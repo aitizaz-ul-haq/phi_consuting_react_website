@@ -1,0 +1,334 @@
+ 
+    body::-webkit-scrollbar {
+        width: 0;  /* Remove scrollbar space */
+      }
+      
+      /* Optional: Hide scrollbar track */
+      body::-webkit-scrollbar-track {
+        display: none;
+      }
+      
+      /* Optional: Style the scrollbar handle */
+      body::-webkit-scrollbar-thumb {
+        background-color: transparent; /* or any color you prefer */
+      }
+
+    main {
+        width: 122%;
+      }
+
+      header {
+        display: none;
+       }
+
+    .hero {
+        width: 403px;
+    }
+
+    .hero-container { 
+        padding-top: 0px;
+        height: 900px;
+    }
+
+    .hero-content {
+        margin: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-heading {
+        margin-top: 5px;
+        font-size: 44px;
+        text-align: center;
+    margin-top: 68px;
+    }
+
+    .hero-desc {
+        margin-top: 60px;
+        font-size: 17px;
+        text-align: center;
+     }
+
+     .hero-desc br{
+        display: none;
+     }
+
+     .hero-container::after { 
+        background-position: 77% 20%;
+     }
+
+     .line-top {
+        font-size: 16px;
+        text-align: center;
+     }
+
+     .client-container {
+        width:116%;
+     }
+
+    .client-heading { 
+        font-size: 22px;
+    margin-bottom: 20px;
+    }
+
+    .client-desc br {
+        display: none;
+    }
+
+    .client-desc {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .logo-container-one { 
+        flex-direction: column;
+    }
+
+    .value-container-one {
+        flex-direction: column;
+    }
+
+    .value-container-two {
+        flex-direction: column;
+    }
+
+    .value-container-three {
+        flex-direction: column;
+    }
+
+    .value-bubble {
+        width: 247px;
+        height: 357px;
+    }
+
+    .testi-cards-container { 
+        flex-direction: column;
+    }
+
+    .ach-badges-container { 
+        flex-direction: column;
+    }
+
+    .blog-cards-container { 
+        flex-direction: column;
+    }
+
+    .blog-image-home {
+        width: 40%;
+    }
+
+    .footer-container { 
+        flex-direction: column;
+    }
+
+    .links-conatiner { 
+        width: 30%;
+    }
+
+    .case-button-more {
+        padding: 8px 26px;
+        width: 257px;
+    }
+
+    .clients {
+        align-items: center;
+    }
+
+    .work-case-study-section {
+        flex-direction: column;
+    }
+
+    .value-heading {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .value-desc {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .value-container-one {
+        flex-direction: column;
+    }
+
+    .value-bubble {
+        margin: 0px;
+    width: 393px;
+    height: 306px;
+    justify-content: center;
+    }
+
+    .services-container {
+        padding-top: 1rem;
+    }
+
+    .services-heading {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .services-desc { 
+        font-size: 18px;
+        margin-bottom: 20px;
+        width: 81%
+    }
+
+    .services-material { 
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .services-tab {
+        width: 96%;
+        height: 106px;
+        margin-top: -4px;
+        box-shadow: 0px 0px 0px -11px var(--LIGHT-PHI-BLUE);
+        border: 2px solid #00BCD4;
+        border-radius: 10px;
+    }
+
+    .work-heading {
+        flex-direction: column;
+        margin-top: 1rem;
+        margin-top: 0px;
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .work-desc { 
+        font-size: 18px;
+        margin-bottom: 20px;
+        width: 84%;
+    }
+
+    .work-case-study-section {
+        margin-top: 50px;
+    }
+
+    .casestudy-img { 
+        display: none;
+    }
+
+    .section-left {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .call {
+        display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    }
+
+    .call-container {
+        padding:1.0rem;
+        width: 116%;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        height: 250px;
+    }
+
+    .call-title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .call-button { 
+        width: 117%;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    }
+
+    .call-button-container {
+        flex-direction: column;
+        padding: 0px;
+    }
+
+    .cta-button { 
+        margin-left: 0px;
+    }
+
+    .testimonial {
+        padding: 1rem;
+    }
+
+    .testi-heading {
+        font-size: 22px;
+    }
+
+    .testi-desc br {
+        display: none;
+    }
+
+    .testi-desc {
+        font-size: 18px;
+    }
+
+    .testi-quote {
+        width: 160%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .banner-container { 
+        width: 100%;
+        margin: 1rem;
+        padding: 0.9rem;
+    }
+
+    .banner {
+        padding: 0px;
+    }
+
+    .banner-title { 
+        font-size: 27px;
+    margin-bottom: 20px;
+    }
+
+    .blog-title { 
+        /* margin-top: 1rem; */
+        margin-top: 80px;
+        font-size: 22px;
+    }
+
+    .blog-card-one {
+        width: 96%;
+    }
+
+    .blog-card-two {
+        width: 96%;
+    }
+    .blog-image-home {
+        width: 101%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        width: 126%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .links-conatiner {
+        width: 372px;
+    }
+
+    .links-section { 
+        flex-direction: column;
+        width: 403px;
+
+    }
+    .allrights {
+        display: none;
+    }
