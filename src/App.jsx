@@ -40,7 +40,7 @@ const App = () => {
        {/* {window.innerWidth <= 768 ? <MobileHeader /> : <Header />} */}
     
       <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="phi_consuting_react_website/" element={<HomePage />} />
       <Route path="/aboutus" element={<AboutUs />} />
       <Route path="/insights" element={<Blog />} />
       <Route path="/careers" element={<Careers />} />
