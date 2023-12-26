@@ -6,6 +6,8 @@
   "homepage": "https://aitizaz-ul-haq.github.io/phi_consuting_react_website/",
   "scripts": {
     "dev": "vite",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build",
     "build": "vite build --base /phi_consuting_react_website/",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
