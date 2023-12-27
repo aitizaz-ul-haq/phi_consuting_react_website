@@ -1,9 +1,10 @@
 {
   "name": "phi_website",
+  "homepage": "https://aitizaz-ul-haq.github.io/phi_consuting_react_website",
   "private": false,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://aitizaz-ul-haq.github.io/phi_consuting_react_website",
+  
   "scripts": {
     "dev": "vite",
     "predeploy":"npm run build",
