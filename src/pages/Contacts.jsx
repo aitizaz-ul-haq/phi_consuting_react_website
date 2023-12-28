@@ -18,7 +18,7 @@ const Contacts = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('https://phi-email-service-62851j0co-aitizaz-ul-haqs-projects.vercel.app/send-email', {
+      const response = await fetch('https://phi-email-service.vercel.app/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
