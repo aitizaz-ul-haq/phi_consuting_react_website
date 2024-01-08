@@ -4854,6 +4854,11 @@ align-items: center;
     color: var(--APPLE-GRAY);
 }
 
+.scheduler-set {
+    text-decoration: none;
+    color: var(--APPLE-GRAY);
+}
+
 @media screen and (min-width: 320px) {
     header {
         display: none;

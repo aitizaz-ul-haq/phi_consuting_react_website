@@ -57,7 +57,7 @@ const SalesConsulting = () => {
               through their buying journey with precision, leveraging the best
               methods and tools for maximum efficiency.
             </p>
-            <div class="consult-button-sales">Schedule a Free Consultation</div>
+            <div class="consult-button-sales"> <Link to="/contact" className='scheduler-set'>Schedule a Free Consultation</Link> </div>
           </div>
         </section>
       </article>

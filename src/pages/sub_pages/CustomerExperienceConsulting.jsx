@@ -53,7 +53,7 @@ const CustomerExperienceConsulting = () => {
               and support them in taking actionable steps toward creating
               customer experiences that deliver more value.
             </p>
-            <div class="consult-button-exp">Schedule a Free Consultation</div>
+            <div class="consult-button-exp"><Link to="/contact" className='scheduler-set'> Schedule a Free Consultation</Link></div>
           </div>
         </section>
       </article>

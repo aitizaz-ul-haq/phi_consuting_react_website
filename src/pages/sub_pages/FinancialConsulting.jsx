@@ -55,7 +55,7 @@ const FiancialConsulting = () => {
               to securely deliver exceptional personalized service.
             </p>
             <div class="consult-button-fin-consul">
-              Schedule a Free Consultation
+            <Link to="/contact" className='scheduler-set'> Schedule a Free Consultation</Link>
             </div>
           </div>
         </section>

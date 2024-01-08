@@ -54,7 +54,8 @@ const HrAndRecruitmentConsulting = () => {
               bottom-line growth and helping you thrive.
             </p>
             <div class="consult-button-hr-consul">
-              Schedule a Free Consultation
+            <Link to="/contact" className='scheduler-set'> Schedule a Free Consultation</Link>
+             
             </div>
           </div>
         </section>

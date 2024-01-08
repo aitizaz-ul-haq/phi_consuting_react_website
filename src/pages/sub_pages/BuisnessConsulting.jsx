@@ -56,7 +56,7 @@ const BuisnessConsulting = () => {
               customers, and the market.
             </p>
             <div class="consult-button-bui-consul">
-              Schedule a Free Consultation
+            <Link to="/contact" className='scheduler-set'> Schedule a Free Consultation</Link>
             </div>
           </div>
         </section>
