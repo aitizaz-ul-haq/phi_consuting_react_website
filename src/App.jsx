@@ -12,6 +12,7 @@ import Header from './components/shared/Header';
 import MobileHeader from "./components/shared/MobileHeader";
 import Footer from './components/shared/Footer';
 import CaseStudyView from './components/view_pages/CaseStudyView';
+import BlogView from './components/view_pages/BlogView';
 
 import CustomerExperience from './pages/sub_pages/CustomerExperienceConsulting';
 import FinancialConsulting from './pages/sub_pages/FinancialConsulting';
@@ -49,6 +50,8 @@ const App = () => {
       <Route path="/services" element={<Services />} />
       <Route path="/valuecreation" element={<OurWork />} />
       <Route path="/viewcasestudy" element={<CaseStudyView/>}/>
+      <Route path="/viewblog" element={<BlogView/>}/>
+      
 
           <Route path="/customer-experience" element={<CustomerExperience />} />
           <Route path="/financial-consulting" element={<FinancialConsulting />} />

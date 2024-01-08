@@ -11,8 +11,8 @@ const CaseStudyView = () => {
         <div className="study-info-container">
             <div className="study-title">
                 <img src={compLogo} alt="" className="study-read-logo" />
-                <h3>Lorem Ipsum Dolor SIt Emet...</h3>
-                <p className="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, optio minima natus facere tenetur in, quam quod ipsa repellendus similique soluta illo laboriosam fuga ullam accusantium iure earum. Repudiandae, excepturi!</p>
+                <h3 className='case-Study-Heading-reader'>Lorem Ipsum Dolor SIt Emet...</h3>
+                <p className="caese-styudy-description-reader">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, optio minima natus facere tenetur in, quam quod ipsa repellendus similique soluta illo laboriosam fuga ullam accusantium iure earum. Repudiandae, excepturi!</p>
             </div>
         </div>
         <div className="study-media-container">
