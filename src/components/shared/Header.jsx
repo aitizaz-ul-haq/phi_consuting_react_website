@@ -38,6 +38,12 @@ const Header = () => {
         >
         <span
           >
+            <Link to="/insights" className="inner-header">Spotlight</Link>
+          
+          </span
+        >
+        <span
+          >
            <Link to="/careers" className="inner-header">Careers</Link>
           </span
         >

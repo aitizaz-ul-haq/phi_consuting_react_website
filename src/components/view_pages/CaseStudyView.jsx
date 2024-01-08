@@ -32,13 +32,13 @@ const CaseStudyView = () => {
             </p>
             <div class="case-more-button-container">
                 <div class="case-button-study-page-back">
-               
                 <Link to="/" className='read-study-button-back'
                   > &larr; Back</Link
                 >
-              
-                     </div>
-                <div class="case-button-study-page"> View More Case Studies &rarr;</div>
+               </div>
+                <div class="case-button-study-page"> <Link to="/" className='read-study-button-back'
+                  > View More Case Studies &rarr;</Link
+                > </div>
               </div>
         </div>
     </section>

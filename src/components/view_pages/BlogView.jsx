@@ -33,7 +33,9 @@ const BlogView = () => {
                 >
               
                      </div>
-                <div class="blog-button-study-page"> View More blogs &rarr;</div>
+                <div class="blog-button-study-page"> <Link to="/insights" className='blog-study-button-back'
+                  > View More Blogs &rarr;</Link
+                > </div>
               </div>
                 </div>
             </section>
