@@ -51,11 +51,8 @@ const App = () => {
       <Route path="/contact" element={<Contacts />} />
       <Route path="/services" element={<Services />} />
       <Route path="/valuecreation" element={<OurWork />} />
-      {/* <Route path="/viewcasestudy" element={<CaseStudyView/>}/> */}
       <Route path="/viewcasestudy/:id" element={<CaseStudyView/>}/>
       <Route path="/viewblog" element={<BlogView/>}/>
-      
-
           <Route path="/customer-experience" element={<CustomerExperience />} />
           <Route path="/financial-consulting" element={<FinancialConsulting />} />
           <Route path="/buisness-consulting" element={<BuisnessConsulting />} />
