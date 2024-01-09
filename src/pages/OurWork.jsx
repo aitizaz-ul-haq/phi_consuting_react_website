@@ -13,9 +13,9 @@ import clutchone from '../assets/img/achievements-badges/clutch_1.png';
 import BBB from '../assets/img/achievements-badges/BBB.png';
 import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
 
-import longblockpicone from '../assets/img/comp_logos/truck-square.png';
-import longblockpictwo from "../assets/img/comp_logos/digitalocean-square.png";
-import longblockpicthree from "../assets/img/comp_logos/truck-square.png";
+import longblockpicone from '/assets/truck-square.png';
+import longblockpictwo from "/assets/digitalocean-square.png";
+import longblockpicthree from "/assets/truck-square.png";
 
 const OurWork = () => {
 

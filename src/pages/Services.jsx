@@ -21,13 +21,13 @@ import impicon from "../assets/img/process_icons/implement.png";
 import monitoricon from "../assets/img/process_icons/monitor.png";
 import improveicon from "../assets/img/process_icons/improve.png";
 
-import workcardimgone from "../assets/img/atob-card.png";
-import workcardtwo from "../assets/img/digitalocean-product.png";
-import workcardthree from "../assets/img/truckx-case.png";
+// import workcardimgone from "../assets/img/atob-card.png";
+// import workcardtwo from "../assets/img/digitalocean-product.png";
+// import workcardthree from "../assets/img/truckx-case.png";
 
-import squareiconone from "../assets/img/comp_logos/AToB-square.jpg";
-import squareicontwo from "../assets/img/comp_logos/digitalocean-square.png";
-import squareiconthree from "../assets/img/comp_logos/truck-square.png";
+// import squareiconone from "../assets/img/comp_logos/AToB-square.jpg";
+// import squareicontwo from "../assets/img/comp_logos/digitalocean-square.png";
+// import squareiconthree from "../assets/img/comp_logos/truck-square.png";
 
 import achiconone from "../assets/img/achievements-badges/clutch_1.png";
 import achicontwo from "../assets/img/achievements-badges/BBB.png";
@@ -492,7 +492,7 @@ const Services = () => {
             help you achieve your goals.
           </p>
           <div class="work-row">
-            <div class="work-card">
+            {/* <div class="work-card">
               <div class="work-card-image-container">
                 <img
                   src={workcardimgone}
@@ -569,7 +569,7 @@ const Services = () => {
               <div class="right-button-work-small">
                 <span>Explore More</span>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div class="right-button spacing-under">

@@ -15,12 +15,12 @@ import financial from '../assets/img/services-icons/financial.png';
 import hr from '../assets/img/services-icons/hr.png';
 import sales from '../assets/img/services-icons/sales.png';
 
-import compiconOne from '../assets/img/comp_logos/truck-square.png';
-import truckxproduct from '../assets/img/truckx-case.png';
-import compiconTwo from '../assets/img/comp_logos/AToB-square.jpg';
-import atobproduct from '../assets/img/atob-card.png';
-import compiconThree from '../assets/img/comp_logos/digitalocean-square.png';
-import digiproduct from '../assets/img/digitalocean-product.png';
+import compiconOne from '/assets/truck-square.png';
+import truckxproduct from '/assets/truckx-case.png';
+import compiconTwo from '/assets/AToB-square.jpg';
+import atobproduct from '/assets/atob-card.png';
+import compiconThree from '/assets/digitalocean-square.png';
+import digiproduct from '/assets/digitalocean-product.png';
 
 import clutchone from '../assets/img/achievements-badges/clutch_1.png';
 import BBB from '../assets/img/achievements-badges/BBB.png';

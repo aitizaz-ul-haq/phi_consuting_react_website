@@ -2986,6 +2986,10 @@ align-items: center;
     margin: 3rem;
     box-shadow: 24px 63px 128px -53px var(--DARK-PHI-BLUE);
     /* padding: 0.5rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: start; */
 }
 
 .work-card:hover {
@@ -3010,16 +3014,22 @@ align-items: center;
 
 .work-card-heading {
     margin: 1rem;
+    font-size: 15px;
+    
 }
 
 .work-card-desc {
     margin: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .right-button-work-small {
     order: 3;
     font-weight: 500;
     margin-left: 1rem;
+    margin-bottom: 1rem;
 }
 
 .right-button-work-small span {
@@ -3028,6 +3038,19 @@ align-items: center;
     background-color: var(--LIGHT-PHI-BLUE);
     cursor: pointer;
     transition: background-color 0.3s;
+    color: var(--DARK-PHI-BLUE);
+}
+
+.work-card-button-link {
+    text-decoration: none;
+    color: var(--DARK-PHI-BLUE);
+}
+
+.work-card-button-link:visited {
+    color: var(--DARK-PHI-BLUE);
+}
+
+.work-card-button-link:active {
     color: var(--DARK-PHI-BLUE);
 }
 

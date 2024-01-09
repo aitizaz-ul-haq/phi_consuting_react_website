@@ -1,6 +1,6 @@
 import React from 'react';
-import compLogo from "../../assets/img/comp_logos/truck-square.png";
-import truckXprod from "../../assets/img/truckx-case.png";
+// import compLogo from "../../assets/img/comp_logos/truck-square.png";
+// import truckXprod from "../../assets/img/truckx-case.png";
 import { Link } from 'react-router-dom';
 
 const CaseStudyView = () => {
@@ -10,13 +10,13 @@ const CaseStudyView = () => {
     <section className="study-material">
         <div className="study-info-container">
             <div className="study-title">
-                <img src={compLogo} alt="" className="study-read-logo" />
+                {/* <img src={compLogo} alt="" className="study-read-logo" /> */}
                 <h3 className='case-Study-Heading-reader'>Lorem Ipsum Dolor SIt Emet...</h3>
                 <p className="caese-styudy-description-reader">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, optio minima natus facere tenetur in, quam quod ipsa repellendus similique soluta illo laboriosam fuga ullam accusantium iure earum. Repudiandae, excepturi!</p>
             </div>
         </div>
         <div className="study-media-container">
-            <img src={truckXprod} alt="" className='product-study-img'/>
+            {/* <img src={truckXprod} alt="" className='product-study-img'/> */}
         </div>       
     </section>
     <section className="study-details-container">

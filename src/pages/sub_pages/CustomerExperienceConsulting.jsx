@@ -20,12 +20,12 @@ import monitoricon from "../../assets/img/process_icons/monitor.png";
 import improveicon from "../../assets/img/process_icons/improve.png";
 
 
-import workone from "../../assets/img/atob-card.png";
-import worktwo from "../../assets/img/comp_logos/AToB-square.jpg";
-import workthree from "../../assets/img/digitalocean-product.png";
-import workfour from "../../assets/img/comp_logos/digitalocean-square.png";
-import workfive from "../../assets/img/truckx-case.png";
-import worksix from "../../assets/img/comp_logos/truck-square.png";
+// import workone from "../../assets/img/atob-card.png";
+// import worktwo from "../../assets/img/comp_logos/AToB-square.jpg";
+// import workthree from "../../assets/img/digitalocean-product.png";
+// import workfour from "../../assets/img/comp_logos/digitalocean-square.png";
+// import workfive from "../../assets/img/truckx-case.png";
+// import worksix from "../../assets/img/comp_logos/truck-square.png";
 
 import achiconone from "../../assets/img/achievements-badges/clutch_1.png";
 import achicontwo from "../../assets/img/achievements-badges/BBB.png";
@@ -37,7 +37,10 @@ import cxiconthree from "../../assets/img/customer_experience_icons/quality assu
 import csiconfour from "../../assets/img/customer_experience_icons/learning-development.png";
 import cxiconfive from "../../assets/img/black_logos/button.png";
 
+import caseStudies from '../../data/caseStudies.json';
+
 const CustomerExperienceConsulting = () => {
+  const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (
         <>
          {/* <!-- Hero Section --> */}
@@ -634,7 +637,10 @@ const CustomerExperienceConsulting = () => {
             testament to our commitment to driving sales excellence.
           </p>
           <div class="work-row">
-            <div class="work-card">
+          {firstThreeCaseStudies.map(study => (
+                <SmallWorkCard key={study.id} caseStudy={study} />
+            ))}
+            {/* <div class="work-card">
               <div class="work-card-image-container">
                 <img
                   src={workone}
@@ -711,7 +717,7 @@ const CustomerExperienceConsulting = () => {
               <div class="right-button-work-small">
                 <span>Explore More</span>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div class="right-button spacing-under">
