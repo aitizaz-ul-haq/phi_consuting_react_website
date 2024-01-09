@@ -3061,6 +3061,8 @@ align-items: center;
 
 .study-heading {
     margin-top: 2rem;
+    font-size: 27px;
+    color: var(--DARK-PHI-BLUE);
 }
 
 .footer-links {
@@ -3111,6 +3113,7 @@ align-items: center;
     justify-content: space-between;
     margin: 20px;
     border-radius: 12px;
+    transition: background-color 0.5s ease;
 }
 
 .case-study-card-collection:hover {
@@ -3137,6 +3140,10 @@ align-items: center;
     border-radius: 5px;
 }
 
+.case-button-more:hover .morcases{
+    color: var(--APPLE-GRAY);
+}
+
 .morcases {
     text-decoration: none;
     color: var(--LIGHTER-DARK-PHI-BLUE);
@@ -3148,10 +3155,6 @@ align-items: center;
 
 .morcases:active {
     color: var(--LIGHTER-DARK-PHI-BLUE);
-}
-
-.case-button-more:hover .morcases{
-    color: var(--APPLE-GRAY);
 }
 /* =================================================Customer Experience page======================= */
 
@@ -4736,6 +4739,7 @@ align-items: center;
 .case-Study-Heading-reader {
     font-size: var(--FS-HEAD);
     color: var(--LIGHTER-DARK-PHI-BLUE);
+    
 }
 
 .caese-styudy-description-reader {
@@ -5478,6 +5482,44 @@ width: 90%;
 .case-button-study-page-back:hover .read-study-button-back{
     color: var(--APPLE-GRAY);
 }
+
+.case-study-row {
+    margin-top: 4rem;
+}
+
+.case-study-container-view {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.study-collection-desc {
+    margin-bottom: 1rem;
+    font-size: 13px;
+}
+
+.study-collection-title {
+    font-size: 15px;
+}
+
+.case-study-card-collection {
+    width: 400px;
+    height: 520px;
+    /* background-color: var(--DARKER-LIGHT-PHI-BLUE); */
+    border: 2px solid var(--LIGHT-PHI-BLUE);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+    border-radius: 12px;
+    transition: background-color 0.5s ease;
+}
+
+
+
 
 /* =================================Services Page===================== */
 
@@ -9476,6 +9518,9 @@ display: none;
         width: 322px;
         height: auto;
     }
+    .case-study-row {
+        margin-top: 6rem;
+    }
     /* =================================Services Page===================== */
 .hero-container-services {
     justify-content: left;
@@ -11197,14 +11242,15 @@ color: var(--APPLE-GRAY);
     }
     
     .case-Study-Heading-reader {
-        font-size: 22px;
+        font-size: 33px;
         margin-top: 1rem;
         margin-bottom: 1rem;
         color: var(--LIGHTER-DARK-PHI-BLUE);
+        text-align: center;
     }
     
     .caese-styudy-description-reader {
-        font-size: 17px;
+        font-size: 22px;
         color: var(--LIGHTER-DARK-PHI-BLUE);
     }
     
@@ -11285,6 +11331,28 @@ color: var(--APPLE-GRAY);
     
     .case-button-study-page-back:hover .read-study-button-back{
         color: var(--APPLE-GRAY);
+    }
+
+    .study-collection-title {
+        font-size: 22px;
+    }
+
+    .study-collection-description {
+        font-size: 17px;
+    }
+
+    .case-study-card-collection {
+        width: 400px;
+        height: 652px;
+        /* background-color: var(--DARKER-LIGHT-PHI-BLUE); */
+        border: 2px solid var(--LIGHT-PHI-BLUE);
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 20px;
+        border-radius: 12px;
+        transition: background-color 0.5s ease;
     }
 
  /* =================================Services Page===================== */
