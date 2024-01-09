@@ -30,6 +30,8 @@ import achiconone from "../../assets/img/achievements-badges/clutch_1.png";
 import achicontwo from "../../assets/img/achievements-badges/BBB.png";
 import achiconthree from "../../assets/img/achievements-badges/clutch_2.png";
 
+import SmallWorkCard from '../../components/shared/cards/SmallWorkCard';
+
 import hriconone from "../../assets/img/hr_icons/hr service.png";
 import hricontwo from "../../assets/img/hr_icons/Payroll & Benefits.png";
 import hriconthree from "../../assets/img/hr_icons/Talent Development.png";

@@ -19,6 +19,8 @@ import impicon from "../../assets/img/process_icons/implement.png";
 import monitoricon from "../../assets/img/process_icons/monitor.png";
 import improveicon from "../../assets/img/process_icons/improve.png";
 
+import SmallWorkCard from '../../components/shared/cards/SmallWorkCard';
+
 // import workone from "../../assets/img/atob-card.png";
 // import worktwo from "../../assets/img/comp_logos/AToB-square.jpg";
 // import workthree from "../../assets/img/digitalocean-product.png";

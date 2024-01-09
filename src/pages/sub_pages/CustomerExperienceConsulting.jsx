@@ -27,6 +27,8 @@ import improveicon from "../../assets/img/process_icons/improve.png";
 // import workfive from "../../assets/img/truckx-case.png";
 // import worksix from "../../assets/img/comp_logos/truck-square.png";
 
+import SmallWorkCard from '../../components/shared/cards/SmallWorkCard';
+
 import achiconone from "../../assets/img/achievements-badges/clutch_1.png";
 import achicontwo from "../../assets/img/achievements-badges/BBB.png";
 import achiconthree from "../../assets/img/achievements-badges/clutch_2.png";
