@@ -29,6 +29,7 @@ import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
 import blogbanner from '../assets/img/b2b.webp';
 import { Link } from 'react-router-dom';
 
+
 const HomePage = () => {
 
   const handleTabClickOne = () => {
@@ -568,7 +569,9 @@ const HomePage = () => {
             </div>
           </div>
           <div class="right-button spacing-under">
-            <div class="case-button-more">View More Case Studies</div>
+            <div class="case-button-more">
+              <Link to="/spotlight" className='morcases'>View More Case Studies</Link>
+             </div>
           </div>
         </section>
       </article>

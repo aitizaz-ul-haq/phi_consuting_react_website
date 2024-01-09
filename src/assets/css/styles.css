@@ -3084,6 +3084,75 @@ align-items: center;
     color: var(--DARK-PHI-BLUE);
 }
 
+.case-study-row {
+    margin-top: 8rem;
+}
+
+.case-study-container-view {
+    padding: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.study-collection-desc {
+    margin-bottom: 1rem;
+}
+
+.case-study-card-collection {
+    width: 400px;
+    height: 600px;
+    /* background-color: var(--DARKER-LIGHT-PHI-BLUE); */
+    border: 2px solid var(--LIGHT-PHI-BLUE);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+    border-radius: 12px;
+}
+
+.case-study-card-collection:hover {
+    background-color: var(--LIGHTER-DARK-PHI-BLUE);
+    color: var(--APPLE-GRAY);
+}
+
+.img-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.collection-card-img {
+    width: 70%;
+    height: auto;
+}
+
+.right-button-work-small-collection {
+    background-color: var(--LIGHT-PHI-BLUE);
+    padding: 0.5rem;
+    width: 95px;
+    border-radius: 5px;
+}
+
+.morcases {
+    text-decoration: none;
+    color: var(--LIGHTER-DARK-PHI-BLUE);
+}
+
+.morcases:visited {
+    color: var(--LIGHTER-DARK-PHI-BLUE);
+}
+
+.morcases:active {
+    color: var(--LIGHTER-DARK-PHI-BLUE);
+}
+
+.case-button-more:hover .morcases{
+    color: var(--APPLE-GRAY);
+}
 /* =================================================Customer Experience page======================= */
 
 .hero-container-exp {

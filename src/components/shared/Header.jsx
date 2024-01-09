@@ -38,7 +38,7 @@ const Header = () => {
         >
         <span
           >
-            <Link to="/insights" className="inner-header">Spotlight</Link>
+            <Link to="/spotlight" className="inner-header">Spotlight</Link>
           
           </span
         >

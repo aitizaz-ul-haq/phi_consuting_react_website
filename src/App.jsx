@@ -13,6 +13,7 @@ import MobileHeader from "./components/shared/MobileHeader";
 import Footer from './components/shared/Footer';
 import CaseStudyView from './components/view_pages/CaseStudyView';
 import BlogView from './components/view_pages/BlogView';
+import Spotlight from './pages/Spotlight';
 
 import CustomerExperience from './pages/sub_pages/CustomerExperienceConsulting';
 import FinancialConsulting from './pages/sub_pages/FinancialConsulting';
@@ -40,15 +41,17 @@ const App = () => {
        {isMobile ? <MobileHeader /> : <Header />}
 
        {/* {window.innerWidth <= 768 ? <MobileHeader /> : <Header />} */}
-    
+       
       <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/aboutus" element={<AboutUs />} />
       <Route path="/insights" element={<Blog />} />
+      <Route path="/spotlight" element={<Spotlight />} />
       <Route path="/careers" element={<Careers />} />
       <Route path="/contact" element={<Contacts />} />
       <Route path="/services" element={<Services />} />
       <Route path="/valuecreation" element={<OurWork />} />
+      {/* <Route path="/viewcasestudy" element={<CaseStudyView/>}/> */}
       <Route path="/viewcasestudy/:id" element={<CaseStudyView/>}/>
       <Route path="/viewblog" element={<BlogView/>}/>
       
