@@ -1,29 +1,33 @@
 import React from 'react';
 import blogHeader from "../../assets/img/b2b.webp";
 import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import blogs from "../../data/blogs.json";
 
 const BlogView = () => {
+  const { id } = useParams();
+  const blog = blogs.find(study => study.id === parseInt(id));
     return(
         <>
           <article className="blog-viewer">
             <section className="blog-content-container">
                 <div className="blog-content">
                     <div className="blog-image-header-container">
-                        <img src={blogHeader} alt="" className='blog-image-in-reader' />
+                        <img src={blog.imageone} alt="" className='blog-image-in-reader' />
                     </div>
                    <div className="blog-heading-read-section">
-                    Lorem Ipsum Dolor Sit Emit....
+                   {blog.title}
                    </div>
                    <div className="blog-desc-line-section">
-                    Lorem Ipsum Dolor Sit Emit what ever what ever what ever...
+                    {blog.summary}
                    </div>
                    <hr />
                    <div className="blog-content-text-section">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem odit quaerat corrupti suscipit ex, fugit saepe dignissimos debitis officia perferendis reiciendis excepturi aperiam odio aliquam iure praesentium accusantium necessitatibus adipisci?
-                    Accusamus similique ducimus veniam dolor? Hic rerum, repudiandae repellat optio odit veritatis molestiae ut sint quidem totam libero deserunt iusto quisquam ad aliquid fugiat, error dicta numquam rem, cupiditate eum.
-                    Doloribus eaque, hic incidunt rem ipsa mollitia suscipit iusto ullam omnis provident veniam quasi quae vero in ex consequuntur quidem assumenda dicta, ratione minus fugiat cupiditate est sunt? Minima, nam.
-                    Eligendi quae nobis dicta optio, consequatur et quidem ipsum suscipit sunt iure soluta aperiam temporibus molestias, minima voluptatem magni accusamus deserunt nihil nesciunt dolor cumque. Accusantium sunt natus numquam maxime?
-                   praesentium possimus, saepe reprehenderit illum unde iste eum nam. Repellendus, quod beatae!
+                   {blog.content.map((item, index) => (
+                item.type === 'paragraph' ? 
+                    <p key={index} className="study-details">{item.text} </p> : <h3 key={index} className='study-heading'>{item.text}</h3>
+                    
+            ))}
                    </div>
                    <div class="blog-more-button-container">
                 <div class="blog-button-study-page-back">
