@@ -28,7 +28,8 @@ import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
 
 import blogbanner from '../assets/img/b2b.webp';
 import { Link } from 'react-router-dom';
-
+import CaseStudyMacroComps from '../components/shared/macroComps/CaseStudyMacroComps';
+import caseStudies from "../data/caseStudies.json";
 
 const HomePage = () => {
 
@@ -469,105 +470,17 @@ const HomePage = () => {
             improving existing ones, we are ready to roll up our sleeves and
             help you achieve your goals.
           </p>
-          <div class="work-case-study-section">
-            <div class="section-left">
-              <div class="company-icon">
-                <img
-                  src={compiconOne}
-                  alt="company icon"
-                  width="100"
-                  height="100"
+          {caseStudies.map((study, index) => (
+                <CaseStudyMacroComps
+                    key={study.id}
+                    title={study.title}
+                    summary={study.summary}
+                    logo={study.imagetwo}
+                    image={study.imageone}
+                    isRight={index % 2 === 0}
                 />
-              </div>
-              <div class="study-title">
-                <h3 class="title-third">
-                  Lorem ipsum dolor sit, amet consectetur
-                </h3>
-              </div>
-              <div class="study-desc">
-                adipisicing elit. In asperiores nulla aliquid ullam autem
-                blanditiis minima ex illum odio eligendi tenetur, est
-                voluptatibus repellendus inventore dolore! Maxime, officiis.
-                Rerum, eos!
-              </div>
-              <div class="case-button-container">
-                <div class="case-button">View Case Study</div>
-              </div>
-            </div>
-            <div class="section-right">
-              <img
-                src={truckxproduct}
-                alt="case study picture"
-                class="casestudy-img"
-              />
-            </div>
-          </div>
-          <div class="work-case-study-section">
-            <div class="section-right">
-              <img
-                src={atobproduct}
-                alt="case study picture"
-                class="casestudy-img"
-              />
-            </div>
-            <div class="section-left">
-              <div class="company-icon">
-                <img
-                  src={compiconTwo}
-                  alt="compnay icon"
-                  width="100"
-                  height="100"
-                />
-              </div>
-              <div class="study-title">
-                <h3 class="title-third">
-                  Lorem ipsum dolor sit, amet consectetur
-                </h3>
-              </div>
-              <div class="study-desc">
-                adipisicing elit. In asperiores nulla aliquid ullam autem
-                blanditiis minima ex illum odio eligendi tenetur, est
-                voluptatibus repellendus inventore dolore! Maxime, officiis.
-                Rerum, eos!
-              </div>
-              <div class="case-button-container">
-                <div class="case-button">View Case Study</div>
-              </div>
-            </div>
-          </div>
-          <div class="work-case-study-section">
-            <div class="section-left">
-              <div class="company-icon">
-                <img
-                  src={compiconThree}
-                  alt="compnay icon"
-                  width="100"
-                  height="100"
-                />
-              </div>
-              <div class="study-title">
-                <h3 class="title-third">
-                  Lorem ipsum dolor sit, amet consectetur
-                </h3>
-              </div>
-              <div class="study-desc">
-                adipisicing elit. In asperiores nulla aliquid ullam autem
-                blanditiis minima ex illum odio eligendi tenetur, est
-                voluptatibus repellendus inventore dolore! Maxime, officiis.
-                Rerum, eos!
-              </div>
-              <div class="case-button-container">
-                <div class="case-button">View Case Study</div>
-              </div>
-            </div>
-            <div class="section-right">
-              <img
-                src={digiproduct}
-                alt="case study picture"
-                class="casestudy-img"
-              />
-            </div>
-          </div>
+            ))}
+         
           <div class="right-button spacing-under">
             <div class="case-button-more">
               <Link to="/spotlight" className='morcases'>View More Case Studies</Link>
