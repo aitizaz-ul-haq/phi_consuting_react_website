@@ -473,6 +473,7 @@ const HomePage = () => {
           {caseStudies.map((study, index) => (
                 <CaseStudyMacroComps
                     key={study.id}
+                    id={study.id}
                     title={study.title}
                     summary={study.summary}
                     logo={study.imagetwo}

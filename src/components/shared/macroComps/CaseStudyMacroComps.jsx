@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const CaseStudyMacroComps = ({ title, summary, logo, image, isRight }) => {
+const CaseStudyMacroComps = ({ id, title, summary, logo, image, isRight }) => {
     return(
         <>
         <div class="work-case-study-section">
@@ -25,17 +26,20 @@ const CaseStudyMacroComps = ({ title, summary, logo, image, isRight }) => {
                 />
               </div>
               <div class="study-title">
-                <h3 class="title-third">
+                <h3 class="macro-title">
                 {title}
                 </h3>
               </div>
-              <div class="study-desc">
+              <div class="study-macro-desc-main">
               {summary}
               </div>
               <div class="case-button-container">
-                <div class="case-button">View Case Study</div>
+                <div class="case-button">
+                    <Link className='macro-button-link-remove' to={`/viewcasestudy/${id}`}> View Case Study</Link>
+                   </div>
               </div>
             </div>
+
                     
                 </>
             ) : (
@@ -51,15 +55,17 @@ const CaseStudyMacroComps = ({ title, summary, logo, image, isRight }) => {
                 />
               </div>
               <div class="study-title">
-                <h3 class="title-third">
+                <h3 class="macro-title">
                 {title}
                 </h3>
               </div>
-              <div class="study-desc">
+              <div class="study-macro-desc-main">
               {summary}
               </div>
               <div class="case-button-container">
-                <div class="case-button">View Case Study</div>
+                <div class="case-button">
+                    <Link className='macro-button-link-remove' to={`/viewcasestudy/${id}`}> View Case Study</Link>
+                   </div>
               </div>
             </div>
 
