@@ -25,7 +25,7 @@ const BlogView = () => {
                    <div className="blog-content-text-section">
                    {blog.content.map((item, index) => (
                 item.type === 'paragraph' ? 
-                    <p key={index} className="study-details">{item.text} </p> : <h3 key={index} className='study-heading'>{item.text}</h3>
+                    <p key={index} className="blog-para-spacing">{item.text} </p> : <h3 key={index} className='study-heading'>{item.text}</h3>
                     
             ))}
                    </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import blogpic from "../assets/img/bi.jpg";
 import { Link } from 'react-router-dom';
+import blogs from '../data/blogs.json';
+import BlogCard from '../components/shared/cards/BlogCard';
 
 const Blog = () => {
 
@@ -32,78 +34,9 @@ const Blog = () => {
         <section class="bloged-container">
           <h2 class="bloged-heading">Blogs</h2>
           <div class="bloged-box-container">
-            <div class="bloged-box">
-              <div class="bloged-banner-container">
-                <img src={blogpic} alt="" width="375" />
-              </div>
-              <h3 class="bloged-title">hello world</h3>
-              <p class="bloged-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi
-                illo sit exercitationem dolorem officiis quibusdam numquam
-                autem, quasi mollitia ab obcaecati rem aperiam delectus in,
-                voluptatum quae, placeat pariatur nobis.
-              </p>
-            </div>
-            <div class="bloged-box">
-              <div class="bloged-banner-container">
-                <img src={blogpic} alt="" width="375" />
-              </div>
-              <h3 class="bloged-title">hello world</h3>
-              <p class="bloged-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi
-                illo sit exercitationem dolorem officiis quibusdam numquam
-                autem, quasi mollitia ab obcaecati rem aperiam delectus in,
-                voluptatum quae, placeat pariatur nobis.
-              </p>
-            </div>
-            <div class="bloged-box">
-              <div class="bloged-banner-container">
-                <img src={blogpic} alt="" width="375" />
-              </div>
-              <h3 class="bloged-title">hello world</h3>
-              <p class="bloged-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi
-                illo sit exercitationem dolorem officiis quibusdam numquam
-                autem, quasi mollitia ab obcaecati rem aperiam delectus in,
-                voluptatum quae, placeat pariatur nobis.
-              </p>
-            </div>
-            <div class="bloged-box">
-              <div class="bloged-banner-container">
-                <img src={blogpic} alt="" width="375" />
-              </div>
-              <h3 class="bloged-title">hello world</h3>
-              <p class="bloged-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi
-                illo sit exercitationem dolorem officiis quibusdam numquam
-                autem, quasi mollitia ab obcaecati rem aperiam delectus in,
-                voluptatum quae, placeat pariatur nobis.
-              </p>
-            </div>
-            <div class="bloged-box">
-              <div class="bloged-banner-container">
-                <img src={blogpic} alt="" width="375" />
-              </div>
-              <h3 class="bloged-title">hello world</h3>
-              <p class="bloged-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi
-                illo sit exercitationem dolorem officiis quibusdam numquam
-                autem, quasi mollitia ab obcaecati rem aperiam delectus in,
-                voluptatum quae, placeat pariatur nobis.
-              </p>
-            </div>
-            <div class="bloged-box">
-              <div class="bloged-banner-container">
-                <img src={blogpic} alt="" width="375" />
-              </div>
-              <h3 class="bloged-title">hello world</h3>
-              <p class="bloged-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi
-                illo sit exercitationem dolorem officiis quibusdam numquam
-                autem, quasi mollitia ab obcaecati rem aperiam delectus in,
-                voluptatum quae, placeat pariatur nobis.
-              </p>
-            </div>
+          {blogs.map(study => (
+                <BlogCard key={study.id} blogs={study} />
+            ))}
           </div>
         </section>
       </article>
