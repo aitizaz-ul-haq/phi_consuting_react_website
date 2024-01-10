@@ -15,12 +15,6 @@ import financial from '../assets/img/services-icons/financial.png';
 import hr from '../assets/img/services-icons/hr.png';
 import sales from '../assets/img/services-icons/sales.png';
 
-import compiconOne from '/assets/truck-square.png';
-import truckxproduct from '/assets/truckx-case.png';
-import compiconTwo from '/assets/AToB-square.jpg';
-import atobproduct from '/assets/atob-card.png';
-import compiconThree from '/assets/digitalocean-square.png';
-import digiproduct from '/assets/digitalocean-product.png';
 
 import clutchone from '../assets/img/achievements-badges/clutch_1.png';
 import BBB from '../assets/img/achievements-badges/BBB.png';
@@ -29,6 +23,8 @@ import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
 import blogbanner from '../assets/img/b2b.webp';
 import { Link } from 'react-router-dom';
 import CaseStudyMacroComps from '../components/shared/macroComps/CaseStudyMacroComps';
+import BlogCard from '../components/shared/cards/BlogCard';
+import blogs from "../data/blogs.json";
 import caseStudies from "../data/caseStudies.json";
 
 const HomePage = () => {
@@ -57,7 +53,7 @@ const HomePage = () => {
     window.location.href = '/contact';
   }
 
-
+  const firstTwoBlogs = blogs.slice(0, 2);
   return (
     <>
           {/* <!-- Hero Section --> */}
@@ -653,53 +649,11 @@ const HomePage = () => {
           </p>
         </section>
         <section class="blog-cards-container">
-          <div class="blog-card-one">
-            <div class="blog-image">
-              <img
-                 src={blogbanner}
-                alt=""
-                width="455"
-                class="blog-image-home"
-              />
-            </div>
-            <div class="date-and-read-time">
-              <p class="date">October 2, 2023</p>
-              <p class="read-time">5 min read</p>
-            </div>
-            <div class="blog-heading">
-              Build Your Own B2B Lead List: A Must-Have Sales Strategy
-            </div>
-            <div class="blog-desc-card">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus
-              esse assumenda delectus debitis eaque ipsa! Ipsa perferendis
-              quaerat nulla exercitationem tenetur eligendi delectus aliquam
-              consequatur necessitatibus ea, ducimus consectetur nihil?
-            </div>
-          </div>
+        
+        {firstTwoBlogs.map(study => (
+                <BlogCard key={study.id} blogs={study} />
+            ))}
 
-          <div class="blog-card-two">
-            <div class="blog-image">
-              <img
-                src={blogbanner}
-                alt=""
-                width="456"
-                class="blog-image-home"
-              />
-            </div>
-            <div class="date-and-read-time">
-              <p class="date">November 5, 2023</p>
-              <p class="read-time">8 min read</p>
-            </div>
-            <div class="blog-heading">
-              Outbound Sales Development 101: Your First Appointment Guide
-            </div>
-            <div class="blog-desc-card">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus
-              esse assumenda delectus debitis eaque ipsa! Ipsa perferendis
-              quaerat nulla exercitationem tenetur eligendi delectus aliquam
-              consequatur necessitatibus ea, ducimus consectetur nihil?
-            </div>
-          </div>
         </section>
         <section class="button-readmore">
           <div class="right-button">
