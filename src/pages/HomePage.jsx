@@ -28,17 +28,64 @@ import caseStudies from "../data/caseStudies.json";
 
 const HomePage = () => {
 
+  const [animateServices, setAnimateServices] = useState(false);
+  const [animateTabs, setAnimateTabs] = useState(false);
+
+  const [isVisibleServices, setIsVisibleServices] = useState(false);
+const servicesRef = useRef(null);
+
+  const [isVisibleFirst, setIsVisibleFirst] = useState(false);
+const firstRef = useRef(null);
+
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef(null);
+
+  // Intersection Observer for the first component
+useEffect(() => {
+  const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => setIsVisibleFirst(entry.isIntersecting));
+  }, { threshold: 1 });
+
+  observer.observe(firstRef.current);
+  return () => observer.disconnect();
+}, []);
+
 
   useEffect(() => {
       const observer = new IntersectionObserver(entries => {
           entries.forEach(entry => setIsVisible(entry.isIntersecting));
-      }, { threshold: 0.5 }); // Trigger when half of the item is visible
+      }, { threshold: 0.5 }); 
 
       observer.observe(containerRef.current);
-      return () => observer.disconnect(); // Cleanup on unmount
+      return () => observer.disconnect(); 
   }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => setIsVisibleServices(entry.isIntersecting));
+    }, { threshold: 0.5 }); // Adjust threshold as needed
+
+    observer.observe(servicesRef.current);
+    return () => observer.disconnect();
+}, []);
+
+useEffect(() => {
+  const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              setAnimateServices(true);
+              // Delay the tab animations to start after the services animation
+              setTimeout(() => setAnimateTabs(true), 500); // Adjust the delay as needed
+          } else {
+              setAnimateServices(false);
+              setAnimateTabs(false);
+          }
+      });
+  }, { threshold: 0.5 });
+
+  observer.observe(servicesRef.current);
+  return () => observer.disconnect();
+}, []);
 
   const handleTabClickOne = () => {
     window.location.href = '/buisness-consulting';
@@ -106,6 +153,7 @@ const HomePage = () => {
                     src={ATOB}
                     alt="AtoB_logo"
                     title="AtoB"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
                 <div class="image-container">
@@ -113,6 +161,7 @@ const HomePage = () => {
                     src={bobtail}
                     alt="bobtail_logo"
                     title="BoBtail"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
 
@@ -121,6 +170,7 @@ const HomePage = () => {
                     src={joyride}
                     alt="joyride_logo"
                     title="Joyride"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
                 <div class="image-container">
@@ -128,6 +178,7 @@ const HomePage = () => {
                     src={Truckx}
                     alt="truckx_logo"
                     title="TruckX"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
                 <div class="image-container">
@@ -135,6 +186,7 @@ const HomePage = () => {
                     src={pallet}
                     alt="Pallet_logo"
                     title="Pallet"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
               </div>
@@ -144,6 +196,7 @@ const HomePage = () => {
                     src={digitalOcean}
                     alt="bobtail_logo"
                     title="Digital Ocean"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
 
@@ -152,6 +205,7 @@ const HomePage = () => {
                     src={mudflap}
                     alt="joyride_logo"
                     title="Mudflap"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
                 <div class="image-container-bottom">
@@ -159,6 +213,7 @@ const HomePage = () => {
                     src={sungrade}
                     alt="truckx_logo"
                     title="Sungrade Solar"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
               </div>
@@ -169,166 +224,33 @@ const HomePage = () => {
 
       {/* <!-- Value Statement Section  --> */}
       <article class="value">
-        <section class="value-container">
+        <section class="value-container" ref={firstRef}>
           <div class="value-content">
             <div class="new-values">
-              <div class="new-value-left-section">
+              <div className={`new-value-left-section ${isVisibleFirst ? 'visible-left' : ''}`}>
                 <h2 class="value-heading">Drive Success with Phi Consulting</h2>
                 <p class="value-desc">
                   We specialize in driving growth by increasing revenue and
                   driving sales while simultaneously reducing costs and time.
                 </p>
               </div>
-              <div class="new-value-right-section">
+              <div  className={`new-value-right-section ${isVisibleFirst ? 'visible-right' : ''}`}>
                 <img
                   src={valuegraph}
                   alt=""
                   class="graph-biz"
+                  title='Unpresedented growth insured with phi consulting'
                 />
               </div>
             </div>
-            {/* <!-- <div class="value-container-one">
-              <div class="value-bubble">
-                <img
-                  src="./assets/img/custom-icons/reduced costs.png"
-                  alt="icons"
-                  width="70"
-                  height="70"
-                  class="icon-value"
-                />
-
-                <div class="bubble-title">
-                  <h3 class="bubble-title-text">Reduced Costs</h3>
-                </div>
-                <div class="bubble-desc">
-                  <p class="bubble-desc-text">
-                    Optimize spending without compromising quality. Phi
-                    Consulting is dedicated to identifying cost-saving
-                    opportunities, ensuring your resources are allocated
-                    efficiently for maximum impact.
-                  </p>
-                </div>
-              </div>
-
-              <div class="value-bubble">
-                <img
-                  src="./assets/img/custom-icons/efficiency.png"
-                  alt="icons"
-                  width="70"
-                  height="70"
-                  class="icon-value"
-                />
-
-                <div class="bubble-title">
-                  <h3 class="bubble-title-text">Increased Efficiency</h3>
-                </div>
-                <div class="bubble-desc">
-                  <p class="bubble-desc-text">
-                    Streamline your operations for success. Phi Consulting's
-                    expertise lies in optimizing processes, enhancing
-                    efficiency, and positioning your business for growth in a
-                    competitive landscape.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="value-container-two">
-              <div class="value-bubble">
-                <img
-                  src="./assets/img/custom-icons/resources.png"
-                  alt="icons"
-                  width="70"
-                  height="70"
-                  class="icon-value"
-                />
-
-                <div class="bubble-title">
-                  <h3 class="bubble-title-text">Maximized Resources</h3>
-                </div>
-                <div class="bubble-desc">
-                  <p class="bubble-desc-text">
-                    Unlock the full potential of your resources with Phi
-                    Consulting. Our tailored solutions not only maximize
-                    existing capabilities but also strategically build capacity
-                    for future challenges.
-                  </p>
-                </div>
-              </div>
-              <div class="value-bubble">
-                <img
-                  src="./assets/img/custom-icons/sustainability.png"
-                  alt="icons"
-                  width="70"
-                  height="70"
-                  class="icon-value"
-                />
-
-                <div class="bubble-title">
-                  <h3 class="bubble-title-text">Sustainable Business Focus</h3>
-                </div>
-                <div class="bubble-desc">
-                  <p class="bubble-desc-text">
-                    Partner with Phi Consulting for a focus on long-term
-                    success. Our approach extends beyond immediate gains,
-                    building a foundation to ensure your business thrives in the
-                    years ahead.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="value-container-three">
-              <div class="value-bubble">
-                <img
-                  src="./assets/img/custom-icons/sales.png"
-                  alt="icons"
-                  width="70"
-                  height="70"
-                  class="icon-value"
-                />
-
-                <div class="bubble-title">
-                  <h3 class="bubble-title-text">Increased Sales</h3>
-                </div>
-                <div class="bubble-desc">
-                  <p class="bubble-desc-text">
-                    Phi Consulting propels your business to new heights by
-                    strategically aligning sales strategies with market
-                    dynamics, fostering a significant and sustainable increase
-                    in revenue.
-                  </p>
-                </div>
-              </div>
-              <div class="value-bubble">
-                <img
-                  src="./assets/img/custom-icons/risk-management.png"
-                  alt="icons"
-                  width="70"
-                  height="70"
-                  class="icon-value"
-                />
-
-                <div class="bubble-title">
-                  <h3 class="bubble-title-text">Minimized Financial Risks</h3>
-                </div>
-                <div class="bubble-desc">
-                  <p class="bubble-desc-text">
-                    Strengthen your financial foundation with Phi Consulting.
-                    Our commitment to minimizing financial risks ensures your
-                    business stands on solid ground, ready to face challenges
-                    with resilience.
-                  </p>
-                </div>
-              </div>
-            </div> --> */}
+            
           </div>
         </section>
       </article>
 
       {/* <!-- services section --> */}
-      <article class="services">
-        <section class="services-container">
+      <article className='services'>
+        <section className={`services-container ${isVisibleServices ? 'visible' : ''}`} ref={servicesRef}>
           <h2 class="services-heading">
             We have the solutions to propel your success.
           </h2>
@@ -341,7 +263,7 @@ const HomePage = () => {
             <div class="services-content">
               <div class="services-tab-container-one">
               
-              <div class="services-tab second-tab" onClick={handleTabClickOne}>
+              <div className="services-tab second-tab" onClick={handleTabClickOne}>
                   <div class="tab-icon">
                     <img
                       src={buisness}

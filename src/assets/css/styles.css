@@ -1063,9 +1063,7 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+   
 }
 
 .image-container-bottom {
@@ -1077,9 +1075,7 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+   
 }
 
 .logo-container-two {
@@ -1107,46 +1103,7 @@ header {
 
 
 
-.clients.animate .image-container {
-    opacity: 1;
-    transform: translateY(0);
-}
 
-/* Animation delay for each logo */
-.clients.animate .image-container:nth-child(1) {
-    transition-delay: 0.1s;
-}
-.clients.animate .image-container:nth-child(2) {
-    transition-delay: 0.3s;
-}
-.clients.animate .image-container:nth-child(3) {
-    transition-delay: 0.6s;
-}
-.clients.animate .image-container:nth-child(4) {
-    transition-delay: 0.8s;
-}
-.clients.animate .image-container:nth-child(5) {
-    transition-delay: 1s;
-}
-
-
-
-
-.clients.animate .image-container-bottom {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Animation delay for each logo */
-.clients.animate .image-container-bottom:nth-child(1) {
-    transition-delay: 1.2s;
-}
-.clients.animate .image-container-bottom:nth-child(2) {
-    transition-delay: 1.4s;
-}
-.clients.animate .image-container-bottom:nth-child(3) {
-    transition-delay: 1.8s;
-}
 
 .value {
     background-color: var(--APPLE-GRAY);
@@ -10694,7 +10651,8 @@ display: none;
     }
 
     .value-desc { 
-        font-size: 18px;
+        font-size: 22px;
+        padding-left: 2rem;
     }
 
     .value-container-one { 
@@ -11174,6 +11132,74 @@ display: none;
         height: auto;
     }
 
+    .image-container {
+        background-color: var(--WHITE-TEXT);
+        margin: 2rem;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+    
+    .image-container-bottom {
+        background-color: var(--WHITE-TEXT);
+        margin: 1rem;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+
+
+    
+    .clients.animate .image-container {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .clients.animate .image-container-bottom {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* Animation delay for each logo */
+    .clients.animate .image-container:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+    .clients.animate .image-container:nth-child(2) {
+        transition-delay: 0.3s;
+    }
+    .clients.animate .image-container:nth-child(3) {
+        transition-delay: 0.6s;
+    }
+    .clients.animate .image-container:nth-child(4) {
+        transition-delay: 0.8s;
+    }
+    .clients.animate .image-container:nth-child(5) {
+        transition-delay: 1s;
+    }
+    
+    /* Animation delay for each logo */
+    .clients.animate .image-container-bottom:nth-child(1) {
+        transition-delay: 1.2s;
+    }
+    .clients.animate .image-container-bottom:nth-child(2) {
+        transition-delay: 1.4s;
+    }
+    .clients.animate .image-container-bottom:nth-child(3) {
+        transition-delay: 1.8s;
+    }
+
     .new-values {
         display: flex;
         flex-direction: row;
@@ -11204,10 +11230,70 @@ display: none;
         align-items: center;
     }
 
+    .new-value-left-section{
+        opacity: 0;
+        transform: translateY(100px);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .new-value-left-section:hover {
+        transform: scale(1.1); /* Adjust scaling factor as needed */
+    }
+
+    .new-value-right-section {
+        opacity: 0;
+        transform: translatex(10px);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    /* Animated state */
+.visible-left {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.visible-right {
+    opacity: 1;
+    transform: translatex(0);
+    transition-delay: 1s; /* Delay for the right section */
+}
+    
+
     .graph-biz {
         width: 50%;
         height: auto;
+        transition: transform 0.2s ease; 
     }
+
+    .graph-biz:hover {
+        transform: scale(1.1); /* Adjust scaling factor as needed */
+    }
+
+   
+
+    .clients.animate .services-container:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .client-logos-sectio-hover {
+        transition: transform 0.2s ease;
+    }
+
+    .client-logos-sectio-hover:hover {
+        transform: scale(1.1);
+    }
+
+    .services-container {
+        opacity: 0;
+        transform: translateY(50px); /* Controls the initial position */
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+    
+    .services-container.visible {
+        opacity: 1;
+        transform: translateY(0); /* Transition to its original position */
+    }
+    
 
     .services-heading {
         font-size: 32px;
