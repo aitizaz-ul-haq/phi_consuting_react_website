@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState, useEffect, useRef } from 'react';
 import ATOB from '../assets/img/new_logos_comps/newer/AtoB 2.png';
 import bobtail from '../assets/img/new_logos_comps/bobtail.png';
 import joyride from '../assets/img/new_logos_comps/joyride.png';
@@ -20,7 +20,6 @@ import clutchone from '../assets/img/achievements-badges/clutch_1.png';
 import BBB from '../assets/img/achievements-badges/BBB.png';
 import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
 
-import blogbanner from '../assets/img/b2b.webp';
 import { Link } from 'react-router-dom';
 import CaseStudyMacroComps from '../components/shared/macroComps/CaseStudyMacroComps';
 import BlogCard from '../components/shared/cards/BlogCard';
@@ -28,6 +27,18 @@ import blogs from "../data/blogs.json";
 import caseStudies from "../data/caseStudies.json";
 
 const HomePage = () => {
+
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+      const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => setIsVisible(entry.isIntersecting));
+      }, { threshold: 0.5 }); // Trigger when half of the item is visible
+
+      observer.observe(containerRef.current);
+      return () => observer.disconnect(); // Cleanup on unmount
+  }, []);
 
   const handleTabClickOne = () => {
     window.location.href = '/buisness-consulting';
@@ -78,7 +89,7 @@ const HomePage = () => {
       </article>
 
       {/* <!-- Clients Section --> */}
-      <article class="clients">
+      <article className={`clients ${isVisible ? 'animate' : ''}`} ref={containerRef}>
         <section class="client-container">
           <div class="client-content">
             <h2 class="client-heading">Trusted by Industry Leaders</h2>
@@ -122,7 +133,7 @@ const HomePage = () => {
                 <div class="image-container">
                   <img
                     src={pallet}
-                    alt="AtoB_logo"
+                    alt="Pallet_logo"
                     title="Pallet"
                   />
                 </div>
@@ -342,10 +353,6 @@ const HomePage = () => {
                     <div class="tab-title">
                       <h3 class="title-third">Buisness Consulting</h3>
                     </div>
-                    {/* <!-- <div class="tab-desc">
-                      Navigate challenges, optimize strategies, and achieve
-                      sustainable growth
-                    </div> --> */}
                   </div>
                 </div>
               
@@ -361,12 +368,8 @@ const HomePage = () => {
                   </div>
                   <div class="tab-info-container">
                     <div class="tab-title">
-                      <h3 class="title-third">Customer Experience</h3>
+                      <h3 class="title-third">GTM Advisory</h3>
                     </div>
-                    {/* <!-- <div class="tab-desc">
-                      Optimize customer interactions for enhanced operational
-                      efficiency
-                    </div> --> */}
                   </div>
                 </div>
                 
@@ -412,7 +415,7 @@ const HomePage = () => {
                   </div>
                 </div>
                 
-              <div class="services-tab sixth-tab" onClick={handleTabClickFive}>
+              {/* <div class="services-tab sixth-tab" onClick={handleTabClickFive}>
                   <div class="tab-icon">
                     <img
                       src={sales}
@@ -426,22 +429,9 @@ const HomePage = () => {
                     <div class="tab-title">
                       <h3 class="title-third">Sales Consulting</h3>
                     </div>
-                    {/* <!-- <div class="tab-desc">
-                      Scale your operations, target the right customers &
-                      optimizie sales cycles
-                    </div> --> */}
                   </div>
-                </div>
+                </div> */}
                
-                {/* <!-- <div class="services-tab-invisible">
-                  <div class="tab-icon"></div>
-                  <div class="tab-info-container">
-                    <div class="tab-title">
-                      <h3 class="title-third"></h3>
-                    </div>
-                    <div class="tab-desc"></div>
-                  </div>
-                </div> --> */}
                 <div class="services-button-container">
                   <div class="explore-more-button">
                   <Link to="/services" class="explore-more-services">Explore More</Link>
