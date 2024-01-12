@@ -542,9 +542,7 @@ const HrAndRecruitmentConsulting = () => {
           <div class="overlay"></div>
           <div class="banner-new-full-scale-container">
             <h2 class="full-banner-call">
-              42% businesses adopt go-to-market strategies for calculating
-              customer value, 28% for business expansion/upgrades, and 61% to
-              build customer experience
+            In the United States, 32% of organizations delegate at least one HR activity to external providers. Furthermore, 51% of organizations choose to outsource benefits administration. Impressively, there’s a remarkable 97% satisfaction rate for outsourcing recruitment processes.
             </h2>
           </div>
         </section>
@@ -637,94 +635,94 @@ const HrAndRecruitmentConsulting = () => {
         </section>
       </article>
 
-      {/* <!-- why phi for customer exp Section --> */}
-      <article class="why-phi-for-sales">
-        <h2 class="why-phi-heading">
-        Why Choose Phi?
-        </h2>
-        <p class="why-phi-desc">
-          {/* At Phi Consulting, we understand that your people are your greatest
-          asset. <br />Our HR & Recruitment Consulting services are designed to
-          not only meet your <br />
-          immediate talent needs but to strategically shape the future of your
-          workforce. */}
-          At Phi Consulting, we understand that your people are your greatest asset. Our HR and recruitment Consulting services are designed to meet your immediate talent needs and strategically shape your workforce's future.
-        </p>
-        <div class="insights-container">
-          <div class="insights-bundle">
-            <div class="left-section-insights">
-              <div class="overlay-container one-hr-consul">
-                <div class="overlay"></div>
-                <div class="content">
-                  <h2 class="overlay-heading">Fast Hiring</h2>
-                  <p class="overlay-desc">
-                  Accelerate your hiring processes with Phi Consulting's efficient methods
-                  </p>
+        {/* <!-- why phi for customer exp Section --> */}
+        <article class="why-phi-for-sales">
+          <h2 class="why-phi-heading">
+          Why Choose Phi?
+          </h2>
+          <p class="why-phi-desc">
+            {/* At Phi Consulting, we understand that your people are your greatest
+            asset. <br />Our HR & Recruitment Consulting services are designed to
+            not only meet your <br />
+            immediate talent needs but to strategically shape the future of your
+            workforce. */}
+            At Phi Consulting, we understand that your people are your greatest asset. Our HR and recruitment Consulting services are designed to meet your immediate talent needs and strategically shape your workforce's future.
+          </p>
+          <div class="insights-container">
+            <div class="insights-bundle">
+              <div class="left-section-insights">
+                <div class="overlay-container one-hr-consul">
+                  <div class="overlay"></div>
+                  <div class="content">
+                    <h2 class="overlay-heading">Fast Hiring</h2>
+                    <p class="overlay-desc">
+                    Accelerate your hiring processes with Phi Consulting's efficient methods
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="right-section-insights">
+                <div class="overlay-container two-hr-consul">
+                  <div class="overlay"></div>
+                  <div class="content">
+                    <h2 class="overlay-heading">Top 3% Vetted Talent</h2>
+                    <p class="overlay-desc">
+                    Gain access to a pool of highly qualified and thoroughly vetted candidates.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="right-section-insights">
-              <div class="overlay-container two-hr-consul">
-                <div class="overlay"></div>
-                <div class="content">
-                  <h2 class="overlay-heading">Top 3% Vetted Talent</h2>
-                  <p class="overlay-desc">
-                  Gain access to a pool of highly qualified and thoroughly vetted candidates.
-                  </p>
+            <div class="insights-bundle">
+              <div class="left-section-insights">
+                <div class="overlay-container three-hr-consul">
+                  <div class="overlay"></div>
+                  <div class="content">
+                    <h2 class="overlay-heading">Timezone Aligned</h2>
+                    <p class="overlay-desc">
+                    Flawlessly align recruitment efforts with your business's operational timezone
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="right-section-insights">
+                <div class="overlay-container four-hr-consul">
+                  <div class="overlay"></div>
+                  <div class="content">
+                    <h2 class="overlay-heading">Culturally Fit</h2>
+                    <p class="overlay-desc">
+                    Compatible to adapt, understand, & adjust accordingly with the company’s core values, vision, principles, and identity.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="insights-bundle">
+              <div class="left-section-insights">
+                <div class="overlay-container five-hr-consul">
+                  <div class="overlay"></div>
+                  <div class="content">
+                    <h2 class="overlay-heading">Technically Robust</h2>
+                    <p class="overlay-desc">
+                    Each candidate goes through a rigorous skill assessment curated uniquely as per the role.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="right-section-insights">
+                <div class="overlay-container six-hr-consul">
+                  <div class="overlay"></div>
+                  <div class="content">
+                    <h2 class="overlay-heading">Excellent Communication</h2>
+                    <p class="overlay-desc">
+                    Speaking, listening, reading, writing, pronunciation, fluency, clarity of expression, and speed of speech.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="insights-bundle">
-            <div class="left-section-insights">
-              <div class="overlay-container three-hr-consul">
-                <div class="overlay"></div>
-                <div class="content">
-                  <h2 class="overlay-heading">Timezone Aligned</h2>
-                  <p class="overlay-desc">
-                  Flawlessly align recruitment efforts with your business's operational timezone
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="right-section-insights">
-              <div class="overlay-container four-hr-consul">
-                <div class="overlay"></div>
-                <div class="content">
-                  <h2 class="overlay-heading">Culturally Fit</h2>
-                  <p class="overlay-desc">
-                  Compatible to adapt, understand, & adjust accordingly with the company’s core values, vision, principles, and identity.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="insights-bundle">
-            <div class="left-section-insights">
-              <div class="overlay-container five-hr-consul">
-                <div class="overlay"></div>
-                <div class="content">
-                  <h2 class="overlay-heading">Technically Robust</h2>
-                  <p class="overlay-desc">
-                  Each candidate goes through a rigorous skill assessment curated uniquely as per the role.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="right-section-insights">
-              <div class="overlay-container six-hr-consul">
-                <div class="overlay"></div>
-                <div class="content">
-                  <h2 class="overlay-heading">Excellent Communication</h2>
-                  <p class="overlay-desc">
-                  Speaking, listening, reading, writing, pronunciation, fluency, clarity of expression, and speed of speech.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
+        </article>
 
       <article class="work" ref={cardsRef}>
         <section class="work-section">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import ATOB from '../assets/img/new_logos_comps/newer/AtoB 2.png';
 import bobtail from '../assets/img/new_logos_comps/bobtail.png';
@@ -18,6 +18,18 @@ import longblockpictwo from "/assets/digitalocean-square.png";
 import longblockpicthree from "/assets/truck-square.png";
 
 const OurWork = () => {
+
+  const [isVisible, setIsVisible] = useState(false);
+   const containerRef = useRef(null);
+
+   useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => setIsVisible(entry.isIntersecting));
+    }, { threshold: 0.5 }); 
+
+    observer.observe(containerRef.current);
+    return () => observer.disconnect(); 
+}, []);
 
   const gotoContacts = () => {
     window.location.href = '/contact';
@@ -165,7 +177,7 @@ const OurWork = () => {
       </article>
 
       {/* <!-- Clients Section --> */}
-      <article class="clients">
+      {/* <article class="clients">
         <section class="client-container">
           <div class="client-content">
             <h2 class="client-heading">Trusted by Industry Leaders</h2>
@@ -235,6 +247,92 @@ const OurWork = () => {
                     src={sungrade}
                     alt="truckx_logo"
                     title="Sungrade Solar"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article> */}
+
+<article className={`clients ${isVisible ? 'animate' : ''}`} ref={containerRef}>
+        <section class="client-container">
+          <div class="client-content">
+            <h2 class="client-heading">Trusted by Industry Leaders</h2>
+            <p class="client-desc">
+              Phi Consulting has empowered startups and SMEs across diverse
+              industries. <br />
+              Our clients trust us for our deep expertise, personalized service,
+              and commitment to delivering tangible results.
+            </p>
+            <div class="client-logo-container">
+              <div class="logo-container-one">
+                <div class="image-container">
+                  <img
+                    src={ATOB}
+                    alt="AtoB_logo"
+                    title="AtoB"
+                    className='client-logos-sectio-hover'
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src={bobtail}
+                    alt="bobtail_logo"
+                    title="BoBtail"
+                    className='client-logos-sectio-hover'
+                  />
+                </div>
+
+                <div class="image-container">
+                  <img
+                    src={joyride}
+                    alt="joyride_logo"
+                    title="Joyride"
+                    className='client-logos-sectio-hover'
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src={Truckx}
+                    alt="truckx_logo"
+                    title="TruckX"
+                    className='client-logos-sectio-hover'
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src={pallet}
+                    alt="Pallet_logo"
+                    title="Pallet"
+                    className='client-logos-sectio-hover'
+                  />
+                </div>
+              </div>
+              <div class="logo-container-one">
+                <div class="image-container-bottom">
+                  <img
+                    src={digitalOcean}
+                    alt="bobtail_logo"
+                    title="Digital Ocean"
+                    className='client-logos-sectio-hover'
+                  />
+                </div>
+
+                <div class="image-container-bottom">
+                  <img
+                    src={mudflap}
+                    alt="joyride_logo"
+                    title="Mudflap"
+                    className='client-logos-sectio-hover'
+                  />
+                </div>
+                <div class="image-container-bottom">
+                  <img
+                    src={sungrade}
+                    alt="truckx_logo"
+                    title="Sungrade Solar"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
               </div>

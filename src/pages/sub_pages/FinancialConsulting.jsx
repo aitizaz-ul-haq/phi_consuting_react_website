@@ -130,6 +130,7 @@ const FiancialConsulting = () => {
           <div class="hero-content-fin-consul">
             <h2 class="hero-heading-fin-consul">
             Strategy and Support to Scale Your Growing Business
+
             </h2>
             <p class="hero-desc-fin-consul">
             At Phi Consulting we understand what it’s like not to be able to raise capital for a good business idea because of lack of clarity in the numbers. And, with our financial consulting service for startups, we’ve helped many startups organize their finances and elevate their financial knowledge.
@@ -145,7 +146,7 @@ const FiancialConsulting = () => {
       <article class="sales-solutions">
         <h2 class="sales-heading">Creating strong foundations for a sustainable future</h2>
         <p class="sales-banner-desc">
-        The path of a startup is not easy. We want to be the guide that helps you discover the right methods to catalyze your growth.
+        The path of a startup is not easy. We want to be the guide that helps you discover the right methods to catalyze your growth
         </p>
         <div class="sales-banner-container">
           <div class="sales-cards one-with-white-back">
@@ -343,7 +344,7 @@ const FiancialConsulting = () => {
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Implementation</h2>
+                <h2 class="circle-heading-sales">Implement</h2>
                 <h3 class="circle-text-sales">
                 Execute the optimized financial plan with precision.
                 </h3>
