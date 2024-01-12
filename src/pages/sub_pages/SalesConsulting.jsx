@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 import ATOB from '../../assets/img/new_logos_comps/newer/AtoB 2.png';
@@ -26,13 +26,6 @@ import impicon from "../../assets/img/process_icons/implement.png";
 import monitoricon from "../../assets/img/process_icons/monitor.png";
 import improveicon from "../../assets/img/process_icons/improve.png";
 
-// import workone from "../../assets/img/atob-card.png";
-// import worktwo from "../../assets/img/comp_logos/AToB-square.jpg";
-// import workthree from "../../assets/img/digitalocean-product.png";
-// import workfour from "../../assets/img/comp_logos/digitalocean-square.png";
-// import workfive from "../../assets/img/truckx-case.png";
-// import worksix from "../../assets/img/comp_logos/truck-square.png";
-
 import achiconone from "../../assets/img/achievements-badges/clutch_1.png";
 import achicontwo from "../../assets/img/achievements-badges/BBB.png";
 import achiconthree from "../../assets/img/achievements-badges/clutch_2.png";
@@ -41,6 +34,88 @@ import SmallWorkCard from '../../components/shared/cards/SmallWorkCard';
 import caseStudies from '../../data/caseStudies.json';
 
 const SalesConsulting = () => {
+
+  const [isVisibleTesti, setIsVisibleTesti] = useState(false);
+ const testiRef = useRef(null);
+
+//   const [isVisibleServices, setIsVisibleServices] = useState(false);
+// const servicesRef = useRef(null);
+
+//   const [isVisibleFirst, setIsVisibleFirst] = useState(false);
+// const firstRef = useRef(null);
+
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef(null);
+
+  const [isVisibleAch, setIsVisibleAch] = useState(false);
+  const achRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
+        },
+        { threshold: 0.5 }
+    );
+
+    observer.observe(achRef.current);
+    return () => observer.disconnect();
+}, []);
+
+useEffect(() => {
+  const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
+  }, { threshold: 0.5 });
+
+  observer.observe(testiRef.current);
+  return () => observer.disconnect();
+}, []);
+
+// useEffect(() => {
+// const observer = new IntersectionObserver(entries => {
+//     entries.forEach(entry => setIsVisibleFirst(entry.isIntersecting));
+// }, { threshold: 0.5 });
+
+// observer.observe(firstRef.current);
+// return () => observer.disconnect();
+// }, []);
+
+
+useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => setIsVisible(entry.isIntersecting));
+    }, { threshold: 0.5 }); 
+
+    observer.observe(containerRef.current);
+    return () => observer.disconnect(); 
+}, []);
+
+// useEffect(() => {
+//   const observer = new IntersectionObserver(entries => {
+//       entries.forEach(entry => setIsVisibleServices(entry.isIntersecting));
+//   }, { threshold: 1 }); // Adjust threshold as needed
+
+//   observer.observe(servicesRef.current);
+//   return () => observer.disconnect();
+// }, []);
+
+// useEffect(() => {
+// const observer = new IntersectionObserver(entries => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             setAnimateServices(true);
+//             // Delay the tab animations to start after the services animation
+//             setTimeout(() => setAnimateTabs(true), 500); // Adjust the delay as needed
+//         } else {
+//             setAnimateServices(false);
+//             setAnimateTabs(false);
+//         }
+//     });
+// }, { threshold: 0.5 });
+
+// observer.observe(servicesRef.current);
+// return () => observer.disconnect();
+// }, []);
 
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (
@@ -52,14 +127,10 @@ const SalesConsulting = () => {
             <h2 class="hero-heading-sales">
               {/* <!-- Transforming Possibilities <br />
               into Profits --> */}
-              Turn Opportunities Into Buisness
+              Your Gateway to Strategic GTM Advisory
             </h2>
             <p class="hero-desc-sales">
-              Refine your organization's scalability with a structured sales
-              department. We prioritize active listening, comprehensive customer
-              understanding, and effective management. We guide your customers
-              through their buying journey with precision, leveraging the best
-              methods and tools for maximum efficiency.
+            We unlock product success through deep consumer behavior insights and strategic GTM Advisory Consultancy. As a trusted partner for emerging startups, we specialize in Sales, Customer Experience, and Sales Enablement
             </p>
             <div class="consult-button-sales"> <Link to="/contact" className='scheduler-set'>Schedule a Free Consultation</Link> </div>
           </div>
@@ -68,13 +139,13 @@ const SalesConsulting = () => {
 
       {/* <!-- sales page banner --> */}
       <article class="sales-solutions">
-        <h2 class="sales-heading">Our Sales Consulting Services</h2>
-        <p class="sales-banner-desc">
+        <h2 class="sales-heading">We don’t just acknowledge problems like churn and slowed revenue growth – we help you solve them.</h2>
+        {/* <p class="sales-banner-desc">
           Phi Consulting transforms possibilities into profits through tailored
           sales consulting services, including Inbound and Outbound Sales, Sales
           Enablement, Sales Expansion, and strategic Product-led Growth
           solutions.
-        </p>
+        </p> */}
         <div class="sales-banner-container">
           <div class="sales-cards one-with-white-back">
             <div class="icon-container">
@@ -85,10 +156,9 @@ const SalesConsulting = () => {
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Inbound Sales</h3>
+            <h3 class="sales-card-title">End-to-End Sales</h3>
             <div class="sales-card-description">
-              Unlock customer interest and engagement with our Inbound Sales
-              expertise, turning leads into satisfied clients.
+            Phi Consulting streamlines your product's journey from beta to market success.
             </div>
           </div>
 
@@ -101,10 +171,9 @@ const SalesConsulting = () => {
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Outbound Sales</h3>
+            <h3 class="sales-card-title">Customer Experience</h3>
             <div class="sales-card-description">
-              Strategically reach out to potential clients and expand your
-              market presence through our targeted Outbound Sales solutions.
+            Phi Consulting positions your products effectively, driving engagement. Our precise metrics empower decision-making for a credible market presence.
             </div>
           </div>
           <div class="sales-cards one-with-white-back">
@@ -118,13 +187,12 @@ const SalesConsulting = () => {
             </div>
             <h3 class="sales-card-title">Sales Enablement</h3>
             <div class="sales-card-description">
-              Empower your sales team with the tools and knowledge they need to
-              close deals effectively with our Sales Enablement services.
+            Reach prospects faster, expanding your customer base. Let us guide you in maintaining profitability while driving top-line revenues.
             </div>
           </div>
         </div>
         <div class="sales-banner-container down-spacing">
-          <div class="sales-cards one-with-blue-back">
+          {/* <div class="sales-cards one-with-blue-back">
             <div class="icon-container">
               <img
                 src={salesfour}
@@ -169,7 +237,7 @@ const SalesConsulting = () => {
                 <span>More Info</span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </article>
 
@@ -177,13 +245,10 @@ const SalesConsulting = () => {
       <article class="path">
         <section class="path-container">
           <h2 class="path-heading">
-            Nurturing Excellence through Structured Engagement
+          Our GTM Advisory Process:
           </h2>
           <p class="sales-process-desc">
-            At Phi Consulting, we believe in the power of a well-defined process
-            to drive continuous improvement. Our structured approach encompasses
-            various elements to ensure a comprehensive and adaptive strategy for
-            your sales success.
+          We possess the know-how to identify precise issues and deliver customized solutions in a matter of days rather than weeks. While we recognize your capability to resolve matters on your own, can you afford to wait for two quarters to confirm you’re right? That’s where we fit in - we’ll unravel the puzzle for you here and now.
           </p>
           <div class="process-container">
             <div class="circle-container-sales">
@@ -198,7 +263,7 @@ const SalesConsulting = () => {
                 </div>
                 <h2 class="circle-heading-sales">Define Your Goals</h2>
                 <h3 class="circle-text-sales">
-                  Clearly articulate your sales objectives.
+                Clearly articulate objectives aligned with your business strategy.
                 </h3>
               </div>
             </div>
@@ -212,9 +277,9 @@ const SalesConsulting = () => {
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Plan & Map Your Process</h2>
+                <h2 class="circle-heading-sales">Strategize GTM Roadmap</h2>
                 <h3 class="circle-text-sales">
-                  Strategize an effective sales roadmap.
+                Craft a comprehensive plan covering sales, customer experience, and sales enablement.
                 </h3>
               </div>
             </div>
@@ -228,9 +293,9 @@ const SalesConsulting = () => {
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Set Actions</h2>
+                <h2 class="circle-heading-sales">Implement Targeted Actions</h2>
                 <h3 class="circle-text-sales">
-                  Implement targeted actions to improve sales.
+                Execute precise strategies to optimize market presence, customer experiences, and empower sales teams.
                 </h3>
               </div>
             </div>
@@ -246,7 +311,7 @@ const SalesConsulting = () => {
                 </div>
                 <h2 class="circle-heading-sales">Assign Stakeholders</h2>
                 <h3 class="circle-text-sales">
-                  Clearly define roles for effective execution.
+                Define roles for seamless execution, leveraging key stakeholders
                 </h3>
               </div>
             </div>
@@ -260,9 +325,9 @@ const SalesConsulting = () => {
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Test the Process</h2>
+                <h2 class="circle-heading-sales">Evaluate and Refine</h2>
                 <h3 class="circle-text-sales">
-                  Evaluate and refine your sales strategy.
+                Test, gather insights, and refine the GTM process for maximum impact.
                 </h3>
               </div>
             </div>
@@ -276,9 +341,9 @@ const SalesConsulting = () => {
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Implementation</h2>
+                <h2 class="circle-heading-sales">Execute Optimized Plan</h2>
                 <h3 class="circle-text-sales">
-                  Execute the optimized sales plan.
+                Implement refined strategies across sales, customer experience, and sales enablement
                 </h3>
               </div>
             </div>
@@ -293,9 +358,9 @@ const SalesConsulting = () => {
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Monitor the Results</h2>
+                <h2 class="circle-heading-sales">Track Performance</h2>
                 <h3 class="circle-text-sales">
-                  Track performance against goals.
+                Monitor results against goals, measuring success in real-time.
                 </h3>
               </div>
             </div>
@@ -309,89 +374,10 @@ const SalesConsulting = () => {
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Iterate the Process</h2>
+                <h2 class="circle-heading-sales">Continuously Refine</h2>
                 <h3 class="circle-text-sales">
-                  Continuously refine for enhanced results.
+                Iterate based on insights, ensuring ongoing improvement in the dynamic GTM landscape
                 </h3>
-              </div>
-            </div>
-          </div>
-        </section>
-      </article>
-
-      {/* <!-- Clients Section --> */}
-      <article class="clients">
-        <section class="client-container">
-          <div class="client-content">
-            <h2 class="client-heading">Trusted by Industry Leaders</h2>
-            <p class="client-desc">
-              Phi Consulting has empowered startups and SMEs across diverse
-              industries. <br />
-              Our clients trust us for our deep expertise, personalized service,
-              and commitment to delivering tangible results.
-            </p>
-            <div class="client-logo-container">
-              <div class="logo-container-one">
-                <div class="image-container">
-                  <img
-                    src={ATOB}
-                    alt="AtoB_logo"
-                    title="AtoB"
-                  />
-                </div>
-                <div class="image-container">
-                  <img
-                    src={bobtail}
-                    alt="bobtail_logo"
-                    title="BoBtail"
-                  />
-                </div>
-
-                <div class="image-container">
-                  <img
-                    src={joyride}
-                    alt="joyride_logo"
-                    title="Joyride"
-                  />
-                </div>
-                <div class="image-container">
-                  <img
-                    src={Truckx}
-                    alt="truckx_logo"
-                    title="TruckX"
-                  />
-                </div>
-                <div class="image-container">
-                  <img
-                    src={pallet}
-                    alt="AtoB_logo"
-                    title="Pallet"
-                  />
-                </div>
-              </div>
-              <div class="logo-container-one">
-                <div class="image-container-bottom">
-                  <img
-                    src={digitalOcean}
-                    alt="bobtail_logo"
-                    title="Digital Ocean"
-                  />
-                </div>
-
-                <div class="image-container-bottom">
-                  <img
-                    src={mudflap}
-                    alt="joyride_logo"
-                    title="Mudflap"
-                  />
-                </div>
-                <div class="image-container-bottom">
-                  <img
-                    src={sungrade}
-                    alt="truckx_logo"
-                    title="Sungrade Solar"
-                  />
-                </div>
               </div>
             </div>
           </div>
@@ -563,7 +549,7 @@ const SalesConsulting = () => {
 
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
-        <h2 class="why-phi-heading">Why Choose Phi for Sales Consulting?</h2>
+        <h2 class="why-phi-heading">Why Choose Phi for GTM Advisory Consulting?</h2>
         <div class="insights-container">
           <div class="insights-bundle">
             <div class="left-section-insights">
@@ -571,11 +557,10 @@ const SalesConsulting = () => {
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                    Deep Understanding of Product's GTM
+                  Deep Understanding of Product's GTM
                   </h2>
                   <p class="overlay-desc">
-                    We grasp the intricacies of your product's Go-To-Market
-                    strategy, ensuring a comprehensive and effective approach
+                  We grasp the intricacies of your product's Go-To-Market strategy, ensuring a comprehensive and effective approach.
                   </p>
                 </div>
               </div>
@@ -585,11 +570,10 @@ const SalesConsulting = () => {
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                    Opening Up More Sales Channels
+                  Opening Up More Sales Channels
                   </h2>
                   <p class="overlay-desc">
-                    Diversify and expand your reach by tapping into untapped
-                    sales channels, creating new avenues for growth.
+                  Diversify and expand your reach by tapping into untapped sales channels, creating new avenues for growth.
                   </p>
                 </div>
               </div>
@@ -600,10 +584,9 @@ const SalesConsulting = () => {
               <div class="overlay-container three-why">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Definite Increase in ACV</h2>
+                  <h2 class="overlay-heading">Definite Increase in ACV (Average Contract Value)</h2>
                   <p class="overlay-desc">
-                    Our strategies are geared towards not just sales, but
-                    maximizing the value of each customer interaction.
+                  Our strategies are geared towards not just sales, but maximizing the value of each customer interaction
                   </p>
                 </div>
               </div>
@@ -613,11 +596,10 @@ const SalesConsulting = () => {
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                    Refining Customer Onboarding Process
+                  Refining Customer Onboarding Process
                   </h2>
                   <p class="overlay-desc">
-                    Seamless onboarding experiences lead to satisfied customers.
-                    We optimize this crucial phase for long-term success.
+                  Seamless onboarding experiences lead to satisfied customers. We optimize this crucial phase for long-term success.
                   </p>
                 </div>
               </div>
@@ -629,11 +611,10 @@ const SalesConsulting = () => {
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                    End-to-End Understanding of Financial Compliance
+                  End-to-End Understanding of Financial Compliance
                   </h2>
                   <p class="overlay-desc">
-                    Navigate the complexities of the financial landscape with
-                    confidence, ensuring compliance at every step.
+                  Navigate the complexities of the financial landscape with confidence, ensuring compliance at every step.
                   </p>
                 </div>
               </div>
@@ -641,6 +622,93 @@ const SalesConsulting = () => {
             {/* <!-- <div class="right-section-insights"></div> --> */}
           </div>
         </div>
+      </article>
+
+        {/* <!-- Clients Section --> */}
+        <article className={`clients ${isVisible ? 'animate' : ''}`} ref={containerRef}>
+        <section class="client-container">
+          <div class="client-content">
+            <h2 class="client-heading">Trusted by Industry Leaders</h2>
+            <p class="client-desc">
+              Phi Consulting has empowered startups and SMEs across diverse
+              industries. <br />
+              Our clients trust us for our deep expertise, personalized service,
+              and commitment to delivering tangible results.
+            </p>
+            <div class="client-logo-container">
+              <div class="logo-container-one">
+                <div class="image-container">
+                  <img
+                    src={ATOB}
+                    alt="AtoB_logo"
+                    title="AtoB"
+                    className='client-logos-sectio-hover'
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src={bobtail}
+                    alt="bobtail_logo"
+                    title="BoBtail"
+                    className='client-logos-sectio-hover'
+                  />
+                </div>
+
+                <div class="image-container">
+                  <img
+                    src={joyride}
+                    alt="joyride_logo"
+                    title="Joyride"
+                    className='client-logos-sectio-hover'
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src={Truckx}
+                    alt="truckx_logo"
+                    title="TruckX"
+                    className='client-logos-sectio-hover'
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src={pallet}
+                    alt="Pallet_logo"
+                    title="Pallet"
+                    className='client-logos-sectio-hover'
+                  />
+                </div>
+              </div>
+              <div class="logo-container-one">
+                <div class="image-container-bottom">
+                  <img
+                    src={digitalOcean}
+                    alt="bobtail_logo"
+                    title="Digital Ocean"
+                    className='client-logos-sectio-hover'
+                  />
+                </div>
+
+                <div class="image-container-bottom">
+                  <img
+                    src={mudflap}
+                    alt="joyride_logo"
+                    title="Mudflap"
+                    className='client-logos-sectio-hover'
+                  />
+                </div>
+                <div class="image-container-bottom">
+                  <img
+                    src={sungrade}
+                    alt="truckx_logo"
+                    title="Sungrade Solar"
+                    className='client-logos-sectio-hover'
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </article>
 
       {/* <!-- Work small version Section --> */}
@@ -665,7 +733,7 @@ const SalesConsulting = () => {
       </article>
 
       {/* <!-- Testimonial Section --> */}
-      <article class="testimonial">
+      {/* <article class="testimonial">
         <section class="testimonial-container">
           <h2 class="testi-heading">What Our Clients Say About Us</h2>
           <p class="testi-desc">
@@ -679,7 +747,6 @@ const SalesConsulting = () => {
         <section class="testi-cards-container">
           <div class="testi-card">
             <div class="circleBase type3 testi-one">
-              {/* <!-- <img src="./assets/img/testimonial_one.webp" alt="" /> --> */}
             </div>
 
             <p class="testi-quote">
@@ -731,10 +798,10 @@ const SalesConsulting = () => {
             <h3 class="testi-card-heading">-linda bigaloo (finance)</h3>
           </div>
         </section>
-      </article>
+      </article> */}
 
       {/* <!-- Achievements Section --> */}
-      <article class="achievement">
+      {/* <article class="achievement">
         <section class="achievement-section">
           <h2 class="ach-heading-services-page">Our Achievements</h2>
           <p class="ach-desc-services-page">
@@ -795,6 +862,136 @@ const SalesConsulting = () => {
               height="220"
             />
           </div>
+        </section>
+      </article> */}
+
+      {/* <!-- Testimonial Section --> */}
+      <article class="testimonial">
+        <section className="testimonial-container">
+          <h2 class="testi-heading">
+            We have not lost a top 3 client in over 3 years
+          </h2>
+          <p class="testi-desc">
+            Our clients speak for the transformative impact of Phi Consulting.
+            Partner with us and discover the potential for unprecedented growth,
+            reduced costs, and optimized efficiency.
+          </p>
+        </section>
+
+        <section className="testi-cards-container" ref={testiRef}>
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
+            <div class="circleBase type3 testi-one">
+              {/* <!-- <img src="./assets/img/testimonial_one.webp" alt="" /> --> */}
+            </div>
+
+            <p class="testi-quote">
+              <q
+                ><i
+                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quibusdam atque iste aut magni harum nobis quasi impedit enim
+                  laborum distinctio, accusamus ducimus dolorem illum, mollitia
+                  aperiam deserunt voluptate quaerat totam!</i
+                ></q
+              >
+            </p>
+            <h3 class="testi-card-heading">-Rob Robinson (CEO)</h3>
+          </div>
+
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
+            <div class="circleBase type3 test-two">
+              <img src="" alt="" />
+            </div>
+
+            <p class="testi-quote">
+              <q
+                ><i
+                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quibusdam atque iste aut magni harum nobis quasi impedit enim
+                  laborum distinctio, accusamus ducimus dolorem illum, mollitia
+                  aperiam deserunt voluptate quaerat totam!</i
+                ></q
+              >
+            </p>
+            <h3 class="testi-card-heading">-lenny pepridge (CTO)</h3>
+          </div>
+
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
+            <div class="circleBase type3 test-three">
+              <img src="" alt="" />
+            </div>
+
+            <p class="testi-quote">
+              <q
+                ><i
+                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quibusdam atque iste aut magni harum nobis quasi impedit enim
+                  laborum distinctio, accusamus ducimus dolorem illum, mollitia
+                  aperiam deserunt voluptate quaerat totam!</i
+                ></q
+              >
+            </p>
+            <h3 class="testi-card-heading">-linda bigaloo (finance)</h3>
+          </div>
+        </section>
+      </article>
+
+      {/* <!-- Achievement Section --> */}
+      <article class="achievement">
+        <section class="achievement-section">
+          <h2 class="ach-heading">Our Achievements</h2>
+        </section>
+        <section class="ach-badges-container" ref={achRef}>
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
+            <img
+               src={achiconone}
+              alt=""
+              width="200"
+              height="230"
+            />
+          </div>
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
+            <img
+               src={achicontwo}
+              alt=""
+              width="200"
+              height="150"
+            />
+          </div>
+
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
+            <img
+             src={achiconthree}
+              alt=""
+              width="250"
+              height="220"
+            />
+          </div>
+
+          {/* <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
+            <img
+              src={clutchone}
+              alt=""
+              width="200"
+              height="230"
+            />
+          </div>
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
+            <img
+              src={BBB}
+              alt=""
+              width="200"
+              height="150"
+            />
+          </div>
+
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
+            <img
+              src={clutchtwo}
+              alt=""
+              width="250"
+              height="220"
+            />
+          </div> */}
         </section>
       </article>
 

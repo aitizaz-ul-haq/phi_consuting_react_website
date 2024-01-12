@@ -69,7 +69,6 @@ const firstRef = useRef(null);
     return () => observer.disconnect();
 }, []);
 
-  // Intersection Observer for the first component
 useEffect(() => {
   const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => setIsVisibleFirst(entry.isIntersecting));
