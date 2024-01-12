@@ -2693,8 +2693,10 @@ padding: 1rem;
 }
 
 .sales-cards {
-    width: 270px;
-    height: 270px;
+    /* width: 270px;
+    height: 270px; */
+        width: 310px;
+        height: 310px;
     padding: 1rem;
     margin: 0.5rem;
     display: flex;
@@ -9808,7 +9810,7 @@ display: none;
     align-items: center;
 }
 .sales-heading { 
-    font-size: 18px;
+    font-size: 36px;
 }
 
 .sales-banner-desc { 
@@ -11844,7 +11846,7 @@ text-align: center;
     }
 
     .tooltip-left.fade-in {
-        animation: fadeInLeft 1s ease-in-out;
+        animation: fadeInLeft 2s ease-in-out;
       }
       
       .tooltip-right.fade-in {
@@ -12146,6 +12148,8 @@ display: none;
     font-size: 18px;
     width: 95%;
 }
+
+
 /* =========================================buisness consul==================== */
 .hero-heading-bui-consul {
     text-align: left; 

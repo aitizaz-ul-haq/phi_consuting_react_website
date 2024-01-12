@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 import ATOB from '../../assets/img/new_logos_comps/newer/AtoB 2.png';
@@ -43,6 +43,90 @@ import caseStudies from '../../data/caseStudies.json';
 
 
 const HrAndRecruitmentConsulting = () => {
+  const [isVisibleTesti, setIsVisibleTesti] = useState(false);
+  const testiRef = useRef(null);
+ 
+   const [isVisible, setIsVisible] = useState(false);
+   const containerRef = useRef(null);
+ 
+   const [isVisibleAch, setIsVisibleAch] = useState(false);
+   const achRef = useRef(null);
+ 
+   const [isVisiblecard, setIsVisiblecard] = useState(false);
+   const cardsRef = useRef(null);
+ 
+   const [processNewVisible, setProcessNewVisible] = useState(false);
+   const processNewRef = useRef(null);
+ 
+  
+   
+   useEffect(() => {
+     const observer = new IntersectionObserver(
+       (entries) => {
+         const entry = entries[0];
+         setProcessNewVisible(entry.isIntersecting);
+       },
+       { threshold: 1 }
+     );
+   
+     if (processNewRef.current) {
+       observer.observe(processNewRef.current);
+     }
+   
+     return () => observer.disconnect();
+   }, []);
+   
+ 
+ 
+   useEffect(() => {
+     const observer = new IntersectionObserver(
+       (entries) => {
+         entries.forEach((entry) => {
+           setIsVisiblecard(entry.isIntersecting);
+         });
+       },
+       { threshold: 0.5 }
+     );
+ 
+     if (cardsRef.current) {
+       observer.observe(cardsRef.current);
+     }
+ 
+     return () => observer.disconnect();
+   }, []);
+   
+ 
+   useEffect(() => {
+     const observer = new IntersectionObserver(
+         (entries) => {
+             entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
+         },
+         { threshold: 0.5 }
+     );
+ 
+     observer.observe(achRef.current);
+     return () => observer.disconnect();
+ }, []);
+ 
+ useEffect(() => {
+   const observer = new IntersectionObserver(entries => {
+       entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
+   }, { threshold: 0.5 });
+ 
+   observer.observe(testiRef.current);
+   return () => observer.disconnect();
+ }, []);
+ 
+ 
+ useEffect(() => {
+     const observer = new IntersectionObserver(entries => {
+         entries.forEach(entry => setIsVisible(entry.isIntersecting));
+     }, { threshold: 0.5 }); 
+ 
+     observer.observe(containerRef.current);
+     return () => observer.disconnect(); 
+ }, []);
+  
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (
         <>
@@ -51,12 +135,10 @@ const HrAndRecruitmentConsulting = () => {
         <section class="hero-container-hr-consul">
           <div class="hero-content-hr-consul">
             <h2 class="hero-heading-hr-consul">
-              HR Solutions to Help Your Business Soar
+            Strategy and Support to Scale Your Growing Business
             </h2>
             <p class="hero-desc-hr-consul">
-              Our unique approach embraces and prioritizes the unique needs and
-              cultures of every organization we work with, supporting
-              bottom-line growth and helping you thrive.
+            Phi Consulting connects emerging startups with top talent in a 5-stage hiring process. We ensure that the talent selected is not only highly skilled but also global-ready.
             </p>
             <div class="consult-button-hr-consul">
             <Link to="/contact" className='scheduler-set'> Schedule a Free Consultation</Link>
@@ -68,12 +150,12 @@ const HrAndRecruitmentConsulting = () => {
 
       {/* <!-- sales page banner --> */}
       <article class="sales-solutions">
-        <h2 class="sales-heading">HR & Recruitment Consulting Services:</h2>
-        <p class="sales-banner-desc">
+        <h2 class="sales-heading">Vetted at par with the international standards of the top companies around the world.</h2>
+        {/* <p class="sales-banner-desc">
           Elevate your workforce potential with Phi Consulting's HR services –
           where strategic solutions meet talent excellence for a future-ready
           organization.
-        </p>
+        </p> */}
         <div class="sales-banner-container">
           <div class="sales-cards one-with-white-back">
             <div class="icon-container">
@@ -86,8 +168,7 @@ const HrAndRecruitmentConsulting = () => {
             </div>
             <h3 class="sales-card-title">360 Degree HR Service</h3>
             <div class="sales-card-description">
-              Phi Consulting provides holistic HR solutions, covering everything
-              from employee onboarding to engagement and retention strategies.
+            Phi Consulting provides holistic HR solutions, covering everything from employee onboarding to engagement and retention strategies. Enhance your workforce management with our comprehensive 360-degree HR Service.
             </div>
           </div>
 
@@ -102,9 +183,7 @@ const HrAndRecruitmentConsulting = () => {
             </div>
             <h3 class="sales-card-title">Payroll & Benefits</h3>
             <div class="sales-card-description">
-              Streamline payroll processes and optimize benefits administration
-              with Phi Consulting. Ensure accurate and efficient financial
-              management, leaving you more time to focus
+            Streamline payroll processes and optimize benefits administration with Phi Consulting. Ensure accurate and efficient financial management, leaving you more time to focus on your core business.
             </div>
           </div>
           <div class="sales-cards one-with-white-back">
@@ -118,9 +197,7 @@ const HrAndRecruitmentConsulting = () => {
             </div>
             <h3 class="sales-card-title">Talent Development</h3>
             <div class="sales-card-description">
-              Invest in your team's growth with Phi Consulting's Talent
-              Development services. Tailored training programs and skill
-              enhancement initiatives ensure your workforce is prepared
+            Invest in your team's growth with Phi Consulting's Talent Development services. Tailored training programs and skill enhancement initiatives ensure your workforce is prepared for current and future challenges.
             </div>
           </div>
         </div>
@@ -136,9 +213,7 @@ const HrAndRecruitmentConsulting = () => {
             </div>
             <h3 class="sales-card-title">Executive Search</h3>
             <div class="sales-card-description">
-              For critical leadership roles, trust Phi Consulting's Executive
-              Search services. We specialize in identifying and securing
-              top-tier executives.
+            For critical leadership roles, trust Phi Consulting's Executive Search services. We specialize in identifying and securing top-tier executives to lead your organization to new heights.
             </div>
           </div>
 
@@ -153,11 +228,10 @@ const HrAndRecruitmentConsulting = () => {
             </div>
             <h3 class="sales-card-title">Organization Development</h3>
             <div class="sales-card-description">
-              Phi Consulting aids in developing agile and efficient
-              organizations. We provide strategic guidance for development.
+            Phi Consulting aids in developing agile and efficient organizations. From restructuring to cultural transformation, we provide strategic guidance for sustainable organizational development.
             </div>
           </div>
-          <div class="sales-cards one-with-blue-back">
+          {/* <div class="sales-cards one-with-blue-back">
             <div class="icon-container">
               <img
                 src={hriconsix}
@@ -172,7 +246,7 @@ const HrAndRecruitmentConsulting = () => {
               processes, and drive sustainable growth through strategic
               initiatives.
             </div>
-          </div>
+          </div> */}
         </div>
       </article>
 
@@ -320,8 +394,164 @@ const HrAndRecruitmentConsulting = () => {
         </section>
       </article>
 
-      {/* <!-- Clients Section --> */}
-      <article class="clients">
+      {/* <!-- section new process --> */}
+      <article class="process-new">
+        <section class="process-new-container">
+          <h2 class="path-heading">Every talent in our network is pre-vetted and qualified on the below parameters.</h2>
+          <p class="work-desc">
+          Right Matchmaking is at the core of everything that Phi does, hence, we put in a great deal of time and effort to ensure that the first shortlisted talent matches your requirements.
+          </p>
+          <div class="process-new-section">
+            <div class="left-process-section" ref={processNewRef}>
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/goal.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Profile Screening & Shortlisting</div>
+                  <div class="process-new-description">
+                  We review tons of applications against our minimum criteria, their professional journey, and holistic background checks.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-process-section">
+              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/plan.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Language Proficiency</div>
+                  <div class="process-new-description-right-side">
+                  AI-powered communication assessment tests a candidate's reading, writing, pronunciation, clarity, fluency, and speed of speech.
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="process-new-section">
+            <div class="left-process-section">
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/action.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Aptitude Evaluation</div>
+                  <div class="process-new-description">
+                  We conduct a scientifically designed aptitude test to check their reasoning and problem-solving ability.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-process-section">
+              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/assign.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Technical Assessment</div>
+                  <div class="process-new-description-right-side">
+                  We have curated one of the toughest and most advanced technical assessments to vet talent's capabilities, these are role-based extremely stringent tests that filter the top 10% of talents.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="process-new-section">
+            <div class="left-process-section">
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/test.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Culture-Fit</div>
+                  <div class="process-new-description">
+                  Our Talent Acquisition experts conduct the final interview understanding the candidate's preferences and expectations to do the right matchmaking.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-process-section">
+              {/* <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/implement.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Implement the Process</div>
+                  <div class="process-new-description-right-side">
+                    Execute strategies flawlessly with our hands-on approach,
+                    bringing the plan to life.
+                  </div>
+                </div>
+              </div> */}
+            </div>
+          </div>
+          <div class="process-new-section">
+            {/* <div class="left-process-section">
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/monitor.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Monitor the Results</div>
+                  <div class="process-new-description">
+                    Continuously track key metrics, assess performance, and
+                    ensure strategies yield desired outcomes.
+                  </div>
+                </div>
+              </div>
+            </div> */}
+            {/* <div class="right-process-section">
+              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/improve.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Make Improvements</div>
+                  <div class="process-new-description-right-side">
+                    Identify areas for improvement based on results, refining
+                    strategies for ongoing optimization.
+                  </div>
+                </div>
+              </div>
+            </div> */}
+          </div>
+        </section>
+      </article>
+
+       {/* <!-- full scale banner --> */}
+       <article class="full-scale-banner">
+        <section class="banner-full-exp">
+          <div class="overlay"></div>
+          <div class="banner-new-full-scale-container">
+            <h2 class="full-banner-call">
+              42% businesses adopt go-to-market strategies for calculating
+              customer value, 28% for business expansion/upgrades, and 61% to
+              build customer experience
+            </h2>
+          </div>
+        </section>
+      </article>
+
+       {/* <!-- Clients Section --> */}
+       <article className={`clients ${isVisible ? 'animate' : ''}`} ref={containerRef}>
         <section class="client-container">
           <div class="client-content">
             <h2 class="client-heading">Trusted by Industry Leaders</h2>
@@ -338,6 +568,7 @@ const HrAndRecruitmentConsulting = () => {
                     src={ATOB}
                     alt="AtoB_logo"
                     title="AtoB"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
                 <div class="image-container">
@@ -345,6 +576,7 @@ const HrAndRecruitmentConsulting = () => {
                     src={bobtail}
                     alt="bobtail_logo"
                     title="BoBtail"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
 
@@ -353,6 +585,7 @@ const HrAndRecruitmentConsulting = () => {
                     src={joyride}
                     alt="joyride_logo"
                     title="Joyride"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
                 <div class="image-container">
@@ -360,13 +593,15 @@ const HrAndRecruitmentConsulting = () => {
                     src={Truckx}
                     alt="truckx_logo"
                     title="TruckX"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
                 <div class="image-container">
                   <img
                     src={pallet}
-                    alt="AtoB_logo"
+                    alt="Pallet_logo"
                     title="Pallet"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
               </div>
@@ -376,6 +611,7 @@ const HrAndRecruitmentConsulting = () => {
                     src={digitalOcean}
                     alt="bobtail_logo"
                     title="Digital Ocean"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
 
@@ -384,6 +620,7 @@ const HrAndRecruitmentConsulting = () => {
                     src={mudflap}
                     alt="joyride_logo"
                     title="Mudflap"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
                 <div class="image-container-bottom">
@@ -391,156 +628,8 @@ const HrAndRecruitmentConsulting = () => {
                     src={sungrade}
                     alt="truckx_logo"
                     title="Sungrade Solar"
+                    className='client-logos-sectio-hover'
                   />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </article>
-
-      {/* <!-- section new process --> */}
-      <article class="process-new">
-        <section class="process-new-container">
-          <h2 class="path-heading">A Proven Path to Success</h2>
-          <p class="work-desc">
-            Explore the journey to excellence with Phi Consulting's strategic
-            process – your gateway to optimizing sales performance, enhancing
-            customer experience, and achieving sustained growth.
-          </p>
-          <div class="process-new-section">
-            <div class="left-process-section">
-              <div class="tooltip-right">
-                <img
-                  src="../assets/img/process_icons/goal.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Define Your Goals</div>
-                  <div class="process-new-description">
-                    Understand your unique challenges, aspirations, and
-                    opportunities to set the foundation for our strategic
-                    approach.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div class="tooltip-left">
-                <img
-                  src="../assets/img/process_icons/plan.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Plan & Map Your Process</div>
-                  <div class="process-new-description-right-side">
-                    Craft a tailored roadmap aligned with your goals, ensuring a
-                    clear path forward.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="process-new-section">
-            <div class="left-process-section">
-              <div class="tooltip-right">
-                <img
-                  src="../assets/img/process_icons/action.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Set Actions</div>
-                  <div class="process-new-description">
-                    Define clear, measurable, and achievable steps, creating a
-                    roadmap for success.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div class="tooltip-left">
-                <img
-                  src="../assets/img/process_icons/assign.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Assign Stakeholders</div>
-                  <div class="process-new-description-right-side">
-                    Foster collaboration by assigning key individuals
-                    responsible for successful execution.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="process-new-section">
-            <div class="left-process-section">
-              <div class="tooltip-right">
-                <img
-                  src="../assets/img/process_icons/test.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Test the Process</div>
-                  <div class="process-new-description">
-                    Rigorously test and refine strategies before full
-                    implementation for effectiveness and adaptability.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div class="tooltip-left">
-                <img
-                  src="../assets/img/process_icons/implement.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Implement the Process</div>
-                  <div class="process-new-description-right-side">
-                    Execute strategies flawlessly with our hands-on approach,
-                    bringing the plan to life.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="process-new-section">
-            <div class="left-process-section">
-              <div class="tooltip-right">
-                <img
-                  src="../assets/img/process_icons/monitor.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Monitor the Results</div>
-                  <div class="process-new-description">
-                    Continuously track key metrics, assess performance, and
-                    ensure strategies yield desired outcomes.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div class="tooltip-left">
-                <img
-                  src="../assets/img/process_icons/improve.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Make Improvements</div>
-                  <div class="process-new-description-right-side">
-                    Identify areas for improvement based on results, refining
-                    strategies for ongoing optimization.
-                  </div>
                 </div>
               </div>
             </div>
@@ -551,14 +640,15 @@ const HrAndRecruitmentConsulting = () => {
       {/* <!-- why phi for customer exp Section --> */}
       <article class="why-phi-for-sales">
         <h2 class="why-phi-heading">
-          Why Choose Phi for HR & Recruitment Consulting?
+        Why Choose Phi?
         </h2>
         <p class="why-phi-desc">
-          At Phi Consulting, we understand that your people are your greatest
+          {/* At Phi Consulting, we understand that your people are your greatest
           asset. <br />Our HR & Recruitment Consulting services are designed to
           not only meet your <br />
           immediate talent needs but to strategically shape the future of your
-          workforce.
+          workforce. */}
+          At Phi Consulting, we understand that your people are your greatest asset. Our HR and recruitment Consulting services are designed to meet your immediate talent needs and strategically shape your workforce's future.
         </p>
         <div class="insights-container">
           <div class="insights-bundle">
@@ -568,8 +658,7 @@ const HrAndRecruitmentConsulting = () => {
                 <div class="content">
                   <h2 class="overlay-heading">Fast Hiring</h2>
                   <p class="overlay-desc">
-                    Accelerate your hiring processes with Phi Consulting's
-                    efficient methods.
+                  Accelerate your hiring processes with Phi Consulting's efficient methods
                   </p>
                 </div>
               </div>
@@ -578,10 +667,9 @@ const HrAndRecruitmentConsulting = () => {
               <div class="overlay-container two-hr-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Top 1% Vetted Talent</h2>
+                  <h2 class="overlay-heading">Top 3% Vetted Talent</h2>
                   <p class="overlay-desc">
-                    Gain access to a pool of highly qualified and thoroughly
-                    vetted candidates.
+                  Gain access to a pool of highly qualified and thoroughly vetted candidates.
                   </p>
                 </div>
               </div>
@@ -594,8 +682,7 @@ const HrAndRecruitmentConsulting = () => {
                 <div class="content">
                   <h2 class="overlay-heading">Timezone Aligned</h2>
                   <p class="overlay-desc">
-                    Flawlessly align recruitment efforts with your business's
-                    operational timezone.
+                  Flawlessly align recruitment efforts with your business's operational timezone
                   </p>
                 </div>
               </div>
@@ -604,9 +691,9 @@ const HrAndRecruitmentConsulting = () => {
               <div class="overlay-container four-hr-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Weekly Progress Reports</h2>
+                  <h2 class="overlay-heading">Culturally Fit</h2>
                   <p class="overlay-desc">
-                    Stay informed with regular updates on recruitment progress.
+                  Compatible to adapt, understand, & adjust accordingly with the company’s core values, vision, principles, and identity.
                   </p>
                 </div>
               </div>
@@ -617,10 +704,9 @@ const HrAndRecruitmentConsulting = () => {
               <div class="overlay-container five-hr-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Replacement Guarantee</h2>
+                  <h2 class="overlay-heading">Technically Robust</h2>
                   <p class="overlay-desc">
-                    We stand by the quality of our placements with a replacement
-                    guarantee.
+                  Each candidate goes through a rigorous skill assessment curated uniquely as per the role.
                   </p>
                 </div>
               </div>
@@ -629,10 +715,9 @@ const HrAndRecruitmentConsulting = () => {
               <div class="overlay-container six-hr-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Agile Meetings</h2>
+                  <h2 class="overlay-heading">Excellent Communication</h2>
                   <p class="overlay-desc">
-                    Foster agile communication through regular, collaborative
-                    meetings.
+                  Speaking, listening, reading, writing, pronunciation, fluency, clarity of expression, and speed of speech.
                   </p>
                 </div>
               </div>
@@ -641,97 +726,16 @@ const HrAndRecruitmentConsulting = () => {
         </div>
       </article>
 
-      {/* <!-- Work small version Section --> */}
-      <article class="work">
+      <article class="work" ref={cardsRef}>
         <section class="work-section">
-          <h2 class="work-heading">Client Success Stories</h2>
+          <h2 class="work-heading">Portfolio</h2>
           <p class="work-desc">
-            Explore our portfolio to witness the transformative impact of Phi
-            Consulting on businesses like yours. Each success story is a
-            testament to our commitment to driving sales excellence.
+          Explore our portfolio to witness the transformative impact of Phi Consulting on businesses like yours. Each success story is a testament to our commitment to driving sales excellence.
           </p>
           <div class="work-row">
           {firstThreeCaseStudies.map(study => (
-                <SmallWorkCard key={study.id} caseStudy={study} />
+                <SmallWorkCard key={study.id} caseStudy={study} isVisible={isVisiblecard} />
             ))}
-            {/* <div class="work-card">
-              <div class="work-card-image-container">
-                <img
-                  src={workone}
-                  alt=""
-                  width="250"
-                  height="250"
-                />
-              </div>
-              <div class="logo-work-card-container">
-                <img
-                  src={worktwo}
-                  alt=""
-                  width="60"
-                  height="60"
-                />
-              </div>
-              <h3 class="work-card-heading">Lorem ipsum dolor sit amet</h3>
-              <p class="work-card-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ad
-                libero ipsa accusantium et itaque,
-              </p>
-              <div class="right-button-work-small">
-                <span>Explore More</span>
-              </div>
-            </div>
-            <div class="work-card">
-              <div class="work-card-image-container">
-                <img
-                  src={workthree}
-                  alt=""
-                  width="250"
-                  height="250"
-                />
-              </div>
-              <div class="logo-work-card-container">
-                <img
-                  src={workfour}
-                  alt=""
-                  width="60"
-                  height="60"
-                />
-              </div>
-              <h3 class="work-card-heading">Lorem ipsum dolor sit amet</h3>
-              <p class="work-card-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ad
-                libero ipsa accusantium et itaque,
-              </p>
-              <div class="right-button-work-small">
-                <span>Explore More</span>
-              </div>
-            </div>
-            <div class="work-card">
-              <div class="work-card-image-container">
-                <img
-                  src={workfive}
-                  alt=""
-                  width="250"
-                  height="250"
-                />
-              </div>
-              <div class="logo-work-card-container">
-                <img
-                  src={worksix}
-                  alt=""
-                  width="60"
-                  height="60"
-                />
-              </div>
-              <h3 class="work-card-heading">Lorem ipsum dolor sit amet</h3>
-              <p class="work-card-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ad
-                libero ipsa accusantium et itaque,
-              </p>
-              <div class="right-button-work-small">
-                <span>Explore More</span>
-              </div>
-            </div> */}
           </div>
 
           <div class="right-button spacing-under">
@@ -742,18 +746,17 @@ const HrAndRecruitmentConsulting = () => {
 
       {/* <!-- Testimonial Section --> */}
       <article class="testimonial">
-        <section class="testimonial-container">
-          <h2 class="testi-heading">What Our Clients Say About Us</h2>
+        <section className="testimonial-container">
+          <h2 class="testi-heading">
+          What Our Clients Say About Us
+          </h2>
           <p class="testi-desc">
-            Our clients speak for the transformative impact of Phi Consulting.
-            <br />
-            Here's what they have to say about their experiences partnering with
-            us:
+          Our clients speak for the transformative impact of Phi Consulting. Here's what they have to say about their experiences partnering with us:
           </p>
         </section>
 
-        <section class="testi-cards-container">
-          <div class="testi-card">
+        <section className="testi-cards-container" ref={testiRef}>
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 testi-one">
               {/* <!-- <img src="./assets/img/testimonial_one.webp" alt="" /> --> */}
             </div>
@@ -771,7 +774,7 @@ const HrAndRecruitmentConsulting = () => {
             <h3 class="testi-card-heading">-Rob Robinson (CEO)</h3>
           </div>
 
-          <div class="testi-card">
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-two">
               <img src="" alt="" />
             </div>
@@ -789,7 +792,7 @@ const HrAndRecruitmentConsulting = () => {
             <h3 class="testi-card-heading">-lenny pepridge (CTO)</h3>
           </div>
 
-          <div class="testi-card">
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-three">
               <img src="" alt="" />
             </div>
@@ -809,68 +812,41 @@ const HrAndRecruitmentConsulting = () => {
         </section>
       </article>
 
-      {/* <!-- Achievements Section --> */}
+      {/* <!-- Achievement Section --> */}
       <article class="achievement">
         <section class="achievement-section">
-          <h2 class="ach-heading-services-page">Our Achievements</h2>
-          <p class="ach-desc-services-page">
-            Explore Phi Consulting's hall of achievements <br />– where revenue
-            surges, operational efficiency peaks, and client success stories
-            converge, defining a legacy of transformative impact.
+          <h2 class="ach-heading">Our Achievements</h2>
+          <p class="testi-desc">
+          Explore Phi Consulting's hall of achievements – where revenue surges, operational efficiency peaks, and client success stories converge, defining a legacy of transformative impact.
           </p>
         </section>
-        <section class="ach-badges-container">
-          <div class="ach-badge">
+        <section class="ach-badges-container" ref={achRef}>
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={achiconone}
+               src={achiconone}
               alt=""
               width="200"
               height="230"
             />
           </div>
-          <div class="ach-badge">
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={achicontwo}
+               src={achicontwo}
               alt=""
               width="200"
               height="150"
             />
           </div>
 
-          <div class="ach-badge">
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={achiconthree}
+             src={achiconthree}
               alt=""
               width="250"
               height="220"
             />
           </div>
 
-          <div class="ach-badge">
-            <img
-              src={achiconone}
-              alt=""
-              width="200"
-              height="230"
-            />
-          </div>
-          <div class="ach-badge">
-            <img
-              src={achicontwo}
-              alt=""
-              width="200"
-              height="150"
-            />
-          </div>
-
-          <div class="ach-badge">
-            <img
-              src={achiconthree}
-              alt=""
-              width="250"
-              height="220"
-            />
-          </div>
         </section>
       </article>
 
@@ -882,10 +858,7 @@ const HrAndRecruitmentConsulting = () => {
               Ready to Improve Your Workforce Strategies?
             </div>
             <div class="cta-descrip">
-              Partner with Phi Consulting for unparalleled HR and Recruitment
-              Consulting services. Transform your talent management and
-              recruitment processes. Contact us today to embark on a journey
-              towards building a skilled and dynamic workforce.
+            Partner with Phi Consulting for unparalleled HR and Recruitment Consulting services. Transform your talent management and recruitment processes. Contact us today to embark on a journey toward building a skilled and dynamic workforce.
             </div>
           </div>
           <div class="cta-button-section">

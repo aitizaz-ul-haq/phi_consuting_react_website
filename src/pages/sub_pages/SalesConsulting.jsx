@@ -49,6 +49,8 @@ const SalesConsulting = () => {
 
   const [processNewVisible, setProcessNewVisible] = useState(false);
   const processNewRef = useRef(null);
+
+ 
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -56,7 +58,7 @@ const SalesConsulting = () => {
         const entry = entries[0];
         setProcessNewVisible(entry.isIntersecting);
       },
-      { threshold: 0.5 }
+      { threshold: 1 }
     );
   
     if (processNewRef.current) {
@@ -139,8 +141,8 @@ useEffect(() => {
       </article>
 
       {/* <!-- sales page banner --> */}
-      <article class="sales-solutions">
-        <h2 class="sales-heading">We don’t just acknowledge problems like churn and slowed revenue growth – we help you solve them.</h2>
+      <article class="sales-solutions" >
+        <h2 class="sales-heading" >We don’t just acknowledge problems like churn and slowed revenue growth – we help you solve them.</h2>
         {/* <p class="sales-banner-desc">
           Phi Consulting transforms possibilities into profits through tailored
           sales consulting services, including Inbound and Outbound Sales, Sales
@@ -386,7 +388,7 @@ useEffect(() => {
       </article>
 
       {/* <!-- section new process --> */}
-      <article class="process-new" ref={processNewRef}>
+      <article class="process-new">
         <section class="process-new-container">
           <h2 class="path-heading">A Proven Path to Success</h2>
           <p class="work-desc">
@@ -395,7 +397,7 @@ useEffect(() => {
             customer experience, and achieving sustained growth.
           </p>
           <div class="process-new-section">
-            <div class="left-process-section">
+            <div class="left-process-section" ref={processNewRef}>
               <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
                 <img
                   src="../assets/img/process_icons/goal.png"

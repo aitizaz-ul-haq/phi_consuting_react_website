@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 import fcone from "../../assets/img/financial_consulting_icons/Finance and Accounting Process Optimization.png";
@@ -28,13 +28,6 @@ import improveicon from "../../assets/img/process_icons/improve.png";
 
 import SmallWorkCard from '../../components/shared/cards/SmallWorkCard';
 
-// import workone from "../../assets/img/atob-card.png";
-// import worktwo from "../../assets/img/comp_logos/AToB-square.jpg";
-// import workthree from "../../assets/img/digitalocean-product.png";
-// import workfour from "../../assets/img/comp_logos/digitalocean-square.png";
-// import workfive from "../../assets/img/truckx-case.png";
-// import worksix from "../../assets/img/comp_logos/truck-square.png";
-
 import achiconone from "../../assets/img/achievements-badges/clutch_1.png";
 import achicontwo from "../../assets/img/achievements-badges/BBB.png";
 import achiconthree from "../../assets/img/achievements-badges/clutch_2.png";
@@ -43,6 +36,91 @@ import caseStudies from '../../data/caseStudies.json';
 
 
 const FiancialConsulting = () => {
+
+  const [isVisibleTesti, setIsVisibleTesti] = useState(false);
+  const testiRef = useRef(null);
+ 
+   const [isVisible, setIsVisible] = useState(false);
+   const containerRef = useRef(null);
+ 
+   const [isVisibleAch, setIsVisibleAch] = useState(false);
+   const achRef = useRef(null);
+ 
+   const [isVisiblecard, setIsVisiblecard] = useState(false);
+   const cardsRef = useRef(null);
+ 
+   const [processNewVisible, setProcessNewVisible] = useState(false);
+   const processNewRef = useRef(null);
+ 
+  
+   
+   useEffect(() => {
+     const observer = new IntersectionObserver(
+       (entries) => {
+         const entry = entries[0];
+         setProcessNewVisible(entry.isIntersecting);
+       },
+       { threshold: 1 }
+     );
+   
+     if (processNewRef.current) {
+       observer.observe(processNewRef.current);
+     }
+   
+     return () => observer.disconnect();
+   }, []);
+   
+ 
+ 
+   useEffect(() => {
+     const observer = new IntersectionObserver(
+       (entries) => {
+         entries.forEach((entry) => {
+           setIsVisiblecard(entry.isIntersecting);
+         });
+       },
+       { threshold: 0.5 }
+     );
+ 
+     if (cardsRef.current) {
+       observer.observe(cardsRef.current);
+     }
+ 
+     return () => observer.disconnect();
+   }, []);
+   
+ 
+   useEffect(() => {
+     const observer = new IntersectionObserver(
+         (entries) => {
+             entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
+         },
+         { threshold: 0.5 }
+     );
+ 
+     observer.observe(achRef.current);
+     return () => observer.disconnect();
+ }, []);
+ 
+ useEffect(() => {
+   const observer = new IntersectionObserver(entries => {
+       entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
+   }, { threshold: 0.5 });
+ 
+   observer.observe(testiRef.current);
+   return () => observer.disconnect();
+ }, []);
+ 
+ 
+ useEffect(() => {
+     const observer = new IntersectionObserver(entries => {
+         entries.forEach(entry => setIsVisible(entry.isIntersecting));
+     }, { threshold: 0.5 }); 
+ 
+     observer.observe(containerRef.current);
+     return () => observer.disconnect(); 
+ }, []);
+
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return(
         <>
@@ -51,13 +129,10 @@ const FiancialConsulting = () => {
         <section class="hero-container-fin-consul">
           <div class="hero-content-fin-consul">
             <h2 class="hero-heading-fin-consul">
-              Enrich Financial Excellence with <br />
-              Phi Consulting
+            Strategy and Support to Scale Your Growing Business
             </h2>
             <p class="hero-desc-fin-consul">
-              Phi’s financial services experts partner with startups to maximize
-              today’s opportunities, modernize for the future, and design beyond
-              to securely deliver exceptional personalized service.
+            At Phi Consulting we understand what it’s like not to be able to raise capital for a good business idea because of lack of clarity in the numbers. And, with our financial consulting service for startups, we’ve helped many startups organize their finances and elevate their financial knowledge.
             </p>
             <div class="consult-button-fin-consul">
             <Link to="/contact" className='scheduler-set'> Schedule a Free Consultation</Link>
@@ -68,11 +143,9 @@ const FiancialConsulting = () => {
 
       {/* <!-- sales page banner --> */}
       <article class="sales-solutions">
-        <h2 class="sales-heading">Financial Consulting Services</h2>
+        <h2 class="sales-heading">Creating strong foundations for a sustainable future</h2>
         <p class="sales-banner-desc">
-          Empower your business with Phi Consulting's Financial Consulting
-          Services – where expertise meets innovation, optimizing financial
-          landscapes for strategic growth and sustainable success.
+        The path of a startup is not easy. We want to be the guide that helps you discover the right methods to catalyze your growth.
         </p>
         <div class="sales-banner-container">
           <div class="sales-cards one-with-white-back">
@@ -85,11 +158,10 @@ const FiancialConsulting = () => {
               />
             </div>
             <h3 class="sales-card-title">
-              Finance and Accounting Process Optimization
+            Finance Transformation:
             </h3>
             <div class="sales-card-description">
-              Phi Consulting specializes in refining and optimizing finance and
-              accounting processes.
+            Our finance transformation solutions allow you to do more with fewer resources by restructuring and optimizing your financial function – so you can drive strategic value now while keeping your eyes pointed toward the future.
             </div>
           </div>
 
@@ -102,11 +174,9 @@ const FiancialConsulting = () => {
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Financial Management</h3>
+            <h3 class="sales-card-title">Process Improvement</h3>
             <div class="sales-card-description">
-              From budgeting to financial reporting, we provide tailored
-              solutions to ensure your financial practices align with your
-              business objectives.
+            Broken business processes will cost you time and money. We are experts at identifying, analyzing and improving existing processes to improve performance and drive results.
             </div>
           </div>
           <div class="sales-cards one-with-white-back">
@@ -118,15 +188,14 @@ const FiancialConsulting = () => {
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Risk Management</h3>
+            <h3 class="sales-card-title">Business Plan Consulting</h3>
             <div class="sales-card-description">
-              We help you identify, assess, and address potential risks,
-              ensuring the resilience and stability of your financial landscape.
+            Investors look for structured and detailed plans for scaling their business while balancing risk and return. We help navigate critical plans for the future by mapping out execution plans for the road ahead.
             </div>
           </div>
         </div>
         <div class="sales-banner-container down-spacing">
-          <div class="sales-cards one-with-blue-back">
+          {/* <div class="sales-cards one-with-blue-back">
             <div class="icon-container">
               <img
                 src={fcfour}
@@ -172,7 +241,7 @@ const FiancialConsulting = () => {
               processes, and drive sustainable growth through strategic
               initiatives.
             </div>
-          </div>
+          </div> */}
         </div>
       </article>
 
@@ -181,8 +250,7 @@ const FiancialConsulting = () => {
         <section class="path-container">
           <h2 class="path-heading">Our Process</h2>
           <p class="sales-process-desc">
-            Phi Consulting follows a meticulous process to ensure the success of
-            your financial strategies
+          Phi Consulting follows a meticulous process to ensure the success of your financial strategies:
           </p>
           <div class="process-container">
             <div class="circle-container-sales">
@@ -197,8 +265,7 @@ const FiancialConsulting = () => {
                 </div>
                 <h2 class="circle-heading-sales">Define Your Goals</h2>
                 <h3 class="circle-text-sales">
-                  Collaboratively outline your financial objectives and
-                  aspirations.
+                Collaboratively outline your financial objectives and aspirations.
                 </h3>
               </div>
             </div>
@@ -214,7 +281,7 @@ const FiancialConsulting = () => {
                 </div>
                 <h2 class="circle-heading-sales">Plan & Map Your Process</h2>
                 <h3 class="circle-text-sales">
-                  Develop a customized roadmap tailored to your business needs
+                Develop a customized roadmap tailored to your business needs.
                 </h3>
               </div>
             </div>
@@ -230,8 +297,7 @@ const FiancialConsulting = () => {
                 </div>
                 <h2 class="circle-heading-sales">Set Actions</h2>
                 <h3 class="circle-text-sales">
-                  Implement strategic actions to achieve your financial
-                  milestones.
+                Implement strategic actions to achieve your financial milestones.
                 </h3>
               </div>
             </div>
@@ -247,8 +313,7 @@ const FiancialConsulting = () => {
                 </div>
                 <h2 class="circle-heading-sales">Assign Stakeholders</h2>
                 <h3 class="circle-text-sales">
-                  Clearly define roles and responsibilities for seamless
-                  execution.
+                Clearly define roles and responsibilities for seamless execution.
                 </h3>
               </div>
             </div>
@@ -264,8 +329,7 @@ const FiancialConsulting = () => {
                 </div>
                 <h2 class="circle-heading-sales">Test the Process</h2>
                 <h3 class="circle-text-sales">
-                  Rigorously evaluate and fine-tune the proposed financial
-                  strategies.
+                Rigorously evaluate and fine-tune the proposed financial strategies.
                 </h3>
               </div>
             </div>
@@ -281,7 +345,7 @@ const FiancialConsulting = () => {
                 </div>
                 <h2 class="circle-heading-sales">Implementation</h2>
                 <h3 class="circle-text-sales">
-                  Execute the optimized financial plan with precision.
+                Execute the optimized financial plan with precision.
                 </h3>
               </div>
             </div>
@@ -298,7 +362,7 @@ const FiancialConsulting = () => {
                 </div>
                 <h2 class="circle-heading-sales">Monitor the Results</h2>
                 <h3 class="circle-text-sales">
-                  Continuously track and analyze financial performance.
+                Continuously track and analyze financial performance.
                 </h3>
               </div>
             </div>
@@ -314,8 +378,7 @@ const FiancialConsulting = () => {
                 </div>
                 <h2 class="circle-heading-sales">Iterate the Process</h2>
                 <h3 class="circle-text-sales">
-                  Adapt and refine strategies based on real-time results and
-                  changing business landscapes.
+                Adapt and refine strategies based on real-time results and changing business landscapes
                 </h3>
               </div>
             </div>
@@ -323,8 +386,165 @@ const FiancialConsulting = () => {
         </section>
       </article>
 
-      {/* <!-- Clients Section --> */}
-      <article class="clients">
+
+      {/* <!-- section new process --> */}
+      <article class="process-new">
+        <section class="process-new-container">
+          <h2 class="path-heading">Every talent in our network is pre-vetted and qualified on the below parameters.</h2>
+          <p class="work-desc">
+          Right Matchmaking is at the core of everything that Phi does, hence, we put in a great deal of time and effort to ensure that the first shortlisted talent matches your requirements.
+          </p>
+          <div class="process-new-section">
+            <div class="left-process-section" ref={processNewRef}>
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/goal.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Profile Screening & Shortlisting</div>
+                  <div class="process-new-description">
+                  We review tons of applications against our minimum criteria, their professional journey, and holistic background checks.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-process-section">
+              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/plan.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Language Proficiency</div>
+                  <div class="process-new-description-right-side">
+                  AI-powered communication assessment tests a candidate's reading, writing, pronunciation, clarity, fluency, and speed of speech.
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="process-new-section">
+            <div class="left-process-section">
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/action.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Aptitude Evaluation</div>
+                  <div class="process-new-description">
+                  We conduct a scientifically designed aptitude test to check their reasoning and problem-solving ability.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-process-section">
+              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/assign.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Technical Assessment</div>
+                  <div class="process-new-description-right-side">
+                  We have curated one of the toughest and most advanced technical assessments to vet talent's capabilities, these are role-based extremely stringent tests that filter the top 10% of talents.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="process-new-section">
+            <div class="left-process-section">
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/test.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Culture-Fit</div>
+                  <div class="process-new-description">
+                  Our Talent Acquisition experts conduct the final interview understanding the candidate's preferences and expectations to do the right matchmaking.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-process-section">
+              {/* <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/implement.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Implement the Process</div>
+                  <div class="process-new-description-right-side">
+                    Execute strategies flawlessly with our hands-on approach,
+                    bringing the plan to life.
+                  </div>
+                </div>
+              </div> */}
+            </div>
+          </div>
+          <div class="process-new-section">
+            {/* <div class="left-process-section">
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/monitor.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Monitor the Results</div>
+                  <div class="process-new-description">
+                    Continuously track key metrics, assess performance, and
+                    ensure strategies yield desired outcomes.
+                  </div>
+                </div>
+              </div>
+            </div> */}
+            {/* <div class="right-process-section">
+              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/improve.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Make Improvements</div>
+                  <div class="process-new-description-right-side">
+                    Identify areas for improvement based on results, refining
+                    strategies for ongoing optimization.
+                  </div>
+                </div>
+              </div>
+            </div> */}
+          </div>
+        </section>
+      </article>
+
+      {/* <!-- full scale banner --> */}
+      <article class="full-scale-banner">
+        <section class="banner-full-exp">
+          <div class="overlay"></div>
+          <div class="banner-new-full-scale-container">
+            <h2 class="full-banner-call">
+              42% businesses adopt go-to-market strategies for calculating
+              customer value, 28% for business expansion/upgrades, and 61% to
+              build customer experience
+            </h2>
+          </div>
+        </section>
+      </article>
+
+        {/* <!-- Clients Section --> */}
+        <article className={`clients ${isVisible ? 'animate' : ''}`} ref={containerRef}>
         <section class="client-container">
           <div class="client-content">
             <h2 class="client-heading">Trusted by Industry Leaders</h2>
@@ -341,6 +561,7 @@ const FiancialConsulting = () => {
                     src={ATOB}
                     alt="AtoB_logo"
                     title="AtoB"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
                 <div class="image-container">
@@ -348,6 +569,7 @@ const FiancialConsulting = () => {
                     src={bobtail}
                     alt="bobtail_logo"
                     title="BoBtail"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
 
@@ -356,6 +578,7 @@ const FiancialConsulting = () => {
                     src={joyride}
                     alt="joyride_logo"
                     title="Joyride"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
                 <div class="image-container">
@@ -363,13 +586,15 @@ const FiancialConsulting = () => {
                     src={Truckx}
                     alt="truckx_logo"
                     title="TruckX"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
                 <div class="image-container">
                   <img
                     src={pallet}
-                    alt="AtoB_logo"
+                    alt="Pallet_logo"
                     title="Pallet"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
               </div>
@@ -379,6 +604,7 @@ const FiancialConsulting = () => {
                     src={digitalOcean}
                     alt="bobtail_logo"
                     title="Digital Ocean"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
 
@@ -387,6 +613,7 @@ const FiancialConsulting = () => {
                     src={mudflap}
                     alt="joyride_logo"
                     title="Mudflap"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
                 <div class="image-container-bottom">
@@ -394,156 +621,8 @@ const FiancialConsulting = () => {
                     src={sungrade}
                     alt="truckx_logo"
                     title="Sungrade Solar"
+                    className='client-logos-sectio-hover'
                   />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </article>
-
-      {/* <!-- section new process --> */}
-      <article class="process-new">
-        <section class="process-new-container">
-          <h2 class="path-heading">A Proven Path to Success</h2>
-          <p class="work-desc">
-            Explore the journey to excellence with Phi Consulting's strategic
-            process – your gateway to optimizing sales performance, enhancing
-            customer experience, and achieving sustained growth.
-          </p>
-          <div class="process-new-section">
-            <div class="left-process-section">
-              <div class="tooltip-right">
-                <img
-                  src="../assets/img/process_icons/goal.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Define Your Goals</div>
-                  <div class="process-new-description">
-                    Understand your unique challenges, aspirations, and
-                    opportunities to set the foundation for our strategic
-                    approach.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div class="tooltip-left">
-                <img
-                  src="../assets/img/process_icons/plan.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Plan & Map Your Process</div>
-                  <div class="process-new-description-right-side">
-                    Craft a tailored roadmap aligned with your goals, ensuring a
-                    clear path forward.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="process-new-section">
-            <div class="left-process-section">
-              <div class="tooltip-right">
-                <img
-                  src="../assets/img/process_icons/action.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Set Actions</div>
-                  <div class="process-new-description">
-                    Define clear, measurable, and achievable steps, creating a
-                    roadmap for success.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div class="tooltip-left">
-                <img
-                  src="../assets/img/process_icons/assign.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Assign Stakeholders</div>
-                  <div class="process-new-description-right-side">
-                    Foster collaboration by assigning key individuals
-                    responsible for successful execution.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="process-new-section">
-            <div class="left-process-section">
-              <div class="tooltip-right">
-                <img
-                  src="../assets/img/process_icons/test.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Test the Process</div>
-                  <div class="process-new-description">
-                    Rigorously test and refine strategies before full
-                    implementation for effectiveness and adaptability.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div class="tooltip-left">
-                <img
-                  src="../assets/img/process_icons/implement.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Implement the Process</div>
-                  <div class="process-new-description-right-side">
-                    Execute strategies flawlessly with our hands-on approach,
-                    bringing the plan to life.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="process-new-section">
-            <div class="left-process-section">
-              <div class="tooltip-right">
-                <img
-                  src="../assets/img/process_icons/monitor.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Monitor the Results</div>
-                  <div class="process-new-description">
-                    Continuously track key metrics, assess performance, and
-                    ensure strategies yield desired outcomes.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div class="tooltip-left">
-                <img
-                  src="../assets/img/process_icons/improve.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Make Improvements</div>
-                  <div class="process-new-description-right-side">
-                    Identify areas for improvement based on results, refining
-                    strategies for ongoing optimization.
-                  </div>
                 </div>
               </div>
             </div>
@@ -554,11 +633,10 @@ const FiancialConsulting = () => {
       {/* <!-- why phi for customer exp Section --> */}
       <article class="why-phi-for-sales">
         <h2 class="why-phi-heading">
-          Why Choose Phi for Financial Consulting?
+        Why Choose Phi?
         </h2>
         <p class="why-phi-desc">
-          Elevate your financial strategies with confidence and chart a course
-          for sustained success.
+        Elevate your financial strategies with confidence and chart a course for sustained success.
         </p>
         <div class="insights-container">
           <div class="insights-bundle">
@@ -568,9 +646,7 @@ const FiancialConsulting = () => {
                 <div class="content">
                   <h2 class="overlay-heading">Proven Expertise</h2>
                   <p class="overlay-desc">
-                    Count on us to navigate the complexities of financial
-                    landscapes with precision and deliver tangible results for
-                    your business
+                  At Phi Consulting, our track record speaks volumes. With years of diverse experience and a history of successful financial transformations, we bring a wealth of proven expertise to the table. Count on us to navigate the complexities of financial landscapes with precision and deliver tangible results for your business.
                   </p>
                 </div>
               </div>
@@ -581,9 +657,7 @@ const FiancialConsulting = () => {
                 <div class="content">
                   <h2 class="overlay-heading">Plan For The Future</h2>
                   <p class="overlay-desc">
-                    Collaborate with us to craft strategic financial plans that
-                    not only address current challenges but also position your
-                    enterprise for long-term growth and resilience.
+                  Phi Consulting goes beyond the present; we're dedicated to shaping a future of financial success for your business. Collaborate with us to craft strategic financial plans that not only address current challenges but also position your enterprise for long-term growth and resilience.
                   </p>
                 </div>
               </div>
@@ -596,9 +670,7 @@ const FiancialConsulting = () => {
                 <div class="content">
                   <h2 class="overlay-heading">Make Data-Driven Decisions</h2>
                   <p class="overlay-desc">
-                    Leverage our analytical expertise to transform complex
-                    financial data into actionable strategies, ensuring every
-                    decision propels your business forward.
+                  In an era where data is paramount, Phi Consulting empowers your decision-making process with robust, data-driven insights. Leverage our analytical expertise to transform complex financial data into actionable strategies, ensuring every decision propels your business forward.
                   </p>
                 </div>
               </div>
@@ -609,9 +681,7 @@ const FiancialConsulting = () => {
                 <div class="content">
                   <h2 class="overlay-heading">Know Your Startup's Value</h2>
                   <p class="overlay-desc">
-                    Phi Consulting helps you uncover and maximize your startup's
-                    inherent value through thorough analysis and strategic
-                    planning.
+                  Understanding the true value of your startup is key to strategic growth. Phi Consulting helps you uncover and maximize your startup's inherent value. Through thorough analysis and strategic planning, we ensure that your business is positioned for success and recognized for its unique contributions in the market
                   </p>
                 </div>
               </div>
@@ -621,96 +691,16 @@ const FiancialConsulting = () => {
       </article>
 
       {/* <!-- Work small version Section --> */}
-      <article class="work">
+      <article class="work" ref={cardsRef}>
         <section class="work-section">
-          <h2 class="work-heading">Client Success Stories</h2>
+          <h2 class="work-heading">Portfolio</h2>
           <p class="work-desc">
-            Explore our portfolio to witness the transformative impact of Phi
-            Consulting on businesses like yours. Each success story is a
-            testament to our commitment to driving sales excellence.
+          Explore our portfolio to witness the transformative impact of Phi Consulting on businesses like yours. Each success story is a testament to our commitment to driving sales excellence.
           </p>
           <div class="work-row">
           {firstThreeCaseStudies.map(study => (
-                <SmallWorkCard key={study.id} caseStudy={study} />
+                <SmallWorkCard key={study.id} caseStudy={study} isVisible={isVisiblecard} />
             ))}
-            {/* <div class="work-card">
-              <div class="work-card-image-container">
-                <img
-                  src={workone}
-                  alt=""
-                  width="250"
-                  height="250"
-                />
-              </div>
-              <div class="logo-work-card-container">
-                <img
-                  src={worktwo}
-                  alt=""
-                  width="60"
-                  height="60"
-                />
-              </div>
-              <h3 class="work-card-heading">Lorem ipsum dolor sit amet</h3>
-              <p class="work-card-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ad
-                libero ipsa accusantium et itaque,
-              </p>
-              <div class="right-button-work-small">
-                <span>Explore More</span>
-              </div>
-            </div>
-            <div class="work-card">
-              <div class="work-card-image-container">
-                <img
-                  src={workthree}
-                  alt=""
-                  width="250"
-                  height="250"
-                />
-              </div>
-              <div class="logo-work-card-container">
-                <img
-                  src={workfour}
-                  alt=""
-                  width="60"
-                  height="60"
-                />
-              </div>
-              <h3 class="work-card-heading">Lorem ipsum dolor sit amet</h3>
-              <p class="work-card-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ad
-                libero ipsa accusantium et itaque,
-              </p>
-              <div class="right-button-work-small">
-                <span>Explore More</span>
-              </div>
-            </div>
-            <div class="work-card">
-              <div class="work-card-image-container">
-                <img
-                  src={workfive}
-                  alt=""
-                  width="250"
-                  height="250"
-                />
-              </div>
-              <div class="logo-work-card-container">
-                <img
-                  src={worksix}
-                  alt=""
-                  width="60"
-                  height="60"
-                />
-              </div>
-              <h3 class="work-card-heading">Lorem ipsum dolor sit amet</h3>
-              <p class="work-card-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ad
-                libero ipsa accusantium et itaque,
-              </p>
-              <div class="right-button-work-small">
-                <span>Explore More</span>
-              </div>
-            </div> */}
           </div>
 
           <div class="right-button spacing-under">
@@ -721,18 +711,17 @@ const FiancialConsulting = () => {
 
       {/* <!-- Testimonial Section --> */}
       <article class="testimonial">
-        <section class="testimonial-container">
-          <h2 class="testi-heading">What Our Clients Say About Us</h2>
+        <section className="testimonial-container">
+          <h2 class="testi-heading">
+          What Our Clients Say About Us
+          </h2>
           <p class="testi-desc">
-            Our clients speak for the transformative impact of Phi Consulting.
-            <br />
-            Here's what they have to say about their experiences partnering with
-            us:
+          Our clients speak for the transformative impact of Phi Consulting. Here's what they have to say about their experiences partnering with us:
           </p>
         </section>
 
-        <section class="testi-cards-container">
-          <div class="testi-card">
+        <section className="testi-cards-container" ref={testiRef}>
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 testi-one">
               {/* <!-- <img src="./assets/img/testimonial_one.webp" alt="" /> --> */}
             </div>
@@ -750,7 +739,7 @@ const FiancialConsulting = () => {
             <h3 class="testi-card-heading">-Rob Robinson (CEO)</h3>
           </div>
 
-          <div class="testi-card">
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-two">
               <img src="" alt="" />
             </div>
@@ -768,7 +757,7 @@ const FiancialConsulting = () => {
             <h3 class="testi-card-heading">-lenny pepridge (CTO)</h3>
           </div>
 
-          <div class="testi-card">
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-three">
               <img src="" alt="" />
             </div>
@@ -788,68 +777,41 @@ const FiancialConsulting = () => {
         </section>
       </article>
 
-      {/* <!-- Achievements Section --> */}
+      {/* <!-- Achievement Section --> */}
       <article class="achievement">
         <section class="achievement-section">
-          <h2 class="ach-heading-services-page">Our Achievements</h2>
-          <p class="ach-desc-services-page">
-            Explore Phi Consulting's hall of achievements <br />– where revenue
-            surges, operational efficiency peaks, and client success stories
-            converge, defining a legacy of transformative impact.
+          <h2 class="ach-heading">Our Achievements</h2>
+          <p class="testi-desc">
+          Explore Phi Consulting's hall of achievements – where revenue surges, operational efficiency peaks, and client success stories converge, defining a legacy of transformative impact.
           </p>
         </section>
-        <section class="ach-badges-container">
-          <div class="ach-badge">
+        <section class="ach-badges-container" ref={achRef}>
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={achiconone}
+               src={achiconone}
               alt=""
               width="200"
               height="230"
             />
           </div>
-          <div class="ach-badge">
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={achicontwo}
+               src={achicontwo}
               alt=""
               width="200"
               height="150"
             />
           </div>
 
-          <div class="ach-badge">
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={achiconthree}
+             src={achiconthree}
               alt=""
               width="250"
               height="220"
             />
           </div>
 
-          <div class="ach-badge">
-            <img
-              src={achiconone}
-              alt=""
-              width="200"
-              height="230"
-            />
-          </div>
-          <div class="ach-badge">
-            <img
-              src={achicontwo}
-              alt=""
-              width="200"
-              height="150"
-            />
-          </div>
-
-          <div class="ach-badge">
-            <img
-              src={achiconthree}
-              alt=""
-              width="250"
-              height="220"
-            />
-          </div>
         </section>
       </article>
 
@@ -859,10 +821,7 @@ const FiancialConsulting = () => {
           <div class="cta-content">
             <div class="cta-heading">Ready to Unlock Financial Success?</div>
             <div class="cta-descrip">
-              Partner with Phi Consulting for unparalleled financial consulting
-              services. Take the first step towards optimizing your financial
-              strategies and achieving sustainable growth. Contact us today for
-              a consultation.
+            Partner with Phi Consulting for unparalleled financial consulting services. Take the first step towards optimizing your financial strategies and achieving sustainable growth. Contact us today for a consultation.
             </div>
           </div>
           <div class="cta-button-section">
