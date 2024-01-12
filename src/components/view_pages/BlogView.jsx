@@ -4,9 +4,13 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import blogs from "../../data/blogs.json";
 
+import useScrollToTop from "../../hooks/useScrollToTop";
+
 const BlogView = () => {
   const { id } = useParams();
   const blog = blogs.find(study => study.id === parseInt(id));
+
+  useScrollToTop();
     return(
         <>
           <article className="blog-viewer">

@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import caseStudies from '../../data/caseStudies.json';
 
+import useScrollToTop from '../../hooks/useScrollToTop';
+
 const CaseStudyView = () => {
     const { id } = useParams();
     const caseStudy = caseStudies.find(study => study.id === parseInt(id));
+
+    useScrollToTop();
     return(
         <>
 <article className="study-container">

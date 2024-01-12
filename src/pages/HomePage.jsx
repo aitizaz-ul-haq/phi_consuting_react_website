@@ -26,6 +26,8 @@ import BlogCard from '../components/shared/cards/BlogCard';
 import blogs from "../data/blogs.json";
 import caseStudies from "../data/caseStudies.json";
 
+
+
 const HomePage = () => {
 
   
@@ -43,6 +45,8 @@ const firstRef = useRef(null);
 
   const [isVisibleAch, setIsVisibleAch] = useState(false);
   const achRef = useRef(null);
+
+  
 
   useEffect(() => {
       const observer = new IntersectionObserver(
@@ -298,7 +302,7 @@ useEffect(() => {
                   </div>
                   <div class="tab-info-container">
                     <div class="tab-title">
-                      <h3 class="title-third">Buisness Consulting</h3>
+                      <h3 class="title-third">Investor Relations</h3>
                     </div>
                   </div>
                 </div>

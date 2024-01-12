@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import CaseStudyCollectionCard from '../components/shared/cards/caseStudyCollectionCard';
 import caseStudies from "../../src/data/caseStudies.json";
 
-
+import useScrollToTop from '../hooks/useScrollToTop';
 const Spotlight = () => {
+
+    useScrollToTop();
     return(
         <>
         <article className="case-study-row">
