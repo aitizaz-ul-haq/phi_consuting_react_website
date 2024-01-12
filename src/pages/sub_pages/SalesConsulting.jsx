@@ -38,17 +38,53 @@ const SalesConsulting = () => {
   const [isVisibleTesti, setIsVisibleTesti] = useState(false);
  const testiRef = useRef(null);
 
-//   const [isVisibleServices, setIsVisibleServices] = useState(false);
-// const servicesRef = useRef(null);
-
-//   const [isVisibleFirst, setIsVisibleFirst] = useState(false);
-// const firstRef = useRef(null);
-
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef(null);
 
   const [isVisibleAch, setIsVisibleAch] = useState(false);
   const achRef = useRef(null);
+
+  const [isVisiblecard, setIsVisiblecard] = useState(false);
+  const cardsRef = useRef(null);
+
+  const [processNewVisible, setProcessNewVisible] = useState(false);
+  const processNewRef = useRef(null);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setProcessNewVisible(entry.isIntersecting);
+      },
+      { threshold: 0.5 }
+    );
+  
+    if (processNewRef.current) {
+      observer.observe(processNewRef.current);
+    }
+  
+    return () => observer.disconnect();
+  }, []);
+  
+
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsVisiblecard(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (cardsRef.current) {
+      observer.observe(cardsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+  
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -71,15 +107,6 @@ useEffect(() => {
   return () => observer.disconnect();
 }, []);
 
-// useEffect(() => {
-// const observer = new IntersectionObserver(entries => {
-//     entries.forEach(entry => setIsVisibleFirst(entry.isIntersecting));
-// }, { threshold: 0.5 });
-
-// observer.observe(firstRef.current);
-// return () => observer.disconnect();
-// }, []);
-
 
 useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -90,32 +117,6 @@ useEffect(() => {
     return () => observer.disconnect(); 
 }, []);
 
-// useEffect(() => {
-//   const observer = new IntersectionObserver(entries => {
-//       entries.forEach(entry => setIsVisibleServices(entry.isIntersecting));
-//   }, { threshold: 1 }); // Adjust threshold as needed
-
-//   observer.observe(servicesRef.current);
-//   return () => observer.disconnect();
-// }, []);
-
-// useEffect(() => {
-// const observer = new IntersectionObserver(entries => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             setAnimateServices(true);
-//             // Delay the tab animations to start after the services animation
-//             setTimeout(() => setAnimateTabs(true), 500); // Adjust the delay as needed
-//         } else {
-//             setAnimateServices(false);
-//             setAnimateTabs(false);
-//         }
-//     });
-// }, { threshold: 0.5 });
-
-// observer.observe(servicesRef.current);
-// return () => observer.disconnect();
-// }, []);
 
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (
@@ -385,7 +386,7 @@ useEffect(() => {
       </article>
 
       {/* <!-- section new process --> */}
-      <article class="process-new">
+      <article class="process-new" ref={processNewRef}>
         <section class="process-new-container">
           <h2 class="path-heading">A Proven Path to Success</h2>
           <p class="work-desc">
@@ -395,7 +396,7 @@ useEffect(() => {
           </p>
           <div class="process-new-section">
             <div class="left-process-section">
-              <div class="tooltip-right">
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
                 <img
                   src="../assets/img/process_icons/goal.png"
                   alt=""
@@ -412,7 +413,7 @@ useEffect(() => {
               </div>
             </div>
             <div class="right-process-section">
-              <div class="tooltip-left">
+              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
                 <img
                   src="../assets/img/process_icons/plan.png"
                   alt=""
@@ -430,7 +431,7 @@ useEffect(() => {
           </div>
           <div class="process-new-section">
             <div class="left-process-section">
-              <div class="tooltip-right">
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
                 <img
                   src="../assets/img/process_icons/action.png"
                   alt=""
@@ -446,7 +447,7 @@ useEffect(() => {
               </div>
             </div>
             <div class="right-process-section">
-              <div class="tooltip-left">
+              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
                 <img
                   src="../assets/img/process_icons/assign.png"
                   alt=""
@@ -464,7 +465,7 @@ useEffect(() => {
           </div>
           <div class="process-new-section">
             <div class="left-process-section">
-              <div class="tooltip-right">
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
                 <img
                   src="../assets/img/process_icons/test.png"
                   alt=""
@@ -480,7 +481,7 @@ useEffect(() => {
               </div>
             </div>
             <div class="right-process-section">
-              <div class="tooltip-left">
+              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
                 <img
                   src="../assets/img/process_icons/implement.png"
                   alt=""
@@ -498,7 +499,7 @@ useEffect(() => {
           </div>
           <div class="process-new-section">
             <div class="left-process-section">
-              <div class="tooltip-right">
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
                 <img
                   src="../assets/img/process_icons/monitor.png"
                   alt=""
@@ -514,7 +515,7 @@ useEffect(() => {
               </div>
             </div>
             <div class="right-process-section">
-              <div class="tooltip-left">
+              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
                 <img
                   src="../assets/img/process_icons/improve.png"
                   alt=""
@@ -712,7 +713,7 @@ useEffect(() => {
       </article>
 
       {/* <!-- Work small version Section --> */}
-      <article class="work">
+      <article class="work" ref={cardsRef}>
         <section class="work-section">
           <h2 class="work-heading">Client Success Stories</h2>
           <p class="work-desc">
@@ -722,7 +723,7 @@ useEffect(() => {
           </p>
           <div class="work-row">
           {firstThreeCaseStudies.map(study => (
-                <SmallWorkCard key={study.id} caseStudy={study} />
+                <SmallWorkCard key={study.id} caseStudy={study} isVisible={isVisiblecard} />
             ))}
           </div>
 
@@ -731,139 +732,6 @@ useEffect(() => {
           </div>
         </section>
       </article>
-
-      {/* <!-- Testimonial Section --> */}
-      {/* <article class="testimonial">
-        <section class="testimonial-container">
-          <h2 class="testi-heading">What Our Clients Say About Us</h2>
-          <p class="testi-desc">
-            Our clients speak for the transformative impact of Phi Consulting.
-            <br />
-            Here's what they have to say about their experiences partnering with
-            us:
-          </p>
-        </section>
-
-        <section class="testi-cards-container">
-          <div class="testi-card">
-            <div class="circleBase type3 testi-one">
-            </div>
-
-            <p class="testi-quote">
-              <q
-                ><i
-                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quibusdam atque iste aut magni harum nobis quasi impedit enim
-                  laborum distinctio, accusamus ducimus dolorem illum, mollitia
-                  aperiam deserunt voluptate quaerat totam!</i
-                ></q
-              >
-            </p>
-            <h3 class="testi-card-heading">-Rob Robinson (CEO)</h3>
-          </div>
-
-          <div class="testi-card">
-            <div class="circleBase type3 test-two">
-              <img src="" alt="" />
-            </div>
-
-            <p class="testi-quote">
-              <q
-                ><i
-                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quibusdam atque iste aut magni harum nobis quasi impedit enim
-                  laborum distinctio, accusamus ducimus dolorem illum, mollitia
-                  aperiam deserunt voluptate quaerat totam!</i
-                ></q
-              >
-            </p>
-            <h3 class="testi-card-heading">-lenny pepridge (CTO)</h3>
-          </div>
-
-          <div class="testi-card">
-            <div class="circleBase type3 test-three">
-              <img src="" alt="" />
-            </div>
-
-            <p class="testi-quote">
-              <q
-                ><i
-                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quibusdam atque iste aut magni harum nobis quasi impedit enim
-                  laborum distinctio, accusamus ducimus dolorem illum, mollitia
-                  aperiam deserunt voluptate quaerat totam!</i
-                ></q
-              >
-            </p>
-            <h3 class="testi-card-heading">-linda bigaloo (finance)</h3>
-          </div>
-        </section>
-      </article> */}
-
-      {/* <!-- Achievements Section --> */}
-      {/* <article class="achievement">
-        <section class="achievement-section">
-          <h2 class="ach-heading-services-page">Our Achievements</h2>
-          <p class="ach-desc-services-page">
-            Explore Phi Consulting's hall of achievements <br />– where revenue
-            surges, operational efficiency peaks, and client success stories
-            converge, defining a legacy of transformative impact.
-          </p>
-        </section>
-        <section class="ach-badges-container">
-          <div class="ach-badge">
-            <img
-              src={achiconone}
-              alt=""
-              width="200"
-              height="230"
-            />
-          </div>
-          <div class="ach-badge">
-            <img
-              src={achicontwo}
-              alt=""
-              width="200"
-              height="150"
-            />
-          </div>
-
-          <div class="ach-badge">
-            <img
-              src={achiconthree}
-              alt=""
-              width="250"
-              height="220"
-            />
-          </div>
-
-          <div class="ach-badge">
-            <img
-              src={achiconone}
-              alt=""
-              width="200"
-              height="230"
-            />
-          </div>
-          <div class="ach-badge">
-            <img
-              src={achicontwo}
-              alt=""
-              width="200"
-              height="150"
-            />
-          </div>
-
-          <div class="ach-badge">
-            <img
-              src={achiconthree}
-              alt=""
-              width="250"
-              height="220"
-            />
-          </div>
-        </section>
-      </article> */}
 
       {/* <!-- Testimonial Section --> */}
       <article class="testimonial">

@@ -11652,6 +11652,8 @@ display: none;
         opacity: 1;
         transition: transform 0.8s ease-out 1s, opacity 0.8s ease-out 1s;
     }
+
+
     
 
      .testi-card {
@@ -11681,8 +11683,7 @@ display: none;
         transition: transform 0.3s ease-in-out;
     }
     
-    
-    
+     
     .product-study-img {
         width:100%;
         height: auto;
@@ -11842,6 +11843,24 @@ text-align: center;
         font-size: 16px;
     }
 
+    .tooltip-left.fade-in {
+        animation: fadeInLeft 1s ease-in-out;
+      }
+      
+      .tooltip-right.fade-in {
+        animation: fadeInRight 1s ease-in-out;
+      }
+      
+      @keyframes fadeInLeft {
+        from { opacity: 0; transform: translateX(-20px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      
+      @keyframes fadeInRight {
+        from { opacity: 0; transform: translateX(20px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+
  /* =================================Services Page===================== */
 .hero-container-services {
     justify-content: left;
@@ -11870,7 +11889,26 @@ text-align: center;
     /* margin-bottom: 40px; */
     margin: 20px;
     box-shadow: 24px 63px 128px -113px var(--DARK-PHI-BLUE);
+   
 }
+
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(80px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .card-animate {
+    animation: fadeIn 1s ease forwards;
+  }
+  
+   
 
 .circle-container { 
     width: 263px;

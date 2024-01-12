@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SmallWorkCard = ({caseStudy}) => {
+const SmallWorkCard = ({caseStudy, isVisible}) => {
 
-    
+  const cardClassName = `work-card ${isVisible ? 'card-animate' : ''}`;    
     return(
         <>
-        <div class="work-card">
+        <div className={cardClassName}>
               <div class="work-card-image-container">
                 <img
                   src={caseStudy.imageone}
