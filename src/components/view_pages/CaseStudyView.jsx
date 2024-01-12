@@ -11,11 +11,24 @@ const CaseStudyView = () => {
 <article className="study-container">
     <section className="study-material">
         <div className="study-info-container">
-            <div className="study-title">
+            {/* <div className="study-title">
                 <img src={caseStudy.imagetwo} alt="" className="study-read-logo" />
                 <h3 className='case-Study-Heading-reader'>{caseStudy.title}</h3>
                 <p className="caese-styudy-description-reader">{caseStudy.summary}</p>
+            </div> */}
+            <div className="reader-casestudy-new-container">
+            <div className="reader-casestudy-logo">
+                    <img src={caseStudy.imagetwo} alt="" className='casestudyreaderimg' />
+            </div> 
+            <div className="reader-casestudy-heading">
+            {caseStudy.title}
             </div>
+            <div className="reader-casestudy-desc-new">
+            {caseStudy.summary}
+            </div>
+            </div>
+
+
         </div>
         <div className="study-media-container">
             <img src={caseStudy.imageone} alt="" className='product-study-img'/>

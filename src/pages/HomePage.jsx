@@ -28,8 +28,9 @@ import caseStudies from "../data/caseStudies.json";
 
 const HomePage = () => {
 
-  const [animateServices, setAnimateServices] = useState(false);
-  const [animateTabs, setAnimateTabs] = useState(false);
+  
+ const [isVisibleTesti, setIsVisibleTesti] = useState(false);
+ const testiRef = useRef(null);
 
   const [isVisibleServices, setIsVisibleServices] = useState(false);
 const servicesRef = useRef(null);
@@ -40,11 +41,35 @@ const firstRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef(null);
 
+  const [isVisibleAch, setIsVisibleAch] = useState(false);
+  const achRef = useRef(null);
+
+  useEffect(() => {
+      const observer = new IntersectionObserver(
+          (entries) => {
+              entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
+          },
+          { threshold: 0.5 }
+      );
+
+      observer.observe(achRef.current);
+      return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
+    }, { threshold: 0.5 });
+
+    observer.observe(testiRef.current);
+    return () => observer.disconnect();
+}, []);
+
   // Intersection Observer for the first component
 useEffect(() => {
   const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => setIsVisibleFirst(entry.isIntersecting));
-  }, { threshold: 1 });
+  }, { threshold: 0.5 });
 
   observer.observe(firstRef.current);
   return () => observer.disconnect();
@@ -63,7 +88,7 @@ useEffect(() => {
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => setIsVisibleServices(entry.isIntersecting));
-    }, { threshold: 0.5 }); // Adjust threshold as needed
+    }, { threshold: 1 }); // Adjust threshold as needed
 
     observer.observe(servicesRef.current);
     return () => observer.disconnect();
@@ -422,7 +447,7 @@ useEffect(() => {
       </article>
       {/* <!-- Testimonial Section --> */}
       <article class="testimonial">
-        <section class="testimonial-container">
+        <section className="testimonial-container">
           <h2 class="testi-heading">
             We have not lost a top 3 client in over 3 years
           </h2>
@@ -433,8 +458,8 @@ useEffect(() => {
           </p>
         </section>
 
-        <section class="testi-cards-container">
-          <div class="testi-card">
+        <section className="testi-cards-container" ref={testiRef}>
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 testi-one">
               {/* <!-- <img src="./assets/img/testimonial_one.webp" alt="" /> --> */}
             </div>
@@ -452,7 +477,7 @@ useEffect(() => {
             <h3 class="testi-card-heading">-Rob Robinson (CEO)</h3>
           </div>
 
-          <div class="testi-card">
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-two">
               <img src="" alt="" />
             </div>
@@ -470,7 +495,7 @@ useEffect(() => {
             <h3 class="testi-card-heading">-lenny pepridge (CTO)</h3>
           </div>
 
-          <div class="testi-card">
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-three">
               <img src="" alt="" />
             </div>
@@ -495,8 +520,8 @@ useEffect(() => {
         <section class="achievement-section">
           <h2 class="ach-heading">Our Achievements</h2>
         </section>
-        <section class="ach-badges-container">
-          <div class="ach-badge">
+        <section class="ach-badges-container" ref={achRef}>
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
               src={clutchone}
               alt=""
@@ -504,7 +529,7 @@ useEffect(() => {
               height="230"
             />
           </div>
-          <div class="ach-badge">
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
               src={BBB}
               alt=""
@@ -513,7 +538,7 @@ useEffect(() => {
             />
           </div>
 
-          <div class="ach-badge">
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
               src={clutchtwo}
               alt=""
@@ -522,7 +547,7 @@ useEffect(() => {
             />
           </div>
 
-          <div class="ach-badge">
+          {/* <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
               src={clutchone}
               alt=""
@@ -530,7 +555,7 @@ useEffect(() => {
               height="230"
             />
           </div>
-          <div class="ach-badge">
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
               src={BBB}
               alt=""
@@ -539,14 +564,14 @@ useEffect(() => {
             />
           </div>
 
-          <div class="ach-badge">
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
               src={clutchtwo}
               alt=""
               width="250"
               height="220"
             />
-          </div>
+          </div> */}
         </section>
       </article>
 

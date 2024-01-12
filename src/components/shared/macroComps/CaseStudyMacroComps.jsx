@@ -1,10 +1,21 @@
-import React from 'react';
+import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const CaseStudyMacroComps = ({ id, title, summary, logo, image, isRight }) => {
+
+  const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => setIsVisible(entry.isIntersecting));
+        });
+        observer.observe(ref.current);
+        return () => observer.disconnect();
+    }, []);
     return(
         <>
-        <div class="work-case-study-section">
+        <div className={`work-case-study-section ${isVisible ? 'animate' : ''}`} ref={ref}>
             {isRight ? (
                 <>
                    

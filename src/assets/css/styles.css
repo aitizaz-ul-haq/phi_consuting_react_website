@@ -5011,6 +5011,30 @@ align-items: center;
     color: var(--DARK-PHI-BLUE);
 }
 
+.reader-casestudy-new-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    text-align: justify;
+}
+
+.casestudyreaderimg {
+    width: 15%;
+    height: auto;
+}
+
+.reader-casestudy-heading {
+    font-size: 28px;
+    font-weight: var(--FONT-THICKER);
+    color: var(--LIGHTER-DARK-PHI-BLUE);
+}
+
+.reader-casestudy-desc-new {
+    font-size: 22px;
+    color: var(--LIGHTER-DARK-PHI-BLUE);
+}
+
 @media screen and (min-width: 320px) {
     header {
         display: none;
@@ -10681,6 +10705,7 @@ display: none;
 
     .section-left { 
         width: 50%;
+        padding: 5rem;
     }
 
     .section-right {
@@ -11051,7 +11076,7 @@ display: none;
     }
 
     .ach-badge img {
-      width : 85%;
+      width : 40%;
      height : auto;
    }
 
@@ -11464,7 +11489,7 @@ display: none;
    
 
     .blog-button-study-page:hover .read-blogs-button-back{
-color: var(--APPLE-GRAY);
+     color: var(--APPLE-GRAY);
     }
 
  
@@ -11537,6 +11562,8 @@ color: var(--APPLE-GRAY);
         justify-content: center;
         align-items: left;
         text-align: left;
+        transform: translatey(100%);
+    opacity: 0;
     }
     
     .study-media-container {
@@ -11561,6 +11588,100 @@ color: var(--APPLE-GRAY);
         font-size: 22px;
         color: var(--LIGHTER-DARK-PHI-BLUE);
     }
+
+    /* .work-case-study-section {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    
+    .casestudy-img {
+        transform: translateX(-100%); 
+    }
+    
+    .study-title, .study-macro-desc-main {
+        transform: translateX(100%); 
+    }
+    
+    .work-case-study-section.animate {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.5s ease-out;
+    }
+    
+    .work-case-study-section.animate .casestudy-img {
+        transform: translateX(0);
+        transition: transform 0.5s ease-out 0.5s; 
+    }
+    
+    .work-case-study-section.animate .study-title, 
+    .work-case-study-section.animate .study-macro-desc-main {
+        transform: translateX(0);
+        transition: transform 0.5s ease-out 1s; 
+    } */
+
+    .work-case-study-section {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    
+    .casestudy-img, .company-icon {
+        transform: translateX(-100%);
+    }
+    
+     .study-macro-desc-main, .case-button-container {
+        transform: translatey(100%);
+        opacity: 0; /* Start with invisible text */
+    }
+    
+    .work-case-study-section.animate {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.5s ease-out;
+    }
+    
+    .work-case-study-section.animate .casestudy-img, 
+    .work-case-study-section.animate .company-icon {
+        transform: translatey(0);
+        transition: transform 0.5s ease-out 0.5s;
+    }
+    
+    .work-case-study-section.animate .study-title, 
+    .work-case-study-section.animate .study-macro-desc-main, 
+    .work-case-study-section.animate .case-button-container {
+        transform: translatey(0);
+        opacity: 1;
+        transition: transform 0.8s ease-out 1s, opacity 0.8s ease-out 1s;
+    }
+    
+
+     .testi-card {
+        opacity: 0;
+        transform: translateX(-50px); /* Start off-screen to the left */
+        transition: all 0.5s ease-out; /* Smooth transition for the animation */
+    }
+    
+    .testi-card.animate {
+        opacity: 1;
+        transform: translateX(0); /* End at the original position */
+    }
+    
+    .ach-badge {
+        opacity: 0;
+        transform: translatey(50px); /* Start off-screen to the right */
+        transition: all 0.5s ease-out; /* Smooth transition for the animation */
+    }
+
+    .ach-badge.animate {
+        opacity: 1;
+        transform: translatey(0); /* End at the original position */
+    }
+    
+    .ach-badge:hover {
+        transform: scale(1.1); /* Scale up on hover */
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    
     
     .product-study-img {
         width:100%;

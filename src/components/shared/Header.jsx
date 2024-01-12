@@ -17,13 +17,10 @@ const Header = () => {
         <div className="dropdown">
         <Link to="/services" className="dropdown-btn"><span className="dropdown-btn">Solutions</span></Link>
           <div className="dropdown-content">
-            {/* <Link to="sales-consulting">Sales Consulting</Link> */}
             <Link to="sales-consulting">GTM advisory</Link>
-
-            {/* <Link to="buisness-consulting">Buisness Consulting</Link> */}
+            <Link to="financial-consulting">Investor Relations</Link>
             <Link to="financial-consulting">Financial Consulting</Link>
             <Link to="hr-consulting">HR & Recruitment Consulting</Link>
-            {/* <Link to="customer-experience">Customer Experience Consulting</Link> */}
           </div>
         </div>
         <div className="dropdown">
