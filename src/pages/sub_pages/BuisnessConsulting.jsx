@@ -852,10 +852,10 @@ useEffect(() => {
         <section class="cta-sections-container">
           <div class="cta-content">
             <div class="cta-heading">
-              Ready to Improve Your Workforce Strategies?
+            Ready to boost your financial narrative?
             </div>
             <div class="cta-descrip">
-            Partner with Phi Consulting for unparalleled HR and Recruitment Consulting services. Transform your talent management and recruitment processes. Contact us today to embark on a journey toward building a skilled and dynamic workforce.
+            Stand out in the market and capture investor attention with our proven strategies. Contact Phi Consulting now and let's embark on a journey of financial success together!
             </div>
           </div>
           <div class="cta-button-section">
