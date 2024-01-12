@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 import ATOB from '../../assets/img/new_logos_comps/newer/AtoB 2.png';
@@ -42,6 +42,87 @@ import bcsix from "../../assets/img/buisness_consulting/management consultant.pn
 import caseStudies from '../../data/caseStudies.json';
 
 const BuisnessConsulting = () => {
+  const [isVisibleTesti, setIsVisibleTesti] = useState(false);
+  const testiRef = useRef(null);
+ 
+   const [isVisible, setIsVisible] = useState(false);
+   const containerRef = useRef(null);
+ 
+   const [isVisibleAch, setIsVisibleAch] = useState(false);
+   const achRef = useRef(null);
+ 
+   const [isVisiblecard, setIsVisiblecard] = useState(false);
+   const cardsRef = useRef(null);
+ 
+   const [processNewVisible, setProcessNewVisible] = useState(false);
+   const processNewRef = useRef(null);
+
+   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setProcessNewVisible(entry.isIntersecting);
+      },
+      { threshold: 1 }
+    );
+  
+    if (processNewRef.current) {
+      observer.observe(processNewRef.current);
+    }
+  
+    return () => observer.disconnect();
+  }, []);
+  
+
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsVisiblecard(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (cardsRef.current) {
+      observer.observe(cardsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+  
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
+        },
+        { threshold: 0.5 }
+    );
+
+    observer.observe(achRef.current);
+    return () => observer.disconnect();
+}, []);
+
+useEffect(() => {
+  const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
+  }, { threshold: 0.5 });
+
+  observer.observe(testiRef.current);
+  return () => observer.disconnect();
+}, []);
+
+
+useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => setIsVisible(entry.isIntersecting));
+    }, { threshold: 0.5 }); 
+
+    observer.observe(containerRef.current);
+    return () => observer.disconnect(); 
+}, []);
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (
         <>
@@ -50,15 +131,10 @@ const BuisnessConsulting = () => {
         <section class="hero-container-bui-consul">
           <div class="hero-content-bui-consul">
             <h2 class="hero-heading-bui-consul">
-              Building Winning Strategies to <br />
-              Gain Competitive Advantage
+            Boost Your Investor Relations Impact
             </h2>
             <p class="hero-desc-bui-consul">
-              We support our clients through our pioneering approach by focusing
-              and building on the deep ethos of the business and adding layers
-              on top of it to build a competitive advantage. Our business
-              consultancy is based on a sound understanding of your product,
-              customers, and the market.
+            Investors look for structured and detailed plans for scaling your business while balancing risk and return. We help navigate critical plans for the future by mapping out execution plans for the road ahead.
             </p>
             <div class="consult-button-bui-consul">
             <Link to="/contact" className='scheduler-set'> Schedule a Free Consultation</Link>
@@ -69,10 +145,9 @@ const BuisnessConsulting = () => {
 
       {/* <!-- sales page banner --> */}
       <article class="sales-solutions">
-        <h2 class="sales-heading">Our Business Consulting Services:</h2>
+        <h2 class="sales-heading">Secure Stakeholder Support with our Investor Relations Consulting Team</h2>
         <p class="sales-banner-desc">
-          Phi Consulting delivers transformative services to optimize strategy,
-          operations, and overall business performance.
+        Phi Consulting boosts your IR impact by providing a tailored solution by blending traditional methods with innovative digital strategies
         </p>
         <div class="sales-banner-container">
           <div class="sales-cards one-with-white-back">
@@ -84,10 +159,9 @@ const BuisnessConsulting = () => {
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Business Transformation</h3>
+            <h3 class="sales-card-title">Boost Investor Awareness</h3>
             <div class="sales-card-description">
-              Embrace change and lead your industry with our innovative business
-              transformation strategies.
+            Employ targeted strategies to elevate your company as a standout investment, increasing visibility in the market
             </div>
           </div>
 
@@ -100,10 +174,9 @@ const BuisnessConsulting = () => {
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Strategy Development</h3>
+            <h3 class="sales-card-title">Clarify Equity Stories</h3>
             <div class="sales-card-description">
-              Craft robust strategies that align with your goals, ensuring a
-              clear roadmap for success.
+            Transform complex equity narratives into compelling and engaging stories that resonate with investors.
             </div>
           </div>
           <div class="sales-cards one-with-white-back">
@@ -115,10 +188,9 @@ const BuisnessConsulting = () => {
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Project/Product Management</h3>
+            <h3 class="sales-card-title">Boost Stock Liquidity</h3>
             <div class="sales-card-description">
-              From ideation to execution, optimize your project and product
-              management with our proven methodologies.
+            Enhance trading volume through strategic, long-term initiatives that strengthen market liquidity for your stocks.
             </div>
           </div>
         </div>
@@ -132,10 +204,9 @@ const BuisnessConsulting = () => {
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Operations Consulting</h3>
+            <h3 class="sales-card-title">Pick Low-Hanging Fruits</h3>
             <div class="sales-card-description">
-              Streamline your operations for efficiency, cost-effectiveness, and
-              unmatched performance.
+            Elevate your Investor Relations (IR) efforts instantly by incorporating digital methods for immediate and impactful results
             </div>
           </div>
 
@@ -148,10 +219,9 @@ const BuisnessConsulting = () => {
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Process Management</h3>
+            <h3 class="sales-card-title">Utilize Existing IR Content</h3>
             <div class="sales-card-description">
-              Fine-tune your processes to perfection, enhancing productivity and
-              reducing bottlenecks.
+            Maximize efficiency for time-strapped Investor Relations Officers (IROs) by repurposing and optimizing existing IR pillar content.
             </div>
           </div>
           <div class="sales-cards one-with-blue-back">
@@ -163,10 +233,9 @@ const BuisnessConsulting = () => {
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Management Consulting</h3>
+            <h3 class="sales-card-title">Leverage Your IR Brand</h3>
             <div class="sales-card-description">
-              Gain insights and advice from seasoned experts, guiding you
-              through the complexities of modern business.
+            Acquire the skills and tools necessary to successfully navigate digital media, leveraging your IR brand for heightened market presence
             </div>
           </div>
         </div>
@@ -323,8 +392,162 @@ const BuisnessConsulting = () => {
         </section>
       </article>
 
-      {/* <!-- Clients Section --> */}
-      <article class="clients">
+       {/* <!-- section new process --> */}
+       <article class="process-new">
+        <section class="process-new-container">
+          <h2 class="path-heading">Our Investment Relations Process</h2>
+          <p class="work-desc">
+          At Phi Consulting, we meticulously navigate the intricacies of Investment Relations to ensure the success of your financial strategies:
+          </p>
+          <div class="process-new-section">
+            <div class="left-process-section" ref={processNewRef}>
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/goal.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Define Your Goals</div>
+                  <div class="process-new-description">
+                  Collaboratively outline your investor relations objectives and aspirations, aligning them with your broader financial strategy
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-process-section">
+              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/plan.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Plan & Map Your Process</div>
+                  <div class="process-new-description-right-side">
+                  Develop a customized roadmap for Investor Relations tailored to your business needs, ensuring a strategic alignment with financial goals.
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="process-new-section">
+            <div class="left-process-section">
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/action.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Set Actions</div>
+                  <div class="process-new-description">
+                  Implement strategic IR actions designed to foster investor engagement, trust, and alignment with your financial milestones.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-process-section">
+              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/assign.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Assign Stakeholders</div>
+                  <div class="process-new-description-right-side">
+                  Clearly define roles and responsibilities within your organization to facilitate the execution of your Investor Relations strategy.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="process-new-section">
+            <div class="left-process-section">
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/test.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Test the Process</div>
+                  <div class="process-new-description">
+                  Rigorously evaluate and fine-tune the proposed IR strategies, ensuring their effectiveness in capturing investor attention and support.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-process-section">
+              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/implement.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Implement Strategies</div>
+                  <div class="process-new-description-right-side">
+                  Execute the optimized Investor Relations plan with precision, leveraging our expertise to enhance your financial narrative.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="process-new-section">
+            <div class="left-process-section">
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/monitor.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Monitor Results</div>
+                  <div class="process-new-description">
+                  Continuously track and analyze the results of your Investor Relations efforts, providing insights into investor perception and market impact.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-process-section">
+              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/improve.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Iterate Strategies</div>
+                  <div class="process-new-description-right-side">
+                  Adapt and refine your Investor Relations strategies based on real-time results and changes in the business landscape, ensuring continued effectiveness.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+
+    
+      {/* <!-- full scale banner --> */}
+      <article class="full-scale-banner">
+        <section class="banner-full-exp">
+          <div class="overlay"></div>
+          <div class="banner-new-full-scale-container">
+            <h2 class="full-banner-call">
+              42% businesses adopt go-to-market strategies for calculating
+              customer value, 28% for business expansion/upgrades, and 61% to
+              build customer experience
+            </h2>
+          </div>
+        </section>
+      </article>
+
+       {/* <!-- Clients Section --> */}
+       <article className={`clients ${isVisible ? 'animate' : ''}`} ref={containerRef}>
         <section class="client-container">
           <div class="client-content">
             <h2 class="client-heading">Trusted by Industry Leaders</h2>
@@ -341,6 +564,7 @@ const BuisnessConsulting = () => {
                     src={ATOB}
                     alt="AtoB_logo"
                     title="AtoB"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
                 <div class="image-container">
@@ -348,6 +572,7 @@ const BuisnessConsulting = () => {
                     src={bobtail}
                     alt="bobtail_logo"
                     title="BoBtail"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
 
@@ -356,6 +581,7 @@ const BuisnessConsulting = () => {
                     src={joyride}
                     alt="joyride_logo"
                     title="Joyride"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
                 <div class="image-container">
@@ -363,13 +589,15 @@ const BuisnessConsulting = () => {
                     src={Truckx}
                     alt="truckx_logo"
                     title="TruckX"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
                 <div class="image-container">
                   <img
                     src={pallet}
-                    alt="AtoB_logo"
+                    alt="Pallet_logo"
                     title="Pallet"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
               </div>
@@ -379,6 +607,7 @@ const BuisnessConsulting = () => {
                     src={digitalOcean}
                     alt="bobtail_logo"
                     title="Digital Ocean"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
 
@@ -387,6 +616,7 @@ const BuisnessConsulting = () => {
                     src={mudflap}
                     alt="joyride_logo"
                     title="Mudflap"
+                    className='client-logos-sectio-hover'
                   />
                 </div>
                 <div class="image-container-bottom">
@@ -394,156 +624,8 @@ const BuisnessConsulting = () => {
                     src={sungrade}
                     alt="truckx_logo"
                     title="Sungrade Solar"
+                    className='client-logos-sectio-hover'
                   />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </article>
-
-      {/* <!-- section new process --> */}
-      <article class="process-new">
-        <section class="process-new-container">
-          <h2 class="path-heading">A Proven Path to Success</h2>
-          <p class="work-desc">
-            Explore the journey to excellence with Phi Consulting's strategic
-            process – your gateway to optimizing sales performance, enhancing
-            customer experience, and achieving sustained growth.
-          </p>
-          <div class="process-new-section">
-            <div class="left-process-section">
-              <div class="tooltip-right">
-                <img
-                  src="../assets/img/process_icons/goal.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Define Your Goals</div>
-                  <div class="process-new-description">
-                    Understand your unique challenges, aspirations, and
-                    opportunities to set the foundation for our strategic
-                    approach.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div class="tooltip-left">
-                <img
-                  src="../assets/img/process_icons/plan.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Plan & Map Your Process</div>
-                  <div class="process-new-description-right-side">
-                    Craft a tailored roadmap aligned with your goals, ensuring a
-                    clear path forward.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="process-new-section">
-            <div class="left-process-section">
-              <div class="tooltip-right">
-                <img
-                  src="../assets/img/process_icons/action.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Set Actions</div>
-                  <div class="process-new-description">
-                    Define clear, measurable, and achievable steps, creating a
-                    roadmap for success.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div class="tooltip-left">
-                <img
-                  src="../assets/img/process_icons/assign.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Assign Stakeholders</div>
-                  <div class="process-new-description-right-side">
-                    Foster collaboration by assigning key individuals
-                    responsible for successful execution.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="process-new-section">
-            <div class="left-process-section">
-              <div class="tooltip-right">
-                <img
-                  src="../assets/img/process_icons/test.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Test the Process</div>
-                  <div class="process-new-description">
-                    Rigorously test and refine strategies before full
-                    implementation for effectiveness and adaptability.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div class="tooltip-left">
-                <img
-                  src="../assets/img/process_icons/implement.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Implement the Process</div>
-                  <div class="process-new-description-right-side">
-                    Execute strategies flawlessly with our hands-on approach,
-                    bringing the plan to life.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="process-new-section">
-            <div class="left-process-section">
-              <div class="tooltip-right">
-                <img
-                  src="../assets/img/process_icons/monitor.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Monitor the Results</div>
-                  <div class="process-new-description">
-                    Continuously track key metrics, assess performance, and
-                    ensure strategies yield desired outcomes.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div class="tooltip-left">
-                <img
-                  src="../assets/img/process_icons/improve.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Make Improvements</div>
-                  <div class="process-new-description-right-side">
-                    Identify areas for improvement based on results, refining
-                    strategies for ongoing optimization.
-                  </div>
                 </div>
               </div>
             </div>
@@ -554,36 +636,36 @@ const BuisnessConsulting = () => {
       {/* <!-- why phi for customer exp Section --> */}
       <article class="why-phi-for-sales">
         <h2 class="why-phi-heading">
-          Why Choose Phi for Customer Experience Consulting?
+        Why Choose Phi?
         </h2>
         <p class="why-phi-desc">
-          Your catalyst for business excellence, offering proven expertise,
-          tailored solutions, and a collaborative approach to enhance your
-          success.
+          {/* At Phi Consulting, we understand that your people are your greatest
+          asset. <br />Our HR & Recruitment Consulting services are designed to
+          not only meet your <br />
+          immediate talent needs but to strategically shape the future of your
+          workforce. */}
+          At Phi Consulting, we meticulously navigate the intricacies of Investment Relations to ensure the success of your financial strategies
         </p>
         <div class="insights-container">
           <div class="insights-bundle">
             <div class="left-section-insights">
-              <div class="overlay-container eight-bui-consul">
+              <div class="overlay-container one-hr-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Customer-Centric Focus</h2>
+                  <h2 class="overlay-heading">Captivate Investor Attention</h2>
                   <p class="overlay-desc">
-                    Your success is our priority. Phi Consulting is committed to
-                    delivering results that align with your customer-centric
-                    goals.
+                  In a market where attention is the ultimate currency, we specialize in strategies that break through the noise and capture investor interest effectively.
                   </p>
                 </div>
               </div>
             </div>
             <div class="right-section-insights">
-              <div class="overlay-container two-bui-consul">
+              <div class="overlay-container two-hr-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Tailored Solutions</h2>
+                  <h2 class="overlay-heading">Simplify Your Equity Story</h2>
                   <p class="overlay-desc">
-                    Every business is unique. Our consulting services are
-                    customized to address your specific challenges and goals.
+                  We understand the challenge of conveying complex equity stories. Our expertise lies in simplifying intricate details to ensure your narrative resonates with potential investors.
                   </p>
                 </div>
               </div>
@@ -591,26 +673,23 @@ const BuisnessConsulting = () => {
           </div>
           <div class="insights-bundle">
             <div class="left-section-insights">
-              <div class="overlay-container three-bui-consul">
+              <div class="overlay-container three-hr-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Collaborative Approach</h2>
+                  <h2 class="overlay-heading">Boost Liquidity & Trading Volumes</h2>
                   <p class="overlay-desc">
-                    We work closely with you, ensuring a partnership that values
-                    your insights and incorporates them into our strategies.
+                  Overcome the struggle of attracting investors in low-liquidity scenarios. Our targeted approaches aim to boost trading volumes, enhancing your market appeal
                   </p>
                 </div>
               </div>
             </div>
             <div class="right-section-insights">
-              <div class="overlay-container four-bui-consul">
+              <div class="overlay-container four-hr-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Strategic Insight</h2>
+                  <h2 class="overlay-heading">Results-Driven IR Tools</h2>
                   <p class="overlay-desc">
-                    Gain a competitive edge with our in-depth strategic
-                    insights, staying ahead of industry trends and market
-                    shifts.
+                  Tired of conventional Investor Relations tools yielding minimal results? Our innovative solutions ensure your IR efforts translate into visible improvements, providing measurable impact.
                   </p>
                 </div>
               </div>
@@ -618,180 +697,42 @@ const BuisnessConsulting = () => {
           </div>
           <div class="insights-bundle">
             <div class="left-section-insights">
-              <div class="overlay-container seven-bui-consul">
+              <div class="overlay-container five-hr-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Global Perspective</h2>
+                  <h2 class="overlay-heading">Strategic Initiatives in a Crowded Calendar</h2>
                   <p class="overlay-desc">
-                    Benefit from a global perspective. Our consultants bring
-                    diverse international experiences, offering a broader
-                    worldview.
+                  Even with a full IR calendar, we carve out space for additional strategic initiatives. Our agile approach allows us to integrate impactful activities amidst your existing schedule
                   </p>
                 </div>
               </div>
             </div>
             <div class="right-section-insights">
-              <div class="overlay-container six-bui-consul">
+              <div class="overlay-container six-hr-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Data-Driven Decisions</h2>
+                  <h2 class="overlay-heading">Enhance Digital Visibility</h2>
                   <p class="overlay-desc">
-                    Leverage the power of data in decision-making. Our approach
-                    integrates data analysis for informed, strategic choices.
+                  We illuminate your IR efforts with increased digital visibility. Overcome the challenge of limited online presence, ensuring your expert voice is heard in the digital landscape.
                   </p>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="insights-bundle">
-            {/* <!-- <div class="left-section-insights">
-              <div class="overlay-container seven-bui-consul">
-                <div class="overlay"></div>
-                <div class="content">
-                  <h2 class="overlay-heading">Global Perspective</h2>
-                  <p class="overlay-desc">
-                    Benefit from a global perspective. Our consultants bring
-                    diverse international experiences, offering a broader
-                    worldview.
-                  </p>
-                </div>
-              </div>
-            </div> --> */}
-            {/* <!-- <div class="right-section-insights">
-              <div class="overlay-container eight-bui-consul">
-                <div class="overlay"></div>
-                <div class="content">
-                  <h2 class="overlay-heading">Customer-Centric Focus</h2>
-                  <p class="overlay-desc">
-                    Your success is our priority. Phi Consulting is committed to
-                    delivering results that align with your customer-centric
-                    goals.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div> --> */}
-            {/* <!-- <div class="insights-bundle">
-            <div class="left-section-insights">
-              <div class="overlay-container nine-bui-consul">
-                <div class="overlay"></div>
-                <div class="content">
-                  <h2 class="overlay-heading">Continuous Improvement</h2>
-                  <p class="overlay-desc">
-                    Embrace a culture of continuous improvement. We don't just
-                    solve problems; we refine strategies for sustained success.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="right-section-insights">
-              <div class="overlay-container ten-bui-consul">
-                <div class="overlay"></div>
-                <div class="content">
-                  <h2 class="overlay-heading">Comprehensive Support</h2>
-                  <p class="overlay-desc">
-                    Beyond consultancy, Phi provides comprehensive support,
-                    ensuring the flawless execution of recommended strategies.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div> --> */}
           </div>
         </div>
       </article>
 
-    {/* <!-- Work small version Section --> */}
-    <article class="work">
+      {/* <!-- why phi for customer exp Section --> */}
+      <article class="work" ref={cardsRef}>
         <section class="work-section">
-          <h2 class="work-heading">Client Success Stories</h2>
+          <h2 class="work-heading">Portfolio</h2>
           <p class="work-desc">
-            Explore our portfolio to witness the transformative impact of Phi
-            Consulting on businesses like yours. Each success story is a
-            testament to our commitment to driving sales excellence.
+          Explore our portfolio to witness the transformative impact of Phi Consulting on businesses like yours. Each success story is a testament to our commitment to driving sales excellence.
           </p>
           <div class="work-row">
           {firstThreeCaseStudies.map(study => (
-                <SmallWorkCard key={study.id} caseStudy={study} />
+                <SmallWorkCard key={study.id} caseStudy={study} isVisible={isVisiblecard} />
             ))}
-            {/* <div class="work-card">
-              <div class="work-card-image-container">
-                <img
-                  src={workone}
-                  alt=""
-                  width="250"
-                  height="250"
-                />
-              </div>
-              <div class="logo-work-card-container">
-                <img
-                  src={worktwo}
-                  alt=""
-                  width="60"
-                  height="60"
-                />
-              </div>
-              <h3 class="work-card-heading">Lorem ipsum dolor sit amet</h3>
-              <p class="work-card-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ad
-                libero ipsa accusantium et itaque,
-              </p>
-              <div class="right-button-work-small">
-                <span>Explore More</span>
-              </div>
-            </div>
-            <div class="work-card">
-              <div class="work-card-image-container">
-                <img
-                  src={workthree}
-                  alt=""
-                  width="250"
-                  height="250"
-                />
-              </div>
-              <div class="logo-work-card-container">
-                <img
-                  src={workfour}
-                  alt=""
-                  width="60"
-                  height="60"
-                />
-              </div>
-              <h3 class="work-card-heading">Lorem ipsum dolor sit amet</h3>
-              <p class="work-card-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ad
-                libero ipsa accusantium et itaque,
-              </p>
-              <div class="right-button-work-small">
-                <span>Explore More</span>
-              </div>
-            </div>
-            <div class="work-card">
-              <div class="work-card-image-container">
-                <img
-                  src={workfive}
-                  alt=""
-                  width="250"
-                  height="250"
-                />
-              </div>
-              <div class="logo-work-card-container">
-                <img
-                  src={worksix}
-                  alt=""
-                  width="60"
-                  height="60"
-                />
-              </div>
-              <h3 class="work-card-heading">Lorem ipsum dolor sit amet</h3>
-              <p class="work-card-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ad
-                libero ipsa accusantium et itaque,
-              </p>
-              <div class="right-button-work-small">
-                <span>Explore More</span>
-              </div>
-            </div> */}
           </div>
 
           <div class="right-button spacing-under">
@@ -800,20 +741,19 @@ const BuisnessConsulting = () => {
         </section>
       </article>
 
-    {/*  <!-- Testimonial Section --> */}
-      <article class="testimonial">
-        <section class="testimonial-container">
-          <h2 class="testi-heading">What Our Clients Say About Us</h2>
+    {/* <!-- Testimonial Section --> */}
+    <article class="testimonial">
+        <section className="testimonial-container">
+          <h2 class="testi-heading">
+          What Our Clients Say About Us
+          </h2>
           <p class="testi-desc">
-            Our clients speak for the transformative impact of Phi Consulting.
-            <br />
-            Here's what they have to say about their experiences partnering with
-            us:
+          Our clients speak for the transformative impact of Phi Consulting. Here's what they have to say about their experiences partnering with us:
           </p>
         </section>
 
-        <section class="testi-cards-container">
-          <div class="testi-card">
+        <section className="testi-cards-container" ref={testiRef}>
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 testi-one">
               {/* <!-- <img src="./assets/img/testimonial_one.webp" alt="" /> --> */}
             </div>
@@ -831,7 +771,7 @@ const BuisnessConsulting = () => {
             <h3 class="testi-card-heading">-Rob Robinson (CEO)</h3>
           </div>
 
-          <div class="testi-card">
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-two">
               <img src="" alt="" />
             </div>
@@ -849,7 +789,7 @@ const BuisnessConsulting = () => {
             <h3 class="testi-card-heading">-lenny pepridge (CTO)</h3>
           </div>
 
-          <div class="testi-card">
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-three">
               <img src="" alt="" />
             </div>
@@ -869,68 +809,41 @@ const BuisnessConsulting = () => {
         </section>
       </article>
 
-      {/* <!-- Achievements Section --> */}
+      {/* <!-- Achievement Section --> */}
       <article class="achievement">
         <section class="achievement-section">
-          <h2 class="ach-heading-services-page">Our Achievements</h2>
-          <p class="ach-desc-services-page">
-            Explore Phi Consulting's hall of achievements <br />– where revenue
-            surges, operational efficiency peaks, and client success stories
-            converge, defining a legacy of transformative impact.
+          <h2 class="ach-heading">Our Achievements</h2>
+          <p class="testi-desc">
+          Explore Phi Consulting's hall of achievements – where revenue surges, operational efficiency peaks, and client success stories converge, defining a legacy of transformative impact.
           </p>
         </section>
-        <section class="ach-badges-container">
-          <div class="ach-badge">
+        <section class="ach-badges-container" ref={achRef}>
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={achiconone}
+               src={achiconone}
               alt=""
               width="200"
               height="230"
             />
           </div>
-          <div class="ach-badge">
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={achicontwo}
+               src={achicontwo}
               alt=""
               width="200"
               height="150"
             />
           </div>
 
-          <div class="ach-badge">
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={achiconthree}
+             src={achiconthree}
               alt=""
               width="250"
               height="220"
             />
           </div>
 
-          <div class="ach-badge">
-            <img
-              src={achiconone}
-              alt=""
-              width="200"
-              height="230"
-            />
-          </div>
-          <div class="ach-badge">
-            <img
-              src={achicontwo}
-              alt=""
-              width="200"
-              height="150"
-            />
-          </div>
-
-          <div class="ach-badge">
-            <img
-              src={achiconthree}
-              alt=""
-              width="250"
-              height="220"
-            />
-          </div>
         </section>
       </article>
 
@@ -939,13 +852,10 @@ const BuisnessConsulting = () => {
         <section class="cta-sections-container">
           <div class="cta-content">
             <div class="cta-heading">
-              Ready to Redefine Your Business Excellence?
+              Ready to Improve Your Workforce Strategies?
             </div>
             <div class="cta-descrip">
-              Experience unparalleled transformation by partnering with Phi
-              Consulting. Let's collaborate to reshape your business strategy
-              and achieve remarkable success. Reach out today to schedule a
-              consultation.
+            Partner with Phi Consulting for unparalleled HR and Recruitment Consulting services. Transform your talent management and recruitment processes. Contact us today to embark on a journey toward building a skilled and dynamic workforce.
             </div>
           </div>
           <div class="cta-button-section">
