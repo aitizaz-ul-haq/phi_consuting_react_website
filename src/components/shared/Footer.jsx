@@ -21,24 +21,24 @@ const Footer = () => {
 
         <div class="links-conatiner">
           <ul class="list-foolter">
-            <h3 class="list-heading">Services</h3>
+            <h3 class="list-heading">Solutions</h3>
             <li>
               <Link to="/sales-consulting" class="footer-links"
-                >Sales Consulting</Link
+                >GTM Strategy</Link
               >
             </li>
             <li>
               <Link
-                to="/customer-experience"
+                to="/hr-consulting"
                 class="footer-links"
-                >Customer Experience</Link
+                >HR & Recruitment</Link
               >
             </li>
             <li>
               <Link
                 to="/buisness-consulting"
                 class="footer-links"
-                >Buisness Consulting</Link
+                >Investor Relations</Link
               >
             </li>
             <li>
@@ -48,24 +48,39 @@ const Footer = () => {
                 >Financial Consulting</Link
               >
             </li>
-            <li>
-              <Link
-                to="/hr-consulting"
-                class="footer-links"
-                >HR & Recruitment Consulting</Link
-              >
-            </li>
+            
           </ul>
         </div>
 
         <div class="links-conatiner spacing-under">
           <ul class="list-foolter">
             <h3 class="list-heading">Navigation</h3>
-            <li>Showcase</li>
-            <li>Contact us</li>
-            <li>Blog</li>
-            <li>About us</li>
-            <li>Careers</li>
+            <li>
+              <Link to="/contact" class="footer-links"
+                >Contact us</Link
+              >
+            </li>
+            <li>
+              <Link
+                to="/insights"
+                class="footer-links"
+                >Blog</Link
+              >
+            </li>
+            <li>
+              <Link
+                to="/aboutus"
+                class="footer-links"
+                >About us</Link
+              >
+            </li>
+            <li>
+              <Link
+                to="/careers"
+                class="footer-links"
+                >Careers</Link
+              >
+            </li>
           </ul>
         </div>
 

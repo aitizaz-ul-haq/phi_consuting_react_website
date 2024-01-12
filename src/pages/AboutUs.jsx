@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import clutchone from '../assets/img/achievements-badges/clutch_1.png';
 import BBB from '../assets/img/achievements-badges/BBB.png';
@@ -13,6 +13,36 @@ import ismailportrait from "../assets/img/phi_people/ismail.jpg";
 
 
 const AboutUs = () => {
+
+
+   const [isVisibleTesti, setIsVisibleTesti] = useState(false);
+  const testiRef = useRef(null);
+
+  const [isVisibleAch, setIsVisibleAch] = useState(false);
+   const achRef = useRef(null);
+
+   useEffect(() => {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
+        },
+        { threshold: 0.5 }
+    );
+
+    observer.observe(achRef.current);
+    return () => observer.disconnect();
+}, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
+    }, { threshold: 0.5 });
+  
+    observer.observe(testiRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  
 
   const gotoContacts = () => {
     window.location.href = '/contact';
@@ -288,19 +318,19 @@ const AboutUs = () => {
         </section>
       </article>
 
-      {/* <!-- Testimonial Section --> */}
-      <article class="testimonial">
-        <section class="testimonial-container">
-          <h2 class="testi-heading">Echoes of Success</h2>
+         {/* <!-- Testimonial Section --> */}
+         <article class="testimonial">
+        <section className="testimonial-container">
+          <h2 class="testi-heading">
+          What Our Clients Say About Us
+          </h2>
           <p class="testi-desc">
-            Discover what our clients have to say about the Phi experience.
-            <br />Realize the impact of our tailored solutions through firsthand
-            accounts of businesses that have journeyed with us towards success.
+          Our clients speak for the transformative impact of Phi Consulting. Here's what they have to say about their experiences partnering with us:
           </p>
         </section>
 
-        <section class="testi-cards-container">
-          <div class="testi-card">
+        <section className="testi-cards-container" ref={testiRef}>
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 testi-one">
               {/* <!-- <img src="./assets/img/testimonial_one.webp" alt="" /> --> */}
             </div>
@@ -318,7 +348,7 @@ const AboutUs = () => {
             <h3 class="testi-card-heading">-Rob Robinson (CEO)</h3>
           </div>
 
-          <div class="testi-card">
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-two">
               <img src="" alt="" />
             </div>
@@ -336,7 +366,7 @@ const AboutUs = () => {
             <h3 class="testi-card-heading">-lenny pepridge (CTO)</h3>
           </div>
 
-          <div class="testi-card">
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-three">
               <img src="" alt="" />
             </div>
@@ -357,12 +387,15 @@ const AboutUs = () => {
       </article>
 
       {/* <!-- Achievement Section --> */}
-      <article class="achievement">
+     <article class="achievement">
         <section class="achievement-section">
           <h2 class="ach-heading">Our Achievements</h2>
+          <p class="testi-desc">
+          Explore Phi Consulting's hall of achievements – where revenue surges, operational efficiency peaks, and client success stories converge, defining a legacy of transformative impact.
+          </p>
         </section>
-        <section class="ach-badges-container">
-          <div class="ach-badge">
+        <section class="ach-badges-container" ref={achRef}>
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
               src={clutchone}
               alt=""
@@ -370,49 +403,24 @@ const AboutUs = () => {
               height="230"
             />
           </div>
-          <div class="ach-badge">
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={BBB}
+               src={BBB}
               alt=""
               width="200"
               height="150"
             />
           </div>
 
-          <div class="ach-badge">
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={clutchtwo}
+             src={clutchtwo}
               alt=""
               width="250"
               height="220"
             />
           </div>
 
-          <div class="ach-badge">
-            <img
-              src={clutchone}
-              alt=""
-              width="200"
-              height="230"
-            />
-          </div>
-          <div class="ach-badge">
-            <img
-              src={BBB}
-              alt=""
-              width="200"
-              height="150"
-            />
-          </div>
-
-          <div class="ach-badge">
-            <img
-              src={clutchtwo}
-              alt=""
-              width="250"
-              height="220"
-            />
-          </div>
         </section>
       </article>
 

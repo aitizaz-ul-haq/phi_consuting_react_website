@@ -33,7 +33,7 @@ const Header = () => {
         </div>
         <span
           >
-            <Link to="/" className="inner-header">Industry</Link>
+            <Link  className="inner-header">Industry</Link>
           
           </span
         >

@@ -22,6 +22,33 @@ const OurWork = () => {
   const [isVisible, setIsVisible] = useState(false);
    const containerRef = useRef(null);
 
+   const [isVisibleTesti, setIsVisibleTesti] = useState(false);
+  const testiRef = useRef(null);
+
+  const [isVisibleAch, setIsVisibleAch] = useState(false);
+   const achRef = useRef(null);
+
+   useEffect(() => {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
+        },
+        { threshold: 0.5 }
+    );
+
+    observer.observe(achRef.current);
+    return () => observer.disconnect();
+}, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
+    }, { threshold: 0.5 });
+  
+    observer.observe(testiRef.current);
+    return () => observer.disconnect();
+  }, []);
+
    useEffect(() => {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => setIsVisible(entry.isIntersecting));
@@ -177,84 +204,6 @@ const OurWork = () => {
       </article>
 
       {/* <!-- Clients Section --> */}
-      {/* <article class="clients">
-        <section class="client-container">
-          <div class="client-content">
-            <h2 class="client-heading">Trusted by Industry Leaders</h2>
-            <p class="client-desc">
-              Phi Consulting has empowered startups and SMEs across diverse
-              industries. <br />
-              Our clients trust us for our deep expertise, personalized service,
-              and commitment to delivering tangible results.
-            </p>
-            <div class="client-logo-container">
-              <div class="logo-container-one">
-                <div class="image-container">
-                  <img
-                    src={ATOB}
-                    alt="AtoB_logo"
-                    title="AtoB"
-                  />
-                </div>
-                <div class="image-container">
-                  <img
-                    src={bobtail}
-                    alt="bobtail_logo"
-                    title="BoBtail"
-                  />
-                </div>
-
-                <div class="image-container">
-                  <img
-                    src={joyride}
-                    alt="joyride_logo"
-                    title="Joyride"
-                  />
-                </div>
-                <div class="image-container">
-                  <img
-                    src={Truckx}
-                    alt="truckx_logo"
-                    title="TruckX"
-                  />
-                </div>
-                <div class="image-container">
-                  <img
-                    src={pallet}
-                    alt="AtoB_logo"
-                    title="Pallet"
-                  />
-                </div>
-              </div>
-              <div class="logo-container-one">
-                <div class="image-container-bottom">
-                  <img
-                    src={digitalOcean}
-                    alt="bobtail_logo"
-                    title="Digital Ocean"
-                  />
-                </div>
-
-                <div class="image-container-bottom">
-                  <img
-                    src={mudflap}
-                    alt="joyride_logo"
-                    title="Mudflap"
-                  />
-                </div>
-                <div class="image-container-bottom">
-                  <img
-                    src={sungrade}
-                    alt="truckx_logo"
-                    title="Sungrade Solar"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </article> */}
-
 <article className={`clients ${isVisible ? 'animate' : ''}`} ref={containerRef}>
         <section class="client-container">
           <div class="client-content">
@@ -380,18 +329,17 @@ const OurWork = () => {
 
       {/* <!-- Testimonial Section --> */}
       <article class="testimonial">
-        <section class="testimonial-container">
-          <h2 class="testi-heading">What Our Clients Say About Us</h2>
+        <section className="testimonial-container">
+          <h2 class="testi-heading">
+          What Our Clients Say About Us
+          </h2>
           <p class="testi-desc">
-            Our clients speak for the transformative impact of Phi Consulting.
-            <br />
-            Here's what they have to say about their experiences partnering with
-            us:
+          Our clients speak for the transformative impact of Phi Consulting. Here's what they have to say about their experiences partnering with us:
           </p>
         </section>
 
-        <section class="testi-cards-container">
-          <div class="testi-card">
+        <section className="testi-cards-container" ref={testiRef}>
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 testi-one">
               {/* <!-- <img src="./assets/img/testimonial_one.webp" alt="" /> --> */}
             </div>
@@ -409,7 +357,7 @@ const OurWork = () => {
             <h3 class="testi-card-heading">-Rob Robinson (CEO)</h3>
           </div>
 
-          <div class="testi-card">
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-two">
               <img src="" alt="" />
             </div>
@@ -427,7 +375,7 @@ const OurWork = () => {
             <h3 class="testi-card-heading">-lenny pepridge (CTO)</h3>
           </div>
 
-          <div class="testi-card">
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-three">
               <img src="" alt="" />
             </div>
@@ -448,12 +396,15 @@ const OurWork = () => {
       </article>
 
       {/* <!-- Achievement Section --> */}
-      <article class="achievement">
+     <article class="achievement">
         <section class="achievement-section">
           <h2 class="ach-heading">Our Achievements</h2>
+          <p class="testi-desc">
+          Explore Phi Consulting's hall of achievements – where revenue surges, operational efficiency peaks, and client success stories converge, defining a legacy of transformative impact.
+          </p>
         </section>
-        <section class="ach-badges-container">
-          <div class="ach-badge">
+        <section class="ach-badges-container" ref={achRef}>
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
               src={clutchone}
               alt=""
@@ -461,49 +412,24 @@ const OurWork = () => {
               height="230"
             />
           </div>
-          <div class="ach-badge">
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={BBB}
+               src={BBB}
               alt=""
               width="200"
               height="150"
             />
           </div>
 
-          <div class="ach-badge">
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={clutchtwo}
+             src={clutchtwo}
               alt=""
               width="250"
               height="220"
             />
           </div>
 
-          <div class="ach-badge">
-            <img
-              src={clutchone}
-              alt=""
-              width="200"
-              height="230"
-            />
-          </div>
-          <div class="ach-badge">
-            <img
-              src={BBB}
-              alt=""
-              width="200"
-              height="150"
-            />
-          </div>
-
-          <div class="ach-badge">
-            <img
-              src={clutchtwo}
-              alt=""
-              width="250"
-              height="220"
-            />
-          </div>
         </section>
       </article>
 
