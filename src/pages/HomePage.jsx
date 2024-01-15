@@ -420,7 +420,7 @@ useEffect(() => {
          
           <div class="right-button spacing-under">
             <div class="case-button-more">
-              <Link to="/spotlight" className='morcases'>View More Case Studies</Link>
+              <Link to="/casestudies" className='morcases'>View More Case Studies</Link>
              </div>
           </div>
         </section>
@@ -597,7 +597,7 @@ useEffect(() => {
         </section>
         <section class="button-readmore">
           <div class="right-button">
-            <span>Read More</span>
+          <span><Link to="/blogs" className='morcases'>Read More</Link></span>
           </div>
         </section>
       </article>

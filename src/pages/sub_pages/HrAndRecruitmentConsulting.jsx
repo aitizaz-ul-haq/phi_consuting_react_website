@@ -542,7 +542,7 @@ const HrAndRecruitmentConsulting = () => {
           <div class="overlay"></div>
           <div class="banner-new-full-scale-container">
             <h2 class="full-banner-call">
-            In the United States, 32% of organizations delegate at least one HR activity to external providers. Furthermore, 51% of organizations choose to outsource benefits administration. Impressively, there’s a remarkable 97% satisfaction rate for outsourcing recruitment processes.
+            In United States, 32% of organizations delegate at least one HR activity to external providers and 51% of organizations choose to outsource administration. Impressively, remarkable 97% satisfaction rate.
             </h2>
           </div>
         </section>

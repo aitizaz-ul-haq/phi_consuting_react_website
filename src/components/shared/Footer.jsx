@@ -23,7 +23,7 @@ const Footer = () => {
           <ul class="list-foolter">
             <h3 class="list-heading">Solutions</h3>
             <li>
-              <Link to="/sales-consulting" class="footer-links"
+              <Link to="/GTM-advisory" class="footer-links"
                 >GTM Strategy</Link
               >
             </li>
@@ -36,7 +36,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                to="/buisness-consulting"
+                to="/investor-relations"
                 class="footer-links"
                 >Investor Relations</Link
               >
@@ -62,9 +62,9 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                to="/insights"
+                to="/blogs"
                 class="footer-links"
-                >Blog</Link
+                >Blogs</Link
               >
             </li>
             <li>

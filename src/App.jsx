@@ -45,8 +45,8 @@ const App = () => {
       <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/aboutus" element={<AboutUs />} />
-      <Route path="/insights" element={<Blog />} />
-      <Route path="/spotlight" element={<Spotlight />} />
+      <Route path="/blogs" element={<Blog />} />
+      <Route path="/casestudies" element={<Spotlight />} />
       <Route path="/careers" element={<Careers />} />
       <Route path="/contact" element={<Contacts />} />
       <Route path="/services" element={<Services />} />
@@ -55,9 +55,9 @@ const App = () => {
       <Route path="/viewblog/:id" element={<BlogView/>}/>
           <Route path="/customer-experience" element={<CustomerExperience />} />
           <Route path="/financial-consulting" element={<FinancialConsulting />} />
-          <Route path="/buisness-consulting" element={<BuisnessConsulting />} />
+          <Route path="/investor-relations" element={<BuisnessConsulting />} />
           <Route path="/hr-consulting" element={<HrConsulting />} />
-          <Route path="/sales-consulting" element={<SalesConsulting />} />
+          <Route path="/GTM-advisory" element={<SalesConsulting />} />
       </Routes>
       <Footer />
     </Router>
