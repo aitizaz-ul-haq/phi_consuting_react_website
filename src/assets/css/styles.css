@@ -4704,6 +4704,7 @@ align-items: center;
     padding-left: 8rem;
     padding-right: 8rem;
     padding-bottom: 8rem;
+    padding-top: 8rem;
     display: flex;
     flex-direction: column;
 }
@@ -10826,6 +10827,7 @@ display: none;
         padding-left: 8rem;
         padding-right: 8rem;
         padding-bottom: 8rem;
+        padding-top: 8rem;
         display: flex;
         flex-direction: column;
     }
@@ -11547,6 +11549,7 @@ display: none;
         padding-left: 8rem;
         padding-right: 8rem;
         padding-bottom: 8rem;
+        padding-top: 8rem;
         display: flex;
         flex-direction: column;
     }
