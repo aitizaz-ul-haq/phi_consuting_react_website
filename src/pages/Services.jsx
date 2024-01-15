@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState, useEffect, useRef } from 'react';
 import { Routes, Route, Link, Outlet } from 'react-router-dom';
 import CustomerExperience from './sub_pages/CustomerExperienceConsulting';
 import FinancialConsulting from './sub_pages/FinancialConsulting';
@@ -32,12 +32,60 @@ import improveicon from "../assets/img/process_icons/improve.png";
 import achiconone from "../assets/img/achievements-badges/clutch_1.png";
 import achicontwo from "../assets/img/achievements-badges/BBB.png";
 import achiconthree from "../assets/img/achievements-badges/clutch_2.png";
+import SmallWorkCard from '../components/shared/cards/SmallWorkCard';
 
-
-
+import caseStudies from "../data/caseStudies.json";
 
 
 const Services = () => {
+
+  const [isVisiblecard, setIsVisiblecard] = useState(false);
+  const cardsRef = useRef(null);
+
+  const [isVisibleTesti, setIsVisibleTesti] = useState(false);
+ const testiRef = useRef(null);
+
+ const [isVisibleAch, setIsVisibleAch] = useState(false);
+  const achRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsVisiblecard(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (cardsRef.current) {
+      observer.observe(cardsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
+    }, { threshold: 0.5 });
+  
+    observer.observe(testiRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
+        },
+        { threshold: 0.5 }
+    );
+
+    observer.observe(achRef.current);
+    return () => observer.disconnect();
+}, []);
+
   const handleTabClickOne = () => {
     window.location.href = '/buisness-consulting';
   } 
@@ -62,7 +110,7 @@ const Services = () => {
     window.location.href = '/contact';
   }
 
-
+  const firstThreeCaseStudies = caseStudies.slice(0, 3);
   return (
     <>
    {/* <!-- Hero Section --> */}
@@ -482,98 +530,22 @@ const Services = () => {
       </article>
 
       {/* <!-- Work small version Section --> */}
-      <article class="work">
+      <article class="work" ref={cardsRef}>
         <section class="work-section">
-          <h2 class="work-heading">Our Work</h2>
+          <h2 class="work-heading">Client Success Stories</h2>
           <p class="work-desc">
-            Our hands-on approach ensures that startups and SMEs thrive in
-            building their consumer base. From launching new products to
-            improving existing ones, we are ready to roll up our sleeves and
-            help you achieve your goals.
+            Explore our portfolio to witness the transformative impact of Phi
+            Consulting on businesses like yours. Each success story is a
+            testament to our commitment to driving sales excellence.
           </p>
           <div class="work-row">
-            {/* <div class="work-card">
-              <div class="work-card-image-container">
-                <img
-                  src={workcardimgone}
-                  alt=""
-                  width="250"
-                  height="250"
-                />
-              </div>
-              <div class="logo-work-card-container">
-                <img
-                  src={squareiconone}
-                  alt=""
-                  width="60"
-                  height="60"
-                />
-              </div>
-              <h3 class="work-card-heading">Lorem ipsum dolor sit amet</h3>
-              <p class="work-card-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ad
-                libero ipsa accusantium et itaque,
-              </p>
-              <div class="right-button-work-small">
-                <span>Explore More</span>
-              </div>
-            </div>
-            <div class="work-card">
-              <div class="work-card-image-container">
-                <img
-                  src={workcardtwo}
-                  alt=""
-                  width="250"
-                  height="250"
-                />
-              </div>
-              <div class="logo-work-card-container">
-                <img
-                  src={squareicontwo}
-                  alt=""
-                  width="60"
-                  height="60"
-                />
-              </div>
-              <h3 class="work-card-heading">Lorem ipsum dolor sit amet</h3>
-              <p class="work-card-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ad
-                libero ipsa accusantium et itaque,
-              </p>
-              <div class="right-button-work-small">
-                <span>Explore More</span>
-              </div>
-            </div>
-            <div class="work-card">
-              <div class="work-card-image-container">
-                <img
-                  src={workcardthree}
-                  alt=""
-                  width="250"
-                  height="250"
-                />
-              </div>
-              <div class="logo-work-card-container">
-                <img
-                  src={squareiconthree}
-                  alt=""
-                  width="60"
-                  height="60"
-                />
-              </div>
-              <h3 class="work-card-heading">Lorem ipsum dolor sit amet</h3>
-              <p class="work-card-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ad
-                libero ipsa accusantium et itaque,
-              </p>
-              <div class="right-button-work-small">
-                <span>Explore More</span>
-              </div>
-            </div> */}
+          {firstThreeCaseStudies.map(study => (
+                <SmallWorkCard key={study.id} caseStudy={study} isVisible={isVisiblecard} />
+            ))}
           </div>
 
           <div class="right-button spacing-under">
-            <span>View More Case Studies</span>
+          <span><Link to="/casestudies" className='morcases'>View More Case Studies</Link></span>
           </div>
         </section>
       </article>
@@ -603,18 +575,19 @@ const Services = () => {
 
       {/* <!-- Testimonial Section --> */}
       <article class="testimonial">
-        <section class="testimonial-container">
-          <h2 class="testi-heading">What Our Clients Say About Us</h2>
+        <section className="testimonial-container">
+          <h2 class="testi-heading">
+            We have not lost a top 3 client in over 3 years
+          </h2>
           <p class="testi-desc">
             Our clients speak for the transformative impact of Phi Consulting.
-            <br />
-            Here's what they have to say about their experiences partnering with
-            us:
+            Partner with us and discover the potential for unprecedented growth,
+            reduced costs, and optimized efficiency.
           </p>
         </section>
 
-        <section class="testi-cards-container">
-          <div class="testi-card">
+        <section className="testi-cards-container" ref={testiRef}>
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 testi-one">
               {/* <!-- <img src="./assets/img/testimonial_one.webp" alt="" /> --> */}
             </div>
@@ -632,7 +605,7 @@ const Services = () => {
             <h3 class="testi-card-heading">-Rob Robinson (CEO)</h3>
           </div>
 
-          <div class="testi-card">
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-two">
               <img src="" alt="" />
             </div>
@@ -650,7 +623,7 @@ const Services = () => {
             <h3 class="testi-card-heading">-lenny pepridge (CTO)</h3>
           </div>
 
-          <div class="testi-card">
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-three">
               <img src="" alt="" />
             </div>
@@ -670,67 +643,63 @@ const Services = () => {
         </section>
       </article>
 
-      <article class="achievement">
+     {/* <!-- Achievement Section --> */}
+     <article class="achievement">
         <section class="achievement-section">
-          <h2 class="ach-heading-services-page">Our Achievements</h2>
-          <p class="ach-desc-services-page">
-            Explore Phi Consulting's hall of achievements <br />– where revenue
-            surges, operational efficiency peaks, and client success stories
-            converge, defining a legacy of transformative impact.
-          </p>
+          <h2 class="ach-heading">Our Achievements</h2>
         </section>
-        <section class="ach-badges-container">
-          <div class="ach-badge">
+        <section class="ach-badges-container" ref={achRef}>
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={achiconone}
+               src={achiconone}
               alt=""
               width="200"
               height="230"
             />
           </div>
-          <div class="ach-badge">
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={achicontwo}
+               src={achicontwo}
               alt=""
               width="200"
               height="150"
             />
           </div>
 
-          <div class="ach-badge">
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={achiconthree}
+             src={achiconthree}
               alt=""
               width="250"
               height="220"
             />
           </div>
 
-          <div class="ach-badge">
+          {/* <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={achiconone}
+              src={clutchone}
               alt=""
               width="200"
               height="230"
             />
           </div>
-          <div class="ach-badge">
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={achicontwo}
+              src={BBB}
               alt=""
               width="200"
               height="150"
             />
           </div>
 
-          <div class="ach-badge">
+          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={achiconthree}
+              src={clutchtwo}
               alt=""
               width="250"
               height="220"
             />
-          </div>
+          </div> */}
         </section>
       </article>
 

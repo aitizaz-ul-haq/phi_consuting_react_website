@@ -22,8 +22,11 @@ import HrConsulting from './pages/sub_pages/HrAndRecruitmentConsulting';
 import SalesConsulting from './pages/sub_pages/SalesConsulting';
 import './assets/css/styles.css';
 
+
+
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -36,11 +39,13 @@ const App = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  
   return (
     <Router>
        {isMobile ? <MobileHeader /> : <Header />}
 
-       {/* {window.innerWidth <= 768 ? <MobileHeader /> : <Header />} */}
+       
        
       <Routes>
       <Route path="/" element={<HomePage />} />
@@ -61,7 +66,35 @@ const App = () => {
       </Routes>
       <Footer />
     </Router>
+
+
+
+
   );
 };
 
 export default App;
+
+
+{/* <Router>
+      {isLoading && <LoadingScreen />}
+      {isMobile ? <MobileHeader /> : <Header />}
+      <Routes>
+        <Route path="/" element={<HomePage toggleLoading={toggleLoading} />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+      <Route path="/blogs" element={<Blog />} />
+      <Route path="/casestudies" element={<Spotlight />} />
+      <Route path="/careers" element={<Careers />} />
+      <Route path="/contact" element={<Contacts />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/valuecreation" element={<OurWork />} />
+      <Route path="/viewcasestudy/:id" element={<CaseStudyView/>}/>
+      <Route path="/viewblog/:id" element={<BlogView/>}/>
+          <Route path="/customer-experience" element={<CustomerExperience />} />
+          <Route path="/financial-consulting" element={<FinancialConsulting />} />
+          <Route path="/investor-relations" element={<BuisnessConsulting />} />
+          <Route path="/hr-consulting" element={<HrConsulting />} />
+          <Route path="/GTM-advisory" element={<SalesConsulting />} />
+      </Routes>
+      <Footer />
+    </Router> */}

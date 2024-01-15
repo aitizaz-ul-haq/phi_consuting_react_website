@@ -730,7 +730,7 @@ useEffect(() => {
           </div>
 
           <div class="right-button spacing-under">
-          <span><Link to="/blogs" className='morcases'>View More Case Studies</Link></span>
+          <span><Link to="/casestudies" className='morcases'>View More Case Studies</Link></span>
           </div>
         </section>
       </article>

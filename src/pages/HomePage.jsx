@@ -23,12 +23,15 @@ import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
 import { Link } from 'react-router-dom';
 import CaseStudyMacroComps from '../components/shared/macroComps/CaseStudyMacroComps';
 import BlogCard from '../components/shared/cards/BlogCard';
+import CustomVideo from '../components/shared/videoComp/CustomVideo';
+import { TypeAnimation } from 'react-type-animation';
 import blogs from "../data/blogs.json";
 import caseStudies from "../data/caseStudies.json";
 
-
+import david from "../assets/video/financial-back.mp4";
 
 const HomePage = () => {
+
 
   
  const [isVisibleTesti, setIsVisibleTesti] = useState(false);
@@ -45,6 +48,16 @@ const firstRef = useRef(null);
 
   const [isVisibleAch, setIsVisibleAch] = useState(false);
   const achRef = useRef(null);
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
 
@@ -146,9 +159,28 @@ useEffect(() => {
       <article class="hero">
         <section class="hero-container">
           <div class="hero-content">
+          {/* <CustomVideo src={david} /> */}
+          {windowWidth >= 1200 && <CustomVideo src={david} />}
             {/* <!-- <h3 class="line-top">Leadership Through Partnership</h3> --> */}
             <h2 class="hero-heading">
-              <span class="phi">Leadership Through Partnership</span>
+              
+              <span class="phi">
+                
+              {windowWidth >= 1200 ? <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        'Leadership Through Partnership',
+        3000, 
+       
+      ]}
+      wrapper="span"
+      speed={50}
+      style={{ fontSize: '40px', display: 'inline-block' }}
+      repeat={Infinity}
+    /> : 'Leadership Through Partnership'}
+                
+                </span>
+              
             </h2>
             <p class="hero-desc">
               Phi Consulting is your dedicated technology consulting partner,
