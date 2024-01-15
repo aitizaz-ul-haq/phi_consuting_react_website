@@ -3531,7 +3531,7 @@ align-items: center;
 .overlay-heading-our-work {
     text-align: center;
     font-family: var(--FF-PHI);
-    font-size: var(--FS-LARGE-HEADING);
+    font-size: 28px;
     font-weight: var(--FONT-THICKER);
     text-align: left;
     color: var(--LIGHT-PHI-BLUE);

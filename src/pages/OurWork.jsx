@@ -13,9 +13,10 @@ import clutchone from '../assets/img/achievements-badges/clutch_1.png';
 import BBB from '../assets/img/achievements-badges/BBB.png';
 import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
 
-import longblockpicone from '/assets/truck-square.png';
-import longblockpictwo from "/assets/digitalocean-square.png";
-import longblockpicthree from "/assets/truck-square.png";
+import caseStudies from "../data/caseStudies.json";
+import LengthyWorkCard from '../components/shared/cards/LengthyWorkCard';
+
+
 
 const OurWork = () => {
 
@@ -98,108 +99,10 @@ const OurWork = () => {
           excellence.
         </p>
         <div class="insights-container">
-          <div class="insights-bundle-our-work">
-            <div class="full-section-insights-our-work">
-              <div class="overlay-container five-bui-consul">
-                <div class="overlay"></div>
-                <div class="content">
-                  <div class="comp-logo-square-container">
-                    <img
-                      src={longblockpicone}
-                      alt=""
-                      width="100"
-                      height="100"
-                    />
-                    <h2 class="overlay-heading-our-work">Lorem Ipsum Dolor</h2>
-                    <p class="overlay-desc-our-work">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Dignissimos magnam, facilis provident repellat,
-                      repellendus atque sunt laboriosam
-                    </p>
-                    <div class="left-button-work-small our-work-bubbles">
-                      <span>Explore More</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="insights-bundle-our-work">
-            <div class="full-section-insights-our-work">
-              <div class="overlay-container three-bui-consul">
-                <div class="overlay"></div>
-                <div class="content">
-                  <div class="comp-logo-square-container">
-                    <img
-                      src={longblockpictwo}
-                      alt=""
-                      width="100"
-                      height="100"
-                    />
-                  </div>
-                  <h2 class="overlay-heading-our-work">Lorem Ipsum Dolor</h2>
-                  <p class="overlay-desc-our-work">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Dignissimos magnam, facilis provident repellat, repellendus
-                    atque sunt laboriosam
-                  </p>
-                  <div class="left-button-work-small our-work-bubbles">
-                    <span>Explore More</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* <!-- <div class="full-section-insights-our-work">
-              <div class="overlay-container four-bui-consul">
-                <div class="overlay"></div>
-                <div class="content">
-                  <div class="comp-logo-square-container">
-                    <img
-                      src="../assets/img/comp_logos/AToB-square.jpg"
-                      alt=""
-                      width="100"
-                      height="100"
-                    />
-                  </div>
-                  <h2 class="overlay-heading-our-work">Lorem Ipsum Dolor</h2>
-                  <p class="overlay-desc-our-work">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Dignissimos magnam, facilis provident repellat, repellendus
-                    atque sunt laboriosam
-                  </p>
-                  <div class="left-button-work-small our-work-bubbles">
-                    <span>Explore More</span>
-                  </div>
-                </div>
-              </div>
-            </div> --> */}
-          </div>
-          <div class="insights-bundle-our-work">
-            <div class="full-section-insights-our-work">
-              <div class="overlay-container five-bui-consul">
-                <div class="overlay"></div>
-                <div class="content">
-                  <div class="comp-logo-square-container">
-                    <img
-                      src={longblockpicthree}
-                      alt=""
-                      width="100"
-                      height="100"
-                    />
-                    <h2 class="overlay-heading-our-work">Lorem Ipsum Dolor</h2>
-                    <p class="overlay-desc-our-work">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Dignissimos magnam, facilis provident repellat,
-                      repellendus atque sunt laboriosam
-                    </p>
-                    <div class="left-button-work-small our-work-bubbles">
-                      <span>Explore More</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        {caseStudies.map(study => (
+                <LengthyWorkCard key={study.id} caseStudy={study} />
+            ))}
+      
         </div>
       </article>
 
