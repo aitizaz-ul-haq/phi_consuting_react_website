@@ -5363,6 +5363,10 @@ width: 90%;
 .blog-card-one {
     width: 295px;
     height: auto;
+    margin-top:0px;
+    margin-left:0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
 }
 .blog-heading {
     font-family: var(--FF-PHI);
@@ -5416,7 +5420,7 @@ width: 90%;
   }
 
   .blog-heading-read-section {
-    font-size: 20px;
+    font-size: 28px;
     font-weight: var(--FONT-THICKER);
     color: var(--LIGHTER-DARK-PHI-BLUE);
     margin-top: 1rem;
@@ -5947,7 +5951,7 @@ display: none;
  .full-section-insights-our-work {
     background-color: green;
     width: 311px;
-    height: 560px;
+    height: 730px;
     margin-top: 25px;
     margin-bottom: 25px;
     margin-left: 0;
@@ -8957,7 +8961,7 @@ height : auto;
 
 
   .blog-heading-read-section {
-    font-size: 20px;
+    font-size: 28px;
     font-weight: var(--FONT-THICKER);
     color: var(--LIGHTER-DARK-PHI-BLUE);
     margin-top: 1rem;
@@ -12636,8 +12640,9 @@ display: none;
 
  .bloged-box-container {
     display: flex;
+    /* flex-direction: row; */
     flex-flow: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     margin-top: 2rem;
     text-align: left;
 }

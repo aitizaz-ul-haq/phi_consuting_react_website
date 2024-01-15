@@ -51,7 +51,7 @@ const CaseStudyView = () => {
                   > &larr; Back</Link
                 >
                </div>
-                <div class="case-button-study-page"> <Link to="/spotlight" className='read-study-button-back'
+                <div class="case-button-study-page"> <Link to="/casestudies" className='read-study-button-back'
                   > View More Case Studies &rarr;</Link
                 > </div>
               </div>
