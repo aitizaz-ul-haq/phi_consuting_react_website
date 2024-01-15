@@ -46,7 +46,7 @@ const firstRef = useRef(null);
   const [isVisibleAch, setIsVisibleAch] = useState(false);
   const achRef = useRef(null);
 
-  
+  const firstThreeCaseStudies = caseStudies.slice(0, 3);
 
   useEffect(() => {
       const observer = new IntersectionObserver(
@@ -406,7 +406,7 @@ useEffect(() => {
             improving existing ones, we are ready to roll up our sleeves and
             help you achieve your goals.
           </p>
-          {caseStudies.map((study, index) => (
+          {firstThreeCaseStudies.map((study, index) => (
                 <CaseStudyMacroComps
                     key={study.id}
                     id={study.id}

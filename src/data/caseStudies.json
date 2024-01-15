@@ -93,8 +93,8 @@
         "id": 4,
         "title": "A Phi Consulting Case Study on Joyride Autos",
         "summary": "Joyride Autos, a trailblazing entity in the realm of unclaimed and abandoned vehicle e-commerce, stands at the forefront of reshaping the automotive industry. With a visionary mission to revolutionize the clearance of impound lots, Joyride goes beyond being a mere online platform—it is a driving force committed to providing a comprehensive solution for buyers and sellers of unclaimed vehicles.",
-        "imageone": "/assets/atob-card.png",
-        "imagetwo": "/assets/AToB-square.jpg",
+        "imageone": "/assets/Joyride.jpeg",
+        "imagetwo": "/assets/joyride square.png",
         "content": [
             {"type": "subheading", "text": "A Phi Consulting Case Study on Joyride Autos"},
             {"type": "paragraph", "text": "Joyride Autos, a trailblazing entity in the realm of unclaimed and abandoned vehicle e-commerce, stands at the forefront of reshaping the automotive industry. With a visionary mission to revolutionize the clearance of impound lots, Joyride goes beyond being a mere online platform—it is a driving force committed to providing a comprehensive solution for buyers and sellers of unclaimed vehicles."},
@@ -120,8 +120,8 @@
         "id": 5,
         "title": "Fueling Pallet's Logistics Revolution through Seamless Data Migration",
         "summary": "Pallet, a trailblazer in the logistics industry, envisioned transforming the landscape through cutting-edge innovation. Their integrated Transportation Management System (TMS) and Warehouse Management System (WMS) promised end-to-end visibility and optimization, revolutionizing logistics operations.",
-        "imageone": "/assets/atob-card.png",
-        "imagetwo": "/assets/AToB-square.jpg",
+        "imageone": "/assets/pallet.png",
+        "imagetwo": "/assets/pallet square.png",
         "content": [
             {"type": "subheading", "text": "Navigating Pallet's Leap from Legacy to Innovation"},
             {"type": "paragraph", "text": "Pallet faced a critical challenge in migrating data from legacy platforms to their newly developed logistics systems. The intricacies of handling client information, transactional data, and ensuring a seamless transition posed significant hurdles. The risk of data loss and disruption in operations loomed large."},
@@ -145,8 +145,8 @@
         "id": 6,
         "title": "Revolutionizing Solar Sales: Phi Consulting's Impact on Sungrade Solar's Success",
         "summary": "Sungrade Solar, an American technology company specializing in residential solar panel installations, approached Phi Consulting seeking expertise in optimizing their sales process. Recognizing the potential for growth in the renewable energy sector, Sungrade Solar aimed to enhance its sales strategy for increased efficiency and profitability",
-        "imageone": "/assets/atob-card.png",
-        "imagetwo": "/assets/AToB-square.jpg",
+        "imageone": "/assets/Solar.png ",
+        "imagetwo": "/assets/Sungrade Solar square.png",
         "content": [
             
             {"type": "subheading", "text": "Unveiling Challenges in Sungrade Solar's Growth Trajectory"},
@@ -172,7 +172,7 @@
         "id": 7,
         "title": "Phi Consulting's Impact on Bobtail's Triumph",
         "summary": "Founded in 2015, Bobtail is a forward-thinking financial service provider in the trucking industry. Their mission is to eliminate inefficiencies in the supply chain and create a seamless business environment. Offering factoring and fleet card services, Bobtail empowers trucking companies to stay in control of their businesses and succeed based on the value they create",
-        "imageone": "/assets/atob-card.png",
+        "imageone": "/assets/Bobtail.png",
         "imagetwo": "/assets/AToB-square.jpg",
         "content": [
            
