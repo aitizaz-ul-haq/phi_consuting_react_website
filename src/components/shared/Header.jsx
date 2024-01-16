@@ -27,9 +27,9 @@ const Header = () => {
         <Link to="/services" className="dropdown-btn"><span className="dropdown-btn">Solutions</span></Link>
           <div className="dropdown-content">
             <Link to="GTM-advisory"><img src={headericonthree} alt="" width="34" height="34" className='header-icons-spacing' /><span>GTM Strategy</span> </Link>
-            <Link to="hr-consulting"> <img src={headericonone} alt="" width="34" height="34" className='header-icons-spacing' /> <span>HR & Recruitment</span></Link>
-            <Link to="investor-relations"> <img src={headericontwo} alt="" width="34" height="34" className='header-icons-spacing' /><span>Investor Relations</span></Link>
-            <Link to="financial-consulting"> <img src={headericonfour} alt="" width="34" height="34" className='header-icons-spacing' /> <span>Financial Consulting</span></Link>
+            <Link to="hr-consulting"><img src={headericonone} alt="" width="34" height="34" className='header-icons-spacing' /> <span>HR & Recruitment</span></Link>
+            <Link to="investor-relations"><img src={headericontwo} alt="" width="34" height="34" className='header-icons-spacing' /><span>Investor Relations</span></Link>
+            <Link to="financial-consulting"><img src={headericonfour} alt="" width="34" height="34" className='header-icons-spacing' /><span>Financial Consulting</span></Link>
             
           </div>
         </div>
