@@ -1,5 +1,14 @@
 import React from 'react';
 import philogomainpage from '../../assets/img/phi_logo.webp';
+
+import headericonone from "../../assets/img/Header-icons/human-resources.png";
+import headericontwo from "../../assets/img/Header-icons/relations.png";
+import headericonthree from "../../assets/img/Header-icons/research.png";
+import headericonfour from "../../assets/img/Header-icons/risk.png";
+
+import insughtsone from "../../assets/img/Header-icons/blog.png";
+import insughtstwo from "../../assets/img/Header-icons/case-study.png";
+
 import { Link } from 'react-router-dom';
 
 
@@ -17,18 +26,18 @@ const Header = () => {
         <div className="dropdown">
         <Link to="/services" className="dropdown-btn"><span className="dropdown-btn">Solutions</span></Link>
           <div className="dropdown-content">
-            <Link to="GTM-advisory">GTM Strategy</Link>
-            <Link to="hr-consulting">HR & Recruitment</Link>
-            <Link to="investor-relations">Investor Relations</Link>
-            <Link to="financial-consulting">Financial Consulting</Link>
+            <Link to="GTM-advisory"><img src={headericonthree} alt="" width="34" height="34" className='header-icons-spacing' /><span>GTM Strategy</span> </Link>
+            <Link to="hr-consulting"> <img src={headericonone} alt="" width="34" height="34" className='header-icons-spacing' /> <span>HR & Recruitment</span></Link>
+            <Link to="investor-relations"> <img src={headericontwo} alt="" width="34" height="34" className='header-icons-spacing' /><span>Investor Relations</span></Link>
+            <Link to="financial-consulting"> <img src={headericonfour} alt="" width="34" height="34" className='header-icons-spacing' /> <span>Financial Consulting</span></Link>
             
           </div>
         </div>
         <div className="dropdown">
         <Link className="dropdown-btn"><span className="dropdown-btn">Insights</span></Link>
           <div className="dropdown-content">
-            <Link to="/blogs">Blogs</Link>
-            <Link to="/casestudies">Case Studies</Link>
+            <Link to="/blogs"> <img src={insughtsone} alt="" width="34" height="34" className='header-icons-spacing' /><span>Blogs</span></Link>
+            <Link to="/casestudies"> <img src={insughtstwo} alt="" width="34" height="34" className='header-icons-spacing' /><span>Case Studies</span></Link>
           </div>
         </div>
         <span

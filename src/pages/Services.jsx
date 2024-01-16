@@ -8,7 +8,7 @@ import SalesConsulting from './sub_pages/SalesConsulting';
 
 import salesicon from "../assets/img/solutions icons/GTM.png";
 import buisnessicon from "../assets/img/solutions icons/Investor Relations.png";
-import financialicon from "../assets/img/white_icons/financial (2).png";
+import financialicon from "../assets/img/solutions icons/fin.png";
 import hricon from "../assets/img/white_icons/human-resources.png";
 import cxicon from "../assets/img/white_icons/customer-experience.png";
 

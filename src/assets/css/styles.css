@@ -322,19 +322,39 @@ header {
     min-width: 160px;
     min-width: 160px;
     width: 300px;
+    border-bottom: 8px solid #00BCD4;
+    border-radius: 15px;
 }
 
 .dropdown-content a {
     color: var(--BLACK-TEXT);
-    padding: 12px 16px;
+    padding: 22px 40px;
     text-decoration: none;
     display: block;
     transition: background-color 0.3s;
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: flex-start;
+    border-radius: 15px;
+}
+
+.dropdown-content a span {
+    transition: transform 0.3s; /* Transition for scaling the text */
+}
+
+.header-icons-spacing {
+    margin-right: 10px;
+}
+
+.dropdown-content a:hover span {
+    transform: scale(1.05); /* Scale the text up slightly on hover */
+    color: var(--DARK-PHI-BLUE);
 }
 
 .dropdown-content a:hover {
     background-color: var(--LIGHT-PHI-BLUE);
-    color: var(--DARK-PHI-BLUE);
+    /* color: var(--DARK-PHI-BLUE); */
+    /* transform: scale(1.05); */
 }
 
 .dropdown:hover .dropdown-content {
