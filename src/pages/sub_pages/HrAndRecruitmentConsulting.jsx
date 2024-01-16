@@ -135,7 +135,8 @@ const HrAndRecruitmentConsulting = () => {
         <section class="hero-container-hr-consul">
           <div class="hero-content-hr-consul">
             <h2 class="hero-heading-hr-consul">
-            Strategy and Support to Scale Your Growing Business
+            Hiring that’s efficient on cost and effective on value
+
             </h2>
             <p class="hero-desc-hr-consul">
             Phi Consulting connects emerging startups with top talent in a 5-stage hiring process. We ensure that the talent selected is not only highly skilled but also global-ready.

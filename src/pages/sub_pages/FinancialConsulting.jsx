@@ -120,6 +120,7 @@ const FiancialConsulting = () => {
      observer.observe(containerRef.current);
      return () => observer.disconnect(); 
  }, []);
+ 
 
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return(
@@ -130,7 +131,9 @@ const FiancialConsulting = () => {
           <div class="hero-content-fin-consul">
             <h2 class="hero-heading-fin-consul">
             Strategy and Support to Scale Your Growing Business
-
+            {/* <pre>
+    {'This is the first sentence.\nThis is the second sentence.'}
+  </pre> */}
             </h2>
             <p class="hero-desc-fin-consul">
             At Phi Consulting we understand what it’s like not to be able to raise capital for a good business idea because of lack of clarity in the numbers. And, with our financial consulting service for startups, we’ve helped many startups organize their finances and elevate their financial knowledge.
@@ -536,9 +539,7 @@ const FiancialConsulting = () => {
           <div class="overlay"></div>
           <div class="banner-new-full-scale-container">
             <h2 class="full-banner-call">
-              42% businesses adopt go-to-market strategies for calculating
-              customer value, 28% for business expansion/upgrades, and 61% to
-              build customer experience
+            71% of financial service executives outsource or offshore some of their services. While 61% of organizations said geopolitical world events like COVID accelerated their digital transformation efforts.
             </h2>
           </div>
         </section>

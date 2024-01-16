@@ -10,12 +10,12 @@ import digitalOcean from '../../assets/img/new_logos_comps/newer/digital-ocean.p
 import mudflap from '../../assets/img/new_logos_comps/newer/Mudflap.png';
 import sungrade from '../../assets/img/new_logos_comps/sungrade solar.png';
 
-import salesone from "../../assets/img/black_logos/inbound.png";
-import salestwo from "../../assets/img/black_logos/outbound.png";
-import salesthree from "../../assets/img/black_logos/enablement.png";
-import salesfour from "../../assets/img/black_logos/expansion.png";
-import salesfive from "../../assets/img/black_logos/product led growth.png";
-import salessix from "../../assets/img/black_logos/button.png";
+import salesone from "../../assets/img/GTM Advisory/sales.png";
+import salestwo from "../../assets/img/GTM Advisory/experience.png";
+import salesthree from "../../assets/img/GTM Advisory/enablement.png";
+// import salesfour from "../../assets/img/black_logos/expansion.png";
+// import salesfive from "../../assets/img/black_logos/product led growth.png";
+// import salessix from "../../assets/img/black_logos/button.png";
 
 import goal from "../../assets/img/process_icons/goal.png";
 import planicon from "../../assets/img/process_icons/plan.png";
@@ -36,7 +36,7 @@ import caseStudies from '../../data/caseStudies.json';
 const SalesConsulting = () => {
 
   const [isVisibleTesti, setIsVisibleTesti] = useState(false);
- const testiRef = useRef(null);
+  const testiRef = useRef(null);
 
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef(null);

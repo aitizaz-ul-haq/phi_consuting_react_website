@@ -32,12 +32,12 @@ import achiconone from "../../assets/img/achievements-badges/clutch_1.png";
 import achicontwo from "../../assets/img/achievements-badges/BBB.png";
 import achiconthree from "../../assets/img/achievements-badges/clutch_2.png";
 
-import bcone from "../../assets/img/buisness_consulting/business transformation.png";
-import bctwo from "../../assets/img/buisness_consulting/strategy.png";
-import bcthree from "../../assets/img/buisness_consulting/project-management.png";
-import bcfour from "../../assets/img/buisness_consulting/operations.png";
-import bcfive from "../../assets/img//buisness_consulting_icons/process management.png";
-import bcsix from "../../assets/img/buisness_consulting/management consultant.png";
+import bcone from "../../assets/img/investor-realtions-icons/Awareness.png";
+import bctwo from "../../assets/img/investor-realtions-icons/equity.png";
+import bcthree from "../../assets/img/investor-realtions-icons/liquidity.png";
+import bcfour from "../../assets/img/investor-realtions-icons/low hanging fruits.png";
+import bcfive from "../../assets/img/investor-realtions-icons/content.png";
+import bcsix from "../../assets/img/investor-realtions-icons/brand.png";
 
 import caseStudies from '../../data/caseStudies.json';
 
@@ -159,7 +159,7 @@ useEffect(() => {
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Boost Investor Awareness</h3>
+            <h3 class="sales-card-title">Investor Awareness</h3>
             <div class="sales-card-description">
             Employ targeted strategies to elevate your company as a standout investment, increasing visibility in the market
             </div>
@@ -174,7 +174,7 @@ useEffect(() => {
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Clarify Equity Stories</h3>
+            <h3 class="sales-card-title">Equity Stories</h3>
             <div class="sales-card-description">
             Transform complex equity narratives into compelling and engaging stories that resonate with investors.
             </div>
@@ -188,7 +188,7 @@ useEffect(() => {
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Boost Stock Liquidity</h3>
+            <h3 class="sales-card-title">Stock Liquidity</h3>
             <div class="sales-card-description">
             Enhance trading volume through strategic, long-term initiatives that strengthen market liquidity for your stocks.
             </div>
@@ -204,7 +204,7 @@ useEffect(() => {
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Pick Low-Hanging Fruits</h3>
+            <h3 class="sales-card-title">Low-Hanging Fruits</h3>
             <div class="sales-card-description">
             Elevate your Investor Relations (IR) efforts instantly by incorporating digital methods for immediate and impactful results
             </div>
@@ -219,7 +219,7 @@ useEffect(() => {
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Utilize Existing IR Content</h3>
+            <h3 class="sales-card-title">IR Content</h3>
             <div class="sales-card-description">
             Maximize efficiency for time-strapped Investor Relations Officers (IROs) by repurposing and optimizing existing IR pillar content.
             </div>
@@ -233,7 +233,7 @@ useEffect(() => {
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Leverage Your IR Brand</h3>
+            <h3 class="sales-card-title">IR Brand</h3>
             <div class="sales-card-description">
             Acquire the skills and tools necessary to successfully navigate digital media, leveraging your IR brand for heightened market presence
             </div>
@@ -538,9 +538,7 @@ useEffect(() => {
           <div class="overlay"></div>
           <div class="banner-new-full-scale-container">
             <h2 class="full-banner-call">
-              42% businesses adopt go-to-market strategies for calculating
-              customer value, 28% for business expansion/upgrades, and 61% to
-              build customer experience
+            Shareholder registration is the most outsourced IR activity, with 77 percent of investor relations teams relying on external providers. Shareholder identification and annual report design follow closely at 64 percent and 58 percent, respectively.
             </h2>
           </div>
         </section>

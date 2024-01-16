@@ -6,8 +6,8 @@ import BuisnessConsulting from './sub_pages/BuisnessConsulting';
 import HrConsulting from './sub_pages/HrAndRecruitmentConsulting';
 import SalesConsulting from './sub_pages/SalesConsulting';
 
-import salesicon from "../assets/img/white_icons/sales.png";
-import buisnessicon from "../assets/img/white_icons/business.png";
+import salesicon from "../assets/img/solutions icons/GTM.png";
+import buisnessicon from "../assets/img/solutions icons/Investor Relations.png";
 import financialicon from "../assets/img/white_icons/financial (2).png";
 import hricon from "../assets/img/white_icons/human-resources.png";
 import cxicon from "../assets/img/white_icons/customer-experience.png";
@@ -21,13 +21,6 @@ import impicon from "../assets/img/process_icons/implement.png";
 import monitoricon from "../assets/img/process_icons/monitor.png";
 import improveicon from "../assets/img/process_icons/improve.png";
 
-// import workcardimgone from "../assets/img/atob-card.png";
-// import workcardtwo from "../assets/img/digitalocean-product.png";
-// import workcardthree from "../assets/img/truckx-case.png";
-
-// import squareiconone from "../assets/img/comp_logos/AToB-square.jpg";
-// import squareicontwo from "../assets/img/comp_logos/digitalocean-square.png";
-// import squareiconthree from "../assets/img/comp_logos/truck-square.png";
 
 import achiconone from "../assets/img/achievements-badges/clutch_1.png";
 import achicontwo from "../assets/img/achievements-badges/BBB.png";
@@ -87,7 +80,7 @@ const Services = () => {
 }, []);
 
   const handleTabClickOne = () => {
-    window.location.href = '/buisness-consulting';
+    window.location.href = '/investor-relations';
   } 
 
   const handleTabClickTwo = () => {
@@ -103,7 +96,7 @@ const Services = () => {
   } 
 
   const handleTabClickFive = () => {
-    window.location.href = '/sales-consulting';
+    window.location.href = '/GTM-advisory';
   } 
 
   const gotoContacts = () => {
@@ -157,7 +150,7 @@ const Services = () => {
                   class="icon-adjuster"
                 />
               </div>
-              <h3 class="card-present-title">Sales Consulting</h3>
+              <h3 class="card-present-title">GTM Advisory</h3>
               <div class="card-present-desc">
                 Scale your sales operations with precision and excellence,
                 targeting the right customers and optimizing sales cycles.
@@ -173,7 +166,7 @@ const Services = () => {
                   class="icon-adjuster"
                 />
               </div>
-              <h3 class="card-present-title">Business Consulting</h3>
+              <h3 class="card-present-title">Investor Relations</h3>
               <div class="card-present-desc">
                 Navigate challenges, optimize strategies, and achieve
                 sustainable growth with our proven expertise.
@@ -195,8 +188,24 @@ const Services = () => {
                 financial guidance.
               </div>
             </div>
+            <div class="card-service-show sales-tab-four" onClick={handleTabClickFour}>
+              <div class="circleBasetwo typetwo">
+                <img
+                  src={hricon}
+                  alt=""
+                  width="100"
+                  height="100"
+                  class="icon-adjuster"
+                />
+              </div>
+              <h3 class="card-present-title">HR & Recruitment</h3>
+              <div class="card-present-desc">
+                Build a dynamic and skilled workforce with our specialized HR
+                solutions.
+              </div>
+            </div>
           </div>
-          <div class="card-row-top">
+          {/* <div class="card-row-top">
             <div class="card-service-show sales-tab-four" onClick={handleTabClickFour}>
               <div class="circleBasetwo typetwo">
                 <img
@@ -229,7 +238,7 @@ const Services = () => {
                 operational efficiency.
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </article>
 
