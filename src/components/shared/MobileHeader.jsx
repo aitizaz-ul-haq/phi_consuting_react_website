@@ -76,8 +76,13 @@ const MobileHeader = () => {
                 </a>
               </li>
               <li>
-                <a href="/insights" className="header-mobile-link" onClick={closeMobileMenu}>
-                Insights
+                <a href="/blogs" className="header-mobile-link" onClick={closeMobileMenu}>
+                Blogs
+                </a>
+              </li>
+              <li>
+                <a href="/casestudies" className="header-mobile-link" onClick={closeMobileMenu}>
+                Case Studies
                 </a>
               </li>
               <li>

@@ -4909,7 +4909,7 @@ align-items: center;
     font-size: var(--FS-MINI-HEADING);
     font-weight: var(--FONT-THICKY);
     color: var(--LIGHTER-DARK-PHI-BLUE);
-    text-align: justify;
+    /* text-align: justify; */
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
@@ -5033,7 +5033,7 @@ align-items: center;
     flex-direction: column;
     justify-content: center;
     align-items: left;
-    text-align: justify;
+    /* text-align: justify; */
 }
 
 .casestudyreaderimg {
@@ -9482,6 +9482,10 @@ display: none;
          z-index: 1000;
     }
 
+    .buttons span {
+        padding: 8px 9px;
+    }
+
     .line-top {
         /* margin-top: 8rem; */
         text-align: left;
@@ -10433,6 +10437,10 @@ display: none;
     .hero-container-bui-consul {
         justify-content: left;
         align-items: left;
+    }
+
+    .buttons span {
+        padding: 8px 15px;
     }
 
     .line-top {
@@ -11517,7 +11525,7 @@ display: none;
         font-size: var(--FS-MINI-HEADING);
         font-weight: var(--FONT-THICKY);
         color: var(--LIGHTER-DARK-PHI-BLUE);
-        text-align: justify;
+        /* text-align: justify; */
         margin-top: 2rem;
         margin-bottom: 2rem;
     }

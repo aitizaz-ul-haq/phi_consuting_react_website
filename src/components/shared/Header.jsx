@@ -28,7 +28,7 @@ const Header = () => {
         <Link className="dropdown-btn"><span className="dropdown-btn">Insights</span></Link>
           <div className="dropdown-content">
             <Link to="/blogs">Blogs</Link>
-            <Link to="/casestudies">CaseStudies</Link>
+            <Link to="/casestudies">Case Studies</Link>
           </div>
         </div>
         <span
