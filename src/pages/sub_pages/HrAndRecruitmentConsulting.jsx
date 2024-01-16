@@ -135,7 +135,7 @@ const HrAndRecruitmentConsulting = () => {
         <section class="hero-container-hr-consul">
           <div class="hero-content-hr-consul">
             <h2 class="hero-heading-hr-consul">
-            Hiring that’s efficient on cost and effective on value
+            Hiring that’s efficient <br /> on cost and effective on value
 
             </h2>
             <p class="hero-desc-hr-consul">

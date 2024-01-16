@@ -130,10 +130,10 @@ useEffect(() => {
             <h2 class="hero-heading-sales">
               {/* <!-- Transforming Possibilities <br />
               into Profits --> */}
-              Your Gateway to Strategic GTM Advisory
+              Your Gateway to Strategic GTM Consultancy
             </h2>
             <p class="hero-desc-sales">
-            We unlock product success through deep consumer behavior insights and strategic GTM Advisory Consultancy. As a trusted partner for emerging startups, we specialize in Sales, Customer Experience, and Sales Enablement
+            We unlock product success through deep consumer behavior insights and strategic GTM Consultancy. As a trusted partner for emerging startups, we specialize in Sales, Customer Experience, and Sales Enablement
             </p>
             <div class="consult-button-sales"> <Link to="/contact" className='scheduler-set'>Schedule a Free Consultation</Link> </div>
           </div>

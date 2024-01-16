@@ -130,7 +130,7 @@ const FiancialConsulting = () => {
         <section class="hero-container-fin-consul">
           <div class="hero-content-fin-consul">
             <h2 class="hero-heading-fin-consul">
-            Strategy and Support to Scale Your Growing Business
+            Strategy and Support <br /> to Scale Your Growing Business
             {/* <pre>
     {'This is the first sentence.\nThis is the second sentence.'}
   </pre> */}
