@@ -7728,6 +7728,9 @@ display : none;
 .hero-content {
 text-align : center;
 }
+.consult-button {
+    margin-left: 1.9rem;
+}
 .line-top {
 font-size : 17px;
 }
@@ -8332,7 +8335,7 @@ display : none;
 font-size : 16px;
 }
 .consult-button {
-margin-left : 6rem;
+margin-left : 7rem;
 }
 .client-content {
 width : 84%;

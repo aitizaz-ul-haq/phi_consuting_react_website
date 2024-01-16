@@ -36,13 +36,13 @@ const MobileHeader = () => {
               </li>
               <li>
                 <a href="/services" className="header-mobile-link" onClick={closeMobileMenu}>
-                  Services
+                  Solutions
                 </a>
               </li>
               
               <li>
-                <a href="/sales-consulting" className="header-mobile-link" onClick={closeMobileMenu}>
-                Sales Consulting
+                <a href="/GTM-advisory" className="header-mobile-link" onClick={closeMobileMenu}>
+                GTM Strategy
                 </a>
               </li>
               <li>
@@ -51,18 +51,18 @@ const MobileHeader = () => {
                 </a>
               </li>
               <li>
-                <a href="/buisness-consulting" className="header-mobile-link" onClick={closeMobileMenu}>
-                  Buisness Consulting
+                <a href="/investor-relations" className="header-mobile-link" onClick={closeMobileMenu}>
+                  Investor Relations
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="/customer-experience" className="header-mobile-link" onClick={closeMobileMenu}>
                 Customer Experience <br /> Consulting
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a href="/hr-consulting" className="header-mobile-link" onClick={closeMobileMenu}>
-                  hr & Recruitment <br /> Consulting
+                  hr & Recruitment 
                 </a>
               </li>
               <li>
