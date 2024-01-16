@@ -28,7 +28,7 @@ import { TypeAnimation } from 'react-type-animation';
 import blogs from "../data/blogs.json";
 import caseStudies from "../data/caseStudies.json";
 
-import david from "../assets/video/financial-back.mp4";
+import david from "../assets/video/world.mp4";
 
 const HomePage = () => {
 
