@@ -170,7 +170,7 @@ useEffect(() => {
       sequence={[
         // Same substring at the start will only be typed out once, initially
         'Leadership Through Partnership',
-        3000, 
+        7000, 
        
       ]}
       wrapper="span"
