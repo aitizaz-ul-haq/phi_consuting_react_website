@@ -50,7 +50,6 @@ const SalesConsulting = () => {
   const [processNewVisible, setProcessNewVisible] = useState(false);
   const processNewRef = useRef(null);
 
- 
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -68,8 +67,6 @@ const SalesConsulting = () => {
     return () => observer.disconnect();
   }, []);
   
-
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -87,7 +84,6 @@ const SalesConsulting = () => {
     return () => observer.disconnect();
   }, []);
   
-
   useEffect(() => {
     const observer = new IntersectionObserver(
         (entries) => {
@@ -108,7 +104,6 @@ useEffect(() => {
   observer.observe(testiRef.current);
   return () => observer.disconnect();
 }, []);
-
 
 useEffect(() => {
     const observer = new IntersectionObserver(entries => {

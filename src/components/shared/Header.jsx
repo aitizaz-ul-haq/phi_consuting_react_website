@@ -52,8 +52,6 @@ const Header = () => {
         <span
           > <Link to="/aboutus" className="inner-header">About us</Link></span
         >
-        
-        
         <span
           >
            <Link to="/careers" className="inner-header">Careers</Link>
