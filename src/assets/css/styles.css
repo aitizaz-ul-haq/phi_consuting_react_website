@@ -299,6 +299,28 @@ header {
     color: var(--LIGHT-PHI-BLUE);
 }
 
+.round-button {
+    width: 100px;         /* Fixed width */
+    height: 100px;        /* Fixed height - equal to the width to maintain round shape */
+    line-height: 50px;   /* This should be equal to the height for vertical centering */
+    text-align: center;  /* Center text horizontally */
+    border-radius: 50%;  /* This makes the button round */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    background-color: #4CAF50; /* Example background color */
+    color: white; /* Example text color */
+    font-size: 14px; /* Adjust as necessary */
+    display: block; /* Makes it easier to center the button if needed */
+    margin: 0 auto; 
+    
+    
+  }
+  
+  .round-button:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Smooth shadow on hover */
+  }
+
 .dropdown {
     display: inline-block;
     position: relative;

@@ -25,6 +25,7 @@ import CaseStudyMacroComps from '../components/shared/macroComps/CaseStudyMacroC
 import BlogCard from '../components/shared/cards/BlogCard';
 import CustomVideo from '../components/shared/videoComp/CustomVideo';
 import { TypeAnimation } from 'react-type-animation';
+import ScrollToTopButton from '../components/shared/buttons/ScrollToTopButton';
 import blogs from "../data/blogs.json";
 import caseStudies from "../data/caseStudies.json";
 
@@ -657,6 +658,8 @@ useEffect(() => {
           </div>
         </section>
       </article>
+
+      <ScrollToTopButton />
     </>
   )
 }

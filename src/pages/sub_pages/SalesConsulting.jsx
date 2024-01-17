@@ -114,7 +114,6 @@ useEffect(() => {
     return () => observer.disconnect(); 
 }, []);
 
-
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (
         <>
