@@ -163,9 +163,7 @@ useEffect(() => {
           {windowWidth >= 1200 && <CustomVideo src={david} />}
             {/* <!-- <h3 class="line-top">Leadership Through Partnership</h3> --> */}
             <h2 class="hero-heading">
-              
               <span class="phi">
-                
               {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
         // Same substring at the start will only be typed out once, initially
@@ -178,9 +176,7 @@ useEffect(() => {
       style={{ fontSize: '40px', display: 'inline-block' }}
       repeat={Infinity}
     /> : 'Leadership Through Partnership'}
-                
                 </span>
-              
             </h2>
             <p class="hero-desc">
               Phi Consulting is your dedicated technology consulting partner,
