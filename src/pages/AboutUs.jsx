@@ -11,17 +11,37 @@ import abudullahportrait from "../assets/img/phi_people/Abdullah.jpg";
 import razaportrait from "../assets/img/phi_people/Raza.jpg";
 import ismailportrait from "../assets/img/phi_people/ismail.jpg";
 
+import useScrollToTop from '../hooks/useScrollToTop';
+
 
 const AboutUs = () => {
 
 
-   const [isVisibleTesti, setIsVisibleTesti] = useState(false);
+  const [isVisibleTesti, setIsVisibleTesti] = useState(false);
   const testiRef = useRef(null);
 
   const [isVisibleAch, setIsVisibleAch] = useState(false);
-   const achRef = useRef(null);
+  const achRef = useRef(null);
 
-   useEffect(() => {
+  const [isVisibleServices, setIsVisibleServices] = useState(false);
+  const servicesRef = useRef(null);
+
+  const [isTeem, setIsTeem] = useState(false);
+  const teemRef = useRef(null);
+
+  const [isVisibleInnovation, setIsVisibleInnovation] = useState(false);
+  const innovationRef = useRef(null);
+
+  const [isVisibleCollaboration, setIsVisibleCollaboration] = useState(false);
+  const collaborationRef = useRef(null);
+
+  const [isVisibleIntegrity, setIsVisibleIntegrity] = useState(false);
+  const integrityRef = useRef(null);
+
+  const [isVisibleAgility, setIsVisibleAgility] = useState(false);
+  const agilityRef = useRef(null);
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
@@ -31,7 +51,7 @@ const AboutUs = () => {
 
     observer.observe(achRef.current);
     return () => observer.disconnect();
-}, []);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -42,11 +62,48 @@ const AboutUs = () => {
     return () => observer.disconnect();
   }, []);
 
-  
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => setIsVisibleServices(entry.isIntersecting));
+    }, { threshold: 0.5 }); // Adjust threshold as needed
+
+    observer.observe(servicesRef.current);
+    return () => observer.disconnect();
+}, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => setIsTeem(entry.isIntersecting));
+    }, { threshold: 0.5 }); // Adjust threshold as needed
+
+    observer.observe(teemRef.current);
+    return () => observer.disconnect();
+}, []);
+
+useEffect(() => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.target === innovationRef.current) {
+        setIsVisibleInnovation(entry.isIntersecting);
+      } else if (entry.target === collaborationRef.current) {
+        setIsVisibleCollaboration(entry.isIntersecting);
+      }
+      // Add similar conditions for other sections
+    });
+  }, { threshold: 0.5 });
+
+  if (innovationRef.current) observer.observe(innovationRef.current);
+  if (collaborationRef.current) observer.observe(collaborationRef.current);
+  // Add observe for other refs
+
+  return () => observer.disconnect();
+}, []);
 
   const gotoContacts = () => {
     window.location.href = '/contact';
   }
+
+  useScrollToTop();
   return (
     <>
      {/* <!-- Hero Section --> */}
@@ -71,7 +128,7 @@ const AboutUs = () => {
       </article>
 
       {/* <!-- about phi Section --> */}
-      <article class="about-phi">
+      <article className={`about-phi ${isVisibleServices ? 'visible' : ''}`} ref={servicesRef}>
         <section class="about-phi-container">
           <div class="about-phi-content">
             <h2 class="about-phi-heading">
@@ -110,7 +167,7 @@ const AboutUs = () => {
               Guided by Excellence, Driven by Values
             </h3> --> */}
           </div>
-          <div class="core-value-tiles-container">
+          <div className={`core-value-tiles-container ${isVisibleInnovation ? 'fade-in-left' : ''}`} ref={innovationRef}>
             <div class="left-filled-heading-container">
               <h3 class="value-heading-box">
                 I<span class="letters-whitened">nn</span>ovation
@@ -123,7 +180,7 @@ const AboutUs = () => {
             </div>
           </div>
           <br />
-          <div class="core-value-tiles-container">
+          <div className={`core-value-tiles-container ${isVisibleCollaboration ? 'fade-in-right' : ''}`} ref={collaborationRef}>
             <div class="right-text-paragraph-container">
               <p class="right-text-intile">
                 Building partnerships that foster <br />
@@ -137,7 +194,7 @@ const AboutUs = () => {
             </div>
           </div>
           <br />
-          <div class="core-value-tiles-container">
+          <div className={`core-value-tiles-container ${isVisibleInnovation ? 'fade-in-left' : ''}`} ref={integrityRef}>
             <div class="left-filled-heading-container">
               <h3 class="value-heading-box">
                 In<span class="letters-whitened">teg</span>rity
@@ -150,7 +207,7 @@ const AboutUs = () => {
             </div>
           </div>
           <br />
-          <div class="core-value-tiles-container">
+          <div className={`core-value-tiles-container ${isVisibleCollaboration ? 'fade-in-right' : ''}`} ref={agilityRef}>
             <div class="right-text-paragraph-container">
               <p class="right-text-intile">
                 Adapting strategies to align with the dynamic needs of your
@@ -167,7 +224,7 @@ const AboutUs = () => {
       </article>
 
       {/* <!-- Meet the team --> */}
-      <article class="meet">
+      <article  className={`meet ${isTeem ? 'visible' : ''}`} ref={teemRef}>
         <section class="meet-container">
           <div class="meet-people-train">
             <h2 class="meet-heading">Brains Behind the Brilliance</h2>

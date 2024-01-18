@@ -4117,8 +4117,8 @@ align-items: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
   }
 
   .meet-people-train {
@@ -11439,6 +11439,81 @@ display: none;
         opacity: 1;
         transform: translateY(0); /* Transition to its original position */
     }
+
+
+    .clients.animate .about-phi:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .client-logos-sectio-hover {
+        transition: transform 0.2s ease;
+    }
+
+    .client-logos-sectio-hover:hover {
+        transform: scale(1.1);
+    }
+
+    .about-phi {
+        opacity: 0;
+        transform: translateY(50px); /* Controls the initial position */
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+    
+    .about-phi.visible {
+        opacity: 1;
+        transform: translateY(0); /* Transition to its original position */
+    }
+
+    .clients.animate .meet:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .client-logos-sectio-hover {
+        transition: transform 0.2s ease;
+    }
+
+    .client-logos-sectio-hover:hover {
+        transform: scale(1.1);
+    }
+
+    .meet {
+        opacity: 0;
+        transform: translateY(50px); 
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+    
+    .meet.visible {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+
+    .pic-box {
+        transition: transform 0.3s ease; /* Smooth transition for scale */
+        display: inline-block; /* or as per your layout */
+      }
+      
+      .pic-box:hover {
+        transform: scale(1.1); /* Increase the size by 10% on hover */
+      }
+
+    @keyframes fadeInLeft {
+        from { opacity: 0; transform: translateX(-50px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      
+      @keyframes fadeInRight {
+        from { opacity: 0; transform: translateX(50px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      
+      .fade-in-left {
+        animation: fadeInLeft 1s ease forwards;
+      }
+      
+      .fade-in-right {
+        animation: fadeInRight 1s ease forwards;
+      }
+      
     
 
     .services-heading {
@@ -12561,6 +12636,8 @@ display: block;
 .about-phi-container {
     width: 100%;
     margin: 0;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
 }
 
 .about-phi-heading { 
