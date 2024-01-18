@@ -31,7 +31,7 @@ import SmallWorkCard from '../../components/shared/cards/SmallWorkCard';
 import achiconone from "../../assets/img/achievements-badges/clutch_1.png";
 import achicontwo from "../../assets/img/achievements-badges/BBB.png";
 import achiconthree from "../../assets/img/achievements-badges/clutch_2.png";
-
+import useScrollToTop from '../../hooks/useScrollToTop';
 import caseStudies from '../../data/caseStudies.json';
 
 
@@ -123,6 +123,7 @@ const FiancialConsulting = () => {
  
 
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
+  useScrollToTop();
     return(
         <>
          {/* <!-- Hero Section --> */}

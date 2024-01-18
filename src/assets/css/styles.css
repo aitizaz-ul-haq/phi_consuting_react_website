@@ -322,7 +322,7 @@ header {
   }
   
   .round-button:hover {
-    box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.2); /* Smooth shadow on hover */
+    box-shadow: 0px 0px 35px var(--DARK-PHI-BLUE); /* Smooth shadow on hover */
   }
 
 .dropdown {

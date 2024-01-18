@@ -4,11 +4,15 @@ import { Link } from 'react-router-dom';
 import blogs from '../data/blogs.json';
 import BlogCard from '../components/shared/cards/BlogCard';
 
+import useScrollToTop from '../hooks/useScrollToTop';
+
 const Blog = () => {
 
   const gotoContacts = () => {
     window.location.href = '/contact';
   }
+
+  useScrollToTop();
   return (
     <>
     {/* <!-- Hero Section --> */}

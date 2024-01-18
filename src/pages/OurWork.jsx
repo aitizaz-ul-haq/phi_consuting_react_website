@@ -16,7 +16,7 @@ import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
 import caseStudies from "../data/caseStudies.json";
 import LengthyWorkCard from '../components/shared/cards/LengthyWorkCard';
 
-
+import useScrollToTop from '../hooks/useScrollToTop';
 
 const OurWork = () => {
 
@@ -63,6 +63,7 @@ const OurWork = () => {
     window.location.href = '/contact';
   }
 
+  useScrollToTop();
 
   return (
     <>
