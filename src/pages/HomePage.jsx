@@ -27,7 +27,7 @@ import { TypeAnimation } from 'react-type-animation';
 import ScrollToTopButton from '../components/shared/buttons/ScrollToTopButton';
 import blogs from "../data/blogs.json";
 import caseStudies from "../data/caseStudies.json";
-
+import useScrollToTop from '../hooks/useScrollToTop';
 import david from "../assets/video/world.mp4";
 
 const HomePage = () => {
@@ -153,6 +153,7 @@ useEffect(() => {
   }
 
   const firstTwoBlogs = blogs.slice(0, 2);
+  useScrollToTop();
   return (
     <>
           {/* <!-- Hero Section --> */}
