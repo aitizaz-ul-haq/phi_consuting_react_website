@@ -15,7 +15,6 @@ import financial from '../assets/img/services-icons/financial.png';
 import hr from '../assets/img/services-icons/hr.png';
 import sales from '../assets/img/services-icons/sales.png';
 
-
 import clutchone from '../assets/img/achievements-badges/clutch_1.png';
 import BBB from '../assets/img/achievements-badges/BBB.png';
 import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';

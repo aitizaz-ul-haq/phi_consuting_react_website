@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import HomePage from './pages/HomePage';
 import AboutUs from './pages/AboutUs';
 import Blog from './pages/Blog';
@@ -25,6 +26,7 @@ import './assets/css/styles.css';
 
 
 const App = () => {
+
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
 
@@ -40,13 +42,10 @@ const App = () => {
     };
   }, []);
 
-  
+
   return (
     <Router>
        {isMobile ? <MobileHeader /> : <Header />}
-
-       
-       
       <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/aboutus" element={<AboutUs />} />
@@ -66,10 +65,6 @@ const App = () => {
       </Routes>
       <Footer />
     </Router>
-
-
-
-
   );
 };
 

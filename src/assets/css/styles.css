@@ -300,25 +300,29 @@ header {
 }
 
 .round-button {
-    width: 100px;         /* Fixed width */
-    height: 100px;        /* Fixed height - equal to the width to maintain round shape */
+    width: 120px;         /* Fixed width */
+    height: 120px;        /* Fixed height - equal to the width to maintain round shape */
     line-height: 50px;   /* This should be equal to the height for vertical centering */
     text-align: center;  /* Center text horizontally */
     border-radius: 50%;  /* This makes the button round */
     border: none;
     cursor: pointer;
     transition: all 0.3s ease; /* Smooth transition for hover effects */
-    background-color: #4CAF50; /* Example background color */
+    background-color: var(--LIGHT-PHI-BLUE); /* Example background color */
     color: white; /* Example text color */
     font-size: 14px; /* Adjust as necessary */
     display: block; /* Makes it easier to center the button if needed */
     margin: 0 auto; 
-    
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: var(--FF-PHI);
     
   }
   
   .round-button:hover {
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Smooth shadow on hover */
+    box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.2); /* Smooth shadow on hover */
   }
 
 .dropdown {
