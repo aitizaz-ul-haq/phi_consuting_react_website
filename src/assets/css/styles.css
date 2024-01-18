@@ -4516,7 +4516,7 @@ align-items: center;
 
 .job-card {
     width: 750px;
-    height: 100px;
+    height: auto;
     background: var(--WHITE-TEXT);
     display: flex;
     flex-direction: row;
@@ -4533,7 +4533,11 @@ align-items: center;
 }
 
 .apply-button-container {
-    width: 190px;
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .explore-button-container {
@@ -4544,7 +4548,8 @@ align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1rem;
+    width: 100%;
+    padding: 0.5rem;
 }
 
 .job-heading {
@@ -6396,6 +6401,33 @@ display: none;
     font-size: 13px;
  }
 
+ .job-card {
+    width: 280px;
+    height: auto;
+    background: var(--WHITE-TEXT);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    order: 1;
+    border-left: 8px solid var(--LIGHTER-DARK-PHI-BLUE);
+    border-top: 1px solid var(--LIGHT-PHI-BLUE);
+    border-bottom: 1px solid var(--LIGHT-PHI-BLUE);
+    border-right: 1px solid var(--LIGHT-PHI-BLUE);
+    margin: 1rem;
+    box-shadow: -1px 1px 14px -7px var(--LIGHTER-DARK-PHI-BLUE);
+}
+
+.apply-button-container {
+    width: 290px;
+    padding: 20px;
+}
+
+.right-button-header {
+    margin-left: 1rem;
+}
+
  /* ======================================contact page=========================== */
  .hero-content-phi-contact {
     width: 620px;
@@ -7099,6 +7131,33 @@ display: none;
     margin-left: 45px;
  }
 
+ .job-card {
+    width: 300px;
+    height: auto;
+    background: var(--WHITE-TEXT);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    order: 1;
+    border-left: 8px solid var(--LIGHTER-DARK-PHI-BLUE);
+    border-top: 1px solid var(--LIGHT-PHI-BLUE);
+    border-bottom: 1px solid var(--LIGHT-PHI-BLUE);
+    border-right: 1px solid var(--LIGHT-PHI-BLUE);
+    margin: 1rem;
+    box-shadow: -1px 1px 14px -7px var(--LIGHTER-DARK-PHI-BLUE);
+}
+
+.apply-button-container {
+    width: 290px;
+    padding: 20px;
+}
+
+.right-button-header {
+    margin-left: 1rem;
+}
+
  /* ===================================contact page========================== */
 
  .consult-button-phi-contact {
@@ -7741,6 +7800,33 @@ display: none;
     margin-left: 45px;
  }
 
+ .job-card {
+    width: 350px;
+    height: auto;
+    background: var(--WHITE-TEXT);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    order: 1;
+    border-left: 8px solid var(--LIGHTER-DARK-PHI-BLUE);
+    border-top: 1px solid var(--LIGHT-PHI-BLUE);
+    border-bottom: 1px solid var(--LIGHT-PHI-BLUE);
+    border-right: 1px solid var(--LIGHT-PHI-BLUE);
+    margin: 1rem;
+    box-shadow: -1px 1px 14px -7px var(--LIGHTER-DARK-PHI-BLUE);
+}
+
+.apply-button-container {
+    width: 290px;
+    padding: 20px;
+}
+
+.right-button-header {
+    margin-left: 1rem;
+}
+
  /* ===================================contact page============================= */
  .hero-content-phi-contact { 
     margin: 21px;
@@ -8351,6 +8437,33 @@ display: none;
     margin-left: 70px;
  }
 
+ .job-card {
+    width: 350px;
+    height: auto;
+    background: var(--WHITE-TEXT);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    order: 1;
+    border-left: 8px solid var(--LIGHTER-DARK-PHI-BLUE);
+    border-top: 1px solid var(--LIGHT-PHI-BLUE);
+    border-bottom: 1px solid var(--LIGHT-PHI-BLUE);
+    border-right: 1px solid var(--LIGHT-PHI-BLUE);
+    margin: 1rem;
+    box-shadow: -1px 1px 14px -7px var(--LIGHTER-DARK-PHI-BLUE);
+}
+
+.apply-button-container {
+    width: 290px;
+    padding: 20px;
+}
+
+.right-button-header {
+    margin-left: 1rem;
+}
+
  /* =========================================contact page======================= */
 
  .consult-button-phi-contact {
@@ -8873,6 +8986,33 @@ display: none;
  .consult-button-careers {
     margin-left: 156px;
  }
+
+ .job-card {
+    width: 350px;
+    height: auto;
+    background: var(--WHITE-TEXT);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    order: 1;
+    border-left: 8px solid var(--LIGHTER-DARK-PHI-BLUE);
+    border-top: 1px solid var(--LIGHT-PHI-BLUE);
+    border-bottom: 1px solid var(--LIGHT-PHI-BLUE);
+    border-right: 1px solid var(--LIGHT-PHI-BLUE);
+    margin: 1rem;
+    box-shadow: -1px 1px 14px -7px var(--LIGHTER-DARK-PHI-BLUE);
+}
+
+.apply-button-container {
+    width: 290px;
+    padding: 20px;
+}
+
+.right-button-header {
+    margin-left: 1rem;
+}
 
  /* =====================================contact page============================= */
  .consult-button-phi-contact {
@@ -9476,6 +9616,33 @@ display: none;
  }
 .consult-button-careers {
     margin-left: 173px;
+}
+
+.job-card {
+    width: 650px;
+    height: auto;
+    background: var(--WHITE-TEXT);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    order: 1;
+    border-left: 8px solid var(--LIGHTER-DARK-PHI-BLUE);
+    border-top: 1px solid var(--LIGHT-PHI-BLUE);
+    border-bottom: 1px solid var(--LIGHT-PHI-BLUE);
+    border-right: 1px solid var(--LIGHT-PHI-BLUE);
+    margin: 1rem;
+    box-shadow: -1px 1px 14px -7px var(--LIGHTER-DARK-PHI-BLUE);
+}
+
+.apply-button-container {
+    width: 290px;
+    padding: 0px;
+}
+
+.right-button-header {
+    margin-left: 1rem;
 }
 
 /* ============================================contact page================== */
@@ -10426,6 +10593,29 @@ display: none;
     margin-left: 8px;
 }
 
+.job-card {
+    width: 750px;
+    height: auto;
+    background: var(--WHITE-TEXT);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    order: 1;
+    border-left: 8px solid var(--LIGHTER-DARK-PHI-BLUE);
+    border-top: 1px solid var(--LIGHT-PHI-BLUE);
+    border-bottom: 1px solid var(--LIGHT-PHI-BLUE);
+    border-right: 1px solid var(--LIGHT-PHI-BLUE);
+    margin: 1rem;
+    box-shadow: -1px 1px 14px -7px var(--LIGHTER-DARK-PHI-BLUE);
+}
+
+.apply-button-container {
+    width: 290px;
+    padding: 0px;
+}
+
 /* ===============================================contact page======================== */
 
 .hero-container-phi-contact {
@@ -11122,6 +11312,29 @@ display: none;
 .ach-desc-services-page { 
     font-size: 13px;
     width: 95%;
+}
+
+.job-card {
+    width: 750px;
+    height: auto;
+    background: var(--WHITE-TEXT);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    order: 1;
+    border-left: 8px solid var(--LIGHTER-DARK-PHI-BLUE);
+    border-top: 1px solid var(--LIGHT-PHI-BLUE);
+    border-bottom: 1px solid var(--LIGHT-PHI-BLUE);
+    border-right: 1px solid var(--LIGHT-PHI-BLUE);
+    margin: 1rem;
+    box-shadow: -1px 1px 14px -7px var(--LIGHTER-DARK-PHI-BLUE);
+}
+
+.apply-button-container {
+    width: 290px;
+    padding: 0px;
 }
 }
 @media screen and (min-width: 1200px) {
@@ -12901,13 +13114,13 @@ display: none;
 }
 
 .job-card {
-    width: 750px;
-    height: 100px;
-    background: var(--WHITE-TEXT);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 750px;
+    height: auto;
+    background: var(--WHITE-TEXT);
     padding: 0.5rem;
     order: 1;
     border-left: 8px solid var(--LIGHTER-DARK-PHI-BLUE);
@@ -12919,7 +13132,7 @@ display: none;
 }
 
 .apply-button-container {
-    width: 190px;
+    width: 290px;
     padding: 0px;
 }
 

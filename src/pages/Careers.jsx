@@ -9,6 +9,9 @@ import perkstwo from "../assets/img/healthcare.png";
 import perksthree from "../assets/img/businessman.png";
 import perksfour from "../assets/img/office-hours.png";
 
+import JobCard from '../components/shared/cards/JobCard';
+import jobPostings from "../data/jobPostings.json";
+
 import { Link } from 'react-router-dom';
 
 const Careers = () => {
@@ -118,7 +121,25 @@ const Careers = () => {
             solutions. Your next career move starts here.
           </p>
           <div class="openings-container">
-            <div class="job-card">
+          {jobPostings.map(study => (
+                <JobCard key={study.id} job={study} />
+            ))}
+          
+            {/* <div class="job-card">
+              <div class="job-info">
+                <div class="job-heading">Lorem Ipsum Lorem</div>
+                <div class="job-desc">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                  eligendi omnis recusandae
+                </div>
+              </div>
+              <div class="apply-button-container">
+                <div class="right-button">
+                  <span>Apply Now</span>
+                </div>
+              </div>
+            </div> */}
+            {/* <div class="job-card">
               <div class="job-info">
                 <div class="job-heading">Lorem Ipsum Lorem</div>
                 <div class="job-desc">
@@ -159,21 +180,7 @@ const Careers = () => {
                   <span>Apply Now</span>
                 </div>
               </div>
-            </div>
-            <div class="job-card">
-              <div class="job-info">
-                <div class="job-heading">Lorem Ipsum Lorem</div>
-                <div class="job-desc">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-                  eligendi omnis recusandae
-                </div>
-              </div>
-              <div class="apply-button-container">
-                <div class="right-button">
-                  <span>Apply Now</span>
-                </div>
-              </div>
-            </div>
+            </div> */}
             <div class="explore-button-container">
               <div class="right-button-header">
                 <span>Explore More</span>
