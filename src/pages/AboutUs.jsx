@@ -41,6 +41,12 @@ const AboutUs = () => {
   const [isVisibleAgility, setIsVisibleAgility] = useState(false);
   const agilityRef = useRef(null);
 
+  const [isVisibleLiveText, setIsVisibleLiveText] = useState(false);
+  const liveTextRef = useRef(null);
+
+  const [isVisibleLiveVideo, setIsVisibleLiveVideo] = useState(false);
+  const liveVideoRef = useRef(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
         (entries) => {
@@ -87,6 +93,10 @@ useEffect(() => {
         setIsVisibleInnovation(entry.isIntersecting);
       } else if (entry.target === collaborationRef.current) {
         setIsVisibleCollaboration(entry.isIntersecting);
+      }else if (entry.target === integrityRef.current) {
+        setIsVisibleIntegrity(entry.isIntersecting);
+      }else if (entry.target === agilityRef.current) {
+        setIsVisibleAgility(entry.isIntersecting);
       }
       // Add similar conditions for other sections
     });
@@ -94,7 +104,26 @@ useEffect(() => {
 
   if (innovationRef.current) observer.observe(innovationRef.current);
   if (collaborationRef.current) observer.observe(collaborationRef.current);
+  if (integrityRef.current) observer.observe(integrityRef.current);
+  if (agilityRef.current) observer.observe(agilityRef.current);
   // Add observe for other refs
+
+  return () => observer.disconnect();
+}, []);
+
+useEffect(() => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.target === liveTextRef.current) {
+        setIsVisibleLiveText(entry.isIntersecting);
+      } else if (entry.target === liveVideoRef.current) {
+        setIsVisibleLiveVideo(entry.isIntersecting);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  if (liveTextRef.current) observer.observe(liveTextRef.current);
+  if (liveVideoRef.current) observer.observe(liveVideoRef.current);
 
   return () => observer.disconnect();
 }, []);
@@ -194,7 +223,7 @@ useEffect(() => {
             </div>
           </div>
           <br />
-          <div className={`core-value-tiles-container ${isVisibleInnovation ? 'fade-in-left' : ''}`} ref={integrityRef}>
+          <div className={`core-value-tiles-container ${isVisibleIntegrity ? 'fade-in-left' : ''}`} ref={integrityRef}>
             <div class="left-filled-heading-container">
               <h3 class="value-heading-box">
                 In<span class="letters-whitened">teg</span>rity
@@ -207,7 +236,7 @@ useEffect(() => {
             </div>
           </div>
           <br />
-          <div className={`core-value-tiles-container ${isVisibleCollaboration ? 'fade-in-right' : ''}`} ref={agilityRef}>
+          <div className={`core-value-tiles-container ${isVisibleAgility ? 'fade-in-right' : ''}`} ref={agilityRef}>
             <div class="right-text-paragraph-container">
               <p class="right-text-intile">
                 Adapting strategies to align with the dynamic needs of your
@@ -340,7 +369,7 @@ useEffect(() => {
           <h2 class="live-heading">Live from Phi</h2>
 
           <div class="live-video-container">
-            <div class="live-left-side">
+            <div className={`live-left-side ${isVisibleLiveText ? 'fade-in-left' : ''}`} ref={liveTextRef}>
               <h3 class="live-subheading">Insights, Discussions, and More</h3>
               <p class="live-desc">
                 Tune in to "Live from Phi" for exclusive insights, discussions,
@@ -356,7 +385,7 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <div class="live-right-side">
+            <div className={`live-right-side ${isVisibleLiveVideo ? 'fade-in-right' : ''}`} ref={liveVideoRef}>
               <div class="video-container">
                 <div class="video-overlay"></div>
                 <iframe

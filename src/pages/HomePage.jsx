@@ -476,6 +476,7 @@ useEffect(() => {
           </div>
         </section>
       </article>
+      
       {/* <!-- Testimonial Section --> */}
       <article class="testimonial">
         <section className="testimonial-container">
