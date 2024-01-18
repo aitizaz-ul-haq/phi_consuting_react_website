@@ -40,6 +40,7 @@ import hriconfive from "../../assets/img/hr_icons/Organization Development.png";
 import hriconsix from "../../assets/img/financial_consulting_icons/strategy (1).png";
 
 import caseStudies from '../../data/caseStudies.json';
+import useScrollToTop from '../../hooks/useScrollToTop';
 
 
 const HrAndRecruitmentConsulting = () => {
@@ -126,6 +127,8 @@ const HrAndRecruitmentConsulting = () => {
      observer.observe(containerRef.current);
      return () => observer.disconnect(); 
  }, []);
+
+ useScrollToTop();
   
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (

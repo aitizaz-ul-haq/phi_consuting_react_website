@@ -33,6 +33,8 @@ import achiconthree from "../../assets/img/achievements-badges/clutch_2.png";
 import SmallWorkCard from '../../components/shared/cards/SmallWorkCard';
 import caseStudies from '../../data/caseStudies.json';
 
+import useScrollToTop from '../../hooks/useScrollToTop';
+
 const SalesConsulting = () => {
 
   const [isVisibleTesti, setIsVisibleTesti] = useState(false);
@@ -113,6 +115,8 @@ useEffect(() => {
     observer.observe(containerRef.current);
     return () => observer.disconnect(); 
 }, []);
+
+useScrollToTop();
 
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (

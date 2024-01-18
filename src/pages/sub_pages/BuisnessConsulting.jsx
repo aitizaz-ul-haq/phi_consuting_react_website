@@ -39,6 +39,8 @@ import bcfour from "../../assets/img/investor-realtions-icons/low hanging fruits
 import bcfive from "../../assets/img/investor-realtions-icons/content.png";
 import bcsix from "../../assets/img/investor-realtions-icons/brand.png";
 
+import useScrollToTop from '../../hooks/useScrollToTop';
+
 import caseStudies from '../../data/caseStudies.json';
 
 const BuisnessConsulting = () => {
@@ -123,6 +125,8 @@ useEffect(() => {
     observer.observe(containerRef.current);
     return () => observer.disconnect(); 
 }, []);
+
+useScrollToTop();
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (
         <>
