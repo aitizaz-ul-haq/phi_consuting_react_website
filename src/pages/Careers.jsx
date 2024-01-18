@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState, useEffect, useRef } from 'react';
 import cultpicone from "../assets/img/innovate_two.png";
 import cultpictwo from "../assets/img/collaborate.png";
 import cultpicthree from "../assets/img/excellence.png";
@@ -15,6 +15,35 @@ import jobPostings from "../data/jobPostings.json";
 import { Link } from 'react-router-dom';
 
 const Careers = () => {
+
+  const [isVisibleCulture, setIsVisibleCulture] = useState(false);
+  const cultureRef = useRef(null);
+
+  const [isVisibleGateway, setIsVisibleGateway] = useState(false);
+  const gatewayRef = useRef(null);
+
+  const [isVisiblePerk, setIsPerk] = useState(false);
+  const perkRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.target === cultureRef.current) {
+          setIsVisibleCulture(entry.isIntersecting);
+        } else if (entry.target === gatewayRef.current) {
+          setIsVisibleGateway(entry.isIntersecting);
+        }else if (entry.target === perkRef.current) {
+          setIsPerk(entry.isIntersecting);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    if (cultureRef.current) observer.observe(cultureRef.current);
+    if (gatewayRef.current) observer.observe(gatewayRef.current);
+    if (perkRef.current) observer.observe(perkRef.current);
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <>
     {/* <!-- Hero Section --> */}
@@ -38,7 +67,7 @@ const Careers = () => {
       </article>
 
       {/* <!-- Work Culture Section --> */}
-      <article class="culture">
+      <article  className={`culture ${isVisibleCulture ? 'visible' : ''}`} ref={cultureRef}>
         <section class="culture-container">
           <h2 class="culture-heading">Our Work Culture</h2>
           <p class="culture-desc">
@@ -48,7 +77,7 @@ const Careers = () => {
             career is nurtured. Discover what makes our workplace truly
             exceptional.
           </p>
-          <div class="culture-poster-container">
+          <div className={`culture-poster-container ${isVisibleCulture ? 'culture-poster-animate' : ''}`}>
             <div class="culture-poster">
               <div class="culture-poster-img">
                 <img
@@ -110,7 +139,7 @@ const Careers = () => {
       </article>
 
       {/* <!-- job opening section --> */}
-      <article class="jobopenings">
+      <article className={`jobopenings ${isVisibleGateway ? 'gateway-animate' : ''}`} ref={gatewayRef}>
         <section class="jobs-container">
           <h2 class="jobs-heading">Your Gateway to Professional Growth</h2>
           {/* <!-- <h3 class="jobs-subheading">Your Gateway to Professional Growth</h3> --> */}
@@ -125,62 +154,6 @@ const Careers = () => {
                 <JobCard key={study.id} job={study} />
             ))}
           
-            {/* <div class="job-card">
-              <div class="job-info">
-                <div class="job-heading">Lorem Ipsum Lorem</div>
-                <div class="job-desc">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-                  eligendi omnis recusandae
-                </div>
-              </div>
-              <div class="apply-button-container">
-                <div class="right-button">
-                  <span>Apply Now</span>
-                </div>
-              </div>
-            </div> */}
-            {/* <div class="job-card">
-              <div class="job-info">
-                <div class="job-heading">Lorem Ipsum Lorem</div>
-                <div class="job-desc">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-                  eligendi omnis recusandae
-                </div>
-              </div>
-              <div class="apply-button-container">
-                <div class="right-button">
-                  <span>Apply Now</span>
-                </div>
-              </div>
-            </div>
-            <div class="job-card">
-              <div class="job-info">
-                <div class="job-heading">Lorem Ipsum Lorem</div>
-                <div class="job-desc">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-                  eligendi omnis recusandae
-                </div>
-              </div>
-              <div class="apply-button-container">
-                <div class="right-button">
-                  <span>Apply Now</span>
-                </div>
-              </div>
-            </div>
-            <div class="job-card">
-              <div class="job-info">
-                <div class="job-heading">Lorem Ipsum Lorem</div>
-                <div class="job-desc">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-                  eligendi omnis recusandae
-                </div>
-              </div>
-              <div class="apply-button-container">
-                <div class="right-button">
-                  <span>Apply Now</span>
-                </div>
-              </div>
-            </div> */}
             <div class="explore-button-container">
               <div class="right-button-header">
                 <span>Explore More</span>
@@ -191,7 +164,7 @@ const Careers = () => {
       </article>
 
       {/* <!-- perks Section --> */}
-      <article class="perks">
+      <article className={`perks ${isVisiblePerk ? 'gateway-animate' : ''}`} ref={perkRef}>
         <section class="perks-container">
           <h2 class="perks-heading">Rewards Beyond the Job</h2>
           {/* <!-- <h3 class="perks-sub-heading"></h3> --> */}

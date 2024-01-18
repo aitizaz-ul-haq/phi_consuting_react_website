@@ -11726,8 +11726,34 @@ display: none;
       .fade-in-right {
         animation: fadeInRight 1s ease forwards;
       }
+
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
       
-    
+      .culture-poster-animate {
+        opacity: 0;
+        animation: fadeInRight 1s ease forwards;
+      }
+      
+      .culture-poster-animate:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      
+      .culture-poster-animate:nth-child(3) {
+        animation-delay: 0.8s;
+      }
+      
+      .culture-poster-animate:nth-child(4) {
+        animation-delay: 1s;
+      }
+      
+      .gateway-animate {
+        opacity: 0;
+        animation: fadeInUp 1s ease forwards;
+      }
+      
 
     .services-heading {
         font-size: 32px;
