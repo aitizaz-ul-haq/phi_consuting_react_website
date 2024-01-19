@@ -1,7 +1,5 @@
-// MobileHeader.js
 import React, { useState } from 'react';
 import mobileLogo from '../../assets/img/phi_logo-filled.png';
-// import './MobileHeader.css';
 
 import homeicon from "../../assets/img/mobile_menu icons/home.png";
 import solutionsicon from "../../assets/img/mobile_menu icons/solutions.png";
