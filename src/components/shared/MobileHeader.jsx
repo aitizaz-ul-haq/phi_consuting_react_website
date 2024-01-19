@@ -14,6 +14,7 @@ import invicon from "../../assets/img/solutions icons/Investor Relations.png";
 
 import blogicon from "../../assets/img/mobile_menu icons/blog.png";
 import casestudy from "../../assets/img/mobile_menu icons/case-study.png"; 
+import hricon from "../../assets/img/white_icons/human-resources.png"
 
 const MobileHeader = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -68,7 +69,7 @@ const MobileHeader = () => {
               </li>
               <li className='list-element-mobile-menu'>
                 <a href="/hr-consulting" className="header-mobile-link" onClick={closeMobileMenu}>
-                <img src={solutionsicon} className='mobile-icons' alt="" width={32} height={32}/>  hr & Recruitment 
+                <img src={hricon} className='mobile-icons' alt="" width={32} height={32}/>  hr & Recruitment 
                 </a>
               </li>
               <li className='list-element-mobile-menu'>
