@@ -159,13 +159,17 @@ header {
     color: white;
     font-size: 22px;
     transition: color 0.3s ease-in-out;
+    display: flex;
+    flex-direction: row;
   }
   
   .header-mobile-link:hover {
     color: #66c0ff;
   }
   
-
+.mobile-icons {
+    margin-right: 1rem;
+}
 /* .mobile-header {
     background-color: var(--DARK-PHI-BLUE);
     color: white;

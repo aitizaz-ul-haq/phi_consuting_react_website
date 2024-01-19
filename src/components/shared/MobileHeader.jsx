@@ -3,6 +3,20 @@ import React, { useState } from 'react';
 import mobileLogo from '../../assets/img/phi_logo-filled.png';
 // import './MobileHeader.css';
 
+import homeicon from "../../assets/img/mobile_menu icons/home.png";
+import solutionsicon from "../../assets/img/mobile_menu icons/solutions.png";
+import aboutusicon from "../../assets/img/mobile_menu icons/information-button.png";
+import valuecreation from "../../assets/img/mobile_menu icons/creation.png";
+import careersicon from "../../assets/img/mobile_menu icons/career.png";
+import contactsicon from "../../assets/img/mobile_menu icons/contact-mail.png";
+
+import gtnicon from "../../assets/img/solutions icons/GTM.png";
+import finicon from "../../assets/img/solutions icons/fin.png";
+import invicon from "../../assets/img/solutions icons/Investor Relations.png";
+
+import blogicon from "../../assets/img/mobile_menu icons/blog.png";
+import casestudy from "../../assets/img/mobile_menu icons/case-study.png"; 
+
 const MobileHeader = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
@@ -31,68 +45,63 @@ const MobileHeader = () => {
               <ul>
               <li>
                 <a href="/" className="header-mobile-link" onClick={closeMobileMenu}>
-                  Home
+                 <img src={homeicon} className='mobile-icons' alt="" width={30} height={30}/> Home
                 </a>
               </li>
               <li>
                 <a href="/services" className="header-mobile-link" onClick={closeMobileMenu}>
-                  Solutions
+                <img src={solutionsicon} className='mobile-icons' alt="" width={32} height={32}/> Solutions
                 </a>
               </li>
               
               <li>
                 <a href="/GTM-advisory" className="header-mobile-link" onClick={closeMobileMenu}>
-                GTM Strategy
+                <img src={gtnicon} className='mobile-icons' alt="" width={32} height={32}/> GTM Strategy
                 </a>
               </li>
               <li>
                 <a href="/financial-consulting" className="header-mobile-link" onClick={closeMobileMenu}>
-                Financial Consulting
+                <img src={finicon} className='mobile-icons' alt="" width={32} height={32}/> Financial Consulting
                 </a>
               </li>
               <li>
                 <a href="/investor-relations" className="header-mobile-link" onClick={closeMobileMenu}>
-                  Investor Relations
+                <img src={invicon} className='mobile-icons' alt="" width={32} height={32}/> Investor Relations
                 </a>
               </li>
-              {/* <li>
-                <a href="/customer-experience" className="header-mobile-link" onClick={closeMobileMenu}>
-                Customer Experience <br /> Consulting
-                </a>
-              </li> */}
               <li>
                 <a href="/hr-consulting" className="header-mobile-link" onClick={closeMobileMenu}>
-                  hr & Recruitment 
+                <img src={solutionsicon} className='mobile-icons' alt="" width={32} height={32}/>  hr & Recruitment 
                 </a>
               </li>
               <li>
                 <a href="/valuecreation" className="header-mobile-link" onClick={closeMobileMenu}>
-                  Value Creation
+                <img src={valuecreation} className='mobile-icons' alt="" width={32} height={32}/> Value Creation
                 </a>
               </li>
               <li>
                 <a href="/aboutus" className="header-mobile-link" onClick={closeMobileMenu}>
-                  About Us
+                <img src={aboutusicon} className='mobile-icons' alt="" width={30} height={30}/> About Us
                 </a>
               </li>
               <li>
                 <a href="/blogs" className="header-mobile-link" onClick={closeMobileMenu}>
-                Blogs
+                <img src={blogicon} className='mobile-icons' alt="" width={32} height={32}/> Blogs
                 </a>
               </li>
               <li>
                 <a href="/casestudies" className="header-mobile-link" onClick={closeMobileMenu}>
-                Case Studies
+                <img src={casestudy} className='mobile-icons' alt="" width={32} height={32}/> Case Studies
                 </a>
               </li>
               <li>
                 <a href="/careers" className="header-mobile-link" onClick={closeMobileMenu}>
-                Careers
+                <img src={careersicon} className='mobile-icons' alt="" width={32} height={32}/> Careers
                 </a>
               </li>
               <li>
                 <a href="/contact" className="header-mobile-link" onClick={closeMobileMenu}>
-                  Contact
+                <img src={contactsicon} className='mobile-icons' alt="" width={32} height={32}/>  Contact
                 </a>
               </li>
               </ul>
