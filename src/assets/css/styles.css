@@ -135,13 +135,18 @@ header {
     list-style: none;
     padding: 20px;
     height: 100vh;
-    background-color: var(--DARK-PHI-BLUE);
+    /* background-color: var(--DARK-PHI-BLUE); */
+    background-color: rgba(0, 51, 102, 0.7);
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: left;
     text-align: left;
+  }
+
+  .list-element-mobile-menu {
+border-bottom: 2px solid var(--LIGHT-PHI-BLUE);
   }
   
   .mobile-menu {
@@ -161,6 +166,7 @@ header {
     transition: color 0.3s ease-in-out;
     display: flex;
     flex-direction: row;
+    margin-bottom: 9px;
   }
   
   .header-mobile-link:hover {
