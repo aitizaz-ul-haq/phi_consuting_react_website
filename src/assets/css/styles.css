@@ -3205,10 +3205,57 @@ align-items: center;
     margin: 20px;
     border-radius: 12px;
     transition: background-color 0.5s ease;
-    background: rgb(9,9,121);
-    background: linear-gradient(0deg, rgba(9,9,121,0.8435749299719888) 0%, rgba(0,212,255,0.7371323529411764) 75%);
+    /* background: rgb(9,9,121);
+    background: linear-gradient(0deg, rgba(9,9,121,0.8435749299719888) 0%, rgba(0,212,255,0.7371323529411764) 75%); */
     color: white;
+
+
+    /* background: linear-gradient(179deg, #1adffe, #172955);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 9s ease infinite;
+    -moz-animation: AnimationName 9s ease infinite;
+    animation: AnimationName 9s ease infinite; */
+
+    background: linear-gradient(262deg, #1adffe, #172955);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 9s ease infinite;
+    -moz-animation: AnimationName 9s ease infinite;
+    animation: AnimationName 9s ease infinite;
 }
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 24%}
+    50%{background-position:100% 77%}
+    100%{background-position:0% 24%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 24%}
+    50%{background-position:100% 77%}
+    100%{background-position:0% 24%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 24%}
+    50%{background-position:100% 77%}
+    100%{background-position:0% 24%}
+}
+
+/* @-webkit-keyframes AnimationName {
+    0%{background-position:52% 0%}
+    50%{background-position:49% 100%}
+    100%{background-position:52% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:52% 0%}
+    50%{background-position:49% 100%}
+    100%{background-position:52% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:52% 0%}
+    50%{background-position:49% 100%}
+    100%{background-position:52% 0%}
+} */
 
 .case-study-card-collection:hover {
     background-color: var(--LIGHTER-DARK-PHI-BLUE);
