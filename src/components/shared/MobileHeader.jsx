@@ -38,8 +38,8 @@ const MobileHeader = () => {
         </button>
         {isMobileMenuOpen && (
           <>
-            <div className="overlay-rock" onClick={closeMobileMenu}></div>
-            <nav className="mobile-menu" id="mobile-menu">
+            <div className={`overlay-rock ${isMobileMenuOpen ? 'active' : ''}`} onClick={closeMobileMenu}></div>
+            <nav className={`mobile-menu ${isMobileMenuOpen ? 'mobile-menu-animate' : ''}`} id="mobile-menu">
               <ul>
               <li className='list-element-mobile-menu'>
                 <a href="/" className="header-mobile-link" onClick={closeMobileMenu}>

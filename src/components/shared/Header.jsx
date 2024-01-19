@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return(
-        <header>
+        <header >
       <div className="logo-mobile-header">
       <Link to="/"><img className="logo-image" src={philogomainpage} alt="Logo"
         /></Link>
