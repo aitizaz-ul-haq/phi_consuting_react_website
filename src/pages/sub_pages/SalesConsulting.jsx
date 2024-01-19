@@ -34,6 +34,9 @@ import SmallWorkCard from '../../components/shared/cards/SmallWorkCard';
 import caseStudies from '../../data/caseStudies.json';
 
 import useScrollToTop from '../../hooks/useScrollToTop';
+// import VantaAnimation from '../../components/shared/vantun';
+
+
 
 const SalesConsulting = () => {
 
@@ -123,8 +126,10 @@ useScrollToTop();
         <>
       {/* <!-- Hero Section --> */}
       <article class="hero">
+    
         <section class="hero-container-sales">
           <div class="hero-content-sales">
+            
             <h2 class="hero-heading-sales">
               {/* <!-- Transforming Possibilities <br />
               into Profits --> */}
@@ -137,6 +142,8 @@ useScrollToTop();
           </div>
         </section>
       </article>
+
+      {/* <VantaAnimation/> */}
 
       {/* <!-- sales page banner --> */}
       <article class="sales-solutions" >
