@@ -127,10 +127,10 @@ useScrollToTop();
       {/* <!-- Hero Section --> */}
       <article class="hero">
     
-        <section class="hero-container-sales">
-          <div class="hero-content-sales">
+        <section class="hero-container-dev">
+          <div class="hero-content-dev">
             
-            <h2 class="hero-heading-sales">
+            <h2 class="hero-heading-dev">
               {/* <!-- Transforming Possibilities <br />
               into Profits --> */}
               Welcome to the Future of DevOps

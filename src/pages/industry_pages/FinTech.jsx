@@ -126,16 +126,12 @@ useScrollToTop();
         <>
       {/* <!-- Hero Section --> */}
       <article class="hero">
-    
-        <section class="hero-container-sales">
-          <div class="hero-content-sales">
-            
-            <h2 class="hero-heading-sales">
-              {/* <!-- Transforming Possibilities <br />
-              into Profits --> */}
+        <section class="hero-container-fin">
+          <div class="hero-content-fin">
+            <h2 class="hero-heading-fin">
               Empowering Your FinTech Startup <br /> to Scale Efficiently
             </h2>
-            <p class="hero-desc-sales">
+            <p class="hero-desc-fin">
             We recognize the unique challenges and immense potential in the FinTech sector. Our mission is to guide you through the complexities of scaling efficiently while optimizing cost-effectiveness. We're dedicated to transforming your ambitious vision into a thriving reality.
             </p>
             <div class="consult-button-sales"> <Link to="/contact" className='scheduler-set'>Schedule a Free Consultation</Link> </div>

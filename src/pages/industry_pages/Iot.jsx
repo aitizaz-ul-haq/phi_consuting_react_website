@@ -130,12 +130,12 @@ useScrollToTop();
       {/* <!-- Hero Section --> */}
       <article class="hero">
    
-        <section class="hero-container-sales">
-          <div class="hero-content-sales">
-            <h2 class="hero-heading-sales">
+        <section class="hero-container-iot">
+          <div class="hero-content-iot">
+            <h2 class="hero-heading-iot">
               Your Gateway to Scalable IoT Innovation
             </h2>
-            <p class="hero-desc-sales">
+            <p class="hero-desc-iot">
             At Phi Consulting, we specialize in transforming potential into success. Our expertise lies in guiding IoT and technology startups like yours through the complex landscapes of growth and innovation. We understand the unique challenges faced by founders and C-level executives, and we're here to ensure your journey is not just successful but also flawless and efficient.
             </p>
             <div class="consult-button-sales"> <Link to="/contact" className='scheduler-set'>Schedule a Free Consultation</Link> </div>

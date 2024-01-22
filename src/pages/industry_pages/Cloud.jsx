@@ -127,15 +127,15 @@ useScrollToTop();
       {/* <!-- Hero Section --> */}
       <article class="hero">
     
-        <section class="hero-container-sales">
-          <div class="hero-content-sales">
+        <section class="hero-container-cloud">
+          <div class="hero-content-cloud">
             
-            <h2 class="hero-heading-sales">
+            <h2 class="hero-heading-cloud">
               {/* <!-- Transforming Possibilities <br />
               into Profits --> */}
               Empowering Your Vision, Elevating Your Cloud Strategy
             </h2>
-            <p class="hero-desc-sales">
+            <p class="hero-desc-cloud">
             We accelerate the success of startups by delivering comprehensive consulting services, focused on efficient scaling and cost optimization. Our expertise lies in transforming challenges into opportunities, paving the way for a sustainable and prosperous future.
             </p>
             <div class="consult-button-sales"> <Link to="/contact" className='scheduler-set'>Schedule a Free Consultation</Link> </div>

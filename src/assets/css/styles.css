@@ -608,6 +608,42 @@ border-bottom: 2px solid var(--LIGHT-PHI-BLUE);
     margin: 90px; 
  }
 
+ .hero-content-fin {
+    z-index: 1; 
+    width: 620px;
+    margin: 90px; 
+ }
+
+ .hero-content-cloud {
+    z-index: 1; 
+    width: 620px;
+    margin: 90px; 
+ }
+
+ .hero-content-dev {
+    z-index: 1; 
+    width: 620px;
+    margin: 90px; 
+ }
+
+ .hero-content-saas {
+    z-index: 1; 
+    width: 620px;
+    margin: 90px; 
+ }
+
+ .hero-content-iaas {
+    z-index: 1; 
+    width: 620px;
+    margin: 90px; 
+ }
+
+ .hero-content-iot {
+    z-index: 1; 
+    width: 620px;
+    margin: 90px; 
+ }
+
  .hero-content-hr-consul {
     z-index: 1; 
     width: 620px;
@@ -683,6 +719,54 @@ border-bottom: 2px solid var(--LIGHT-PHI-BLUE);
 }
 
 .hero-heading-sales{
+    font-weight: 800;
+    font-size: 56px;
+    margin-bottom: 0;
+    color: var(--WHITE-TEXT);
+    margin-top: 22px;
+}
+
+.hero-heading-fin{
+    font-weight: 800;
+    font-size: 56px;
+    margin-bottom: 0;
+    color: var(--WHITE-TEXT);
+    margin-top: 22px;
+}
+
+.hero-heading-cloud{
+    font-weight: 800;
+    font-size: 56px;
+    margin-bottom: 0;
+    color: var(--WHITE-TEXT);
+    margin-top: 22px;
+}
+
+.hero-heading-dev{
+    font-weight: 800;
+    font-size: 56px;
+    margin-bottom: 0;
+    color: var(--WHITE-TEXT);
+    margin-top: 22px;
+}
+
+.hero-heading-saas{
+    font-weight: 800;
+    font-size: 56px;
+    margin-bottom: 0;
+    color: var(--WHITE-TEXT);
+    margin-top: 22px;
+}
+
+.hero-heading-iaas{
+    font-weight: 800;
+    font-size: 56px;
+    margin-bottom: 0;
+    color: var(--WHITE-TEXT);
+    margin-top: 22px;
+}
+
+.hero-heading-iot{
     font-weight: 800;
     font-size: 56px;
     margin-bottom: 0;
@@ -782,6 +866,51 @@ border-bottom: 2px solid var(--LIGHT-PHI-BLUE);
  }
 
  .hero-desc-sales {
+    font-weight: var(--FONT-THICKY);
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 60px; 
+    color: var(--WHITE-TEXT);
+    word-spacing: 4px;
+ }
+
+ .hero-desc-fin {
+    font-weight: var(--FONT-THICKY);
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 60px; 
+    color: var(--WHITE-TEXT);
+    word-spacing: 4px;
+ }
+
+ .hero-desc-cloud {
+    font-weight: var(--FONT-THICKY);
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 60px; 
+    color: var(--WHITE-TEXT);
+    word-spacing: 4px;
+ }
+
+ .hero-desc-saas {
+    font-weight: var(--FONT-THICKY);
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 60px; 
+    color: var(--WHITE-TEXT);
+    word-spacing: 4px;
+ }
+
+ .hero-desc-iaas {
+    font-weight: var(--FONT-THICKY);
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 60px; 
+    color: var(--WHITE-TEXT);
+    word-spacing: 4px;
+ }
+
+ .hero-desc-iot {
     font-weight: var(--FONT-THICKY);
     font-size: 20px;
     margin-top: 10px;
@@ -2787,6 +2916,158 @@ padding: 1rem;
     z-index: -2; 
 }
 
+.hero-container-cloud {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    overflow: hidden; 
+    padding-top: 100px;
+    z-index: 10;
+}
+
+.hero-container-cloud::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(8, 23, 58,0.7);
+    z-index: -1; 
+}
+
+.hero-container-cloud::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/industry_backgrounds/Cloud_background.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; 
+    z-index: -2; 
+}
+
+.hero-container-fin {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    overflow: hidden; 
+    padding-top: 100px;
+    z-index: 10;
+}
+
+.hero-container-fin::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(8, 23, 58,0.7);
+    z-index: -1; 
+}
+
+.hero-container-fin::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/industry_backgrounds/fintech_background.jpeg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; 
+    z-index: -2; 
+}
+
+.hero-container-dev {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    overflow: hidden; 
+    padding-top: 100px;
+    z-index: 10;
+}
+
+.hero-container-dev::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(8, 23, 58,0.7);
+    z-index: -1; 
+}
+
+.hero-container-dev::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/industry_backgrounds/DevOps-background.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; 
+    z-index: -2; 
+}
+
+.hero-container-saas {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    overflow: hidden; 
+    padding-top: 100px;
+    z-index: 10;
+}
+
+.hero-container-saas::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(8, 23, 58,0.7);
+    z-index: -1; 
+}
+
+.hero-container-saas::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/industry_backgrounds/SaaS_background.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; 
+    z-index: -2; 
+}
+
 .hero-container-iot {
     position: relative;
     width: 100%;
@@ -2817,7 +3098,45 @@ padding: 1rem;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/services_page_img/sales_consulting.webp'); 
+    background-image: url('../img/industry_backgrounds/iot-background.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; 
+    z-index: -2; 
+}
+
+.hero-container-iaas {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    overflow: hidden; 
+    padding-top: 100px;
+    z-index: 10;
+}
+
+.hero-container-iaas::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(8, 23, 58,0.7);
+    z-index: -1; 
+}
+
+.hero-container-iaas::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/industry_backgrounds/iaas_background.jpg'); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -6102,7 +6421,79 @@ display: none;
     margin: 0px;
  }
 
+ .hero-content-fin {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-cloud {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-dev {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-saas {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-iaas {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-iot {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
  .hero-heading-sales { 
+    font-size: 20px;
+    margin-top: 100px;
+}
+
+.hero-heading-fin { 
+    font-size: 20px;
+    margin-top: 100px;
+}
+
+.hero-heading-cloud { 
+    font-size: 20px;
+    margin-top: 100px;
+}
+
+.hero-heading-dev { 
+    font-size: 20px;
+    margin-top: 100px;
+}
+
+.hero-heading-saas { 
+    font-size: 20px;
+    margin-top: 100px;
+}
+
+.hero-heading-iaas { 
+    font-size: 20px;
+    margin-top: 100px;
+}
+
+.hero-heading-iot { 
     font-size: 20px;
     margin-top: 100px;
 }
@@ -6111,6 +6502,28 @@ display: none;
     padding: 1rem;
  }
 
+ .hero-desc-fin { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-cloud { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-saas { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+ .hero-desc-iaas { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+ .hero-desc-iot { 
+    font-size: 13px;
+    padding: 1rem;
+ }
 
  .consult-button-sales {
     margin-left: 20px;
@@ -7216,10 +7629,101 @@ display: none;
     margin: 0px;
  }
 
+ .hero-content-fin {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-cloud {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-dev {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-saas {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-iaas {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-iot {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
  .hero-heading-sales { 
     font-size: 30px;
 }
+
+.hero-heading-fin { 
+    font-size: 30px;
+}
+
+.hero-heading-cloud { 
+    font-size: 30px;
+}
+
+.hero-heading-dev { 
+    font-size: 30px;
+}
+
+.hero-heading-saas { 
+    font-size: 30px;
+}
+
+.hero-heading-iaas { 
+    font-size: 30px;
+}
+
+.hero-heading-iot { 
+    font-size: 30px;
+}
 .hero-desc-sales { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-fin { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-cloud { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-saas { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-iaas { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-iot { 
     font-size: 13px;
     padding: 1rem;
  }
@@ -7817,7 +8321,73 @@ display: none;
     margin: 21px;
  }
 
+ .hero-content-fin { 
+    margin: 21px;
+ }
+
+ .hero-content-cloud { 
+    margin: 21px;
+ }
+
+ .hero-content-dev { 
+    margin: 21px;
+ }
+
+ .hero-content-saas { 
+    margin: 21px;
+ }
+
+ .hero-content-iaas { 
+    margin: 21px;
+ }
+
+ .hero-content-iot { 
+    margin: 21px;
+ }
+
  .hero-content-sales {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-fin {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-cloud {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-dev {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-saas {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-iaas {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-iot {
     width: 620px;
     margin: 90px; 
     text-align: center;
@@ -7827,7 +8397,54 @@ display: none;
  .hero-heading-sales { 
     font-size: 30px;
 }
+
+.hero-heading-fin { 
+    font-size: 30px;
+}
+
+.hero-heading-cloud { 
+    font-size: 30px;
+}
+
+.hero-heading-dev { 
+    font-size: 30px;
+}
+
+.hero-heading-saas { 
+    font-size: 30px;
+}
+.hero-heading-iaas { 
+    font-size: 30px;
+}
+
+.hero-heading-iot { 
+    font-size: 30px;
+}
 .hero-desc-sales { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-fin { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-cloud { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-saas { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-iaas { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+ .hero-desc-iot { 
     font-size: 13px;
     padding: 1rem;
  }
@@ -8529,6 +9146,30 @@ display: none;
  .hero-content-sales {
     text-align: center;
 }
+
+.hero-content-fin {
+    text-align: center;
+}
+
+.hero-content-cloud {
+    text-align: center;
+}
+
+.hero-content-dev {
+    text-align: center;
+}
+
+.hero-content-saas {
+    text-align: center;
+}
+
+.hero-content-iaas {
+    text-align: center;
+}
+
+.hero-content-iot {
+    text-align: center;
+}
  .consult-button-sales {
     margin-left: 45px;
  }
@@ -8540,10 +9181,106 @@ display: none;
     margin: 0px;
  }
 
+ .hero-content-fin {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-cloud {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-dev {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-saas {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-iaas {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-iot {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
  .hero-heading-sales { 
     font-size: 30px;
 }
+
+.hero-heading-fin { 
+    font-size: 30px;
+}
+
+.hero-heading-cloud { 
+    font-size: 30px;
+}
+
+.hero-heading-dev { 
+    font-size: 30px;
+}
+
+.hero-heading-saas { 
+    font-size: 30px;
+}
+
+.hero-heading-iaas { 
+    font-size: 30px;
+}
+
+.hero-heading-iot { 
+    font-size: 30px;
+}
 .hero-desc-sales { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-fin { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-cloud { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-saas { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+
+ .hero-desc-iaas { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+ .hero-desc-iot { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-iot { 
     font-size: 13px;
     padding: 1rem;
  }
@@ -9084,10 +9821,101 @@ display: none;
     margin: 0px;
  }
 
+ .hero-content-fin {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-cloud {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-dev {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-saas {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-iaas {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-iot {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
  .hero-heading-sales { 
     font-size: 30px;
 }
+
+.hero-heading-fin { 
+    font-size: 30px;
+}
+
+.hero-heading-cloud { 
+    font-size: 30px;
+}
+
+.hero-heading-dev { 
+    font-size: 30px;
+}
+
+.hero-heading-saas { 
+    font-size: 30px;
+}
+
+.hero-heading-iaas { 
+    font-size: 30px;
+}
+
+.hero-heading-iot { 
+    font-size: 30px;
+}
 .hero-desc-sales { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-fin { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-cloud { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-saas { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-iaas { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-iot { 
     font-size: 13px;
     padding: 1rem;
  }
@@ -9610,7 +10438,79 @@ display: none;
     align-items: center;
  }
 
+ .hero-container-fin { 
+    justify-content: center;
+    align-items: center;
+ }
+
+ .hero-container-cloud { 
+    justify-content: center;
+    align-items: center;
+ }
+
+ .hero-container-dev { 
+    justify-content: center;
+    align-items: center;
+ }
+
+ .hero-container-saas { 
+    justify-content: center;
+    align-items: center;
+ }
+
+ .hero-container-iaas { 
+    justify-content: center;
+    align-items: center;
+ }
+
+ .hero-container-iot { 
+    justify-content: center;
+    align-items: center;
+ }
+
  .hero-content-sales {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-fin {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-cloud {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-dev {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-saas {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-iaas {
+    width: 620px;
+    margin: 90px; 
+    text-align: center;
+    margin: 0px;
+ }
+
+ .hero-content-iot {
     width: 620px;
     margin: 90px; 
     text-align: center;
@@ -9620,7 +10520,56 @@ display: none;
  .hero-heading-sales { 
     font-size: 30px;
 }
+
+.hero-heading-fin { 
+    font-size: 30px;
+}
+
+.hero-heading-cloud { 
+    font-size: 30px;
+}
+
+.hero-heading-dev { 
+    font-size: 30px;
+}
+
+.hero-heading-saas { 
+    font-size: 30px;
+}
+
+.hero-heading-iaas { 
+    font-size: 30px;
+}
+
+.hero-heading-iot { 
+    font-size: 30px;
+}
 .hero-desc-sales { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-fin { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-cloud { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-saas { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-iaas { 
+    font-size: 13px;
+    padding: 1rem;
+ }
+
+ .hero-desc-iot { 
     font-size: 13px;
     padding: 1rem;
  }
@@ -10385,8 +11334,74 @@ display: none;
     align-items: left;
 }
 
+.hero-container-fin {
+    justify-content: left;
+    align-items: left;
+}
+
+.hero-container-cloud {
+    justify-content: left;
+    align-items: left;
+}
+
+.hero-container-dev {
+    justify-content: left;
+    align-items: left;
+}
+
+.hero-container-saas {
+    justify-content: left;
+    align-items: left;
+}
+
+.hero-container-iaas {
+    justify-content: left;
+    align-items: left;
+}
+
+.hero-container-iot {
+    justify-content: left;
+    align-items: left;
+}
+
 
 .hero-heading-sales {
+    text-align: left; 
+    width: 50%;
+    padding: 0.5rem;
+}
+
+.hero-heading-fin {
+    text-align: left; 
+    width: 50%;
+    padding: 0.5rem;
+}
+
+.hero-heading-cloud {
+    text-align: left; 
+    width: 50%;
+    padding: 0.5rem;
+}
+
+.hero-heading-dev {
+    text-align: left; 
+    width: 50%;
+    padding: 0.5rem;
+}
+
+.hero-heading-saas {
+    text-align: left; 
+    width: 50%;
+    padding: 0.5rem;
+}
+
+.hero-heading-iaas {
+    text-align: left; 
+    width: 50%;
+    padding: 0.5rem;
+}
+
+.hero-heading-iot {
     text-align: left; 
     width: 50%;
     padding: 0.5rem;
@@ -10399,11 +11414,111 @@ display: none;
     margin: 0px;
  }
 
+ .hero-content-fin {
+    width: 620px;
+    margin: 90px; 
+    text-align: left;
+    margin: 0px;
+ }
+
+ .hero-content-cloud {
+    width: 620px;
+    margin: 90px; 
+    text-align: left;
+    margin: 0px;
+ }
+
+ .hero-content-dev {
+    width: 620px;
+    margin: 90px; 
+    text-align: left;
+    margin: 0px;
+ }
+
+ .hero-content-saas {
+    width: 620px;
+    margin: 90px; 
+    text-align: left;
+    margin: 0px;
+ }
+
+ .hero-content-iaas {
+    width: 620px;
+    margin: 90px; 
+    text-align: left;
+    margin: 0px;
+ }
+
+ .hero-content-iot {
+    width: 620px;
+    margin: 90px; 
+    text-align: left;
+    margin: 0px;
+ }
+
  .hero-desc-sales br{
 display: none;
  }
 
+ .hero-desc-fin br{
+    display: none;
+     }
+    
+
+ .hero-desc-cloud br{
+    display: none;
+     }
+    
+
+ .hero-desc-saas br{
+    display: none;
+     }
+    
+
+ .hero-desc-iaas br{
+    display: none;
+     }
+
+ .hero-desc-iot br{
+    display: none;
+     }
+
  .hero-desc-sales { 
+    text-align: left; 
+    margin: 0;
+    padding: 0.5rem;
+    width: 72%;
+ }
+
+ .hero-desc-fin { 
+    text-align: left; 
+    margin: 0;
+    padding: 0.5rem;
+    width: 72%;
+ }
+
+ .hero-desc-cloud { 
+    text-align: left; 
+    margin: 0;
+    padding: 0.5rem;
+    width: 72%;
+ }
+
+ .hero-desc-saas { 
+    text-align: left; 
+    margin: 0;
+    padding: 0.5rem;
+    width: 72%;
+ }
+
+ .hero-desc-iaas { 
+    text-align: left; 
+    margin: 0;
+    padding: 0.5rem;
+    width: 72%;
+ }
+
+ .hero-desc-iot { 
     text-align: left; 
     margin: 0;
     padding: 0.5rem;
@@ -12652,7 +13767,97 @@ display: none;
     font-size: 40px;
 }
 
+.hero-heading-fin {
+    text-align: left; 
+    margin: 0;
+    width: 100%;
+    /* padding: 1rem; */
+    font-size: 40px;
+}
+
+.hero-heading-cloud {
+    text-align: left; 
+    margin: 0;
+    width: 100%;
+    /* padding: 1rem; */
+    font-size: 40px;
+}
+
+.hero-heading-dev {
+    text-align: left; 
+    margin: 0;
+    width: 100%;
+    /* padding: 1rem; */
+    font-size: 40px;
+}
+
+.hero-heading-saas {
+    text-align: left; 
+    margin: 0;
+    width: 100%;
+    /* padding: 1rem; */
+    font-size: 40px;
+}
+
+.hero-heading-iaas {
+    text-align: left; 
+    margin: 0;
+    width: 100%;
+    /* padding: 1rem; */
+    font-size: 40px;
+}
+
+.hero-heading-iot {
+    text-align: left; 
+    margin: 0;
+    width: 100%;
+    /* padding: 1rem; */
+    font-size: 40px;
+}
+
 .hero-content-sales {
+    width: 820px;
+    margin: 90px; 
+    text-align: left;
+    margin: 47px;
+ }
+
+ .hero-content-fin {
+    width: 820px;
+    margin: 90px; 
+    text-align: left;
+    margin: 47px;
+ }
+
+ .hero-content-cloud {
+    width: 820px;
+    margin: 90px; 
+    text-align: left;
+    margin: 47px;
+ }
+
+ .hero-content-dev {
+    width: 820px;
+    margin: 90px; 
+    text-align: left;
+    margin: 47px;
+ }
+
+ .hero-content-saas {
+    width: 820px;
+    margin: 90px; 
+    text-align: left;
+    margin: 47px;
+ }
+
+ .hero-content-iaas {
+    width: 820px;
+    margin: 90px; 
+    text-align: left;
+    margin: 47px;
+ }
+
+ .hero-content-iot {
     width: 820px;
     margin: 90px; 
     text-align: left;
@@ -12663,7 +13868,77 @@ display: none;
 display: none;
  }
 
+ .hero-desc-fin br{
+    display: none;
+     }
+
+ .hero-desc-cloud br{
+    display: none;
+     }
+
+ .hero-desc-saas br{
+    display: none;
+     }
+
+ .hero-desc-iaas br{
+    display: none;
+     }
+
+ .hero-desc-iotl br{
+    display: none;
+     }
+
  .hero-desc-sales { 
+    text-align: left; 
+    margin: 0;
+    font-weight: var(--FONT-THICKY);
+    font-size: 16px;
+    color: var(--WHITE-TEXT);
+    word-spacing: 4px;
+    width: 100%;
+ }
+
+ .hero-desc-fin { 
+    text-align: left; 
+    margin: 0;
+    font-weight: var(--FONT-THICKY);
+    font-size: 16px;
+    color: var(--WHITE-TEXT);
+    word-spacing: 4px;
+    width: 100%;
+ }
+
+ .hero-desc-cloud { 
+    text-align: left; 
+    margin: 0;
+    font-weight: var(--FONT-THICKY);
+    font-size: 16px;
+    color: var(--WHITE-TEXT);
+    word-spacing: 4px;
+    width: 100%;
+ }
+
+ .hero-desc-saas { 
+    text-align: left; 
+    margin: 0;
+    font-weight: var(--FONT-THICKY);
+    font-size: 16px;
+    color: var(--WHITE-TEXT);
+    word-spacing: 4px;
+    width: 100%;
+ }
+
+ .hero-desc-iaas { 
+    text-align: left; 
+    margin: 0;
+    font-weight: var(--FONT-THICKY);
+    font-size: 16px;
+    color: var(--WHITE-TEXT);
+    word-spacing: 4px;
+    width: 100%;
+ }
+
+ .hero-desc-iot { 
     text-align: left; 
     margin: 0;
     font-weight: var(--FONT-THICKY);

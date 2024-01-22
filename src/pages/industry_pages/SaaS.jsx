@@ -127,15 +127,15 @@ useScrollToTop();
       {/* <!-- Hero Section --> */}
       <article class="hero">
     
-        <section class="hero-container-sales">
-          <div class="hero-content-sales">
+        <section class="hero-container-saas">
+          <div class="hero-content-saas">
             
-            <h2 class="hero-heading-sales">
+            <h2 class="hero-heading-saas">
               {/* <!-- Transforming Possibilities <br />
               into Profits --> */}
               Expertise at the Intersection of <br /> Innovation and Growth
             </h2>
-            <p class="hero-desc-sales">
+            <p class="hero-desc-saas">
             We bridge the gap between your startup's potential and its success. Specializing in SaaS, we're not just consultants; we're your strategic growth partners.
             </p>
             <div class="consult-button-sales"> <Link to="/contact" className='scheduler-set'>Schedule a Free Consultation</Link> </div>

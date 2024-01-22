@@ -127,15 +127,15 @@ useScrollToTop();
       {/* <!-- Hero Section --> */}
       <article class="hero">
     
-        <section class="hero-container-sales">
-          <div class="hero-content-sales">
+        <section class="hero-container-iaas">
+          <div class="hero-content-iaas">
             
-            <h2 class="hero-heading-sales">
+            <h2 class="hero-heading-iaas">
               {/* <!-- Transforming Possibilities <br />
               into Profits --> */}
               Expert IaaS Solutions for Startups
             </h2>
-            <p class="hero-desc-sales">
+            <p class="hero-desc-iaas">
             At Phi Consulting, we understand the unique challenges and immense potential of startups in the cutting-edge sector of IaaS. Our mission is to be your strategic partner, guiding your venture towards scalable growth and operational excellence.
             </p>
             <div class="consult-button-sales"> <Link to="/contact" className='scheduler-set'>Schedule a Free Consultation</Link> </div>
