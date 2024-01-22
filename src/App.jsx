@@ -21,6 +21,13 @@ import FinancialConsulting from './pages/sub_pages/FinancialConsulting';
 import BuisnessConsulting from './pages/sub_pages/BuisnessConsulting';
 import HrConsulting from './pages/sub_pages/HrAndRecruitmentConsulting';
 import SalesConsulting from './pages/sub_pages/SalesConsulting';
+
+import Iot from './pages/industry_pages/iot';
+import IaaS from './pages/industry_pages/IaaS';
+import SaaS from './pages/industry_pages/SaaS';
+import DevOps from './pages/industry_pages/DevOps';
+import Cloud from './pages/industry_pages/Cloud';
+import FinTech from './pages/industry_pages/FinTech';
 import './assets/css/styles.css';
 
 
@@ -62,6 +69,13 @@ const App = () => {
           <Route path="/investor-relations" element={<BuisnessConsulting />} />
           <Route path="/hr-consulting" element={<HrConsulting />} />
           <Route path="/GTM-advisory" element={<SalesConsulting />} />
+          {/* industry pages */}
+          <Route path="/Iot" element={<Iot />} />
+          <Route path="/IaaS" element={<IaaS />} />
+          <Route path="/SaaS" element={<SaaS />} />
+          <Route path="/dev-ops" element={<DevOps />} />
+          <Route path="/Cloud" element={<Cloud />} />
+          <Route path="/FinTech" element={<FinTech />} />
       </Routes>
       <Footer />
     </Router>
