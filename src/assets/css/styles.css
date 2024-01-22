@@ -13452,14 +13452,30 @@ display: none;
 
     .industry-para-collection {
         opacity: 0;
-        transform: translateY(60px);
+        transform: translateY(70px);
         transition: opacity 0.3s ease-in, transform 0.3s ease-in;
         will-change: opacity, transform;
+        color: #00BCD4;
+        color: #172955;
     }
     
     .industry-para-collection.visible {
         opacity: 1;
         transform: translateY(0px);
+    }
+
+    .para-title-industry span {
+        background-image: linear-gradient(to right, #172955, #172955); /* Gradient from left to right */
+        background-color: transparent; /* Initial background color */
+        color: inherit; /* Initial font color */
+        background-size: 0% 100%; /* Start with no background color */
+        background-repeat: no-repeat;
+        transition: background-size 1s ease, color 0.9s ease; /* Smooth transition for background and color */
+    }
+    
+    .industry-para-collection.visible .para-title-industry span {
+        background-size: 100% 100%; /* Full background on visible */
+        color: #1adffe; /* Final font color */
     }
 
     /* .work-case-study-section {

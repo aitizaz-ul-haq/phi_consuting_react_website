@@ -37,6 +37,7 @@ import useScrollToTop from '../../hooks/useScrollToTop';
 import IndustryServicesSection from '../../components/shared/macroComps/IndustryServicesSection';
 import IndustrySpecialities from '../../components/shared/macroComps/industrySpecialities';
 
+import { TypeAnimation } from 'react-type-animation';
 const Iot = () => {
 
   const [isVisibleTesti, setIsVisibleTesti] = useState(false);
@@ -54,6 +55,7 @@ const Iot = () => {
   const [processNewVisible, setProcessNewVisible] = useState(false);
   const processNewRef = useRef(null);
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -130,9 +132,22 @@ useScrollToTop();
         <section class="hero-container-iot">
           <div class="hero-content-iot">
             <h2 class="hero-heading-iot">
-            Your Gateway to Scalable IoT Innovation
+            {windowWidth >= 1200 ? <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        'Your Gateway to Scalable IoT Innovation',
+        7000, 
+       
+      ]}
+      wrapper="span"
+      speed={50}
+      style={{ fontSize: '40px', display: 'inline-block' }}
+      repeat={Infinity}
+    /> : 'Your Gateway to Scalable IoT Innovation'}
+            
             </h2>
             <p class="hero-desc-iot">
+              
             Embark on a transformative journey with Phi Consulting, where we specialize in turning potential into success for IoT and technology startups. Our dedicated team guides founders and C-level executives through the intricate landscapes of growth and innovation, ensuring a flawless and efficient journey.
             </p>
             <div class="consult-button-sales"> <Link to="/contact" className='scheduler-set'>Schedule a Free Consultation</Link> </div>

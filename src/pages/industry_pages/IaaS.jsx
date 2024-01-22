@@ -34,9 +34,9 @@ import SmallWorkCard from '../../components/shared/cards/SmallWorkCard';
 import caseStudies from '../../data/caseStudies.json';
 
 import useScrollToTop from '../../hooks/useScrollToTop';
-// import VantaAnimation from '../../components/shared/vantun';
-
-
+import IndustryServicesSection from '../../components/shared/macroComps/IndustryServicesSection';
+import IndustrySpecialities from '../../components/shared/macroComps/industrySpecialities';
+import { TypeAnimation } from 'react-type-animation';
 
 const IaaS = () => {
 
@@ -55,7 +55,9 @@ const IaaS = () => {
   const [processNewVisible, setProcessNewVisible] = useState(false);
   const processNewRef = useRef(null);
 
-  
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const sectionsRef = useRef([]);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -119,9 +121,42 @@ useEffect(() => {
     return () => observer.disconnect(); 
 }, []);
 
+
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            },
+            {
+                rootMargin: '0px',
+                threshold: 0.3
+            }
+        );
+
+        const elements = sectionsRef.current;
+        elements.forEach(el => observer.observe(el));
+
+        return () => elements.forEach(el => observer.unobserve(el));
+    }, []);
+
+    const addToRefs = el => {
+        if (el && !sectionsRef.current.includes(el)) {
+            sectionsRef.current.push(el);
+        }
+    };
+
 useScrollToTop();
 
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
+
+
     return (
         <>
       {/* <!-- Hero Section --> */}
@@ -131,137 +166,93 @@ useScrollToTop();
           <div class="hero-content-iaas">
             
             <h2 class="hero-heading-iaas">
-              {/* <!-- Transforming Possibilities <br />
-              into Profits --> */}
-              Expert IaaS Solutions for Startups
+            {windowWidth >= 1200 ? <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        'Expert IaaS Solutions for Startups',
+        7000, 
+       
+      ]}
+      wrapper="span"
+      speed={50}
+      style={{ fontSize: '40px', display: 'inline-block' }}
+      repeat={Infinity}
+    /> : 'Expert IaaS Solutions for Startups'}
+              
             </h2>
             <p class="hero-desc-iaas">
             At Phi Consulting, we understand the unique challenges and immense potential of startups in the cutting-edge sector of IaaS. Our mission is to be your strategic partner, guiding your venture towards scalable growth and operational excellence.
+
             </p>
             <div class="consult-button-sales"> <Link to="/contact" className='scheduler-set'>Schedule a Free Consultation</Link> </div>
           </div>
         </section>
       </article>
 
-      {/* <VantaAnimation/> */}
+      {/* Services Section */}
+      <IndustryServicesSection />
 
-      {/* <!-- sales page banner --> */}
-      <article class="sales-solutions" >
-        <h2 class="sales-heading" >Tailored IaaS Consulting Services </h2>
-        {/* <p class="sales-banner-desc">
-          Phi Consulting transforms possibilities into profits through tailored
-          sales consulting services, including Inbound and Outbound Sales, Sales
-          Enablement, Sales Expansion, and strategic Product-led Growth
-          solutions.
-        </p> */}
-        <div class="sales-banner-container">
-          <div class="sales-cards one-with-white-back">
-            <div class="icon-container">
-              <img
-                src={salesone}
-                alt=""
-                width="90"
-                height="90"
-              />
-            </div>
-            <h3 class="sales-card-title">Go-To-Market Strategy</h3>
-            <div class="sales-card-description">
-            Your innovation deserves a robust market entry. Our Go-To-Market (GTM) strategies are not just plans, but blueprints for success, designed to capture your target market effectively and efficiently.
-            </div>
-          </div>
-
-          <div class="sales-cards one-with-blue-back">
-            <div class="icon-container">
-              <img
-                src={salestwo}
-                alt=""
-                width="90"
-                height="90"
-              />
-            </div>
-            <h3 class="sales-card-title">HR & Recruitment Solutions</h3>
-            <div class="sales-card-description">
-            Talent is the backbone of any startup. We help you build a team not just for today, but for the future – a workforce aligned with your vision and equipped for the challenges ahead.
-            </div>
-          </div>
-          <div class="sales-cards one-with-white-back">
-            <div class="icon-container">
-              <img
-                src={salesthree}
-                alt=""
-                width="90"
-                height="90"
-              />
-            </div>
-            <h3 class="sales-card-title">Financial Consulting</h3>
-            <div class="sales-card-description">
-            Navigate the financial complexities of startup growth with our expert advice. From budgeting to fiscal management, we ensure your financial health is robust, enabling you to focus on innovation.
-            </div>
-          </div>
-          <div class="sales-cards one-with-white-back">
-            <div class="icon-container">
-              <img
-                src={salesthree}
-                alt=""
-                width="90"
-                height="90"
-              />
-            </div>
-            <h3 class="sales-card-title">Investor Relations</h3>
-            <div class="sales-card-description">
-            Building bridges between your vision and the right investors. Our investor relations services connect you with the right people, ensuring your ideas get the backing they need to soar.
-            </div>
-          </div>
+      {/* Specialities Paragraph */}
+      {/* <IndustrySpecialities /> */}
+      <article className="industry-para-container">
+        <section className="industry-para-collection" ref={addToRefs}>
+        <div className="para-title-industry">
+        <h2 className='title-special'>What is <span className='bluer'> IaaS Consulting</span>?</h2>
         </div>
-        <div class="sales-banner-container down-spacing">
-          {/* <div class="sales-cards one-with-blue-back">
-            <div class="icon-container">
-              <img
-                src={salesfour}
-                alt=""
-                width="90"
-                height="90"
-              />
-            </div>
-            <h3 class="sales-card-title">Sales Expansion</h3>
-            <div class="sales-card-description">
-              Expand your market reach and drive growth with our Sales Expansion
-              strategies tailored to your unique business goals.
-            </div>
-          </div>
-
-          <div class="sales-cards one-with-white-back">
-            <div class="icon-container">
-              <img
-                src={salesfive}
-                alt=""
-                width="90"
-                height="90"
-              />
-            </div>
-            <h3 class="sales-card-title">Product-led Growth</h3>
-            <div class="sales-card-description">
-              Leverage your product as a key driver for business growth with our
-              Product-led Growth strategies, turning users into loyal customers.
-            </div>
-          </div>
-          <div class="sales-cards one-with-blue-back">
-            <div class="icon-container">
-              <img
-                src={salessix}
-                alt=""
-                width="90"
-                height="90"
-              />
-            </div>
-            <div class="more-info-container">
-              <div class="right-button">
-                <span>More Info</span>
-              </div>
-            </div>
-          </div> */}
+        <div className="para-desc-industry">
+        Our IaaS consulting services are crafted to help businesses assess their infrastructure needs, identify optimal cloud providers, and formulate a scalable, cost-effective strategy. Whether you're migrating existing on-premises infrastructure to the cloud or fine-tuning resource allocation, we've got you covered. Our experts ensure your security and compliance while recommending best practices for seamless management and maintenance.
         </div>
-      </article>
+        </section>
+       
+
+        <section className="industry-para-collection" ref={addToRefs}>
+        <div className="para-title-industry">
+        <h2 className='title-special'>Tailored<span className='bluer'> IaaS</span>  Consulting Services</h2>
+        </div>
+        <div className="para-desc-industry">
+        At Phi Consulting, we understand the unique challenges faced by founders and C-level executives. Our custom consulting services are designed to cater to your specific needs, ensuring your startup scales efficiently while keeping costs in check.
+        </div>
+        </section>
+
+        <section className="industry-para-collection" ref={addToRefs}>
+        <div className="para-title-industry">
+        <h2 className='title-special'><span className='bluer'>Go-To-Market</span> Strategy</h2>
+        </div>
+        <div className="para-desc-industry">
+        Your innovation deserves a robust market entry. Our Go-To-Market (GTM) strategies are not just plans, but blueprints for success, designed to capture your target market effectively and efficiently.
+        </div>
+        </section>
+
+        <section className="industry-para-collection" ref={addToRefs}>
+        <div className="para-title-industry">
+        <h2 className='title-special'><span className='bluer'>HR & Recruitment </span> Solutions</h2>
+        </div>
+        <div className="para-desc-industry">
+        Talent is the backbone of any startup. We assist you in building a team not just for today, but for the future—a workforce aligned with your vision and ready for the challenges ahead.
+        </div>
+        </section>
+
+        <section className="industry-para-collection" ref={addToRefs}>
+        <div className="para-title-industry">
+        <h2 className='title-special'><span className='bluer'>Financial</span> Consulting</h2>
+        </div>
+        <div className="para-desc-industry">
+        Navigate the financial complexities of startup growth with our expert advice. From budgeting to fiscal management, we ensure your financial health is robust, enabling you to focus on innovation.
+
+        </div>
+        </section>
+
+        <section className="industry-para-collection" ref={addToRefs}>
+        <div className="para-title-industry">
+        <h2 className='title-special'><span className='bluer'>Investor Relations</span></h2>
+        </div>
+        <div className="para-desc-industry">
+        Building bridges between your vision and the right investors. Our investor relations services connect you with the right people, ensuring your ideas get the backing they need to soar.
+        </div>
+        </section>
+       </article>
+
+    
 
       {/* <!-- Section path  --> */}
       <article class="path">
@@ -406,154 +397,7 @@ useScrollToTop();
         </section>
       </article>
 
-      {/* <!-- section new process --> */}
-      {/* <article class="process-new">
-        <section class="process-new-container">
-          <h2 class="path-heading">A Proven Path to Success</h2>
-          <p class="work-desc">
-            Explore the journey to excellence with Phi Consulting's strategic
-            process – your gateway to optimizing sales performance, enhancing
-            customer experience, and achieving sustained growth.
-          </p>
-          <div class="process-new-section">
-            <div class="left-process-section" ref={processNewRef}>
-              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
-                <img
-                  src="../assets/img/process_icons/goal.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Define Your Goals</div>
-                  <div class="process-new-description">
-                    Understand your unique challenges, aspirations, and
-                    opportunities to set the foundation for our strategic
-                    approach.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
-                <img
-                  src="../assets/img/process_icons/plan.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Plan & Map Your Process</div>
-                  <div class="process-new-description-right-side">
-                    Craft a tailored roadmap aligned with your goals, ensuring a
-                    clear path forward.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="process-new-section">
-            <div class="left-process-section">
-              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
-                <img
-                  src="../assets/img/process_icons/action.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Set Actions</div>
-                  <div class="process-new-description">
-                    Define clear, measurable, and achievable steps, creating a
-                    roadmap for success.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
-                <img
-                  src="../assets/img/process_icons/assign.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Assign Stakeholders</div>
-                  <div class="process-new-description-right-side">
-                    Foster collaboration by assigning key individuals
-                    responsible for successful execution.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="process-new-section">
-            <div class="left-process-section">
-              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
-                <img
-                  src="../assets/img/process_icons/test.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Test the Process</div>
-                  <div class="process-new-description">
-                    Rigorously test and refine strategies before full
-                    implementation for effectiveness and adaptability.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
-                <img
-                  src="../assets/img/process_icons/implement.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Implement the Process</div>
-                  <div class="process-new-description-right-side">
-                    Execute strategies flawlessly with our hands-on approach,
-                    bringing the plan to life.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="process-new-section">
-            <div class="left-process-section">
-              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
-                <img
-                  src="../assets/img/process_icons/monitor.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Monitor the Results</div>
-                  <div class="process-new-description">
-                    Continuously track key metrics, assess performance, and
-                    ensure strategies yield desired outcomes.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
-                <img
-                  src="../assets/img/process_icons/improve.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Make Improvements</div>
-                  <div class="process-new-description-right-side">
-                    Identify areas for improvement based on results, refining
-                    strategies for ongoing optimization.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </article> */}
+
 
 
 
@@ -568,10 +412,10 @@ useScrollToTop();
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Industry-Specific Expertise
+                  Experience in Your Industry
                   </h2>
                   <p class="overlay-desc">
-                  Our team specializes in your field, offering insights and strategies that resonate with your industry's unique landscape.
+                  Our team brings in-depth knowledge and experience across the IoT, SaaS, IaaS, Fintech, Cloud, and DevOps sectors.
 
                   </p>
                 </div>
@@ -582,10 +426,10 @@ useScrollToTop();
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Cost-Effective Scaling
+                  Customized Solutions
                   </h2>
                   <p class="overlay-desc">
-                  Efficiency is at the heart of what we do. We help you scale your operations while optimizing resources, ensuring a lean yet powerful growth trajectory.
+                  We recognize the uniqueness of your startup. Our approach is highly personalized, ensuring solutions that fit your specific needs and goals.
                   </p>
                 </div>
               </div>
@@ -596,9 +440,9 @@ useScrollToTop();
               <div class="overlay-container three-why">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Personalized Approach</h2>
+                  <h2 class="overlay-heading">Efficiency and Cost-Reduction</h2>
                   <p class="overlay-desc">
-                  Your startup is unique, and so is our approach. We offer customized solutions that align with your vision and business goals.
+                  While you innovate, we optimize. Our strategies are designed not only to help you grow but to do so in the most cost-effective way.
                   </p>
                 </div>
               </div>
@@ -608,14 +452,15 @@ useScrollToTop();
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Results-Driven
+                  Long-Term Partnership
                   </h2>
                   <p class="overlay-desc">
-                  We measure our success by your success. Our commitment is to deliver tangible results that propel your startup to new heights.
+                  We believe in building lasting relationships. Our success is measured by the sustained growth and success of our clients.
                   </p>
                 </div>
               </div>
             </div>
+            
           </div>
           
         </div>
@@ -878,10 +723,10 @@ useScrollToTop();
         <section class="cta-sections-container">
           <div class="cta-content">
             <div class="cta-heading">
-            Let's Shape the Future Together
+            Ready to Scale New Heights?
             </div>
             <div class="cta-descrip">
-            Ready to accelerate your startup's journey? Contact us to discuss how we can partner in your growth. At Phi Consulting, your vision is our mission.
+            Embark on your journey towards unprecedented growth and efficiency with Phi Consulting. Let's discuss how we can transform your startup's potential into real-world success.
             </div>
           </div>
           <div class="cta-button-section">
