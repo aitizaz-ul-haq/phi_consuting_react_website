@@ -177,7 +177,7 @@ border-bottom: 2px solid var(--LIGHT-PHI-BLUE);
   }
   
   .header-mobile-link:hover {
-    color: #66c0ff;
+    color: white;
   }
   
 .mobile-icons {
@@ -416,6 +416,56 @@ border-bottom: 2px solid var(--LIGHT-PHI-BLUE);
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+
+.mobile-dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--DARK-PHI-BLUE);
+    box-shadow: 0 8px 16px var(--LIGHTER-DARK-PHI-BLUE);
+    z-index: 1;
+    min-width: 160px;
+    width: 289px;
+    border-bottom: 8px solid #00BCD4;
+    border-radius: 20px;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    padding: 5px;
+  }
+  
+  .mobile-dropdown-menu a {
+    display: flex;
+  align-items: center;
+  color: var(--BLACK-TEXT);
+  padding: 2px 11px;
+  text-decoration: none;
+  display: block;
+  font-size: 22px;
+  transition: background-color 0.3s;
+  }
+
+  .dropdown-icon {
+    margin-right: 10px;
+    /* Adjust the icon size if necessary */
+  }
+  
+  .mobile-dropdown-menu a:visited,
+  .mobile-dropdown-menu a:active {
+    color: white;
+  }
+  
+  .mobile-dropdown-menu a span {
+    margin-right: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .mobile-dropdown-show {
+    display: block;
+    opacity: 1;
+    transform: scaleY(1);
+  }
 
 .right-button-header {
     order: 3;

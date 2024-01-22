@@ -16,8 +16,21 @@ import blogicon from "../../assets/img/mobile_menu icons/blog.png";
 import casestudy from "../../assets/img/mobile_menu icons/case-study.png"; 
 import hricon from "../../assets/img/white_icons/human-resources.png"
 
+import insight from "../../assets/img/mobile_menu icons/insight.png";
+import industry from "../../assets/img/mobile_menu icons/industry.png";
+
+import iot from "../../assets/img/white_industry_icons/iot.png";
+import iaas from "../../assets/img/white_industry_icons/iaas.png";
+import saas from "../../assets/img/white_industry_icons/saas.png";
+import devops from "../../assets/img/white_industry_icons/devops.png";
+import cloud from "../../assets/img/white_industry_icons/server.png";
+import fintech from "../../assets/img/white_industry_icons/cloud-computing.png";
+
 const MobileHeader = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isSolutionsDropdownOpen, setIsSolutionsDropdownOpen] = useState(false);
+    const [isIndustryDropdownOpen, setIsIndustryDropdownOpen] = useState(false);
+    const [isInsightsDropdownOpen, setIsInsightsDropdownOpen] = useState(false);
   
     const toggleMobileMenu = () => {
       setIsMobileMenuOpen((prev) => !prev);
@@ -25,6 +38,24 @@ const MobileHeader = () => {
   
     const closeMobileMenu = () => {
       setIsMobileMenuOpen(false);
+    };
+
+    const toggleSolutionsDropdown = () => {
+      setIsSolutionsDropdownOpen(prev => !prev);
+      setIsIndustryDropdownOpen(false);
+      setIsInsightsDropdownOpen(false);
+    };
+
+    const toggleIndustryDropdown = () => {
+      setIsIndustryDropdownOpen(prev => !prev);
+      setIsInsightsDropdownOpen(false);
+      setIsSolutionsDropdownOpen(false);
+    };
+
+    const toggleInsightsDropdown = () => {
+      setIsInsightsDropdownOpen(prev => !prev);
+      setIsIndustryDropdownOpen(false);
+      setIsSolutionsDropdownOpen(false);
     };
   
     return (
@@ -48,11 +79,67 @@ const MobileHeader = () => {
                 </a>
               </li>
               <li className='list-element-mobile-menu'>
-                <a href="/services" className="header-mobile-link" onClick={closeMobileMenu}>
+                <a className="header-mobile-link" onClick={toggleSolutionsDropdown}>
                 <img src={solutionsicon} className='mobile-icons' alt="" width={32} height={32}/> Solutions
                 </a>
+                <div className={`mobile-dropdown-menu ${isSolutionsDropdownOpen ? 'mobile-dropdown-show' : ''}`}>
+                    
+                    <a href="/GTM-advisory" onClick={closeMobileMenu}>
+                      <img src={gtnicon} className='dropdown-icon' alt="" width={28} height={28}/> <span>GTM Strategy</span>
+                    </a>
+                    <a href="/financial-consulting" onClick={closeMobileMenu}>
+                      <img src={finicon} className='dropdown-icon' alt="" width={28} height={28}/> <span>Financial Consulting</span>
+                    </a>
+                    <a href="/investor-relations" onClick={closeMobileMenu}>
+                      <img src={invicon} className='dropdown-icon' alt="" width={28} height={28}/> <span>Investor Relations</span>
+                    </a>
+                    <a href="/hr-consulting" onClick={closeMobileMenu}>
+                      <img src={hricon} className='dropdown-icon' alt="" width={28} height={28}/> <span>HR & Recruitment</span>
+                    </a>
+                  </div>
               </li>
               <li className='list-element-mobile-menu'>
+                <a className="header-mobile-link" onClick={toggleIndustryDropdown}>
+                <img src={industry} className='mobile-icons' alt="" width={32} height={32}/> Industry
+                </a>
+                <div className={`mobile-dropdown-menu ${isIndustryDropdownOpen ? 'mobile-dropdown-show' : ''}`}>
+                    
+                    <a href="/GTM-advisory" onClick={closeMobileMenu}>
+                      <img src={iot} className='dropdown-icon' alt="" width={28} height={28}/> <span>IoT Consulting</span>
+                    </a>
+                    <a href="/financial-consulting" onClick={closeMobileMenu}>
+                      <img src={iaas} className='dropdown-icon' alt="" width={28} height={28}/> <span>IaaS Consulting</span>
+                    </a>
+                    <a href="/investor-relations" onClick={closeMobileMenu}>
+                      <img src={saas} className='dropdown-icon' alt="" width={28} height={28}/> <span>SaaS Consulting</span>
+                    </a>
+                    <a href="/hr-consulting" onClick={closeMobileMenu}>
+                      <img src={devops} className='dropdown-icon' alt="" width={28} height={28}/> <span>DevOps Consulting</span>
+                    </a>
+                    <a href="/investor-relations" onClick={closeMobileMenu}>
+                      <img src={cloud} className='dropdown-icon' alt="" width={28} height={28}/> <span>Cloud Consulting</span>
+                    </a>
+                    <a href="/hr-consulting" onClick={closeMobileMenu}>
+                      <img src={fintech} className='dropdown-icon' alt="" width={28} height={28}/> <span>FinTech Consulting</span>
+                    </a>
+                  </div>
+              </li>
+              <li className='list-element-mobile-menu'>
+                <a className="header-mobile-link" onClick={toggleInsightsDropdown}>
+                <img src={insight} className='mobile-icons' alt="" width={32} height={32}/> Insights
+                </a>
+                <div className={`mobile-dropdown-menu ${isInsightsDropdownOpen ? 'mobile-dropdown-show' : ''}`}>
+                    
+                    <a href="/blogs" onClick={closeMobileMenu}>
+                      <img src={blogicon} className='dropdown-icon' alt="" width={28} height={28}/> <span>Blogs</span>
+                    </a>
+                    <a href="/casestudies" onClick={closeMobileMenu}>
+                      <img src={casestudy} className='dropdown-icon' alt="" width={28} height={28}/> <span>Case Studies</span>
+                    </a>
+                    
+                  </div>
+              </li>
+              {/* <li className='list-element-mobile-menu'>
                 <a href="/GTM-advisory" className="header-mobile-link" onClick={closeMobileMenu}>
                 <img src={gtnicon} className='mobile-icons' alt="" width={32} height={32}/> GTM Strategy
                 </a>
@@ -71,7 +158,7 @@ const MobileHeader = () => {
                 <a href="/hr-consulting" className="header-mobile-link" onClick={closeMobileMenu}>
                 <img src={hricon} className='mobile-icons' alt="" width={32} height={32}/>  hr & Recruitment 
                 </a>
-              </li>
+              </li> */}
               <li className='list-element-mobile-menu'>
                 <a href="/valuecreation" className="header-mobile-link" onClick={closeMobileMenu}>
                 <img src={valuecreation} className='mobile-icons' alt="" width={32} height={32}/> Value Creation
@@ -82,7 +169,7 @@ const MobileHeader = () => {
                 <img src={aboutusicon} className='mobile-icons' alt="" width={30} height={30}/> About Us
                 </a>
               </li>
-              <li className='list-element-mobile-menu'>
+              {/* <li className='list-element-mobile-menu'>
                 <a href="/blogs" className="header-mobile-link" onClick={closeMobileMenu}>
                 <img src={blogicon} className='mobile-icons' alt="" width={32} height={32}/> Blogs
                 </a>
@@ -91,7 +178,7 @@ const MobileHeader = () => {
                 <a href="/casestudies" className="header-mobile-link" onClick={closeMobileMenu}>
                 <img src={casestudy} className='mobile-icons' alt="" width={32} height={32}/> Case Studies
                 </a>
-              </li>
+              </li> */}
               <li className='list-element-mobile-menu'>
                 <a href="/careers" className="header-mobile-link" onClick={closeMobileMenu}>
                 <img src={careersicon} className='mobile-icons' alt="" width={32} height={32}/> Careers
