@@ -2413,6 +2413,102 @@ padding: 1rem;
     z-index: -2; /* Place the pseudo-element with the image behind the tint */
 }
 
+.services-industry-container {
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+    /* background-color: var(--APPLE-GRAY); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.services-industry-heading {
+    font-size: var(--FS-HEAD);
+    color: var(--LIGHTER-DARK-PHI-BLUE);
+    margin-bottom: 4rem;
+}
+
+.service-cariers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    color: var(--WHITE-TEXT);
+    color: #0d0d0d;
+}
+
+.service-nugget {
+    width: 400px;
+    height: 350px;
+    /* background-color: var(--LIGHT-PHI-BLUE); */
+    padding: 2rem;
+    margin: 1rem;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0px 0px 25px -17px var(--LIGHTER-DARK-PHI-BLUE);
+}
+
+.service-nugget:hover {
+    transform: scale(1.08); /* Slightly increase the size on hover */
+}
+
+.services-industry-title {
+    font-size: var(--FS-HEAD);
+    margin-top: 1rem;
+    font-weight: 600;
+    color: var(--LIGHTER-DARK-PHI-BLUE);
+}
+
+.services-industry-description {
+    font-size: var(--FS-MINI-HEADING);
+    font-weight: 100;
+    color: var(--LIGHTER-DARK-PHI-BLUE);
+}
+
+.icon-services-industry {
+    width: 100px;
+    height: auto;
+    padding: 1rem;
+    background-color: var(--LIGHT-PHI-BLUE);
+    /* border: 2px solid var(--LIGHTER-DARK-PHI-BLUE); */
+    box-shadow: 0px 0px 40px -17px var(--LIGHTER-DARK-PHI-BLUE);
+}
+
+.industry-para-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 6rem;
+    padding-right: 6rem;
+   
+}
+
+.industry-para-collection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+}
+
+.para-title-industry {
+    font-size: 32px;
+    color: var(--LIGHTER-DARK-PHI-BLUE);
+    font-weight: 600;
+}
+
+.para-desc-industry {
+    font-size: 32px;
+    color: var(--LIGHTER-DARK-PHI-BLUE);
+    font-weight: 100;
+}
+
+.bluer {
+    color: var(--LIGHT-PHI-BLUE);
+}
+
 .strategic-solutions {
     display: flex;
     flex-direction: column;
@@ -2428,6 +2524,8 @@ padding: 1rem;
     align-items: center;
     margin: 10px;
 }
+
+
 
 .card-row-top {
     display: flex;
@@ -13334,6 +13432,34 @@ display: none;
     .caese-styudy-description-reader {
         font-size: 22px;
         color: var(--LIGHTER-DARK-PHI-BLUE);
+    }
+
+    .service-nugget {
+        /* existing styles */
+        opacity: 0; /* Initially hidden */
+    transform: translateY(30px); /* Start slightly lower */
+    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
+    }
+    
+    .service-nugget.visible {
+        opacity: 1; /* Fully visible when in viewport */
+    transform: translateY(0); /* Move to original position */
+    }
+
+    .service-nugget:hover {
+        transform: scale(1.08) translateY(0); /* Scale up and ensure it's in the original position on hover */
+    }
+
+    .industry-para-collection {
+        opacity: 0;
+        transform: translateY(60px);
+        transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+        will-change: opacity, transform;
+    }
+    
+    .industry-para-collection.visible {
+        opacity: 1;
+        transform: translateY(0px);
     }
 
     /* .work-case-study-section {
