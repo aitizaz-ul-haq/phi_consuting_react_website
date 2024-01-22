@@ -555,20 +555,6 @@ useScrollToTop();
         </section>
       </article> */}
 
-      {/* <!-- full scale banner --> */}
-      <article class="full-scale-banner">
-        <section class="banner-full-exp">
-          <div class="overlay"></div>
-          <div class="banner-new-full-scale-container">
-            <h2 class="full-banner-call">
-              42% businesses adopt go-to-market strategies for calculating
-              customer value, 28% for business expansion/upgrades, and 61% to
-              build customer experience
-            </h2>
-          </div>
-        </section>
-      </article>
-
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
         <h2 class="why-phi-heading">Why Phi Consulting?</h2>
@@ -646,6 +632,20 @@ useScrollToTop();
            
           </div>
         </div>
+      </article>
+
+      {/* <!-- full scale banner --> */}
+      <article class="full-scale-banner">
+        <section class="banner-full-exp">
+          <div class="overlay"></div>
+          <div class="banner-new-full-scale-container">
+            <h2 class="full-banner-call">
+              42% businesses adopt go-to-market strategies for calculating
+              customer value, 28% for business expansion/upgrades, and 61% to
+              build customer experience
+            </h2>
+          </div>
+        </section>
       </article>
 
         {/* <!-- Clients Section --> */}

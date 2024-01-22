@@ -104,22 +104,22 @@ const MobileHeader = () => {
                 </a>
                 <div className={`mobile-dropdown-menu ${isIndustryDropdownOpen ? 'mobile-dropdown-show' : ''}`}>
                     
-                    <a href="/GTM-advisory" onClick={closeMobileMenu}>
+                    <a href="/Iot" onClick={closeMobileMenu}>
                       <img src={iot} className='dropdown-icon' alt="" width={28} height={28}/> <span>IoT Consulting</span>
                     </a>
-                    <a href="/financial-consulting" onClick={closeMobileMenu}>
+                    <a href="/IaaS" onClick={closeMobileMenu}>
                       <img src={iaas} className='dropdown-icon' alt="" width={28} height={28}/> <span>IaaS Consulting</span>
                     </a>
-                    <a href="/investor-relations" onClick={closeMobileMenu}>
+                    <a href="/SaaS" onClick={closeMobileMenu}>
                       <img src={saas} className='dropdown-icon' alt="" width={28} height={28}/> <span>SaaS Consulting</span>
                     </a>
-                    <a href="/hr-consulting" onClick={closeMobileMenu}>
+                    <a href="/dev-ops" onClick={closeMobileMenu}>
                       <img src={devops} className='dropdown-icon' alt="" width={28} height={28}/> <span>DevOps Consulting</span>
                     </a>
-                    <a href="/investor-relations" onClick={closeMobileMenu}>
+                    <a href="/Cloud" onClick={closeMobileMenu}>
                       <img src={cloud} className='dropdown-icon' alt="" width={28} height={28}/> <span>Cloud Consulting</span>
                     </a>
-                    <a href="/hr-consulting" onClick={closeMobileMenu}>
+                    <a href="/FinTech" onClick={closeMobileMenu}>
                       <img src={fintech} className='dropdown-icon' alt="" width={28} height={28}/> <span>FinTech Consulting</span>
                     </a>
                   </div>
