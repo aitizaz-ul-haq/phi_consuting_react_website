@@ -36,6 +36,8 @@ import caseStudies from '../../data/caseStudies.json';
 import useScrollToTop from '../../hooks/useScrollToTop';
 // import VantaAnimation from '../../components/shared/vantun';
 
+import VantaEffectComponent from '../../components/shared/vantaEffectComponent';
+
 
 
 const Iot = () => {
@@ -124,15 +126,13 @@ useScrollToTop();
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (
         <>
+         
       {/* <!-- Hero Section --> */}
       <article class="hero">
-    
+   
         <section class="hero-container-sales">
           <div class="hero-content-sales">
-            
             <h2 class="hero-heading-sales">
-              {/* <!-- Transforming Possibilities <br />
-              into Profits --> */}
               Your Gateway to Scalable IoT Innovation
             </h2>
             <p class="hero-desc-sales">
@@ -898,6 +898,8 @@ useScrollToTop();
           </div>
         </section>
       </article>
+
+      {/* <VantaEffectComponent/> */}
         </>
     )
 }
