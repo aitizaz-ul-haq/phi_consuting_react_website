@@ -407,7 +407,7 @@ useScrollToTop();
       </article>
 
       {/* <!-- section new process --> */}
-      <article class="process-new">
+      {/* <article class="process-new">
         <section class="process-new-container">
           <h2 class="path-heading">A Proven Path to Success</h2>
           <p class="work-desc">
@@ -553,7 +553,7 @@ useScrollToTop();
             </div>
           </div>
         </section>
-      </article>
+      </article> */}
 
       {/* <!-- full scale banner --> */}
       <article class="full-scale-banner">
