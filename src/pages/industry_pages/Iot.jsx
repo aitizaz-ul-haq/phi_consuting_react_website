@@ -157,7 +157,7 @@ useScrollToTop();
 
 
       {/* Services Section */}
-      <IndustryServicesSection/>
+      {/* <IndustryServicesSection/> */}
 
     
      {/* Specialities Paragraph */}

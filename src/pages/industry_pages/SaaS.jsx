@@ -221,7 +221,7 @@ useScrollToTop();
       {/* <VantaAnimation/> */}
 
       {/* <!-- sales page banner --> */}
-      <IndustryServicesSection />
+      {/* <IndustryServicesSection /> */}
 
     {/* Specialities Paragraph */}
       {/* <IndustrySpecialities /> */}
@@ -236,50 +236,48 @@ useScrollToTop();
         </section>
        
 
-        <section className="industry-para-collection" ref={addToRefs}>
+        {/* <section className="industry-para-collection" ref={addToRefs}>
         <div className="para-title-industry">
         <h2 className='title-special'>Tailored<span className='bluer'> SaaS</span>  Consulting Services</h2>
         </div>
         <div className="para-desc-industry">
         At Phi Consulting, we understand the unique challenges faced by founders and C-level executives. Our custom consulting services are designed to cater to your specific needs, ensuring your startup scales efficiently while keeping costs in check.
         </div>
-        </section>
+        </section> */}
 
-        <section className="industry-para-collection" ref={addToRefs}>
+<section className="industry-para-collection" ref={addToRefs}>
         <div className="para-title-industry">
-        <h2 className='title-special'><span className='bluer'>Go-To-Market</span> Strategy</h2>
+        <h2 className='title-special'>Revolutionize Your <span className='bluer'>Go-To-Market</span> Strategy</h2>
         </div>
         <div className="para-desc-industry">
-        Our Go-To-Market strategies are more than just plans; they are blueprints for success, meticulously tailored to your startup's unique value proposition and the ever-evolving dynamics of your market.
-        </div>
-        </section>
-
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'><span className='bluer'>HR & Recruitment </span> Solutions</h2>
-        </div>
-        <div className="para-desc-industry">
-        Talent is the backbone of thriving startups. With our comprehensive HR and recruitment services, we ensure you assemble the right team to drive your vision forward.
+        In the dynamic world of IoT and tech startups, a well-crafted go-to-market (GTM) strategy is not just advantageous but essential. Our seasoned experts develop custom GTM strategies aligned with your vision, enabling you to not only enter the market but also make a lasting impact.
         </div>
         </section>
 
         <section className="industry-para-collection" ref={addToRefs}>
         <div className="para-title-industry">
-        <h2 className='title-special'><span className='bluer'>Financial</span> Consulting</h2>
+        <h2 className='title-special'><span className='bluer'>Attract, Retain,</span> and <span className='bluer'>Nurture</span> the Best Talent</h2>
         </div>
         <div className="para-desc-industry">
-        In the startup world, financial acumen is paramount. Our financial consulting services provide the insights and strategies needed to optimize your financial performance, securing your company's future.
-
+        Your team is the backbone of success. Phi Consulting offers comprehensive HR and recruitment services, assisting you in building a talented workforce aligned with your startup's culture and objectives. From talent acquisition to development, we ensure your human capital is your strongest asset.
         </div>
         </section>
 
         <section className="industry-para-collection" ref={addToRefs}>
         <div className="para-title-industry">
-        <h2 className='title-special'><span className='bluer'>Investor Relations</span></h2>
+        <h2 className='title-special'>Navigate <span className='bluer'>Financial Complexities</span> with Ease</h2>
         </div>
         <div className="para-desc-industry">
-        Building bridges with investors is key to your startup's success. Our expertise in investor relations ensures effective communication of your startup's value, fostering trust and securing the funding necessary for growth.
+        Managing finances in a startup environment can be challenging. Our IoT consulting services provide clarity and direction, helping you make informed decisions that secure your company's financial health and fuel its growth.
+        </div>
+        </section>
 
+        <section className="industry-para-collection" ref={addToRefs}>
+        <div className="para-title-industry">
+        <h2 className='title-special'><span className='bluer'>Building Bridges</span> Between You and Your Investors</h2>
+        </div>
+        <div className="para-desc-industry">
+        Strong investor relations are vital for startup growth. Our team helps you communicate your vision and progress effectively, fostering trust and understanding with investors. This ensures not only continued financial support but also strategic partnerships that propel your IoT startup forward.
         </div>
         </section>
        </article>

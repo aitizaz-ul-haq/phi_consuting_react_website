@@ -45,14 +45,14 @@ const IndustrySpecialities = () => {
         </section>
        
 
-        <section className="industry-para-collection" ref={addToRefs}>
+        {/* <section className="industry-para-collection" ref={addToRefs}>
         <div className="para-title-industry">
         <h2 className='title-special'>Tailored<span className='bluer'> Solutions</span>  for Your Unique Journey</h2>
         </div>
         <div className="para-desc-industry">
         Recognizing the distinctive challenges faced by startup leaders, our custom consulting services are designed to cater to specific needs. Phi Consulting ensures your startup scales efficiently while maintaining cost-effectiveness.
         </div>
-        </section>
+        </section> */}
 
         <section className="industry-para-collection" ref={addToRefs}>
         <div className="para-title-industry">

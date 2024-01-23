@@ -218,7 +218,7 @@ useScrollToTop();
       </article>
 
       {/* Services Section */}
-      <IndustryServicesSection />
+      {/* <IndustryServicesSection /> */}
 
       {/* Specialities Paragraph */}
       {/* <IndustrySpecialities /> */}
@@ -231,9 +231,46 @@ useScrollToTop();
         Our IaaS consulting services are crafted to help businesses assess their infrastructure needs, identify optimal cloud providers, and formulate a scalable, cost-effective strategy. Whether you're migrating existing on-premises infrastructure to the cloud or fine-tuning resource allocation, we've got you covered. Our experts ensure your security and compliance while recommending best practices for seamless management and maintenance.
         </div>
         </section>
-       
 
         <section className="industry-para-collection" ref={addToRefs}>
+        <div className="para-title-industry">
+        <h2 className='title-special'>Revolutionize Your <span className='bluer'>Go-To-Market</span> Strategy</h2>
+        </div>
+        <div className="para-desc-industry">
+        In the dynamic world of IoT and tech startups, a well-crafted go-to-market (GTM) strategy is not just advantageous but essential. Our seasoned experts develop custom GTM strategies aligned with your vision, enabling you to not only enter the market but also make a lasting impact.
+        </div>
+        </section>
+
+        <section className="industry-para-collection" ref={addToRefs}>
+        <div className="para-title-industry">
+        <h2 className='title-special'><span className='bluer'>Attract, Retain,</span> and <span className='bluer'>Nurture</span> the Best Talent</h2>
+        </div>
+        <div className="para-desc-industry">
+        Your team is the backbone of success. Phi Consulting offers comprehensive HR and recruitment services, assisting you in building a talented workforce aligned with your startup's culture and objectives. From talent acquisition to development, we ensure your human capital is your strongest asset.
+        </div>
+        </section>
+
+        <section className="industry-para-collection" ref={addToRefs}>
+        <div className="para-title-industry">
+        <h2 className='title-special'>Navigate <span className='bluer'>Financial Complexities</span> with Ease</h2>
+        </div>
+        <div className="para-desc-industry">
+        Managing finances in a startup environment can be challenging. Our IoT consulting services provide clarity and direction, helping you make informed decisions that secure your company's financial health and fuel its growth.
+        </div>
+        </section>
+
+        <section className="industry-para-collection" ref={addToRefs}>
+        <div className="para-title-industry">
+        <h2 className='title-special'><span className='bluer'>Building Bridges</span> Between You and Your Investors</h2>
+        </div>
+        <div className="para-desc-industry">
+        Strong investor relations are vital for startup growth. Our team helps you communicate your vision and progress effectively, fostering trust and understanding with investors. This ensures not only continued financial support but also strategic partnerships that propel your IoT startup forward.
+        </div>
+        </section>
+        </article>
+       
+
+        {/* <section className="industry-para-collection" ref={addToRefs}>
         <div className="para-title-industry">
         <h2 className='title-special'>Tailored<span className='bluer'> IaaS</span>  Consulting Services</h2>
         </div>
@@ -277,8 +314,8 @@ useScrollToTop();
         <div className="para-desc-industry">
         Building bridges between your vision and the right investors. Our investor relations services connect you with the right people, ensuring your ideas get the backing they need to soar.
         </div>
-        </section>
-       </article>
+        </section> */}
+      
 
     
 

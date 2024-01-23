@@ -215,7 +215,7 @@ useScrollToTop();
         </section>
       </article>
 
-      <IndustryServicesSection />
+      {/* <IndustryServicesSection /> */}
 
       <article className="industry-para-container">
         <section className="industry-para-collection" ref={addToRefs}>
@@ -226,7 +226,41 @@ useScrollToTop();
         DevOps consulting is about providing guidance and expertise to organizations in adopting and implementing DevOps practices. The synergy of software development (Dev) and IT operations (Ops) is designed to streamline the development lifecycle, ensuring the continuous delivery of high-quality software. Our DevOps consulting services empower companies to transform their processes, tools, and culture, fostering collaboration and efficiency across development and operations teams.
         </div>
         </section>
-      
+        <section className="industry-para-collection" ref={addToRefs}>
+        <div className="para-title-industry">
+        <h2 className='title-special'>Revolutionize Your <span className='bluer'>Go-To-Market</span> Strategy</h2>
+        </div>
+        <div className="para-desc-industry">
+        In the dynamic world of IoT and tech startups, a well-crafted go-to-market (GTM) strategy is not just advantageous but essential. Our seasoned experts develop custom GTM strategies aligned with your vision, enabling you to not only enter the market but also make a lasting impact.
+        </div>
+        </section>
+
+        <section className="industry-para-collection" ref={addToRefs}>
+        <div className="para-title-industry">
+        <h2 className='title-special'><span className='bluer'>Attract, Retain,</span> and <span className='bluer'>Nurture</span> the Best Talent</h2>
+        </div>
+        <div className="para-desc-industry">
+        Your team is the backbone of success. Phi Consulting offers comprehensive HR and recruitment services, assisting you in building a talented workforce aligned with your startup's culture and objectives. From talent acquisition to development, we ensure your human capital is your strongest asset.
+        </div>
+        </section>
+
+        <section className="industry-para-collection" ref={addToRefs}>
+        <div className="para-title-industry">
+        <h2 className='title-special'>Navigate <span className='bluer'>Financial Complexities</span> with Ease</h2>
+        </div>
+        <div className="para-desc-industry">
+        Managing finances in a startup environment can be challenging. Our IoT consulting services provide clarity and direction, helping you make informed decisions that secure your company's financial health and fuel its growth.
+        </div>
+        </section>
+
+        <section className="industry-para-collection" ref={addToRefs}>
+        <div className="para-title-industry">
+        <h2 className='title-special'><span className='bluer'>Building Bridges</span> Between You and Your Investors</h2>
+        </div>
+        <div className="para-desc-industry">
+        Strong investor relations are vital for startup growth. Our team helps you communicate your vision and progress effectively, fostering trust and understanding with investors. This ensures not only continued financial support but also strategic partnerships that propel your IoT startup forward.
+        </div>
+        </section>
        </article>
 
 
