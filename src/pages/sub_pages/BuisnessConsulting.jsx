@@ -40,7 +40,7 @@ import bcfive from "../../assets/img/investor-realtions-icons/content.png";
 import bcsix from "../../assets/img/investor-realtions-icons/brand.png";
 
 import useScrollToTop from '../../hooks/useScrollToTop';
-
+import { TypeAnimation } from 'react-type-animation';
 import caseStudies from '../../data/caseStudies.json';
 
 const BuisnessConsulting = () => {
@@ -58,6 +58,9 @@ const BuisnessConsulting = () => {
  
    const [processNewVisible, setProcessNewVisible] = useState(false);
    const processNewRef = useRef(null);
+
+   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
 
    useEffect(() => {
     const observer = new IntersectionObserver(
@@ -135,7 +138,19 @@ useScrollToTop();
         <section class="hero-container-bui-consul">
           <div class="hero-content-bui-consul">
             <h2 class="hero-heading-bui-consul">
-            Boost Your Investor Relations Impact
+            {windowWidth >= 1200 ? <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        ' Boost Your Investor Relations Impact',
+        7000, 
+       
+      ]}
+      wrapper="span"
+      speed={50}
+      style={{ fontSize: '40px', display: 'inline-block' }}
+      repeat={Infinity}
+    /> : ' Boost Your Investor Relations Impact'}
+           
             </h2>
             <p class="hero-desc-bui-consul">
             Investors look for structured and detailed plans for scaling your business while balancing risk and return. We help navigate critical plans for the future by mapping out execution plans for the road ahead.

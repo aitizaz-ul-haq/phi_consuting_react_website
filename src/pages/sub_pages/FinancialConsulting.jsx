@@ -33,6 +33,7 @@ import achicontwo from "../../assets/img/achievements-badges/BBB.png";
 import achiconthree from "../../assets/img/achievements-badges/clutch_2.png";
 import useScrollToTop from '../../hooks/useScrollToTop';
 import caseStudies from '../../data/caseStudies.json';
+import { TypeAnimation } from 'react-type-animation';
 
 
 
@@ -53,7 +54,7 @@ const FiancialConsulting = () => {
    const [processNewVisible, setProcessNewVisible] = useState(false);
    const processNewRef = useRef(null);
  
-  
+   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
    
    useEffect(() => {
      const observer = new IntersectionObserver(
@@ -132,10 +133,19 @@ const FiancialConsulting = () => {
         <section class="hero-container-fin-consul">
           <div class="hero-content-fin-consul">
             <h2 class="hero-heading-fin-consul">
-            Strategy and Support <br /> to Scale Your Growing Business
-            {/* <pre>
-    {'This is the first sentence.\nThis is the second sentence.'}
-  </pre> */}
+            {windowWidth >= 1200 ? <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        'Strategy and Support to Scale Your Growing Business',
+        7000, 
+       
+      ]}
+      wrapper="span"
+      speed={50}
+      style={{ fontSize: '40px', display: 'inline-block' }}
+      repeat={Infinity}
+    /> : 'Strategy and Support to Scale Your Growing Business'}
+           
             </h2>
             <p class="hero-desc-fin-consul">
             At Phi Consulting we understand what it’s like not to be able to raise capital for a good business idea because of lack of clarity in the numbers. And, with our financial consulting service for startups, we’ve helped many startups organize their finances and elevate their financial knowledge.

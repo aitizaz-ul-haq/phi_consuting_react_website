@@ -42,6 +42,8 @@ import hriconsix from "../../assets/img/financial_consulting_icons/strategy (1).
 import caseStudies from '../../data/caseStudies.json';
 import useScrollToTop from '../../hooks/useScrollToTop';
 
+import { TypeAnimation } from 'react-type-animation';
+
 
 const HrAndRecruitmentConsulting = () => {
   const [isVisibleTesti, setIsVisibleTesti] = useState(false);
@@ -59,7 +61,7 @@ const HrAndRecruitmentConsulting = () => {
    const [processNewVisible, setProcessNewVisible] = useState(false);
    const processNewRef = useRef(null);
  
-  
+   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
    
    useEffect(() => {
      const observer = new IntersectionObserver(
@@ -138,7 +140,19 @@ const HrAndRecruitmentConsulting = () => {
         <section class="hero-container-hr-consul">
           <div class="hero-content-hr-consul">
             <h2 class="hero-heading-hr-consul">
-            Hiring that’s efficient <br /> on cost and effective on value
+            {windowWidth >= 1200 ? <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        ' Hiring that’s efficient on cost and effective on value',
+        7000, 
+       
+      ]}
+      wrapper="span"
+      speed={50}
+      style={{ fontSize: '40px', display: 'inline-block' }}
+      repeat={Infinity}
+    /> : ' Hiring that’s efficient on cost and effective on value'}
+           
 
             </h2>
             <p class="hero-desc-hr-consul">

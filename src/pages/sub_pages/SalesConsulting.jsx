@@ -34,7 +34,7 @@ import SmallWorkCard from '../../components/shared/cards/SmallWorkCard';
 import caseStudies from '../../data/caseStudies.json';
 
 import useScrollToTop from '../../hooks/useScrollToTop';
-// import VantaAnimation from '../../components/shared/vantun';
+import { TypeAnimation } from 'react-type-animation';
 
 
 
@@ -54,6 +54,8 @@ const SalesConsulting = () => {
 
   const [processNewVisible, setProcessNewVisible] = useState(false);
   const processNewRef = useRef(null);
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   
   useEffect(() => {
@@ -131,9 +133,19 @@ useScrollToTop();
           <div class="hero-content-sales">
             
             <h2 class="hero-heading-sales">
-              {/* <!-- Transforming Possibilities <br />
-              into Profits --> */}
-              Your Gateway to Strategic GTM Consultancy
+            {windowWidth >= 1200 ? <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        'Your Gateway to Strategic GTM Consultancy',
+        7000, 
+       
+      ]}
+      wrapper="span"
+      speed={50}
+      style={{ fontSize: '40px', display: 'inline-block' }}
+      repeat={Infinity}
+    /> : 'Your Gateway to Strategic GTM Consultancy'}
+              
             </h2>
             <p class="hero-desc-sales">
             We unlock product success through deep consumer behavior insights and strategic GTM Consultancy. As a trusted partner for emerging startups, we specialize in Sales, Customer Experience, and Sales Enablement

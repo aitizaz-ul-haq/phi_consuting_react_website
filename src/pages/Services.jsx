@@ -26,7 +26,7 @@ import achiconone from "../assets/img/achievements-badges/clutch_1.png";
 import achicontwo from "../assets/img/achievements-badges/BBB.png";
 import achiconthree from "../assets/img/achievements-badges/clutch_2.png";
 import SmallWorkCard from '../components/shared/cards/SmallWorkCard';
-
+import { TypeAnimation } from 'react-type-animation';
 import caseStudies from "../data/caseStudies.json";
 
 
@@ -40,6 +40,9 @@ const Services = () => {
 
  const [isVisibleAch, setIsVisibleAch] = useState(false);
   const achRef = useRef(null);
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -111,7 +114,19 @@ const Services = () => {
         <section class="hero-container-services">
           <div class="hero-content-services-page">
             <h2 class="hero-heading-services-page">
-              Drive Growth & Excellence with Phi Consulting
+            {windowWidth >= 1200 ? <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        'Drive Growth & Excellence with Phi Consulting',
+        7000, 
+       
+      ]}
+      wrapper="span"
+      speed={50}
+      style={{ fontSize: '40px', display: 'inline-block' }}
+      repeat={Infinity}
+    /> : 'Drive Growth & Excellence with Phi Consulting'}
+              
             </h2>
             <p class="hero-desc-services-page">
               Unlock the complete potential of your enterprise through Phi
