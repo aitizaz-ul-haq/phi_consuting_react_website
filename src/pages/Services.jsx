@@ -41,6 +41,9 @@ const Services = () => {
  const [isVisibleAch, setIsVisibleAch] = useState(false);
   const achRef = useRef(null);
 
+  const [processNewVisible, setProcessNewVisible] = useState(false);
+  const processNewRef = useRef(null);
+
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
 
@@ -80,6 +83,22 @@ const Services = () => {
 
     observer.observe(achRef.current);
     return () => observer.disconnect();
+}, []);
+
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const entry = entries[0];
+      setProcessNewVisible(entry.isIntersecting);
+    },
+    { threshold: 1 }
+  );
+
+  if (processNewRef.current) {
+    observer.observe(processNewRef.current);
+  }
+
+  return () => observer.disconnect();
 }, []);
 
   const handleTabClickOne = () => {
@@ -220,40 +239,6 @@ const Services = () => {
               </div>
             </div>
           </div>
-          {/* <div class="card-row-top">
-            <div class="card-service-show sales-tab-four" onClick={handleTabClickFour}>
-              <div class="circleBasetwo typetwo">
-                <img
-                  src={hricon}
-                  alt=""
-                  width="100"
-                  height="100"
-                  class="icon-adjuster"
-                />
-              </div>
-              <h3 class="card-present-title">HR & Recruitment Consulting</h3>
-              <div class="card-present-desc">
-                Build a dynamic and skilled workforce with our specialized HR
-                solutions.
-              </div>
-            </div>
-            <div class="card-service-show sales-tab-five" onClick={handleTabClickTwo}>
-              <div class="circleBasetwo typetwo">
-                <img
-                  src={cxicon}
-                  alt=""
-                  width="100"
-                  height="100"
-                  class="icon-adjuster"
-                />
-              </div>
-              <h3 class="card-present-title">Customer Experience Consulting</h3>
-              <div class="card-present-desc">
-                Optimize customer interactions for enhanced satisfaction and
-                operational efficiency.
-              </div>
-            </div>
-          </div> */}
         </div>
       </article>
 
@@ -404,8 +389,10 @@ const Services = () => {
         </section>
       </article>
 
+
+
       {/* <!-- section new process --> */}
-      <article class="process-new">
+      {/* <article class="process-new">
         <section class="process-new-container">
           <h2 class="path-heading">A Proven Path to Success</h2>
           <p class="work-desc">
@@ -535,6 +522,154 @@ const Services = () => {
             </div>
             <div class="right-process-section">
               <div class="tooltip-left">
+                <img
+                  src="../assets/img/process_icons/improve.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Make Improvements</div>
+                  <div class="process-new-description-right-side">
+                    Identify areas for improvement based on results, refining
+                    strategies for ongoing optimization.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article> */}
+
+<article class="process-new">
+        <section class="process-new-container">
+          <h2 class="path-heading">A Proven Path to Success</h2>
+          <p class="work-desc">
+            Explore the journey to excellence with Phi Consulting's strategic
+            process – your gateway to optimizing sales performance, enhancing
+            customer experience, and achieving sustained growth.
+          </p>
+          <div class="process-new-section">
+            <div class="left-process-section" ref={processNewRef}>
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/goal.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Define Your Goals</div>
+                  <div class="process-new-description">
+                    Understand your unique challenges, aspirations, and
+                    opportunities to set the foundation for our strategic
+                    approach.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-process-section">
+              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/plan.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Plan & Map Your Process</div>
+                  <div class="process-new-description-right-side">
+                    Craft a tailored roadmap aligned with your goals, ensuring a
+                    clear path forward.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="process-new-section">
+            <div class="left-process-section">
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/action.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Set Actions</div>
+                  <div class="process-new-description">
+                    Define clear, measurable, and achievable steps, creating a
+                    roadmap for success.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-process-section">
+              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/assign.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Assign Stakeholders</div>
+                  <div class="process-new-description-right-side">
+                    Foster collaboration by assigning key individuals
+                    responsible for successful execution.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="process-new-section">
+            <div class="left-process-section">
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/test.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Test the Process</div>
+                  <div class="process-new-description">
+                    Rigorously test and refine strategies before full
+                    implementation for effectiveness and adaptability.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-process-section">
+              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/implement.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Implement the Process</div>
+                  <div class="process-new-description-right-side">
+                    Execute strategies flawlessly with our hands-on approach,
+                    bringing the plan to life.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="process-new-section">
+            <div class="left-process-section">
+              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
+                <img
+                  src="../assets/img/process_icons/monitor.png"
+                  alt=""
+                  class="new-process-icon"
+                />
+                <div class="text-container">
+                  <div class="process-new-heading">Monitor the Results</div>
+                  <div class="process-new-description">
+                    Continuously track key metrics, assess performance, and
+                    ensure strategies yield desired outcomes.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-process-section">
+              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
                 <img
                   src="../assets/img/process_icons/improve.png"
                   alt=""
