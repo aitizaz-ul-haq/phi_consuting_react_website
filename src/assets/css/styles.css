@@ -14075,7 +14075,25 @@ display: none;
     
     
     /* Add more nth-child rules as needed based on the number of cards */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
     
+    
+    .card-animation {
+        opacity: 0;
+        animation: fadeInUp 0.5s ease forwards;
+    }
+
+  
 
     .macro-title {
 font-size: 32px;

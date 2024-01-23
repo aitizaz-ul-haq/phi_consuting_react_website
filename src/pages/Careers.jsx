@@ -11,7 +11,7 @@ import perksfour from "../assets/img/office-hours.png";
 
 import JobCard from '../components/shared/cards/JobCard';
 import jobPostings from "../data/jobPostings.json";
-
+import { TypeAnimation } from 'react-type-animation';
 import { Link } from 'react-router-dom';
 
 const Careers = () => {
@@ -24,7 +24,7 @@ const Careers = () => {
 
   const [isVisiblePerk, setIsPerk] = useState(false);
   const perkRef = useRef(null);
-
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -51,7 +51,19 @@ const Careers = () => {
         <section class="hero-container-careers">
           <div class="hero-content-careers">
             <h2 class="hero-heading-careers">
-              Join Our Team, Ignite Your Future
+            {windowWidth >= 1200 ? <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        'Join Our Team, Ignite Your Future',
+        7000, 
+       
+      ]}
+      wrapper="span"
+      speed={50}
+      style={{ fontSize: '40px', display: 'inline-block' }}
+      repeat={Infinity}
+    /> : 'Join Our Team, Ignite Your Future'}
+              
             </h2>
             <p class="hero-desc-careers">
               Welcome to Phi Consulting Careers - where innovation meets

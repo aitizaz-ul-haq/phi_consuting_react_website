@@ -1,8 +1,23 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 
 const LengthyWorkCard = ({caseStudy}) => {
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('card-animation');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    const cards = document.querySelectorAll('.insights-bundle-our-work');
+    cards.forEach(card => observer.observe(card));
+
+    return () => cards.forEach(card => observer.unobserve(card));
+}, []);
     return(
         <>
             <div class="insights-bundle-our-work">
