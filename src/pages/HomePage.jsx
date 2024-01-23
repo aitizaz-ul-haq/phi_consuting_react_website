@@ -30,6 +30,8 @@ import caseStudies from "../data/caseStudies.json";
 import useScrollToTop from '../hooks/useScrollToTop';
 import david from "../assets/video/world.mp4";
 
+import { Tooltip } from 'antd';
+
 const HomePage = () => {
 
 
@@ -187,7 +189,7 @@ useEffect(() => {
               foster business expansion, and enhance the overall customer
               experience.
             </p>
-            <div class="consult-button" onClick={gotoContacts}>Schedule a Free Consultation</div>
+            <div class="consult-button" onClick={gotoContacts}><Tooltip title="Contact Page">Schedule a Free Consultation</Tooltip></div>
           </div>
         </section>
       </article>

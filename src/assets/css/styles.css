@@ -12811,6 +12811,7 @@ display: none;
 }
 }
 @media screen and (min-width: 1200px) {
+    
     .hero-container {
         position: relative;
         width: 100%;
@@ -14300,13 +14301,13 @@ display: none;
 }
 
 .left-section-insights {
-    width: 400px;
+    width: 725px;
     height: 440px;
     margin: 2rem;
 }
 
 .right-section-insights {
-    width: 400px;
+    width: 725px;
     height: 440px;
     margin: 2rem;
 }

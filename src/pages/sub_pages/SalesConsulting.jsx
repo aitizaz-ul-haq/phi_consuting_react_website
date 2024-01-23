@@ -36,6 +36,7 @@ import caseStudies from '../../data/caseStudies.json';
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { TypeAnimation } from 'react-type-animation';
 
+import { Button, Modal } from 'antd';
 
 
 const SalesConsulting = () => {
@@ -56,6 +57,19 @@ const SalesConsulting = () => {
   const processNewRef = useRef(null);
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
   
   useEffect(() => {
@@ -155,8 +169,10 @@ useScrollToTop();
         </section>
       </article>
 
-      {/* <VantaAnimation/> */}
 
+
+
+     
       {/* <!-- sales page banner --> */}
       <article class="sales-solutions" >
         <h2 class="sales-heading" >We don’t just acknowledge problems like churn and slowed revenue growth – we help you solve them.</h2>
@@ -570,6 +586,14 @@ useScrollToTop();
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
         <h2 class="why-phi-heading">Why Choose Phi for GTM Advisory Consulting?</h2>
+        {/* <Button type="primary" onClick={showModal}>
+        Open Modal
+      </Button>
+      <Modal centered title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal> */}
         <div class="insights-container">
           <div class="insights-bundle">
             <div class="left-section-insights">

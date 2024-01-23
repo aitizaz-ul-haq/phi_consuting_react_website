@@ -17,14 +17,14 @@ import cloud from "../../assets/img/industry_icons/server.png";
 import fintech from "../../assets/img/industry_icons/cloud-computing.png";
 
 import { Link } from 'react-router-dom';
-
+import { Tooltip } from 'antd';
 
 const Header = () => {
     return(
         <header >
       <div className="logo-mobile-header">
-      <Link to="/"><img className="logo-image" src={philogomainpage} alt="Logo"
-        /></Link>
+      <Link to="/"><Tooltip title="Home"><img className="logo-image" src={philogomainpage} alt="Logo"
+        /></Tooltip></Link>
         {/* <a href="../index.html"
           ><img className="logo-image" src={philogomainpage} alt="Logo"
         /></a> */}
@@ -75,11 +75,11 @@ const Header = () => {
         >
       </div>
       <div className="right-button-header">
-        <span
+      <Tooltip title="Contact us Page"><span
           >
             <Link to="/contact" className="inner-header">Contact</Link>
           </span
-        >
+        ></Tooltip>
       </div>
     </header>
     )

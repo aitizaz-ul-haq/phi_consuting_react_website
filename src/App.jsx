@@ -31,7 +31,6 @@ import FinTech from './pages/industry_pages/FinTech';
 import './assets/css/styles.css';
 
 
-
 const App = () => {
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -83,27 +82,3 @@ const App = () => {
 };
 
 export default App;
-
-
-{/* <Router>
-      {isLoading && <LoadingScreen />}
-      {isMobile ? <MobileHeader /> : <Header />}
-      <Routes>
-        <Route path="/" element={<HomePage toggleLoading={toggleLoading} />} />
-        <Route path="/aboutus" element={<AboutUs />} />
-      <Route path="/blogs" element={<Blog />} />
-      <Route path="/casestudies" element={<Spotlight />} />
-      <Route path="/careers" element={<Careers />} />
-      <Route path="/contact" element={<Contacts />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/valuecreation" element={<OurWork />} />
-      <Route path="/viewcasestudy/:id" element={<CaseStudyView/>}/>
-      <Route path="/viewblog/:id" element={<BlogView/>}/>
-          <Route path="/customer-experience" element={<CustomerExperience />} />
-          <Route path="/financial-consulting" element={<FinancialConsulting />} />
-          <Route path="/investor-relations" element={<BuisnessConsulting />} />
-          <Route path="/hr-consulting" element={<HrConsulting />} />
-          <Route path="/GTM-advisory" element={<SalesConsulting />} />
-      </Routes>
-      <Footer />
-    </Router> */}
