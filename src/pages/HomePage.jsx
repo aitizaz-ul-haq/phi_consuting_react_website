@@ -18,7 +18,7 @@ import sales from '../assets/img/services-icons/sales.png';
 import clutchone from '../assets/img/achievements-badges/clutch_1.png';
 import BBB from '../assets/img/achievements-badges/BBB.png';
 import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
-
+import { Tooltip } from 'antd';
 import { Link } from 'react-router-dom';
 import CaseStudyMacroComps from '../components/shared/macroComps/CaseStudyMacroComps';
 import BlogCard from '../components/shared/cards/BlogCard';
@@ -29,12 +29,13 @@ import blogs from "../data/blogs.json";
 import caseStudies from "../data/caseStudies.json";
 import useScrollToTop from '../hooks/useScrollToTop';
 import david from "../assets/video/world.mp4";
+import eye from "../assets/img/eye.png";
+import top from "../assets/img/top Arrow.png";
 
-import { Tooltip } from 'antd';
 
 const HomePage = () => {
 
-
+  const [darkMode, setDarkMode] = useState(false);
   
  const [isVisibleTesti, setIsVisibleTesti] = useState(false);
  const testiRef = useRef(null);
@@ -52,6 +53,15 @@ const firstRef = useRef(null);
   const achRef = useRef(null);
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const toggleDarkMode = () => setDarkMode(!darkMode);
+
+    const scrollToTop = () => {
+      window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+      });
+  };
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -158,6 +168,19 @@ useEffect(() => {
   useScrollToTop();
   return (
     <>
+    <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
+        <div className="left-section-control"></div>
+            <div className="right-section-control">
+            <Tooltip placement="leftTop" title="toggle eye protection">
+            <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={42} height={42}/></button> 
+            </Tooltip>
+                 {/* Back to Top Button */}
+                 <Tooltip placement="leftTop" title="back to top">
+    <button className="back-to-top" onClick={scrollToTop}>
+    <img src={top} alt="eye icon" width={42} height={42}/>
+    </button>
+    </Tooltip>
+            </div>
           {/* <!-- Hero Section --> */}
       <article class="hero">
         <section class="hero-container">
@@ -662,7 +685,7 @@ useEffect(() => {
         </section>
       </article>
 
-      <ScrollToTopButton />
+      {/* <ScrollToTopButton /> */}
     </>
   )
 }

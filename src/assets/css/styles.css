@@ -14115,6 +14115,90 @@ display: none;
     .casestudyreaderimg:hover, .product-study-img:hover {
         transform: scale(1.1); /* Scales the image to 110% of its original size */
     }
+
+    .overlayscreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(255, 167, 86,0.2);
+        z-index: 10;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        pointer-events: none;
+    }
+    
+    .overlayscreen.activate {
+        opacity: 1;
+    }
+    
+    .left-section-control, .right-section-control {
+        position: fixed;
+        top: 90%;
+        transform: translateY(-50%);
+        /* width: 100px;
+        height: 100px; */
+        background-color: transparent;
+        transition: background-color 0.3s ease;
+        z-index: 11;
+    }
+    
+    .left-section-control {
+        left: 10px;
+    }
+    
+    .right-section-control {
+        right: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* .left-section-control:hover, .right-section-control:hover {
+        background-color: rgba(255, 255, 255, 0.7);
+    } */
+    
+    .right-section-control button {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 10px;
+        background-color: var(--LIGHT-PHI-BLUE);
+        border-radius: 25px;
+        border: 1px solid var(--DARK-PHI-BLUE);
+        font-size: 12px;
+        /* background-color: #f0f0f0; */
+        transition: background-color 0.3s;
+        margin-bottom: 5px;
+    }
+
+     
+
+    .side-controls {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .dark-mode-toggle,
+    .back-to-top {
+        padding: 10px 15px;
+        margin-bottom: 10px; /* Spacing between buttons */
+        background-color: #f0f0f0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin: 10px;
+    }
+    
+    .dark-mode-toggle:hover,
+    .back-to-top:hover,.right-section-control button:hover {
+        background-color: #e0e0e0;
+    }
+    
     
     .macro-title {
 font-size: 32px;

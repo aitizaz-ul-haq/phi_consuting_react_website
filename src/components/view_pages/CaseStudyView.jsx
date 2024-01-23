@@ -1,15 +1,25 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import caseStudies from '../../data/caseStudies.json';
-
+import eye from "../../assets/img/eye.png"
 import useScrollToTop from '../../hooks/useScrollToTop';
+import { Tooltip } from 'antd';
+import top from "../../assets/img/top Arrow.png"
 
 const CaseStudyView = () => {
     const { id } = useParams();
     const caseStudy = caseStudies.find(study => study.id === parseInt(id));
     const headingSectionRef = useRef(null);
-
+    const [darkMode, setDarkMode] = useState(false);
+    const toggleDarkMode = () => setDarkMode(!darkMode);
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+  
     useEffect(() => {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -35,6 +45,19 @@ const CaseStudyView = () => {
     useScrollToTop();
     return(
         <>
+       <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
+        <div className="left-section-control"></div>
+            <div className="right-section-control">
+            <Tooltip placement="leftTop" title="toggle eye protection">
+            <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={42} height={42}/></button> 
+            </Tooltip>
+                 {/* Back to Top Button */}
+                 <Tooltip placement="leftTop" title="back to top">
+    <button className="back-to-top" onClick={scrollToTop}>
+    <img src={top} alt="eye icon" width={42} height={42}/>
+    </button>
+    </Tooltip>
+            </div>
 <article className="study-container">
     <section className="study-material" ref={headingSectionRef}>
         <div className="study-info-container">
