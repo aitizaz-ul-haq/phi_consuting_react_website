@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import caseStudies from '../../data/caseStudies.json';
@@ -8,12 +8,35 @@ import useScrollToTop from '../../hooks/useScrollToTop';
 const CaseStudyView = () => {
     const { id } = useParams();
     const caseStudy = caseStudies.find(study => study.id === parseInt(id));
+    const headingSectionRef = useRef(null);
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-casestudy');
+                    entry.target.classList.remove('fade-out-casestudy');
+                } else {
+                    entry.target.classList.add('fade-out-casestudy');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (headingSectionRef.current) {
+            observer.observe(headingSectionRef.current);
+        }
+
+        return () => {
+            if (headingSectionRef.current) {
+                observer.unobserve(headingSectionRef.current);
+            }
+        };
+    }, []);
     useScrollToTop();
     return(
         <>
 <article className="study-container">
-    <section className="study-material">
+    <section className="study-material" ref={headingSectionRef}>
         <div className="study-info-container">
             {/* <div className="study-title">
                 <img src={caseStudy.imagetwo} alt="" className="study-read-logo" />
