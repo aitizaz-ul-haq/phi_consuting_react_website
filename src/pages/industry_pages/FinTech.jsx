@@ -61,6 +61,8 @@ const FinTech = () => {
   const sectionsRef = useRef([]);
 
   const insightsRefs = useRef([]);
+
+  const diagonalDivRef = useRef(null);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -147,6 +149,27 @@ useEffect(() => {
   return () => elements.forEach(el => observer.unobserve(el));
 }, []);
 
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting) {
+        diagonalDivRef.current.classList.add('fill-effect');
+      }
+    },
+    { threshold: 0.5 } // Adjust this threshold as needed
+  );
+
+  if (diagonalDivRef.current) {
+    observer.observe(diagonalDivRef.current);
+  }
+
+  return () => {
+    if (diagonalDivRef.current) {
+      observer.unobserve(diagonalDivRef.current);
+    }
+  };
+}, []);
+
 const addToRefs = el => {
   if (el && !sectionsRef.current.includes(el)) {
       sectionsRef.current.push(el);
@@ -215,7 +238,7 @@ useScrollToTop();
 
       <IndustryServicesSection />
 
-      <article className="industry-para-container">
+      <article className="industry-para-container" ref={diagonalDivRef}>
         <section className="industry-para-collection" ref={addToRefs}>
         <div className="para-title-industry">
         <h2 className='title-special'>What is <span className='bluer'> Fintech  Consulting</span>?</h2>
