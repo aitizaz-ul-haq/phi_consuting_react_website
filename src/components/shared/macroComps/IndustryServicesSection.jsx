@@ -38,7 +38,7 @@ const IndustryServicesSection = () => {
     return (
         <>
        <article className="services-industry-container">
-        <h2 className='services-industry-heading'>Our Services</h2>
+        <h2 className='services-industry-heading'>Your Growth Blueprint</h2>
         <div className="service-cariers" ref={ref}>
             <div className="service-nugget">
                 <div className="icon-carry">

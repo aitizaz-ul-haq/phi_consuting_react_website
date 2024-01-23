@@ -440,7 +440,6 @@ useScrollToTop();
         </section>
       </article>
 
-      {/* <VantaEffectComponent/> */}
         </>
     )
 }
