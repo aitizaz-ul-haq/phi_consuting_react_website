@@ -15,7 +15,7 @@ import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
 
 import caseStudies from "../data/caseStudies.json";
 import LengthyWorkCard from '../components/shared/cards/LengthyWorkCard';
-
+import { TypeAnimation } from 'react-type-animation';
 import useScrollToTop from '../hooks/useScrollToTop';
 
 const OurWork = () => {
@@ -28,6 +28,8 @@ const OurWork = () => {
 
   const [isVisibleAch, setIsVisibleAch] = useState(false);
    const achRef = useRef(null);
+
+   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
    useEffect(() => {
     const observer = new IntersectionObserver(
@@ -72,8 +74,19 @@ const OurWork = () => {
         <section class="hero-container-our-work">
           <div class="hero-content-our-work">
             <h2 class="hero-heading-our-work">
-              Success is not just a goal <br />
-              but a proven outcome.
+            {windowWidth >= 1200 ? <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        'Success is not just a goal but a proven outcome',
+        7000, 
+       
+      ]}
+      wrapper="span"
+      speed={50}
+      style={{ fontSize: '40px', display: 'inline-block' }}
+      repeat={Infinity}
+    /> : ' Empowering Your Vision, Elevating Your Cloud Strategy'}
+              
             </h2>
             <p class="hero-desc-our-work">
               Our unique investment approach centers on identifying undervalued

@@ -10,7 +10,7 @@ import alizaidiportrait from "../assets/img/phi_people/ali_zaidi.jpg";
 import abudullahportrait from "../assets/img/phi_people/Abdullah.jpg";
 import razaportrait from "../assets/img/phi_people/Raza.jpg";
 import ismailportrait from "../assets/img/phi_people/ismail.jpg";
-
+import { TypeAnimation } from 'react-type-animation';
 import useScrollToTop from '../hooks/useScrollToTop';
 
 
@@ -46,6 +46,8 @@ const AboutUs = () => {
 
   const [isVisibleLiveVideo, setIsVisibleLiveVideo] = useState(false);
   const liveVideoRef = useRef(null);
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -140,13 +142,25 @@ useEffect(() => {
         <section class="hero-container-phi-about">
           <div class="hero-content-phi-about">
             <h2 class="hero-heading-phi-about">
-              Unleashing Excellence in Consultancy
+            {windowWidth >= 1200 ? <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        'Unleashing Excellence in Consultancy',
+        7000, 
+       
+      ]}
+      wrapper="span"
+      speed={50}
+      style={{ fontSize: '40px', display: 'inline-block' }}
+      repeat={Infinity}
+    /> : 'Unleashing Excellence in Consultancy'}
+              
             </h2>
             <p class="hero-desc-phi-about">
-              Welcome to Phi Consulting, where strategic brilliance meets <br />
-              transformative solutions. We empower businesses to thrive <br />
+              Welcome to Phi Consulting, where strategic brilliance meets 
+              transformative solutions. We empower <br /> businesses to thrive 
               in the ever-evolving landscape of industry challenges. Discover
-              <br />
+              
               a journey of innovation, growth, and success with Phi.
             </p>
             <div class="consult-button-phi-about" onClick={gotoContacts}>
