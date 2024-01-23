@@ -58,7 +58,7 @@ const Cloud = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const sectionsRef = useRef([]);
-
+  const insightsRefs = useRef([]);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -152,6 +152,34 @@ const addToRefs = el => {
   }
 };
 
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    },
+    {
+      threshold: 0.5, // Adjust as needed
+    }
+  );
+
+  const elements = insightsRefs.current;
+  elements.forEach((el) => {
+    if (el) observer.observe(el);
+  });
+
+  return () => {
+    elements.forEach((el) => {
+      if (el) observer.unobserve(el);
+    });
+  };
+}, []);
+
 useScrollToTop();
 
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
@@ -203,7 +231,7 @@ useScrollToTop();
       <article class="why-phi-for-sales">
         <h2 class="why-phi-heading">Why Choose Phi Consulting?</h2>
         <div class="insights-container">
-          <div class="insights-bundle">
+          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
             <div class="left-section-insights">
               <div class="overlay-container one-why">
                 <div class="overlay"></div>
@@ -232,7 +260,7 @@ useScrollToTop();
               </div>
             </div>
           </div>
-          <div class="insights-bundle">
+          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
             <div class="left-section-insights">
               <div class="overlay-container three-why">
                 <div class="overlay"></div>

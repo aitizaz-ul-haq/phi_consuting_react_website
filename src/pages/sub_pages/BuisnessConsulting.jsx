@@ -61,6 +61,7 @@ const BuisnessConsulting = () => {
 
    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+   const insightsRefs = useRef([]);
 
    useEffect(() => {
     const observer = new IntersectionObserver(
@@ -127,6 +128,34 @@ useEffect(() => {
 
     observer.observe(containerRef.current);
     return () => observer.disconnect(); 
+}, []);
+
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    },
+    {
+      threshold: 0.5, // Adjust as needed
+    }
+  );
+
+  const elements = insightsRefs.current;
+  elements.forEach((el) => {
+    if (el) observer.observe(el);
+  });
+
+  return () => {
+    elements.forEach((el) => {
+      if (el) observer.unobserve(el);
+    });
+  };
 }, []);
 
 useScrollToTop();
@@ -664,7 +693,7 @@ useScrollToTop();
           At Phi Consulting, we meticulously navigate the intricacies of Investment Relations to ensure the success of your financial strategies
         </p>
         <div class="insights-container">
-          <div class="insights-bundle">
+          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
             <div class="left-section-insights">
               <div class="overlay-container one-hr-consul">
                 <div class="overlay"></div>
@@ -688,7 +717,7 @@ useScrollToTop();
               </div>
             </div>
           </div>
-          <div class="insights-bundle">
+          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
             <div class="left-section-insights">
               <div class="overlay-container three-hr-consul">
                 <div class="overlay"></div>
@@ -712,7 +741,7 @@ useScrollToTop();
               </div>
             </div>
           </div>
-          <div class="insights-bundle">
+          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
             <div class="left-section-insights">
               <div class="overlay-container five-hr-consul">
                 <div class="overlay"></div>

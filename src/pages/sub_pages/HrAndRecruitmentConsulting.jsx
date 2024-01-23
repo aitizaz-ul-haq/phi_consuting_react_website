@@ -62,6 +62,8 @@ const HrAndRecruitmentConsulting = () => {
    const processNewRef = useRef(null);
  
    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+   const insightsRefs = useRef([]);
    
    useEffect(() => {
      const observer = new IntersectionObserver(
@@ -129,6 +131,34 @@ const HrAndRecruitmentConsulting = () => {
      observer.observe(containerRef.current);
      return () => observer.disconnect(); 
  }, []);
+
+ useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    },
+    {
+      threshold: 0.5, // Adjust as needed
+    }
+  );
+
+  const elements = insightsRefs.current;
+  elements.forEach((el) => {
+    if (el) observer.observe(el);
+  });
+
+  return () => {
+    elements.forEach((el) => {
+      if (el) observer.unobserve(el);
+    });
+  };
+}, []);
 
  useScrollToTop();
   
@@ -667,7 +697,7 @@ const HrAndRecruitmentConsulting = () => {
             At Phi Consulting, we understand that your people are your greatest asset. Our HR and recruitment Consulting services are designed to meet your immediate talent needs and strategically shape your workforce's future.
           </p>
           <div class="insights-container">
-            <div class="insights-bundle">
+            <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
               <div class="left-section-insights">
                 <div class="overlay-container one-hr-consul">
                   <div class="overlay"></div>
@@ -691,7 +721,7 @@ const HrAndRecruitmentConsulting = () => {
                 </div>
               </div>
             </div>
-            <div class="insights-bundle">
+            <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
               <div class="left-section-insights">
                 <div class="overlay-container three-hr-consul">
                   <div class="overlay"></div>
@@ -715,7 +745,7 @@ const HrAndRecruitmentConsulting = () => {
                 </div>
               </div>
             </div>
-            <div class="insights-bundle">
+            <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
               <div class="left-section-insights">
                 <div class="overlay-container five-hr-consul">
                   <div class="overlay"></div>

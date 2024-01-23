@@ -58,18 +58,18 @@ const SalesConsulting = () => {
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  const insightsRefs = useRef([]);
 
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const showModal = () => {
+  //   setIsModalOpen(true);
+  // };
+  // const handleOk = () => {
+  //   setIsModalOpen(false);
+  // };
+  // const handleCancel = () => {
+  //   setIsModalOpen(false);
+  // };
 
   
   useEffect(() => {
@@ -134,6 +134,35 @@ useEffect(() => {
     observer.observe(containerRef.current);
     return () => observer.disconnect(); 
 }, []);
+
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    },
+    {
+      threshold: 0.5, // Adjust as needed
+    }
+  );
+
+  const elements = insightsRefs.current;
+  elements.forEach((el) => {
+    if (el) observer.observe(el);
+  });
+
+  return () => {
+    elements.forEach((el) => {
+      if (el) observer.unobserve(el);
+    });
+  };
+}, []);
+
 
 useScrollToTop();
 
@@ -595,7 +624,7 @@ useScrollToTop();
         <p>Some contents...</p>
       </Modal> */}
         <div class="insights-container">
-          <div class="insights-bundle">
+          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
             <div class="left-section-insights">
               <div class="overlay-container one-why">
                 <div class="overlay"></div>
@@ -623,7 +652,7 @@ useScrollToTop();
               </div>
             </div>
           </div>
-          <div class="insights-bundle">
+          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
             <div class="left-section-insights">
               <div class="overlay-container three-why">
                 <div class="overlay"></div>
@@ -649,7 +678,7 @@ useScrollToTop();
               </div>
             </div>
           </div>
-          <div class="insights-bundle">
+          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
             <div class="left-section-insights">
               <div class="overlay-container five-why">
                 <div class="overlay"></div>
