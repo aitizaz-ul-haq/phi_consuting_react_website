@@ -344,7 +344,7 @@ useScrollToTop();
             </div>
           </div>
           <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
-            <div class="left-section-insights">
+            <div class="left-section-insights-last">
               <div class="overlay-container five-why">
                 <div class="overlay"></div>
                 <div class="content">

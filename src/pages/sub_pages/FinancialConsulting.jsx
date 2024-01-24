@@ -34,7 +34,9 @@ import achiconthree from "../../assets/img/achievements-badges/clutch_2.png";
 import useScrollToTop from '../../hooks/useScrollToTop';
 import caseStudies from '../../data/caseStudies.json';
 import { TypeAnimation } from 'react-type-animation';
-
+import { Tooltip } from 'antd';
+import eye from "../../assets/img/eye.png";
+import top from "../../assets/img/top Arrow.png";
 
 
 const FiancialConsulting = () => {
@@ -55,7 +57,7 @@ const FiancialConsulting = () => {
    const processNewRef = useRef(null);
  
    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
+   const [darkMode, setDarkMode] = useState(false);
    const insightsRefs = useRef([]);
    
    useEffect(() => {
@@ -153,10 +155,33 @@ const FiancialConsulting = () => {
   };
 }, []);
 
+const toggleDarkMode = () => setDarkMode(!darkMode);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+};
+
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
   useScrollToTop();
     return(
         <>
+
+<div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
+        <div className="left-section-control"></div>
+            <div className="right-section-control">
+            <Tooltip placement="leftTop" title="toggle eye protection">
+            <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={42} height={42}/></button> 
+            </Tooltip>
+                 {/* Back to Top Button */}
+                 <Tooltip placement="leftTop" title="back to top">
+    <button className="back-to-top" onClick={scrollToTop}>
+    <img src={top} alt="eye icon" width={42} height={42}/>
+    </button>
+    </Tooltip>
+            </div>
          {/* <!-- Hero Section --> */}
       <article class="hero">
         <section class="hero-container-fin-consul">

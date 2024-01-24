@@ -54,6 +54,7 @@ const firstRef = useRef(null);
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
     const scrollToTop = () => {
