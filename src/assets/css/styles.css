@@ -14425,7 +14425,15 @@ display: none;
     font-size: 18px;
     width: 80%;
 }
-
+/* Add a class to your social media image tags if not already present */
+.social-icon {
+    transition: transform 0.3s ease; /* This adds a smooth transition effect */
+    display: inline-block; /* This ensures the transform applies correctly */
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.1); /* This scales up the image to 110% of its original size */
+  }
 /* =============================================sales consulting page=================== */
 .hero-heading-sales {
     text-align: left; 

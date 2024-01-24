@@ -9,6 +9,7 @@ import footerphilogo from '../../assets/img/phi_logo.webp';
 import emailtag from '../../assets/img/icons-footer/email.png';
 import phonetag from '../../assets/img/icons-footer/phone-call.png';
 import pintag from '../../assets/img/icons-footer/pin.png';
+import { Tooltip } from 'antd';
 
 const Footer = () => {
     return(
@@ -120,19 +121,30 @@ const Footer = () => {
       </section>
       <section class="links-section">
         <div class="link-row">
-          <img src={facebook} alt="" width="50" />
+        <Tooltip placement="top" title="Our Facebook">
+        <img src={facebook} className='social-icon' alt="" width="50" />
+        </Tooltip>
+         
         </div>
         <div class="link-row">
-          <img src={instagram} alt="" width="60" />
+        <Tooltip placement="bottom" title="Follow us on insta">
+          <img src={instagram} className='social-icon' alt="" width="60" />
+          </Tooltip>
         </div>
         <div class="link-row">
-          <img src={linkdin} alt="" width="50" />
+        <Tooltip placement="top" title="Find us on Linkdin">
+          <img src={linkdin} className='social-icon' alt="" width="50" />
+          </Tooltip>
         </div>
         <div class="link-row">
-            <img src={twitter} alt="" width="50" />
+        <Tooltip placement="bottom" title="Talk to us on Twitter">
+            <img src={twitter} className='social-icon' alt="" width="50" />
+            </Tooltip>
         </div>
         <div class="link-row">
-          <img src={youtube} alt="" width="50" />
+        <Tooltip placement="top" title="Watch us on Youtube">
+          <img src={youtube} className='social-icon' alt="" width="50" />
+          </Tooltip>
         </div>
       </section>
       <section class="allrights">
