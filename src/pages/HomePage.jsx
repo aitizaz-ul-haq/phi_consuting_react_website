@@ -117,7 +117,7 @@ useEffect(() => {
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => setIsVisibleServices(entry.isIntersecting));
-    }, { threshold: 1 }); // Adjust threshold as needed
+    }, { threshold: 0.6 }); // Adjust threshold as needed
 
     observer.observe(servicesRef.current);
     return () => observer.disconnect();
