@@ -477,7 +477,7 @@ useScrollToTop();
       <article class="testimonial">
         <section className="testimonial-container">
           <h2 class="testi-heading">
-            We have not lost a top 3 client in over 3 years
+          We Have Successfully Retained Our Top 3 Clients For Over 3 Years.
           </h2>
           <p class="testi-desc">
             Our clients speak for the transformative impact of Phi Consulting.
