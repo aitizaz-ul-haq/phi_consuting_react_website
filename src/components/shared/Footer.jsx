@@ -121,29 +121,39 @@ const Footer = () => {
       </section>
       <section class="links-section">
         <div class="link-row">
-        <Tooltip placement="top" title="Our Facebook">
+        <Tooltip placement="left" title="Our Facebook">
+        <a href="https://www.facebook.com/phisaasllc" target="_blank" rel="noopener noreferrer">
         <img src={facebook} className='social-icon' alt="" width="50" />
+        </a>
         </Tooltip>
          
         </div>
         <div class="link-row">
         <Tooltip placement="bottom" title="Follow us on insta">
+        <a href="https://www.instagram.com/phisaasllc/" target="_blank" rel="noopener noreferrer">
           <img src={instagram} className='social-icon' alt="" width="60" />
+          </a>
           </Tooltip>
         </div>
         <div class="link-row">
         <Tooltip placement="top" title="Find us on Linkdin">
+        <a href="https://www.linkedin.com/company/phisaas/" target="_blank" rel="noopener noreferrer">
           <img src={linkdin} className='social-icon' alt="" width="50" />
+          </a>
           </Tooltip>
         </div>
         <div class="link-row">
         <Tooltip placement="bottom" title="Talk to us on Twitter">
+        <a href="https://twitter.com/phisaasllc" target="_blank" rel="noopener noreferrer">
             <img src={twitter} className='social-icon' alt="" width="50" />
+            </a>
             </Tooltip>
         </div>
         <div class="link-row">
-        <Tooltip placement="top" title="Watch us on Youtube">
+        <Tooltip placement="right" title="Watch us on Youtube">
+        <a href="https://www.youtube.com/@phiconsulting6257" target="_blank" rel="noopener noreferrer">
           <img src={youtube} className='social-icon' alt="" width="50" />
+          </a>
           </Tooltip>
         </div>
       </section>
