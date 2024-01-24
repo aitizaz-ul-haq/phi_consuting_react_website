@@ -603,7 +603,6 @@ useScrollToTop();
         </section>
       </article>
 
-    
       {/* <!-- full scale banner --> */}
       <article class="full-scale-banner">
         <section class="banner-full-exp">
@@ -806,7 +805,7 @@ useScrollToTop();
           </div>
 
           <div class="right-button spacing-under">
-            <span>View More Case Studies</span>
+          <span><Link to="/casestudies" className='morcases'>View More Case Studies</Link></span>
           </div>
         </section>
       </article>
