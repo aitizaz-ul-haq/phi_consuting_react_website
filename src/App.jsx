@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route,Outlet } from 'react-router-dom';
 
 import HomePage from './pages/HomePage';
 import AboutUs from './pages/AboutUs';
@@ -28,13 +28,22 @@ import SaaS from './pages/industry_pages/SaaS';
 import DevOps from './pages/industry_pages/DevOps';
 import Cloud from './pages/industry_pages/Cloud';
 import FinTech from './pages/industry_pages/FinTech';
+
+import Login from './pages/dashboard/login';
+import Dashboard from './pages/dashboard/Dashboard';
+import Jobs from './pages/dashboard/Jobs';
+import AddJobs from './pages/dashboard/AddJobs';
+
+import Blogs from './pages/dashboard/Blogs';
+import AddBlogs from './pages/dashboard/AddBlogs';
+
+import Cases from './pages/dashboard/Cases';
+import AddCases from './pages/dashboard/AddCases';
 import './assets/css/styles.css';
 
 
 const App = () => {
-
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -42,18 +51,37 @@ const App = () => {
     };
 
     window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const Layout = () => (
+    <>
+      {isMobile ? <MobileHeader /> : <Header />}
+      <Outlet />
+      <Footer />
+    </>
+  );
 
   return (
     <Router>
-       {isMobile ? <MobileHeader /> : <Header />}
       <Routes>
-      <Route path="/" element={<HomePage />} />
+        {/* Separate route for login without header and footer */}
+        <Route path="/phi-remote-login" element={<Login />} />
+
+        {/* dashboard */}
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="Jobs" element={<Jobs />} />
+          <Route path="AddJobs" element={<AddJobs />} />
+          <Route path="Blogs" element={<Blogs />} />
+          <Route path="AddBlogs" element={<AddBlogs />} />
+          <Route path="Cases" element={<Cases />} />
+          <Route path="AddCases" element={<AddCases />} />
+          {/* Add routes for other pages */}
+        </Route>
+
+        {/* Route for all other pages with header and footer */}
+        <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
       <Route path="/aboutus" element={<AboutUs />} />
       <Route path="/blogs" element={<Blog />} />
       <Route path="/casestudies" element={<Spotlight />} />
@@ -75,8 +103,9 @@ const App = () => {
           <Route path="/dev-ops" element={<DevOps />} />
           <Route path="/Cloud" element={<Cloud />} />
           <Route path="/FinTech" element={<FinTech />} />
+          
+       </Route>
       </Routes>
-      <Footer />
     </Router>
   );
 };

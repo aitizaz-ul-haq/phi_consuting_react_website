@@ -721,6 +721,7 @@ useScrollToTop();
 
         {/* <!-- Clients Section --> */}
         <article className={`clients ${isVisible ? 'animate' : ''}`} ref={containerRef}>
+        {/* <article className="clients" > */}
         <section class="client-container">
           <div class="client-content">
             <h2 class="client-heading">Trusted by Industry Leaders</h2>
