@@ -142,11 +142,11 @@ useEffect(() => {
 }, []);
 
   const handleTabClickOne = () => {
-    window.location.href = '/buisness-consulting';
+    window.location.href = '/investor-relations';
   } 
 
   const handleTabClickTwo = () => {
-    window.location.href = '/customer-experience';
+    window.location.href = '/GTM-advisory';
   } 
 
   const handleTabClickThree = () => {

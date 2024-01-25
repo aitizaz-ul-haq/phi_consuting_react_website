@@ -15,7 +15,16 @@ const AddJobs = () => {
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
-    console.log(values);
+    const formattedData = {
+        id: 1, // Assuming a static ID for this example
+        title: values.title,
+        role: values.role,
+        content: values.items.map(item => ([
+          { type: "subheading", text: item.subHeading },
+          { type: "paragraph", text: item.paragraph }
+        ])).flat()
+      };
+      console.log(formattedData);
   };
 
   const onReset = () => {
@@ -24,11 +33,11 @@ const AddJobs = () => {
 
   return (
     <Form {...layout} form={form} name="control-hooks" onFinish={onFinish} style={{ maxWidth: 600 }}>
-      <Form.Item name="title" label="Title" rules={[{ required: true }]} >
+      <Form.Item name="title" label="Title" rules={[{ required: true }]}>
         <Input />
       </Form.Item>
 
-      <Form.Item name="role" label="Role" rules={[{ required: true }]} >
+      <Form.Item name="role" label="Role" rules={[{ required: true }]}>
         <Input />
       </Form.Item>
 
@@ -37,39 +46,20 @@ const AddJobs = () => {
         {(fields, { add, remove }) => (
           <div style={{ display: 'flex', rowGap: 16, flexDirection: 'column' }}>
             {fields.map((field) => (
-              <Card size="small" title={`Item ${field.name + 1}`} key={field.key} extra={
+              <Card size="small" title={`Section ${field.name + 1}`} key={field.key} extra={
                 <CloseOutlined onClick={() => remove(field.name)} />
               }>
-                <Form.Item label="Name" name={[field.name, 'name']} >
-                  <Input />
+                
+                {/* Title and Message */}
+                <Form.Item label="subheading" name={[field.name, 'subHeading']}>
+                  <Input placeholder="subheading" />
                 </Form.Item>
-
-                {/* Nest Form.List */}
-                <Form.Item label="List">
-                  <Form.List name={[field.name, 'list']}>
-                    {(subFields, subOpt) => (
-                      <div style={{ display: 'flex', flexDirection: 'column', rowGap: 16 }}>
-                        {subFields.map((subField) => (
-                          <Space key={subField.key}>
-                            <Form.Item noStyle name={[subField.name, 'first']}>
-                              <Input placeholder="first" />
-                            </Form.Item>
-                            <Form.Item noStyle name={[subField.name, 'second']}>
-                              <Input placeholder="second" />
-                            </Form.Item>
-                            <CloseOutlined onClick={() => subOpt.remove(subField.name)} />
-                          </Space>
-                        ))}
-                        <Button type="dashed" onClick={() => subOpt.add()} block>
-                          + Add Sub Item
-                        </Button>
-                      </div>
-                    )}
-                  </Form.List>
+                <Form.Item label="Paragraph" name={[field.name, 'paragraph']}>
+                  <Input.TextArea placeholder="Paragraph text here..." />
                 </Form.Item>
               </Card>
             ))}
-            <Button type="dashed" onClick={() => add()} block>+ Add Item</Button>
+            <Button type="dashed" onClick={() => add()} block>+ Add Section</Button>
           </div>
         )}
       </Form.List>

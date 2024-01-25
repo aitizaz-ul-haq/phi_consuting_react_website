@@ -555,7 +555,7 @@ useScrollToTop();
       </article>
 
             {/* <!-- full scale banner --> */}
-            <article class="full-scale-banner">
+            {/* <article class="full-scale-banner">
         <section class="banner-full-exp">
           <div class="overlay"></div>
           <div class="banner-new-full-scale-container">
@@ -566,7 +566,7 @@ useScrollToTop();
             </h2>
           </div>
         </section>
-      </article>
+      </article> */}
 
         {/* <!-- Clients Section --> */}
         <article className={`clients ${isVisible ? 'animate' : ''}`} ref={containerRef}>

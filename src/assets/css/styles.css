@@ -11546,7 +11546,7 @@ display: none;
  .hero-heading-bui-consul { 
     font-size: 30px;
     width: 40%;
-    padding: 1rem;
+    padding-left: 1rem;
     margin: 0;
 }
 .hero-desc-bui-consul { 
@@ -13874,47 +13874,70 @@ display: none;
   
   .dropdown-content {
     display: none;
-    background-color: #ffffff;
-    padding: 5px 0;
-    border-left: 3px solid #007bff;
-  }
-  
-  .dropdown-content a {
-    padding: 10px 15px;
+    position: absolute;
+    background-color: var(--APPLE-GRAY);
+    box-shadow: 0 8px 16px var(--LIGHTER-DARK-PHI-BLUE);
+    z-index: 1;
+    min-width: 160px;
+    width: 289px;
+    border-bottom: 8px solid #00BCD4;
+    border-radius: 20px;
+}
+
+.dropdown-content a {
+    color: var(--BLACK-TEXT);
+    padding: 8px 30px;
     text-decoration: none;
     display: block;
-    color: #333333;
     transition: background-color 0.3s;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
-  
-  /* Remove default visited link style */
-  .dropdown-content a:visited {
-    color: #333333;
-  }
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: flex-start;
+    border-radius: 15px;
+}
+
+.dropdown-content a span {
+    transition: transform 0.3s; /* Transition for scaling the text */
+}
+
+.header-icons-spacing {
+    margin-right: 10px;
+}
+
+.dropdown-content a:hover span {
+    transform: scale(1.12); /* Scale the text up slightly on hover */
+    color: var(--DARK-PHI-BLUE);
+}
+
+.dropdown-content a:hover {
+    background-color: var(--LIGHT-PHI-BLUE);
+    /* color: var(--DARK-PHI-BLUE); */
+    /* transform: scale(1.05); */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
   
   /* Animation */
-  @keyframes slideDown {
+  @keyframes slideDownweb {
     from { transform: scaleY(0); }
     to { transform: scaleY(1); }
   }
   
-  @keyframes slideUp {
+  @keyframes slideUpweb {
     from { transform: scaleY(1); }
     to { transform: scaleY(0); }
   }
   
   .show-dropdown {
-    animation: slideDown 0.3s ease forwards;
+    animation: slideDownweb 0.6s ease forwards;
     display: block;
     transform-origin: top;
   }
   
   .hide-dropdown {
-    animation: slideUp 0.3s ease forwards;
+    animation: slideUpweb 0.6s ease forwards;
   }
 
   .dashboard-container {
@@ -14674,7 +14697,7 @@ display: none;
 }
 
 .hero-content-sales {
-    width: 820px;
+    width: 828px;
     margin: 90px; 
     text-align: left;
     margin: 47px;
@@ -14918,7 +14941,7 @@ display: none;
     text-align: left; 
     margin: 0;
     width: 100%;
-    padding: 1rem;
+    /* padding: 1rem; */
     font-size: 40px;
 }
 
@@ -14962,7 +14985,7 @@ display: none;
 }
 
 .hero-content-hr-consul {
-    width: 820px;
+    width: 946px;
     margin: 90px; 
     text-align: left;
     margin: 47px;
@@ -14997,7 +15020,7 @@ display: none;
 }
 
 .hero-content-fin-consul {
-    width: 820px;
+    width: 982px;
     margin: 90px; 
     text-align: left;
     margin: 47px;
@@ -15121,7 +15144,7 @@ display: none;
 .why-phi-desc {
     font-size: 18px;
     width: 61%;
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
 }
 
 .ach-heading-our-work {

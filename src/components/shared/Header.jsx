@@ -25,9 +25,6 @@ const Header = () => {
       <div className="logo-mobile-header">
       <Link to="/"><Tooltip title="Home"><img className="logo-image" src={philogomainpage} alt="Logo"
         /></Tooltip></Link>
-        {/* <a href="../index.html"
-          ><img className="logo-image" src={philogomainpage} alt="Logo"
-        /></a> */}
       </div>
       <div className="buttons">
         <div className="dropdown">
@@ -49,14 +46,14 @@ const Header = () => {
         </div>
 
         <div className="dropdown">
-        <Link className="dropdown-btn"><span className="dropdown-btn">Industry</span></Link>
+        <Link className="dropdown-btn"><span className="dropdown-btn">Industries</span></Link>
           <div className="dropdown-content">
+          <Link to="/FinTech"> <img src={fintech} alt="" width="34" height="34" className='header-icons-spacing' /><span>FinTech Consulting</span></Link>
+          <Link to="/Cloud"> <img src={cloud} alt="" width="34" height="34" className='header-icons-spacing' /><span>Cloud Consulting</span></Link>
+          <Link to="/SaaS"> <img src={saas} alt="" width="34" height="34" className='header-icons-spacing' /><span>SaaS Consulting</span></Link>
             <Link to="/Iot"> <img src={iot} alt="" width="34" height="34" className='header-icons-spacing' /><span>IoT Consulting</span></Link>
             <Link to="/IaaS"> <img src={iaas} alt="" width="34" height="34" className='header-icons-spacing' /><span>IaaS Consulting</span></Link>
-            <Link to="/SaaS"> <img src={saas} alt="" width="34" height="34" className='header-icons-spacing' /><span>SaaS Consulting</span></Link>
             <Link to="/dev-ops"> <img src={devops} alt="" width="34" height="34" className='header-icons-spacing' /><span>DevOps Consulting</span></Link>
-            <Link to="/Cloud"> <img src={cloud} alt="" width="34" height="34" className='header-icons-spacing' /><span>Cloud Consulting</span></Link>
-            <Link to="/FinTech"> <img src={fintech} alt="" width="34" height="34" className='header-icons-spacing' /><span>FinTech Consulting</span></Link>
           </div>
         </div>
         {/* <span>

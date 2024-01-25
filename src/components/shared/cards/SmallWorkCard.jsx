@@ -24,9 +24,9 @@ const SmallWorkCard = ({caseStudy, isVisible}) => {
                 />
               </div>
               <h3 class="work-card-heading">{caseStudy.title}</h3>
-              <p class="work-card-desc">
+              {/* <p class="work-card-desc">
               {caseStudy.summary}
-              </p>
+              </p> */}
               <div class="right-button-work-small">
                 <span>
                 <Link className='work-card-button-link' to={`/viewcasestudy/${caseStudy.id}`}>Explore More</Link></span>
