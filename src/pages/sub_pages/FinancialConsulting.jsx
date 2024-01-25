@@ -460,9 +460,11 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
       {/* <!-- section new process --> */}
       <article class="process-new">
         <section class="process-new-container">
-          <h2 class="path-heading">Every talent in our network is pre-vetted and qualified on the below parameters.</h2>
+          <h2 class="path-heading">A Proven Path to Success</h2>
           <p class="work-desc">
-          Right Matchmaking is at the core of everything that Phi does, hence, we put in a great deal of time and effort to ensure that the first shortlisted talent matches your requirements.
+            Explore the journey to excellence with Phi Consulting's strategic
+            process – your gateway to optimizing sales performance, enhancing
+            customer experience, and achieving sustained growth.
           </p>
           <div class="process-new-section">
             <div class="left-process-section" ref={processNewRef}>
@@ -473,9 +475,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Profile Screening & Shortlisting</div>
+                  <div class="process-new-heading">Define Your Goals</div>
                   <div class="process-new-description">
-                  We review tons of applications against our minimum criteria, their professional journey, and holistic background checks.
+                  Collaboratively outline your financial objectives and aspirations.
                   </div>
                 </div>
               </div>
@@ -488,10 +490,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Language Proficiency</div>
+                  <div class="process-new-heading">Plan & Map Your Process</div>
                   <div class="process-new-description-right-side">
-                  AI-powered communication assessment tests a candidate's reading, writing, pronunciation, clarity, fluency, and speed of speech.
-
+                  Develop a customized roadmap tailored to your business needs.
                   </div>
                 </div>
               </div>
@@ -506,9 +507,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Aptitude Evaluation</div>
+                  <div class="process-new-heading">Set Actions</div>
                   <div class="process-new-description">
-                  We conduct a scientifically designed aptitude test to check their reasoning and problem-solving ability.
+                  Implement strategic actions to achieve your financial milestones.
                   </div>
                 </div>
               </div>
@@ -521,9 +522,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Technical Assessment</div>
+                  <div class="process-new-heading">Assign Stakeholders</div>
                   <div class="process-new-description-right-side">
-                  We have curated one of the toughest and most advanced technical assessments to vet talent's capabilities, these are role-based extremely stringent tests that filter the top 10% of talents.
+                  Clearly define roles and responsibilities for seamless execution
                   </div>
                 </div>
               </div>
@@ -538,32 +539,31 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Culture-Fit</div>
+                  <div class="process-new-heading">Test the Process</div>
                   <div class="process-new-description">
-                  Our Talent Acquisition experts conduct the final interview understanding the candidate's preferences and expectations to do the right matchmaking.
+                  Rigorously evaluate and fine-tune the proposed financial strategies.
                   </div>
                 </div>
               </div>
             </div>
             <div class="right-process-section">
-              {/* <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
+              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
                 <img
                   src="../assets/img/process_icons/implement.png"
                   alt=""
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Implement the Process</div>
+                  <div class="process-new-heading">Implement</div>
                   <div class="process-new-description-right-side">
-                    Execute strategies flawlessly with our hands-on approach,
-                    bringing the plan to life.
+                  Execute the optimized financial plan with precision.
                   </div>
                 </div>
-              </div> */}
+              </div>
             </div>
           </div>
           <div class="process-new-section">
-            {/* <div class="left-process-section">
+            <div class="left-process-section">
               <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
                 <img
                   src="../assets/img/process_icons/monitor.png"
@@ -573,13 +573,12 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="text-container">
                   <div class="process-new-heading">Monitor the Results</div>
                   <div class="process-new-description">
-                    Continuously track key metrics, assess performance, and
-                    ensure strategies yield desired outcomes.
+                  Continuously track and analyze financial performance.
                   </div>
                 </div>
               </div>
-            </div> */}
-            {/* <div class="right-process-section">
+            </div>
+            <div class="right-process-section">
               <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
                 <img
                   src="../assets/img/process_icons/improve.png"
@@ -587,14 +586,13 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Make Improvements</div>
+                  <div class="process-new-heading">Iterate the Process</div>
                   <div class="process-new-description-right-side">
-                    Identify areas for improvement based on results, refining
-                    strategies for ongoing optimization.
+                  Adapt and refine strategies based on real-time results and changing business landscapes.
                   </div>
                 </div>
               </div>
-            </div> */}
+            </div>
           </div>
         </section>
       </article>

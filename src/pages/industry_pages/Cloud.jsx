@@ -254,7 +254,7 @@ useScrollToTop();
         <h2 className='title-special'>Revolutionize Your <span className='bluer'>Go-To-Market</span> Strategy</h2>
         </div>
         <div className="para-desc-industry">
-        In the dynamic world of IoT and tech startups, a well-crafted go-to-market (GTM) strategy is not just advantageous but essential. Our seasoned experts develop custom GTM strategies aligned with your vision, enabling you to not only enter the market but also make a lasting impact.
+        Navigate the market with confidence. Our Go-To-Market strategies are tailored to your unique vision, ensuring a powerful launch and sustained growth
         </div>
         </section>
 
@@ -263,7 +263,7 @@ useScrollToTop();
         <h2 className='title-special'><span className='bluer'>Attract, Retain,</span> and <span className='bluer'>Nurture</span> the Best Talent</h2>
         </div>
         <div className="para-desc-industry">
-        Your team is the backbone of success. Phi Consulting offers comprehensive HR and recruitment services, assisting you in building a talented workforce aligned with your startup's culture and objectives. From talent acquisition to development, we ensure your human capital is your strongest asset.
+        Build your dream team with us. Our HR experts specialize in recruiting top talent that aligns with your startup's culture and objectives.
         </div>
         </section>
 
@@ -272,7 +272,7 @@ useScrollToTop();
         <h2 className='title-special'>Navigate <span className='bluer'>Financial Complexities</span> with Ease</h2>
         </div>
         <div className="para-desc-industry">
-        Managing finances in a startup environment can be challenging. Our IoT consulting services provide clarity and direction, helping you make informed decisions that secure your company's financial health and fuel its growth.
+        Financial clarity for ambitious visions. We provide insightful financial strategies to optimize your resources and fuel your growth
         </div>
         </section>
 
@@ -281,7 +281,8 @@ useScrollToTop();
         <h2 className='title-special'><span className='bluer'>Building Bridges</span> Between You and Your Investors</h2>
         </div>
         <div className="para-desc-industry">
-        Strong investor relations are vital for startup growth. Our team helps you communicate your vision and progress effectively, fostering trust and understanding with investors. This ensures not only continued financial support but also strategic partnerships that propel your IoT startup forward.
+        Connecting visionaries with investors. Our robust network and expertise in investor relations help secure the right funding to elevate your startup.
+
         </div>
         </section>
        </article>
