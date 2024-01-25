@@ -2070,7 +2070,7 @@ padding: 1rem;
 }
 
 .testi-one {
-    background-image: url('../img/testimonial_one.webp');
+    background-image: url('../img/bob.png');
     background-size: cover; /* Ensure the background image covers the entire container */
     background-position: center; /* Center the background image */
     width: 80px;
@@ -2092,7 +2092,7 @@ padding: 1rem;
 }
 
 .test-three {
-    background-image: url('../img/testimonial_3.jpg');
+    background-image: url('../img/AToB-square.jpg');
     background-size: cover; /* Ensure the background image covers the entire container */
     background-position: center; /* Center the background image */
     width: 80px;
