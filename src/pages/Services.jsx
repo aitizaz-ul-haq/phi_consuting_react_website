@@ -150,8 +150,7 @@ useEffect(() => {
             <p class="hero-desc-services-page">
               Unlock the complete potential of your enterprise through Phi
               Consulting's comprehensive suite of solutions. Our expertise spans
-              Sales, Business, Financial, HR & Recruitment, and Customer
-              Experience Consulting. We are not just consultants; we are your
+              GTM Strategy, HR & Recruitment, Investor Relations & Financial Consulting. We are not just consultants; we are your
               dedicated partners in navigating challenges and ensuring
               sustainable growth.
             </p>
@@ -184,7 +183,7 @@ useEffect(() => {
                   class="icon-adjuster"
                 />
               </div>
-              <h3 class="card-present-title">GTM Advisory</h3>
+              <h3 class="card-present-title">GTM Strategy</h3>
               <div class="card-present-desc">
                 Scale your sales operations with precision and excellence,
                 targeting the right customers and optimizing sales cycles.

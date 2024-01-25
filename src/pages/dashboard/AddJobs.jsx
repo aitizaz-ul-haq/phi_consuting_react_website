@@ -16,7 +16,6 @@ const AddJobs = () => {
 
   const onFinish = (values) => {
     const formattedData = {
-        id: 1, // Assuming a static ID for this example
         title: values.title,
         role: values.role,
         content: values.items.map(item => ([
@@ -32,7 +31,8 @@ const AddJobs = () => {
   };
 
   return (
-    <Form {...layout} form={form} name="control-hooks" onFinish={onFinish} style={{ maxWidth: 600 }}>
+    <div className="form-container-dash">
+         <Form {...layout} form={form} name="control-hooks" onFinish={onFinish} style={{ maxWidth: 600 }}>
       <Form.Item name="title" label="Title" rules={[{ required: true }]}>
         <Input />
       </Form.Item>
@@ -71,6 +71,8 @@ const AddJobs = () => {
         </Space>
       </Form.Item>
     </Form>
+    </div>
+   
   );
 };
 
