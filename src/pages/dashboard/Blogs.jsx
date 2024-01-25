@@ -1,75 +1,73 @@
-import React from 'react';
-import { Space, Table, Tag } from 'antd';
-const columns = [
-  {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
-    render: (text) => <a>{text}</a>,
-  },
-  {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
-  },
-  {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
-  },
-  {
-    title: 'Tags',
-    key: 'tags',
-    dataIndex: 'tags',
-    render: (_, { tags }) => (
-      <>
-        {tags.map((tag) => {
-          let color = tag.length > 5 ? 'geekblue' : 'green';
-          if (tag === 'loser') {
-            color = 'volcano';
-          }
-          return (
-            <Tag color={color} key={tag}>
-              {tag.toUpperCase()}
-            </Tag>
-          );
-        })}
-      </>
-    ),
-  },
-  {
-    title: 'Action',
-    key: 'action',
-    render: (_, record) => (
-      <Space size="middle">
-        <a>Invite {record.name}</a>
-        <a>Delete</a>
-      </Space>
-    ),
-  },
-];
-const data = [
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer'],
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
-  },
-];
-const Blogs = () => <Table columns={columns} dataSource={data} />;
+import React, { useEffect, useState } from 'react';
+import { Table, Space, Button, message } from 'antd';
+import axios from 'axios';
+
+const Blogs = () => {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
+
+  const fetchBlogs = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/blogs'); // Adjust this URL to your API endpoint
+      setBlogs(response.data);
+      // console.log(response);
+      setBlogs(response.data.map(blog => ({ ...blog, key: blog._id.toString() }))); // Convert _id to string
+    } catch (error) {
+      console.error('Error fetching blogs:', error);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3000/blogs/${id}`); // Adjust this URL to your API endpoint
+      const updatedBlogs = blogs.filter(blog => blog._id !== id);
+      setBlogs(updatedBlogs); // Update the state to trigger re-render
+      message.success('Blog deleted successfully');
+    } catch (error) {
+      console.error('Error deleting blog:', error);
+      message.error('Error deleting blog');
+    }
+  };
+
+  const columns = [
+    {
+      title: 'Title',
+      dataIndex: 'title',
+      key: 'title',
+      render: text => <a>{text}</a>,
+    },
+    {
+      title: 'Summary',
+      dataIndex: 'summary',
+      key: 'summary',
+      render: summary => <p>{summary}</p>,
+    },
+    {
+      title: 'Date Posted',
+      dataIndex: 'DatePosted',
+      key: 'DatePosted',
+    },
+    {
+      title: 'Read Time',
+      dataIndex: 'ReadTime',
+      key: 'ReadTime',
+    },
+    {
+      title: 'Action',
+      key: 'action',
+      render: (_, record) => (
+        <Space size="middle">
+          <a>Edit</a>
+          <Button type="link" onClick={() => handleDelete(record._id)}>Delete</Button>
+        </Space>
+      ),
+    },
+  ];
+
+  return <Table columns={columns} dataSource={blogs} rowKey="_id" />;
+};
+
 export default Blogs;

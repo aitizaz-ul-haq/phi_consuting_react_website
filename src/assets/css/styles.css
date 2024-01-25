@@ -13848,6 +13848,8 @@ display: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     height: 100vh;
     overflow-y: auto;
+    flex-grow: 0;  /* Do not grow larger than the set width */
+    flex-shrink: 0;
   }
   
   .sidebar button {

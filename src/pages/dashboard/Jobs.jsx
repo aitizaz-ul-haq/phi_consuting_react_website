@@ -1,39 +1,29 @@
 import React from 'react';
-import { Space, Table, Tag } from 'antd';
+import { Table, Space } from 'antd';
+
 const columns = [
   {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
-    render: (text) => <a>{text}</a>,
+    title: 'Title',
+    dataIndex: 'title',
+    key: 'title',
   },
   {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
+    title: 'Role',
+    dataIndex: 'role',
+    key: 'role',
   },
   {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
-  },
-  {
-    title: 'Tags',
-    key: 'tags',
-    dataIndex: 'tags',
-    render: (_, { tags }) => (
+    title: 'Content',
+    dataIndex: 'content',
+    key: 'content',
+    render: (content) => (
       <>
-        {tags.map((tag) => {
-          let color = tag.length > 5 ? 'geekblue' : 'green';
-          if (tag === 'loser') {
-            color = 'volcano';
-          }
-          return (
-            <Tag color={color} key={tag}>
-              {tag.toUpperCase()}
-            </Tag>
-          );
-        })}
+        {content.map((item, index) => (
+          <p key={index}>
+            <strong>{item.type === 'subheading' ? item.text : ''}</strong>
+            {item.type === 'paragraph' ? item.text : ''}
+          </p>
+        ))}
       </>
     ),
   },
@@ -48,28 +38,21 @@ const columns = [
     ),
   },
 ];
+
 const data = [
   {
     key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer'],
+    title: "Outbound Account Executive",
+    role: "As an Outbound Account Executive, you will have the opportunity to work with Phis largest line of revenue. We are looking For sales professionals who are competitive, driven, strong communicators, and consistently practice refining their skill set. You should be humble, coachable, and relentless toward hitting your goals and targets.",
+    content: [
+      {"type": "subheading", "text": "About Us"},
+      {"type": "paragraph", "text": "Phi Consulting constructs innovation involving the most recent progressions in Information Technology..."},
+      // ... more content
+    ]
   },
-  {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
-  },
+  // ... more data
 ];
+
 const Jobs = () => <Table columns={columns} dataSource={data} />;
+
 export default Jobs;
