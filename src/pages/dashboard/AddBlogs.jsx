@@ -1,8 +1,12 @@
-import React from 'react';
-import { Button, Card, Form, Input, Space } from 'antd';
+import React,{useState, useEffect} from 'react';
+import { Button, Card, Form, Input, Space, Select } from 'antd';
 import { CloseOutlined } from '@ant-design/icons';
 import axios from 'axios';
+import moment from 'moment';
+import { message } from 'antd';
+import { Navigate } from 'react-router-dom';
 
+const { Option } = Select;
 const layout = {
   labelCol: { span: 8 },
   wrapperCol: { span: 16 },
@@ -14,12 +18,13 @@ const tailLayout = {
 
 const AddBlog = () => {
   const [form] = Form.useForm();
+  const [redirectToBlogs, setRedirectToBlogs] = useState(false);
 
   const onFinish = async (values) => {
     const formattedData = {
       title: values.title,
       summary: values.summary,
-      imageone: values.imageone,
+      companyName: values.companyName,
       DatePosted: values.DatePosted,
       ReadTime: values.ReadTime,
       content: values.items.map(item => ({
@@ -29,35 +34,58 @@ const AddBlog = () => {
     };
   
     try {
-      const response = await axios.post('http://localhost:3000/blogs', formattedData); // Adjust the URL to match your server's address
+      const response = await axios.post('http://localhost:3000/blogs', formattedData);
       console.log('Blog created successfully:', response.data);
+      message.success('Blog edited successfully');
+      setRedirectToBlogs(true); // This triggers redirection
     } catch (error) {
       console.error('Error creating blog:', error);
+      message.error('An error occurred while updating the blog');
     }
   };
   const onReset = () => {
     form.resetFields();
   };
 
+  if (redirectToBlogs) {
+    return <Navigate to="/dashboard/Blogs" />;
+}
+
   return (
     <div className="form-container-dash">
-      <Form {...layout} form={form} name="control-hooks" onFinish={onFinish} style={{ maxWidth: 600 }}>
+       <Form {...layout} form={form} name="control-hooks" onFinish={onFinish} style={{ maxWidth: 600 }}>
         <Form.Item name="title" label="Title" rules={[{ required: true }]}>
           <Input />
         </Form.Item>
         <Form.Item name="summary" label="Summary" rules={[{ required: true }]}>
           <Input.TextArea />
         </Form.Item>
-        <Form.Item name="imageone" label="Image URL">
+        <Form.Item name="companyName" label="Company Name" rules={[{ required: true }]}>
+          <Select placeholder="Select a company">
+            <Option value="Atob">Atob</Option>
+            <Option value="pallet">pallet</Option>
+            <Option value="truckx">truckx</Option>
+            <Option value="solar">solar</Option>
+            <Option value="bobtail">bobtail</Option>
+            <Option value="joyride">joyride</Option>
+            <Option value="mudflip">mudflip</Option>
+            <Option value="digital ocean">digital ocean</Option>
+          </Select>
+        </Form.Item>
+        <Form.Item name="DatePosted" label="Date Posted" initialValue={moment().format("DD/MM/YYYY")}>
           <Input />
         </Form.Item>
-        <Form.Item name="DatePosted" label="Date Posted">
-          <Input />
+        <Form.Item name="ReadTime" label="Read Time" rules={[{ required: true }]}>
+          <Select placeholder="Select read time">
+            <Option value="2 min">2 min</Option>
+            <Option value="3 min">3 min</Option>
+            <Option value="4 min">4 min</Option>
+            <Option value="5 min">5 min</Option>
+            <Option value="6 min">6 min</Option>
+            <Option value="7 min">7 min</Option>
+            <Option value="8 min">8 min</Option>
+          </Select>
         </Form.Item>
-        <Form.Item name="ReadTime" label="Read Time">
-          <Input />
-        </Form.Item>
-
         {/* Dynamic Form List */}
         <Form.List name="items">
           {(fields, { add, remove }) => (

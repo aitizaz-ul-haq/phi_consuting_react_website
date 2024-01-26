@@ -534,7 +534,7 @@ useEffect(() => {
             <h3 class="testi-card-heading">Head of Customer Support - AtoB Financials</h3>
           </div>
 
-          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
+          {/* <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-two">
               <img src="" alt="" />
             </div>
@@ -550,7 +550,7 @@ useEffect(() => {
               >
             </p>
             <h3 class="testi-card-heading">-lenny pepridge (CTO)</h3>
-          </div>
+          </div> */}
 
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-three">

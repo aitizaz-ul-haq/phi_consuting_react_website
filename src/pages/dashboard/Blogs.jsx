@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Table, Space, Button, message } from 'antd';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
+
+  const navigate = useNavigate();
+
+ 
+
 
   useEffect(() => {
     fetchBlogs();
@@ -30,6 +36,11 @@ const Blogs = () => {
       console.error('Error deleting blog:', error);
       message.error('Error deleting blog');
     }
+  };
+
+  const handleEdit = (blogId) => {
+    console.log('pressed...')
+    navigate(`/dashboard/EditBlog/${blogId}`);
   };
 
   const columns = [
@@ -60,12 +71,16 @@ const Blogs = () => {
       key: 'action',
       render: (_, record) => (
         <Space size="middle">
-          <a>Edit</a>
+          <Button type="link" onClick={() => handleEdit(record._id)}>Edit</Button>
           <Button type="link" onClick={() => handleDelete(record._id)}>Delete</Button>
         </Space>
       ),
     },
   ];
+
+  const onEditClick = (blogId) => {
+    handleEdit(blogId);
+  };
 
   return <Table columns={columns} dataSource={blogs} rowKey="_id" />;
 };

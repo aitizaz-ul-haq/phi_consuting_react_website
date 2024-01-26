@@ -36,6 +36,7 @@ import AddJobs from './pages/dashboard/AddJobs';
 
 import Blogs from './pages/dashboard/Blogs';
 import AddBlogs from './pages/dashboard/AddBlogs';
+import EditBlog from './pages/dashboard/BlogEdit';
 
 import Cases from './pages/dashboard/Cases';
 import AddCases from './pages/dashboard/AddCases';
@@ -74,6 +75,7 @@ const App = () => {
           <Route path="AddJobs" element={<AddJobs />} />
           <Route path="Blogs" element={<Blogs />} />
           <Route path="AddBlogs" element={<AddBlogs />} />
+          <Route path="EditBlog/:blogId" element={<EditBlog />} />
           <Route path="Cases" element={<Cases />} />
           <Route path="AddCases" element={<AddCases />} />
           {/* Add routes for other pages */}

@@ -2070,7 +2070,7 @@ padding: 1rem;
 }
 
 .testi-one {
-    background-image: url('../img/bob.png');
+    background-image: url('../img/AToB-square.jpg');
     background-size: cover; /* Ensure the background image covers the entire container */
     background-position: center; /* Center the background image */
     width: 80px;
@@ -14050,7 +14050,49 @@ display: none;
 color: var(--DARK-PHI-BLUE);
   }
   
-
+  .form-container-dash {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  
+  .form-container-dash label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  .form-container-dash input[type="text"],
+  .form-container-dash textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-container-dash textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .form-container-dash button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .form-container-dash button:hover {
+    background-color: #0056b3;
+  }
+  
     /* .work-case-study-section {
         opacity: 0;
         transform: translateY(20px); 
