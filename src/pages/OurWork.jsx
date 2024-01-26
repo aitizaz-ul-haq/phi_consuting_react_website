@@ -251,7 +251,9 @@ const OurWork = () => {
           We Have Successfully Retained Our Top 3 Clients For Over 3 Years.
           </h2>
           <p class="testi-desc">
-          Our clients speak for the transformative impact of Phi Consulting. Here's what they have to say about their experiences partnering with us:
+            Our clients speak for the transformative impact of Phi Consulting.
+            Partner with us and discover the potential for unprecedented growth,
+            reduced costs, and optimized efficiency.
           </p>
         </section>
 
@@ -264,17 +266,15 @@ const OurWork = () => {
             <p class="testi-quote">
               <q
                 ><i
-                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quibusdam atque iste aut magni harum nobis quasi impedit enim
-                  laborum distinctio, accusamus ducimus dolorem illum, mollitia
-                  aperiam deserunt voluptate quaerat totam!</i
+                  >Phi Consulting has delivered the project on time, meeting the client's expectations. They have communicated frequently and promptly via email and virtual meetings, ensuring an effective workflow. Their ability to adapt and willingness to improve the process are hallmarks of their work.
+                  </i
                 ></q
               >
             </p>
-            <h3 class="testi-card-heading">-Rob Robinson (CEO)</h3>
+            <h3 class="testi-card-heading">Head of Customer Support - AtoB Financials</h3>
           </div>
 
-          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
+          {/* <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-two">
               <img src="" alt="" />
             </div>
@@ -290,7 +290,7 @@ const OurWork = () => {
               >
             </p>
             <h3 class="testi-card-heading">-lenny pepridge (CTO)</h3>
-          </div>
+          </div> */}
 
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-three">
@@ -300,14 +300,12 @@ const OurWork = () => {
             <p class="testi-quote">
               <q
                 ><i
-                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quibusdam atque iste aut magni harum nobis quasi impedit enim
-                  laborum distinctio, accusamus ducimus dolorem illum, mollitia
-                  aperiam deserunt voluptate quaerat totam!</i
+                  >Phi Consulting's work meets the client's expectations and has a strong 60 Net Promoter Score. The team has an easy onboarding process and a turn-key nature that has impressed the client.
+                  Head of Sales & Business Development - AtoB Financials</i
                 ></q
               >
             </p>
-            <h3 class="testi-card-heading">-linda bigaloo (finance)</h3>
+            <h3 class="testi-card-heading">Head of Sales & Business Development - AtoB Financials</h3>
           </div>
         </section>
       </article>
