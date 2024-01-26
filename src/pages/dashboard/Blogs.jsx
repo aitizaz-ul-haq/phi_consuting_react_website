@@ -1,28 +1,30 @@
 import React, { useEffect, useState } from 'react';
-import { Table, Space, Button, message } from 'antd';
+import { Table, Space, Button, message, Spin  } from 'antd';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
-
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-
- 
-
 
   useEffect(() => {
     fetchBlogs();
   }, []);
 
   const fetchBlogs = async () => {
+    setIsLoading(true);
+    const timer = setTimeout(() => setIsLoading(false), 3000);
+
     try {
-      const response = await axios.get('http://localhost:3000/blogs'); // Adjust this URL to your API endpoint
-      setBlogs(response.data);
-      // console.log(response);
-      setBlogs(response.data.map(blog => ({ ...blog, key: blog._id.toString() }))); // Convert _id to string
+      const response = await axios.get('http://localhost:3000/blogs');
+      clearTimeout(timer);
+      setBlogs(response.data.map(blog => ({ ...blog, key: blog._id.toString() })));
+      setIsLoading(false);
     } catch (error) {
       console.error('Error fetching blogs:', error);
+      clearTimeout(timer);
+      setIsLoading(false);
     }
   };
 
@@ -82,7 +84,11 @@ const Blogs = () => {
     handleEdit(blogId);
   };
 
-  return <Table columns={columns} dataSource={blogs} rowKey="_id" />;
+  return (
+    <Spin spinning={isLoading} delay={300}>
+    <Table columns={columns} dataSource={blogs} rowKey="_id" />
+  </Spin>
+  );
 };
 
 export default Blogs;

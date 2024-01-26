@@ -1,231 +1,75 @@
-import React from 'react';
-import { Table, Space } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Table, Space, Button, Spin, message } from 'antd';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-const columns = [
-  {
-    title: 'Title',
-    dataIndex: 'title',
-    key: 'title',
-    render: text => <a>{text}</a>,
-  },
-  {
-    title: 'Summary',
-    dataIndex: 'summary',
-    key: 'summary',
-    render: summary => <p>{summary}</p>,
-  },
-  
-  {
-    title: 'Action',
-    key: 'action',
-    render: (_, record) => (
-      <Space size="middle">
-        <a>Edit</a>
-        <a>Delete</a>
-      </Space>
-    ),
-  },
-];
+const CaseStudies = () => {
+  const [caseStudies, setCaseStudies] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
-const caseData = [
-  {
-      "id": 1,
-      "title": "Transformative Growth: How Phi Consulting Catapulted AtoB to an $800 Million Series-B Valuation",
-      "summary": "AtoB, a trailblazing Fintech Payment provider for the Logistics industry, embarked on its journey with the ambition to revolutionize financial transactions in the logistics sector. However, as an early-stage startup, AtoB confronted the ever-present challenge of scaling revenue cycles and acquiring customers while burdened by the high costs associated with conventional sales models",
-      "imageone": "/assets/atob-card.png",
-      "imagetwo": "/assets/AToB-square.jpg",
-      "content": [
-         
-          {"type": "subheading", "text": "Navigating the Startup Rollercoaster: AtoB's Bumpy Ride"},
-          {"type": "paragraph", "text": "AtoB, a trailblazing Fintech Payment provider for the Logistics industry, embarked on its journey with the ambition to revolutionize financial transactions in the logistics sector. However, as an early-stage startup, AtoB confronted the ever-present challenge of scaling revenue cycles and acquiring customers while burdened by the high costs associated with conventional sales models"},
-          {"type": "paragraph", "text": "The challenges facing AtoB were multifold. In an environment where acquiring customers often proved cost-prohibitive, the need to efficiently scale revenue cycles loomed large. The startup sought a solution that would reconcile its growth ambitions with the fiscal constraints inherent in the startup landscape."},
-          {"type": "subheading", "text": "Phi to the Rescue: Turbocharging AtoB's Journey"},
-          {"type": "paragraph", "text": "Recognizing the critical need for specialized expertise, AtoB engaged the services of Phi   Consulting, a distinguished sales consultancy. Phi, known for its success with startups, immediately set out to provide AtoB with a tailored suite of resources designed to address their unique challenges. This included deploying seasoned sales professionals, streamlining internal processes, and introducing an innovative, cost-effective customer acquisition model"},
-          {"type": "subheading", "text": "Phi's Secret Sauce: Cracking the Code for AtoB"},
-          {"type": "paragraph", "text": "Phi's solution rested on a foundation of strategic channel partnerships. By cultivating relationships that extended AtoB's reach and market presence, Phi Consulting facilitated an agile and cost-effective approach to customer acquisition. This marked a departure from traditional sales models and positioned AtoB to scale its revenue cycles without the burden of exorbitant costs"},
-          {"type": "subheading", "text": "Turning Plans into Action: Phi and AtoB in Action!"},
-          {"type": "paragraph", "text": "Phi Saas Consulting executed a multifaceted implementation strategy, addressing sales and customer support components. Recognizing the necessity of a robust sales team, Phi meticulously curated and deployed a specialized sales force for AtoB. Comprising seasoned professionals with industry knowledge and a proven track record, this team facilitated AtoB's navigation of customer acquisition intricacies"},
-          {"type": "paragraph", "text": "Phi's involvement extended beyond advisory, actively contributing to scaling AtoB from a modest customer base to thousands. Through streamlined sales processes and strategic optimizations, Phi Saas Consulting identified opportunities and propelled AtoB into new markets and customer segments, fostering significant growth"},
-          {"type": "paragraph", "text": "Moreover, Phi's dedication to cultivating strategic channel partnerships played a pivotal role. By fostering collaborations aligned with AtoB's objectives, Phi Saas Consulting facilitated dynamic expansion, demonstrating the efficacy of a well-coordinated, cost-effective customer acquisition model"},
-          {"type": "paragraph", "text": "The tangible outcome was a transformative evolution for AtoB, transitioning from a nascent startup to an industry player with a substantial customer base. This success not only validated Phi Saas Consulting's proficiency in formulating effective sales & customer experience strategies but also highlighted their instrumental role in steering AtoB's exponential growth"},
-          {"type": "subheading", "text": "Showtime: AtoB's Big Wins with Phi"},
-          {"type": "paragraph", "text": "The impact of Phi's strategies was resounding. AtoB witnessed a notable uptick in customer satisfaction and retention, fueled by efficient troubleshooting and onboarding processes. Beyond this, AtoB's commitment to a superior customer experience not only set the company apart from competitors but also led to industry recognition as a best customer experience organization. Most significantly, AtoB achieved an impressive $800 million valuation during its series B funding round, a clear indicator of the success of Phi Consulting's integrated strategies."},
-          
-          {"type": "subheading", "text": "Ready to Scale Your Business?"},
-          {"type": "paragraph", "text": "For businesses seeking comprehensive growth strategies and top-notch customer support, Phi   Consulting stands as a proven partner. Contact us today to explore how we can help your business thrive."},
-          {"type": "subheading", "text": "Final Takeaway: Paving the Path to Success with Phi"},
-          {"type": "paragraph", "text": "The AtoB-Phi Consulting success story exemplifies the growing trend among startups: outsourcing critical functions to specialized organizations. Beyond the immediate benefits of cost savings, startups can focus on core competencies, such as product development and innovation, while experienced professionals handle sales and customer support. The Phi Consulting model, as showcased by AtoB, not only enables rapid scaling but also ensures a superior customer experience, all at a fraction of the cost of hiring in-house professionals. If your startup aims for swift, efficient growth, consider outsourcing your operations to a seasoned partner like Phi Consulting."}
+  useEffect(() => {
+    fetchCaseStudies();
+  }, []);
 
-      ]
-  },
-  {
-      "id": 2,
-      "title": "Behind the Wheel with TruckX: Pioneering All-In-One IoT Innovation in Transportation",
-      "summary": "TruckX is an All-In-One IoT platform for transportation, aimed to revolutionize the industry by providing ELD compliance, Telematics, and Dashcam solutions. However, the absence of a diverse user base and the lack of a dedicated sales team posed significant challenges to TruckX's growth potential. Recognizing the need for strategic intervention, TruckX turned to Phi Consulting.",
-      "imageone": "/assets/truckx-case.png",
-      "imagetwo": "/assets/truck-square.png",
-      "content": [
+  const fetchCaseStudies = async () => {
+    setIsLoading(true);
+    try {
+      const response = await axios.get('http://localhost:3000/cases');
+      setCaseStudies(response.data.map(cs => ({ ...cs, key: cs._id })));
+      setIsLoading(false);
+    } catch (error) {
+      console.error('Error fetching case studies:', error);
+      setIsLoading(false);
+    }
+  };
 
-          {"type": "subheading", "text": "TruckX's Odyssey from Limited User Base to Sales Team Struggles"},
-          {"type": "paragraph", "text": "TruckX confronted two major hurdles when they approached Phi Consulting: a lack of diversity in their user base and the absence of a dedicated sales team. Phi Consulting recognized the pivotal role it could play in reshaping TruckX's outbound sales strategy, marking a crucial moment in TruckX's journey towards market dominance."},
-          {"type": "subheading", "text": "Phi Consulting's Expedition into TruckX's Growth Landscape"},
-          {"type": "paragraph", "text": "Phi Consulting undertook a thorough analysis of TruckX's business intricacies and market dynamics. Collaboratively, they identified key pain points, particularly the absence of an end-to-end sales process hindering TruckX's potential for growth. This laid the foundation for Phi Consulting's comprehensive suite of services, encompassing management consulting, sales enablement, and the outsourcing of sales resources."},
-          {"type": "subheading", "text": "Phi Consulting's Customized Drive to Sales"},
-          {"type": "paragraph", "text": "Phi Consulting's expertise extended to defining a robust Go-To-Market (GTM) strategy, specifically tailored for the USA's logistics industry, with a focus on Over-The-Road (OTR) trucking fleets. This tailored approach set the stage for TruckX to make a significant impact in a niche market, positioning itself as an industry leader."},
-          {"type": "subheading", "text": "Phi Consulting's Playbook in Action"},
-          {"type": "paragraph", "text": "Phi Consulting played a pivotal role in reshaping TruckX's sales strategy, defining an end-to-end sales process that aligned with the unique offerings of TruckX. They facilitated the setup of a dedicated sales team, ensuring a seamless blend of inbound and outbound sales services. This strategic overhaul aimed to diversify TruckX's user base and drive revenue growth"},
-          {"type": "subheading", "text": "TruckX's Quantum Leap - A Fourfold Surge in Net Revenue"},
-          {"type": "paragraph", "text": "The collaborative efforts between TruckX and Phi Consulting bore fruit, leading to a remarkable fourfold increase in net revenue. The strategic realignment of sales processes, coupled with the establishment of a dedicated sales team, propelled TruckX to new heights in the competitive landscape of transportation technology."},
-         
-          {"type": "subheading", "text": "Gear Up for Growth: Reach Out to Phi Consulting for Customized Solutions that Accelerate Success"},
-          {"type": "paragraph", "text": "If you're seeking a strategic partner to elevate your business performance, Phi Consulting is ready to help. Contact us today to explore how our tailored consultancy services can unlock your company's full potential."},
-          {"type": "subheading", "text": "Unleashing Potential: Phi Consulting's Strategy Unlocks TruckX's Journey to Market Dominance."},
-          {"type": "paragraph", "text": "Phi Consulting's strategic partnership with TruckX exemplifies the transformative impact of strategic sales and HR/recruitment consultancy. By addressing critical challenges, defining a comprehensive sales strategy, and implementing changes with precision, Phi Consulting propelled TruckX to market dominance, establishing it as a key player in the competitive landscape of transportation technology."}
-      ]
-  },
-  
-  {
-      "id": 3,
-      "title": "DigitalOcean x Phi Consulting: A Symphony of Growth",
-      "summary": "Digital Ocean, a leading American technology company and cloud service provider, sought the expertise of Phi Consulting to navigate key challenges in their expansion journey. With headquarters in New York City and 15 global data centers, Digital Ocean caters to developers, startups, and SMBs, offering cloud infrastructure-as-a-service platforms",
-      "imageone": "/assets/digitalocean-product.png",
-      "imagetwo": "/assets/digitalocean-square.png",
-      "content": [
+  const handleEdit = (caseId) => {
+    navigate(`/dashboard/EditCase/${caseId}`);
+  };
 
-          {"type": "subheading", "text": "The DigitalOcean Journey"},
-          {"type": "paragraph", "text": "Digital Ocean, a leading American technology company and cloud service provider, sought the expertise of Phi Consulting to navigate key challenges in their expansion journey. With headquarters in New York City and 15 global data centers, Digital Ocean caters to developers, startups, and SMBs, offering cloud infrastructure-as-a-service platforms."},
-          {"type": "subheading", "text": "Digital Ocean's Quest in Expanding Horizons"},
-          {"type": "paragraph", "text": "Digital Ocean faced pivotal challenges in establishing a foothold in new markets, cultivating leadership in remote teams, executing a significant acquisition, and enhancing customer experience to drive growth. The need for a comprehensive HR, Business, and Customer Experience consultancy was evident."},
-          {"type": "subheading", "text": "The Collaborative Climb of Phi Consulting and Digital Ocean"},
-          {"type": "paragraph", "text": "In the initial phase, Phi Consulting embarked on a transformative journey with Digital Ocean, beginning with HR & Recruitment Consultancy. This involved the strategic establishment of Digital Ocean's first team in Pakistan, cultivating leaders who now play pivotal roles in the company's success."},
-          {"type": "paragraph", "text": "As the collaboration deepened, Phi Consulting extended its expertise into Business Consulting, leading to a meticulous due diligence process and Management Consulting for Digital Ocean's acquisition of Cloudways, a significant venture valued at $350 million."},
-          {"type": "paragraph", "text": "The journey reached its zenith with Customer Experience Consultancy, where Phi Consulting played a crucial role in setting up dedicated customer success and growth teams. This added layer of strategic focus aimed at enhancing the overall customer journey, aligning it seamlessly with Digital Ocean's ambitious growth objectives."},
-          {"type": "paragraph", "text": "Throughout this journey, Phi Consulting tailored each phase to align with Digital Ocean's unique challenges and growth trajectory, showcasing the power of a holistic consultancy approach."},
-          {"type": "subheading", "text": "Phi Consulting's Playbook for Digital Ocean's Growth"},
-          {"type": "paragraph", "text": "Phi Consulting's multifaceted solution included strategic HR planning, leadership development, meticulous due diligence for acquisitions, and a tailored approach to enhance customer experience. The team at Phi Consulting focused on aligning each solution with Digital Ocean's growth objectives."},
-          {"type": "subheading", "text": "Crafting DigitalOcean's Success Story"},
-          {"type": "paragraph", "text": "Phi Consulting flawlessly executed the devised strategies, implementing HR frameworks, conducting due diligence processes, and providing hands-on guidance for the establishment of customer success and growth teams. The collaboration was marked by a meticulous approach, ensuring each phase of the plan was executed with precision."},
-          {"type": "subheading", "text": "The Metrics of DigitalOcean's Success"},
-          {"type": "paragraph", "text": "The impact of Phi Consulting's interventions was profound. Digital Ocean experienced a remarkable 34% quarter-on-quarter revenue increase. The Net Promoter Score (NPS) surged by 8%, reflecting heightened customer satisfaction. Share prices soared threefold, underlying the success of the acquisition strategy. Remarkably, the growth target was met in just 10 months, achieving this milestone at only 25% of the initially allocated budget."},
-         
-          {"type": "subheading", "text": "Tomorrow Begins Today: Start Your Journey with Phi Consulting"},
-          {"type": "paragraph", "text": "Unlock the potential for your business growth. Partner with Phi Consulting for strategic solutions tailored to your unique challenges. Contact us today for a consultation."},
-          {"type": "subheading", "text": "Sky's No Limit"},
-          {"type": "paragraph", "text": "The partnership between Digital Ocean and Phi Consulting exemplifies the transformative power of strategic consultancy. By addressing critical challenges, Phi Consulting propelled Digital Ocean to new heights, showcasing the potential for strategic interventions in achieving unprecedented success in the competitive tech landscape."}
-          
-      ]
-  },
-  {
-      "id": 4,
-      "title": "A Phi Consulting Case Study on Joyride Autos",
-      "summary": "Joyride Autos, a trailblazing entity in the realm of unclaimed and abandoned vehicle e-commerce, stands at the forefront of reshaping the automotive industry. With a visionary mission to revolutionize the clearance of impound lots, Joyride goes beyond being a mere online platform—it is a driving force committed to providing a comprehensive solution for buyers and sellers of unclaimed vehicles.",
-      "imageone": "/assets/joytwo.png",
-      "imagetwo": "/assets/joybox.png",
-      "content": [
-          {"type": "subheading", "text": "A Phi Consulting Case Study on Joyride Autos"},
-          {"type": "paragraph", "text": "Joyride Autos, a trailblazing entity in the realm of unclaimed and abandoned vehicle e-commerce, stands at the forefront of reshaping the automotive industry. With a visionary mission to revolutionize the clearance of impound lots, Joyride goes beyond being a mere online platform—it is a driving force committed to providing a comprehensive solution for buyers and sellers of unclaimed vehicles."},
-          {"type": "subheading", "text": "Joyride's Roadblocks to Expansion"},
-          {"type": "paragraph", "text": "Joyride faced hurdles in expanding its user base and increasing revenue. The primary challenges included the need for a refined sales cycle, attracting buyers and sellers to the platform, and convincing dealers and dismantlers of the untapped potential in unclaimed vehicles."},
-          {"type": "subheading", "text": "Phi Consulting's Expedition into Joyride's Sales Landscape"},
-          {"type": "paragraph", "text": "Phi Consulting entered the scene to reengineer Joyride's sales strategy comprehensively. Analyzing the market, Phi identified key touchpoints and potential roadblocks in Joyride's current approach. The journey began with a thorough understanding of the industry landscape, buyer behaviors, and competitor analysis."},
-          {"type": "subheading", "text": "Phi's Tune-Up for Joyride's Revenue Engine"},
-          {"type": "paragraph", "text": "Phi Consulting crafted a meticulous sales consultancy plan, reshaping Joyride's complete sales cycle. The strategy focused on bringing both buyers and sellers onto the platform, creating a seamless experience for users. Phi's approach involved leveraging data and analytics to optimize the platform for increased engagement"},
-          {"type": "subheading", "text": "Phi Consulting's Hands-On Approach to Sales Transformation"},
-          {"type": "paragraph", "text": "With a clear roadmap in hand, Phi Consulting worked closely with Joyride's team to implement the new sales strategy. This phase involved refining communication channels, optimizing the platform for user-friendliness, and aligning marketing efforts with the identified target audience"},
-          {"type": "subheading", "text": "Joyride's Meteoric Rise in Users and Revenue"},
-          {"type": "paragraph", "text": "The impact of Phi Consulting's intervention was profound. Joyride experienced a notable increase in its user base, successfully attracting dealers and dismantlers to join the platform. Revenue growth became evident as unclaimed vehicles found new owners efficiently, clearing impound lots at an accelerated pace."},
-         
-          {"type": "subheading", "text": "Partner with Phi Consulting to Ignite Your Business Momentum"},
-          {"type": "paragraph", "text": "Are you ready to optimize your business strategy? Connect with Phi Consulting today to unlock hidden potentials and drive substantial growth."},
-          {"type": "subheading", "text": "Driving Change: Joyride Autos' Success Saga with Phi Consulting"},
-          {"type": "paragraph", "text": "Phi Consulting's collaboration with Joyride Autos exemplifies the transformative power of strategic sales consultancy. By understanding the unique challenges of the unclaimed vehicle market, Phi paved the way for sustainable growth, positioning Joyride as a leading force in the industry."}
-      ]
-  },
-  {
-      "id": 5,
-      "title": "Fueling Pallet's Logistics Revolution through Seamless Data Migration",
-      "summary": "Pallet, a trailblazer in the logistics industry, envisioned transforming the landscape through cutting-edge innovation. Their integrated Transportation Management System (TMS) and Warehouse Management System (WMS) promised end-to-end visibility and optimization, revolutionizing logistics operations.",
-      "imageone": "/assets/pallet.png",
-      "imagetwo": "/assets/palletbox.png",
-      "content": [
-          {"type": "subheading", "text": "Navigating Pallet's Leap from Legacy to Innovation"},
-          {"type": "paragraph", "text": "Pallet faced a critical challenge in migrating data from legacy platforms to their newly developed logistics systems. The intricacies of handling client information, transactional data, and ensuring a seamless transition posed significant hurdles. The risk of data loss and disruption in operations loomed large."},
-          {"type": "subheading", "text": "Navigating Logistics Complexity for Pallet's Visionary Endeavors"},
-          {"type": "paragraph", "text": "Recognizing the need for expert guidance, Pallet engaged Phi Consulting to navigate the complexities of data migration. The journey began with an in-depth analysis of Pallet's existing systems, data structures, and the unique requirements of their clientele. Phi Consulting dove into understanding the intricacies of the logistics domain, ensuring a tailored approach for Pallet's distinctive challenges."},
-          {"type": "subheading", "text": "Phi Consulting's Meticulous Data Migration Services"},
-          {"type": "paragraph", "text": "Phi Consulting devised a meticulous data migration strategy, aligning with Pallet's commitment to innovation and efficiency. The solution encompassed a phased approach, prioritizing data integrity and minimizing operational downtime. Leveraging their expertise in business consultancy, Phi Consulting streamlined the migration process, ensuring a seamless transition to Pallet's advanced TMS and WMS."},
-          {"type": "subheading", "text": "Phi Consulting and Pallet Orchestrating a Seamless Migration Symphony"},
-          {"type": "paragraph", "text": "The implementation phase witnessed Phi Consulting's hands-on approach. Collaborating closely with Pallet's internal teams, Phi ensured a smooth execution of the migration plan. Rigorous testing, continuous monitoring, and real-time adjustments were employed to address any unforeseen challenges. The synergy between Phi Consulting and Pallet's teams exemplified a partnership built on trust and shared commitment."},
-          {"type": "subheading", "text": "Phi Consulting's Data Migration Expertise Unleashes Pallet's Operational Success"},
-          {"type": "paragraph", "text": "The results were transformative. Pallet experienced enhanced logistics visibility, operational efficiency, and cost reduction. The streamlined systems allowed for faster and more reliable delivery times, bolstering customer satisfaction. Phi Consulting's data migration expertise not only met but exceeded Pallet's expectations, catapulting them to new heights within the logistics industry."},
-         
-          {"type": "subheading", "text": "Collaborate with Phi Consulting for Tailored Business Excellence."},
-          {"type": "paragraph", "text": "Ready to optimize your business processes? Connect with Phi Consulting for tailored solutions that drive success in a dynamic market."},
-          {"type": "subheading", "text": "Elevating Pallet's Logistics Aspirations Beyond Boundaries."},
-          {"type": "paragraph", "text": "Phi Consulting's collaboration with Pallet exemplifies the power of strategic business consultancy. In navigating the complexities of data migration, Phi not only mitigated challenges but also played a pivotal role in propelling Pallet's vision of revolutionizing the logistics industry into a tangible reality."}
-      ]
-  },
-  {
-      "id": 6,
-      "title": "Revolutionizing Solar Sales: Phi Consulting's Impact on Sungrade Solar's Success",
-      "summary": "Sungrade Solar, an American technology company specializing in residential solar panel installations, approached Phi Consulting seeking expertise in optimizing their sales process. Recognizing the potential for growth in the renewable energy sector, Sungrade Solar aimed to enhance its sales strategy for increased efficiency and profitability",
-      "imageone": "/assets/solar_one.webp ",
-      "imagetwo": "/assets/Solarbox.png",
-      "content": [
-          
-          {"type": "subheading", "text": "Unveiling Challenges in Sungrade Solar's Growth Trajectory"},
-          {"type": "paragraph", "text": "Sungrade Solar faced several challenges in its sales approach, including a lack of a structured sales process, inefficient lead generation, and an inability to capitalize on inbound leads. These obstacles hindered their ability to convert prospects into satisfied customers, impacting overall revenue and market share."},
-          {"type": "subheading", "text": "Navigating Solutions for Sungrade Solar's Sales Enhancement"},
-          {"type": "paragraph", "text": "Phi Consulting embarked on a collaborative journey with Sungrade Solar, beginning with an in-depth analysis of their existing sales framework. The team at Phi Consulting meticulously identified pain points and areas for improvement to tailor a solution that aligned with Sungrade Solar's specific needs"},
-          {"type": "subheading", "text": "Phi Consulting's Customized Sales Strategy for Sungrade Solar's Success"},
-          {"type": "paragraph", "text": "Phi Consulting implemented a comprehensive sales consultancy program for Sungrade Solar. This included the development of a streamlined sales process, targeted lead generation strategies, and the optimization of inbound sales procedures. The solution was designed to enhance customer engagement, increase conversion rates, and ultimately drive revenue growth for Sungrade Solar."},
-          {"type": "subheading", "text": "Phi Consulting Implements Tailored Sales Processes for Sungrade Solar"},
-          {"type": "paragraph", "text": "With a detailed roadmap in place, Phi Consulting seamlessly integrated the new sales strategy into Sungrade Solar's operations. The implementation phase focused on training the sales team, refining lead generation techniques, and leveraging technology to automate certain aspects of the sales process. This collaborative effort ensured a smooth transition and alignment with Sungrade Solar's business objectives."},
-          {"type": "subheading", "text": "Phi Consulting's Impact Sparks a 32% Surge in Sungrade Solar's Inbound Lead Conversion"},
-          {"type": "paragraph", "text": "The impact of Phi Consulting's intervention was nothing short of transformative. Sungrade Solar experienced a remarkable 32% increase in inbound lead conversion, surpassing industry benchmarks. The optimized sales process and targeted lead generation strategies not only accelerated the sales cycle but also significantly improved customer acquisition and retention rates."},
-          
-          {"type": "subheading", "text": "Illuminate Your Sales Strategy with Phi Consulting's Expertise."},
-          {"type": "paragraph", "text": "For businesses seeking a tailored and effective sales consultancy solution, Phi Consulting offers a proven track record of success. Contact us today to explore how we can elevate your sales strategy and drive measurable results."},
-          {"type": "subheading", "text": "Sungrade Solar's Success Journey: A Professional Transformation Aided by Phi Consulting."},
-          {"type": "paragraph", "text": "The collaboration between Phi Consulting and Sungrade Solar exemplifies the positive outcomes that result from strategic sales consultancy. By addressing challenges head-on and implementing a customized solution, Sungrade Solar not only improved its sales performance but also positioned itself as a leader in the dynamic and evolving renewable energy landscape."}
-          
-      ]
-  },
-  {
-      "id": 7,
-      "title": "Phi Consulting's Impact on Bobtail's Triumph",
-      "summary": "Founded in 2015, Bobtail is a forward-thinking financial service provider in the trucking industry. Their mission is to eliminate inefficiencies in the supply chain and create a seamless business environment. Offering factoring and fleet card services, Bobtail empowers trucking companies to stay in control of their businesses and succeed based on the value they create",
-      "imageone": "/assets/Bobtail.png",
-      "imagetwo": "/assets/bob.png",
-      "content": [
-         
-          {"type": "subheading", "text": "Navigating Efficiency in Trucking with Bobtail"},
-          {"type": "paragraph", "text": "Founded in 2015, Bobtail is a forward-thinking financial service provider in the trucking industry. Their mission is to eliminate inefficiencies in the supply chain and create a seamless business environment. Offering factoring and fleet card services, Bobtail empowers trucking companies to stay in control of their businesses and succeed based on the value they create."},
-          {"type": "subheading", "text": "Steering Through Hurdles in Sales and Innovation"},
-          {"type": "paragraph", "text": "Before engaging Phi Consulting, Bobtail faced significant challenges in streamlining their sales processes and expanding their services. The launch of their new product, the Bobtail Zero Mastercard®, presented additional hurdles in terms of defining effective sales strategies and ensuring a successful market entry."},
-          {"type": "subheading", "text": "Phi Consulting and Bobtail's Collaborative Adventure"},
-          {"type": "paragraph", "text": "Phi Consulting embarked on a comprehensive journey with Bobtail, understanding their unique position in the trucking industry and the intricacies of their services. The collaborative exploration of challenges laid the foundation for a strategic partnership focused on achieving tangible results."},
-          {"type": "subheading", "text": "A Symphony of Strategic Enhancements"},
-          {"type": "paragraph", "text": "In response to Bobtail's challenges, Phi Consulting conducted an in-depth analysis and implemented a multifaceted approach to elevate their operations. The team crafted a customized Sales Consultancy strategy, meticulously refining both inbound and outbound sales processes. Simultaneously, the customer journey underwent a comprehensive optimization, ensuring a flawless and satisfying experience at every interaction point"},
-          {"type": "paragraph", "text": "Recognizing the need for expansion, Phi Consulting strategically broadened Bobtail's sales horizons, delving into untapped markets to diversify revenue streams. The launch of the Bobtail Zero Mastercard® demanded a nuanced touch, and Phi Consulting's Business Consulting expertise proved instrumental in navigating market intricacies and executing a successful launch strategy."},
-          {"type": "paragraph", "text": "Beyond mere interventions, Phi Consulting implemented a continuous improvement framework, ensuring that strategies remained agile and aligned with the evolving dynamics of the trucking industry. This holistic suite of solutions not only addressed immediate challenges but also positioned Bobtail for sustained success in their mission to revolutionize the trucking industry."},
-          {"type": "subheading", "text": "Executing Brilliance in Sales and Product Launch"},
-          {"type": "paragraph", "text": "Phi Consulting executed their tailored strategies with precision, embedding them seamlessly into Bobtail's operations. For refined sales processes, comprehensive training sessions were conducted, empowering the sales team with the necessary insights for navigating the enhanced landscape. Continuous monitoring mechanisms allowed for real-time adjustments, ensuring optimal performance"},
-          {"type": "paragraph", "text": "Simultaneously, the optimized customer journey was intricately woven into every facet of Bobtail's operations, fostering a cohesive and satisfying customer experience. Collaborative workshops facilitated a cultural shift towards customer-centricity, embedding the principles of the optimized journey within the organization."},
-          {"type": "paragraph", "text": "The launch of the Bobtail Zero Mastercard® was a meticulously orchestrated event, with Phi Consulting's Business Consulting expertise fine-tuning market positioning, messaging, and launch timelines in close collaboration with Bobtail's teams."},
-          {"type": "paragraph", "text": "The result was a flawless market entry, capturing attention and driving early adoption. Throughout implementation, Phi Consulting's agile approach, marked by regular reviews and adjustments, exceeded expectations, providing Bobtail with a resilient foundation for sustained growth and success in the competitive trucking industry."},
-          {"type": "subheading", "text": "Quantifying the Impact of Phi Consulting"},
-          {"type": "paragraph", "text": "The impact of Phi Consulting's interventions was swift and substantial. Bobtail experienced a marked improvement in their sales performance, with increased inbound and outbound sales and successful expansion into new markets. The launch of the Bobtail Zero Mastercard® exceeded expectations, saving clients money on fuel and providing enhanced fleet management capabilities."},
-         
-          {"type": "subheading", "text": "Unlock Your Potential with Phi Consulting's Tailored Expertise"},
-          {"type": "paragraph", "text": "If you're seeking a strategic partner to elevate your business performance, Phi Consulting is ready to help. Contact us today to explore how our tailored consultancy services can unlock your company's full potential."},
-          {"type": "subheading", "text": "Final Takeaway: Orchestrating Success Beyond Expectations"},
-          {"type": "paragraph", "text": "Phi Consulting's strategic interventions have ushered Bobtail into a new era of success. The meticulous execution of tailored sales and customer journey strategies not only addressed challenges but instigated a cultural shift, embedding a customer-centric ethos within Bobtail. The flawless launch of the Bobtail Zero Mastercard® exemplified the power of collaborative Business Consulting, setting the stage for sustained growth. The Implementation Symphony, marked by continuous monitoring and agile adjustments, exceeded expectations, providing Bobtail with a resilient foundation for continued success"}
-      ]
-  }
- 
-];
+  const handleDelete = async (id) => {
+    setIsLoading(true);
+    try {
+      await axios.delete(`http://localhost:3000/cases/${id}`);
+      message.success('Case study deleted successfully');
+      fetchCaseStudies(); // Refresh the list after deletion
+    } catch (error) {
+      message.error('Error deleting case study');
+      console.error('Error deleting case study:', error);
+    }
+    setIsLoading(false);
+  };
 
-const Cases = () => <Table columns={columns} dataSource={caseData} />;
+  const columns = [
+    {
+      title: 'Title',
+      dataIndex: 'title',
+      key: 'title',
+    },
+    {
+      title: 'Summary',
+      dataIndex: 'summary',
+      key: 'summary',
+    },
+    // Additional columns for other properties can be added here
+    {
+      title: 'Action',
+      key: 'action',
+      render: (_, record) => (
+        <Space size="middle">
+          <Button type="link" onClick={() => handleEdit(record._id)}>Edit</Button>
+          <Button type="link" onClick={() => handleDelete(record._id)}>Delete</Button>
+        </Space>
+      ),
+    },
+  ];
 
-export default Cases;
+  return (
+    <Spin spinning={isLoading} delay={300}>
+      <Table columns={columns} dataSource={caseStudies} rowKey="_id" />
+    </Spin>
+  );
+};
+
+export default CaseStudies;

@@ -95,7 +95,10 @@ const AddBlog = () => {
                   <CloseOutlined onClick={() => remove(field.name)} />
                 }>
                   <Form.Item label="Type" name={[field.name, 'type']} rules={[{ required: true }]}>
-                    <Input placeholder="Type (e.g., subheading, paragraph)" />
+                    <Select placeholder="Select type">
+                      <Option value="subheading">Subheading</Option>
+                      <Option value="paragraph">Paragraph</Option>
+                    </Select>
                   </Form.Item>
                   <Form.Item label="Text" name={[field.name, 'text']} rules={[{ required: true }]}>
                     <Input.TextArea placeholder="Text" />
