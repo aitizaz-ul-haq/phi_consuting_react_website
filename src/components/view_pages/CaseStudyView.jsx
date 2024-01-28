@@ -59,19 +59,22 @@ const CaseStudyView = () => {
     useEffect(() => {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
+                console.log(entry); // Debugging log
                 if (entry.isIntersecting) {
+                    console.log('Element is intersecting');
                     entry.target.classList.add('fade-in-casestudy');
                     entry.target.classList.remove('fade-out-casestudy');
                 } else {
+                    console.log('Element is not intersecting');
                     entry.target.classList.add('fade-out-casestudy');
                 }
             });
         }, { threshold: 0.5 });
-
+    
         if (headingSectionRef.current) {
             observer.observe(headingSectionRef.current);
         }
-
+    
         return () => {
             if (headingSectionRef.current) {
                 observer.unobserve(headingSectionRef.current);
@@ -108,12 +111,12 @@ const CaseStudyView = () => {
         <div className="left-section-control"></div>
             <div className="right-section-control">
             <Tooltip placement="leftTop" title="toggle eye protection">
-            <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={42} height={42}/></button> 
+            <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
             </Tooltip>
                  {/* Back to Top Button */}
                  <Tooltip placement="leftTop" title="back to top">
     <button className="back-to-top" onClick={scrollToTop}>
-    <img src={top} alt="eye icon" width={42} height={42}/>
+    <img src={top} alt="eye icon" width={25} height={25}/>
     </button>
     </Tooltip>
             </div>

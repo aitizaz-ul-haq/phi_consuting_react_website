@@ -10,22 +10,6 @@ import digitalOcean from '../../assets/img/new_logos_comps/newer/digital-ocean.p
 import mudflap from '../../assets/img/new_logos_comps/newer/Mudflap.png';
 import sungrade from '../../assets/img/new_logos_comps/sungrade solar.png';
 
-import salesone from "../../assets/img/GTM Advisory/sales.png";
-import salestwo from "../../assets/img/GTM Advisory/experience.png";
-import salesthree from "../../assets/img/GTM Advisory/enablement.png";
-// import salesfour from "../../assets/img/black_logos/expansion.png";
-// import salesfive from "../../assets/img/black_logos/product led growth.png";
-// import salessix from "../../assets/img/black_logos/button.png";
-
-import goal from "../../assets/img/process_icons/goal.png";
-import planicon from "../../assets/img/process_icons/plan.png";
-import actionicon from "../../assets/img/process_icons/action.png";
-import assignicon from "../../assets/img/process_icons/assign.png";
-import testicon from "../../assets/img/process_icons/test.png";
-import impicon from "../../assets/img/process_icons/implement.png";
-import monitoricon from "../../assets/img/process_icons/monitor.png";
-import improveicon from "../../assets/img/process_icons/improve.png";
-
 import achiconone from "../../assets/img/achievements-badges/clutch_1.png";
 import achicontwo from "../../assets/img/achievements-badges/BBB.png";
 import achiconthree from "../../assets/img/achievements-badges/clutch_2.png";
@@ -33,11 +17,13 @@ import achiconthree from "../../assets/img/achievements-badges/clutch_2.png";
 import SmallWorkCard from '../../components/shared/cards/SmallWorkCard';
 import caseStudies from '../../data/caseStudies.json';
 
-import useScrollToTop from '../../hooks/useScrollToTop';
+// import useScrollToTop from '../../hooks/useScrollToTop';
 // import VantaAnimation from '../../components/shared/vantun';
-
+import { Tooltip } from 'antd';
 import { TypeAnimation } from 'react-type-animation';
 import IndustryServicesSection from '../../components/shared/macroComps/IndustryServicesSection';
+import eye from "../../assets/img/eye.png";
+import top from "../../assets/img/top Arrow.png";
 
 
 
@@ -56,13 +42,19 @@ const SaaS = () => {
   const cardsRef = useRef(null);
 
   const [processNewVisible, setProcessNewVisible] = useState(false);
-  const processNewRef = useRef(null);
-
+  
+  const [darkMode, setDarkMode] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
+  const processNewRef = useRef(null);
   const sectionsRef = useRef([]);
 
   const insightsRefs = useRef([]);
+
+  const addToRefs = el => {
+    if (el && !sectionsRef.current.includes(el)) {
+        sectionsRef.current.push(el);
+    }
+  };
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -149,11 +141,7 @@ useEffect(() => {
   return () => elements.forEach(el => observer.unobserve(el));
 }, []);
 
-const addToRefs = el => {
-  if (el && !sectionsRef.current.includes(el)) {
-      sectionsRef.current.push(el);
-  }
-};
+
 
 useEffect(() => {
   const observer = new IntersectionObserver(
@@ -183,11 +171,37 @@ useEffect(() => {
   };
 }, []);
 
-useScrollToTop();
+
+
+const toggleDarkMode = () => setDarkMode(!darkMode);
+
+const scrollToTop = () => {
+  window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+  });
+};
+
+// useScrollToTop();
 
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
+
+  
     return (
         <>
+        <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
+        <div className="left-section-control"></div>
+            <div className="right-section-control">
+            <Tooltip placement="leftTop" title="toggle eye protection">
+            <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
+            </Tooltip>
+                 {/* Back to Top Button */}
+                 <Tooltip placement="leftTop" title="back to top">
+    <button className="back-to-top" onClick={scrollToTop}>
+    <img src={top} alt="eye icon" width={25} height={25}/>
+    </button>
+    </Tooltip>
+            </div>
       {/* <!-- Hero Section --> */}
       <article class="hero">
     
@@ -235,15 +249,6 @@ useScrollToTop();
         </div>
         </section>
        
-
-        {/* <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'>Tailored<span className='bluer'> SaaS</span>  Consulting Services</h2>
-        </div>
-        <div className="para-desc-industry">
-        At Phi Consulting, we understand the unique challenges faced by founders and C-level executives. Our custom consulting services are designed to cater to your specific needs, ensuring your startup scales efficiently while keeping costs in check.
-        </div>
-        </section> */}
 
 <section className="industry-para-collection" ref={addToRefs}>
         <div className="para-title-industry">
