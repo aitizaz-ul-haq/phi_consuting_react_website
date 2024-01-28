@@ -38,7 +38,7 @@ import Blogs from './pages/dashboard/Blogs';
 import AddBlogs from './pages/dashboard/AddBlogs';
 import EditBlog from './pages/dashboard/BlogEdit';
 import EditCases from './pages/dashboard/CasesEdit';
-import EditJob from './pages/dashboard/BlogEdit';
+import EditJob from './pages/dashboard/JobsEdit';
 
 import Cases from './pages/dashboard/Cases';
 import AddCases from './pages/dashboard/AddCases';

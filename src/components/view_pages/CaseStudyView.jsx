@@ -5,21 +5,57 @@ import caseStudies from '../../data/caseStudies.json';
 import eye from "../../assets/img/eye.png"
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { Tooltip } from 'antd';
-import top from "../../assets/img/top Arrow.png"
+import top from "../../assets/img/top Arrow.png";
+import axios from 'axios';
+
+import atobbox from "../../assets/img/api_images/AToB-square.jpg"; 
+import truckxbox from "../../assets/img/api_images/truck-square.png";
+import palletbox from "../../assets/img/api_images/palletbox.png";
+import solarbox from "../../assets/img/api_images/Solarbox.png";
+import bobtailbox from "../../assets/img/api_images/bob.png";
+import joybox from "../../assets/img/api_images/joybox.png";
+import dobox from "../../assets/img/api_images/digitalocean-square.png";
+
+import atobproduct from "../../assets/img/api_images/atob-card.png"; 
+import truckxproduct from "../../assets/img/api_images/truckx-case.png";
+import palletproduct from "../../assets/img/api_images/pallet.png";
+import solarproduct from "../../assets/img/api_images/solar_one.webp";
+import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
+import joyrideproduct from "../../assets/img/api_images/joytwo.png";
+import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 
 const CaseStudyView = () => {
-    const { id } = useParams();
-    const caseStudy = caseStudies.find(study => study.id === parseInt(id));
+
+   
+    const [caseStudy, setCaseStudy] = useState(null);
+    const { id } = useParams(); // useParams should be at the top level
     const headingSectionRef = useRef(null);
     const [darkMode, setDarkMode] = useState(false);
+    // const caseStudy = caseStudies.find(study => study.id === parseInt(id));
     const toggleDarkMode = () => setDarkMode(!darkMode);
+     
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
     };
-  
+
+    useScrollToTop();
+
+    useEffect(() => {
+        const fetchCaseStudy = async () => {
+            try {
+                const response = await axios.get(`http://localhost:3000/cases/${id}`);
+                setCaseStudy(response.data);
+            } catch (error) {
+                console.error('Error fetching case study:', error);
+            }
+        };
+
+        fetchCaseStudy();
+    }, [id]);
+
     useEffect(() => {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -42,7 +78,30 @@ const CaseStudyView = () => {
             }
         };
     }, []);
-    useScrollToTop();
+    
+    if (!caseStudy) {
+        return <div>Case study not found</div>;
+    }
+    
+    const imageUrl = caseStudy.imageone && caseStudy.imageone.includes('Atob') ? atobproduct 
+                    : caseStudy.imageone && caseStudy.imageone.includes('truckx') ? truckxproduct 
+                    : caseStudy.imageone && caseStudy.imageone.includes('pallet') ? palletproduct 
+                    : caseStudy.imageone && caseStudy.imageone.includes('solar') ? solarproduct 
+                    : caseStudy.imageone && caseStudy.imageone.includes('bobtail') ? bobtailproduct 
+                    : caseStudy.imageone && caseStudy.imageone.includes('joyride') ? joyrideproduct 
+                    : caseStudy.imageone && caseStudy.imageone.includes('digital ocean') ? doproduct 
+                    : caseStudy.imageone;
+    
+    const box = caseStudy.imagetwo && caseStudy.imagetwo.includes('Atob') ? atobbox 
+                    : caseStudy.imagetwo && caseStudy.imagetwo.includes('truckx') ? truckxbox 
+                    : caseStudy.imagetwo && caseStudy.imagetwo.includes('pallet') ? palletbox 
+                    : caseStudy.imagetwo && caseStudy.imagetwo.includes('solar') ? solarbox 
+                    : caseStudy.imagetwo && caseStudy.imagetwo.includes('bobtail') ? bobtailbox 
+                    : caseStudy.imagetwo && caseStudy.imagetwo.includes('joyride') ? joybox 
+                    : caseStudy.imagetwo && caseStudy.imagetwo.includes('digital ocean') ? dobox 
+                    : caseStudy.imagetwo;
+
+
     return(
         <>
        <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
@@ -68,7 +127,7 @@ const CaseStudyView = () => {
             </div> */}
             <div className="reader-casestudy-new-container">
             <div className="reader-casestudy-logo">
-                    <img src={caseStudy.imagetwo} alt="" className='casestudyreaderimg' />
+                    <img src={box} alt="" className='casestudyreaderimg' />
             </div> 
             <div className="reader-casestudy-heading">
             {caseStudy.title}
@@ -81,7 +140,7 @@ const CaseStudyView = () => {
 
         </div>
         <div className="study-media-container">
-            <img src={caseStudy.imageone} alt="" className='product-study-img'/>
+            <img src={imageUrl} alt="" className='product-study-img'/>
         </div>       
     </section>
     <section className="study-details-container">
