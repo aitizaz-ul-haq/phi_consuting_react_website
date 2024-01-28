@@ -1,27 +1,45 @@
 import React, { useEffect, useRef, useState } from 'react';
 import blogHeader from "../../assets/img/b2b.webp";
-import { Link } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
-import blogs from "../../data/blogs.json";
+import { Link, useParams } from 'react-router-dom';
 import { Tooltip } from 'antd';
 import useScrollToTop from "../../hooks/useScrollToTop";
 import eye from "../../assets/img/eye.png";
-import top from "../../assets/img/top Arrow.png"
+import top from "../../assets/img/top Arrow.png";
+import axios from 'axios';
 
 const BlogView = () => {
+  const [blog, setBlog] = useState(null);
   const { id } = useParams();
-  const blog = blogs.find(study => study.id === parseInt(id));
   const [darkMode, setDarkMode] = useState(false);
-    const toggleDarkMode = () => setDarkMode(!darkMode);
 
-    const scrollToTop = () => {
-      window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-      });
+  useEffect(() => {
+    const fetchBlogData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/blogs/${id}`);
+        setBlog(response.data);
+      } catch (error) {
+        console.error('Error fetching blog:', error);
+      }
+    };
+
+    if (id) {
+      fetchBlogData();
+    }
+  }, [id]);
+
+  const toggleDarkMode = () => setDarkMode(!darkMode);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   useScrollToTop();
+
+  if (!blog) {
+    return <div>Loading blog data...</div>;
+  }
     return(
         <>
          <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
@@ -41,7 +59,7 @@ const BlogView = () => {
             <section className="blog-content-container">
                 <div className="blog-content">
                     <div className="blog-image-header-container">
-                        <img src={blog.imageone} alt="" className='blog-image-in-reader' />
+                        <img src={blogHeader} alt="" className='blog-image-in-reader' />
                     </div>
                    <div className="blog-heading-read-section">
                    {blog.title}

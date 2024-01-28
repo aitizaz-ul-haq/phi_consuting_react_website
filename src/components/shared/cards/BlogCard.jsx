@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import blogpic from "../../../assets/img/b2b.webp";
 
 const BlogCard = ({blogs}) => {
     return(
         
         <div class="blog-card-one">
-            <Link className='blog-phi-home' to={`/viewblog/${blogs.id}`}>
+            <Link className='blog-phi-home' to={`/viewblog/${blogs._id}`}>
             <div class="blog-image">
               <img
-                 src={blogs.imageone}
+                 src={blogpic}
                 alt=""
                 width="455"
                 class="blog-image-home"

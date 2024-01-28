@@ -1,13 +1,29 @@
-import React from 'react';
-import blogpic from "../assets/img/bi.jpg";
+import React,{useState, useEffect} from 'react';
+// import blogpic from "../assets/img/bi.jpg";
 import { Link } from 'react-router-dom';
 import blogs from '../data/blogs.json';
 import BlogCard from '../components/shared/cards/BlogCard';
-
+import axios from 'axios';
 import useScrollToTop from '../hooks/useScrollToTop';
 
-const Blog = () => {
+const Blog = ({blogpic}) => {
+  const [blogs, setBlogs] = useState([]);
 
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/blogs');
+        setBlogs(response.data);
+      } catch (error) {
+        console.error('Error fetching blogs:', error);
+        // Optionally, handle the error (e.g., display an error message)
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
+  useScrollToTop();
   const gotoContacts = () => {
     window.location.href = '/contact';
   }
@@ -38,8 +54,8 @@ const Blog = () => {
         <section class="bloged-container">
           <h2 class="bloged-heading">Blogs</h2>
           <div class="bloged-box-container">
-          {blogs.map(study => (
-                <BlogCard key={study.id} blogs={study} />
+            {blogs.map(blog => (
+              <BlogCard key={blog._id} blogs={blog}/>
             ))}
           </div>
         </section>
