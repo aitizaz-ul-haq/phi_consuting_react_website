@@ -1,99 +1,81 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import { message } from 'antd';
-import { Navigate } from 'react-router-dom';
 
-
-const EditBlog = () => {
-    const [blogData, setBlogData] = useState({ content: [] });
-    const [redirectToBlogs, setRedirectToBlogs] = useState(false);
-    const { blogId } = useParams();
+const EditJob = () => {
+    const [jobData, setJobData] = useState({ content: [] });
+    const [redirectToJobs, setRedirectToJobs] = useState(false);
+    const { jobId } = useParams();
   
     useEffect(() => {
-        const fetchBlogData = async () => {
+        const fetchJobData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/blogs/${blogId}`);
-                setBlogData(response.data);
+                const response = await axios.get(`http://localhost:3000/jobs/${jobId}`);
+                setJobData(response.data);
             } catch (error) {
-                console.error('Error fetching blog:', error);
+                console.error('Error fetching job:', error);
+                message.error('Error fetching job data');
             }
         };
 
-        if (blogId) {
-            fetchBlogData();
+        if (jobId) {
+            fetchJobData();
         }
-    }, [blogId]);
+    }, [jobId]);
 
-   const handleSubmit = async (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.currentTarget);
 
-    // Map through the content and create an updated structure
-    const updatedContent = blogData.content.map((item, index) => ({
-        type: item.type,
-        text: formData.get(`content-text-${index}`)
-    }));
+        // Map through the content and create an updated structure
+        const updatedContent = jobData.content.map((item, index) => ({
+            type: item.type,
+            text: formData.get(`content-text-${index}`)
+        }));
 
-    // Create the updated blog data object
-    const updatedBlogData = {
-        title: formData.get('title'),
-        summary: formData.get('summary'),
-        imageone: formData.get('imageone'),
-        DatePosted: formData.get('DatePosted'),
-        ReadTime: formData.get('ReadTime'),
-        content: updatedContent
+        // Create the updated job data object
+        const updatedJobData = {
+            title: formData.get('title'),
+            role: formData.get('role'),
+            content: updatedContent
+        };
+
+        try {
+            await axios.put(`http://localhost:3000/jobs/${jobId}`, updatedJobData);
+            message.success('Job updated successfully');
+            setRedirectToJobs(true);
+        } catch (error) {
+            console.error('Error updating job:', error);
+            message.error('An error occurred while updating the job');
+        }
     };
 
-    try {
-        // Make a PUT request to update the blog
-        const response = await axios.put(`http://localhost:3000/blogs/${blogId}`, updatedBlogData);
-        console.log('Blog updated successfully:', response.data);
-        message.success('Blog edited successfully');
-        setRedirectToBlogs(true); // This triggers redirection
-    } catch (error) {
-        console.error('Error updating blog:', error);
-        message.error('An error occurred while updating the blog');
+    if (redirectToJobs) {
+        return <Navigate to="/dashboard/Jobs" />;
     }
-};
-
-if (redirectToBlogs) {
-    return <Navigate to="/dashboard/Blogs" />;
-}
 
     return (
         <div className="form-container-dash">
             <form onSubmit={handleSubmit} style={{ maxWidth: 600 }}>
                 <div>
                     <label>Title</label>
-                    <input name="title" defaultValue={blogData.title} />
+                    <input name="title" defaultValue={jobData.title} />
                 </div>
                 <div>
-                    <label>Summary</label>
-                    <textarea name="summary" defaultValue={blogData.summary} />
+                    <label>Role</label>
+                    <textarea name="role" defaultValue={jobData.role} />
                 </div>
-                <div>
-                    <label>Image URL</label>
-                    <input name="imageone" defaultValue={blogData.imageone} />
-                </div>
-                <div>
-                    <label>Date Posted</label>
-                    <input name="DatePosted" defaultValue={blogData.DatePosted} />
-                </div>
-                <div>
-                    <label>Read Time</label>
-                    <input name="ReadTime" defaultValue={blogData.ReadTime} />
-                </div>
-                {blogData.content.map((item, index) => (
+                {jobData.content.map((item, index) => (
                     <div key={index}>
                         <label>{item.type}</label>
                         <textarea name={`content-text-${index}`} defaultValue={item.text} />
                     </div>
                 ))}
-                <button type="submit">Submit</button>
+                <button type="submit">Update Job</button>
             </form>
         </div>
     );
 };
 
-export default EditBlog;
+export default EditJob;

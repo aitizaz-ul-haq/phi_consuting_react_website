@@ -38,6 +38,7 @@ import Blogs from './pages/dashboard/Blogs';
 import AddBlogs from './pages/dashboard/AddBlogs';
 import EditBlog from './pages/dashboard/BlogEdit';
 import EditCases from './pages/dashboard/CasesEdit';
+import EditJob from './pages/dashboard/BlogEdit';
 
 import Cases from './pages/dashboard/Cases';
 import AddCases from './pages/dashboard/AddCases';
@@ -73,6 +74,7 @@ const App = () => {
         {/* dashboard */}
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="Jobs" element={<Jobs />} />
+          <Route path="EditJob/:jobId" element={<EditJob />} />
           <Route path="AddJobs" element={<AddJobs />} />
           <Route path="Blogs" element={<Blogs />} />
           <Route path="AddBlogs" element={<AddBlogs />} />

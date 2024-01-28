@@ -1,58 +1,76 @@
-import React from 'react';
-import { Table, Space } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Table, Space, Button, message, Spin } from 'antd';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-const columns = [
-  {
-    title: 'Title',
-    dataIndex: 'title',
-    key: 'title',
-  },
-  {
-    title: 'Role',
-    dataIndex: 'role',
-    key: 'role',
-  },
-  {
-    title: 'Content',
-    dataIndex: 'content',
-    key: 'content',
-    render: (content) => (
-      <>
-        {content.map((item, index) => (
-          <p key={index}>
-            <strong>{item.type === 'subheading' ? item.text : ''}</strong>
-            {item.type === 'paragraph' ? item.text : ''}
-          </p>
-        ))}
-      </>
-    ),
-  },
-  {
-    title: 'Action',
-    key: 'action',
-    render: (_, record) => (
-      <Space size="middle">
-        <a>Invite {record.name}</a>
-        <a>Delete</a>
-      </Space>
-    ),
-  },
-];
+const Jobs = () => {
+  const [jobs, setJobs] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
-const data = [
-  {
-    key: '1',
-    title: "Outbound Account Executive",
-    role: "As an Outbound Account Executive, you will have the opportunity to work with Phis largest line of revenue. We are looking For sales professionals who are competitive, driven, strong communicators, and consistently practice refining their skill set. You should be humble, coachable, and relentless toward hitting your goals and targets.",
-    content: [
-      {"type": "subheading", "text": "About Us"},
-      {"type": "paragraph", "text": "Phi Consulting constructs innovation involving the most recent progressions in Information Technology..."},
-      // ... more content
-    ]
-  },
-  // ... more data
-];
+  useEffect(() => {
+    fetchJobs();
+  }, []);
 
-const Jobs = () => <Table columns={columns} dataSource={data} />;
+  const fetchJobs = async () => {
+    setIsLoading(true);
+    try {
+      const response = await axios.get('http://localhost:3000/jobs');
+      setJobs(response.data.map(job => ({ ...job, key: job._id.toString() })));
+      setIsLoading(false);
+    } catch (error) {
+      console.error('Error fetching jobs:', error);
+      setIsLoading(false);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3000/jobs/${id}`);
+      const updatedJobs = jobs.filter(job => job._id !== id);
+      setJobs(updatedJobs);
+      message.success('Job deleted successfully');
+    } catch (error) {
+      console.error('Error deleting job:', error);
+      message.error('Error deleting job');
+    }
+  };
+
+  const handleEdit = (jobId) => {
+    navigate(`/dashboard/EditJob/${jobId}`);
+  };
+
+  const columns = [
+    {
+      title: 'Title',
+      dataIndex: 'title',
+      key: 'title',
+      render: text => <a>{text}</a>,
+    },
+    {
+      title: 'Role Description',
+      dataIndex: 'role',
+      key: 'role',
+      render: role => <p>{role}</p>,
+    },
+    // Add more columns as needed based on your job data structure
+    {
+      title: 'Action',
+      key: 'action',
+      render: (_, record) => (
+        <Space size="middle">
+          <Button type="link" onClick={() => handleEdit(record._id)}>Edit</Button>
+          <Button type="link" onClick={() => handleDelete(record._id)}>Delete</Button>
+        </Space>
+      ),
+    },
+  ];
+
+  return (
+    <Spin spinning={isLoading} delay={300}>
+      <Table columns={columns} dataSource={jobs} rowKey="_id" />
+    </Spin>
+  );
+};
 
 export default Jobs;
