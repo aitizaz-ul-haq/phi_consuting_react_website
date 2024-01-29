@@ -55,6 +55,7 @@ const HomePage = () => {
 
   const [darkMode, setDarkMode] = useState(false);
   const [caseStudies, setCaseStudies] = useState([]);
+  const [blogs, setBlogs] = useState([]);
   
  const [isVisibleTesti, setIsVisibleTesti] = useState(false);
  const testiRef = useRef(null);
@@ -85,6 +86,21 @@ const firstRef = useRef(null);
           behavior: 'smooth'
       });
   };
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        // Replace with your actual API endpoint
+        const response = await axios.get('http://localhost:3000/blogs'); 
+        setBlogs(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error('Error fetching blogs:', error);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
 
   useEffect(() => {
     // Fetch case studies from API
@@ -548,7 +564,7 @@ useEffect(() => {
           <div class="cta-button-section">
             <div class="right-button-header">
               <span
-                ><Link to="/contact" class="inner-header" 
+                ><Link to="/contact-us" class="inner-header" 
                   >Get a Free Consultation</Link
                 ></span
               >
@@ -696,7 +712,7 @@ useEffect(() => {
         <section class="blog-cards-container">
         
         {firstTwoBlogs.map(study => (
-                <BlogCard key={study.id} blogs={study} />
+                <BlogCard key={study._id} id={study._id} blogs={study} />
             ))}
 
         </section>
