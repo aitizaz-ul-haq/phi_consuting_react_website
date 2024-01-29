@@ -15,6 +15,7 @@ import Footer from './components/shared/Footer';
 import CaseStudyView from './components/view_pages/CaseStudyView';
 import BlogView from './components/view_pages/BlogView';
 import Spotlight from './pages/Spotlight';
+import CaseDetails from './components/view_pages/CaseDetails';
 
 import CustomerExperience from './pages/sub_pages/CustomerExperienceConsulting';
 import FinancialConsulting from './pages/sub_pages/FinancialConsulting';
@@ -150,7 +151,8 @@ const App = () => {
         {/* Insights and its subpages */}
         <Route path="/blogs" element={<Layout><Blog /></Layout>} />
         <Route path="/case-studies" element={<Layout><Spotlight /></Layout>} />
-        <Route path="viewcasestudy/:id" element={<Layout><CaseStudyView /></Layout>} />
+        <Route path="casestudy/:id" element={<Layout><CaseStudyView /></Layout>} />
+        <Route path="casedetails/:id" element={<Layout><CaseDetails /></Layout>} />
         <Route path="blog/:id" element={<Layout><BlogView/></Layout>}/>
 
         {/* Industry and its subpages */}

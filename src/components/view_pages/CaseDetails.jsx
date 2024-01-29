@@ -24,36 +24,39 @@ import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 
-const CaseStudyView = () => {
+const CaseDetails = () => {
 
    
     const [caseStudy, setCaseStudy] = useState(null);
-    const caseId = localStorage.getItem('currentcaseId');
+    const caseId = localStorage.getItem('detailsId');
     const headingSectionRef = useRef(null);
     const [darkMode, setDarkMode] = useState(false);
     const [loading, setLoading] = useState(true);
     // const caseStudy = caseStudies.find(study => study.id === parseInt(id));
     const toggleDarkMode = () => setDarkMode(!darkMode);
 
-    useEffect(() => {
-        
-        const fetchCaseStudy = async () => {
-            try {
-                // Simulate a delay
-                setTimeout(async () => {
-                    const response = await axios.get(`http://localhost:3000/cases/${caseId}`);
-                    setCaseStudy(response.data);
-                   
-                    setLoading(false); // Set loading to false when the API call is complete
-                }, 2000); // Delay in milliseconds (e.g., 2000ms = 2 seconds)
-            } catch (error) {
-                console.error('Error fetching case study:', error);
-                setLoading(false); // Ensure loading is false even if there's an error
-            }
-        };
+    const fetchCaseStudy = async () => {
+        try {
+            // Simulate a delay
+            setTimeout(async () => {
+                const response = await axios.get(`http://localhost:3000/cases/${caseId}`);
+                setCaseStudy(response.data);
+               
+                setLoading(false); // Set loading to false when the API call is complete
+            }, 2000); // Delay in milliseconds (e.g., 2000ms = 2 seconds)
+        } catch (error) {
+            console.error('Error fetching case study:', error);
+            setLoading(false); // Ensure loading is false even if there's an error
+        }
+    };
 
-        fetchCaseStudy();
-    }, [caseId]);
+    useEffect(() => {
+        const caseId = localStorage.getItem('detailsId');
+        if (caseId) {
+            fetchCaseStudy(caseId);
+            localStorage.removeItem('detailsId'); // Clear the id from localStorage
+        }
+    }, []);
      
     const scrollToTop = () => {
         window.scrollTo({
@@ -189,4 +192,4 @@ const CaseStudyView = () => {
     )
 }
 
-export default CaseStudyView;
+export default CaseDetails;

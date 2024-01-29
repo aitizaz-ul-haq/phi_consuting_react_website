@@ -11,6 +11,11 @@ import doproduct from "../../../assets/img/api_images/digitalocean-product.png";
 
 
 const CaseStudyCollectionCard = ({ caseStudy }) => {
+
+    const handleClick = () => {
+        localStorage.setItem('currentcaseId', caseStudy._id);
+      };
+
     const imageUrl = caseStudy.imageone.includes('Atob') ? atobproduct : caseStudy.imageone.includes('truckx') ? truckxproduct : caseStudy.imageone.includes('pallet') ? palletproduct : caseStudy.imageone.includes('solar') ? solarproduct : caseStudy.imageone.includes('bobtail') ? bobtailproduct : caseStudy.imageone.includes('joyride') ? joyrideproduct : caseStudy.imageone.includes('digital ocean') ? doproduct : caseStudy.imageone;
 
     return(
@@ -27,7 +32,7 @@ const CaseStudyCollectionCard = ({ caseStudy }) => {
                 </div>
                 <div className="right-button-work-small-collection">
                     <span>
-                        <Link className='work-card-button-link' to={`/viewcasestudy/${caseStudy._id}`}>Read More</Link>
+                        <Link className='work-card-button-link' onClick={handleClick} to={`/casestudy/${caseStudy.imageone}`}>Read More</Link>
                     </span>
                 </div>
             </div>

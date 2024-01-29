@@ -1,18 +1,21 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-const CaseStudyMacroComps = ({ id, title, summary, logo, image, isRight }) => {
-
+const CaseStudyMacroComps = ({ id, title, summary, logo, image, isRight, urltag }) => {
   const [isVisible, setIsVisible] = useState(false);
-    const ref = useRef(null);
+  const ref = useRef(null);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => setIsVisible(entry.isIntersecting));
-        });
-        observer.observe(ref.current);
-        return () => observer.disconnect();
-    }, []);
+  useEffect(() => {
+      const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => setIsVisible(entry.isIntersecting));
+      });
+      observer.observe(ref.current);
+      return () => observer.disconnect();
+  }, []);
+
+  const handleClick = () => {
+      localStorage.setItem('detailsId', id);
+  };
     return(
         <>
         <div className={`work-case-study-section ${isVisible ? 'animate' : ''}`} ref={ref}>
@@ -46,7 +49,7 @@ const CaseStudyMacroComps = ({ id, title, summary, logo, image, isRight }) => {
               </div>
               <div class="case-button-container">
                 <div class="case-button">
-                    <Link className='macro-button-link-remove' to={`/viewcasestudy/${id}`}> View Case Study</Link>
+                    <Link className='macro-button-link-remove' to={`/casedetails/${urltag}`} onClick={handleClick}> View Case Study</Link>
                    </div>
               </div>
             </div>
@@ -75,7 +78,7 @@ const CaseStudyMacroComps = ({ id, title, summary, logo, image, isRight }) => {
               </div>
               <div class="case-button-container">
                 <div class="case-button">
-                    <Link className='macro-button-link-remove' to={`/viewcasestudy/${id}`}> View Case Study</Link>
+                    <Link className='macro-button-link-remove' to={`/casedetails/${urltag}`} onClick={handleClick}> View Case Study</Link>
                    </div>
               </div>
             </div>

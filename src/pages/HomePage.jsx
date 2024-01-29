@@ -516,7 +516,10 @@ useEffect(() => {
             improving existing ones, we are ready to roll up our sleeves and
             help you achieve your goals.
           </p>
-          {caseStudies.map((study, index) => (
+          {caseStudies.map((study, index) => {
+  
+
+  return (
                 <CaseStudyMacroComps
                     key={study.id}
                     id={study._id}
@@ -539,9 +542,17 @@ useEffect(() => {
                     study.imageone.includes('digital ocean') ? doproduct :
                     null}
                     isRight={index % 2 === 0}
-                />
-            ))}
-         
+                    urltag={study.imageone.includes('Atob') ? 'Atob' :
+                    study.imageone.includes('truckx') ? 'truckx' :
+                    study.imageone.includes('pallet') ? 'pallet' :
+                    study.imageone.includes('solar') ? 'solar' :
+                    study.imageone.includes('bobtail') ? 'bobtail' :
+                    study.imageone.includes('joyride') ? 'joyride' :
+                    study.imageone.includes('digital ocean') ? 'digital ocean' :
+                    null}
+                    />
+                    );
+                  })}
           <div class="right-button spacing-under">
             <div class="case-button-more">
               <Link to="/case-studies" className='morcases'>View More Case Studies</Link>
