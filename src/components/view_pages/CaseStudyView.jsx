@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import caseStudies from '../../data/caseStudies.json';
 import eye from "../../assets/img/eye.png"
 import useScrollToTop from '../../hooks/useScrollToTop';
-import { Tooltip } from 'antd';
+import { Tooltip, Spin  } from 'antd';
 import top from "../../assets/img/top Arrow.png";
 import axios from 'axios';
 
@@ -31,6 +31,7 @@ const CaseStudyView = () => {
     const { id } = useParams(); // useParams should be at the top level
     const headingSectionRef = useRef(null);
     const [darkMode, setDarkMode] = useState(false);
+    const [loading, setLoading] = useState(true);
     // const caseStudy = caseStudies.find(study => study.id === parseInt(id));
     const toggleDarkMode = () => setDarkMode(!darkMode);
      
@@ -42,19 +43,6 @@ const CaseStudyView = () => {
     };
 
     useScrollToTop();
-
-    useEffect(() => {
-        const fetchCaseStudy = async () => {
-            try {
-                const response = await axios.get(`http://localhost:3000/cases/${id}`);
-                setCaseStudy(response.data);
-            } catch (error) {
-                console.error('Error fetching case study:', error);
-            }
-        };
-
-        fetchCaseStudy();
-    }, [id]);
 
     useEffect(() => {
         const observer = new IntersectionObserver(entries => {
@@ -81,6 +69,34 @@ const CaseStudyView = () => {
             }
         };
     }, []);
+
+    useEffect(() => {
+        
+        const fetchCaseStudy = async () => {
+            try {
+                // Simulate a delay
+                setTimeout(async () => {
+                    const response = await axios.get(`http://localhost:3000/cases/${id}`);
+                    setCaseStudy(response.data);
+                   
+                    setLoading(false); // Set loading to false when the API call is complete
+                }, 2000); // Delay in milliseconds (e.g., 2000ms = 2 seconds)
+            } catch (error) {
+                console.error('Error fetching case study:', error);
+                setLoading(false); // Ensure loading is false even if there's an error
+            }
+        };
+
+        fetchCaseStudy();
+    }, [id]);
+
+    if (loading) {
+        return (
+            <div className="spinner-container">
+                <Spin size="large" />
+            </div>
+        );
+    }
     
     if (!caseStudy) {
         return <div>Case study not found</div>;

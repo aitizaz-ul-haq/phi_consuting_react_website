@@ -12889,7 +12889,13 @@ display: none;
 }
 }
 @media screen and (min-width: 1200px) {
-    
+    .spinner-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; 
+    }
+
     .hero-container {
         position: relative;
         width: 100%;
@@ -14542,6 +14548,7 @@ text-align: center;
         to { opacity: 1; transform: translateX(0); }
       }
 
+    
  /* =================================Services Page===================== */
 .hero-container-services {
     justify-content: left;

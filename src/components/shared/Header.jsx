@@ -28,12 +28,12 @@ const Header = () => {
       </div>
       <div className="buttons">
         <div className="dropdown">
-        <Link to="/services" className="dropdown-btn"><span className="dropdown-btn">Solutions</span></Link>
+        <Link to="/solutions" className="dropdown-btn"><span className="dropdown-btn">Solutions</span></Link>
           <div className="dropdown-content">
-            <Link to="GTM-advisory"><img src={headericonthree} alt="" width="34" height="34" className='header-icons-spacing' /><span>GTM Strategy</span> </Link>
-            <Link to="hr-consulting"><img src={headericonone} alt="" width="34" height="34" className='header-icons-spacing' /> <span>HR & Recruitment</span></Link>
-            <Link to="investor-relations"><img src={headericontwo} alt="" width="34" height="34" className='header-icons-spacing' /><span>Investor Relations</span></Link>
-            <Link to="financial-consulting"><img src={headericonfour} alt="" width="34" height="34" className='header-icons-spacing' /><span>Financial Consulting</span></Link>
+            <Link to="/solutions/go-to-market-strategy"><img src={headericonthree} alt="" width="34" height="34" className='header-icons-spacing' /><span>GTM Strategy</span> </Link>
+            <Link to="/solutions/hr-recruitment"><img src={headericonone} alt="" width="34" height="34" className='header-icons-spacing' /> <span>HR & Recruitment</span></Link>
+            <Link to="/solutions/investors-relation"><img src={headericontwo} alt="" width="34" height="34" className='header-icons-spacing' /><span>Investor Relations</span></Link>
+            <Link to="/solutions/financial-consulting"><img src={headericonfour} alt="" width="34" height="34" className='header-icons-spacing' /><span>Financial Consulting</span></Link>
             
           </div>
         </div>
@@ -41,29 +41,29 @@ const Header = () => {
         <Link className="dropdown-btn"><span className="dropdown-btn">Insights</span></Link>
           <div className="dropdown-content">
             <Link to="/blogs"> <img src={insughtsone} alt="" width="34" height="34" className='header-icons-spacing' /><span>Blogs</span></Link>
-            <Link to="/casestudies"> <img src={insughtstwo} alt="" width="34" height="34" className='header-icons-spacing' /><span>Case Studies</span></Link>
+            <Link to="/case-studies"> <img src={insughtstwo} alt="" width="34" height="34" className='header-icons-spacing' /><span>Case Studies</span></Link>
           </div>
         </div>
 
         <div className="dropdown">
         <Link className="dropdown-btn"><span className="dropdown-btn">Industries</span></Link>
           <div className="dropdown-content">
-          <Link to="/FinTech"> <img src={fintech} alt="" width="34" height="34" className='header-icons-spacing' /><span>FinTech Consulting</span></Link>
-          <Link to="/Cloud"> <img src={cloud} alt="" width="34" height="34" className='header-icons-spacing' /><span>Cloud Consulting</span></Link>
-          <Link to="/SaaS"> <img src={saas} alt="" width="34" height="34" className='header-icons-spacing' /><span>SaaS Consulting</span></Link>
-            <Link to="/Iot"> <img src={iot} alt="" width="34" height="34" className='header-icons-spacing' /><span>IoT Consulting</span></Link>
-            <Link to="/IaaS"> <img src={iaas} alt="" width="34" height="34" className='header-icons-spacing' /><span>IaaS Consulting</span></Link>
-            <Link to="/dev-ops"> <img src={devops} alt="" width="34" height="34" className='header-icons-spacing' /><span>DevOps Consulting</span></Link>
+          <Link to="/fin-tech-consulting"> <img src={fintech} alt="" width="34" height="34" className='header-icons-spacing' /><span>FinTech Consulting</span></Link>
+          <Link to="/cloud-consulting"> <img src={cloud} alt="" width="34" height="34" className='header-icons-spacing' /><span>Cloud Consulting</span></Link>
+          <Link to="/saas-consulting"> <img src={saas} alt="" width="34" height="34" className='header-icons-spacing' /><span>SaaS Consulting</span></Link>
+            <Link to="/iot-consulting"> <img src={iot} alt="" width="34" height="34" className='header-icons-spacing' /><span>IoT Consulting</span></Link>
+            <Link to="/iaas-consulting"> <img src={iaas} alt="" width="34" height="34" className='header-icons-spacing' /><span>IaaS Consulting</span></Link>
+            <Link to="/dev-ops-consulting"> <img src={devops} alt="" width="34" height="34" className='header-icons-spacing' /><span>DevOps Consulting</span></Link>
           </div>
         </div>
         {/* <span>
             <Link  className="inner-header">Industry</Link>
         </span> */}
         <span>
-            <Link to="/valuecreation" className="inner-header">Value Creation</Link>
+            <Link to="/value-creation" className="inner-header">Value Creation</Link>
             </span>
         <span
-          > <Link to="/aboutus" className="inner-header">About us</Link></span
+          > <Link to="/about-us" className="inner-header">About us</Link></span
         >
         <span
           >
@@ -74,7 +74,7 @@ const Header = () => {
       <div className="right-button-header">
       <Tooltip title="Contact us Page"><span
           >
-            <Link to="/contact" className="inner-header">Contact</Link>
+            <Link to="/contact-us" className="inner-header">Contact</Link>
           </span
         ></Tooltip>
       </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import blogHeader from "../../assets/img/b2b.webp";
 import { Link, useParams } from 'react-router-dom';
-import { Tooltip } from 'antd';
+import { Tooltip, Spin } from 'antd';
 import useScrollToTop from "../../hooks/useScrollToTop";
 import eye from "../../assets/img/eye.png";
 import top from "../../assets/img/top Arrow.png";
@@ -11,6 +11,7 @@ const BlogView = () => {
   const [blog, setBlog] = useState(null);
   const { id } = useParams();
   const [darkMode, setDarkMode] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchBlogData = async () => {
@@ -19,6 +20,9 @@ const BlogView = () => {
         setBlog(response.data);
       } catch (error) {
         console.error('Error fetching blog:', error);
+      } finally {
+        // Introduce a delay before hiding the spinner
+        setTimeout(() => setLoading(false), 2000); // 2000ms = 2 seconds
       }
     };
 
@@ -36,6 +40,10 @@ const BlogView = () => {
   };
 
   useScrollToTop();
+
+  if (loading) {
+    return <div className="spinner-container"><Spin size="large" /></div>;
+  }
 
   if (!blog) {
     return <div>Loading blog data...</div>;
