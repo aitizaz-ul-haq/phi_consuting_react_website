@@ -38,9 +38,27 @@ import { Tooltip } from 'antd';
 import eye from "../../assets/img/eye.png";
 import top from "../../assets/img/top Arrow.png";
 
+import axios from 'axios';
+
+import atobbox from "../../assets/img/api_images/AToB-square.jpg";
+import truckxbox from "../../assets/img/api_images/truck-square.png";
+import palletbox from "../../assets/img/api_images/palletbox.png";
+import solarbox from "../../assets/img/api_images/Solarbox.png";
+import bobtailbox from "../../assets/img/api_images/bob.png";
+import joybox from "../../assets/img/api_images/joybox.png";
+import dobox from "../../assets/img/api_images/digitalocean-square.png";
+
+import atobproduct from "../../assets/img/api_images/atob-card.png"; 
+import truckxproduct from "../../assets/img/api_images/truckx-case.png";
+import palletproduct from "../../assets/img/api_images/pallet.png";
+import solarproduct from "../../assets/img/api_images/solar_one.webp";
+import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
+import joyrideproduct from "../../assets/img/api_images/joytwo.png";
+import doproduct from "../../assets/img/api_images/digitalocean-product.png";
+
 
 const FiancialConsulting = () => {
-
+  const [caseStudies, setCaseStudies] = useState([]);
   const [isVisibleTesti, setIsVisibleTesti] = useState(false);
   const testiRef = useRef(null);
  
@@ -59,6 +77,19 @@ const FiancialConsulting = () => {
    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
    const [darkMode, setDarkMode] = useState(false);
    const insightsRefs = useRef([]);
+
+   useEffect(() => {
+    const fetchCaseStudies = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/cases');
+        setCaseStudies(response.data.slice(0, 3)); // Fetch only the first three case studies
+      } catch (error) {
+        console.error('Error fetching case studies:', error);
+      }
+    };
+  
+    fetchCaseStudies();
+  }, []);
    
    useEffect(() => {
      const observer = new IntersectionObserver(
@@ -173,12 +204,12 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
         <div className="left-section-control"></div>
             <div className="right-section-control">
             <Tooltip placement="leftTop" title="toggle eye protection">
-            <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={42} height={42}/></button> 
+            <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
             </Tooltip>
                  {/* Back to Top Button */}
                  <Tooltip placement="leftTop" title="back to top">
     <button className="back-to-top" onClick={scrollToTop}>
-    <img src={top} alt="eye icon" width={42} height={42}/>
+    <img src={top} alt="eye icon" width={25} height={25}/>
     </button>
     </Tooltip>
             </div>
@@ -765,12 +796,28 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
           </p>
           <div class="work-row">
           {firstThreeCaseStudies.map(study => (
-                <SmallWorkCard key={study.id} caseStudy={study} isVisible={isVisiblecard} />
+                <SmallWorkCard key={study._id} id={study._id} caseStudy={study} isVisible={isVisiblecard} 
+                logo={study.imagetwo.includes('Atob') ? atobbox :
+                study.imagetwo.includes('truckx') ? truckxbox :
+                study.imagetwo.includes('pallet') ? palletbox :
+                study.imagetwo.includes('solar') ? solarbox :
+                study.imagetwo.includes('bobtail') ? bobtailbox :
+                study.imagetwo.includes('joyride') ? joybox :
+                study.imagetwo.includes('digital ocean') ? dobox :
+                null}  
+                image={study.imageone.includes('Atob') ? atobproduct :
+                study.imageone.includes('truckx') ? truckxproduct :
+                study.imageone.includes('pallet') ? palletproduct :
+                study.imageone.includes('solar') ? solarproduct :
+                study.imageone.includes('bobtail') ? bobtailproduct :
+                study.imageone.includes('joyride') ? joyrideproduct :
+                study.imageone.includes('digital ocean') ? doproduct :
+                null} />
             ))}
           </div>
 
           <div class="right-button spacing-under">
-          <span><Link to="/casestudies" className='morcases'>View More Case Studies</Link></span>
+          <span><Link to="/case-studies" className='morcases'>View More Case Studies</Link></span>
           </div>
         </section>
       </article>
@@ -891,7 +938,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
           <div class="cta-button-section">
             <div class="right-button-header">
               <span
-                ><Link to="/contact" class="inner-header"
+                ><Link to="/contact-us" class="inner-header"
                   >Get in Touch</Link
                 ></span
               >

@@ -37,7 +37,7 @@ const Blog = ({blogpic}) => {
 
   useScrollToTop();
   const gotoContacts = () => {
-    window.location.href = '/contact';
+    window.location.href = '/contact-us';
   }
 
   useScrollToTop();
@@ -75,7 +75,7 @@ const Blog = ({blogpic}) => {
           <h2 class="bloged-heading">Blogs</h2>
           <div class="bloged-box-container">
             {blogs.map(blog => (
-              <BlogCard key={blog._id} blogs={blog}/>
+              <BlogCard key={blog._id} id={blog._id} blogs={blog}/>
             ))}
           </div>
         </section>
@@ -97,7 +97,7 @@ const Blog = ({blogpic}) => {
           <div class="cta-button-section">
             <div class="right-button-header">
               <span
-                ><Link to="/contact" class="inner-header"
+                ><Link to="/contact-us" class="inner-header"
                   >Get in Touch</Link
                 ></span
               >

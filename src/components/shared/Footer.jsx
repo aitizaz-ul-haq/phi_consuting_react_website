@@ -24,27 +24,27 @@ const Footer = () => {
           <ul class="list-foolter">
             <h3 class="list-heading">Solutions</h3>
             <li>
-              <Link to="/GTM-advisory" class="footer-links"
+              <Link to="/solutions/go-to-market-strategy" class="footer-links"
                 >GTM Strategy</Link
               >
             </li>
             <li>
               <Link
-                to="/hr-consulting"
+                to="/solutions/hr-recruitment"
                 class="footer-links"
                 >HR & Recruitment</Link
               >
             </li>
             <li>
               <Link
-                to="/investor-relations"
+                to="/solutions/investors-relation"
                 class="footer-links"
                 >Investor Relations</Link
               >
             </li>
             <li>
               <Link
-                to="/financial-consulting"
+                to="/solutions/financial-consulting"
                 class="footer-links"
                 >Financial Consulting</Link
               >
@@ -57,7 +57,7 @@ const Footer = () => {
           <ul class="list-foolter">
             <h3 class="list-heading">Navigation</h3>
             <li>
-              <Link to="/contact" class="footer-links"
+              <Link to="/contact-us" class="footer-links"
                 >Contact us</Link
               >
             </li>
@@ -70,7 +70,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                to="/aboutus"
+                to="/about-us"
                 class="footer-links"
                 >About us</Link
               >

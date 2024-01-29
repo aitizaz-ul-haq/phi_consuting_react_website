@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SmallWorkCard = ({caseStudy, isVisible}) => {
+const SmallWorkCard = ({caseStudy, isVisible, id, image, logo}) => {
 
   const cardClassName = `work-card ${isVisible ? 'card-animate' : ''}`;    
     return(
@@ -9,7 +9,7 @@ const SmallWorkCard = ({caseStudy, isVisible}) => {
         <div className={cardClassName}>
               <div class="work-card-image-container">
                 <img
-                  src={caseStudy.imageone}
+                  src={image}
                   alt=""
                   width="250"
                   height="250"
@@ -17,7 +17,7 @@ const SmallWorkCard = ({caseStudy, isVisible}) => {
               </div>
               <div class="logo-work-card-container">
                 <img
-                  src={caseStudy.imagetwo}
+                  src={logo}
                   alt=""
                   width="60"
                   height="60"
@@ -29,7 +29,7 @@ const SmallWorkCard = ({caseStudy, isVisible}) => {
               </p> */}
               <div class="right-button-work-small">
                 <span>
-                <Link className='work-card-button-link' to={`/viewcasestudy/${caseStudy.id}`}>Explore More</Link></span>
+                <Link className='work-card-button-link' to={`/viewcasestudy/${id}`}>Explore More</Link></span>
               </div>
             </div>
         </>

@@ -6,17 +6,21 @@ import useScrollToTop from "../../hooks/useScrollToTop";
 import eye from "../../assets/img/eye.png";
 import top from "../../assets/img/top Arrow.png";
 import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 
 const BlogView = () => {
+ 
   const [blog, setBlog] = useState(null);
-  const { id } = useParams();
+  // const { id } = useParams();
+  const blogId = localStorage.getItem('currentBlogId');
   const [darkMode, setDarkMode] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    
     const fetchBlogData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/blogs/${id}`);
+        const response = await axios.get(`http://localhost:3000/blogs/${blogId}`);
         setBlog(response.data);
       } catch (error) {
         console.error('Error fetching blog:', error);
@@ -26,10 +30,10 @@ const BlogView = () => {
       }
     };
 
-    if (id) {
+    if (blogId) {
       fetchBlogData();
     }
-  }, [id]);
+  }, [blogId]);
 
   const toggleDarkMode = () => setDarkMode(!darkMode);
   const scrollToTop = () => {

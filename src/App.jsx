@@ -151,7 +151,7 @@ const App = () => {
         <Route path="/blogs" element={<Layout><Blog /></Layout>} />
         <Route path="/case-studies" element={<Layout><Spotlight /></Layout>} />
         <Route path="viewcasestudy/:id" element={<Layout><CaseStudyView /></Layout>} />
-        <Route path="viewblog/:id" element={<Layout><BlogView/></Layout>}/>
+        <Route path="blog/:id" element={<Layout><BlogView/></Layout>}/>
 
         {/* Industry and its subpages */}
         <Route path="/iot-consulting" element={<Layout><Iot /></Layout>} />

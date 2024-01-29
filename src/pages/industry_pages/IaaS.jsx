@@ -40,8 +40,26 @@ import { TypeAnimation } from 'react-type-animation';
 import eye from "../../assets/img/eye.png";
 import top from "../../assets/img/top Arrow.png";
 import { Tooltip } from 'antd';
-const IaaS = () => {
 
+import axios from 'axios';
+
+import atobbox from "../../assets/img/api_images/AToB-square.jpg";
+import truckxbox from "../../assets/img/api_images/truck-square.png";
+import palletbox from "../../assets/img/api_images/palletbox.png";
+import solarbox from "../../assets/img/api_images/Solarbox.png";
+import bobtailbox from "../../assets/img/api_images/bob.png";
+import joybox from "../../assets/img/api_images/joybox.png";
+import dobox from "../../assets/img/api_images/digitalocean-square.png";
+
+import atobproduct from "../../assets/img/api_images/atob-card.png"; 
+import truckxproduct from "../../assets/img/api_images/truckx-case.png";
+import palletproduct from "../../assets/img/api_images/pallet.png";
+import solarproduct from "../../assets/img/api_images/solar_one.webp";
+import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
+import joyrideproduct from "../../assets/img/api_images/joytwo.png";
+import doproduct from "../../assets/img/api_images/digitalocean-product.png";
+const IaaS = () => {
+  const [caseStudies, setCaseStudies] = useState([]);
   const [isVisibleTesti, setIsVisibleTesti] = useState(false);
   const testiRef = useRef(null);
 
@@ -64,6 +82,18 @@ const IaaS = () => {
   const sectionsRef = useRef([]);
 
   const insightsRefs = useRef([]);
+  useEffect(() => {
+    const fetchCaseStudies = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/cases');
+        setCaseStudies(response.data.slice(0, 3)); // Fetch only the first three case studies
+      } catch (error) {
+        console.error('Error fetching case studies:', error);
+      }
+    };
+  
+    fetchCaseStudies();
+  }, []);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -239,7 +269,7 @@ useScrollToTop();
             At Phi Consulting, we understand the unique challenges and immense potential of startups in the cutting-edge sector of IaaS. Our mission is to be your strategic partner, guiding your venture towards scalable growth and operational excellence.
 
             </p>
-            <div class="consult-button-sales"> <Link to="/contact" className='scheduler-set'>Schedule a Free Consultation</Link> </div>
+            <div class="consult-button-sales"> <Link to="/contact-us" className='scheduler-set'>Schedule a Free Consultation</Link> </div>
           </div>
         </section>
       </article>
@@ -666,12 +696,28 @@ useScrollToTop();
           </p>
           <div class="work-row">
           {firstThreeCaseStudies.map(study => (
-                <SmallWorkCard key={study.id} caseStudy={study} isVisible={isVisiblecard} />
+                <SmallWorkCard key={study._id} id={study._id} caseStudy={study} isVisible={isVisiblecard} 
+                logo={study.imagetwo.includes('Atob') ? atobbox :
+                study.imagetwo.includes('truckx') ? truckxbox :
+                study.imagetwo.includes('pallet') ? palletbox :
+                study.imagetwo.includes('solar') ? solarbox :
+                study.imagetwo.includes('bobtail') ? bobtailbox :
+                study.imagetwo.includes('joyride') ? joybox :
+                study.imagetwo.includes('digital ocean') ? dobox :
+                null}  
+                image={study.imageone.includes('Atob') ? atobproduct :
+                study.imageone.includes('truckx') ? truckxproduct :
+                study.imageone.includes('pallet') ? palletproduct :
+                study.imageone.includes('solar') ? solarproduct :
+                study.imageone.includes('bobtail') ? bobtailproduct :
+                study.imageone.includes('joyride') ? joyrideproduct :
+                study.imageone.includes('digital ocean') ? doproduct :
+                null} />
             ))}
           </div>
 
           <div class="right-button spacing-under">
-          <span><Link to="/casestudies" className='morcases'>View More Case Studies</Link></span>
+          <span><Link to="/case-studies" className='morcases'>View More Case Studies</Link></span>
           </div>
         </section>
       </article>
@@ -816,7 +862,7 @@ useScrollToTop();
           <div class="cta-button-section">
             <div class="right-button-header">
               <span
-                ><Link to="/contact" class="inner-header"
+                ><Link to="/contact-us" class="inner-header"
                   >Get in Touch</Link
                 ></span
               >

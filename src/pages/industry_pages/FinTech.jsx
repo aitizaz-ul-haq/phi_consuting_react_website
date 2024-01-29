@@ -10,21 +10,6 @@ import digitalOcean from '../../assets/img/new_logos_comps/newer/digital-ocean.p
 import mudflap from '../../assets/img/new_logos_comps/newer/Mudflap.png';
 import sungrade from '../../assets/img/new_logos_comps/sungrade solar.png';
 
-import salesone from "../../assets/img/GTM Advisory/sales.png";
-import salestwo from "../../assets/img/GTM Advisory/experience.png";
-import salesthree from "../../assets/img/GTM Advisory/enablement.png";
-// import salesfour from "../../assets/img/black_logos/expansion.png";
-// import salesfive from "../../assets/img/black_logos/product led growth.png";
-// import salessix from "../../assets/img/black_logos/button.png";
-
-import goal from "../../assets/img/process_icons/goal.png";
-import planicon from "../../assets/img/process_icons/plan.png";
-import actionicon from "../../assets/img/process_icons/action.png";
-import assignicon from "../../assets/img/process_icons/assign.png";
-import testicon from "../../assets/img/process_icons/test.png";
-import impicon from "../../assets/img/process_icons/implement.png";
-import monitoricon from "../../assets/img/process_icons/monitor.png";
-import improveicon from "../../assets/img/process_icons/improve.png";
 
 import achiconone from "../../assets/img/achievements-badges/clutch_1.png";
 import achicontwo from "../../assets/img/achievements-badges/BBB.png";
@@ -40,9 +25,27 @@ import eye from "../../assets/img/eye.png";
 import top from "../../assets/img/top Arrow.png";
 import { Tooltip } from 'antd';
 
+import axios from 'axios';
+
+import atobbox from "../../assets/img/api_images/AToB-square.jpg";
+import truckxbox from "../../assets/img/api_images/truck-square.png";
+import palletbox from "../../assets/img/api_images/palletbox.png";
+import solarbox from "../../assets/img/api_images/Solarbox.png";
+import bobtailbox from "../../assets/img/api_images/bob.png";
+import joybox from "../../assets/img/api_images/joybox.png";
+import dobox from "../../assets/img/api_images/digitalocean-square.png";
+
+import atobproduct from "../../assets/img/api_images/atob-card.png"; 
+import truckxproduct from "../../assets/img/api_images/truckx-case.png";
+import palletproduct from "../../assets/img/api_images/pallet.png";
+import solarproduct from "../../assets/img/api_images/solar_one.webp";
+import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
+import joyrideproduct from "../../assets/img/api_images/joytwo.png";
+import doproduct from "../../assets/img/api_images/digitalocean-product.png";
+
 
 const FinTech = () => {
-
+  const [caseStudies, setCaseStudies] = useState([]);
   const [isVisibleTesti, setIsVisibleTesti] = useState(false);
   const testiRef = useRef(null);
 
@@ -67,7 +70,18 @@ const FinTech = () => {
   const insightsRefs = useRef([]);
 
   const diagonalDivRef = useRef(null);
-
+  useEffect(() => {
+    const fetchCaseStudies = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/cases');
+        setCaseStudies(response.data.slice(0, 3)); // Fetch only the first three case studies
+      } catch (error) {
+        console.error('Error fetching case studies:', error);
+      }
+    };
+  
+    fetchCaseStudies();
+  }, []);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -261,7 +275,7 @@ useScrollToTop();
             <p class="hero-desc-fin">
             We recognize the unique challenges and immense potential in the FinTech sector. Our mission is to guide you through the complexities of scaling efficiently while optimizing cost-effectiveness. We're dedicated to transforming your ambitious vision into a thriving reality.
             </p>
-            <div class="consult-button-sales"> <Link to="/contact" className='scheduler-set'>Schedule a Free Consultation</Link> </div>
+            <div class="consult-button-sales"> <Link to="/contact-us" className='scheduler-set'>Schedule a Free Consultation</Link> </div>
           </div>
         </section>
       </article>
@@ -505,12 +519,28 @@ useScrollToTop();
           </p>
           <div class="work-row">
           {firstThreeCaseStudies.map(study => (
-                <SmallWorkCard key={study.id} caseStudy={study} isVisible={isVisiblecard} />
+                <SmallWorkCard key={study._id} id={study._id} caseStudy={study} isVisible={isVisiblecard} 
+                logo={study.imagetwo.includes('Atob') ? atobbox :
+                study.imagetwo.includes('truckx') ? truckxbox :
+                study.imagetwo.includes('pallet') ? palletbox :
+                study.imagetwo.includes('solar') ? solarbox :
+                study.imagetwo.includes('bobtail') ? bobtailbox :
+                study.imagetwo.includes('joyride') ? joybox :
+                study.imagetwo.includes('digital ocean') ? dobox :
+                null}  
+                image={study.imageone.includes('Atob') ? atobproduct :
+                study.imageone.includes('truckx') ? truckxproduct :
+                study.imageone.includes('pallet') ? palletproduct :
+                study.imageone.includes('solar') ? solarproduct :
+                study.imageone.includes('bobtail') ? bobtailproduct :
+                study.imageone.includes('joyride') ? joyrideproduct :
+                study.imageone.includes('digital ocean') ? doproduct :
+                null} />
             ))}
           </div>
 
           <div class="right-button spacing-under">
-          <span><Link to="/casestudies" className='morcases'>View More Case Studies</Link></span>
+          <span><Link to="/case-studies" className='morcases'>View More Case Studies</Link></span>
           </div>
         </section>
       </article>
@@ -654,7 +684,7 @@ useScrollToTop();
           <div class="cta-button-section">
             <div class="right-button-header">
               <span
-                ><Link to="/contact" class="inner-header"
+                ><Link to="/contact-us" class="inner-header"
                   >Get in Touch</Link
                 ></span
               >
