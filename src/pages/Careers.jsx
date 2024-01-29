@@ -14,8 +14,11 @@ import jobPostings from "../data/jobPostings.json";
 import { TypeAnimation } from 'react-type-animation';
 import { Link } from 'react-router-dom';
 
+import axios from 'axios';
+
 const Careers = () => {
 
+  const [jobs, setJobs] = useState([]);
   const [isVisibleCulture, setIsVisibleCulture] = useState(false);
   const cultureRef = useRef(null);
 
@@ -25,6 +28,7 @@ const Careers = () => {
   const [isVisiblePerk, setIsPerk] = useState(false);
   const perkRef = useRef(null);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -43,6 +47,22 @@ const Careers = () => {
     if (perkRef.current) observer.observe(perkRef.current);
 
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    // Function to fetch job data
+    const fetchJobs = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/jobs');
+        setJobs(response.data); // Update state with fetched data
+      } catch (error) {
+        console.error('Error fetching jobs:', error);
+      }
+    };
+
+    fetchJobs();
+
+    // ... other useEffect code
   }, []);
   return (
     <>
@@ -162,8 +182,12 @@ const Careers = () => {
             solutions. Your next career move starts here.
           </p>
           <div class="openings-container">
-          {jobPostings.map(study => (
+          {/* {jobPostings.map(study => (
                 <JobCard key={study.id} job={study} />
+            ))} */}
+
+            {jobs.map(job => (
+              <JobCard key={job._id} job={job} /> 
             ))}
           
             <div class="explore-button-container">

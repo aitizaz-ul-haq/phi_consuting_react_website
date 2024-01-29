@@ -24,10 +24,10 @@ const AddJob = () => {
     const formattedData = {
       title: values.title,
       role: values.role,
-      content: values.items.map(item => ({
+      content: values.items?.map(item => ({ // Use optional chaining here
         type: item.type,
         text: item.text
-      }))
+      })) || [] // Fallback to an empty array if items is undefined
     };
   
     try {
@@ -40,6 +40,7 @@ const AddJob = () => {
       message.error('An error occurred while posting the job');
     }
   };
+  
   
 
   const onReset = () => {

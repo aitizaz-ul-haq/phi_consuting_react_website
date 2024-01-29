@@ -11,11 +11,11 @@ const JobCard = ({job}) => {
                   {job.role}
                 </div>
               </div>
-              <div class="apply-button-container">
+              {/* <div class="apply-button-container">
                 <div class="right-button">
                   <span>Apply Now</span>
                 </div>
-              </div>
+              </div> */}
             </div>
         </>
     );
