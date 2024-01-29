@@ -5,23 +5,35 @@ import blogs from '../data/blogs.json';
 import BlogCard from '../components/shared/cards/BlogCard';
 import axios from 'axios';
 import useScrollToTop from '../hooks/useScrollToTop';
+import { Spin } from 'antd';
+
 
 const Blog = ({blogpic}) => {
   const [blogs, setBlogs] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const response = await axios.get('http://localhost:3000/blogs');
-        setBlogs(response.data);
-      } catch (error) {
-        console.error('Error fetching blogs:', error);
-        // Optionally, handle the error (e.g., display an error message)
-      }
-    };
-
     fetchBlogs();
   }, []);
+
+  const fetchBlogs = async () => {
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); // 3000ms = 3 seconds
+
+    try {
+      const response = await axios.get('http://localhost:3000/blogs');
+      clearTimeout(timer);
+      setBlogs(response.data.map(blog => ({ ...blog, key: blog._id.toString() })));
+    } catch (error) {
+      console.error('Error fetching blogs:', error);
+      clearTimeout(timer);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
 
   useScrollToTop();
   const gotoContacts = () => {
@@ -29,6 +41,14 @@ const Blog = ({blogpic}) => {
   }
 
   useScrollToTop();
+
+  if (isLoading) {
+    return (
+      <div className="spinner-container">
+        <Spin size="large" />
+      </div>
+    );
+  }
   return (
     <>
     {/* <!-- Hero Section --> */}

@@ -8,6 +8,7 @@ import digitalOcean from '../assets/img/new_logos_comps/newer/digital-ocean.png'
 import mudflap from '../assets/img/new_logos_comps/newer/Mudflap.png';
 import sungrade from '../assets/img/new_logos_comps/sungrade solar.png';
 import valuegraph from '../assets/img/Traditional Growth mark_2.png';
+import axios from 'axios';
 
 import buisness from '../assets/img/services-icons/buisness.png';
 import custExp from '../assets/img/services-icons/customer experience.png';
@@ -26,16 +27,34 @@ import CustomVideo from '../components/shared/videoComp/CustomVideo';
 import { TypeAnimation } from 'react-type-animation';
 import ScrollToTopButton from '../components/shared/buttons/ScrollToTopButton';
 import blogs from "../data/blogs.json";
-import caseStudies from "../data/caseStudies.json";
+// import caseStudies from "../data/caseStudies.json";
 import useScrollToTop from '../hooks/useScrollToTop';
 import david from "../assets/video/world.mp4";
 import eye from "../assets/img/eye.png";
 import top from "../assets/img/top Arrow.png";
 
 
+import atobbox from "../assets/img/api_images/AToB-square.jpg";
+import truckxbox from "../assets/img/api_images/truck-square.png";
+import palletbox from "../assets/img/api_images/palletbox.png";
+import solarbox from "../assets/img/api_images/Solarbox.png";
+import bobtailbox from "../assets/img/api_images/bob.png";
+import joybox from "../assets/img/api_images/joybox.png";
+import dobox from "../assets/img/api_images/digitalocean-square.png";
+
+import atobproduct from "../assets/img/api_images/atob-card.png"; 
+import truckxproduct from "../assets/img/api_images/truckx-case.png";
+import palletproduct from "../assets/img/api_images/pallet.png";
+import solarproduct from "../assets/img/api_images/solar_one.webp";
+import bobtailproduct from "../assets/img/api_images/Bobtail.png";
+import joyrideproduct from "../assets/img/api_images/joytwo.png";
+import doproduct from "../assets/img/api_images/digitalocean-product.png";
+
+
 const HomePage = () => {
 
   const [darkMode, setDarkMode] = useState(false);
+  const [caseStudies, setCaseStudies] = useState([]);
   
  const [isVisibleTesti, setIsVisibleTesti] = useState(false);
  const testiRef = useRef(null);
@@ -52,6 +71,9 @@ const firstRef = useRef(null);
   const [isVisibleAch, setIsVisibleAch] = useState(false);
   const achRef = useRef(null);
 
+  const [animateServices, setAnimateServices] = useState(false);
+  const [animateTabs, setAnimateTabs] = useState(false);
+
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
 
@@ -65,6 +87,23 @@ const firstRef = useRef(null);
   };
 
   useEffect(() => {
+    // Fetch case studies from API
+    const fetchCaseStudies = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/cases');
+        setCaseStudies(response.data.slice(0, 3)); // Store only the first three entries
+        console.log(response.data)
+      } catch (error) {
+        console.error('Error fetching case studies:', error);
+        // Optionally, handle errors, e.g., set an error state
+      }
+    };
+
+    fetchCaseStudies();
+    // ... other useEffect hooks ...
+  }, []);
+
+  useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
 
     window.addEventListener('resize', handleResize);
@@ -72,7 +111,7 @@ const firstRef = useRef(null);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const firstThreeCaseStudies = caseStudies.slice(0, 3);
+  // const firstThreeCaseStudies = caseStudies.slice(0, 3);
 
   useEffect(() => {
       const observer = new IntersectionObserver(
@@ -142,19 +181,19 @@ useEffect(() => {
 }, []);
 
   const handleTabClickOne = () => {
-    window.location.href = '/investor-relations';
+    window.location.href = '/solutions/investors-relation';
   } 
 
   const handleTabClickTwo = () => {
-    window.location.href = '/GTM-advisory';
+    window.location.href = '/solutions/go-to-market-strategy';
   } 
 
   const handleTabClickThree = () => {
-    window.location.href = '/financial-consulting';
+    window.location.href = '/solutions/financial-consulting';
   } 
 
   const handleTabClickFour = () => {
-    window.location.href = '/hr-consulting';
+    window.location.href = '/solutions/hr-recruitment';
   } 
 
   const handleTabClickFive = () => {
@@ -162,7 +201,7 @@ useEffect(() => {
   } 
 
   const gotoContacts = () => {
-    window.location.href = '/contact';
+    window.location.href = '/contact-us';
   }
 
   const firstTwoBlogs = blogs.slice(0, 2);
@@ -439,7 +478,7 @@ useEffect(() => {
                
                 <div class="services-button-container">
                   <div class="explore-more-button">
-                  <Link to="/services" class="explore-more-services">Explore More</Link>
+                  <Link to="/solutions" class="explore-more-services">Explore More</Link>
                     
                   </div>
                 </div>
@@ -461,14 +500,28 @@ useEffect(() => {
             improving existing ones, we are ready to roll up our sleeves and
             help you achieve your goals.
           </p>
-          {firstThreeCaseStudies.map((study, index) => (
+          {caseStudies.map((study, index) => (
                 <CaseStudyMacroComps
                     key={study.id}
-                    id={study.id}
+                    id={study._id}
                     title={study.title}
                     summary={study.summary}
-                    logo={study.imagetwo}
-                    image={study.imageone}
+                    logo={study.imagetwo.includes('Atob') ? atobbox :
+                    study.imagetwo.includes('truckx') ? truckxbox :
+                    study.imagetwo.includes('pallet') ? palletbox :
+                    study.imagetwo.includes('solar') ? solarbox :
+                    study.imagetwo.includes('bobtail') ? bobtailbox :
+                    study.imagetwo.includes('joyride') ? joybox :
+                    study.imagetwo.includes('digital ocean') ? dobox :
+                    null}
+                    image={study.imageone.includes('Atob') ? atobproduct :
+                    study.imageone.includes('truckx') ? truckxproduct :
+                    study.imageone.includes('pallet') ? palletproduct :
+                    study.imageone.includes('solar') ? solarproduct :
+                    study.imageone.includes('bobtail') ? bobtailproduct :
+                    study.imageone.includes('joyride') ? joyrideproduct :
+                    study.imageone.includes('digital ocean') ? doproduct :
+                    null}
                     isRight={index % 2 === 0}
                 />
             ))}
