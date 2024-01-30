@@ -45,6 +45,10 @@ import Cases from './pages/dashboard/Cases';
 import AddCases from './pages/dashboard/AddCases';
 import './assets/css/styles.css';
 
+import AddFinCont from './pages/dashboard/AddFinCont';
+import Fin from './pages/dashboard/Fin';
+import FinEdit from './pages/dashboard/FinEdit';
+
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -187,9 +191,12 @@ const ProtectedRoute = ({ children }) => {
           <Route path="AddJobs" element={<AddJobs />} />
           <Route path="AddBlogs" element={<AddBlogs />} />
           <Route path="AddCases" element={<AddCases />} />
+          <Route path="AddFin" element={<AddFinCont />} />
           <Route path="Jobs" element={<Jobs />} />
           <Route path="Blogs" element={<Blogs />} />
           <Route path="Cases" element={<Cases />} />
+          <Route path="fin" element={<Fin />} />
+          <Route path="EditFin/:finId" element={<FinEdit />} />
           <Route path="EditJob/:jobId" element={<EditJob />} />
           <Route path="EditBlog/:blogId" element={<EditBlog />} />
           <Route path="EditCase/:caseId" element={<EditCases />} />
