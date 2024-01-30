@@ -174,8 +174,15 @@ const ProtectedRoute = ({ children }) => {
         <Route path="/careers" element={<Layout><Careers /></Layout>} />
         <Route path="/contact-us" element={<Layout><Contacts /></Layout>} />
 
+         {/* Separate route for login */}
+         <Route path="/phi-remote-login" element={<Login />} />
+
         {/* Dashboard and its subpages */}
-        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} >
+        <Route path="/dashboard" element={
+        <ProtectedRoute>
+          <Dashboard />
+        </ProtectedRoute>
+      }>
           <Route index element={<Navigate replace to="/dashboard/Jobs" />} />
           <Route path="AddJobs" element={<AddJobs />} />
           <Route path="AddBlogs" element={<AddBlogs />} />
@@ -189,8 +196,7 @@ const ProtectedRoute = ({ children }) => {
         </Route>
 
         
-        {/* Separate route for login */}
-        <Route path="/phi-remote-login" element={<Login />} />
+       
       </Routes>
     </Router>
   );
