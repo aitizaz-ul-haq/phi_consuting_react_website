@@ -45,7 +45,7 @@ import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 
 
 const FinTech = () => {
-  const [caseStudies, setCaseStudies] = useState([]);
+  const [fintechData, setFintechData] = useState([]);
   // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
   // const testiRef = useRef(null);
 
@@ -70,18 +70,34 @@ const FinTech = () => {
   const insightsRefs = useRef([]);
 
   const diagonalDivRef = useRef(null);
+
+  function simplifyFintechData(data) {
+    return data.reduce((acc, entry) => {
+      const simplifiedContent = entry.content.map(item => ({
+        id: entry._id, // Keeping track of the parent entry ID, if needed
+        headingText: item.headingText,
+        highlighted: item.highlighted,
+        paragraphText: item.paragraphText
+      }));
+      return acc.concat(simplifiedContent);
+    }, []);
+  }
+
   useEffect(() => {
-    const fetchCaseStudies = async () => {
+    const fetchFintechData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/cases');
-        setCaseStudies(response.data.slice(0, 3)); // Fetch only the first three case studies
+        const response = await axios.get('http://localhost:3000/fintech');
+        console.log(`response data...`, response)
+        const simplifiedData = simplifyFintechData(response.data);
+        setFintechData(simplifiedData);
       } catch (error) {
-        console.error('Error fetching case studies:', error);
+        console.error('Error fetching fintech data:', error);
       }
     };
   
-    fetchCaseStudies();
+    fetchFintechData();
   }, []);
+  
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -98,6 +114,9 @@ const FinTech = () => {
   
     return () => observer.disconnect();
   }, []);
+
+
+  
   
   // useEffect(() => {
   //   const observer = new IntersectionObserver(
@@ -283,7 +302,7 @@ useScrollToTop();
       {/* <IndustryServicesSection /> */}
 
       <article className="industry-para-container" ref={diagonalDivRef}>
-        <section className="industry-para-collection" ref={addToRefs}>
+        {/* <section className="industry-para-collection" ref={addToRefs}>
         <div className="para-title-industry">
         <h2 className='title-special'>What is <span className='bluer'> Fintech  Consulting</span>?</h2>
         </div>
@@ -319,14 +338,26 @@ useScrollToTop();
         </div>
         </section>
 
-        <section className="industry-para-collection" ref={addToRefs}>
+        <section className="industry-para-collection">
         <div className="para-title-industry">
         <h2 className='title-special'><span className='bluer'>Building Bridges</span> Between You and Your Investors</h2>
         </div>
         <div className="para-desc-industry">
         Building and maintaining strong relationships with investors are vital to your startup's growth. We assist in developing compelling investor relations strategies, ensuring consistent communication, and fostering trust with your investors.
         </div>
-        </section>
+        </section> */}
+       
+       {fintechData.map((item, index) => (
+  <section className="industry-para-collection" key={index} ref={addToRefs}>
+    <div className="para-title-industry">
+      <h2 className='title-special'>{item.headingText} <span className='bluer'>{item.highlighted}</span></h2>
+    </div>
+    <div className="para-desc-industry">
+      {item.paragraphText}
+    </div>
+  </section>
+))}
+    
        </article>
    
 
