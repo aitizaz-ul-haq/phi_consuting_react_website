@@ -60,7 +60,7 @@ const AddCases = () => {
         <Form.Item name="summary" label="Summary" rules={[{ required: true }]}>
           <Input.TextArea />
         </Form.Item>
-        <Form.Item name="imageone" label="Image One" rules={[{ required: true }]}>
+        <Form.Item name="imageone" label="select company product" rules={[{ required: true }]}>
           <Select placeholder="Select a company for Image One">
             {/* Add options here */}
             <Option value="Atob">Atob</Option>
@@ -73,7 +73,7 @@ const AddCases = () => {
             <Option value="digital ocean">digital ocean</Option>
           </Select>
         </Form.Item>
-        <Form.Item name="imagetwo" label="Image Two" rules={[{ required: true }]}>
+        <Form.Item name="imagetwo" label="select company logo" rules={[{ required: true }]}>
           <Select placeholder="Select a company for Image Two">
             {/* Add options here */}
             <Option value="Atob">Atob</Option>

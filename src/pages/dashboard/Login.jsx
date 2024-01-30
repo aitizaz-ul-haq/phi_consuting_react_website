@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
+import phiremotelogo from "../../assets/img/phi_logo.webp";
 const onFinish = async (values) => {
   try {
       const response = await fetch('http://localhost:3000/login', {
@@ -27,6 +28,7 @@ const onFinishFailed = (errorInfo) => {
 const Login = () => (
     <>
     <article className="login-container">
+      <div className="log-remote-container"></div>
         <section className="login-remote">
         <Form
     name="basic"
