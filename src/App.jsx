@@ -86,6 +86,11 @@ const App = () => {
 //     </>
 //   );
 
+const ProtectedRoute = ({ children }) => {
+  const isAuthenticated = localStorage.getItem('token');
+  return isAuthenticated ? children : <Navigate to="/phi-remote-login" />;
+};
+
   return (
     // <Router>
     //   <Routes>
@@ -170,17 +175,20 @@ const App = () => {
         <Route path="/contact-us" element={<Layout><Contacts /></Layout>} />
 
         {/* Dashboard and its subpages */}
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dashboard/AddJobs" element={<AddJobs />} />
-        <Route path="/dashboard/AddBlogs" element={<AddBlogs />} />
-        <Route path="/dashboard/AddCases" element={<AddCases />} />
-        <Route path="/dashboard/Jobs" element={<Jobs />} />
-        <Route path="/dashboard/Blogs" element={<Blogs />} />
-        <Route path="/dashboard/Cases" element={<Cases />} />
-        <Route path="/dashboard/EditJob/:jobId" element={<EditJob />} />
-        <Route path="/dashboard/EditBlog/:blogId" element={<EditBlog />} />
-        <Route path="/dashboard/EditCase/:caseId" element={<EditCases />} />
+        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} >
+          <Route index element={<Navigate replace to="/dashboard/Jobs" />} />
+          <Route path="AddJobs" element={<AddJobs />} />
+          <Route path="AddBlogs" element={<AddBlogs />} />
+          <Route path="AddCases" element={<AddCases />} />
+          <Route path="Jobs" element={<Jobs />} />
+          <Route path="Blogs" element={<Blogs />} />
+          <Route path="Cases" element={<Cases />} />
+          <Route path="EditJob/:jobId" element={<EditJob />} />
+          <Route path="EditBlog/:blogId" element={<EditBlog />} />
+          <Route path="EditCase/:caseId" element={<EditCases />} />
+        </Route>
 
+        
         {/* Separate route for login */}
         <Route path="/phi-remote-login" element={<Login />} />
       </Routes>

@@ -1,7 +1,25 @@
 import React from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
-const onFinish = (values) => {
-  console.log('Success:', values);
+const onFinish = async (values) => {
+  try {
+      const response = await fetch('http://localhost:3000/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(values)
+      });
+
+      if (response.ok) {
+          const data = await response.json();
+          // Store the token, e.g., in localStorage
+          localStorage.setItem('token', data.token);
+          // Redirect to the dashboard
+          window.location.href = '/dashboard';
+      } else {
+          console.log('Login failed');
+      }
+  } catch (error) {
+      console.log('Error:', error);
+  }
 };
 const onFinishFailed = (errorInfo) => {
   console.log('Failed:', errorInfo);
