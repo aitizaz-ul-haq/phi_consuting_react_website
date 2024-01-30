@@ -63,27 +63,27 @@ if (redirectToBlogs) {
 
     return (
         <div className="form-container-dash">
-            <form onSubmit={handleSubmit} style={{ maxWidth: 600 }}>
+            <form onSubmit={handleSubmit} className='editform' style={{ maxWidth: 600 }}>
                 <div>
                     <label>Title</label>
-                    <input name="title" defaultValue={blogData.title} />
+                    <input name="title" className='title-field' defaultValue={blogData.title} />
                 </div>
                 <div>
                     <label>Summary</label>
-                    <textarea name="summary" defaultValue={blogData.summary} />
+                    <textarea name="summary" className='textarea-field' defaultValue={blogData.summary} />
                 </div>
-                <div>
+                {/* <div>
                     <label>Image URL</label>
-                    <input name="imageone" defaultValue={blogData.imageone} />
-                </div>
+                    <input name="imageone" className='title-field' defaultValue={blogData.imageone} />
+                </div> */}
                 <div>
                     <label>Date Posted</label>
-                    <input name="DatePosted" defaultValue={blogData.DatePosted} />
+                    <input name="DatePosted" className='drop-field' defaultValue={blogData.DatePosted} />
                 </div>
-                <div>
+                {/* <div>
                     <label>Read Time</label>
-                    <input name="ReadTime" defaultValue={blogData.ReadTime} />
-                </div>
+                    <input name="ReadTime" className='drop-field' defaultValue={blogData.ReadTime} />
+                </div> */}
                 {blogData.content.map((item, index) => (
                     <div key={index}>
                         <label>{item.type}</label>

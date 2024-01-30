@@ -79,7 +79,7 @@ const AddJob = () => {
                   </Form.Item>
                 </Card>
               ))}
-              <Button type="dashed" onClick={() => add()} block>+ Add Content Section</Button>
+              <Button type="dashed"  onClick={() => add()} block>+ Add Content Section</Button>
             </>
           )}
         </Form.List>

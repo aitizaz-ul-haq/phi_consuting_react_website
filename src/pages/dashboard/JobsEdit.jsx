@@ -57,14 +57,14 @@ const EditJob = () => {
 
     return (
         <div className="form-container-dash">
-            <form onSubmit={handleSubmit} style={{ maxWidth: 600 }}>
+            <form className='editform' onSubmit={handleSubmit} style={{ maxWidth: 600 }}>
                 <div>
                     <label>Title</label>
-                    <input name="title" defaultValue={jobData.title} />
+                    <input name="title" className='title-field' defaultValue={jobData.title} />
                 </div>
                 <div>
                     <label>Role</label>
-                    <textarea name="role" defaultValue={jobData.role} />
+                    <textarea name="role" className='textarea-field' defaultValue={jobData.role} />
                 </div>
                 {jobData.content.map((item, index) => (
                     <div key={index}>
