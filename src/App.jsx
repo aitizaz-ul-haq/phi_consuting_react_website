@@ -53,9 +53,12 @@ import ShowInfo from './pages/dashboard/industriesdash/Fintech Dash/Fintechinfo/
 import EditFinInfo from './pages/dashboard/industriesdash/Fintech Dash/Fintechinfo/EditFinInfo';
 import Value from './components/view_pages/value';
 
-import Iot from './pages/dashboard/industriesdash/Iot Dash/Iot';
+import IotPage from './pages/dashboard/industriesdash/Iot Dash/IotPage';
 import ShowIotInfo from './pages/dashboard/industriesdash/Iot Dash/Iotinfo/ShowIotInfo';
-
+import AddIotCont from './pages/dashboard/industriesdash/Iot Dash/AddIotCont';
+import IotEdit from './pages/dashboard/industriesdash/Iot Dash/IotEdit';
+import AddIotInfo from './pages/dashboard/industriesdash/Iot Dash/Iotinfo/AddIotInfo';
+import EditIotInfo from './pages/dashboard/industriesdash/Iot Dash/Iotinfo/EditIotInfo';
 
 
 
@@ -216,7 +219,7 @@ const ProtectedRoute = ({ children }) => {
 
             {/* ----------------- */}
           <Route path="fin" element={<Fin />} />
-          <Route path="iot" element={<Iot />} />
+          <Route path="iot" element={<IotPage />} />
 
             {/* ----------------- */}
           <Route path="ShowFinInfo" element={<ShowInfo />} />
