@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 
-const ShowIotInfo = () => {
+const ShowSaasInfo = () => {
 
     const [infoEntries, setInfoEntries] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -72,4 +72,4 @@ const ShowIotInfo = () => {
     );
 }
 
-export default ShowIotInfo;
+export default ShowSaasInfo;

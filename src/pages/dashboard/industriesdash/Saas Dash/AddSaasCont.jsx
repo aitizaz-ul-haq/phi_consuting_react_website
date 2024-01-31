@@ -11,7 +11,7 @@ const layout = {
   wrapperCol: { span: 16 },
 };
 
-const AddIotCont = () => {
+const AddSaasCont = () => {
 
     const [form] = Form.useForm();
     const [redirectToCases, setRedirectToCases] = useState(false);
@@ -84,4 +84,4 @@ const AddIotCont = () => {
     );
 }
 
-export default AddIotCont;
+export default AddSaasCont;

@@ -9,7 +9,7 @@ const layout = {
   labelCol: { span: 8 },
   wrapperCol: { span: 16 },
 };
-const IotEdit = () => {
+const SaasEdit = () => {
 
     const [form] = Form.useForm();
   const [redirectToCases, setRedirectToCases] = useState(false);
@@ -96,4 +96,4 @@ const IotEdit = () => {
     );
 }
 
-export default IotEdit;
+export default SaasEdit;

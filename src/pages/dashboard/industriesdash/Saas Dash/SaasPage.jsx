@@ -3,7 +3,7 @@ import { Table, Space, Button, Spin, message } from 'antd';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const IotPage = () => {
+const SaasPage = () => {
   const [fintechEntries, setFintechEntries] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -81,4 +81,4 @@ const IotPage = () => {
   );
 };
 
-export default IotPage;
+export default SaasPage;

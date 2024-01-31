@@ -9,7 +9,7 @@ const layout = {
   wrapperCol: { span: 16 },
 };
 
-const EditIotInfo = () => {
+const EditSaasInfo = () => {
 
     const [form] = Form.useForm();
     const navigate = useNavigate();
@@ -89,4 +89,4 @@ const EditIotInfo = () => {
     );
 }
 
-export default EditIotInfo;
+export default EditSaasInfo;

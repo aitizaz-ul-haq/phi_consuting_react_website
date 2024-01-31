@@ -11,7 +11,7 @@ const layout = {
 };
 
 
-const AddIotInfo = () => {
+const AddSaasInfo = () => {
 
     const [form] = Form.useForm();
   const [redirectToCases, setRedirectToCases] = useState(false);
@@ -75,4 +75,4 @@ const AddIotInfo = () => {
     );
 }
 
-export default AddIotInfo;
+export default AddSaasInfo;

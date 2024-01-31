@@ -60,7 +60,8 @@ import IotEdit from './pages/dashboard/industriesdash/Iot Dash/IotEdit';
 import AddIotInfo from './pages/dashboard/industriesdash/Iot Dash/Iotinfo/AddIotInfo';
 import EditIotInfo from './pages/dashboard/industriesdash/Iot Dash/Iotinfo/EditIotInfo';
 
-import SaasPage from './pages/dashboard/industriesdash/Iot Dash/Saas Dash/SaasPage';
+
+
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
