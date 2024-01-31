@@ -32,7 +32,7 @@ const IotEdit = () => {
 
   const onFinish = async (values) => {
     try {
-      const response = await axios.put(`http://localhost:3000/iotId/${iotId}`, values);
+      const response = await axios.put(`http://localhost:3000/iot/${iotId}`, values);
       console.log('Response:', response.data);
       message.success('iot entry updated successfully');
       setRedirectToCases(true);

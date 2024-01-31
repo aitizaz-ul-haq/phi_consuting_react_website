@@ -17,7 +17,7 @@ const ShowIotInfo = () => {
     const fetchInfoEntries = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get('http://localhost:3000/fintechinfo');
+        const response = await axios.get('http://localhost:3000/iotinfo');
         const formattedData = response.data.map(entry => ({
           key: entry._id,
           ...entry.sections.reduce((acc, section, index) => {

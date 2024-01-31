@@ -30,7 +30,7 @@ const IotPage = () => {
   };
 
   const handleEdit = (iotId) => {
-    navigate(`/dashboard/EditFin/${iotId}`);
+    navigate(`/dashboard/EditIot/${iotId}`);
   };
 
   const handleDelete = async (iotId) => {

@@ -54,12 +54,12 @@ const Sidebar = () => {
       </div>
       <div>
         <button className='dash-options' onClick={() => setDropdown5(!dropdown5)}>Iot Content</button>
-        {dropdown4 && (
+        {dropdown5 && (
           <div className='list-container'>
-          <Link className='list-elements-dash' to="/dashboard/fin">Iot</Link>
-          <Link className='list-elements-dash' to="/dashboard/AddFin">Add Content</Link>
-          <Link className='list-elements-dash' to="/dashboard/ShowFinInfo">Show Info</Link>
-          <Link className='list-elements-dash' to="/dashboard/AddFinInfo">Add Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/iot">Iot</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddIot">Add Content</Link>
+          <Link className='list-elements-dash' to="/dashboard/ShowIotInfo">Show Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddIotInfo">Add Info</Link>
         </div>
         )}
       </div>

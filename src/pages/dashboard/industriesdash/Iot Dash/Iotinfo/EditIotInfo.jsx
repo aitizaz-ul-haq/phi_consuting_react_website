@@ -50,7 +50,7 @@ const EditIotInfo = () => {
   
       try {
         await axios.put(`http://localhost:3000/iotinfo/${iotInfoId}`, dataToPut);
-        message.success('Iot info entry updated successfully');
+        message.success('Iotinfo info entry updated successfully');
         navigate('/dashboard/ShowIotInfo');
       } catch (error) {
         console.error('Error updating data:', error);

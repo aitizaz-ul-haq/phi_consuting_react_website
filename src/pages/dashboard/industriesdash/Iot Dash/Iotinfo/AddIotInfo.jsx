@@ -37,7 +37,7 @@ const AddIotInfo = () => {
   };
 
   if (redirectToCases) {
-    return <Navigate to="/dashboard/iot" />;
+    return <Navigate to="/dashboard/ShowIotInfo" />;
   }
     return(
         <div className="form-container-dash">
