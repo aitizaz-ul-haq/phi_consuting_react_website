@@ -13,53 +13,63 @@ import clutchone from '../assets/img/achievements-badges/clutch_1.png';
 import BBB from '../assets/img/achievements-badges/BBB.png';
 import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
 
-import caseStudies from "../data/caseStudies.json";
+// import caseStudies from "../data/caseStudies.json";
 import LengthyWorkCard from '../components/shared/cards/LengthyWorkCard';
 import { TypeAnimation } from 'react-type-animation';
 import useScrollToTop from '../hooks/useScrollToTop';
 
 const OurWork = () => {
+  const [caseStudies, setCaseStudies] = useState([]);
+  // const [isVisible, setIsVisible] = useState(false);
+  //  const containerRef = useRef(null);
 
-  const [isVisible, setIsVisible] = useState(false);
-   const containerRef = useRef(null);
+  //  const [isVisibleTesti, setIsVisibleTesti] = useState(false);
+  // const testiRef = useRef(null);
 
-   const [isVisibleTesti, setIsVisibleTesti] = useState(false);
-  const testiRef = useRef(null);
-
-  const [isVisibleAch, setIsVisibleAch] = useState(false);
-   const achRef = useRef(null);
+  // const [isVisibleAch, setIsVisibleAch] = useState(false);
+  //  const achRef = useRef(null);
 
    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
    useEffect(() => {
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
-        },
-        { threshold: 0.5 }
-    );
+    const fetchCaseStudies = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/cases'); // Replace with your API endpoint
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        setCaseStudies(data);
+      } catch (error) {
+        console.error("Error fetching case studies:", error);
+      }
+    };
 
-    observer.observe(achRef.current);
-    return () => observer.disconnect();
-}, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
-    }, { threshold: 0.5 });
-  
-    observer.observe(testiRef.current);
-    return () => observer.disconnect();
+    fetchCaseStudies();
   }, []);
 
-   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => setIsVisible(entry.isIntersecting));
-    }, { threshold: 0.5 }); 
+//    useEffect(() => {
+//     const observer = new IntersectionObserver(
+//         (entries) => {
+//             entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
+//         },
+//         { threshold: 0.5 }
+//     );
 
-    observer.observe(containerRef.current);
-    return () => observer.disconnect(); 
-}, []);
+//     observer.observe(achRef.current);
+//     return () => observer.disconnect();
+// }, []);
+
+
+
+//    useEffect(() => {
+//     const observer = new IntersectionObserver(entries => {
+//         entries.forEach(entry => setIsVisible(entry.isIntersecting));
+//     }, { threshold: 0.5 }); 
+
+//     observer.observe(containerRef.current);
+//     return () => observer.disconnect(); 
+// }, []);
 
   const gotoContacts = () => {
     window.location.href = '/contact';
@@ -114,14 +124,14 @@ const OurWork = () => {
         </p>
         <div class="insights-container">
         {caseStudies.map(study => (
-                <LengthyWorkCard key={study.id} caseStudy={study} />
+                <LengthyWorkCard key={study._id} id={study._id}  caseStudy={study} />
             ))}
       
         </div>
       </article>
 
       {/* <!-- Clients Section --> */}
-<article className={`clients ${isVisible ? 'animate' : ''}`} ref={containerRef}>
+{/* <article className={`clients ${isVisible ? 'animate' : ''}`} ref={containerRef}>
         <section class="client-container">
           <div class="client-content">
             <h2 class="client-heading">Trusted by Industry Leaders</h2>
@@ -205,7 +215,7 @@ const OurWork = () => {
             </div>
           </div>
         </section>
-      </article>
+      </article> */}
 
       {/* <!-- how we work --> */}
       <article class="how-work">
@@ -245,7 +255,7 @@ const OurWork = () => {
       </article>
 
       {/* <!-- Testimonial Section --> */}
-      <article class="testimonial">
+      {/* <article class="testimonial">
         <section className="testimonial-container">
           <h2 class="testi-heading">
           We Have Successfully Retained Our Top 3 Clients For Over 3 Years.
@@ -260,7 +270,7 @@ const OurWork = () => {
         <section className="testi-cards-container" ref={testiRef}>
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 testi-one">
-              {/* <!-- <img src="./assets/img/testimonial_one.webp" alt="" /> --> */}
+              
             </div>
 
             <p class="testi-quote">
@@ -274,23 +284,7 @@ const OurWork = () => {
             <h3 class="testi-card-heading">Head of Customer Support - AtoB Financials</h3>
           </div>
 
-          {/* <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
-            <div class="circleBase type3 test-two">
-              <img src="" alt="" />
-            </div>
-
-            <p class="testi-quote">
-              <q
-                ><i
-                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quibusdam atque iste aut magni harum nobis quasi impedit enim
-                  laborum distinctio, accusamus ducimus dolorem illum, mollitia
-                  aperiam deserunt voluptate quaerat totam!</i
-                ></q
-              >
-            </p>
-            <h3 class="testi-card-heading">-lenny pepridge (CTO)</h3>
-          </div> */}
+         
 
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-three">
@@ -308,10 +302,10 @@ const OurWork = () => {
             <h3 class="testi-card-heading">Head of Sales & Business Development - AtoB Financials</h3>
           </div>
         </section>
-      </article>
+      </article> */}
 
       {/* <!-- Achievement Section --> */}
-     <article class="achievement">
+     {/* <article class="achievement">
         <section class="achievement-section">
           <h2 class="ach-heading">Our Achievements</h2>
           <p class="testi-desc">
@@ -346,7 +340,7 @@ const OurWork = () => {
           </div>
 
         </section>
-      </article>
+      </article> */}
 
       {/* <!-- Call to Action Section --> */}
       <article class="cta-container">

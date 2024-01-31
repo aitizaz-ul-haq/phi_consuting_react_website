@@ -1,8 +1,22 @@
 import React,{useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
+import atobsquare from "../../../assets/img/api_images/AToB-square.jpg";
+import bobsquare from "../../../assets/img/api_images/bob.png";
+import dosquare from "../../../assets/img/api_images/digitalocean-square.png";
+import joysquare from "../../../assets/img/api_images/joybox.png";
+import solarsquare from "../../../assets/img/api_images/Solarbox.png";
+import palletsquare from "../../../assets/img/api_images/palletbox.png";
+import truckxsquare from "../../../assets/img/api_images/truck-square.png";
+
 
 const LengthyWorkCard = ({caseStudy}) => {
+
+  const handleClick = () => {
+    localStorage.setItem('valId', caseStudy._id);
+  };
+
+  const imageUrl = caseStudy.imageone.includes('Atob') ? atobsquare : caseStudy.imageone.includes('truckx') ? truckxsquare : caseStudy.imageone.includes('pallet') ? palletsquare : caseStudy.imageone.includes('solar') ? solarsquare : caseStudy.imageone.includes('bobtail') ? bobsquare : caseStudy.imageone.includes('joyride') ? joysquare : caseStudy.imageone.includes('digital ocean') ? dosquare : caseStudy.imageone;
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -27,7 +41,7 @@ const LengthyWorkCard = ({caseStudy}) => {
                 <div class="content">
                   <div class="comp-logo-square-container">
                     <img
-                      src={caseStudy.imagetwo}
+                      src={imageUrl}
                       alt=""
                       width="100"
                       height="100"
@@ -37,7 +51,7 @@ const LengthyWorkCard = ({caseStudy}) => {
                     {caseStudy.summary}
                     </p>
                     <div class="left-button-work-small our-work-bubbles">
-                   <span> <Link className='work-card-button-link' to={`/viewcasestudy/${caseStudy.id}`}>Explore More</Link></span>
+                   <span> <Link className='work-card-button-link' onClick={handleClick} to={`/value/${caseStudy.imageone}`}>Explore More</Link></span>
                     </div>
                   </div>
                 </div>

@@ -43,6 +43,8 @@ import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 
+import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
+
 
 const FinTech = () => {
   const [fintechData, setFintechData] = useState([]);
@@ -71,33 +73,37 @@ const FinTech = () => {
 
   const diagonalDivRef = useRef(null);
 
-  function simplifyFintechData(data) {
-    return data.reduce((acc, entry) => {
-      const simplifiedContent = entry.content.map(item => ({
-        id: entry._id, // Keeping track of the parent entry ID, if needed
-        headingText: item.headingText,
-        highlighted: item.highlighted,
-        paragraphText: item.paragraphText
-      }));
-      return acc.concat(simplifiedContent);
-    }, []);
-  }
 
-  useEffect(() => {
-    const fetchFintechData = async () => {
-      try {
-        const response = await axios.get('http://localhost:3000/fintech');
-        console.log(`response data...`, response)
-        const simplifiedData = simplifyFintechData(response.data);
-        setFintechData(simplifiedData);
-      } catch (error) {
-        console.error('Error fetching fintech data:', error);
-      }
-    };
-  
-    fetchFintechData();
-  }, []);
-  
+
+//  function simplifyFintechData(data) {
+//   return data.reduce((acc, entry) => {
+//     const simplifiedContent = entry.content.map(item => ({
+//       id: entry._id, // Keeping track of the parent entry ID, if needed
+//       headingText: item.headingText,
+//       highlighted: item.highlighted,
+//       paragraphText: item.paragraphText
+//     }));
+//     return acc.concat(simplifiedContent);
+//   }, []);
+// }
+
+// useEffect(() => {
+//   const fetchFintechData = async () => {
+//     try {
+//       const response = await axios.get('http://localhost:3000/fintech');
+//       console.log(`response data...`, response.data)
+//       const simplifiedData = simplifyFintechData(response.data);
+//       setFintechData(simplifiedData);
+    
+//     } catch (error) {
+//       console.error('Error fetching fintech data:', error);
+//     }
+//   };
+
+//   fetchFintechData();
+// }, []);
+
+
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -253,9 +259,11 @@ useEffect(() => {
     });
 };
 
+
+
 useScrollToTop();
 
-  const firstThreeCaseStudies = caseStudies.slice(0, 3);
+  
     return (
         <>
 
@@ -301,7 +309,7 @@ useScrollToTop();
 
       {/* <IndustryServicesSection /> */}
 
-      <article className="industry-para-container" ref={diagonalDivRef}>
+      {/* <article className="industry-para-container" ref={diagonalDivRef}> */}
         {/* <section className="industry-para-collection" ref={addToRefs}>
         <div className="para-title-industry">
         <h2 className='title-special'>What is <span className='bluer'> Fintech  Consulting</span>?</h2>
@@ -347,7 +355,7 @@ useScrollToTop();
         </div>
         </section> */}
        
-       {fintechData.map((item, index) => (
+       {/* {fintechData.map((item, index) => (
   <section className="industry-para-collection" key={index} ref={addToRefs}>
     <div className="para-title-industry">
       <h2 className='title-special'>{item.headingText} <span className='bluer'>{item.highlighted}</span></h2>
@@ -358,7 +366,9 @@ useScrollToTop();
   </section>
 ))}
     
-       </article>
+       </article> */}
+
+       <IndustriesArticles/>
    
 
       {/* <!-- why phi for sale Section --> */}

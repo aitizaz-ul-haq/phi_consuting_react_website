@@ -13781,6 +13781,21 @@ display: none;
         color: var(--LIGHT-PHI-BLUE);
     }
 
+    .styling-articals {
+        padding: 8rem;
+    }
+
+    .styling-artical-sections {
+        padding: 8rem;
+        background-color: var(--LIGHT-PHI-BLUE);
+        border-radius: 15px;
+        margin: 2rem;
+    }
+
+    .title-special-new {
+        color: white;
+    }
+
     .insights-bundle {
         opacity: 0;
         transform: translateY(20px);

@@ -46,9 +46,12 @@ const Sidebar = () => {
           <div className='list-container'>
           <Link className='list-elements-dash' to="/dashboard/fin">Fintech</Link>
           <Link className='list-elements-dash' to="/dashboard/AddFin">Add Content</Link>
+          <Link className='list-elements-dash' to="/dashboard/ShowFinInfo">Show Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddFinInfo">Add Info</Link>
         </div>
         )}
       </div>
+      
     </div>
   );
 };

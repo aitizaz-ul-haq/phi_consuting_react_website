@@ -17,10 +17,10 @@ const Fin = () => {
     try {
       const response = await axios.get('http://localhost:3000/fintech');
       setFintechEntries(response.data.map(entry => ({
-        ...entry,
         key: entry._id,
-        heading: entry.content.find(item => item.headingType === 'heading')?.headingText || 'No Heading',
-        paragraph: entry.content.find(item => item.paragraphType === 'paragraph')?.paragraphText || 'No Paragraph'
+        headingText: entry.headingText,
+        highlighted: entry.highlighted,
+        paragraphText: entry.paragraphText,
       })));
       setIsLoading(false);
     } catch (error) {
@@ -38,7 +38,7 @@ const Fin = () => {
     try {
       await axios.delete(`http://localhost:3000/fintech/${fintechId}`);
       message.success('Fintech entry deleted successfully');
-      fetchFintechEntries(); // Refresh the list after deletion
+      fetchFintechEntries();
     } catch (error) {
       message.error('Error deleting fintech entry');
       console.error('Error deleting fintech entry:', error);
@@ -49,21 +49,26 @@ const Fin = () => {
   const columns = [
     {
       title: 'Heading',
-      dataIndex: 'heading',
-      key: 'heading',
+      dataIndex: 'headingText',
+      key: 'headingText',
+    },
+    {
+      title: 'Highlighted',
+      dataIndex: 'highlighted',
+      key: 'highlighted',
     },
     {
       title: 'Paragraph',
-      dataIndex: 'paragraph',
-      key: 'paragraph',
+      dataIndex: 'paragraphText',
+      key: 'paragraphText',
     },
     {
       title: 'Action',
       key: 'action',
       render: (_, record) => (
         <Space size="middle">
-          <Button type="link" onClick={() => handleEdit(record._id)}>Edit</Button>
-          <Button type="link" onClick={() => handleDelete(record._id)}>Delete</Button>
+          <Button type="link" onClick={() => handleEdit(record.key)}>Edit</Button>
+          <Button type="link" onClick={() => handleDelete(record.key)}>Delete</Button>
         </Space>
       ),
     },
@@ -71,7 +76,7 @@ const Fin = () => {
 
   return (
     <Spin spinning={isLoading} delay={300}>
-      <Table columns={columns} dataSource={fintechEntries} rowKey="_id" />
+      <Table columns={columns} dataSource={fintechEntries} rowKey="key" />
     </Spin>
   );
 };

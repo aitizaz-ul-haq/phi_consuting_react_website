@@ -487,7 +487,7 @@ useEffect(() => {
       {/* <!-- Achievement Section --> */}
      <article class="achievement">
         <section class="achievement-section">
-          <h2 class="ach-heading">Our Achievements</h2>
+          <h2 class="ach-heading">Our Recognitions</h2>
           <p class="testi-desc">
           Explore Phi Consulting's hall of achievements – where revenue surges, operational efficiency peaks, and client success stories converge, defining a legacy of transformative impact.
           </p>

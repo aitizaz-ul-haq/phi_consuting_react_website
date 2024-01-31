@@ -67,17 +67,17 @@ import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 
 const HrAndRecruitmentConsulting = () => {
   const [caseStudies, setCaseStudies] = useState([]);
-  const [isVisibleTesti, setIsVisibleTesti] = useState(false);
-  const testiRef = useRef(null);
+  // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
+  // const testiRef = useRef(null);
  
-   const [isVisible, setIsVisible] = useState(false);
-   const containerRef = useRef(null);
+  //  const [isVisible, setIsVisible] = useState(false);
+  //  const containerRef = useRef(null);
  
-   const [isVisibleAch, setIsVisibleAch] = useState(false);
-   const achRef = useRef(null);
+  //  const [isVisibleAch, setIsVisibleAch] = useState(false);
+  //  const achRef = useRef(null);
  
-   const [isVisiblecard, setIsVisiblecard] = useState(false);
-   const cardsRef = useRef(null);
+  //  const [isVisiblecard, setIsVisiblecard] = useState(false);
+  //  const cardsRef = useRef(null);
  
    const [processNewVisible, setProcessNewVisible] = useState(false);
    const processNewRef = useRef(null);
@@ -117,54 +117,54 @@ const HrAndRecruitmentConsulting = () => {
    
  
  
-   useEffect(() => {
-     const observer = new IntersectionObserver(
-       (entries) => {
-         entries.forEach((entry) => {
-           setIsVisiblecard(entry.isIntersecting);
-         });
-       },
-       { threshold: 0.5 }
-     );
+  //  useEffect(() => {
+  //    const observer = new IntersectionObserver(
+  //      (entries) => {
+  //        entries.forEach((entry) => {
+  //          setIsVisiblecard(entry.isIntersecting);
+  //        });
+  //      },
+  //      { threshold: 0.5 }
+  //    );
  
-     if (cardsRef.current) {
-       observer.observe(cardsRef.current);
-     }
+  //    if (cardsRef.current) {
+  //      observer.observe(cardsRef.current);
+  //    }
  
-     return () => observer.disconnect();
-   }, []);
+  //    return () => observer.disconnect();
+  //  }, []);
    
  
-   useEffect(() => {
-     const observer = new IntersectionObserver(
-         (entries) => {
-             entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
-         },
-         { threshold: 0.5 }
-     );
+//    useEffect(() => {
+//      const observer = new IntersectionObserver(
+//          (entries) => {
+//              entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
+//          },
+//          { threshold: 0.5 }
+//      );
  
-     observer.observe(achRef.current);
-     return () => observer.disconnect();
- }, []);
+//      observer.observe(achRef.current);
+//      return () => observer.disconnect();
+//  }, []);
  
- useEffect(() => {
-   const observer = new IntersectionObserver(entries => {
-       entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
-   }, { threshold: 0.5 });
+//  useEffect(() => {
+//    const observer = new IntersectionObserver(entries => {
+//        entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
+//    }, { threshold: 0.5 });
  
-   observer.observe(testiRef.current);
-   return () => observer.disconnect();
- }, []);
+//    observer.observe(testiRef.current);
+//    return () => observer.disconnect();
+//  }, []);
  
  
- useEffect(() => {
-     const observer = new IntersectionObserver(entries => {
-         entries.forEach(entry => setIsVisible(entry.isIntersecting));
-     }, { threshold: 0.5 }); 
+//  useEffect(() => {
+//      const observer = new IntersectionObserver(entries => {
+//          entries.forEach(entry => setIsVisible(entry.isIntersecting));
+//      }, { threshold: 0.5 }); 
  
-     observer.observe(containerRef.current);
-     return () => observer.disconnect(); 
- }, []);
+//      observer.observe(containerRef.current);
+//      return () => observer.disconnect(); 
+//  }, []);
 
  useEffect(() => {
   const observer = new IntersectionObserver(
@@ -652,7 +652,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
       </article>
 
        {/* <!-- Clients Section --> */}
-       <article className={`clients ${isVisible ? 'animate' : ''}`} ref={containerRef}>
+       {/* <article className={`clients ${isVisible ? 'animate' : ''}`} ref={containerRef}>
         <section class="client-container">
           <div class="client-content">
             <h2 class="client-heading">Trusted by Industry Leaders</h2>
@@ -736,7 +736,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             </div>
           </div>
         </section>
-      </article>
+      </article> */}
 
         {/* <!-- why phi for customer exp Section --> */}
         <article class="why-phi-for-sales">
@@ -827,7 +827,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
           </div>
         </article>
 
-      <article class="work" ref={cardsRef}>
+      {/* <article class="work" ref={cardsRef}>
         <section class="work-section">
           <h2 class="work-heading">Portfolio</h2>
           <p class="work-desc">
@@ -859,10 +859,10 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
           <span><Link to="/case-studies" className='morcases'>View More Case Studies</Link></span>
           </div>
         </section>
-      </article>
+      </article> */}
 
       {/* <!-- Testimonial Section --> */}
-      <article class="testimonial">
+      {/* <article class="testimonial">
         <section className="testimonial-container">
           <h2 class="testi-heading">
           We Have Successfully Retained Our Top 3 Clients For Over 3 Years.
@@ -877,7 +877,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
         <section className="testi-cards-container" ref={testiRef}>
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 testi-one">
-              {/* <!-- <img src="./assets/img/testimonial_one.webp" alt="" /> --> */}
+             
             </div>
 
             <p class="testi-quote">
@@ -890,24 +890,6 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             </p>
             <h3 class="testi-card-heading">Head of Customer Support - AtoB Financials</h3>
           </div>
-
-          {/* <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
-            <div class="circleBase type3 test-two">
-              <img src="" alt="" />
-            </div>
-
-            <p class="testi-quote">
-              <q
-                ><i
-                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quibusdam atque iste aut magni harum nobis quasi impedit enim
-                  laborum distinctio, accusamus ducimus dolorem illum, mollitia
-                  aperiam deserunt voluptate quaerat totam!</i
-                ></q
-              >
-            </p>
-            <h3 class="testi-card-heading">-lenny pepridge (CTO)</h3>
-          </div> */}
 
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-three">
@@ -925,10 +907,10 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             <h3 class="testi-card-heading">Head of Sales & Business Development - AtoB Financials</h3>
           </div>
         </section>
-      </article>
+      </article> */}
 
       {/* <!-- Achievement Section --> */}
-      <article class="achievement">
+      {/* <article class="achievement">
         <section class="achievement-section">
           <h2 class="ach-heading">Our Achievements</h2>
           <p class="testi-desc">
@@ -963,7 +945,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
           </div>
 
         </section>
-      </article>
+      </article> */}
 
       {/* <!-- Call to Action Section --> */}
       <article class="cta-container">

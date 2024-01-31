@@ -48,6 +48,10 @@ import './assets/css/styles.css';
 import AddFinCont from './pages/dashboard/AddFinCont';
 import Fin from './pages/dashboard/Fin';
 import FinEdit from './pages/dashboard/FinEdit';
+import AddFinInfo from './pages/dashboard/AddFinInfo';
+import ShowInfo from './pages/dashboard/ShowInfo';
+import EditFinInfo from './pages/dashboard/EditFinInfo';
+import Value from './components/view_pages/value';
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -174,6 +178,7 @@ const ProtectedRoute = ({ children }) => {
 
         {/* Single Pages */}
         <Route path="/value-creation" element={<Layout><OurWork /></Layout>} />
+        <Route path="value/:id" element={<Layout><Value /></Layout>} />
         <Route path="/about-us" element={<Layout><AboutUs /></Layout>} />
         <Route path="/careers" element={<Layout><Careers /></Layout>} />
         <Route path="/contact-us" element={<Layout><Contacts /></Layout>} />
@@ -188,18 +193,24 @@ const ProtectedRoute = ({ children }) => {
         </ProtectedRoute>
       }>
           <Route index element={<Navigate replace to="/dashboard/Jobs" />} />
+
           <Route path="AddJobs" element={<AddJobs />} />
           <Route path="AddBlogs" element={<AddBlogs />} />
           <Route path="AddCases" element={<AddCases />} />
           <Route path="AddFin" element={<AddFinCont />} />
+          <Route path="AddFinInfo" element={<AddFinInfo />} />
+
           <Route path="Jobs" element={<Jobs />} />
           <Route path="Blogs" element={<Blogs />} />
           <Route path="Cases" element={<Cases />} />
           <Route path="fin" element={<Fin />} />
+          <Route path="ShowFinInfo" element={<ShowInfo />} />
+
           <Route path="EditFin/:finId" element={<FinEdit />} />
           <Route path="EditJob/:jobId" element={<EditJob />} />
           <Route path="EditBlog/:blogId" element={<EditBlog />} />
           <Route path="EditCase/:caseId" element={<EditCases />} />
+          <Route path="EditFinInfo/:fininfoId" element={<EditFinInfo />} />
         </Route>
 
         

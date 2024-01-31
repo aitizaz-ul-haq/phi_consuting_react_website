@@ -1,63 +1,63 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import axios from 'axios';
 
-const IndustriesArticles = ({ data }) => {
-    const diagonalDivRef = useRef(null);
-    const sectionsRef = useRef([]);
+const IndustriesArticles = () => {
+    const [fintechData, setFintechData] = useState([]);
+
+    const simplifyFintechData = (data) => {
+        return data.reduce((acc, entry) => {
+            const simplifiedContent = entry.content.map(item => ({
+                id: entry._id,
+                headingText: item.headingText,
+                highlighted: item.highlighted,
+                paragraphText: item.paragraphText
+            }));
+            return acc.concat(simplifiedContent);
+        }, []);
+    };
+
+    const fetchFintechData = async () => {
+        try {
+            const response = await axios.get('http://localhost:3000/fintech');
+            console.log("API Response:", response);
+            if (response.data && response.data.length > 0) {
+                const simplifiedData = simplifyFintechData(response.data);
+                console.log("Simplified Data:", simplifiedData);
+                setFintechData(simplifiedData);
+            } else {
+                console.log("No data received from API");
+            }
+        } catch (error) {
+            console.error('Error fetching fintech data:', error);
+        }
+    };
+
     useEffect(() => {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('fill-effect');
-              }
-            });
-          },
-          { threshold: 0.5 }
-        );
-
-        sectionsRef.current.forEach(el => observer.observe(el));
-
-        return () => {
-          sectionsRef.current.forEach(el => observer.unobserve(el));
-        };
+        fetchFintechData();
     }, []);
 
-    const addToRefs = el => {
-        if (el && !sectionsRef.current.includes(el)) {
-            sectionsRef.current.push(el);
-        }
-      };
-
-    if (!data) {
+ 
+    if (fintechData.length === 0) {
         return <div>Loading...</div>;
-      }
-
-    // Check if data is not null or undefined
-    if (!Array.isArray(data)) {
-        console.error('Data is not an array:', data);
-        return <div>Error: Data is not in the correct format.</div>;
-      }
+    }
 
     return (
-      <>
-        
-        <article className="industry-para-container">
-          <section className="industry-para-collection">
-          {data.map((item, index) => (
-            <>
-            <div className="para-title-industry" key={index}>
-              <h2 className='title-special'>{item.heading} <span className='bluer'>{item.highlight}</span></h2>
-            </div>
-            <div className="para-desc-industry">
-              {item.paragraph}
-            </div>
-            </>
-             ))}
-          </section>
+        <article className='styling-articals'>
+            {fintechData.map((item, index) => (
+                <section className='styling-artical-sections' key={index} >
+                    <div className="para-title-industry">
+                        <h2 className='title-special-new'>{item.headingText} <span className='bluer'>{item.highlighted}</span></h2>
+                    </div>
+                    <div className="para-desc-industry">
+                        {item.paragraphText}
+                    </div>
+                </section>
+            ))}
         </article>
-     
-      </>
     );
 };
+
+// className="industry-para-container"
+// className="industry-para-collection"
 
 export default IndustriesArticles;
