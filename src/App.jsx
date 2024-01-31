@@ -206,7 +206,7 @@ const ProtectedRoute = ({ children }) => {
           <Route path="fin" element={<Fin />} />
           <Route path="ShowFinInfo" element={<ShowInfo />} />
 
-          <Route path="EditFin/:finId" element={<FinEdit />} />
+          <Route path="EditFin/:fintechId" element={<FinEdit />} />
           <Route path="EditJob/:jobId" element={<EditJob />} />
           <Route path="EditBlog/:blogId" element={<EditBlog />} />
           <Route path="EditCase/:caseId" element={<EditCases />} />

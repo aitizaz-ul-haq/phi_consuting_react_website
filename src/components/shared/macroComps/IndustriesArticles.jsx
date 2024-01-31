@@ -5,15 +5,12 @@ const IndustriesArticles = () => {
     const [fintechData, setFintechData] = useState([]);
 
     const simplifyFintechData = (data) => {
-        return data.reduce((acc, entry) => {
-            const simplifiedContent = entry.content.map(item => ({
-                id: entry._id,
-                headingText: item.headingText,
-                highlighted: item.highlighted,
-                paragraphText: item.paragraphText
-            }));
-            return acc.concat(simplifiedContent);
-        }, []);
+        return data.map(entry => ({
+            id: entry._id,
+            headingText: entry.headingText,
+            highlighted: entry.highlighted,
+            paragraphText: entry.paragraphText
+        }));
     };
 
     const fetchFintechData = async () => {
