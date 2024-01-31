@@ -12,11 +12,11 @@ const layout = {
 const EditFinInfo = () => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
-  const { id } = useParams();
+  const { infoId } = useParams();
 
   useEffect(() => {
-    if (id) {
-      axios.get(`http://localhost:3000/fintechinfo/${id}`)
+    if (infoId) {
+      axios.get(`http://localhost:3000/fintechinfo/${infoId}`)
         .then(response => {
           const data = response.data;
           const formData = data.sections.reduce((acc, section, index) => {
@@ -31,7 +31,7 @@ const EditFinInfo = () => {
           message.error('Error fetching data for editing');
         });
     }
-  }, [id, form]);
+  }, [infoId, form]);
 
   const onFinish = async (values) => {
     const updatedSections = Object.keys(values).reduce((acc, key) => {
@@ -48,9 +48,9 @@ const EditFinInfo = () => {
     const dataToPut = { sections: updatedSections };
 
     try {
-      await axios.put(`http://localhost:3000/fintechinfo/${id}`, dataToPut);
+      await axios.put(`http://localhost:3000/fintechinfo/${infoId}`, dataToPut);
       message.success('Fintech info entry updated successfully');
-      navigate('/dashboard/fin');
+      navigate('/dashboard/ShowFinInfo');
     } catch (error) {
       console.error('Error updating data:', error);
       message.error('An error occurred while updating the fintech info entry');

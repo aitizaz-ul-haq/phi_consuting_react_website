@@ -45,12 +45,12 @@ import Cases from './pages/dashboard/Cases';
 import AddCases from './pages/dashboard/AddCases';
 import './assets/css/styles.css';
 
-import AddFinCont from './pages/dashboard/AddFinCont';
+import AddFinCont from './pages/dashboard/industriesdash/Fintech Dash/AddFinCont';
 import Fin from './pages/dashboard/Fin';
-import FinEdit from './pages/dashboard/FinEdit';
-import AddFinInfo from './pages/dashboard/AddFinInfo';
-import ShowInfo from './pages/dashboard/ShowInfo';
-import EditFinInfo from './pages/dashboard/EditFinInfo';
+import FinEdit from './pages/dashboard/industriesdash/Fintech Dash/FinEdit';
+import AddFinInfo from './pages/dashboard/industriesdash/Fintech Dash/Fintechinfo/AddFinInfo';
+import ShowInfo from './pages/dashboard/industriesdash/Fintech Dash/Fintechinfo/ShowInfo';
+import EditFinInfo from './pages/dashboard/industriesdash/Fintech Dash/Fintechinfo/EditFinInfo';
 import Value from './components/view_pages/value';
 
 const App = () => {
@@ -210,7 +210,7 @@ const ProtectedRoute = ({ children }) => {
           <Route path="EditJob/:jobId" element={<EditJob />} />
           <Route path="EditBlog/:blogId" element={<EditBlog />} />
           <Route path="EditCase/:caseId" element={<EditCases />} />
-          <Route path="EditFinInfo/:fininfoId" element={<EditFinInfo />} />
+          <Route path="EditFinInfo/:infoId" element={<EditFinInfo />} />
         </Route>
 
         

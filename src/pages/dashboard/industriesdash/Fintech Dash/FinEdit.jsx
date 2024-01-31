@@ -43,7 +43,7 @@ const FinEdit = () => {
   };
 
   if (redirectToCases) {
-    return <Navigate to="/dashboard/Cases" />;
+    return <Navigate to="/dashboard/fin" />;
   }
 
   return (
