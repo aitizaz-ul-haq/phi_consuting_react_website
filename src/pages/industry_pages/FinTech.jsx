@@ -38,7 +38,7 @@ import dobox from "../../assets/img/api_images/digitalocean-square.png";
 import atobproduct from "../../assets/img/api_images/atob-card.png"; 
 import truckxproduct from "../../assets/img/api_images/truckx-case.png";
 import palletproduct from "../../assets/img/api_images/pallet.png";
-import solarproduct from "../../assets/img/api_images/solar_one.webp";
+import solarproduct from "../../assets/img/api_images/solar_one.webp";     
 import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
@@ -47,7 +47,14 @@ import IndustriesArticles from '../../components/shared/macroComps/IndustriesArt
 
 
 const FinTech = () => {
-  const [fintechData, setFintechData] = useState([]);
+  const [sectionOneTitle, setSectionOneTitle] = useState('');
+  const [sectionOneParagraph, setSectionOneParagraph] = useState('');
+  const [sectionTwoTitle, setSectionTwoTitle] = useState('');
+  const [sectionTwoParagraph, setSectionTwoParagraph] = useState('');
+  const [sectionThreeTitle, setSectionThreeTitle] = useState('');
+  const [sectionThreeParagraph, setSectionThreeParagraph] = useState('');
+  const [sectionFourTitle, setSectionFourTitle] = useState('');
+  const [sectionFourParagraph, setSectionFourParagraph] = useState('');
   // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
   // const testiRef = useRef(null);
 
@@ -103,8 +110,34 @@ const FinTech = () => {
 //   fetchFintechData();
 // }, []);
 
+useEffect(() => {
+  const fetchFintechInfo = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/fintechinfo');
+      // Assuming the first element of the array has the sections
+      const sections = response.data[0].sections;
 
-  
+      if (sections.length >= 2) {
+        // Update state variables based on your data structure
+        setSectionOneTitle(sections[0].title);
+        setSectionOneParagraph(sections[0].paragraph);
+        setSectionTwoTitle(sections[1].title);
+        setSectionTwoParagraph(sections[1].paragraph);
+        setSectionThreeTitle(sections[2].title);
+        setSectionThreeParagraph(sections[2].paragraph);
+        setSectionFourTitle(sections[3].title);
+        setSectionFourParagraph(sections[3].paragraph);
+        // ... set more states for other sections ...
+      }
+    } catch (error) {
+      console.error('Error fetching fintech info:', error);
+      // Handle the error appropriately
+    }
+  };
+
+  fetchFintechInfo();
+}, []);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -121,9 +154,6 @@ const FinTech = () => {
     return () => observer.disconnect();
   }, []);
 
-
-  
-  
   // useEffect(() => {
   //   const observer = new IntersectionObserver(
   //     (entries) => {
@@ -249,9 +279,7 @@ useEffect(() => {
   };
 }, []);
 
-
   const toggleDarkMode = () => setDarkMode(!darkMode);
-
   const scrollToTop = () => {
     window.scrollTo({
         top: 0,
@@ -259,11 +287,7 @@ useEffect(() => {
     });
 };
 
-
-
 useScrollToTop();
-
-  
     return (
         <>
 
@@ -381,10 +405,10 @@ useScrollToTop();
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Industry Expertise
+                  {sectionOneTitle}
                   </h2>
                   <p class="overlay-desc">
-                  Our team comprises industry veterans who understand the nuances of FinTech startups.
+                  {sectionOneParagraph}
                   </p>
                 </div>
               </div>
@@ -394,10 +418,10 @@ useScrollToTop();
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Customized Solutions
+                  {sectionTwoTitle}
                   </h2>
                   <p class="overlay-desc">
-                  We don’t believe in one-size-fits-all. Our solutions are tailored to address your unique challenges and goals.
+                  {sectionTwoParagraph}
                   </p>
                 </div>
               </div>
@@ -408,9 +432,9 @@ useScrollToTop();
               <div class="overlay-container three-why">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Proven Track Record</h2>
+                  <h2 class="overlay-heading">{sectionThreeTitle}</h2>
                   <p class="overlay-desc">
-                  We've helped numerous startups in the FinTech sector achieve scalable growth and financial efficiency.
+                  {sectionThreeParagraph}
                   </p>
                 </div>
               </div>
@@ -420,31 +444,15 @@ useScrollToTop();
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Long-Term Partnership
+                  {sectionFourTitle}
                   </h2>
                   <p class="overlay-desc">
-                  We're committed to being your trusted advisors, supporting you at every stage of your journey.
+                  {sectionFourParagraph}
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          {/* <div class="insights-bundle">
-            <div class="left-section-insights">
-              <div class="overlay-container five-why">
-                <div class="overlay"></div>
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  Results-Driven
-                  </h2>
-                  <p class="overlay-desc">
-                  We measure our success by your success. Our commitment is to deliver tangible results that propel your startup to new heights.
-                  </p>
-                </div>
-              </div>
-            </div>
-           
-          </div> */}
         </div>
       </article>
 
