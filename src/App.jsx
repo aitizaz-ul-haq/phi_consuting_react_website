@@ -46,12 +46,18 @@ import AddCases from './pages/dashboard/AddCases';
 import './assets/css/styles.css';
 
 import AddFinCont from './pages/dashboard/industriesdash/Fintech Dash/AddFinCont';
-import Fin from './pages/dashboard/Fin';
+import Fin from './pages/dashboard/industriesdash/Fintech Dash/Fin';
 import FinEdit from './pages/dashboard/industriesdash/Fintech Dash/FinEdit';
 import AddFinInfo from './pages/dashboard/industriesdash/Fintech Dash/Fintechinfo/AddFinInfo';
 import ShowInfo from './pages/dashboard/industriesdash/Fintech Dash/Fintechinfo/ShowInfo';
 import EditFinInfo from './pages/dashboard/industriesdash/Fintech Dash/Fintechinfo/EditFinInfo';
 import Value from './components/view_pages/value';
+
+import Iot from './pages/dashboard/industriesdash/Iot Dash/Iot';
+import ShowIotInfo from './pages/dashboard/industriesdash/Iot Dash/Iotinfo/ShowIotInfo';
+
+
+
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -194,27 +200,38 @@ const ProtectedRoute = ({ children }) => {
       }>
           <Route index element={<Navigate replace to="/dashboard/Jobs" />} />
 
-          <Route path="AddJobs" element={<AddJobs />} />
+          <Route path="AddJobs" element={<AddJobs />} />  
           <Route path="AddBlogs" element={<AddBlogs />} />
           <Route path="AddCases" element={<AddCases />} />
+          {/* ----------------- */}
           <Route path="AddFin" element={<AddFinCont />} />
           <Route path="AddFinInfo" element={<AddFinInfo />} />
+            {/* ----------------- */}
+          <Route path="AddIot" element={<AddIotCont />} />
+          <Route path="AddIotInfo" element={<AddIotInfo />} />
 
           <Route path="Jobs" element={<Jobs />} />
           <Route path="Blogs" element={<Blogs />} />
           <Route path="Cases" element={<Cases />} />
-          <Route path="fin" element={<Fin />} />
-          <Route path="ShowFinInfo" element={<ShowInfo />} />
 
-          <Route path="EditFin/:fintechId" element={<FinEdit />} />
+            {/* ----------------- */}
+          <Route path="fin" element={<Fin />} />
+          <Route path="iot" element={<Iot />} />
+
+            {/* ----------------- */}
+          <Route path="ShowFinInfo" element={<ShowInfo />} />
+          <Route path="ShowIotInfo" element={<ShowIotInfo />} />
+
+          
           <Route path="EditJob/:jobId" element={<EditJob />} />
           <Route path="EditBlog/:blogId" element={<EditBlog />} />
           <Route path="EditCase/:caseId" element={<EditCases />} />
           <Route path="EditFinInfo/:infoId" element={<EditFinInfo />} />
+          <Route path="EditFin/:fintechId" element={<FinEdit />} />
+          <Route path="EditFinInfo/:infoId" element={<EditFinInfo />} />
+          <Route path="EditFin/:fintechId" element={<FinEdit />} />
         </Route>
 
-        
-       
       </Routes>
     </Router>
   );

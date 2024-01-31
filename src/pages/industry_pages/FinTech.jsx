@@ -55,17 +55,7 @@ const FinTech = () => {
   const [sectionThreeParagraph, setSectionThreeParagraph] = useState('');
   const [sectionFourTitle, setSectionFourTitle] = useState('');
   const [sectionFourParagraph, setSectionFourParagraph] = useState('');
-  // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
-  // const testiRef = useRef(null);
 
-  // const [isVisible, setIsVisible] = useState(false);
-  // const containerRef = useRef(null);
-
-  // const [isVisibleAch, setIsVisibleAch] = useState(false);
-  // const achRef = useRef(null);
-
-  // const [isVisiblecard, setIsVisiblecard] = useState(false);
-  // const cardsRef = useRef(null);
 
   const [processNewVisible, setProcessNewVisible] = useState(false);
   const processNewRef = useRef(null);

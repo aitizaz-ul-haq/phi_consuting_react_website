@@ -7,6 +7,7 @@ const Sidebar = () => {
   const [dropdown2, setDropdown2] = useState(false);
   const [dropdown3, setDropdown3] = useState(false);
   const [dropdown4, setDropdown4] = useState(false);
+  const [dropdown5, setDropdown5] = useState(false);
 
   return (
     <div className="sidebar">
@@ -51,7 +52,17 @@ const Sidebar = () => {
         </div>
         )}
       </div>
-      
+      <div>
+        <button className='dash-options' onClick={() => setDropdown5(!dropdown5)}>Iot Content</button>
+        {dropdown4 && (
+          <div className='list-container'>
+          <Link className='list-elements-dash' to="/dashboard/fin">Iot</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddFin">Add Content</Link>
+          <Link className='list-elements-dash' to="/dashboard/ShowFinInfo">Show Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddFinInfo">Add Info</Link>
+        </div>
+        )}
+      </div>
     </div>
   );
 };
