@@ -11,6 +11,7 @@ const Sidebar = () => {
   const [dropdown6, setDropdown6] = useState(false);
   const [dropdown7, setDropdown7] = useState(false);
   const [dropdown8, setDropdown8] = useState(false);
+  const [dropdown9, setDropdown9] = useState(false);
 
   return (
     <div className="sidebar">
@@ -93,6 +94,17 @@ const Sidebar = () => {
         {dropdown8 && (
           <div className='list-container'>
           <Link className='list-elements-dash' to="/dashboard/cloud">Cloud</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddCloud">Add Content</Link>
+          <Link className='list-elements-dash' to="/dashboard/ShowCloudInfo">Show Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddCloud">Add Info</Link>
+        </div>
+        )}
+      </div>
+      <div>
+        <button className='dash-options' onClick={() => setDropdown9(!dropdown9)}>Iaas Content</button>
+        {dropdown9 && (
+          <div className='list-container'>
+          <Link className='list-elements-dash' to="/dashboard/cloud">IaaS</Link>
           <Link className='list-elements-dash' to="/dashboard/AddCloud">Add Content</Link>
           <Link className='list-elements-dash' to="/dashboard/ShowCloudInfo">Show Info</Link>
           <Link className='list-elements-dash' to="/dashboard/AddCloud">Add Info</Link>
