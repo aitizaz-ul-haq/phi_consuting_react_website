@@ -13859,7 +13859,18 @@ display: none;
         align-items: center;
         padding:8rem;
       }
-
+.Dash-Heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-family: var(--FF-PHI);
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #0056b3;
+}
       /* Sidebar.css */
 
 .sidebar {
@@ -13874,19 +13885,23 @@ display: none;
   }
   
   .sidebar button {
-    background-color: #007bff;
+    background-color: var(--LIGHT-PHI-BLUE);
     color: white;
     padding: 10px 15px;
     border: none;
     text-align: left;
     width: 100%;
     font-size: 16px;
+    font-weight: 300;
     cursor: pointer;
     transition: background-color 0.3s;
+    color: var(--DARK-PHI-BLUE);
   }
   
   .sidebar button:hover {
     background-color: #0056b3;
+    color: var(--APPLE-GRAY);
+    font-weight: 300;
   }
   
   .sidebar div {
@@ -14068,8 +14083,9 @@ display: none;
 
   .list-elements-dash {
     text-decoration: none;
-    font-size: 22px;
+    font-size: 19px;
     font-weight: 100;
+    /* background-color: #0056b3; */
   }
 
   .list-elements-dash:hover,

@@ -15,6 +15,10 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar">
+      <hr />
+      <div>
+        <h4 className='Dash-Heading'>Posts</h4>
+      </div>
       <div>
         <button className='dash-options' onClick={() => setDropdown1(!dropdown1)}>Job Postings</button>
         {dropdown1 && (
@@ -25,7 +29,7 @@ const Sidebar = () => {
         )}
       </div>
       <div>
-        <button className='dash-options' onClick={() => setDropdown2(!dropdown2)}>Blogs</button>
+        <button className='dash-options' onClick={() => setDropdown2(!dropdown2)}>Blog Postings</button>
         {dropdown2 && (
           <div className='list-container'>
             <Link className='list-elements-dash' to="/dashboard/Blogs">Blogs</Link>
@@ -34,7 +38,7 @@ const Sidebar = () => {
         )}
       </div>
       <div>
-        <button className='dash-options' onClick={() => setDropdown3(!dropdown3)}>Case Studies</button>
+        <button className='dash-options' onClick={() => setDropdown3(!dropdown3)}>Case Study Postings</button>
         {dropdown3 && (
           <div className='list-container'>
           <Link className='list-elements-dash' to="/dashboard/Cases">Cases</Link>
@@ -44,6 +48,9 @@ const Sidebar = () => {
       </div>
       <div>
         <hr />
+        <div>
+        <h4 className='Dash-Heading'>Industries Content</h4>
+      </div>
       </div>
       <div>
         <button className='dash-options' onClick={() => setDropdown4(!dropdown4)}>Fintech Content</button>
@@ -111,6 +118,7 @@ const Sidebar = () => {
         </div>
         )}
       </div>
+      <hr />
     </div>
   );
 };
