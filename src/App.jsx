@@ -74,6 +74,13 @@ import AddDevInfo from "./pages/dashboard/industriesdash/Dev Dash/Devinfo/AddDev
 import EditDevInfo from "./pages/dashboard/industriesdash/Dev Dash/Devinfo/EditDevInfo";
 import ShowDevInfo from './pages/dashboard/industriesdash/Dev Dash/Devinfo/ShowDevInfo';
 
+import AddCloudCont from "./pages/dashboard/industriesdash/Cloud Dash/AddCloudCont";
+import CloudEdit from "./pages/dashboard/industriesdash/Cloud Dash/CloudEdit";
+import CloudPage from "./pages/dashboard/industriesdash/Cloud Dash/CloudPage";
+import AddCloudInfo from "./pages/dashboard/industriesdash/Cloud Dash/Cloudinfo/AddCloudInfo";
+import EditCloudInfo from "./pages/dashboard/industriesdash/Cloud Dash/Cloudinfo/EditCloudInfo";
+import ShowCloudInfo from './pages/dashboard/industriesdash/Cloud Dash/Cloudinfo/ShowCloudInfo';
+
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -237,6 +244,10 @@ const ProtectedRoute = ({ children }) => {
            {/* ----------------- */}
            <Route path="AddDev" element={<AddDevCont />} />
           <Route path="AddDevInfo" element={<AddDevInfo />} />
+
+           {/* ----------------- */}
+           <Route path="AddCloud" element={<AddCloudCont />} />
+          <Route path="AddCloudInfo" element={<AddCloudInfo />} />
           
 
           {/* ----------------- */}
@@ -244,12 +255,14 @@ const ProtectedRoute = ({ children }) => {
           <Route path="iot" element={<IotPage />} />
           <Route path="saas" element={<SaasPage />} />
           <Route path="dev" element={<DevPage />} />
+          <Route path="cloud" element={<CloudPage />} />
 
           {/* ----------------- */}
           <Route path="ShowFinInfo" element={<ShowInfo />} />
           <Route path="ShowIotInfo" element={<ShowIotInfo />} />
           <Route path="ShowSaasInfo" element={<ShowSaasInfo />} />
           <Route path="ShowDevInfo" element={<ShowDevInfo />} />
+          <Route path="ShowCloudInfo" element={<ShowCloudInfo />} />
 
           
           <Route path="EditJob/:jobId" element={<EditJob />} />
@@ -267,6 +280,9 @@ const ProtectedRoute = ({ children }) => {
 
           <Route path="EditdevInfo/:devinfoId" element={<EditDevInfo />} />
           <Route path="EditDev/:devopsId" element={<DevEdit />} />
+
+          <Route path="EditcloudInfo/:cloudinfoId" element={<EditCloudInfo />} />
+          <Route path="EditCloud/:cloudId" element={<CloudEdit />} />
         </Route>
 
       </Routes>

@@ -15,7 +15,7 @@ const CloudPage = () => {
   const fetchFintechEntries = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/devops');
+      const response = await axios.get('http://localhost:3000/cloud');
       setFintechEntries(response.data.map(entry => ({
         key: entry._id,
         headingText: entry.headingText,
@@ -29,19 +29,19 @@ const CloudPage = () => {
     }
   };
 
-  const handleEdit = (devopsId) => {
-    navigate(`/dashboard/EditDev/${devopsId}`);
+  const handleEdit = (cloudId) => {
+    navigate(`/dashboard/EditCloud/${cloudId}`);
   };
 
-  const handleDelete = async (devopsId) => {
+  const handleDelete = async (cloudId) => {
     setIsLoading(true);
     try {
-      await axios.delete(`http://localhost:3000/devops/${devopsId}`);
-      message.success('devops entry deleted successfully');
+      await axios.delete(`http://localhost:3000/cloud/${cloudId}`);
+      message.success('cloud entry deleted successfully');
       fetchFintechEntries();
     } catch (error) {
-      message.error('Error deleting devops entry');
-      console.error('Error deleting devops entry:', error);
+      message.error('Error deleting cloud entry');
+      console.error('Error deleting cloud entry:', error);
     }
     setIsLoading(false);
   };

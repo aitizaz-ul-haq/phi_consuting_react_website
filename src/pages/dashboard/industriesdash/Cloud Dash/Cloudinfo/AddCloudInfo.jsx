@@ -27,17 +27,17 @@ const AddCloudInfo = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:3000/devinfo', dataToPost);
-      message.success('devinfo info entry created successfully');
+      const response = await axios.post('http://localhost:3000/cloudinfo', dataToPost);
+      message.success('cloudinfo info entry created successfully');
       setRedirectToCases(true);
     } catch (error) {
       console.error('Error posting data:', error);
-      message.error('An error occurred while adding the devinfo info entry');
+      message.error('An error occurred while adding the cloudinfo info entry');
     }
   };
 
   if (redirectToCases) {
-    return <Navigate to="/dashboard/ShowDevInfo" />;
+    return <Navigate to="/dashboard/ShowCloudInfo" />;
   }
     return(
         <div className="form-container-dash">

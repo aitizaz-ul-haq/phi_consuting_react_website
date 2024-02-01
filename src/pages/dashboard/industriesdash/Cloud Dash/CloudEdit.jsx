@@ -13,14 +13,14 @@ const CloudEdit = () => {
 
     const [form] = Form.useForm();
   const [redirectToCases, setRedirectToCases] = useState(false);
-  const { devopsId } = useParams(); // Get the fintech ID from the URL
+  const { cloudId } = useParams(); // Get the fintech ID from the URL
 
-  console.log(`id `, devopsId);
+  console.log(`id `, cloudId);
 
   useEffect(() => {
     const fetchFintechEntry = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/devops/${devopsId}`);
+        const response = await axios.get(`http://localhost:3000/cloud/${cloudId}`);
         console.log(response)
         form.setFieldsValue(response.data); // Set form values with the fetched data
       } catch (error) {
@@ -29,22 +29,22 @@ const CloudEdit = () => {
       }
     };
     fetchFintechEntry();
-  }, [devopsId, form]);
+  }, [cloudId, form]);
 
   const onFinish = async (values) => {
     try {
-      const response = await axios.put(`http://localhost:3000/devops/${devopsId}`, values);
+      const response = await axios.put(`http://localhost:3000/cloud/${cloudId}`, values);
       console.log('Response:', response.data);
-      message.success('devops entry updated successfully');
+      message.success('cloud entry updated successfully');
       setRedirectToCases(true);
     } catch (error) {
       console.error('Error updating data:', error);
-      message.error('An error occurred while updating the devops entry');
+      message.error('An error occurred while updating the cloud entry');
     }
   };
 
   if (redirectToCases) {
-    return <Navigate to="/dashboard/dev" />;
+    return <Navigate to="/dashboard/cloud" />;
   }
     return(
         <div className="form-container-dash">

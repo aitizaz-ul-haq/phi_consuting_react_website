@@ -18,18 +18,18 @@ const AddCloudCon = () => {
   
     const onFinish = async (values) => {
       try {
-        const response = await axios.post('http://localhost:3000/devops', values);
+        const response = await axios.post('http://localhost:3000/cloud', values);
         console.log('Response:', response.data);
-        message.success('devops entry created successfully');
+        message.success('cloud entry created successfully');
         setRedirectToCases(true);
       } catch (error) {
         console.error('Error posting data:', error);
-        message.error('An error occurred while adding the devops entry');
+        message.error('An error occurred while adding the cloud entry');
       }
     };
   
     if (redirectToCases) {
-      return <Navigate to="/dashboard/dev" />;
+      return <Navigate to="/dashboard/cloud" />;
     }
   
 
