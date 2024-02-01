@@ -92,9 +92,13 @@ import AddGtm from './pages/dashboard/solutions/GTM Dash/AddGtm';
 import EditGtm from './pages/dashboard/solutions/GTM Dash/EditGtm';
 import GtmPage from './pages/dashboard/solutions/GTM Dash/GtmPage';
 
-import AddHr from './pages/dashboard/solutions/HR Dash/AddHr';
+import AddHr from './pages/dashboard/solutions/HR Dash/AddHrrec';
 import EditHr from './pages/dashboard/solutions/HR Dash/EditHR';
 import HrPage from './pages/dashboard/solutions/HR Dash/HrPage';
+
+import AddInv from './pages/dashboard/solutions/Inv Dash/AddInv';
+import EditInv from './pages/dashboard/solutions/Inv Dash/EditInv';
+import InvPage from './pages/dashboard/solutions/Inv Dash/InvPage';
 
 
 const App = () => {
@@ -274,6 +278,8 @@ const ProtectedRoute = ({ children }) => {
           {/* ----------------- */}
           <Route path="AddGTM" element={<AddGtm />} />
           <Route path="AddHR" element={<AddHr />} />
+          <Route path="AddInv" element={<AddInv />} />
+
 
           {/* ----------------- */}
           <Route path="fin" element={<Fin />} />
@@ -284,6 +290,7 @@ const ProtectedRoute = ({ children }) => {
           <Route path="iaas" element={<IaasPage />} />
           <Route path="gtm" element={<GtmPage />} />
           <Route path="hr" element={<HrPage />} />
+          <Route path="inv" element={<InvPage />} />
 
           {/* ----------------- */}
           <Route path="ShowFinInfo" element={<ShowInfo />} />
@@ -317,6 +324,7 @@ const ProtectedRoute = ({ children }) => {
 
           <Route path="EditGtm/:gtmpageId" element={<EditGtm />} />
           <Route path="EditHr/:hrpageId" element={<EditHr />} />
+          <Route path="EditInv/:invId" element={<EditInv />} />
         </Route>
 
       </Routes>

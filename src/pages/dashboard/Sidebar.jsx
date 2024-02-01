@@ -146,6 +146,16 @@ const Sidebar = () => {
         </div>
         )}
       </div>
+      <div>
+        <button className='dash-options' onClick={() => setDropdown12(!dropdown12)}>Investor Relations Content</button>
+        {dropdown12 && (
+          <div className='list-container'>
+             <Link className='list-elements-dash' to="/dashboard/AddInv">Add Investor</Link>
+            <Link className='list-elements-dash' to="/dashboard/inv">Show Info</Link>
+           
+        </div>
+        )}
+      </div>
     </div>
   );
 };
