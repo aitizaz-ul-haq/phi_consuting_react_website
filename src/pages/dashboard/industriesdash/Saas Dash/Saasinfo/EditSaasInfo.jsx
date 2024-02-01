@@ -13,11 +13,11 @@ const EditSaasInfo = () => {
 
     const [form] = Form.useForm();
     const navigate = useNavigate();
-    const { iotInfoId } = useParams();
+    const { saasinfoId } = useParams();
   
     useEffect(() => {
-      if (iotInfoId) {
-        axios.get(`http://localhost:3000/iotinfo/${iotInfoId}`)
+      if (saasinfoId) {
+        axios.get(`http://localhost:3000/iotinfo/${saasinfoId}`)
           .then(response => {
             const data = response.data;
             const formData = data.sections.reduce((acc, section, index) => {
@@ -32,7 +32,7 @@ const EditSaasInfo = () => {
             message.error('Error fetching data for editing');
           });
       }
-    }, [iotInfoId, form]);
+    }, [saasinfoId, form]);
   
     const onFinish = async (values) => {
       const updatedSections = Object.keys(values).reduce((acc, key) => {
@@ -49,9 +49,9 @@ const EditSaasInfo = () => {
       const dataToPut = { sections: updatedSections };
   
       try {
-        await axios.put(`http://localhost:3000/iotinfo/${iotInfoId}`, dataToPut);
-        message.success('Iotinfo info entry updated successfully');
-        navigate('/dashboard/ShowIotInfo');
+        await axios.put(`http://localhost:3000/saasinfo/${saasinfoId}`, dataToPut);
+        message.success('saasinfo info entry updated successfully');
+        navigate('/dashboard/ShowSaasInfo');
       } catch (error) {
         console.error('Error updating data:', error);
         message.error('An error occurred while updating the Iot info entry');

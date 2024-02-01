@@ -27,17 +27,17 @@ const AddSaasInfo = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:3000/iotinfo', dataToPost);
-      message.success('iotinfo info entry created successfully');
+      const response = await axios.post('http://localhost:3000/saasinfo', dataToPost);
+      message.success('saasinfo info entry created successfully');
       setRedirectToCases(true);
     } catch (error) {
       console.error('Error posting data:', error);
-      message.error('An error occurred while adding the iotinfo info entry');
+      message.error('An error occurred while adding the saasinfo info entry');
     }
   };
 
   if (redirectToCases) {
-    return <Navigate to="/dashboard/ShowIotInfo" />;
+    return <Navigate to="/dashboard/ShowSaasInfo" />;
   }
     return(
         <div className="form-container-dash">

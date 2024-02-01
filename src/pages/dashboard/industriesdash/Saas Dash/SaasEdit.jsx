@@ -13,37 +13,37 @@ const SaasEdit = () => {
 
     const [form] = Form.useForm();
   const [redirectToCases, setRedirectToCases] = useState(false);
-  const { iotId } = useParams(); // Get the fintech ID from the URL
+  const { saasId } = useParams(); // Get the fintech ID from the URL
 
-  console.log(`id we are tryin gto get`, iotId);
+  console.log(`id we are tryin gto get`, saasId);
 
   useEffect(() => {
     const fetchFintechEntry = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/iot/${iotId}`);
+        const response = await axios.get(`http://localhost:3000/saas/${saasId}`);
         form.setFieldsValue(response.data); // Set form values with the fetched data
       } catch (error) {
-        console.error('Error fetching iot entry:', error);
+        console.error('Error fetching saas entry:', error);
         message.error('An error occurred while fetching the iot entry');
       }
     };
     fetchFintechEntry();
-  }, [iotId, form]);
+  }, [saasId, form]);
 
   const onFinish = async (values) => {
     try {
-      const response = await axios.put(`http://localhost:3000/iot/${iotId}`, values);
+      const response = await axios.put(`http://localhost:3000/saas/${saasId}`, values);
       console.log('Response:', response.data);
-      message.success('iot entry updated successfully');
+      message.success('saas entry updated successfully');
       setRedirectToCases(true);
     } catch (error) {
       console.error('Error updating data:', error);
-      message.error('An error occurred while updating the iot entry');
+      message.error('An error occurred while updating the saas entry');
     }
   };
 
   if (redirectToCases) {
-    return <Navigate to="/dashboard/iot" />;
+    return <Navigate to="/dashboard/saas" />;
   }
     return(
         <div className="form-container-dash">

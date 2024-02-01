@@ -60,8 +60,12 @@ import IotEdit from './pages/dashboard/industriesdash/Iot Dash/IotEdit';
 import AddIotInfo from './pages/dashboard/industriesdash/Iot Dash/Iotinfo/AddIotInfo';
 import EditIotInfo from './pages/dashboard/industriesdash/Iot Dash/Iotinfo/EditIotInfo';
 
-
-
+import SaasPage from "./pages/dashboard/industriesdash/Saas Dash/SaasPage";
+import SaasEdit from "./pages/dashboard/industriesdash/Saas Dash/SaasEdit";
+import AddSaasCont from "./pages/dashboard/industriesdash/Saas Dash/AddSaasCont";
+import AddSaasInfo from "./pages/dashboard/industriesdash/Saas Dash/Saasinfo/AddSaasInfo";
+import EditSaasInfo from "./pages/dashboard/industriesdash/Saas Dash/Saasinfo/EditSaasInfo";
+import ShowSaasInfo from "./pages/dashboard/industriesdash/Saas Dash/Saasinfo/ShowSaasInfo";
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -220,18 +224,18 @@ const ProtectedRoute = ({ children }) => {
           <Route path="AddIotInfo" element={<AddIotInfo />} />
 
           {/* ----------------- */}
-          <Route path="AddSaas" element={<AddIotCont />} />
-          <Route path="AddSaasInfo" element={<AddIotInfo />} />
+          <Route path="AddSaas" element={<AddSaasCont />} />
+          <Route path="AddSaasInfo" element={<AddSaasInfo />} />
 
           {/* ----------------- */}
           <Route path="fin" element={<Fin />} />
           <Route path="iot" element={<IotPage />} />
-          <Route path="saas" element={<IotPage />} />
+          <Route path="saas" element={<SaasPage />} />
 
           {/* ----------------- */}
           <Route path="ShowFinInfo" element={<ShowInfo />} />
           <Route path="ShowIotInfo" element={<ShowIotInfo />} />
-          <Route path="ShowSaasInfo" element={<ShowIotInfo />} />
+          <Route path="ShowSaasInfo" element={<ShowSaasInfo />} />
 
           
           <Route path="EditJob/:jobId" element={<EditJob />} />
@@ -241,8 +245,8 @@ const ProtectedRoute = ({ children }) => {
           <Route path="EditFin/:fintechId" element={<FinEdit />} />
           <Route path="EditiotInfo/:iotInfoId" element={<EditIotInfo />} />
           <Route path="EditIot/:iotId" element={<IotEdit />} />
-          <Route path="EditsaasInfo/:saasInfoId" element={<EditIotInfo />} />
-          <Route path="EditSaas/:saasId" element={<IotEdit />} />
+          <Route path="EditsaasInfo/:saasInfoId" element={<EditSaasInfo />} />
+          <Route path="EditSaas/:saasId" element={<SaasEdit />} />
         </Route>
 
       </Routes>

@@ -17,7 +17,7 @@ const ShowSaasInfo = () => {
     const fetchInfoEntries = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get('http://localhost:3000/iotinfo');
+        const response = await axios.get('http://localhost:3000/saasinfo');
         const formattedData = response.data.map(entry => ({
           key: entry._id,
           ...entry.sections.reduce((acc, section, index) => {
@@ -33,14 +33,14 @@ const ShowSaasInfo = () => {
       }
     };
   
-    const handleEdit = (iotInfoId) => {
-      navigate(`/dashboard/EditIotInfo/${iotInfoId}`); 
+    const handleEdit = (saasinfoId) => {
+      navigate(`/dashboard/EditsaasInfo/${saasinfoId}`); 
     };
   
-    const handleDelete = async (iotInfoId) => {
+    const handleDelete = async (saasinfoId) => {
       setIsLoading(true);
       try {
-        await axios.delete(`http://localhost:3000/iotinfo/${iotInfoId}`);
+        await axios.delete(`http://localhost:3000/iotinfo/${saasinfoId}`);
         message.success('Info entry deleted successfully');
         fetchInfoEntries();
       } catch (error) {

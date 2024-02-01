@@ -15,7 +15,7 @@ const SaasPage = () => {
   const fetchFintechEntries = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/iot');
+      const response = await axios.get('http://localhost:3000/saas');
       setFintechEntries(response.data.map(entry => ({
         key: entry._id,
         headingText: entry.headingText,
@@ -29,19 +29,19 @@ const SaasPage = () => {
     }
   };
 
-  const handleEdit = (iotId) => {
-    navigate(`/dashboard/EditIot/${iotId}`);
+  const handleEdit = (saasId) => {
+    navigate(`/dashboard/EditSaas/${saasId}`);
   };
 
-  const handleDelete = async (iotId) => {
+  const handleDelete = async (saasId) => {
     setIsLoading(true);
     try {
-      await axios.delete(`http://localhost:3000/iot/${iotId}`);
-      message.success('iot entry deleted successfully');
+      await axios.delete(`http://localhost:3000/saas/${saasId}`);
+      message.success('saas entry deleted successfully');
       fetchFintechEntries();
     } catch (error) {
-      message.error('Error deleting iot entry');
-      console.error('Error deleting iot entry:', error);
+      message.error('Error deleting saas entry');
+      console.error('Error deleting saas entry:', error);
     }
     setIsLoading(false);
   };

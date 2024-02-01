@@ -18,18 +18,18 @@ const AddSaasCont = () => {
   
     const onFinish = async (values) => {
       try {
-        const response = await axios.post('http://localhost:3000/iot', values);
+        const response = await axios.post('http://localhost:3000/saas', values);
         console.log('Response:', response.data);
-        message.success('Iot entry created successfully');
+        message.success('saas entry created successfully');
         setRedirectToCases(true);
       } catch (error) {
         console.error('Error posting data:', error);
-        message.error('An error occurred while adding the Iot entry');
+        message.error('An error occurred while adding the saas entry');
       }
     };
   
     if (redirectToCases) {
-      return <Navigate to="/dashboard/Iot" />;
+      return <Navigate to="/dashboard/saas" />;
     }
   
 
