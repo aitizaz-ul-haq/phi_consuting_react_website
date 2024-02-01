@@ -306,7 +306,7 @@ const ProtectedRoute = ({ children }) => {
           <Route path="EditiaasInfo/:iaasinfoId" element={<EditIaasInfo />} />
           <Route path="EditIaas/:iaasId" element={<IaasEdit />} />
 
-          <Route path="EditGtm/:gtmId" element={<EditGtm />} />
+          <Route path="EditGtm/:gtmpageId" element={<EditGtm />} />
         </Route>
 
       </Routes>

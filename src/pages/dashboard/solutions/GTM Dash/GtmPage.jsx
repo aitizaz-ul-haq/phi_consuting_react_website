@@ -32,19 +32,19 @@ const GtnPage = () => {
     }
   };
 
-  const handleEdit = (cloudId) => {
-    navigate(`/dashboard/EditCloud/${cloudId}`);
+  const handleEdit = (gtmpageId) => {
+    navigate(`/dashboard/EditGtm/${gtmpageId}`);
   };
 
-  const handleDelete = async (cloudId) => {
+  const handleDelete = async (gtmpageId) => {
     setIsLoading(true);
     try {
-      await axios.delete(`http://localhost:3000/cloud/${cloudId}`);
-      message.success('Cloud entry deleted successfully');
+      await axios.delete(`http://localhost:3000/gtmpage/${gtmpageId}`);
+      message.success('gtmpage entry deleted successfully');
       fetchCloudEntries();
     } catch (error) {
-      message.error('Error deleting cloud entry');
-      console.error('Error deleting cloud entry:', error);
+      message.error('Error deleting gtmpage entry');
+      console.error('Error deleting gtmpage entry:', error);
     }
     setIsLoading(false);
   };
