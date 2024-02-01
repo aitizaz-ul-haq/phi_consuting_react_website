@@ -96,7 +96,7 @@ const Sidebar = () => {
           <Link className='list-elements-dash' to="/dashboard/cloud">Cloud</Link>
           <Link className='list-elements-dash' to="/dashboard/AddCloud">Add Content</Link>
           <Link className='list-elements-dash' to="/dashboard/ShowCloudInfo">Show Info</Link>
-          <Link className='list-elements-dash' to="/dashboard/AddCloud">Add Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddDevInfo">Add Info</Link>
         </div>
         )}
       </div>
@@ -104,10 +104,10 @@ const Sidebar = () => {
         <button className='dash-options' onClick={() => setDropdown9(!dropdown9)}>Iaas Content</button>
         {dropdown9 && (
           <div className='list-container'>
-          <Link className='list-elements-dash' to="/dashboard/cloud">IaaS</Link>
-          <Link className='list-elements-dash' to="/dashboard/AddCloud">Add Content</Link>
-          <Link className='list-elements-dash' to="/dashboard/ShowCloudInfo">Show Info</Link>
-          <Link className='list-elements-dash' to="/dashboard/AddCloud">Add Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/iaas">IaaS</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddIaas">Add Content</Link>
+          <Link className='list-elements-dash' to="/dashboard/ShowIaasInfo">Show Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddIaasInfo">Add Info</Link>
         </div>
         )}
       </div>
