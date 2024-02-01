@@ -92,6 +92,9 @@ import AddGtm from './pages/dashboard/solutions/GTM Dash/AddGtm';
 import EditGtm from './pages/dashboard/solutions/GTM Dash/EditGtm';
 import GtmPage from './pages/dashboard/solutions/GTM Dash/GtmPage';
 
+import AddHr from './pages/dashboard/solutions/HR Dash/HrPage';
+import EditHr from './pages/dashboard/solutions/HR Dash/EditHr';
+
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -277,6 +280,7 @@ const ProtectedRoute = ({ children }) => {
           <Route path="cloud" element={<CloudPage />} />
           <Route path="iaas" element={<IaasPage />} />
           <Route path="gtm" element={<GtmPage />} />
+          {/* <Route path="gtm" element={<GtmPage />} /> */}
 
           {/* ----------------- */}
           <Route path="ShowFinInfo" element={<ShowInfo />} />
