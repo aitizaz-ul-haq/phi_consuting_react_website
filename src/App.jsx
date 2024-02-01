@@ -225,6 +225,8 @@ const ProtectedRoute = ({ children }) => {
          {/* Separate route for login */}
          <Route path="/phi-remote-login" element={<Login />} />
 
+         {/* <Route path="LandingPage" element={<EditGtm />} /> */}
+
         {/* Dashboard and its subpages */}
         <Route path="/dashboard" element={
         <ProtectedRoute>
