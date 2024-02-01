@@ -15,6 +15,15 @@
         "featuresHeadingThree":" ",
         "featuresDescriptionThree": " ",
 
+        "featuresHeadingFour":" ",
+        "featuresDescriptionFour": " ",
+
+        "featuresHeadingFive":" ",
+        "featuresDescriptionFive": " ",
+
+        "featuresHeadingSix":" ",
+        "featuresDescriptionSix": " ",
+
         "processDesOne":" ",
         "processDesTwo":" ",
         "processDesThree":" ",
@@ -37,7 +46,13 @@
         "whyBoxThreeDescription":" ",
 
         "whyBoxFourHeading":" ",
-        "whyBoxFourDescription":" "
+        "whyBoxFourDescription":" ",
+
+        "whyBoxFiveHeading":" ",
+        "whyBoxFiveDescription":" ",
+
+        "whyBoxSixHeading":" ",
+        "whyBoxSixDescription":" "
 
     }
 ]

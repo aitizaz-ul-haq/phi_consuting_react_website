@@ -3,29 +3,31 @@ import { Table, Space, Button, Spin, message } from 'antd';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const CloudPage = () => {
-  const [fintechEntries, setFintechEntries] = useState([]);
+const GtnPage = () => {
+  const [cloudEntries, setCloudEntries] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetchFintechEntries();
+    fetchCloudEntries();
   }, []);
 
-  const fetchFintechEntries = async () => {
+  const fetchCloudEntries = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/cloud');
-      setFintechEntries(response.data.map(entry => ({
+      const response = await axios.get('http://localhost:3000/gtmpage');
+      setCloudEntries(response.data.map(entry => ({
         key: entry._id,
-        headingText: entry.headingText,
-        highlighted: entry.highlighted,
-        paragraphText: entry.paragraphText,
+        bannerHeading: entry.bannerHeading,
+        bannerDescription: entry.bannerDescription,
+        featuresMainHeading: entry.featuresMainHeading,
+        featuresMainDescription: entry.featuresMainDescription,
+        featuresHeadingOne: entry.featuresHeadingOne,
+        featuresDescriptionOne: entry.featuresDescriptionOne,
       })));
-      console.log(`hello data`, response.data);
       setIsLoading(false);
     } catch (error) {
-      console.error('Error fetching fintech entries:', error);
+      console.error('Error fetching cloud entries:', error);
       setIsLoading(false);
     }
   };
@@ -38,8 +40,8 @@ const CloudPage = () => {
     setIsLoading(true);
     try {
       await axios.delete(`http://localhost:3000/cloud/${cloudId}`);
-      message.success('cloud entry deleted successfully');
-      fetchFintechEntries();
+      message.success('Cloud entry deleted successfully');
+      fetchCloudEntries();
     } catch (error) {
       message.error('Error deleting cloud entry');
       console.error('Error deleting cloud entry:', error);
@@ -49,19 +51,29 @@ const CloudPage = () => {
 
   const columns = [
     {
-      title: 'Heading',
-      dataIndex: 'headingText',
-      key: 'headingText',
+      title: 'Banner Heading',
+      dataIndex: 'bannerHeading',
+      key: 'bannerHeading',
     },
     {
-      title: 'Highlighted',
-      dataIndex: 'highlighted',
-      key: 'highlighted',
+      title: 'Banner Description',
+      dataIndex: 'bannerDescription',
+      key: 'bannerDescription',
     },
     {
-      title: 'Paragraph',
-      dataIndex: 'paragraphText',
-      key: 'paragraphText',
+      title: 'Features Main Heading',
+      dataIndex: 'featuresMainHeading',
+      key: 'featuresMainHeading',
+    },
+    {
+      title: 'Features Main Description',
+      dataIndex: 'featuresMainDescription',
+      key: 'featuresMainDescription',
+    },
+    {
+      title: 'Features Heading One',
+      dataIndex: 'featuresHeadingOne',
+      key: 'featuresHeadingOne',
     },
     {
       title: 'Action',
@@ -77,9 +89,9 @@ const CloudPage = () => {
 
   return (
     <Spin spinning={isLoading} delay={300}>
-      <Table columns={columns} dataSource={fintechEntries} rowKey="key" />
+      <Table columns={columns} dataSource={cloudEntries} rowKey="key" />
     </Spin>
   );
 };
 
-export default CloudPage;
+export default GtnPage;
