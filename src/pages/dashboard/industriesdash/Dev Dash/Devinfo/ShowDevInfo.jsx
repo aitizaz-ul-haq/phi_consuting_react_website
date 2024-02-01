@@ -33,7 +33,7 @@ const ShowDevInfo = () => {
       }
     };
   
-    const handleEdit = (devinfoId) => {
+    const  handleEdit = (devinfoId) => {
       navigate(`/dashboard/EditdevInfo/${devinfoId}`); 
     };          
   

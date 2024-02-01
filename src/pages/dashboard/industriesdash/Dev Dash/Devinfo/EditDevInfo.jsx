@@ -19,7 +19,7 @@ const EditDevInfo = () => {
 
     useEffect(() => {
       if (devinfoId) {
-        axios.get(`http://localhost:3000/saasinfo/${devinfoId}`)
+        axios.get(`http://localhost:3000/devinfo/${devinfoId}`)
           .then(response => {
             const data = response.data;
             const formData = data.sections.reduce((acc, section, index) => {

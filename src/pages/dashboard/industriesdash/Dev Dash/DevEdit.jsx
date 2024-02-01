@@ -44,7 +44,7 @@ const DevEdit = () => {
   };
 
   if (redirectToCases) {
-    return <Navigate to="/dashboard/devops" />;
+    return <Navigate to="/dashboard/dev" />;
   }
     return(
         <div className="form-container-dash">

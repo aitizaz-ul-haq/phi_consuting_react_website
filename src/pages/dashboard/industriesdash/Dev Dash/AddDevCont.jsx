@@ -29,7 +29,7 @@ const AddDevCont = () => {
     };
   
     if (redirectToCases) {
-      return <Navigate to="/dashboard/devops" />;
+      return <Navigate to="/dashboard/dev" />;
     }
   
 

@@ -30,7 +30,7 @@ const DevPage = () => {
   };
 
   const handleEdit = (devopsId) => {
-    navigate(`/dashboard/EditSaas/${devopsId}`);
+    navigate(`/dashboard/EditDev/${devopsId}`);
   };
 
   const handleDelete = async (devopsId) => {

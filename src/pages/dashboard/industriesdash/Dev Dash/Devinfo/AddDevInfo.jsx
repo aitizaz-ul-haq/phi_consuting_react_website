@@ -37,7 +37,7 @@ const AddDevInfo = () => {
   };
 
   if (redirectToCases) {
-    return <Navigate to="/dashboard/ShowSaasInfo" />;
+    return <Navigate to="/dashboard/ShowDevInfo" />;
   }
     return(
         <div className="form-container-dash">

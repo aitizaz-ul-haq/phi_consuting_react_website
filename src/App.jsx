@@ -71,7 +71,7 @@ import AddDevCont from "./pages/dashboard/industriesdash/Dev Dash/AddDevCont";
 import DevEdit from "./pages/dashboard/industriesdash/Dev Dash/DevEdit";
 import DevPage from "./pages/dashboard/industriesdash/Dev Dash/DevPage";
 import AddDevInfo from "./pages/dashboard/industriesdash/Dev Dash/Devinfo/AddDevInfo";
-import EditDevInfo from "./pages/dashboard/industriesdash/Dev Dash/Devinfo/ShowDevInfo";
+import EditDevInfo from "./pages/dashboard/industriesdash/Dev Dash/Devinfo/EditDevInfo";
 import ShowDevInfo from './pages/dashboard/industriesdash/Dev Dash/Devinfo/ShowDevInfo';
 
 const App = () => {
@@ -265,7 +265,7 @@ const ProtectedRoute = ({ children }) => {
           <Route path="EditsaasInfo/:saasinfoId" element={<EditSaasInfo />} />
           <Route path="EditSaas/:saasId" element={<SaasEdit />} />
 
-          <Route path="EditdevInfo/:devopsinfoId" element={<EditDevInfo />} />
+          <Route path="EditdevInfo/:devinfoId" element={<EditDevInfo />} />
           <Route path="EditDev/:devopsId" element={<DevEdit />} />
         </Route>
 
