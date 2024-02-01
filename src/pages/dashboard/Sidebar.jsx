@@ -156,6 +156,16 @@ const Sidebar = () => {
         </div>
         )}
       </div>
+      <div>
+        <button className='dash-options' onClick={() => setDropdown13(!dropdown13)}>Financial Content</button>
+        {dropdown13 && (
+          <div className='list-container'>
+             <Link className='list-elements-dash' to="/dashboard/AddFinc">Add Financial</Link>
+            <Link className='list-elements-dash' to="/dashboard/fint">Show Info</Link>
+           
+        </div>
+        )}
+      </div>
     </div>
   );
 };

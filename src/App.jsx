@@ -100,6 +100,9 @@ import AddInv from './pages/dashboard/solutions/Inv Dash/AddInv';
 import EditInv from './pages/dashboard/solutions/Inv Dash/EditInv';
 import InvPage from './pages/dashboard/solutions/Inv Dash/InvPage';
 
+import AddFin from './pages/dashboard/solutions/Fin Dash/AddFin';
+import EditFin from './pages/dashboard/solutions/Fin Dash/EditFin';
+import FinPage from './pages/dashboard/solutions/Fin Dash/FinPage';
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -279,6 +282,7 @@ const ProtectedRoute = ({ children }) => {
           <Route path="AddGTM" element={<AddGtm />} />
           <Route path="AddHR" element={<AddHr />} />
           <Route path="AddInv" element={<AddInv />} />
+          <Route path="AddFinc" element={<AddFin />} />
 
 
           {/* ----------------- */}
@@ -291,6 +295,7 @@ const ProtectedRoute = ({ children }) => {
           <Route path="gtm" element={<GtmPage />} />
           <Route path="hr" element={<HrPage />} />
           <Route path="inv" element={<InvPage />} />
+          <Route path="fint" element={<FinPage />} />
 
           {/* ----------------- */}
           <Route path="ShowFinInfo" element={<ShowInfo />} />
@@ -325,6 +330,7 @@ const ProtectedRoute = ({ children }) => {
           <Route path="EditGtm/:gtmpageId" element={<EditGtm />} />
           <Route path="EditHr/:hrpageId" element={<EditHr />} />
           <Route path="EditInv/:invId" element={<EditInv />} />
+          <Route path="EditFino/:finId" element={<EditFin />} />
         </Route>
 
       </Routes>
