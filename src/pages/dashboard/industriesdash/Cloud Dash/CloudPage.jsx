@@ -22,6 +22,7 @@ const CloudPage = () => {
         highlighted: entry.highlighted,
         paragraphText: entry.paragraphText,
       })));
+      console.log(`hello data`, response.data);
       setIsLoading(false);
     } catch (error) {
       console.error('Error fetching fintech entries:', error);
