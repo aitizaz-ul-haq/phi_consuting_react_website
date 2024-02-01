@@ -35,12 +35,12 @@ const ShowSaasInfo = () => {
   
     const handleEdit = (saasinfoId) => {
       navigate(`/dashboard/EditsaasInfo/${saasinfoId}`); 
-    };
+    };          
   
     const handleDelete = async (saasinfoId) => {
       setIsLoading(true);
       try {
-        await axios.delete(`http://localhost:3000/iotinfo/${saasinfoId}`);
+        await axios.delete(`http://localhost:3000/saasinfo/${saasinfoId}`);
         message.success('Info entry deleted successfully');
         fetchInfoEntries();
       } catch (error) {

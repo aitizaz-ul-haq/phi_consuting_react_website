@@ -241,11 +241,14 @@ const ProtectedRoute = ({ children }) => {
           <Route path="EditJob/:jobId" element={<EditJob />} />
           <Route path="EditBlog/:blogId" element={<EditBlog />} />
           <Route path="EditCase/:caseId" element={<EditCases />} />
+
           <Route path="EditFinInfo/:infoId" element={<EditFinInfo />} />
           <Route path="EditFin/:fintechId" element={<FinEdit />} />
+
           <Route path="EditiotInfo/:iotInfoId" element={<EditIotInfo />} />
           <Route path="EditIot/:iotId" element={<IotEdit />} />
-          <Route path="EditsaasInfo/:saasInfoId" element={<EditSaasInfo />} />
+
+          <Route path="EditsaasInfo/:saasinfoId" element={<EditSaasInfo />} />
           <Route path="EditSaas/:saasId" element={<SaasEdit />} />
         </Route>
 

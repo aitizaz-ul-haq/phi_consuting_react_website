@@ -14,10 +14,12 @@ const EditSaasInfo = () => {
     const [form] = Form.useForm();
     const navigate = useNavigate();
     const { saasinfoId } = useParams();
-  
+  console.log(`saas info id`, saasinfoId)
+
+
     useEffect(() => {
       if (saasinfoId) {
-        axios.get(`http://localhost:3000/iotinfo/${saasinfoId}`)
+        axios.get(`http://localhost:3000/saasinfo/${saasinfoId}`)
           .then(response => {
             const data = response.data;
             const formData = data.sections.reduce((acc, section, index) => {
@@ -33,6 +35,8 @@ const EditSaasInfo = () => {
           });
       }
     }, [saasinfoId, form]);
+
+    
   
     const onFinish = async (values) => {
       const updatedSections = Object.keys(values).reduce((acc, key) => {

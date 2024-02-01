@@ -68,10 +68,10 @@ const Sidebar = () => {
         <button className='dash-options' onClick={() => setDropdown6(!dropdown6)}>SaaS Content</button>
         {dropdown6 && (
           <div className='list-container'>
-          <Link className='list-elements-dash' to="/dashboard/iot">SaaS</Link>
-          <Link className='list-elements-dash' to="/dashboard/AddIot">Add Content</Link>
-          <Link className='list-elements-dash' to="/dashboard/ShowIotInfo">Show Info</Link>
-          <Link className='list-elements-dash' to="/dashboard/AddIotInfo">Add Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/saas">SaaS</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddSaas">Add Content</Link>
+          <Link className='list-elements-dash' to="/dashboard/ShowSaasInfo">Show Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddSaasInfo">Add Info</Link>
         </div>
         )}
       </div>

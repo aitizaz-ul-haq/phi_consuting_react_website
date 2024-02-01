@@ -15,12 +15,13 @@ const SaasEdit = () => {
   const [redirectToCases, setRedirectToCases] = useState(false);
   const { saasId } = useParams(); // Get the fintech ID from the URL
 
-  console.log(`id we are tryin gto get`, saasId);
+  console.log(`id `, saasId);
 
   useEffect(() => {
     const fetchFintechEntry = async () => {
       try {
         const response = await axios.get(`http://localhost:3000/saas/${saasId}`);
+        console.log(response)
         form.setFieldsValue(response.data); // Set form values with the fetched data
       } catch (error) {
         console.error('Error fetching saas entry:', error);
