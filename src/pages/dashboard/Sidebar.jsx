@@ -130,9 +130,9 @@ const Sidebar = () => {
         <button className='dash-options' onClick={() => setDropdown10(!dropdown10)}>GTM Content</button>
         {dropdown10 && (
           <div className='list-container'>
+             <Link className='list-elements-dash' to="/dashboard/AddGTM">Add GTM</Link>
             <Link className='list-elements-dash' to="/dashboard/gtm">Show Info</Link>
-            <Link className='list-elements-dash' to="/dashboard/AddGTM">Add GTM</Link>
-            <Link className='list-elements-dash' to="/dashboard/EditGtm">Edit GTM</Link>
+           
         </div>
         )}
       </div>
@@ -140,9 +140,9 @@ const Sidebar = () => {
         <button className='dash-options' onClick={() => setDropdown11(!dropdown11)}>HR & Recruitment Content</button>
         {dropdown11 && (
           <div className='list-container'>
-            <Link className='list-elements-dash' to="/dashboard/gtm">Show Info</Link>
-            <Link className='list-elements-dash' to="/dashboard/AddGTM">Add GTM</Link>
-            <Link className='list-elements-dash' to="/dashboard/EditGtm">Edit GTM</Link>
+             <Link className='list-elements-dash' to="/dashboard/AddHR">Add HR</Link>
+            <Link className='list-elements-dash' to="/dashboard/hr">Show Info</Link>
+           
         </div>
         )}
       </div>

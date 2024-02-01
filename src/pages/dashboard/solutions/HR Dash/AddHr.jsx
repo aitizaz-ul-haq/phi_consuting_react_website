@@ -17,18 +17,18 @@ const AddHr = () => {
   const onFinish = async (values) => {
     console.log('the data submitted', values);
     try {
-      const response = await axios.post('http://localhost:3000/gtmpage', values);
+      const response = await axios.post('http://localhost:3000/hrpage', values);
       console.log('Response:', response.data);
-      message.success('gtmpage entry created successfully');
+      message.success('hrpage entry created successfully');
       setRedirectToCases(true);
     } catch (error) {
       console.error('Error posting data:', error);
-      message.error('An error occurred while adding the gtmpage entry');
+      message.error('An error occurred while adding the hrpage entry');
     }
   };
 
   if (redirectToCases) {
-    return <Navigate to="/dashboard/gtm" />;
+    return <Navigate to="/dashboard/hr" />;
   }
 
   return (

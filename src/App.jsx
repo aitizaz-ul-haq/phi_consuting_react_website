@@ -92,8 +92,10 @@ import AddGtm from './pages/dashboard/solutions/GTM Dash/AddGtm';
 import EditGtm from './pages/dashboard/solutions/GTM Dash/EditGtm';
 import GtmPage from './pages/dashboard/solutions/GTM Dash/GtmPage';
 
-import AddHr from './pages/dashboard/solutions/HR Dash/HrPage';
-import EditHr from './pages/dashboard/solutions/HR Dash/EditHr';
+import AddHr from './pages/dashboard/solutions/HR Dash/AddHr';
+import EditHr from './pages/dashboard/solutions/HR Dash/EditHR';
+import HrPage from './pages/dashboard/solutions/HR Dash/HrPage';
+
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -271,6 +273,7 @@ const ProtectedRoute = ({ children }) => {
 
           {/* ----------------- */}
           <Route path="AddGTM" element={<AddGtm />} />
+          <Route path="AddHR" element={<AddHr />} />
 
           {/* ----------------- */}
           <Route path="fin" element={<Fin />} />
@@ -280,7 +283,7 @@ const ProtectedRoute = ({ children }) => {
           <Route path="cloud" element={<CloudPage />} />
           <Route path="iaas" element={<IaasPage />} />
           <Route path="gtm" element={<GtmPage />} />
-          {/* <Route path="gtm" element={<GtmPage />} /> */}
+          <Route path="hr" element={<HrPage />} />
 
           {/* ----------------- */}
           <Route path="ShowFinInfo" element={<ShowInfo />} />
@@ -313,6 +316,7 @@ const ProtectedRoute = ({ children }) => {
           <Route path="EditIaas/:iaasId" element={<IaasEdit />} />
 
           <Route path="EditGtm/:gtmpageId" element={<EditGtm />} />
+          <Route path="EditHr/:hrpageId" element={<EditHr />} />
         </Route>
 
       </Routes>

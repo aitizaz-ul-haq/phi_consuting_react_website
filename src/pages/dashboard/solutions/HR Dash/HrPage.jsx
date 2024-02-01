@@ -3,7 +3,7 @@ import { Table, Space, Button, Spin, message } from 'antd';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const AddHr = () => {
+const HrPage = () => {
   const [cloudEntries, setCloudEntries] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const AddHr = () => {
   const fetchCloudEntries = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/gtmpage');
+      const response = await axios.get('http://localhost:3000/hrpage');
       setCloudEntries(response.data.map(entry => ({
         key: entry._id,
         bannerHeading: entry.bannerHeading,
@@ -27,24 +27,24 @@ const AddHr = () => {
       })));
       setIsLoading(false);
     } catch (error) {
-      console.error('Error fetching cloud entries:', error);
+      console.error('Error fetching hrpage entries:', error);
       setIsLoading(false);
     }
   };
 
-  const handleEdit = (gtmpageId) => {
-    navigate(`/dashboard/EditGtm/${gtmpageId}`);
+  const handleEdit = (hrpageId) => {
+    navigate(`/dashboard/EditHr/${hrpageId}`);
   };
 
-  const handleDelete = async (gtmpageId) => {
+  const handleDelete = async (hrpageId) => {
     setIsLoading(true);
     try {
-      await axios.delete(`http://localhost:3000/gtmpage/${gtmpageId}`);
-      message.success('gtmpage entry deleted successfully');
+      await axios.delete(`http://localhost:3000/hrpage/${hrpageId}`);
+      message.success('hrpage entry deleted successfully');
       fetchCloudEntries();
     } catch (error) {
-      message.error('Error deleting gtmpage entry');
-      console.error('Error deleting gtmpage entry:', error);
+      message.error('Error deleting hrpage entry');
+      console.error('Error deleting hrpage entry:', error);
     }
     setIsLoading(false);
   };
@@ -94,4 +94,4 @@ const AddHr = () => {
   );
 };
 
-export default AddHr;
+export default HrPage;

@@ -12,12 +12,12 @@ const layout = {
 const EditHr = () => {
   const [form] = Form.useForm();
   const [redirectToCases, setRedirectToCases] = useState(false);
-  const { gtmpageId } = useParams();
+  const { hrpageId } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/gtmpage/${gtmpageId}`);
+        const response = await axios.get(`http://localhost:3000/hrpage/${hrpageId}`);
         form.setFieldsValue(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -26,31 +26,28 @@ const EditHr = () => {
     };
 
     fetchData();
-  }, [gtmpageId, form]);
+  }, [hrpageId, form]);
 
   const onFinish = async (values) => {
     try {
-      await axios.put(`http://localhost:3000/gtmpage/${gtmpageId}`, values);
-      message.success('GTM content updated successfully');
+      await axios.put(`http://localhost:3000/hrpage/${hrpageId}`, values);
+      message.success('hrpage content updated successfully');
       setRedirectToCases(true);
     } catch (error) {
       console.error('Error updating data:', error);
-      message.error('An error occurred while updating the GTM content');
+      message.error('An error occurred while updating the hrpage content');
     }
   };
 
   if (redirectToCases) {
-    return <Navigate to="/dashboard/gtm" />;
+    return <Navigate to="/dashboard/hr" />;
   }
 
   return (
     <div className="form-container-dash">
       <Title level={2}>Edit GTM Content</Title>
       <Form {...layout} form={form} name="edit-gtm-content" onFinish={onFinish}>
-        {/* Add all the form fields as per the provided JSON structure */}
-        {/* ... Add other form items here as per your JSON structure */}
-        
-        {/* Example form items */}
+      
         <Form.Item
           label="Banner Heading"
           name="bannerHeading"
