@@ -15,7 +15,7 @@ const DevPage = () => {
   const fetchFintechEntries = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/saas');
+      const response = await axios.get('http://localhost:3000/devops');
       setFintechEntries(response.data.map(entry => ({
         key: entry._id,
         headingText: entry.headingText,
@@ -29,19 +29,19 @@ const DevPage = () => {
     }
   };
 
-  const handleEdit = (saasId) => {
-    navigate(`/dashboard/EditSaas/${saasId}`);
+  const handleEdit = (devopsId) => {
+    navigate(`/dashboard/EditSaas/${devopsId}`);
   };
 
-  const handleDelete = async (saasId) => {
+  const handleDelete = async (devopsId) => {
     setIsLoading(true);
     try {
-      await axios.delete(`http://localhost:3000/saas/${saasId}`);
-      message.success('saas entry deleted successfully');
+      await axios.delete(`http://localhost:3000/devops/${devopsId}`);
+      message.success('devops entry deleted successfully');
       fetchFintechEntries();
     } catch (error) {
-      message.error('Error deleting saas entry');
-      console.error('Error deleting saas entry:', error);
+      message.error('Error deleting devops entry');
+      console.error('Error deleting devops entry:', error);
     }
     setIsLoading(false);
   };

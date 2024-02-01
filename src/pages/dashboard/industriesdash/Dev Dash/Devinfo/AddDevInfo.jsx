@@ -27,12 +27,12 @@ const AddDevInfo = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:3000/saasinfo', dataToPost);
-      message.success('saasinfo info entry created successfully');
+      const response = await axios.post('http://localhost:3000/devinfo', dataToPost);
+      message.success('devinfo info entry created successfully');
       setRedirectToCases(true);
     } catch (error) {
       console.error('Error posting data:', error);
-      message.error('An error occurred while adding the saasinfo info entry');
+      message.error('An error occurred while adding the devinfo info entry');
     }
   };
 

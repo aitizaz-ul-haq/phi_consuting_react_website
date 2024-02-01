@@ -13,14 +13,14 @@ const DevEdit = () => {
 
     const [form] = Form.useForm();
   const [redirectToCases, setRedirectToCases] = useState(false);
-  const { saasId } = useParams(); // Get the fintech ID from the URL
+  const { devopsId } = useParams(); // Get the fintech ID from the URL
 
-  console.log(`id `, saasId);
+  console.log(`id `, devopsId);
 
   useEffect(() => {
     const fetchFintechEntry = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/saas/${saasId}`);
+        const response = await axios.get(`http://localhost:3000/devops/${devopsId}`);
         console.log(response)
         form.setFieldsValue(response.data); // Set form values with the fetched data
       } catch (error) {
@@ -29,22 +29,22 @@ const DevEdit = () => {
       }
     };
     fetchFintechEntry();
-  }, [saasId, form]);
+  }, [devopsId, form]);
 
   const onFinish = async (values) => {
     try {
-      const response = await axios.put(`http://localhost:3000/saas/${saasId}`, values);
+      const response = await axios.put(`http://localhost:3000/devops/${devopsId}`, values);
       console.log('Response:', response.data);
-      message.success('saas entry updated successfully');
+      message.success('devops entry updated successfully');
       setRedirectToCases(true);
     } catch (error) {
       console.error('Error updating data:', error);
-      message.error('An error occurred while updating the saas entry');
+      message.error('An error occurred while updating the devops entry');
     }
   };
 
   if (redirectToCases) {
-    return <Navigate to="/dashboard/saas" />;
+    return <Navigate to="/dashboard/devops" />;
   }
     return(
         <div className="form-container-dash">

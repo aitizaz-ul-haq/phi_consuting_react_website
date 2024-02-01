@@ -17,7 +17,7 @@ const ShowDevInfo = () => {
     const fetchInfoEntries = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get('http://localhost:3000/saasinfo');
+        const response = await axios.get('http://localhost:3000/devinfo');
         const formattedData = response.data.map(entry => ({
           key: entry._id,
           ...entry.sections.reduce((acc, section, index) => {
@@ -33,15 +33,15 @@ const ShowDevInfo = () => {
       }
     };
   
-    const handleEdit = (saasinfoId) => {
-      navigate(`/dashboard/EditsaasInfo/${saasinfoId}`); 
+    const handleEdit = (devinfoId) => {
+      navigate(`/dashboard/EditdevInfo/${devinfoId}`); 
     };          
   
-    const handleDelete = async (saasinfoId) => {
+    const handleDelete = async (devinfoId) => {
       setIsLoading(true);
       try {
-        await axios.delete(`http://localhost:3000/saasinfo/${saasinfoId}`);
-        message.success('Info entry deleted successfully');
+        await axios.delete(`http://localhost:3000/devinfo/${devinfoId}`);
+        message.success('devinfo entry deleted successfully');
         fetchInfoEntries();
       } catch (error) {
         message.error('Error deleting info entry');

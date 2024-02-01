@@ -18,18 +18,18 @@ const AddDevCont = () => {
   
     const onFinish = async (values) => {
       try {
-        const response = await axios.post('http://localhost:3000/saas', values);
+        const response = await axios.post('http://localhost:3000/devops', values);
         console.log('Response:', response.data);
-        message.success('saas entry created successfully');
+        message.success('devops entry created successfully');
         setRedirectToCases(true);
       } catch (error) {
         console.error('Error posting data:', error);
-        message.error('An error occurred while adding the saas entry');
+        message.error('An error occurred while adding the devops entry');
       }
     };
   
     if (redirectToCases) {
-      return <Navigate to="/dashboard/saas" />;
+      return <Navigate to="/dashboard/devops" />;
     }
   
 

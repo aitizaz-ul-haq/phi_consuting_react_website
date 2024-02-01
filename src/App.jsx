@@ -67,6 +67,13 @@ import AddSaasInfo from "./pages/dashboard/industriesdash/Saas Dash/Saasinfo/Add
 import EditSaasInfo from "./pages/dashboard/industriesdash/Saas Dash/Saasinfo/EditSaasInfo";
 import ShowSaasInfo from "./pages/dashboard/industriesdash/Saas Dash/Saasinfo/ShowSaasInfo";
 
+import AddDevCont from "./pages/dashboard/industriesdash/Dev Dash/AddDevCont";
+import DevEdit from "./pages/dashboard/industriesdash/Dev Dash/DevEdit";
+import DevPage from "./pages/dashboard/industriesdash/Dev Dash/DevPage";
+import AddDevInfo from "./pages/dashboard/industriesdash/Dev Dash/Devinfo/AddDevInfo";
+import EditDevInfo from "./pages/dashboard/industriesdash/Dev Dash/Devinfo/ShowDevInfo";
+import ShowDevInfo from './pages/dashboard/industriesdash/Dev Dash/Devinfo/ShowDevInfo';
+
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -227,15 +234,22 @@ const ProtectedRoute = ({ children }) => {
           <Route path="AddSaas" element={<AddSaasCont />} />
           <Route path="AddSaasInfo" element={<AddSaasInfo />} />
 
+           {/* ----------------- */}
+           <Route path="AddDev" element={<AddDevCont />} />
+          <Route path="AddDevInfo" element={<AddDevInfo />} />
+          
+
           {/* ----------------- */}
           <Route path="fin" element={<Fin />} />
           <Route path="iot" element={<IotPage />} />
           <Route path="saas" element={<SaasPage />} />
+          <Route path="dev" element={<DevPage />} />
 
           {/* ----------------- */}
           <Route path="ShowFinInfo" element={<ShowInfo />} />
           <Route path="ShowIotInfo" element={<ShowIotInfo />} />
           <Route path="ShowSaasInfo" element={<ShowSaasInfo />} />
+          <Route path="ShowDevInfo" element={<ShowDevInfo />} />
 
           
           <Route path="EditJob/:jobId" element={<EditJob />} />
@@ -250,6 +264,9 @@ const ProtectedRoute = ({ children }) => {
 
           <Route path="EditsaasInfo/:saasinfoId" element={<EditSaasInfo />} />
           <Route path="EditSaas/:saasId" element={<SaasEdit />} />
+
+          <Route path="EditdevInfo/:devopsinfoId" element={<EditDevInfo />} />
+          <Route path="EditDev/:devopsId" element={<DevEdit />} />
         </Route>
 
       </Routes>
