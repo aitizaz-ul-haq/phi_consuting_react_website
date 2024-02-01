@@ -88,6 +88,10 @@ import AddIaasInfo from './pages/dashboard/industriesdash/Iaas Dash/Iaasinfo/Add
 import EditIaasInfo from './pages/dashboard/industriesdash/Iaas Dash/Iaasinfo/EditIaasInfo';
 import ShowIaasInfo from './pages/dashboard/industriesdash/Iaas Dash/Iaasinfo/ShowIaasInfo';
 
+import AddGtm from './pages/dashboard/solutions/GTM Dash/AddGtm';
+import EditGtm from './pages/dashboard/solutions/GTM Dash/EditGtm';
+import GtmPage from './pages/dashboard/solutions/GTM Dash/GtmPage';
+
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -261,12 +265,16 @@ const ProtectedRoute = ({ children }) => {
           <Route path="AddIaasInfo" element={<AddIaasInfo />} />
 
           {/* ----------------- */}
+          <Route path="AddGTM" element={<AddGtm />} />
+
+          {/* ----------------- */}
           <Route path="fin" element={<Fin />} />
           <Route path="iot" element={<IotPage />} />
           <Route path="saas" element={<SaasPage />} />
           <Route path="dev" element={<DevPage />} />
           <Route path="cloud" element={<CloudPage />} />
           <Route path="iaas" element={<IaasPage />} />
+          <Route path="gtm" element={<GtmPage />} />
 
           {/* ----------------- */}
           <Route path="ShowFinInfo" element={<ShowInfo />} />
@@ -297,6 +305,8 @@ const ProtectedRoute = ({ children }) => {
 
           <Route path="EditiaasInfo/:iaasinfoId" element={<EditIaasInfo />} />
           <Route path="EditIaas/:iaasId" element={<IaasEdit />} />
+
+          <Route path="EditGtm/:gtmId" element={<EditGtm />} />
         </Route>
 
       </Routes>

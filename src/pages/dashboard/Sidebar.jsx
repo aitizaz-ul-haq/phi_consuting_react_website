@@ -13,9 +13,13 @@ const Sidebar = () => {
   const [dropdown8, setDropdown8] = useState(false);
   const [dropdown9, setDropdown9] = useState(false);
 
+  const [dropdown10, setDropdown10] = useState(false);
+  const [dropdown11, setDropdown11] = useState(false);
+  const [dropdown12, setDropdown12] = useState(false);
+  const [dropdown13, setDropdown13] = useState(false);
+
   return (
     <div className="sidebar">
-      <hr />
       <div>
         <h4 className='Dash-Heading'>Posts</h4>
       </div>
@@ -47,9 +51,8 @@ const Sidebar = () => {
         )}
       </div>
       <div>
-        <hr />
         <div>
-        <h4 className='Dash-Heading'>Industries Content</h4>
+        <h4 className='Dash-Heading'>Industries</h4>
       </div>
       </div>
       <div>
@@ -118,7 +121,21 @@ const Sidebar = () => {
         </div>
         )}
       </div>
-      <hr />
+      <div>
+        <div>
+        <h4 className='Dash-Heading'>Solutions</h4>
+      </div>
+      </div>
+      <div>
+        <button className='dash-options' onClick={() => setDropdown10(!dropdown10)}>Iaas Content</button>
+        {dropdown10 && (
+          <div className='list-container'>
+          <Link className='list-elements-dash' to="/dashboard/AddGTM">Add GTM</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddIaas">Edit GTM</Link>
+          <Link className='list-elements-dash' to="/dashboard/gtm">Show Info</Link>
+        </div>
+        )}
+      </div>
     </div>
   );
 };
