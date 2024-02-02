@@ -1,9 +1,11 @@
 import React from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
 import phiremotelogo from "../../assets/img/phi_logo.webp";
+
+const apiUrl = import.meta.env.VITE_API_URL || 'https://phi-email-service.vercel.app';
 const onFinish = async (values) => {
   try {
-      const response = await fetch('http://localhost:3000/login', {
+      const response = await fetch(`${apiUrl}/login`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(values)
@@ -25,7 +27,11 @@ const onFinish = async (values) => {
 const onFinishFailed = (errorInfo) => {
   console.log('Failed:', errorInfo);
 };
+
+
 const Login = () => (
+
+  
     <>
     <article className="login-container">
       <div className="log-remote-container"></div>
