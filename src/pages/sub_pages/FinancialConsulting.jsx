@@ -137,7 +137,7 @@ const FiancialConsulting = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/invpage');
+        const response = await axios.get('http://localhost:3000/finpage');
         console.log(`GTM page data`, response.data);
         if (response.data && response.data.length > 0) {
           const gtmData = response.data[0]; // Assuming the first entry is what we want

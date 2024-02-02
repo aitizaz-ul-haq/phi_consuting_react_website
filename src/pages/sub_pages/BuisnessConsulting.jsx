@@ -85,6 +85,119 @@ const BuisnessConsulting = () => {
    const [darkMode, setDarkMode] = useState(false);
    const insightsRefs = useRef([]);
 
+   const [data, setData] = useState({
+    bannerHeading: "",
+    bannerDescription: "",
+  
+    featuresMainHeading: "",
+    featuresMainDescription: "",
+  
+    featuresHeadingOne: "",
+    featuresDescriptionOne: "",
+  
+    featuresHeadingTwo: "",
+    featuresDescriptionTwo: "",
+  
+    featuresHeadingThree: "",
+    featuresDescriptionThree: "",
+  
+    featuresHeadingFour: "",
+    featuresDescriptionFour: "",
+  
+    featuresHeadingFive: "",
+    featuresDescriptionFive: "",
+  
+    featuresHeadingSix: "",
+    featuresDescriptionSix: "",
+  
+    processDesOne: "",
+    processDesTwo: "",
+    processDesThree: "",
+    processDesFour: "",
+    processDesFive: "",
+    processDesSix: "",
+    processDesSeven: "",
+    processDesEight: "",
+  
+    whySectionHeading: "",
+    whySectionDescription: "",
+  
+    whyBoxOneHeading: "",
+    whyBoxOneDescription: "",
+  
+    whyBoxTwoHeading: "",
+    whyBoxTwoDescription: "",
+  
+    whyBoxThreeHeading: "",
+    whyBoxThreeDescription: "",
+  
+    whyBoxFourHeading: "",
+    whyBoxFourDescription: "",
+  
+    whyBoxFiveHeading: "",
+    whyBoxFiveDescription: "",
+  
+    whyBoxSixHeading: "",
+    whyBoxSixDescription: ""
+  });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/invpage');
+        console.log(`GTM page data`, response.data);
+        if (response.data && response.data.length > 0) {
+          const gtmData = response.data[0]; // Assuming the first entry is what we want
+  
+          setData({
+            bannerHeading: gtmData.bannerHeading,
+            bannerDescription: gtmData.bannerDescription,
+            featuresMainHeading: gtmData.featuresMainHeading,
+            featuresMainDescription: gtmData.featuresMainDescription,
+            featuresHeadingOne: gtmData.featuresHeadingOne,
+            featuresDescriptionOne: gtmData.featuresDescriptionOne,
+            featuresHeadingTwo: gtmData.featuresHeadingTwo,
+            featuresDescriptionTwo: gtmData.featuresDescriptionTwo,
+            featuresHeadingThree: gtmData.featuresHeadingThree,
+            featuresDescriptionThree: gtmData.featuresDescriptionThree,
+            featuresHeadingFour: gtmData.featuresHeadingFour,
+            featuresDescriptionFour: gtmData.featuresDescriptionFour,
+            featuresHeadingFive: gtmData.featuresHeadingFive,
+            featuresDescriptionFive: gtmData.featuresDescriptionFive,
+            featuresHeadingSix: gtmData.featuresHeadingSix,
+            featuresDescriptionSix: gtmData.featuresDescriptionSix,
+            processDesOne: gtmData.processDesOne,
+            processDesTwo: gtmData.processDesTwo,
+            processDesThree: gtmData.processDesThree,
+            processDesFour: gtmData.processDesFour,
+            processDesFive: gtmData.processDesFive,
+            processDesSix: gtmData.processDesSix,
+            processDesSeven: gtmData.processDesSeven,
+            processDesEight: gtmData.processDesEight,
+            whySectionHeading: gtmData.whySectionHeading,
+            whySectionDescription: gtmData.whySectionDescription,
+            whyBoxOneHeading: gtmData.whyBoxOneHeading,
+            whyBoxOneDescription: gtmData.whyBoxOneDescription,
+            whyBoxTwoHeading: gtmData.whyBoxTwoHeading,
+            whyBoxTwoDescription: gtmData.whyBoxTwoDescription,
+            whyBoxThreeHeading: gtmData.whyBoxThreeHeading,
+            whyBoxThreeDescription: gtmData.whyBoxThreeDescription,
+            whyBoxFourHeading: gtmData.whyBoxFourHeading,
+            whyBoxFourDescription: gtmData.whyBoxFourDescription,
+            whyBoxFiveHeading: gtmData.whyBoxFiveHeading,
+            whyBoxFiveDescription: gtmData.whyBoxFiveDescription,
+            whyBoxSixHeading: gtmData.whyBoxSixHeading,
+            whyBoxSixDescription: gtmData.whyBoxSixDescription,
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching GTM Page data:", error);
+      }
+    };
+  
+    fetchData();
+  }, []);
+
    useEffect(() => {
     const fetchCaseStudies = async () => {
       try {
@@ -239,7 +352,7 @@ useScrollToTop();
            
             </h2>
             <p class="hero-desc-bui-consul">
-            Investors look for structured and detailed plans for scaling your business while balancing risk and return. We help navigate critical plans for the future by mapping out execution plans for the road ahead.
+            {data.bannerDescription}
             </p>
             <div class="consult-button-bui-consul">
             <Link to="/contact" className='scheduler-set'> Schedule a Free Consultation</Link>
@@ -250,9 +363,9 @@ useScrollToTop();
 
       {/* <!-- sales page banner --> */}
       <article class="sales-solutions">
-        <h2 class="sales-heading">Secure Stakeholder Support with our Investor Relations Consulting Team</h2>
+        <h2 class="sales-heading">{data.featuresMainHeading}</h2>
         <p class="sales-banner-desc">
-        Phi Consulting boosts your IR impact by providing a tailored solution by blending traditional methods with innovative digital strategies
+        {data.featuresMainDescription}
         </p>
         <div class="sales-banner-container">
           <div class="sales-cards one-with-white-back">
@@ -264,9 +377,9 @@ useScrollToTop();
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Investor Awareness</h3>
+            <h3 class="sales-card-title"> {data.featuresHeadingOne}</h3>
             <div class="sales-card-description">
-            Employ targeted strategies to elevate your company as a standout investment, increasing visibility in the market
+            {data.featuresDescriptionOne}
             </div>
           </div>
 
@@ -279,9 +392,9 @@ useScrollToTop();
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Equity Stories</h3>
+            <h3 class="sales-card-title">{data.featuresHeadingTwo}</h3>
             <div class="sales-card-description">
-            Transform complex equity narratives into compelling and engaging stories that resonate with investors.
+            {data.featuresDescriptionTwo}
             </div>
           </div>
           <div class="sales-cards one-with-white-back">
@@ -293,9 +406,9 @@ useScrollToTop();
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Stock Liquidity</h3>
+            <h3 class="sales-card-title">{data.featuresHeadingThree}</h3>
             <div class="sales-card-description">
-            Enhance trading volume through strategic, long-term initiatives that strengthen market liquidity for your stocks.
+            {data.featuresDescriptionThree}
             </div>
           </div>
         </div>
@@ -309,9 +422,9 @@ useScrollToTop();
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Low-Hanging Fruits</h3>
+            <h3 class="sales-card-title">{data.featuresHeadingFour}</h3>
             <div class="sales-card-description">
-            Elevate your Investor Relations (IR) efforts instantly by incorporating digital methods for immediate and impactful results
+            {data.featuresDescriptionFour}
             </div>
           </div>
 
@@ -324,9 +437,9 @@ useScrollToTop();
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">IR Content</h3>
+            <h3 class="sales-card-title">{data.featuresHeadingFive}</h3>
             <div class="sales-card-description">
-            Maximize efficiency for time-strapped Investor Relations Officers (IROs) by repurposing and optimizing existing IR pillar content.
+            {data.featuresDescriptionFive}
             </div>
           </div>
           <div class="sales-cards one-with-blue-back">
@@ -338,9 +451,9 @@ useScrollToTop();
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">IR Brand</h3>
+            <h3 class="sales-card-title">{data.featuresHeadingSix}</h3>
             <div class="sales-card-description">
-            Acquire the skills and tools necessary to successfully navigate digital media, leveraging your IR brand for heightened market presence
+            {data.featuresDescriptionSix}
             </div>
           </div>
         </div>
@@ -515,7 +628,7 @@ useScrollToTop();
                 <div class="text-container">
                   <div class="process-new-heading">Define Your Goals</div>
                   <div class="process-new-description">
-                  Collaboratively outline your investor relations objectives and aspirations, aligning them with your broader financial strategy
+                  {data.processDesOne}
                   </div>
                 </div>
               </div>
@@ -530,7 +643,7 @@ useScrollToTop();
                 <div class="text-container">
                   <div class="process-new-heading">Plan & Map Your Process</div>
                   <div class="process-new-description-right-side">
-                  Develop a customized roadmap for Investor Relations tailored to your business needs, ensuring a strategic alignment with financial goals.
+                  {data.processDesTwo}
 
                   </div>
                 </div>
@@ -548,7 +661,7 @@ useScrollToTop();
                 <div class="text-container">
                   <div class="process-new-heading">Set Actions</div>
                   <div class="process-new-description">
-                  Implement strategic IR actions designed to foster investor engagement, trust, and alignment with your financial milestones.
+                  {data.processDesThree}
                   </div>
                 </div>
               </div>
@@ -563,7 +676,7 @@ useScrollToTop();
                 <div class="text-container">
                   <div class="process-new-heading">Assign Stakeholders</div>
                   <div class="process-new-description-right-side">
-                  Clearly define roles and responsibilities within your organization to facilitate the execution of your Investor Relations strategy.
+                  {data.processDesFour}
                   </div>
                 </div>
               </div>
@@ -580,7 +693,7 @@ useScrollToTop();
                 <div class="text-container">
                   <div class="process-new-heading">Test the Process</div>
                   <div class="process-new-description">
-                  Rigorously evaluate and fine-tune the proposed IR strategies, ensuring their effectiveness in capturing investor attention and support.
+                  {data.processDesFive}
                   </div>
                 </div>
               </div>
@@ -595,7 +708,7 @@ useScrollToTop();
                 <div class="text-container">
                   <div class="process-new-heading">Implement Strategies</div>
                   <div class="process-new-description-right-side">
-                  Execute the optimized Investor Relations plan with precision, leveraging our expertise to enhance your financial narrative.
+                  {data.processDesSix}
                   </div>
                 </div>
               </div>
@@ -612,7 +725,7 @@ useScrollToTop();
                 <div class="text-container">
                   <div class="process-new-heading">Monitor Results</div>
                   <div class="process-new-description">
-                  Continuously track and analyze the results of your Investor Relations efforts, providing insights into investor perception and market impact.
+                  {data.processDesSeven}
                   </div>
                 </div>
               </div>
@@ -627,7 +740,7 @@ useScrollToTop();
                 <div class="text-container">
                   <div class="process-new-heading">Iterate Strategies</div>
                   <div class="process-new-description-right-side">
-                  Adapt and refine your Investor Relations strategies based on real-time results and changes in the business landscape, ensuring continued effectiveness.
+                  {data.processDesEight}
                   </div>
                 </div>
               </div>
@@ -738,7 +851,7 @@ useScrollToTop();
       {/* <!-- why phi for customer exp Section --> */}
       <article class="why-phi-for-sales">
         <h2 class="why-phi-heading">
-        Why Choose Phi?
+        {data.whySectionHeading}
         </h2>
         <p class="why-phi-desc">
           {/* At Phi Consulting, we understand that your people are your greatest
@@ -754,9 +867,9 @@ useScrollToTop();
               <div class="overlay-container one-hr-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Captivate Investor Attention</h2>
+                  <h2 class="overlay-heading">{data.whyBoxOneHeading}</h2>
                   <p class="overlay-desc">
-                  In a market where attention is the ultimate currency, we specialize in strategies that break through the noise and capture investor interest effectively.
+                  {data.whyBoxOneDescription}
                   </p>
                 </div>
               </div>
@@ -765,9 +878,9 @@ useScrollToTop();
               <div class="overlay-container two-hr-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Simplify Your Equity Story</h2>
+                  <h2 class="overlay-heading">{data.whyBoxTwoHeading}</h2>
                   <p class="overlay-desc">
-                  We understand the challenge of conveying complex equity stories. Our expertise lies in simplifying intricate details to ensure your narrative resonates with potential investors.
+                  {data.whyBoxTwoDescription}
                   </p>
                 </div>
               </div>
@@ -778,9 +891,9 @@ useScrollToTop();
               <div class="overlay-container three-hr-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Boost Liquidity & Trading Volumes</h2>
+                  <h2 class="overlay-heading">{data.whyBoxThreeHeading}</h2>
                   <p class="overlay-desc">
-                  Overcome the struggle of attracting investors in low-liquidity scenarios. Our targeted approaches aim to boost trading volumes, enhancing your market appeal
+                  {data.whyBoxThreeDescription}
                   </p>
                 </div>
               </div>
@@ -789,9 +902,9 @@ useScrollToTop();
               <div class="overlay-container four-hr-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Results-Driven IR Tools</h2>
+                  <h2 class="overlay-heading">{data.whyBoxFourHeading}</h2>
                   <p class="overlay-desc">
-                  Tired of conventional Investor Relations tools yielding minimal results? Our innovative solutions ensure your IR efforts translate into visible improvements, providing measurable impact.
+                  {data.whyBoxFourDescription}
                   </p>
                 </div>
               </div>
@@ -802,9 +915,9 @@ useScrollToTop();
               <div class="overlay-container five-hr-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Strategic Initiatives in a Crowded Calendar</h2>
+                  <h2 class="overlay-heading">{data.whyBoxFiveHeading}</h2>
                   <p class="overlay-desc">
-                  Even with a full IR calendar, we carve out space for additional strategic initiatives. Our agile approach allows us to integrate impactful activities amidst your existing schedule
+                  {data.whyBoxFiveDescription}
                   </p>
                 </div>
               </div>
@@ -813,9 +926,9 @@ useScrollToTop();
               <div class="overlay-container six-hr-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Enhance Digital Visibility</h2>
+                  <h2 class="overlay-heading">{data.whyBoxSixHeading}</h2>
                   <p class="overlay-desc">
-                  We illuminate your IR efforts with increased digital visibility. Overcome the challenge of limited online presence, ensuring your expert voice is heard in the digital landscape.
+                  {data.whyBoxSixDescription}
                   </p>
                 </div>
               </div>
