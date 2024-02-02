@@ -611,10 +611,10 @@ useEffect(() => {
                 ></q
               >
             </p>
-            <h3 class="testi-card-heading">Head of Customer Support - AtoB Financials</h3>
+            <h3 class="testi-card-heading">Head of Customer Support - <span className='company-test-desig-one'>AtoB</span> Financials</h3>
           </div>
 
-          {/* <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-two">
               <img src="" alt="" />
             </div>
@@ -622,15 +622,12 @@ useEffect(() => {
             <p class="testi-quote">
               <q
                 ><i
-                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quibusdam atque iste aut magni harum nobis quasi impedit enim
-                  laborum distinctio, accusamus ducimus dolorem illum, mollitia
-                  aperiam deserunt voluptate quaerat totam!</i
+                  >I have had a very good experience with PHI over the past 3 years. They are able to ramp up very quickly with GTM personnel when directed. The personnel they bring on almost always hit the mark. If someone was not up to caliber, the PHI leadership team was quick to act and upgrade. Phi is very easy to work with and acts more like a partner than a contractor. </i
                 ></q
               >
             </p>
-            <h3 class="testi-card-heading">-lenny pepridge (CTO)</h3>
-          </div> */}
+            <h3 class="testi-card-heading">Brendan Meuse - VP, Revenue Operations <span className='company-test-desig-two'>Digital Ocean</span></h3>
+          </div>
 
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-three">
@@ -645,7 +642,7 @@ useEffect(() => {
                 ></q
               >
             </p>
-            <h3 class="testi-card-heading">Head of Sales & Business Development - AtoB Financials</h3>
+            <h3 class="testi-card-heading">Head of Sales & Business Development <span className='company-test-desig-one'>AtoB</span> Financials</h3>
           </div>
         </section>
       </article>

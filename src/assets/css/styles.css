@@ -2016,6 +2016,7 @@ padding: 1rem;
 }
 
 .testi-card-heading {
+    margin-top: 15px;
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -2025,8 +2026,20 @@ padding: 1rem;
     font-size: var(--FS-DESC);
     font-weight: var(--FONT-THICK);
     color: var(--DARK-PHI-BLUE);
+    font-weight: 600;
 }
 
+.company-test-desig-one {
+    color: darkgreen;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.company-test-desig-two {
+    color:#0056b3;
+    margin-left: 4px;
+    margin-right: 4px;
+}
 
 
 .testi-quote {
@@ -2060,7 +2073,7 @@ padding: 1rem;
 .type3 {
     width: 80px;
     height: 80px;
-    background: aqua;
+    /* background: aqua; */
     border: 5px solid blue;
     box-shadow: 0px 0px 36px -11px var(--LIGHT-PHI-BLUE);
 }
@@ -2081,7 +2094,7 @@ padding: 1rem;
 }
 
 .test-two {
-    background-image: url('../img/testimonial_2.jpg');
+    background-image: url('../img/digitalocean-square.png');
     background-size: cover; /* Ensure the background image covers the entire container */
     background-position: center; /* Center the background image */
     width: 80px;

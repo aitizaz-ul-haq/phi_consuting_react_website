@@ -32,11 +32,11 @@ import caseStudies from "../data/caseStudies.json";
 
 const Services = () => {
 
-  const [isVisiblecard, setIsVisiblecard] = useState(false);
-  const cardsRef = useRef(null);
+//   const [isVisiblecard, setIsVisiblecard] = useState(false);
+//   const cardsRef = useRef(null);
 
-  const [isVisibleTesti, setIsVisibleTesti] = useState(false);
- const testiRef = useRef(null);
+//   const [isVisibleTesti, setIsVisibleTesti] = useState(false);
+//  const testiRef = useRef(null);
 
  const [isVisibleAch, setIsVisibleAch] = useState(false);
   const achRef = useRef(null);
@@ -47,31 +47,31 @@ const Services = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          setIsVisiblecard(entry.isIntersecting);
-        });
-      },
-      { threshold: 0.5 }
-    );
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         setIsVisiblecard(entry.isIntersecting);
+  //       });
+  //     },
+  //     { threshold: 0.5 }
+  //   );
 
-    if (cardsRef.current) {
-      observer.observe(cardsRef.current);
-    }
+  //   if (cardsRef.current) {
+  //     observer.observe(cardsRef.current);
+  //   }
 
-    return () => observer.disconnect();
-  }, []);
+  //   return () => observer.disconnect();
+  // }, []);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
-    }, { threshold: 0.5 });
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(entries => {
+  //       entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
+  //   }, { threshold: 0.5 });
   
-    observer.observe(testiRef.current);
-    return () => observer.disconnect();
-  }, []);
+  //   observer.observe(testiRef.current);
+  //   return () => observer.disconnect();
+  // }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -688,7 +688,7 @@ useEffect(() => {
       </article>
 
       {/* <!-- Work small version Section --> */}
-      <article class="work" ref={cardsRef}>
+      {/* <article class="work" ref={cardsRef}>
         <section class="work-section">
           <h2 class="work-heading">Client Success Stories</h2>
           <p class="work-desc">
@@ -706,98 +706,9 @@ useEffect(() => {
           <span><Link to="/casestudies" className='morcases'>View More Case Studies</Link></span>
           </div>
         </section>
-      </article>
+      </article> */}
 
-      {/* <!-- Call to Action Section --> */}
-      <article class="cta-container">
-        <section class="cta-sections-container">
-          <div class="cta-content">
-            <div class="cta-heading">Ready to Elevate Your Business?</div>
-            <div class="cta-descrip">
-              Unlock growth, reduce costs, and maximize efficiency with Phi
-              Consulting. Contact us today for a consultation and take the first
-              step toward business excellence.
-            </div>
-          </div>
-          <div class="cta-button-section">
-            <div class="right-button-header">
-              <span
-                ><Link to="/contact" class="inner-header"
-                  >Contact Us</Link
-                ></span
-              >
-            </div>
-          </div>
-        </section>
-      </article>
-
-      {/* <!-- Testimonial Section --> */}
-      <article class="testimonial">
-        <section className="testimonial-container">
-          <h2 class="testi-heading">
-          We Have Successfully Retained Our Top 3 Clients For Over 3 Years.
-          </h2>
-          <p class="testi-desc">
-            Our clients speak for the transformative impact of Phi Consulting.
-            Partner with us and discover the potential for unprecedented growth,
-            reduced costs, and optimized efficiency.
-          </p>
-        </section>
-
-        <section className="testi-cards-container" ref={testiRef}>
-          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
-            <div class="circleBase type3 testi-one">
-              {/* <!-- <img src="./assets/img/testimonial_one.webp" alt="" /> --> */}
-            </div>
-
-            <p class="testi-quote">
-              <q
-                ><i
-                  >Phi Consulting has delivered the project on time, meeting the client's expectations. They have communicated frequently and promptly via email and virtual meetings, ensuring an effective workflow. Their ability to adapt and willingness to improve the process are hallmarks of their work.
-                  </i
-                ></q
-              >
-            </p>
-            <h3 class="testi-card-heading">Head of Customer Support - AtoB Financials</h3>
-          </div>
-
-          {/* <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
-            <div class="circleBase type3 test-two">
-              <img src="" alt="" />
-            </div>
-
-            <p class="testi-quote">
-              <q
-                ><i
-                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quibusdam atque iste aut magni harum nobis quasi impedit enim
-                  laborum distinctio, accusamus ducimus dolorem illum, mollitia
-                  aperiam deserunt voluptate quaerat totam!</i
-                ></q
-              >
-            </p>
-            <h3 class="testi-card-heading">-lenny pepridge (CTO)</h3>
-          </div> */}
-
-          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
-            <div class="circleBase type3 test-three">
-              <img src="" alt="" />
-            </div>
-
-            <p class="testi-quote">
-              <q
-                ><i
-                  >Phi Consulting's work meets the client's expectations and has a strong 60 Net Promoter Score. The team has an easy onboarding process and a turn-key nature that has impressed the client.
-                  Head of Sales & Business Development - AtoB Financials</i
-                ></q
-              >
-            </p>
-            <h3 class="testi-card-heading">Head of Sales & Business Development - AtoB Financials</h3>
-          </div>
-        </section>
-      </article>
-
-     {/* <!-- Achievement Section --> */}
+       {/* <!-- Achievement Section --> */}
      <article class="achievement">
         <section class="achievement-section">
           <h2 class="ach-heading">Our Achievements</h2>
@@ -829,44 +740,94 @@ useEffect(() => {
             />
           </div>
 
-          {/* <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
-            <img
-              src={clutchone}
-              alt=""
-              width="200"
-              height="230"
-            />
-          </div>
-          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
-            <img
-              src={BBB}
-              alt=""
-              width="200"
-              height="150"
-            />
-          </div>
-
-          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
-            <img
-              src={clutchtwo}
-              alt=""
-              width="250"
-              height="220"
-            />
-          </div> */}
+       
         </section>
       </article>
 
-      <Routes>
+      {/* <!-- Call to Action Section --> */}
+      <article class="cta-container">
+        <section class="cta-sections-container">
+          <div class="cta-content">
+            <div class="cta-heading">Ready to Elevate Your Business?</div>
+            <div class="cta-descrip">
+              Unlock growth, reduce costs, and maximize efficiency with Phi
+              Consulting. Contact us today for a consultation and take the first
+              step toward business excellence.
+            </div>
+          </div>
+          <div class="cta-button-section">
+            <div class="right-button-header">
+              <span
+                ><Link to="/contact" class="inner-header"
+                  >Contact Us</Link
+                ></span
+              >
+            </div>
+          </div>
+        </section>
+      </article>
+
+      {/* <!-- Testimonial Section --> */}
+      {/* <article class="testimonial">
+        <section className="testimonial-container">
+          <h2 class="testi-heading">
+          We Have Successfully Retained Our Top 3 Clients For Over 3 Years.
+          </h2>
+          <p class="testi-desc">
+            Our clients speak for the transformative impact of Phi Consulting.
+            Partner with us and discover the potential for unprecedented growth,
+            reduced costs, and optimized efficiency.
+          </p>
+        </section>
+
+        <section className="testi-cards-container" ref={testiRef}>
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
+            <div class="circleBase type3 testi-one">
+             
+            </div>
+
+            <p class="testi-quote">
+              <q
+                ><i
+                  >Phi Consulting has delivered the project on time, meeting the client's expectations. They have communicated frequently and promptly via email and virtual meetings, ensuring an effective workflow. Their ability to adapt and willingness to improve the process are hallmarks of their work.
+                  </i
+                ></q
+              >
+            </p>
+            <h3 class="testi-card-heading">Head of Customer Support - AtoB Financials</h3>
+          </div>
+
+
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
+            <div class="circleBase type3 test-three">
+              <img src="" alt="" />
+            </div>
+
+            <p class="testi-quote">
+              <q
+                ><i
+                  >Phi Consulting's work meets the client's expectations and has a strong 60 Net Promoter Score. The team has an easy onboarding process and a turn-key nature that has impressed the client.
+                  Head of Sales & Business Development - AtoB Financials</i
+                ></q
+              >
+            </p>
+            <h3 class="testi-card-heading">Head of Sales & Business Development - AtoB Financials</h3>
+          </div>
+        </section>
+      </article> */}
+
+    
+
+      {/* <Routes>
         <Route path="/" element={<Outlet />}>
           <Route path="customer-experience" element={<CustomerExperience />} />
           <Route path="financial-consulting" element={<FinancialConsulting />} />
           <Route path="buisness-consulting" element={<BuisnessConsulting />} />
           <Route path="hr-consulting" element={<HrConsulting />} />
           <Route path="sales-consulting" element={<SalesConsulting />} />
-          {/* Add routes for other service components */}
+         
         </Route>
-      </Routes>
+      </Routes> */}
     </>
   )
 }
