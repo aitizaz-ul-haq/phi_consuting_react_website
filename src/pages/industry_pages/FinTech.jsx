@@ -72,33 +72,33 @@ const FinTech = () => {
 
 
 
-//  function simplifyFintechData(data) {
-//   return data.reduce((acc, entry) => {
-//     const simplifiedContent = entry.content.map(item => ({
-//       id: entry._id, // Keeping track of the parent entry ID, if needed
-//       headingText: item.headingText,
-//       highlighted: item.highlighted,
-//       paragraphText: item.paragraphText
-//     }));
-//     return acc.concat(simplifiedContent);
-//   }, []);
-// }
+ function simplifyFintechData(data) {
+  return data.reduce((acc, entry) => {
+    const simplifiedContent = entry.content.map(item => ({
+      id: entry._id, // Keeping track of the parent entry ID, if needed
+      headingText: item.headingText,
+      highlighted: item.highlighted,
+      paragraphText: item.paragraphText
+    }));
+    return acc.concat(simplifiedContent);
+  }, []);
+}
 
-// useEffect(() => {
-//   const fetchFintechData = async () => {
-//     try {
-//       const response = await axios.get('http://localhost:3000/fintech');
-//       console.log(`response data...`, response.data)
-//       const simplifiedData = simplifyFintechData(response.data);
-//       setFintechData(simplifiedData);
+useEffect(() => {
+  const fetchFintechData = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/fintech');
+      console.log(`response data...`, response.data)
+      const simplifiedData = simplifyFintechData(response.data);
+      setFintechData(simplifiedData);
     
-//     } catch (error) {
-//       console.error('Error fetching fintech data:', error);
-//     }
-//   };
+    } catch (error) {
+      console.error('Error fetching fintech data:', error);
+    }
+  };
 
-//   fetchFintechData();
-// }, []);
+  fetchFintechData();
+}, []);
 
 useEffect(() => {
   const fetchFintechInfo = async () => {

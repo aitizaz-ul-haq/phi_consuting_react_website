@@ -13904,7 +13904,7 @@ display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--LIGHT-PHI-BLUE);
+    background-color: lightblue;
     /* color: white; */
     padding: 10px 15px;
     border: none;
@@ -14046,7 +14046,7 @@ display: none;
 
   .dash-logout {
     padding: 0.5rem;
-    background-color: var(--LIGHT-PHI-BLUE);
+    background-color: lightblue;
     color: var(--DARK-PHI-BLUE);
     font-weight: 600;
     font-family: var(--FF-PHI);
