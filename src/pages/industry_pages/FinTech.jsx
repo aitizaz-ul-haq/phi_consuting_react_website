@@ -56,7 +56,7 @@ const FinTech = () => {
   const [sectionFourTitle, setSectionFourTitle] = useState('');
   const [sectionFourParagraph, setSectionFourParagraph] = useState('');
 
-  const apiUrl = process.env.REACT_APP_API_URL;
+  const apiUrl = import.meta.env.VITE_API_URL || 'https://phi-email-service.vercel.app';
 
   const [processNewVisible, setProcessNewVisible] = useState(false);
   const processNewRef = useRef(null);

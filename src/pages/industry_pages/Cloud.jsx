@@ -89,7 +89,8 @@ const Cloud = () => {
   const [darkMode, setDarkMode] = useState(false);
   const sectionsRef = useRef([]);
   const insightsRefs = useRef([]);
-  const apiUrl = process.env.REACT_APP_API_URL;
+
+  const apiUrl = import.meta.env.VITE_API_URL || 'https://phi-email-service.vercel.app';
 
   function simplifyFintechData(data) {
     return data.reduce((acc, entry) => {

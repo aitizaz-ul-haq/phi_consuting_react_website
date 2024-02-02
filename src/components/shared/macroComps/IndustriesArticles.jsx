@@ -4,7 +4,7 @@ import axios from 'axios';
 const IndustriesArticles = ({ Api }) => {
     const [fintechData, setFintechData] = useState([]);
 
-    const apiUrl = process.env.REACT_APP_API_URL;
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://phi-email-service.vercel.app';
 
     useEffect(() => {
         const fetchFintechData = async () => {
