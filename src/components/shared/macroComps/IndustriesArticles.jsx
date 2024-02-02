@@ -1,39 +1,30 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const IndustriesArticles = () => {
+const IndustriesArticles = ({ Api }) => {
     const [fintechData, setFintechData] = useState([]);
 
-    const simplifyFintechData = (data) => {
-        return data.map(entry => ({
-            id: entry._id,
-            headingText: entry.headingText,
-            highlighted: entry.highlighted,
-            paragraphText: entry.paragraphText
-        }));
-    };
-
-    const fetchFintechData = async () => {
-        try {
-            const response = await axios.get('http://localhost:3000/fintech');
-            console.log("API Response:", response);
-            if (response.data && response.data.length > 0) {
-                const simplifiedData = simplifyFintechData(response.data);
-                console.log("Simplified Data:", simplifiedData);
-                setFintechData(simplifiedData);
-            } else {
-                console.log("No data received from API");
-            }
-        } catch (error) {
-            console.error('Error fetching fintech data:', error);
-        }
-    };
-
     useEffect(() => {
-        fetchFintechData();
-    }, []);
+        const fetchFintechData = async () => {
+            try {
+                const response = await axios.get(`http://localhost:3000/${Api}`);
+                console.log("API Response:", response);
+                if (response.data && response.data.length > 0) {
+                    // Assuming your API returns the data array directly
+                    setFintechData(response.data);
+                } else {
+                    console.log("No data received from API");
+                }
+            } catch (error) {
+                console.error('Error fetching fintech data:', error);
+            }
+        };
 
- 
+        if (Api) {
+            fetchFintechData();
+        }
+    }, [Api]); // Include Api in the dependencies array
+
     if (fintechData.length === 0) {
         return <div>Loading...</div>;
     }
@@ -53,8 +44,5 @@ const IndustriesArticles = () => {
         </article>
     );
 };
-
-// className="industry-para-container"
-// className="industry-para-collection"
 
 export default IndustriesArticles;

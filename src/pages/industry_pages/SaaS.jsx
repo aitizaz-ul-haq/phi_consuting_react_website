@@ -43,8 +43,18 @@ import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 
+import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 const SaaS = () => {
-  const [caseStudies, setCaseStudies] = useState([]);
+  const [sectionOneTitle, setSectionOneTitle] = useState('');
+  const [sectionOneParagraph, setSectionOneParagraph] = useState('');
+  const [sectionTwoTitle, setSectionTwoTitle] = useState('');
+  const [sectionTwoParagraph, setSectionTwoParagraph] = useState('');
+  const [sectionThreeTitle, setSectionThreeTitle] = useState('');
+  const [sectionThreeParagraph, setSectionThreeParagraph] = useState('');
+  const [sectionFourTitle, setSectionFourTitle] = useState('');
+  const [sectionFourParagraph, setSectionFourParagraph] = useState('');
+  const [sectionFiveTitle, setSectionFiveTitle] = useState('');
+  const [sectionFiveParagraph, setSectionFiveParagraph] = useState('');
   // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
   // const testiRef = useRef(null);
 
@@ -66,17 +76,60 @@ const SaaS = () => {
 
   const insightsRefs = useRef([]);
 
+  function simplifyFintechData(data) {
+    return data.reduce((acc, entry) => {
+      const simplifiedContent = entry.content.map(item => ({
+        id: entry._id, // Keeping track of the parent entry ID, if needed
+        headingText: item.headingText,
+        highlighted: item.highlighted,
+        paragraphText: item.paragraphText
+      }));
+      return acc.concat(simplifiedContent);
+    }, []);
+  }
+  
   useEffect(() => {
-    const fetchCaseStudies = async () => {
+    const fetchFintechData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/cases');
-        setCaseStudies(response.data.slice(0, 3)); // Fetch only the first three case studies
+        const response = await axios.get('http://localhost:3000/saas');
+        console.log(`response data...`, response.data)
+        const simplifiedData = simplifyFintechData(response.data);
+        setFintechData(simplifiedData);
+      
       } catch (error) {
-        console.error('Error fetching case studies:', error);
+        console.error('Error fetching saas data:', error);
       }
     };
   
-    fetchCaseStudies();
+    fetchFintechData();
+  }, []);
+  
+  useEffect(() => {
+    const fetchFintechInfo = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/saasinfo');
+        // Assuming the first element of the array has the sections
+        const sections = response.data[0].sections;
+  
+        if (sections.length >= 2) {
+          // Update state variables based on your data structure
+          setSectionOneTitle(sections[0].title);
+          setSectionOneParagraph(sections[0].paragraph);
+          setSectionTwoTitle(sections[1].title);
+          setSectionTwoParagraph(sections[1].paragraph);
+          setSectionThreeTitle(sections[2].title);
+          setSectionThreeParagraph(sections[2].paragraph);
+          setSectionFourTitle(sections[3].title);
+          setSectionFourParagraph(sections[3].paragraph);
+          // ... set more states for other sections ...
+        }
+      } catch (error) {
+        console.error('Error fetching fintech info:', error);
+        // Handle the error appropriately
+      }
+    };
+  
+    fetchFintechInfo();
   }, []);
 
   const addToRefs = el => {
@@ -170,8 +223,6 @@ useEffect(() => {
   return () => elements.forEach(el => observer.unobserve(el));
 }, []);
 
-
-
 useEffect(() => {
   const observer = new IntersectionObserver(
     (entries) => {
@@ -200,8 +251,6 @@ useEffect(() => {
   };
 }, []);
 
-
-
 const toggleDarkMode = () => setDarkMode(!darkMode);
 
 const scrollToTop = () => {
@@ -214,8 +263,8 @@ const scrollToTop = () => {
 // useScrollToTop();
 
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
+  const saas = 'saas';
 
-  
     return (
         <>
         <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
@@ -267,8 +316,8 @@ const scrollToTop = () => {
       {/* <IndustryServicesSection /> */}
 
     {/* Specialities Paragraph */}
-      {/* <IndustrySpecialities /> */}
-      <article className="industry-para-container">
+    <IndustriesArticles Api="saas" />
+      {/* <article className="industry-para-container">
         <section className="industry-para-collection" ref={addToRefs}>
         <div className="para-title-industry">
         <h2 className='title-special'>What is <span className='bluer'> SaaS Consulting</span>?</h2>
@@ -315,7 +364,7 @@ const scrollToTop = () => {
         </div>
         </section>
        </article>
-    
+     */}
 
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
@@ -327,11 +376,10 @@ const scrollToTop = () => {
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Industry-Specific Expertise
+                  {sectionOneTitle}
                   </h2>
                   <p class="overlay-desc">
-                  Our team specializes in your field, offering insights and strategies that resonate with your industry's unique landscape.
-
+                  {sectionOneParagraph}
                   </p>
                 </div>
               </div>
@@ -341,11 +389,10 @@ const scrollToTop = () => {
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Cost-Effective Scaling
+                  {sectionTwoTitle}
                   </h2>
                   <p class="overlay-desc">
-                  Efficiency is at the heart of what we do. We help you scale your operations while optimizing resources, ensuring a lean yet powerful growth trajectory.
-
+                  {sectionTwoParagraph}
                   </p>
                 </div>
               </div>
@@ -356,9 +403,9 @@ const scrollToTop = () => {
               <div class="overlay-container three-why">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Personalized Approach</h2>
+                  <h2 class="overlay-heading">{sectionThreeTitle}</h2>
                   <p class="overlay-desc">
-                  Your startup is unique, and so is our approach. We offer customized solutions that align with your vision and business goals.
+                  {sectionThreeParagraph}
                   </p>
                 </div>
               </div>
@@ -368,10 +415,10 @@ const scrollToTop = () => {
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Results-Driven
+                  {sectionFourTitle}
                   </h2>
                   <p class="overlay-desc">
-                  We measure our success by your success. Our commitment is to deliver tangible results that propel your startup to new heights.
+                  {sectionFourParagraph}
                   </p>
                 </div>
               </div>
@@ -383,10 +430,10 @@ const scrollToTop = () => {
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Results-Driven
+                  {sectionFiveTitle}
                   </h2>
                   <p class="overlay-desc">
-                  We measure our success by your success. Our commitment is to deliver tangible results that propel your startup to new heights.
+                  {sectionFiveParagraph}
                   </p>
                 </div>
               </div>

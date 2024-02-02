@@ -70,7 +70,7 @@ const FinTech = () => {
 
   const diagonalDivRef = useRef(null);
 
-
+const Fintech = 'fintech';
 
  function simplifyFintechData(data) {
   return data.reduce((acc, entry) => {
@@ -382,7 +382,7 @@ useScrollToTop();
     
        </article> */}
 
-       <IndustriesArticles/>
+       <IndustriesArticles Api="fintech" />
    
 
       {/* <!-- why phi for sale Section --> */}

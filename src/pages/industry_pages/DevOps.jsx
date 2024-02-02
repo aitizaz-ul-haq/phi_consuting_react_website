@@ -59,8 +59,19 @@ import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 
+import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
+
 const DevOps = () => {
-  const [caseStudies, setCaseStudies] = useState([]);
+  const [sectionOneTitle, setSectionOneTitle] = useState('');
+  const [sectionOneParagraph, setSectionOneParagraph] = useState('');
+  const [sectionTwoTitle, setSectionTwoTitle] = useState('');
+  const [sectionTwoParagraph, setSectionTwoParagraph] = useState('');
+  const [sectionThreeTitle, setSectionThreeTitle] = useState('');
+  const [sectionThreeParagraph, setSectionThreeParagraph] = useState('');
+  const [sectionFourTitle, setSectionFourTitle] = useState('');
+  const [sectionFourParagraph, setSectionFourParagraph] = useState('');
+  const [sectionFiveTitle, setSectionFiveTitle] = useState('');
+  const [sectionFiveParagraph, setSectionFiveParagraph] = useState('');
   // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
   // const testiRef = useRef(null);
 
@@ -82,17 +93,60 @@ const DevOps = () => {
   const sectionsRef = useRef([]);
   const insightsRefs = useRef([]);
 
+  function simplifyFintechData(data) {
+    return data.reduce((acc, entry) => {
+      const simplifiedContent = entry.content.map(item => ({
+        id: entry._id, // Keeping track of the parent entry ID, if needed
+        headingText: item.headingText,
+        highlighted: item.highlighted,
+        paragraphText: item.paragraphText
+      }));
+      return acc.concat(simplifiedContent);
+    }, []);
+  }
+  
   useEffect(() => {
-    const fetchCaseStudies = async () => {
+    const fetchFintechData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/cases');
-        setCaseStudies(response.data.slice(0, 3)); // Fetch only the first three case studies
+        const response = await axios.get('http://localhost:3000/devops');
+        console.log(`response data...`, response.data)
+        const simplifiedData = simplifyFintechData(response.data);
+        setFintechData(simplifiedData);
+      
       } catch (error) {
-        console.error('Error fetching case studies:', error);
+        console.error('Error fetching saas data:', error);
       }
     };
   
-    fetchCaseStudies();
+    fetchFintechData();
+  }, []);
+  
+  useEffect(() => {
+    const fetchFintechInfo = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/devinfo');
+        // Assuming the first element of the array has the sections
+        const sections = response.data[0].sections;
+  
+        if (sections.length >= 2) {
+          // Update state variables based on your data structure
+          setSectionOneTitle(sections[0].title);
+          setSectionOneParagraph(sections[0].paragraph);
+          setSectionTwoTitle(sections[1].title);
+          setSectionTwoParagraph(sections[1].paragraph);
+          setSectionThreeTitle(sections[2].title);
+          setSectionThreeParagraph(sections[2].paragraph);
+          setSectionFourTitle(sections[3].title);
+          setSectionFourParagraph(sections[3].paragraph);
+          // ... set more states for other sections ...
+        }
+      } catch (error) {
+        console.error('Error fetching fintech info:', error);
+        // Handle the error appropriately
+      }
+    };
+  
+    fetchFintechInfo();
   }, []);
   
   useEffect(() => {
@@ -273,7 +327,9 @@ useScrollToTop();
 
       {/* <IndustryServicesSection /> */}
 
-      <article className="industry-para-container">
+      <IndustriesArticles Api="devops" />
+
+      {/* <article className="industry-para-container">
         <section className="industry-para-collection" ref={addToRefs}>
         <div className="para-title-industry">
         <h2 className='title-special'>What is <span className='bluer'> DevOps  Consulting</span>?</h2>
@@ -317,12 +373,12 @@ useScrollToTop();
         Secure funding and build lasting relationships with investors. Our investor relations expertise means you're always pitch-ready, turning potential interests into solid investments.
         </div>
         </section>
-       </article>
+       </article> */}
 
 
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
-        <h2 class="why-phi-heading">Why Choose Phi?</h2>
+        <h2 class="why-phi-heading">Why Phi Consulting?</h2>
         <div class="insights-container">
           <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
             <div class="left-section-insights">
@@ -330,10 +386,10 @@ useScrollToTop();
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Customized Approach
+                  {sectionOneTitle}
                   </h2>
                   <p class="overlay-desc">
-                  Every startup is unique, and so are our solutions. We dive deep into your specific challenges and opportunities, crafting strategies that align with your vision and goals.
+                  {sectionOneParagraph}
                   </p>
                 </div>
               </div>
@@ -343,10 +399,10 @@ useScrollToTop();
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Industry Expertise
+                  {sectionTwoTitle}
                   </h2>
                   <p class="overlay-desc">
-                  With a rich background in IoT, SaaS, IaaS, Fintech, Cloud, and DevOps, we bring a wealth of knowledge and industry-specific insights to propel your startup forward.
+                  {sectionTwoParagraph}
                   </p>
                 </div>
               </div>
@@ -357,9 +413,9 @@ useScrollToTop();
               <div class="overlay-container three-why">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Cost-Effective Scaling</h2>
+                  <h2 class="overlay-heading">{sectionThreeTitle}</h2>
                   <p class="overlay-desc">
-                  Efficiency is key in the startup world. Our DevOps consulting focuses on smart scaling strategies that minimize costs while maximizing productivity and innovation.
+                  {sectionThreeParagraph}
                   </p>
                 </div>
               </div>
@@ -369,15 +425,30 @@ useScrollToTop();
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Long-Term Partnership
+                  {sectionFourTitle}
                   </h2>
                   <p class="overlay-desc">
-                  Your success is our success. We believe in building long-term relationships and supporting your journey from a budding startup to a market leader.
+                  {sectionFourParagraph}
                   </p>
                 </div>
               </div>
             </div>
           </div>
+          {/* <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
+            <div class="left-section-insights-last">
+              <div class="overlay-container five-why">
+                <div class="overlay"></div>
+                <div class="content">
+                  <h2 class="overlay-heading">
+                  {sectionFiveTitle}
+                  </h2>
+                  <p class="overlay-desc">
+                  {sectionFiveParagraph}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div> */}
         </div>
       </article>
 

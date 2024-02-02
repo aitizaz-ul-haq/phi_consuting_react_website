@@ -58,8 +58,20 @@ import solarproduct from "../../assets/img/api_images/solar_one.webp";
 import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
+
+import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
+
 const IaaS = () => {
-  const [caseStudies, setCaseStudies] = useState([]);
+  const [sectionOneTitle, setSectionOneTitle] = useState('');
+  const [sectionOneParagraph, setSectionOneParagraph] = useState('');
+  const [sectionTwoTitle, setSectionTwoTitle] = useState('');
+  const [sectionTwoParagraph, setSectionTwoParagraph] = useState('');
+  const [sectionThreeTitle, setSectionThreeTitle] = useState('');
+  const [sectionThreeParagraph, setSectionThreeParagraph] = useState('');
+  const [sectionFourTitle, setSectionFourTitle] = useState('');
+  const [sectionFourParagraph, setSectionFourParagraph] = useState('');
+  const [sectionFiveTitle, setSectionFiveTitle] = useState('');
+  const [sectionFiveParagraph, setSectionFiveParagraph] = useState('');
   // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
   // const testiRef = useRef(null);
 
@@ -82,6 +94,64 @@ const IaaS = () => {
   const sectionsRef = useRef([]);
 
   const insightsRefs = useRef([]);
+
+  function simplifyFintechData(data) {
+    return data.reduce((acc, entry) => {
+      const simplifiedContent = entry.content.map(item => ({
+        id: entry._id, // Keeping track of the parent entry ID, if needed
+        headingText: item.headingText,
+        highlighted: item.highlighted,
+        paragraphText: item.paragraphText
+      }));
+      return acc.concat(simplifiedContent);
+    }, []);
+  }
+  
+  useEffect(() => {
+    const fetchFintechData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/iaas');
+        console.log(`response data...`, response.data)
+        const simplifiedData = simplifyFintechData(response.data);
+        setFintechData(simplifiedData);
+      
+      } catch (error) {
+        console.error('Error fetching iaas data:', error);
+      }
+    };
+  
+    fetchFintechData();
+  }, []);
+  
+  useEffect(() => {
+    const fetchFintechInfo = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/iaasinfo');
+        // Assuming the first element of the array has the sections
+        const sections = response.data[0].sections;
+  
+        if (sections.length >= 2) {
+          // Update state variables based on your data structure
+          setSectionOneTitle(sections[0].title);
+          setSectionOneParagraph(sections[0].paragraph);
+          setSectionTwoTitle(sections[1].title);
+          setSectionTwoParagraph(sections[1].paragraph);
+          setSectionThreeTitle(sections[2].title);
+          setSectionThreeParagraph(sections[2].paragraph);
+          setSectionFourTitle(sections[3].title);
+          setSectionFourParagraph(sections[3].paragraph);
+          // ... set more states for other sections ...
+        }
+      } catch (error) {
+        console.error('Error fetching fintech info:', error);
+        // Handle the error appropriately
+      }
+    };
+  
+    fetchFintechInfo();
+  }, []);
+
+  
   useEffect(() => {
     const fetchCaseStudies = async () => {
       try {
@@ -274,12 +344,14 @@ useScrollToTop();
         </section>
       </article>
 
+      <IndustriesArticles Api="iaas" />
+
       {/* Services Section */}
       {/* <IndustryServicesSection /> */}
 
       {/* Specialities Paragraph */}
       {/* <IndustrySpecialities /> */}
-      <article className="industry-para-container">
+      {/* <article className="industry-para-container">
         <section className="industry-para-collection" ref={addToRefs}>
         <div className="para-title-industry">
         <h2 className='title-special'>What is <span className='bluer'> IaaS Consulting</span>?</h2>
@@ -324,7 +396,7 @@ useScrollToTop();
         Building bridges between your vision and the right investors. Our investor relations services connect you with the right people, ensuring your ideas get the backing they need to soar.
         </div>
         </section>
-        </article>
+        </article> */}
        
 
         {/* <section className="industry-para-collection" ref={addToRefs}>
@@ -530,10 +602,10 @@ useScrollToTop();
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Experience in Your Industry
+                  {sectionOneTitle}
                   </h2>
                   <p class="overlay-desc">
-                  Our team brings in-depth knowledge and experience across the IoT, SaaS, IaaS, Fintech, Cloud, and DevOps sectors.
+                  {sectionOneParagraph}
 
                   </p>
                 </div>
@@ -544,10 +616,10 @@ useScrollToTop();
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Customized Solutions
+                  {sectionTwoTitle}
                   </h2>
                   <p class="overlay-desc">
-                  We recognize the uniqueness of your startup. Our approach is highly personalized, ensuring solutions that fit your specific needs and goals.
+                  {sectionTwoParagraph}
                   </p>
                 </div>
               </div>
@@ -558,9 +630,9 @@ useScrollToTop();
               <div class="overlay-container three-why">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Efficiency and Cost-Reduction</h2>
+                  <h2 class="overlay-heading">{sectionThreeTitle}</h2>
                   <p class="overlay-desc">
-                  While you innovate, we optimize. Our strategies are designed not only to help you grow but to do so in the most cost-effective way.
+                  {sectionThreeParagraph}
                   </p>
                 </div>
               </div>
@@ -570,10 +642,10 @@ useScrollToTop();
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Long-Term Partnership
+                  {sectionFourTitle}
                   </h2>
                   <p class="overlay-desc">
-                  We believe in building lasting relationships. Our success is measured by the sustained growth and success of our clients.
+                  {sectionFourParagraph}
                   </p>
                 </div>
               </div>

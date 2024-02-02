@@ -42,8 +42,19 @@ import solarproduct from "../../assets/img/api_images/solar_one.webp";
 import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
+
+import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 const Iot = () => {
-  const [caseStudies, setCaseStudies] = useState([]);
+  const [sectionOneTitle, setSectionOneTitle] = useState('');
+  const [sectionOneParagraph, setSectionOneParagraph] = useState('');
+  const [sectionTwoTitle, setSectionTwoTitle] = useState('');
+  const [sectionTwoParagraph, setSectionTwoParagraph] = useState('');
+  const [sectionThreeTitle, setSectionThreeTitle] = useState('');
+  const [sectionThreeParagraph, setSectionThreeParagraph] = useState('');
+  const [sectionFourTitle, setSectionFourTitle] = useState('');
+  const [sectionFourParagraph, setSectionFourParagraph] = useState('');
+  const [sectionFiveTitle, setSectionFiveTitle] = useState('');
+  const [sectionFiveParagraph, setSectionFiveParagraph] = useState('');
   // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
   // const testiRef = useRef(null);
 
@@ -63,18 +74,62 @@ const Iot = () => {
 
   const [darkMode, setDarkMode] = useState(false);
 
+  function simplifyFintechData(data) {
+    return data.reduce((acc, entry) => {
+      const simplifiedContent = entry.content.map(item => ({
+        id: entry._id, // Keeping track of the parent entry ID, if needed
+        headingText: item.headingText,
+        highlighted: item.highlighted,
+        paragraphText: item.paragraphText
+      }));
+      return acc.concat(simplifiedContent);
+    }, []);
+  }
+  
   useEffect(() => {
-    const fetchCaseStudies = async () => {
+    const fetchFintechData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/cases');
-        setCaseStudies(response.data.slice(0, 3)); // Fetch only the first three case studies
+        const response = await axios.get('http://localhost:3000/saas');
+        console.log(`response data...`, response.data)
+        const simplifiedData = simplifyFintechData(response.data);
+        setFintechData(simplifiedData);
+      
       } catch (error) {
-        console.error('Error fetching case studies:', error);
+        console.error('Error fetching saas data:', error);
       }
     };
   
-    fetchCaseStudies();
+    fetchFintechData();
   }, []);
+  
+  useEffect(() => {
+    const fetchFintechInfo = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/saasinfo');
+        // Assuming the first element of the array has the sections
+        const sections = response.data[0].sections;
+  
+        if (sections.length >= 2) {
+          // Update state variables based on your data structure
+          setSectionOneTitle(sections[0].title);
+          setSectionOneParagraph(sections[0].paragraph);
+          setSectionTwoTitle(sections[1].title);
+          setSectionTwoParagraph(sections[1].paragraph);
+          setSectionThreeTitle(sections[2].title);
+          setSectionThreeParagraph(sections[2].paragraph);
+          setSectionFourTitle(sections[3].title);
+          setSectionFourParagraph(sections[3].paragraph);
+          // ... set more states for other sections ...
+        }
+      } catch (error) {
+        console.error('Error fetching fintech info:', error);
+        // Handle the error appropriately
+      }
+    };
+  
+    fetchFintechInfo();
+  }, []);
+
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -199,9 +254,9 @@ useScrollToTop();
       {/* Services Section */}
       {/* <IndustryServicesSection/> */}
 
-    
+    <IndustriesArticles Api="iot"/>
      {/* Specialities Paragraph */}
-     <IndustrySpecialities />
+     {/* <IndustrySpecialities /> */}
 
     
 
