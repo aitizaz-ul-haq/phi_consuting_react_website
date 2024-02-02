@@ -13801,7 +13801,7 @@ display: none;
 
     .styling-artical-sections {
         padding: 8rem;
-        background-color: var(--LIGHT-PHI-BLUE);
+        background-color: lightskyblue;
         border-radius: 15px;
         margin: 2rem;
     }
