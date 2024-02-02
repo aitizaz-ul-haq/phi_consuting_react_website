@@ -89,7 +89,7 @@ const Cloud = () => {
   const [darkMode, setDarkMode] = useState(false);
   const sectionsRef = useRef([]);
   const insightsRefs = useRef([]);
-
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   function simplifyFintechData(data) {
     return data.reduce((acc, entry) => {
@@ -106,7 +106,7 @@ const Cloud = () => {
   useEffect(() => {
     const fetchFintechData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/cloud');
+        const response = await axios.get(`${apiUrl}/cloud`);
         console.log(`response data...`, response.data)
         const simplifiedData = simplifyFintechData(response.data);
         setFintechData(simplifiedData);
@@ -122,7 +122,7 @@ const Cloud = () => {
   useEffect(() => {
     const fetchFintechInfo = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/cloudinfo');
+        const response = await axios.get(`${apiUrl}/cloudinfo`);
         // Assuming the first element of the array has the sections
         const sections = response.data[0].sections;
   

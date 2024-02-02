@@ -72,6 +72,8 @@ const DevOps = () => {
   const [sectionFourParagraph, setSectionFourParagraph] = useState('');
   const [sectionFiveTitle, setSectionFiveTitle] = useState('');
   const [sectionFiveParagraph, setSectionFiveParagraph] = useState('');
+
+  const apiUrl = process.env.REACT_APP_API_URL;
   // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
   // const testiRef = useRef(null);
 
@@ -108,7 +110,7 @@ const DevOps = () => {
   useEffect(() => {
     const fetchFintechData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/devops');
+        const response = await axios.get(`${apiUrl}/devops`);
         console.log(`response data...`, response.data)
         const simplifiedData = simplifyFintechData(response.data);
         setFintechData(simplifiedData);
@@ -124,7 +126,7 @@ const DevOps = () => {
   useEffect(() => {
     const fetchFintechInfo = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/devinfo');
+        const response = await axios.get(`${apiUrl}/devinfo`);
         // Assuming the first element of the array has the sections
         const sections = response.data[0].sections;
   

@@ -95,6 +95,8 @@ const IaaS = () => {
 
   const insightsRefs = useRef([]);
 
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   function simplifyFintechData(data) {
     return data.reduce((acc, entry) => {
       const simplifiedContent = entry.content.map(item => ({
@@ -110,7 +112,7 @@ const IaaS = () => {
   useEffect(() => {
     const fetchFintechData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/iaas');
+        const response = await axios.get(`${apiUrl}/iaas`);
         console.log(`response data...`, response.data)
         const simplifiedData = simplifyFintechData(response.data);
         setFintechData(simplifiedData);
@@ -126,7 +128,7 @@ const IaaS = () => {
   useEffect(() => {
     const fetchFintechInfo = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/iaasinfo');
+        const response = await axios.get(`${apiUrl}/iaasinfo`);
         // Assuming the first element of the array has the sections
         const sections = response.data[0].sections;
   
@@ -152,18 +154,7 @@ const IaaS = () => {
   }, []);
 
   
-  useEffect(() => {
-    const fetchCaseStudies = async () => {
-      try {
-        const response = await axios.get('http://localhost:3000/cases');
-        setCaseStudies(response.data.slice(0, 3)); // Fetch only the first three case studies
-      } catch (error) {
-        console.error('Error fetching case studies:', error);
-      }
-    };
-  
-    fetchCaseStudies();
-  }, []);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {

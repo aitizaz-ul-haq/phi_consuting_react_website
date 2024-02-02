@@ -74,6 +74,8 @@ const Iot = () => {
 
   const [darkMode, setDarkMode] = useState(false);
 
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   function simplifyFintechData(data) {
     return data.reduce((acc, entry) => {
       const simplifiedContent = entry.content.map(item => ({
@@ -89,7 +91,7 @@ const Iot = () => {
   useEffect(() => {
     const fetchFintechData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/saas');
+        const response = await axios.get(`${apiUrl}/saas`);
         console.log(`response data...`, response.data)
         const simplifiedData = simplifyFintechData(response.data);
         setFintechData(simplifiedData);
@@ -105,7 +107,7 @@ const Iot = () => {
   useEffect(() => {
     const fetchFintechInfo = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/saasinfo');
+        const response = await axios.get(`${apiUrl}/saasinfo`);
         // Assuming the first element of the array has the sections
         const sections = response.data[0].sections;
   

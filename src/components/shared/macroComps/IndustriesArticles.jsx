@@ -4,10 +4,12 @@ import axios from 'axios';
 const IndustriesArticles = ({ Api }) => {
     const [fintechData, setFintechData] = useState([]);
 
+    const apiUrl = process.env.REACT_APP_API_URL;
+
     useEffect(() => {
         const fetchFintechData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/${Api}`);
+                const response = await axios.get(`${apiUrl}/${Api}`);
                 console.log("API Response:", response);
                 if (response.data && response.data.length > 0) {
                     // Assuming your API returns the data array directly

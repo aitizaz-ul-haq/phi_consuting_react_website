@@ -56,6 +56,7 @@ const FinTech = () => {
   const [sectionFourTitle, setSectionFourTitle] = useState('');
   const [sectionFourParagraph, setSectionFourParagraph] = useState('');
 
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const [processNewVisible, setProcessNewVisible] = useState(false);
   const processNewRef = useRef(null);
@@ -87,7 +88,7 @@ const Fintech = 'fintech';
 useEffect(() => {
   const fetchFintechData = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/fintech');
+      const response = await axios.get(`${apiUrl}/fintech`);
       console.log(`response data...`, response.data)
       const simplifiedData = simplifyFintechData(response.data);
       setFintechData(simplifiedData);
@@ -103,7 +104,7 @@ useEffect(() => {
 useEffect(() => {
   const fetchFintechInfo = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/fintechinfo');
+      const response = await axios.get(`${apiUrl}/fintechinfo`);
       // Assuming the first element of the array has the sections
       const sections = response.data[0].sections;
 
