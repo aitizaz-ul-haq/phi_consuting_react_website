@@ -1,6 +1,6 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-
+  
 import ATOB from '../../assets/img/new_logos_comps/newer/AtoB 2.png';
 import bobtail from '../../assets/img/new_logos_comps/bobtail.png';
 import joyride from '../../assets/img/new_logos_comps/joyride.png';
