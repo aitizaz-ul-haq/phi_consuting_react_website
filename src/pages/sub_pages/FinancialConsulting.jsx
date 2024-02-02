@@ -78,6 +78,119 @@ const FiancialConsulting = () => {
    const [darkMode, setDarkMode] = useState(false);
    const insightsRefs = useRef([]);
 
+   const [data, setData] = useState({
+    bannerHeading: "",
+    bannerDescription: "",
+  
+    featuresMainHeading: "",
+    featuresMainDescription: "",
+  
+    featuresHeadingOne: "",
+    featuresDescriptionOne: "",
+  
+    featuresHeadingTwo: "",
+    featuresDescriptionTwo: "",
+  
+    featuresHeadingThree: "",
+    featuresDescriptionThree: "",
+  
+    featuresHeadingFour: "",
+    featuresDescriptionFour: "",
+  
+    featuresHeadingFive: "",
+    featuresDescriptionFive: "",
+  
+    featuresHeadingSix: "",
+    featuresDescriptionSix: "",
+  
+    processDesOne: "",
+    processDesTwo: "",
+    processDesThree: "",
+    processDesFour: "",
+    processDesFive: "",
+    processDesSix: "",
+    processDesSeven: "",
+    processDesEight: "",
+  
+    whySectionHeading: "",
+    whySectionDescription: "",
+  
+    whyBoxOneHeading: "",
+    whyBoxOneDescription: "",
+  
+    whyBoxTwoHeading: "",
+    whyBoxTwoDescription: "",
+  
+    whyBoxThreeHeading: "",
+    whyBoxThreeDescription: "",
+  
+    whyBoxFourHeading: "",
+    whyBoxFourDescription: "",
+  
+    whyBoxFiveHeading: "",
+    whyBoxFiveDescription: "",
+  
+    whyBoxSixHeading: "",
+    whyBoxSixDescription: ""
+  });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/invpage');
+        console.log(`GTM page data`, response.data);
+        if (response.data && response.data.length > 0) {
+          const gtmData = response.data[0]; // Assuming the first entry is what we want
+  
+          setData({
+            bannerHeading: gtmData.bannerHeading,
+            bannerDescription: gtmData.bannerDescription,
+            featuresMainHeading: gtmData.featuresMainHeading,
+            featuresMainDescription: gtmData.featuresMainDescription,
+            featuresHeadingOne: gtmData.featuresHeadingOne,
+            featuresDescriptionOne: gtmData.featuresDescriptionOne,
+            featuresHeadingTwo: gtmData.featuresHeadingTwo,
+            featuresDescriptionTwo: gtmData.featuresDescriptionTwo,
+            featuresHeadingThree: gtmData.featuresHeadingThree,
+            featuresDescriptionThree: gtmData.featuresDescriptionThree,
+            featuresHeadingFour: gtmData.featuresHeadingFour,
+            featuresDescriptionFour: gtmData.featuresDescriptionFour,
+            featuresHeadingFive: gtmData.featuresHeadingFive,
+            featuresDescriptionFive: gtmData.featuresDescriptionFive,
+            featuresHeadingSix: gtmData.featuresHeadingSix,
+            featuresDescriptionSix: gtmData.featuresDescriptionSix,
+            processDesOne: gtmData.processDesOne,
+            processDesTwo: gtmData.processDesTwo,
+            processDesThree: gtmData.processDesThree,
+            processDesFour: gtmData.processDesFour,
+            processDesFive: gtmData.processDesFive,
+            processDesSix: gtmData.processDesSix,
+            processDesSeven: gtmData.processDesSeven,
+            processDesEight: gtmData.processDesEight,
+            whySectionHeading: gtmData.whySectionHeading,
+            whySectionDescription: gtmData.whySectionDescription,
+            whyBoxOneHeading: gtmData.whyBoxOneHeading,
+            whyBoxOneDescription: gtmData.whyBoxOneDescription,
+            whyBoxTwoHeading: gtmData.whyBoxTwoHeading,
+            whyBoxTwoDescription: gtmData.whyBoxTwoDescription,
+            whyBoxThreeHeading: gtmData.whyBoxThreeHeading,
+            whyBoxThreeDescription: gtmData.whyBoxThreeDescription,
+            whyBoxFourHeading: gtmData.whyBoxFourHeading,
+            whyBoxFourDescription: gtmData.whyBoxFourDescription,
+            whyBoxFiveHeading: gtmData.whyBoxFiveHeading,
+            whyBoxFiveDescription: gtmData.whyBoxFiveDescription,
+            whyBoxSixHeading: gtmData.whyBoxSixHeading,
+            whyBoxSixDescription: gtmData.whyBoxSixDescription,
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching GTM Page data:", error);
+      }
+    };
+  
+    fetchData();
+  }, []);
+
    useEffect(() => {
     const fetchCaseStudies = async () => {
       try {
@@ -233,7 +346,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
            
             </h2>
             <p class="hero-desc-fin-consul">
-            At Phi Consulting we understand what it’s like not to be able to raise capital for a good business idea because of lack of clarity in the numbers. And, with our financial consulting service for startups, we’ve helped many startups organize their finances and elevate their financial knowledge.
+            {data.bannerDescription}
             </p>
             <div class="consult-button-fin-consul">
             <Link to="/contact" className='scheduler-set'> Schedule a Free Consultation</Link>
@@ -244,9 +357,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
 
       {/* <!-- sales page banner --> */}
       <article class="sales-solutions">
-        <h2 class="sales-heading">Creating strong foundations for a sustainable future</h2>
+        <h2 class="sales-heading">{data.featuresMainHeading}</h2>
         <p class="sales-banner-desc">
-        The path of a startup is not easy. We want to be the guide that helps you discover the right methods to catalyze your growth
+        {data.featuresMainDescription}
         </p>
         <div class="sales-banner-container">
           <div class="sales-cards one-with-white-back">
@@ -259,10 +372,10 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
               />
             </div>
             <h3 class="sales-card-title">
-            Finance Transformation:
+            {data.featuresHeadingOne}
             </h3>
             <div class="sales-card-description">
-            Our finance transformation solutions allow you to do more with fewer resources by restructuring and optimizing your financial function – so you can drive strategic value now while keeping your eyes pointed toward the future.
+            {data.featuresDescriptionOne}
             </div>
           </div>
 
@@ -275,9 +388,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Process Improvement</h3>
+            <h3 class="sales-card-title">{data.featuresHeadingTwo}</h3>
             <div class="sales-card-description">
-            Broken business processes will cost you time and money. We are experts at identifying, analyzing and improving existing processes to improve performance and drive results.
+            {data.featuresDescriptionTwo}
             </div>
           </div>
           <div class="sales-cards one-with-white-back">
@@ -289,9 +402,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Business Plan Consulting</h3>
+            <h3 class="sales-card-title">{data.featuresHeadingThree}</h3>
             <div class="sales-card-description">
-            Investors look for structured and detailed plans for scaling their business while balancing risk and return. We help navigate critical plans for the future by mapping out execution plans for the road ahead.
+            {data.featuresDescriptionThree}
             </div>
           </div>
         </div>
@@ -366,7 +479,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 </div>
                 <h2 class="circle-heading-sales">Define Your Goals</h2>
                 <h3 class="circle-text-sales">
-                Collaboratively outline your financial objectives and aspirations.
+                {data.processDesOne}
                 </h3>
               </div>
             </div>
@@ -382,7 +495,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 </div>
                 <h2 class="circle-heading-sales">Plan & Map Your Process</h2>
                 <h3 class="circle-text-sales">
-                Develop a customized roadmap tailored to your business needs.
+                {data.processDesTwo}
                 </h3>
               </div>
             </div>
@@ -398,7 +511,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 </div>
                 <h2 class="circle-heading-sales">Set Actions</h2>
                 <h3 class="circle-text-sales">
-                Implement strategic actions to achieve your financial milestones.
+                {data.processDesThree}
                 </h3>
               </div>
             </div>
@@ -414,7 +527,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 </div>
                 <h2 class="circle-heading-sales">Assign Stakeholders</h2>
                 <h3 class="circle-text-sales">
-                Clearly define roles and responsibilities for seamless execution.
+                {data.processDesFour}
                 </h3>
               </div>
             </div>
@@ -430,7 +543,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 </div>
                 <h2 class="circle-heading-sales">Test the Process</h2>
                 <h3 class="circle-text-sales">
-                Rigorously evaluate and fine-tune the proposed financial strategies.
+                {data.processDesFive}
                 </h3>
               </div>
             </div>
@@ -446,7 +559,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 </div>
                 <h2 class="circle-heading-sales">Implement</h2>
                 <h3 class="circle-text-sales">
-                Execute the optimized financial plan with precision.
+                {data.processDesSix}
                 </h3>
               </div>
             </div>
@@ -463,7 +576,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 </div>
                 <h2 class="circle-heading-sales">Monitor the Results</h2>
                 <h3 class="circle-text-sales">
-                Continuously track and analyze financial performance.
+                {data.processDesSeven}
                 </h3>
               </div>
             </div>
@@ -479,7 +592,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 </div>
                 <h2 class="circle-heading-sales">Iterate the Process</h2>
                 <h3 class="circle-text-sales">
-                Adapt and refine strategies based on real-time results and changing business landscapes
+                {data.processDesEight}
                 </h3>
               </div>
             </div>
@@ -508,7 +621,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="text-container">
                   <div class="process-new-heading">Define Your Goals</div>
                   <div class="process-new-description">
-                  Collaboratively outline your financial objectives and aspirations.
+                  {data.processDesOne}
                   </div>
                 </div>
               </div>
@@ -523,7 +636,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="text-container">
                   <div class="process-new-heading">Plan & Map Your Process</div>
                   <div class="process-new-description-right-side">
-                  Develop a customized roadmap tailored to your business needs.
+                  {data.processDesTwo}
                   </div>
                 </div>
               </div>
@@ -540,7 +653,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="text-container">
                   <div class="process-new-heading">Set Actions</div>
                   <div class="process-new-description">
-                  Implement strategic actions to achieve your financial milestones.
+                  {data.processDesThree}
                   </div>
                 </div>
               </div>
@@ -555,7 +668,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="text-container">
                   <div class="process-new-heading">Assign Stakeholders</div>
                   <div class="process-new-description-right-side">
-                  Clearly define roles and responsibilities for seamless execution
+                  {data.processDesFour}
                   </div>
                 </div>
               </div>
@@ -572,7 +685,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="text-container">
                   <div class="process-new-heading">Test the Process</div>
                   <div class="process-new-description">
-                  Rigorously evaluate and fine-tune the proposed financial strategies.
+                  {data.processDesFive}
                   </div>
                 </div>
               </div>
@@ -587,7 +700,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="text-container">
                   <div class="process-new-heading">Implement</div>
                   <div class="process-new-description-right-side">
-                  Execute the optimized financial plan with precision.
+                  {data.processDesSix}
                   </div>
                 </div>
               </div>
@@ -604,7 +717,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="text-container">
                   <div class="process-new-heading">Monitor the Results</div>
                   <div class="process-new-description">
-                  Continuously track and analyze financial performance.
+                  {data.processDesSeven}
                   </div>
                 </div>
               </div>
@@ -619,7 +732,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="text-container">
                   <div class="process-new-heading">Iterate the Process</div>
                   <div class="process-new-description-right-side">
-                  Adapt and refine strategies based on real-time results and changing business landscapes.
+                  {data.processDesEight}
                   </div>
                 </div>
               </div>
@@ -730,7 +843,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
       {/* <!-- why phi for customer exp Section --> */}
       <article class="why-phi-for-sales">
         <h2 class="why-phi-heading">
-        Why Choose Phi?
+        {data.whySectionHeading}
         </h2>
         <p class="why-phi-desc">
         Elevate your financial strategies with confidence and chart a course for sustained success.
@@ -741,9 +854,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
               <div class="overlay-container one-bui-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Proven Expertise</h2>
+                  <h2 class="overlay-heading">{data.whyBoxOneHeading}</h2>
                   <p class="overlay-desc">
-                  At Phi Consulting, our track record speaks volumes. With years of diverse experience and a history of successful financial transformations, we bring a wealth of proven expertise to the table. Count on us to navigate the complexities of financial landscapes with precision and deliver tangible results for your business.
+                  {data.whyBoxOneDescription}
                   </p>
                 </div>
               </div>
@@ -752,9 +865,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
               <div class="overlay-container two-fin-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Plan For The Future</h2>
+                  <h2 class="overlay-heading">{data.whyBoxTwoHeading}</h2>
                   <p class="overlay-desc">
-                  Phi Consulting goes beyond the present; we're dedicated to shaping a future of financial success for your business. Collaborate with us to craft strategic financial plans that not only address current challenges but also position your enterprise for long-term growth and resilience.
+                  {data.whyBoxTwoDescription}
                   </p>
                 </div>
               </div>
@@ -765,9 +878,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
               <div class="overlay-container three-fin-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Make Data-Driven Decisions</h2>
+                  <h2 class="overlay-heading">{data.whyBoxThreeHeading}</h2>
                   <p class="overlay-desc">
-                  In an era where data is paramount, Phi Consulting empowers your decision-making process with robust, data-driven insights. Leverage our analytical expertise to transform complex financial data into actionable strategies, ensuring every decision propels your business forward.
+                  {data.whyBoxThreeDescription}
                   </p>
                 </div>
               </div>
@@ -776,9 +889,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
               <div class="overlay-container four-fin-consul">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Know Your Startup's Value</h2>
+                  <h2 class="overlay-heading">{data.whyBoxFourHeading}</h2>
                   <p class="overlay-desc">
-                  Understanding the true value of your startup is key to strategic growth. Phi Consulting helps you uncover and maximize your startup's inherent value. Through thorough analysis and strategic planning, we ensure that your business is positioned for success and recognized for its unique contributions in the market
+                  {data.whyBoxFourDescription}
                   </p>
                 </div>
               </div>

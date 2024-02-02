@@ -86,6 +86,119 @@ const HrAndRecruitmentConsulting = () => {
    const [darkMode, setDarkMode] = useState(false);
    const insightsRefs = useRef([]);
 
+   const [data, setData] = useState({
+    bannerHeading: "",
+    bannerDescription: "",
+  
+    featuresMainHeading: "",
+    featuresMainDescription: "",
+  
+    featuresHeadingOne: "",
+    featuresDescriptionOne: "",
+  
+    featuresHeadingTwo: "",
+    featuresDescriptionTwo: "",
+  
+    featuresHeadingThree: "",
+    featuresDescriptionThree: "",
+  
+    featuresHeadingFour: "",
+    featuresDescriptionFour: "",
+  
+    featuresHeadingFive: "",
+    featuresDescriptionFive: "",
+  
+    featuresHeadingSix: "",
+    featuresDescriptionSix: "",
+  
+    processDesOne: "",
+    processDesTwo: "",
+    processDesThree: "",
+    processDesFour: "",
+    processDesFive: "",
+    processDesSix: "",
+    processDesSeven: "",
+    processDesEight: "",
+  
+    whySectionHeading: "",
+    whySectionDescription: "",
+  
+    whyBoxOneHeading: "",
+    whyBoxOneDescription: "",
+  
+    whyBoxTwoHeading: "",
+    whyBoxTwoDescription: "",
+  
+    whyBoxThreeHeading: "",
+    whyBoxThreeDescription: "",
+  
+    whyBoxFourHeading: "",
+    whyBoxFourDescription: "",
+  
+    whyBoxFiveHeading: "",
+    whyBoxFiveDescription: "",
+  
+    whyBoxSixHeading: "",
+    whyBoxSixDescription: ""
+  });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/hrpage');
+        console.log(`GTM page data`, response.data);
+        if (response.data && response.data.length > 0) {
+          const gtmData = response.data[0]; // Assuming the first entry is what we want
+  
+          setData({
+            bannerHeading: gtmData.bannerHeading,
+            bannerDescription: gtmData.bannerDescription,
+            featuresMainHeading: gtmData.featuresMainHeading,
+            featuresMainDescription: gtmData.featuresMainDescription,
+            featuresHeadingOne: gtmData.featuresHeadingOne,
+            featuresDescriptionOne: gtmData.featuresDescriptionOne,
+            featuresHeadingTwo: gtmData.featuresHeadingTwo,
+            featuresDescriptionTwo: gtmData.featuresDescriptionTwo,
+            featuresHeadingThree: gtmData.featuresHeadingThree,
+            featuresDescriptionThree: gtmData.featuresDescriptionThree,
+            featuresHeadingFour: gtmData.featuresHeadingFour,
+            featuresDescriptionFour: gtmData.featuresDescriptionFour,
+            featuresHeadingFive: gtmData.featuresHeadingFive,
+            featuresDescriptionFive: gtmData.featuresDescriptionFive,
+            featuresHeadingSix: gtmData.featuresHeadingSix,
+            featuresDescriptionSix: gtmData.featuresDescriptionSix,
+            processDesOne: gtmData.processDesOne,
+            processDesTwo: gtmData.processDesTwo,
+            processDesThree: gtmData.processDesThree,
+            processDesFour: gtmData.processDesFour,
+            processDesFive: gtmData.processDesFive,
+            processDesSix: gtmData.processDesSix,
+            processDesSeven: gtmData.processDesSeven,
+            processDesEight: gtmData.processDesEight,
+            whySectionHeading: gtmData.whySectionHeading,
+            whySectionDescription: gtmData.whySectionDescription,
+            whyBoxOneHeading: gtmData.whyBoxOneHeading,
+            whyBoxOneDescription: gtmData.whyBoxOneDescription,
+            whyBoxTwoHeading: gtmData.whyBoxTwoHeading,
+            whyBoxTwoDescription: gtmData.whyBoxTwoDescription,
+            whyBoxThreeHeading: gtmData.whyBoxThreeHeading,
+            whyBoxThreeDescription: gtmData.whyBoxThreeDescription,
+            whyBoxFourHeading: gtmData.whyBoxFourHeading,
+            whyBoxFourDescription: gtmData.whyBoxFourDescription,
+            whyBoxFiveHeading: gtmData.whyBoxFiveHeading,
+            whyBoxFiveDescription: gtmData.whyBoxFiveDescription,
+            whyBoxSixHeading: gtmData.whyBoxSixHeading,
+            whyBoxSixDescription: gtmData.whyBoxSixDescription,
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching GTM Page data:", error);
+      }
+    };
+  
+    fetchData();
+  }, []);
+
    useEffect(() => {
     const fetchCaseStudies = async () => {
       try {
@@ -241,7 +354,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
 
             </h2>
             <p class="hero-desc-hr-consul">
-            Phi Consulting connects emerging startups with top talent in a 5-stage hiring process. We ensure that the talent selected is not only highly skilled but also global-ready.
+            {data.bannerDescription}
             </p>
             <div class="consult-button-hr-consul">
             <Link to="/contact-us" className='scheduler-set'> Schedule a Free Consultation</Link>
@@ -253,12 +366,10 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
 
       {/* <!-- sales page banner --> */}
       <article class="sales-solutions">
-        <h2 class="sales-heading">Vetted at par with the international standards of the top companies around the world.</h2>
-        {/* <p class="sales-banner-desc">
-          Elevate your workforce potential with Phi Consulting's HR services –
-          where strategic solutions meet talent excellence for a future-ready
-          organization.
-        </p> */}
+        <h2 class="sales-heading">{data.featuresMainHeading}</h2>
+        <p class="sales-banner-desc">
+        {data.featuresMainDescription}
+        </p>
         <div class="sales-banner-container">
           <div class="sales-cards one-with-white-back">
             <div class="icon-container">
@@ -269,9 +380,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">360 Degree HR Service</h3>
+            <h3 class="sales-card-title">{data.featuresHeadingOne}</h3>
             <div class="sales-card-description">
-            Phi Consulting provides holistic HR solutions, covering everything from employee onboarding to engagement and retention strategies. Enhance your workforce management with our comprehensive 360-degree HR Service.
+            {data.featuresDescriptionOne}
             </div>
           </div>
 
@@ -284,9 +395,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Payroll & Benefits</h3>
+            <h3 class="sales-card-title">{data.featuresHeadingTwo}</h3>
             <div class="sales-card-description">
-            Streamline payroll processes and optimize benefits administration with Phi Consulting. Ensure accurate and efficient financial management, leaving you more time to focus on your core business.
+            {data.featuresDescriptionTwo}
             </div>
           </div>
           <div class="sales-cards one-with-white-back">
@@ -298,9 +409,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Talent Development</h3>
+            <h3 class="sales-card-title">{data.featuresHeadingThree}</h3>
             <div class="sales-card-description">
-            Invest in your team's growth with Phi Consulting's Talent Development services. Tailored training programs and skill enhancement initiatives ensure your workforce is prepared for current and future challenges.
+            {data.featuresDescriptionThree}
             </div>
           </div>
         </div>
@@ -314,9 +425,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Executive Search</h3>
+            <h3 class="sales-card-title">{data.featuresHeadingFour}</h3>
             <div class="sales-card-description">
-            For critical leadership roles, trust Phi Consulting's Executive Search services. We specialize in identifying and securing top-tier executives to lead your organization to new heights.
+            {data.featuresHeadingFour}
             </div>
           </div>
 
@@ -329,9 +440,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Organization Development</h3>
+            <h3 class="sales-card-title">{data.featuresHeadingFive}</h3>
             <div class="sales-card-description">
-            Phi Consulting aids in developing agile and efficient organizations. From restructuring to cultural transformation, we provide strategic guidance for sustainable organizational development.
+            {data.featuresHeadingFive}
             </div>
           </div>
           {/* <div class="sales-cards one-with-blue-back">
@@ -515,7 +626,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="text-container">
                   <div class="process-new-heading">Profile Screening & Shortlisting</div>
                   <div class="process-new-description">
-                  We review tons of applications against our minimum criteria, their professional journey, and holistic background checks.
+                  {data.processDesOne}
                   </div>
                 </div>
               </div>
@@ -530,7 +641,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="text-container">
                   <div class="process-new-heading">Language Proficiency</div>
                   <div class="process-new-description-right-side">
-                  AI-powered communication assessment tests a candidate's reading, writing, pronunciation, clarity, fluency, and speed of speech.
+                  {data.processDesTwo}
 
                   </div>
                 </div>
@@ -548,7 +659,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="text-container">
                   <div class="process-new-heading">Aptitude Evaluation</div>
                   <div class="process-new-description">
-                  We conduct a scientifically designed aptitude test to check their reasoning and problem-solving ability.
+                  {data.processDesThree}
                   </div>
                 </div>
               </div>
@@ -563,7 +674,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="text-container">
                   <div class="process-new-heading">Technical Assessment</div>
                   <div class="process-new-description-right-side">
-                  We have curated one of the toughest and most advanced technical assessments to vet talent's capabilities, these are role-based extremely stringent tests that filter the top 10% of talents.
+                  {data.processDesFour}
                   </div>
                 </div>
               </div>
@@ -580,7 +691,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="text-container">
                   <div class="process-new-heading">Culture-Fit</div>
                   <div class="process-new-description">
-                  Our Talent Acquisition experts conduct the final interview understanding the candidate's preferences and expectations to do the right matchmaking.
+                  {data.processDesFive}
                   </div>
                 </div>
               </div>
@@ -741,7 +852,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
         {/* <!-- why phi for customer exp Section --> */}
         <article class="why-phi-for-sales">
           <h2 class="why-phi-heading">
-          Why Choose Phi?
+          {data.whySectionHeading}
           </h2>
           <p class="why-phi-desc">
             {/* At Phi Consulting, we understand that your people are your greatest
@@ -757,9 +868,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="overlay-container one-hr-consul">
                   <div class="overlay"></div>
                   <div class="content">
-                    <h2 class="overlay-heading">Fast Hiring</h2>
+                    <h2 class="overlay-heading"> {data.whyBoxOneHeading}</h2>
                     <p class="overlay-desc">
-                    Accelerate your hiring processes with Phi Consulting's efficient methods
+                    {data.whyBoxOneDescription}
                     </p>
                   </div>
                 </div>
@@ -768,9 +879,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="overlay-container two-hr-consul">
                   <div class="overlay"></div>
                   <div class="content">
-                    <h2 class="overlay-heading">Top 3% Vetted Talent</h2>
+                    <h2 class="overlay-heading"> {data.whyBoxTwoHeading}</h2>
                     <p class="overlay-desc">
-                    Gain access to a pool of highly qualified and thoroughly vetted candidates.
+                    {data.whyBoxTwoDescription}
                     </p>
                   </div>
                 </div>
@@ -781,9 +892,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="overlay-container three-hr-consul">
                   <div class="overlay"></div>
                   <div class="content">
-                    <h2 class="overlay-heading">Timezone Aligned</h2>
+                    <h2 class="overlay-heading">{data.whyBoxThreeHeading}</h2>
                     <p class="overlay-desc">
-                    Flawlessly align recruitment efforts with your business's operational timezone
+                    {data.whyBoxThreeDescription}
                     </p>
                   </div>
                 </div>
@@ -792,9 +903,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="overlay-container four-hr-consul">
                   <div class="overlay"></div>
                   <div class="content">
-                    <h2 class="overlay-heading">Culturally Fit</h2>
+                    <h2 class="overlay-heading">{data.whyBoxFourHeading}</h2>
                     <p class="overlay-desc">
-                    Compatible to adapt, understand, & adjust accordingly with the company’s core values, vision, principles, and identity.
+                    {data.whyBoxFourDescription}
                     </p>
                   </div>
                 </div>
@@ -805,9 +916,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="overlay-container five-hr-consul">
                   <div class="overlay"></div>
                   <div class="content">
-                    <h2 class="overlay-heading">Technically Robust</h2>
+                    <h2 class="overlay-heading">{data.whyBoxFiveHeading}</h2>
                     <p class="overlay-desc">
-                    Each candidate goes through a rigorous skill assessment curated uniquely as per the role.
+                    {data.whyBoxFiveDescription}
                     </p>
                   </div>
                 </div>
@@ -816,9 +927,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 <div class="overlay-container six-hr-consul">
                   <div class="overlay"></div>
                   <div class="content">
-                    <h2 class="overlay-heading">Excellent Communication</h2>
+                    <h2 class="overlay-heading">{data.whyBoxSixHeading}</h2>
                     <p class="overlay-desc">
-                    Speaking, listening, reading, writing, pronunciation, fluency, clarity of expression, and speed of speech.
+                    {data.whyBoxSixDescription}
                     </p>
                   </div>
                 </div>

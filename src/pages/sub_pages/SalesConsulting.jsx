@@ -72,6 +72,63 @@ const SalesConsulting = () => {
   // const [isVisiblecard, setIsVisiblecard] = useState(false);
   // const cardsRef = useRef(null);
 
+  const [data, setData] = useState({
+    bannerHeading: "",
+    bannerDescription: "",
+  
+    featuresMainHeading: "",
+    featuresMainDescription: "",
+  
+    featuresHeadingOne: "",
+    featuresDescriptionOne: "",
+  
+    featuresHeadingTwo: "",
+    featuresDescriptionTwo: "",
+  
+    featuresHeadingThree: "",
+    featuresDescriptionThree: "",
+  
+    featuresHeadingFour: "",
+    featuresDescriptionFour: "",
+  
+    featuresHeadingFive: "",
+    featuresDescriptionFive: "",
+  
+    featuresHeadingSix: "",
+    featuresDescriptionSix: "",
+  
+    processDesOne: "",
+    processDesTwo: "",
+    processDesThree: "",
+    processDesFour: "",
+    processDesFive: "",
+    processDesSix: "",
+    processDesSeven: "",
+    processDesEight: "",
+  
+    whySectionHeading: "",
+    whySectionDescription: "",
+  
+    whyBoxOneHeading: "",
+    whyBoxOneDescription: "",
+  
+    whyBoxTwoHeading: "",
+    whyBoxTwoDescription: "",
+  
+    whyBoxThreeHeading: "",
+    whyBoxThreeDescription: "",
+  
+    whyBoxFourHeading: "",
+    whyBoxFourDescription: "",
+  
+    whyBoxFiveHeading: "",
+    whyBoxFiveDescription: "",
+  
+    whyBoxSixHeading: "",
+    whyBoxSixDescription: ""
+  });
+  
+
   const [processNewVisible, setProcessNewVisible] = useState(false);
   const processNewRef = useRef(null);
 
@@ -79,6 +136,64 @@ const SalesConsulting = () => {
   const [darkMode, setDarkMode] = useState(false);
   const insightsRefs = useRef([]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/gtmpage');
+        console.log(`GTM page data`, response.data);
+        if (response.data && response.data.length > 0) {
+          const gtmData = response.data[0]; // Assuming the first entry is what we want
+  
+          setData({
+            bannerHeading: gtmData.bannerHeading,
+            bannerDescription: gtmData.bannerDescription,
+            featuresMainHeading: gtmData.featuresMainHeading,
+            featuresMainDescription: gtmData.featuresMainDescription,
+            featuresHeadingOne: gtmData.featuresHeadingOne,
+            featuresDescriptionOne: gtmData.featuresDescriptionOne,
+            featuresHeadingTwo: gtmData.featuresHeadingTwo,
+            featuresDescriptionTwo: gtmData.featuresDescriptionTwo,
+            featuresHeadingThree: gtmData.featuresHeadingThree,
+            featuresDescriptionThree: gtmData.featuresDescriptionThree,
+            featuresHeadingFour: gtmData.featuresHeadingFour,
+            featuresDescriptionFour: gtmData.featuresDescriptionFour,
+            featuresHeadingFive: gtmData.featuresHeadingFive,
+            featuresDescriptionFive: gtmData.featuresDescriptionFive,
+            featuresHeadingSix: gtmData.featuresHeadingSix,
+            featuresDescriptionSix: gtmData.featuresDescriptionSix,
+            processDesOne: gtmData.processDesOne,
+            processDesTwo: gtmData.processDesTwo,
+            processDesThree: gtmData.processDesThree,
+            processDesFour: gtmData.processDesFour,
+            processDesFive: gtmData.processDesFive,
+            processDesSix: gtmData.processDesSix,
+            processDesSeven: gtmData.processDesSeven,
+            processDesEight: gtmData.processDesEight,
+            whySectionHeading: gtmData.whySectionHeading,
+            whySectionDescription: gtmData.whySectionDescription,
+            whyBoxOneHeading: gtmData.whyBoxOneHeading,
+            whyBoxOneDescription: gtmData.whyBoxOneDescription,
+            whyBoxTwoHeading: gtmData.whyBoxTwoHeading,
+            whyBoxTwoDescription: gtmData.whyBoxTwoDescription,
+            whyBoxThreeHeading: gtmData.whyBoxThreeHeading,
+            whyBoxThreeDescription: gtmData.whyBoxThreeDescription,
+            whyBoxFourHeading: gtmData.whyBoxFourHeading,
+            whyBoxFourDescription: gtmData.whyBoxFourDescription,
+            whyBoxFiveHeading: gtmData.whyBoxFiveHeading,
+            whyBoxFiveDescription: gtmData.whyBoxFiveDescription,
+            whyBoxSixHeading: gtmData.whyBoxSixHeading,
+            whyBoxSixDescription: gtmData.whyBoxSixDescription,
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching GTM Page data:", error);
+      }
+    };
+  
+    fetchData();
+  }, []);
+
+  
   useEffect(() => {
     const fetchCaseStudies = async () => {
       try {
@@ -231,7 +346,7 @@ useScrollToTop();
               
             </h2>
             <p class="hero-desc-sales">
-            We unlock product success through deep consumer behavior insights and strategic GTM Consultancy. As a trusted partner for emerging startups, we specialize in Sales, Customer Experience, and Sales Enablement
+            {data.bannerDescription}
             </p>
             <div class="consult-button-sales"> <Link to="/contact-us" className='scheduler-set'>Schedule a Free Consultation</Link> </div>
           </div>
@@ -240,13 +355,10 @@ useScrollToTop();
 
       {/* <!-- sales page banner --> */}
       <article class="sales-solutions" >
-        <h2 class="sales-heading" >We don’t just acknowledge problems like churn and slowed revenue growth – we help you solve them.</h2>
-        {/* <p class="sales-banner-desc">
-          Phi Consulting transforms possibilities into profits through tailored
-          sales consulting services, including Inbound and Outbound Sales, Sales
-          Enablement, Sales Expansion, and strategic Product-led Growth
-          solutions.
-        </p> */}
+        <h2 class="sales-heading" >{data.featuresMainHeading}</h2>
+        <p class="sales-banner-desc">
+         {data.featuresMainDescription}
+        </p>
         <div class="sales-banner-container">
           <div class="sales-cards one-with-white-back">
             <div class="icon-container">
@@ -257,9 +369,9 @@ useScrollToTop();
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">End-to-End Sales</h3>
+            <h3 class="sales-card-title">{data.featuresHeadingOne}</h3>
             <div class="sales-card-description">
-            Phi Consulting streamlines your product's journey from beta to market success.
+            {data.featuresDescriptionOne}
             </div>
           </div>
 
@@ -272,9 +384,9 @@ useScrollToTop();
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Customer Experience</h3>
+            <h3 class="sales-card-title">{data.featuresHeadingTwo}</h3>
             <div class="sales-card-description">
-            Phi Consulting positions your products effectively, driving engagement. Our precise metrics empower decision-making for a credible market presence.
+            {data.featuresDescriptionTwo}
             </div>
           </div>
           <div class="sales-cards one-with-white-back">
@@ -286,9 +398,9 @@ useScrollToTop();
                 height="90"
               />
             </div>
-            <h3 class="sales-card-title">Sales Enablement</h3>
+            <h3 class="sales-card-title">{data.featuresHeadingThree}</h3>
             <div class="sales-card-description">
-            Reach prospects faster, expanding your customer base. Let us guide you in maintaining profitability while driving top-line revenues.
+            {data.featuresDescriptionThree}
             </div>
           </div>
         </div>
@@ -505,9 +617,7 @@ useScrollToTop();
                 <div class="text-container">
                   <div class="process-new-heading">Define Your Goals</div>
                   <div class="process-new-description">
-                    Understand your unique challenges, aspirations, and
-                    opportunities to set the foundation for our strategic
-                    approach.
+                    {data.processDesOne}
                   </div>
                 </div>
               </div>
@@ -522,8 +632,7 @@ useScrollToTop();
                 <div class="text-container">
                   <div class="process-new-heading">Plan & Map Your Process</div>
                   <div class="process-new-description-right-side">
-                    Craft a tailored roadmap aligned with your goals, ensuring a
-                    clear path forward.
+                  {data.processDesTwo}
                   </div>
                 </div>
               </div>
@@ -540,8 +649,7 @@ useScrollToTop();
                 <div class="text-container">
                   <div class="process-new-heading">Set Actions</div>
                   <div class="process-new-description">
-                    Define clear, measurable, and achievable steps, creating a
-                    roadmap for success.
+                  {data.processDesThree}
                   </div>
                 </div>
               </div>
@@ -556,8 +664,7 @@ useScrollToTop();
                 <div class="text-container">
                   <div class="process-new-heading">Assign Stakeholders</div>
                   <div class="process-new-description-right-side">
-                    Foster collaboration by assigning key individuals
-                    responsible for successful execution.
+                  {data.processDesFour}
                   </div>
                 </div>
               </div>
@@ -574,8 +681,7 @@ useScrollToTop();
                 <div class="text-container">
                   <div class="process-new-heading">Test the Process</div>
                   <div class="process-new-description">
-                    Rigorously test and refine strategies before full
-                    implementation for effectiveness and adaptability.
+                  {data.processDesFive}
                   </div>
                 </div>
               </div>
@@ -590,8 +696,7 @@ useScrollToTop();
                 <div class="text-container">
                   <div class="process-new-heading">Implement the Process</div>
                   <div class="process-new-description-right-side">
-                    Execute strategies flawlessly with our hands-on approach,
-                    bringing the plan to life.
+                  {data.processDesSix}
                   </div>
                 </div>
               </div>
@@ -608,8 +713,7 @@ useScrollToTop();
                 <div class="text-container">
                   <div class="process-new-heading">Monitor the Results</div>
                   <div class="process-new-description">
-                    Continuously track key metrics, assess performance, and
-                    ensure strategies yield desired outcomes.
+                  {data.processDesSeven}
                   </div>
                 </div>
               </div>
@@ -624,8 +728,7 @@ useScrollToTop();
                 <div class="text-container">
                   <div class="process-new-heading">Make Improvements</div>
                   <div class="process-new-description-right-side">
-                    Identify areas for improvement based on results, refining
-                    strategies for ongoing optimization.
+                  {data.processDesEight}
                   </div>
                 </div>
               </div>
@@ -650,7 +753,7 @@ useScrollToTop();
 
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
-        <h2 class="why-phi-heading">Why Choose Phi for GTM Advisory Consulting?</h2>
+        <h2 class="why-phi-heading">{data.whySectionHeading}</h2>
         {/* <Button type="primary" onClick={showModal}>
         Open Modal
       </Button>
@@ -666,10 +769,10 @@ useScrollToTop();
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Deep Understanding of Product's GTM
+                  {data.whyBoxOneHeading}
                   </h2>
                   <p class="overlay-desc">
-                  We grasp the intricacies of your product's Go-To-Market strategy, ensuring a comprehensive and effective approach.
+                  {data.whyBoxOneDescription}
                   </p>
                 </div>
               </div>
@@ -679,10 +782,10 @@ useScrollToTop();
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Opening Up More Sales Channels
+                  {data.whyBoxTwoHeading}
                   </h2>
                   <p class="overlay-desc">
-                  Diversify and expand your reach by tapping into untapped sales channels, creating new avenues for growth.
+                  {data.whyBoxTwoDescription}
                   </p>
                 </div>
               </div>
@@ -693,9 +796,9 @@ useScrollToTop();
               <div class="overlay-container three-why">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Definite Increase in ACV (Average Contract Value)</h2>
+                  <h2 class="overlay-heading">{data.whyBoxThreeHeading}</h2>
                   <p class="overlay-desc">
-                  Our strategies are geared towards not just sales, but maximizing the value of each customer interaction
+                  {data.whyBoxThreeDescription}
                   </p>
                 </div>
               </div>
@@ -705,10 +808,10 @@ useScrollToTop();
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Refining Customer Onboarding Process
+                  {data.whyBoxFourHeading}
                   </h2>
                   <p class="overlay-desc">
-                  Seamless onboarding experiences lead to satisfied customers. We optimize this crucial phase for long-term success.
+                  {data.whyBoxFourDescription}
                   </p>
                 </div>
               </div>
@@ -720,10 +823,10 @@ useScrollToTop();
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  End-to-End Understanding of Financial Compliance
+                  {data.whyBoxFiveHeading}
                   </h2>
                   <p class="overlay-desc">
-                  Navigate the complexities of the financial landscape with confidence, ensuring compliance at every step.
+                  {data.whyBoxFiveDescription}
                   </p>
                 </div>
               </div>
