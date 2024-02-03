@@ -144,7 +144,7 @@ const BuisnessConsulting = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/invpage');
+        const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/invpage');
         console.log(`GTM page data`, response.data);
         if (response.data && response.data.length > 0) {
           const gtmData = response.data[0]; // Assuming the first entry is what we want
@@ -201,7 +201,7 @@ const BuisnessConsulting = () => {
    useEffect(() => {
     const fetchCaseStudies = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/cases');
+        const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/cases');
         setCaseStudies(response.data.slice(0, 3)); // Fetch only the first three case studies
       } catch (error) {
         console.error('Error fetching case studies:', error);
