@@ -145,7 +145,7 @@ const HrAndRecruitmentConsulting = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/hrpage');
+        const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/hrpage');
         console.log(`GTM page data`, response.data);
         if (response.data && response.data.length > 0) {
           const gtmData = response.data[0]; // Assuming the first entry is what we want
