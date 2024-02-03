@@ -56,7 +56,7 @@ const FinTech = () => {
   const [sectionFourTitle, setSectionFourTitle] = useState('');
   const [sectionFourParagraph, setSectionFourParagraph] = useState('');
 
-  const apiUrl = import.meta.env.VITE_API_URL || 'https://phi-email-service.vercel.app';
+  const apiUrl = import.meta.env.VITE_API_URL || 'https://phi-email-service-62851j0co-aitizaz-ul-haqs-projects.vercel.app/';
 
   const [processNewVisible, setProcessNewVisible] = useState(false);
   const processNewRef = useRef(null);
@@ -88,7 +88,7 @@ const Fintech = 'fintech';
 useEffect(() => {
   const fetchFintechData = async () => {
     try {
-      const response = await axios.get(`${apiUrl}/fintech`);
+      const response = await axios.get(`https://https://prickle-balanced-archaeopteryx.glitch.me//fintech`);
       console.log(`response data...`, response.data)
       const simplifiedData = simplifyFintechData(response.data);
       setFintechData(simplifiedData);
