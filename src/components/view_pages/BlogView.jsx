@@ -20,7 +20,7 @@ const BlogView = () => {
     
     const fetchBlogData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/blogs/${blogId}`);
+        const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me//blogs/${blogId}`);
         setBlog(response.data);
       } catch (error) {
         console.error('Error fetching blog:', error);

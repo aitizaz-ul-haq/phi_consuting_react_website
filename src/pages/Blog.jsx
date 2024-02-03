@@ -23,7 +23,7 @@ const Blog = ({blogpic}) => {
     }, 3000); // 3000ms = 3 seconds
 
     try {
-      const response = await axios.get('http://localhost:3000/blogs');
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/blogs');
       clearTimeout(timer);
       setBlogs(response.data.map(blog => ({ ...blog, key: blog._id.toString() })));
     } catch (error) {

@@ -12,7 +12,7 @@ const Spotlight = () => {
     useEffect(() => {
         const fetchCaseStudies = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/cases'); // Your API endpoint
+                const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/cases'); // Your API endpoint
                 setCaseStudies(response.data);
             } catch (error) {
                 console.error('Error fetching case studies:', error);

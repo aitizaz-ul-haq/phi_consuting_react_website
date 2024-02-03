@@ -40,7 +40,7 @@ const Value = () => {
         try {
             // Simulate a delay
             setTimeout(async () => {
-                const response = await axios.get(`http://localhost:3000/cases/${valId}`);
+                const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me//cases/${valId}`);
                 setCaseStudy(response.data);
                
                 setLoading(false); // Set loading to false when the API call is complete
