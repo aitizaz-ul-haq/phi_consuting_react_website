@@ -91,7 +91,7 @@ const firstRef = useRef(null);
     const fetchBlogs = async () => {
       try {
         // Replace with your actual API endpoint
-        const response = await axios.get('http://localhost:3000/blogs'); 
+        const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me//blogs'); 
         setBlogs(response.data);
         console.log(response.data);
       } catch (error) {
@@ -106,7 +106,7 @@ const firstRef = useRef(null);
     // Fetch case studies from API
     const fetchCaseStudies = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/cases');
+        const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me//cases');
         setCaseStudies(response.data.slice(0, 3)); // Store only the first three entries
         console.log(response.data)
       } catch (error) {
