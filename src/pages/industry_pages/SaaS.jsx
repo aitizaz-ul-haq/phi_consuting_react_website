@@ -56,7 +56,7 @@ const SaaS = () => {
   const [sectionFiveTitle, setSectionFiveTitle] = useState('');
   const [sectionFiveParagraph, setSectionFiveParagraph] = useState('');
 
-  const apiUrl = import.meta.env.VITE_API_URL || 'https://phi-email-service.vercel.app';
+  const apiUrl = import.meta.env.VITE_API_URL_PROD || 'https://prickle-balanced-archaeopteryx.glitch.me';
 
   // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
   // const testiRef = useRef(null);

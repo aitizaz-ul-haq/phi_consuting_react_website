@@ -4,7 +4,7 @@ import axios from 'axios';
 const IndustriesArticles = ({ Api }) => {
     const [fintechData, setFintechData] = useState([]);
 
-    const apiUrl = import.meta.env.VITE_API_URL || 'https://phi-email-service.vercel.app';
+    const apiUrl = import.meta.env.VITE_API_URL_PROD || 'https://prickle-balanced-archaeopteryx.glitch.me';
 
     useEffect(() => {
         const fetchFintechData = async () => {

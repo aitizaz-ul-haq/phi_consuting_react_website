@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
 import phiremotelogo from "../../assets/img/phi_logo.webp";
 
-const apiUrl = import.meta.env.VITE_API_URL || 'https://phi-email-service-62851j0co-aitizaz-ul-haqs-projects.vercel.app/';
+const apiUrl = import.meta.env.VITE_API_URL_PROD || 'https://prickle-balanced-archaeopteryx.glitch.me';
 const onFinish = async (values) => {
   try {
       const response = await fetch(`${apiUrl}/login`, {

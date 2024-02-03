@@ -95,7 +95,7 @@ const IaaS = () => {
 
   const insightsRefs = useRef([]);
 
-  const apiUrl = import.meta.env.VITE_API_URL || 'https://phi-email-service.vercel.app';
+  const apiUrl = import.meta.env.VITE_API_URL_PROD || 'https://prickle-balanced-archaeopteryx.glitch.me';
 
   function simplifyFintechData(data) {
     return data.reduce((acc, entry) => {
