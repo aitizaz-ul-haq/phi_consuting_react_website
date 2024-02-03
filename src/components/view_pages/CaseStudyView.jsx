@@ -41,7 +41,7 @@ const CaseStudyView = () => {
             try {
                 // Simulate a delay
                 setTimeout(async () => {
-                    const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me//cases/${caseId}`);
+                    const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/cases/${caseId}`);
                     setCaseStudy(response.data);
                    
                     setLoading(false); // Set loading to false when the API call is complete
