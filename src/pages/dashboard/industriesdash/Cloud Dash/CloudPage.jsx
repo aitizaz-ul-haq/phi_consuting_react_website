@@ -15,7 +15,7 @@ const CloudPage = () => {
   const fetchFintechEntries = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/cloud');
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/cloud');
       setFintechEntries(response.data.map(entry => ({
         key: entry._id,
         headingText: entry.headingText,
@@ -37,7 +37,7 @@ const CloudPage = () => {
   const handleDelete = async (cloudId) => {
     setIsLoading(true);
     try {
-      await axios.delete(`http://localhost:3000/cloud/${cloudId}`);
+      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/cloud/${cloudId}`);
       message.success('cloud entry deleted successfully');
       fetchFintechEntries();
     } catch (error) {

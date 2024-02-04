@@ -15,7 +15,7 @@ const CaseStudies = () => {
   const fetchCaseStudies = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/cases');
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/cases');
       setCaseStudies(response.data.map(cs => ({ ...cs, key: cs._id })));
       setIsLoading(false);
     } catch (error) {
@@ -31,7 +31,7 @@ const CaseStudies = () => {
   const handleDelete = async (id) => {
     setIsLoading(true);
     try {
-      await axios.delete(`http://localhost:3000/cases/${id}`);
+      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/cases/${id}`);
       message.success('Case study deleted successfully');
       fetchCaseStudies(); // Refresh the list after deletion
     } catch (error) {

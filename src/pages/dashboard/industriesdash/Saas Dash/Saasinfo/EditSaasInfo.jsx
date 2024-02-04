@@ -19,7 +19,7 @@ const EditSaasInfo = () => {
 
     useEffect(() => {
       if (saasinfoId) {
-        axios.get(`http://localhost:3000/saasinfo/${saasinfoId}`)
+        axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/saasinfo/${saasinfoId}`)
           .then(response => {
             const data = response.data;
             const formData = data.sections.reduce((acc, section, index) => {
@@ -53,7 +53,7 @@ const EditSaasInfo = () => {
       const dataToPut = { sections: updatedSections };
   
       try {
-        await axios.put(`http://localhost:3000/saasinfo/${saasinfoId}`, dataToPut);
+        await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/saasinfo/${saasinfoId}`, dataToPut);
         message.success('saasinfo info entry updated successfully');
         navigate('/dashboard/ShowSaasInfo');
       } catch (error) {

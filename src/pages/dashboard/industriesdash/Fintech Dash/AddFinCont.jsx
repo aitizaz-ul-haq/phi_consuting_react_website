@@ -17,7 +17,7 @@ const AddFinCont = () => {
 
   const onFinish = async (values) => {
     try {
-      const response = await axios.post('http://localhost:3000/fintech', values);
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/fintech', values);
       console.log('Response:', response.data);
       message.success('Fintech entry created successfully');
       setRedirectToCases(true);

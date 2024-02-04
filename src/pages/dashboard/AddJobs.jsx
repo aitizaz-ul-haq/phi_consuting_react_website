@@ -31,7 +31,7 @@ const AddJob = () => {
     };
   
     try {
-      const response = await axios.post('http://localhost:3000/jobs', formattedData); // Adjust the URL to your API endpoint
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/jobs', formattedData); // Adjust the URL to your API endpoint
       console.log('Job created successfully:', response.data);
       message.success('Job posted successfully');
       setRedirectToJobs(true); // Triggers redirection

@@ -18,7 +18,7 @@ const AddDevCont = () => {
   
     const onFinish = async (values) => {
       try {
-        const response = await axios.post('http://localhost:3000/devops', values);
+        const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/devops', values);
         console.log('Response:', response.data);
         message.success('devops entry created successfully');
         setRedirectToCases(true);

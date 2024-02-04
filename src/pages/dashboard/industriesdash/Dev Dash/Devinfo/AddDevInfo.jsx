@@ -27,7 +27,7 @@ const AddDevInfo = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:3000/devinfo', dataToPost);
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/devinfo', dataToPost);
       message.success('devinfo info entry created successfully');
       setRedirectToCases(true);
     } catch (error) {

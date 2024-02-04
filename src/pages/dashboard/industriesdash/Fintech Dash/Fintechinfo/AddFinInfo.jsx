@@ -25,7 +25,7 @@ const AddFinInfo = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:3000/fintechinfo', dataToPost);
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/fintechinfo', dataToPost);
       message.success('Fintech info entry created successfully');
       setRedirectToCases(true);
     } catch (error) {

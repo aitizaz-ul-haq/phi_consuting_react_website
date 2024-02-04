@@ -32,7 +32,7 @@ const AddCases = () => {
     };
   
     try {
-      const response = await axios.post('http://localhost:3000/cases', formattedData); // Updated endpoint
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/cases', formattedData); // Updated endpoint
       console.log('Case study created successfully:', response.data);
       message.success('Case study added successfully');
       setRedirectToCases(true); // Redirect after successful submission

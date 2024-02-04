@@ -20,7 +20,7 @@ const DevEdit = () => {
   useEffect(() => {
     const fetchFintechEntry = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/devops/${devopsId}`);
+        const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/devops/${devopsId}`);
         console.log(response)
         form.setFieldsValue(response.data); // Set form values with the fetched data
       } catch (error) {
@@ -33,7 +33,7 @@ const DevEdit = () => {
 
   const onFinish = async (values) => {
     try {
-      const response = await axios.put(`http://localhost:3000/devops/${devopsId}`, values);
+      const response = await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/devops/${devopsId}`, values);
       console.log('Response:', response.data);
       message.success('devops entry updated successfully');
       setRedirectToCases(true);

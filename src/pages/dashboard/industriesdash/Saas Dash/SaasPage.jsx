@@ -15,7 +15,7 @@ const SaasPage = () => {
   const fetchFintechEntries = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/saas');
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/saas');
       setFintechEntries(response.data.map(entry => ({
         key: entry._id,
         headingText: entry.headingText,
@@ -36,7 +36,7 @@ const SaasPage = () => {
   const handleDelete = async (saasId) => {
     setIsLoading(true);
     try {
-      await axios.delete(`http://localhost:3000/saas/${saasId}`);
+      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/saas/${saasId}`);
       message.success('saas entry deleted successfully');
       fetchFintechEntries();
     } catch (error) {

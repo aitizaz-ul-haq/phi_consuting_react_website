@@ -18,7 +18,7 @@ const AddIaasCont = () => {
   
     const onFinish = async (values) => {
       try {
-        const response = await axios.post('http://localhost:3000/iaas', values);
+        const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/iaas', values);
         console.log('Response:', response.data);
         message.success('iaas entry created successfully');
         setRedirectToCases(true);

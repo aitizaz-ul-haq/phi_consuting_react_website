@@ -17,7 +17,7 @@ const AddHr = () => {
   const onFinish = async (values) => {
     console.log('the data submitted', values);
     try {
-      const response = await axios.post('http://localhost:3000/hrpage', values);
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/hrpage', values);
       console.log('Response:', response.data);
       message.success('hrpage entry created successfully');
       setRedirectToCases(true);

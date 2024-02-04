@@ -18,7 +18,7 @@ const AddSaasCont = () => {
   
     const onFinish = async (values) => {
       try {
-        const response = await axios.post('http://localhost:3000/saas', values);
+        const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/saas', values);
         console.log('Response:', response.data);
         message.success('saas entry created successfully');
         setRedirectToCases(true);

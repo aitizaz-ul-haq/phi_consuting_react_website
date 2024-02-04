@@ -5,7 +5,7 @@ import phiremotelogo from "../../assets/img/phi_logo.webp";
 const apiUrl = import.meta.env.VITE_API_URL_PROD || 'https://prickle-balanced-archaeopteryx.glitch.me';
 const onFinish = async (values) => {
   try {
-      const response = await fetch(`${apiUrl}/login`, {
+      const response = await fetch(`https://prickle-balanced-archaeopteryx.glitch.me/login`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(values)

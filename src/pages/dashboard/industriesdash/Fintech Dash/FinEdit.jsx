@@ -20,7 +20,7 @@ const FinEdit = () => {
   useEffect(() => {
     const fetchFintechEntry = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/fintech/${fintechId}`);
+        const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/fintech/${fintechId}`);
         form.setFieldsValue(response.data); // Set form values with the fetched data
       } catch (error) {
         console.error('Error fetching fintech entry:', error);
@@ -32,7 +32,7 @@ const FinEdit = () => {
 
   const onFinish = async (values) => {
     try {
-      const response = await axios.put(`http://localhost:3000/fintech/${fintechId}`, values);
+      const response = await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/fintech/${fintechId}`, values);
       console.log('Response:', response.data);
       message.success('Fintech entry updated successfully');
       setRedirectToCases(true);

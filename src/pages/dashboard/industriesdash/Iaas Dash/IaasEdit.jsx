@@ -20,7 +20,7 @@ const IaasEdit = () => {
   useEffect(() => {
     const fetchFintechEntry = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/iaas/${iaasId}`);
+        const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/iaas/${iaasId}`);
         console.log(response)
         form.setFieldsValue(response.data); // Set form values with the fetched data
       } catch (error) {
@@ -33,7 +33,7 @@ const IaasEdit = () => {
 
   const onFinish = async (values) => {
     try {
-      const response = await axios.put(`http://localhost:3000/iaas/${iaasId}`, values);
+      const response = await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/iaas/${iaasId}`, values);
       console.log('Response:', response.data);
       message.success('iaas entry updated successfully');
       setRedirectToCases(true);

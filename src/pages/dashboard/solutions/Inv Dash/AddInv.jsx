@@ -17,7 +17,7 @@ const AddInv = () => {
   const onFinish = async (values) => {
     console.log('the data submitted', values);
     try {
-      const response = await axios.post('http://localhost:3000/invpage', values);
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/invpage', values);
       console.log('Response:', response.data);
       message.success('invpage entry created successfully');
       setRedirectToCases(true);

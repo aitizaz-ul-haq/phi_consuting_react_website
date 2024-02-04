@@ -20,7 +20,7 @@ const SaasEdit = () => {
   useEffect(() => {
     const fetchFintechEntry = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/saas/${saasId}`);
+        const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/saas/${saasId}`);
         console.log(response)
         form.setFieldsValue(response.data); // Set form values with the fetched data
       } catch (error) {
@@ -33,7 +33,7 @@ const SaasEdit = () => {
 
   const onFinish = async (values) => {
     try {
-      const response = await axios.put(`http://localhost:3000/saas/${saasId}`, values);
+      const response = await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/saas/${saasId}`, values);
       console.log('Response:', response.data);
       message.success('saas entry updated successfully');
       setRedirectToCases(true);

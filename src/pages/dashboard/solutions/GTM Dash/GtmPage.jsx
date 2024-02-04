@@ -15,7 +15,7 @@ const GtnPage = () => {
   const fetchCloudEntries = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/gtmpage');
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/gtmpage');
       setCloudEntries(response.data.map(entry => ({
         key: entry._id,
         bannerHeading: entry.bannerHeading,
@@ -39,7 +39,7 @@ const GtnPage = () => {
   const handleDelete = async (gtmpageId) => {
     setIsLoading(true);
     try {
-      await axios.delete(`http://localhost:3000/gtmpage/${gtmpageId}`);
+      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/gtmpage/${gtmpageId}`);
       message.success('gtmpage entry deleted successfully');
       fetchCloudEntries();
     } catch (error) {

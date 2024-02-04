@@ -15,7 +15,7 @@ const DevPage = () => {
   const fetchFintechEntries = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/devops');
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/devops');
       setFintechEntries(response.data.map(entry => ({
         key: entry._id,
         headingText: entry.headingText,
@@ -36,7 +36,7 @@ const DevPage = () => {
   const handleDelete = async (devopsId) => {
     setIsLoading(true);
     try {
-      await axios.delete(`http://localhost:3000/devops/${devopsId}`);
+      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/devops/${devopsId}`);
       message.success('devops entry deleted successfully');
       fetchFintechEntries();
     } catch (error) {

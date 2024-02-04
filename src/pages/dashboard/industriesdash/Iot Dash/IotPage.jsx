@@ -15,7 +15,7 @@ const IotPage = () => {
   const fetchFintechEntries = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/iot');
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/iot');
       setFintechEntries(response.data.map(entry => ({
         key: entry._id,
         headingText: entry.headingText,
@@ -36,7 +36,7 @@ const IotPage = () => {
   const handleDelete = async (iotId) => {
     setIsLoading(true);
     try {
-      await axios.delete(`http://localhost:3000/iot/${iotId}`);
+      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/iot/${iotId}`);
       message.success('iot entry deleted successfully');
       fetchFintechEntries();
     } catch (error) {

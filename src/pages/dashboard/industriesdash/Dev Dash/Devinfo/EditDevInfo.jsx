@@ -19,7 +19,7 @@ const EditDevInfo = () => {
 
     useEffect(() => {
       if (devinfoId) {
-        axios.get(`http://localhost:3000/devinfo/${devinfoId}`)
+        axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/devinfo/${devinfoId}`)
           .then(response => {
             const data = response.data;
             const formData = data.sections.reduce((acc, section, index) => {
@@ -53,7 +53,7 @@ const EditDevInfo = () => {
       const dataToPut = { sections: updatedSections };
   
       try {
-        await axios.put(`http://localhost:3000/saasinfo/${devinfoId}`, dataToPut);
+        await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/saasinfo/${devinfoId}`, dataToPut);
         message.success('devinfo info entry updated successfully');
         navigate('/dashboard/ShowDevInfo');
       } catch (error) {

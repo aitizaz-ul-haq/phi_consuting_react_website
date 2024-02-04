@@ -17,7 +17,7 @@ const ShowCloudInfo = () => {
     const fetchInfoEntries = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get('http://localhost:3000/devinfo');
+        const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/devinfo');
         const formattedData = response.data.map(entry => ({
           key: entry._id,
           ...entry.sections.reduce((acc, section, index) => {
@@ -40,7 +40,7 @@ const ShowCloudInfo = () => {
     const handleDelete = async (devinfoId) => {
       setIsLoading(true);
       try {
-        await axios.delete(`http://localhost:3000/devinfo/${devinfoId}`);
+        await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/devinfo/${devinfoId}`);
         message.success('devinfo entry deleted successfully');
         fetchInfoEntries();
       } catch (error) {

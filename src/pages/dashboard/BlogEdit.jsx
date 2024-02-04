@@ -13,7 +13,7 @@ const EditBlog = () => {
     useEffect(() => {
         const fetchBlogData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/blogs/${blogId}`);
+                const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/blogs/${blogId}`);
                 setBlogData(response.data);
             } catch (error) {
                 console.error('Error fetching blog:', error);
@@ -47,7 +47,7 @@ const EditBlog = () => {
 
     try {
         // Make a PUT request to update the blog
-        const response = await axios.put(`http://localhost:3000/blogs/${blogId}`, updatedBlogData);
+        const response = await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/blogs/${blogId}`, updatedBlogData);
         console.log('Blog updated successfully:', response.data);
         message.success('Blog edited successfully');
         setRedirectToBlogs(true); // This triggers redirection

@@ -15,7 +15,7 @@ const IaasPage = () => {
   const fetchFintechEntries = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/iaas');
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/iaas');
       setFintechEntries(response.data.map(entry => ({
         key: entry._id,
         headingText: entry.headingText,
@@ -37,7 +37,7 @@ const IaasPage = () => {
   const handleDelete = async (iaasId) => {
     setIsLoading(true);
     try {
-      await axios.delete(`http://localhost:3000/iaas/${iaasId}`);
+      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/iaas/${iaasId}`);
       message.success('iaas entry deleted successfully');
       fetchFintechEntries();
     } catch (error) {

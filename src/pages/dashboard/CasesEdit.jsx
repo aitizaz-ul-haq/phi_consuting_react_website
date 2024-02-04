@@ -13,7 +13,7 @@ const EditBlog = () => {
     useEffect(() => {
         const fetchCaseData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/cases/${caseId}`);
+                const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/cases/${caseId}`);
                 setCaseData(response.data);
             } catch (error) {
                 console.error('Error fetching case:', error);

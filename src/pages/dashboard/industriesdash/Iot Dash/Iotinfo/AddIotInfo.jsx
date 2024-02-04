@@ -27,7 +27,7 @@ const AddIotInfo = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:3000/iotinfo', dataToPost);
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/iotinfo', dataToPost);
       message.success('iotinfo info entry created successfully');
       setRedirectToCases(true);
     } catch (error) {

@@ -27,7 +27,7 @@ const AddIaasInfo = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:3000/iaasinfo', dataToPost);
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/iaasinfo', dataToPost);
       message.success('iaasinfo info entry created successfully');
       setRedirectToCases(true);
     } catch (error) {

@@ -11,7 +11,7 @@ const EditJob = () => {
     useEffect(() => {
         const fetchJobData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/jobs/${jobId}`);
+                const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/jobs/${jobId}`);
                 setJobData(response.data);
             } catch (error) {
                 console.error('Error fetching job:', error);

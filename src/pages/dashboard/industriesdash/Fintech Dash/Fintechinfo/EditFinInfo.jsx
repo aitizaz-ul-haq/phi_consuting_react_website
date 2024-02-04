@@ -16,7 +16,7 @@ const EditFinInfo = () => {
 
   useEffect(() => {
     if (infoId) {
-      axios.get(`http://localhost:3000/fintechinfo/${infoId}`)
+      axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/fintechinfo/${infoId}`)
         .then(response => {
           const data = response.data;
           const formData = data.sections.reduce((acc, section, index) => {
@@ -48,7 +48,7 @@ const EditFinInfo = () => {
     const dataToPut = { sections: updatedSections };
 
     try {
-      await axios.put(`http://localhost:3000/fintechinfo/${infoId}`, dataToPut);
+      await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/fintechinfo/${infoId}`, dataToPut);
       message.success('Fintech info entry updated successfully');
       navigate('/dashboard/ShowFinInfo');
     } catch (error) {

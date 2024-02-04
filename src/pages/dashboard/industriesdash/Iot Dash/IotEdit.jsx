@@ -20,7 +20,7 @@ const IotEdit = () => {
   useEffect(() => {
     const fetchFintechEntry = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/iot/${iotId}`);
+        const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/iot/${iotId}`);
         form.setFieldsValue(response.data); // Set form values with the fetched data
       } catch (error) {
         console.error('Error fetching iot entry:', error);
@@ -32,7 +32,7 @@ const IotEdit = () => {
 
   const onFinish = async (values) => {
     try {
-      const response = await axios.put(`http://localhost:3000/iot/${iotId}`, values);
+      const response = await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/iot/${iotId}`, values);
       console.log('Response:', response.data);
       message.success('iot entry updated successfully');
       setRedirectToCases(true);

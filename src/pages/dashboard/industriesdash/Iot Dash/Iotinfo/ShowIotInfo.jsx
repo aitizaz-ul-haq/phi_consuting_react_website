@@ -17,7 +17,7 @@ const ShowIotInfo = () => {
     const fetchInfoEntries = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get('http://localhost:3000/iotinfo');
+        const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/iotinfo');
         const formattedData = response.data.map(entry => ({
           key: entry._id,
           ...entry.sections.reduce((acc, section, index) => {
@@ -40,7 +40,7 @@ const ShowIotInfo = () => {
     const handleDelete = async (iotInfoId) => {
       setIsLoading(true);
       try {
-        await axios.delete(`http://localhost:3000/iotinfo/${iotInfoId}`);
+        await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/iotinfo/${iotInfoId}`);
         message.success('Info entry deleted successfully');
         fetchInfoEntries();
       } catch (error) {

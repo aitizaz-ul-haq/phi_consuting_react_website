@@ -15,7 +15,7 @@ const Jobs = () => {
   const fetchJobs = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/jobs');
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/jobs');
       setJobs(response.data.map(job => ({ ...job, key: job._id.toString() })));
       setIsLoading(false);
     } catch (error) {
@@ -26,7 +26,7 @@ const Jobs = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/jobs/${id}`);
+      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/jobs/${id}`);
       const updatedJobs = jobs.filter(job => job._id !== id);
       setJobs(updatedJobs);
       message.success('Job deleted successfully');

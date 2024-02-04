@@ -27,7 +27,7 @@ const AddCloudInfo = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:3000/cloudinfo', dataToPost);
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/cloudinfo', dataToPost);
       message.success('cloudinfo info entry created successfully');
       setRedirectToCases(true);
     } catch (error) {

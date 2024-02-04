@@ -18,7 +18,7 @@ const AddIotCont = () => {
   
     const onFinish = async (values) => {
       try {
-        const response = await axios.post('http://localhost:3000/iot', values);
+        const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/iot', values);
         console.log('Response:', response.data);
         message.success('Iot entry created successfully');
         setRedirectToCases(true);

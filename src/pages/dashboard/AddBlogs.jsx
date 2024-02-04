@@ -34,7 +34,7 @@ const AddBlog = () => {
     };
   
     try {
-      const response = await axios.post('http://localhost:3000/blogs', formattedData);
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/blogs', formattedData);
       console.log('Blog created successfully:', response.data);
       message.success('Blog edited successfully');
       setRedirectToBlogs(true); // This triggers redirection

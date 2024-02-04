@@ -17,7 +17,7 @@ const Blogs = () => {
     const timer = setTimeout(() => setIsLoading(false), 3000);
 
     try {
-      const response = await axios.get('http://localhost:3000/blogs');
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/blogs');
       clearTimeout(timer);
       setBlogs(response.data.map(blog => ({ ...blog, key: blog._id.toString() })));
       setIsLoading(false);
@@ -30,7 +30,7 @@ const Blogs = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/blogs/${id}`); // Adjust this URL to your API endpoint
+      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/blogs/${id}`); // Adjust this URL to your API endpoint
       const updatedBlogs = blogs.filter(blog => blog._id !== id);
       setBlogs(updatedBlogs); // Update the state to trigger re-render
       message.success('Blog deleted successfully');

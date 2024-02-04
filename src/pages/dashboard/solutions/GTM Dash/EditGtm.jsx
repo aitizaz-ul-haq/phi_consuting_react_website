@@ -17,7 +17,7 @@ const CloudEdit = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/gtmpage/${gtmpageId}`);
+        const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/gtmpage/${gtmpageId}`);
         form.setFieldsValue(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -30,7 +30,7 @@ const CloudEdit = () => {
 
   const onFinish = async (values) => {
     try {
-      await axios.put(`http://localhost:3000/gtmpage/${gtmpageId}`, values);
+      await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/gtmpage/${gtmpageId}`, values);
       message.success('GTM content updated successfully');
       setRedirectToCases(true);
     } catch (error) {

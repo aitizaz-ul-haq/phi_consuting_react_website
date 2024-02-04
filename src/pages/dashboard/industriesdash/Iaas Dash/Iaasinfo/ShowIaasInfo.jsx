@@ -17,7 +17,7 @@ const ShowIaasInfo = () => {
     const fetchInfoEntries = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get('http://localhost:3000/iaasinfo');
+        const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/iaasinfo');
         const formattedData = response.data.map(entry => ({
           key: entry._id,
           ...entry.sections.reduce((acc, section, index) => {
@@ -40,7 +40,7 @@ const ShowIaasInfo = () => {
     const handleDelete = async (iaasinfoId) => {
       setIsLoading(true);
       try {
-        await axios.delete(`http://localhost:3000/iaasinfo/${iaasinfoId}`);
+        await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/iaasinfo/${iaasinfoId}`);
         message.success('iaasinfo entry deleted successfully');
         fetchInfoEntries();
       } catch (error) {

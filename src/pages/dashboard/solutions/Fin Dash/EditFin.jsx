@@ -17,7 +17,7 @@ const EditFin = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/finpage/${finId}`);
+        const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/finpage/${finId}`);
         form.setFieldsValue(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -30,7 +30,7 @@ const EditFin = () => {
 
   const onFinish = async (values) => {
     try {
-      await axios.put(`http://localhost:3000/finpage/${finId}`, values);
+      await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/finpage/${finId}`, values);
       message.success('finpage content updated successfully');
       setRedirectToCases(true);
     } catch (error) {

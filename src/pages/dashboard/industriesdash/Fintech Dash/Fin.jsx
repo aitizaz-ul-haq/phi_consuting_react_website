@@ -15,7 +15,7 @@ const Fin = () => {
   const fetchFintechEntries = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/fintech');
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/fintech');
       setFintechEntries(response.data.map(entry => ({
         key: entry._id,
         headingText: entry.headingText,
@@ -36,7 +36,7 @@ const Fin = () => {
   const handleDelete = async (fintechId) => {
     setIsLoading(true);
     try {
-      await axios.delete(`http://localhost:3000/fintech/${fintechId}`);
+      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/fintech/${fintechId}`);
       message.success('Fintech entry deleted successfully');
       fetchFintechEntries();
     } catch (error) {

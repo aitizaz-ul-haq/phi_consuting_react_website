@@ -19,7 +19,7 @@ const EditIaasInfo = () => {
 
     useEffect(() => {
       if (iaasinfoId) {
-        axios.get(`http://localhost:3000/iaasinfo/${iaasinfoId}`)
+        axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/iaasinfo/${iaasinfoId}`)
           .then(response => {
             const data = response.data;
             const formData = data.sections.reduce((acc, section, index) => {

@@ -17,7 +17,7 @@ const AddFin = () => {
   const onFinish = async (values) => {
     console.log('the data submitted', values);
     try {
-      const response = await axios.post('http://localhost:3000/finpage', values);
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/finpage', values);
       console.log('Response:', response.data);
       message.success('finpage entry created successfully');
       setRedirectToCases(true);

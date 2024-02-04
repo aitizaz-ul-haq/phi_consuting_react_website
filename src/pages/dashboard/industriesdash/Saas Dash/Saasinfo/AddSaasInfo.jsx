@@ -27,7 +27,7 @@ const AddSaasInfo = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:3000/saasinfo', dataToPost);
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/saasinfo', dataToPost);
       message.success('saasinfo info entry created successfully');
       setRedirectToCases(true);
     } catch (error) {

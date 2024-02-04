@@ -17,7 +17,7 @@ const EditIotInfo = () => {
   
     useEffect(() => {
       if (iotInfoId) {
-        axios.get(`http://localhost:3000/iotinfo/${iotInfoId}`)
+        axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/iotinfo/${iotInfoId}`)
           .then(response => {
             const data = response.data;
             const formData = data.sections.reduce((acc, section, index) => {
@@ -49,7 +49,7 @@ const EditIotInfo = () => {
       const dataToPut = { sections: updatedSections };
   
       try {
-        await axios.put(`http://localhost:3000/iotinfo/${iotInfoId}`, dataToPut);
+        await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/iotinfo/${iotInfoId}`, dataToPut);
         message.success('Iotinfo info entry updated successfully');
         navigate('/dashboard/ShowIotInfo');
       } catch (error) {

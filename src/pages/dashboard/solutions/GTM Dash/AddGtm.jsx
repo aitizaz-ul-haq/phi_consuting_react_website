@@ -17,7 +17,7 @@ const AddGtm = () => {
   const onFinish = async (values) => {
     console.log('the data submitted', values);
     try {
-      const response = await axios.post('http://localhost:3000/gtmpage', values);
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/gtmpage', values);
       console.log('Response:', response.data);
       message.success('gtmpage entry created successfully');
       setRedirectToCases(true);
