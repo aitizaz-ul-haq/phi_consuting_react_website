@@ -180,6 +180,21 @@ const EditHr = () => {
 
 
         <Form.Item
+  label="Process Main Heading"
+  name="processMainHeading"
+  // Optional: Add validation rules if required
+>
+  <Input />
+</Form.Item>
+
+        <Form.Item
+          label="Process Main Description"
+          name="processMainDesc"
+           // rules={[{ required: true }]}
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item
   label="Process One Heading"
   name="processHedOne"
   // Optional: Add validation rules if required
