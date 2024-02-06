@@ -68,10 +68,10 @@ const HomePage = () => {
  const testiRef = useRef(null);
 
   const [isVisibleServices, setIsVisibleServices] = useState(false);
-const servicesRef = useRef(null);
+  const servicesRef = useRef(null);
 
   const [isVisibleFirst, setIsVisibleFirst] = useState(false);
-const firstRef = useRef(null);
+  const firstRef = useRef(null);
 
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef(null);
@@ -290,30 +290,6 @@ useEffect(() => {
     };
   }, []); 
 
-  // useEffect(() => {
-  //   const clientContainer = document.querySelector('.client-container');
-
-  //   // Apply the background image to the client-container section
-  //   if (clientContainer) {
-  //     clientContainer.style.backgroundImage = `url(${backClient})`;
-  //     clientContainer.style.backgroundSize = 'cover';
-  //     clientContainer.style.backgroundPosition = 'center';
-  //     clientContainer.style.backgroundRepeat = 'no-repeat';
-  //     // Optionally, apply a parallax effect similar to the work section if desired
-  //   }
-
-  //   // Cleanup function to revert the styles
-  //   return () => {
-  //     if (clientContainer) {
-  //       clientContainer.style.backgroundImage = '';
-  //       clientContainer.style.backgroundSize = '';
-  //       clientContainer.style.backgroundPosition = '';
-  //       clientContainer.style.backgroundRepeat = '';
-  //       // If a parallax effect was applied, ensure to remove associated event listeners or reset styles as needed
-  //     }
-  //   };
-  // }, []);
-
   useEffect(() => {
     // Setting the background color with a transparent effect for the services section
     const servicesSection = document.querySelector('.services');
@@ -337,7 +313,7 @@ useEffect(() => {
         servicesSection.style.borderBottom = '';
       }
     };
-  }, []); // The empty dependency array ensures this effect runs only once when the component mounts
+  }, []); 
 
 
   useEffect(() => {
@@ -405,7 +381,9 @@ useEffect(() => {
     </button>
     </Tooltip>
             </div>
-          {/* <!-- Hero Section --> */}
+
+
+    {/* <!-- Hero Section --> */}
       <article class="hero">
         <section class="hero-container">
           <div class="hero-content">
