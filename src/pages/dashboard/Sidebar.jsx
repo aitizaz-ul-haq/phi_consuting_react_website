@@ -24,7 +24,7 @@ const Sidebar = () => {
         <h4 className='Dash-Heading'>Posts</h4>
       </div>
       <div>
-        <button className='dash-options' onClick={() => setDropdown1(!dropdown1)}>Job Postings</button>
+        <button className='dash-options' onClick={() => setDropdown1(!dropdown1)}>Jobs</button>
         {dropdown1 && (
           <div className='list-container'>
             <Link className='list-elements-dash' to="/dashboard/Jobs">Jobs</Link>
@@ -33,7 +33,7 @@ const Sidebar = () => {
         )}
       </div>
       <div>
-        <button className='dash-options' onClick={() => setDropdown2(!dropdown2)}>Blog Postings</button>
+        <button className='dash-options' onClick={() => setDropdown2(!dropdown2)}>Blogs</button>
         {dropdown2 && (
           <div className='list-container'>
             <Link className='list-elements-dash' to="/dashboard/Blogs">Blogs</Link>
@@ -42,7 +42,7 @@ const Sidebar = () => {
         )}
       </div>
       <div>
-        <button className='dash-options' onClick={() => setDropdown3(!dropdown3)}>Case Study Postings</button>
+        <button className='dash-options' onClick={() => setDropdown3(!dropdown3)}>Case Studies</button>
         {dropdown3 && (
           <div className='list-container'>
           <Link className='list-elements-dash' to="/dashboard/Cases">Cases</Link>
@@ -56,7 +56,7 @@ const Sidebar = () => {
       </div>
       </div>
       <div>
-        <button className='dash-options' onClick={() => setDropdown4(!dropdown4)}>Fintech Content</button>
+        <button className='dash-options' onClick={() => setDropdown4(!dropdown4)}>Fintech</button>
         {dropdown4 && (
           <div className='list-container'>
           <Link className='list-elements-dash' to="/dashboard/fin">Fintech</Link>
@@ -67,7 +67,7 @@ const Sidebar = () => {
         )}
       </div>
       <div>
-        <button className='dash-options' onClick={() => setDropdown5(!dropdown5)}>Iot Content</button>
+        <button className='dash-options' onClick={() => setDropdown5(!dropdown5)}>Iot</button>
         {dropdown5 && (
           <div className='list-container'>
           <Link className='list-elements-dash' to="/dashboard/iot">Iot</Link>
@@ -78,7 +78,7 @@ const Sidebar = () => {
         )}
       </div>
       <div>
-        <button className='dash-options' onClick={() => setDropdown6(!dropdown6)}>SaaS Content</button>
+        <button className='dash-options' onClick={() => setDropdown6(!dropdown6)}>SaaS</button>
         {dropdown6 && (
           <div className='list-container'>
           <Link className='list-elements-dash' to="/dashboard/saas">SaaS</Link>
@@ -89,7 +89,7 @@ const Sidebar = () => {
         )}
       </div>
       <div>
-        <button className='dash-options' onClick={() => setDropdown7(!dropdown7)}>Devops Content</button>
+        <button className='dash-options' onClick={() => setDropdown7(!dropdown7)}>Devops</button>
         {dropdown7 && (
           <div className='list-container'>
           <Link className='list-elements-dash' to="/dashboard/dev">DevOps</Link>
@@ -100,7 +100,7 @@ const Sidebar = () => {
         )}
       </div>
       <div>
-        <button className='dash-options' onClick={() => setDropdown8(!dropdown8)}>Cloud Content</button>
+        <button className='dash-options' onClick={() => setDropdown8(!dropdown8)}>Cloud</button>
         {dropdown8 && (
           <div className='list-container'>
           <Link className='list-elements-dash' to="/dashboard/cloud">Cloud</Link>
@@ -111,7 +111,7 @@ const Sidebar = () => {
         )}
       </div>
       <div>
-        <button className='dash-options' onClick={() => setDropdown9(!dropdown9)}>Iaas Content</button>
+        <button className='dash-options' onClick={() => setDropdown9(!dropdown9)}>Iaas</button>
         {dropdown9 && (
           <div className='list-container'>
           <Link className='list-elements-dash' to="/dashboard/iaas">IaaS</Link>
@@ -127,7 +127,7 @@ const Sidebar = () => {
       </div>
       </div>
       <div>
-        <button className='dash-options' onClick={() => setDropdown10(!dropdown10)}>GTM Content</button>
+        <button className='dash-options' onClick={() => setDropdown10(!dropdown10)}>GTM</button>
         {dropdown10 && (
           <div className='list-container'>
              <Link className='list-elements-dash' to="/dashboard/AddGTM">Add GTM</Link>
@@ -137,7 +137,7 @@ const Sidebar = () => {
         )}
       </div>
       <div>
-        <button className='dash-options' onClick={() => setDropdown11(!dropdown11)}>HR & Recruitment Content</button>
+        <button className='dash-options' onClick={() => setDropdown11(!dropdown11)}>HR & Recruitment</button>
         {dropdown11 && (
           <div className='list-container'>
              <Link className='list-elements-dash' to="/dashboard/AddHR">Add HR</Link>
@@ -147,7 +147,7 @@ const Sidebar = () => {
         )}
       </div>
       <div>
-        <button className='dash-options' onClick={() => setDropdown12(!dropdown12)}>Investor Relations Content</button>
+        <button className='dash-options' onClick={() => setDropdown12(!dropdown12)}>Investor Relations</button>
         {dropdown12 && (
           <div className='list-container'>
              <Link className='list-elements-dash' to="/dashboard/AddInv">Add Investor</Link>
@@ -157,7 +157,7 @@ const Sidebar = () => {
         )}
       </div>
       <div>
-        <button className='dash-options' onClick={() => setDropdown13(!dropdown13)}>Financial Content</button>
+        <button className='dash-options' onClick={() => setDropdown13(!dropdown13)}>Financial</button>
         {dropdown13 && (
           <div className='list-container'>
              <Link className='list-elements-dash' to="/dashboard/AddFinc">Add Financial</Link>

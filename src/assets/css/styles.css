@@ -551,6 +551,8 @@ border-bottom: 2px solid var(--LIGHT-PHI-BLUE);
     padding-top: 90px;
 }
 
+
+
 .hero-container::before {
     content: "";
     position: absolute;
@@ -12941,7 +12943,7 @@ display: none;
 }
 }
 @media screen and (min-width: 1200px) {
-    
+   
     .client-heading {
         font-size: 40px;
         font-weight: 100;
@@ -13921,13 +13923,7 @@ display: none;
         transform: scale(1.1); /* Adjust the scale value as needed */
       }
 
-      .login-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding:8rem;
-      }
+     
       
       .login-remote {
         display: flex;
@@ -13961,6 +13957,12 @@ display: none;
     flex-grow: 0;  /* Do not grow larger than the set width */
     flex-shrink: 0;
   }
+
+  ::-webkit-scrollbar {
+    display: none;
+}
+
+
   
   .sidebar button {
     display: flex;

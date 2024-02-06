@@ -33,7 +33,7 @@ const AddFin = () => {
 
   return (
     <div className="form-container-dash">
-      <Title level={2}>Add GTM Content</Title>
+      <Title level={2} style={{ fontWeight: 100, fontSize: '32px' }}>Add Financial Consulting Page Content</Title>
       <Form {...layout} form={form} name="add-cloud-con" onFinish={onFinish}>
         
         {/* Add form fields based on the given structure */}

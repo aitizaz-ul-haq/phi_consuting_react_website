@@ -1,0 +1,29 @@
+.logo-login-container {
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+margin: 3rem;
+}
+
+
+.login-heading {
+    font-size: 38px;
+    font-weight: 100;
+}
+
+
+.login-description {
+    font-size: 22px;
+    font-weight: 100;
+}
+
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding:4rem; */
+  }

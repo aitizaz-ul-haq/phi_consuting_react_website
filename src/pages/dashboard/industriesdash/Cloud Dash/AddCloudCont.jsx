@@ -35,7 +35,7 @@ const AddCloudCon = () => {
 
     return(
         <div className="form-container-dash">
-        <Title level={2}>Add Financial Consulting Case</Title>
+        <Title level={2} style={{ fontWeight: 100, fontSize: '32px' }}>Add Cloud Industries Page Articles</Title>
         <Form {...layout} form={form} name="control-hooks" onFinish={onFinish}>
           {/* Heading Type Field */}
           <Form.Item

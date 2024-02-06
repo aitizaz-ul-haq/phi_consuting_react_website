@@ -41,7 +41,7 @@ const AddCloudInfo = () => {
   }
     return(
         <div className="form-container-dash">
-        <Title level={2}>Add Financial Consulting Case</Title>
+        <Title level={2} style={{ fontWeight: 100, fontSize: '32px' }}>Add Cloud Information</Title>
         <Form {...layout} form={form} name="add-fin-info" onFinish={onFinish}>
           {/* Four static sections */}
           {[...Array(4)].map((_, index) => (
