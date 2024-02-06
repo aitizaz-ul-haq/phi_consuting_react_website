@@ -123,6 +123,13 @@ import AddFintBan from './pages/dashboard/Industries Banner/Fintech Banner/AddFi
 import EditFintBan from './pages/dashboard/Industries Banner/Fintech Banner/EditFintBan';
 import ShowFintBan from './pages/dashboard/Industries Banner/Fintech Banner/ShowFintBan';
 
+import AddDevBan from './pages/dashboard/Industries Banner/Dev Banner/AddDevBan';
+import EditDevBanner from './pages/dashboard/Industries Banner/Dev Banner/EditDevBanner';
+import ShowDevBan from './pages/dashboard/Industries Banner/Dev Banner/ShowDevBan';
+
+import AddCloudBan from './pages/dashboard/Industries Banner/Cloud Banner/AddCloudBan';
+import EditCloudBan from './pages/dashboard/Industries Banner/Cloud Banner/EditCloudBan';
+import ShowCloudBan from './pages/dashboard/Industries Banner/Cloud Banner/ShowCloudBan';
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -372,6 +379,15 @@ const ProtectedRoute = ({ children }) => {
           <Route path="EditFi/:fintbanId" element={<EditFintBan/>} />
           <Route path="AddFintBan" element={<AddFintBan />} />
           <Route path="ShowFintBan" element={<ShowFintBan />} />
+
+          <Route path="Editde/:devbanId" element={<EditDevBanner/>} />
+          <Route path="AddDevBan" element={<AddDevBan />} />
+          <Route path="ShowDevBan" element={<ShowDevBan />} />
+
+          <Route path="Editcl/:cloudbanId" element={<EditCloudBan/>} />
+          <Route path="AddCloudBan" element={<AddCloudBan />} />
+          <Route path="ShowCloudBan" element={<ShowCloudBan />} />
+
 
         </Route>
 
