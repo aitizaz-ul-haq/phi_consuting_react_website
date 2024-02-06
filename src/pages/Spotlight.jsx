@@ -42,7 +42,7 @@ const Spotlight = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [loading]); // Re-run the effect if the loading state changes
+    }, [loading]); 
 
     if (loading) {
         return <div className="spinner-container"><Spin size="large" /></div>;

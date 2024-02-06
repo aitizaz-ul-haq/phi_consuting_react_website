@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import clutchone from '../assets/img/achievements-badges/clutch_1.png';
 import BBB from '../assets/img/achievements-badges/BBB.png';
 import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
-
 import phiphoto from "../assets/img/phi_logo-filled.png";
-
 import alizaidiportrait from "../assets/img/phi_people/ali_zaidi.jpg";
 import abudullahportrait from "../assets/img/phi_people/Abdullah.jpg";
 import razaportrait from "../assets/img/phi_people/Raza.jpg";
