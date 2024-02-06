@@ -21,7 +21,7 @@ import impicon from "../assets/img/process_icons/implement.png";
 import monitoricon from "../assets/img/process_icons/monitor.png";
 import improveicon from "../assets/img/process_icons/improve.png";
 
-
+import { Helmet } from 'react-helmet';
 import achiconone from "../assets/img/achievements-badges/clutch_1.png";
 import achicontwo from "../assets/img/achievements-badges/BBB.png";
 import achiconthree from "../assets/img/achievements-badges/clutch_2.png";
@@ -128,6 +128,12 @@ useEffect(() => {
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
   return (
     <>
+   <Helmet>
+        <title>Drive Growth & Excellence with Phi Consulting</title>
+        <meta name="description" content="Drive growth with Phi Consulting's expert solutions in GTM Strategy, HR, Investor Relations & Financial Consulting. Maximize your enterprise potential. Schedule a free consultation now!" />
+      </Helmet>
+
+
    {/* <!-- Hero Section --> */}
       <article class="hero">
         <section class="hero-container-services">

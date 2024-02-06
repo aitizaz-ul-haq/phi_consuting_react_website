@@ -64,7 +64,7 @@ import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 
-
+import { Helmet } from 'react-helmet';
 const HrAndRecruitmentConsulting = () => {
   const [caseStudies, setCaseStudies] = useState([]);
   // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
@@ -345,6 +345,10 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (
         <>
+  <Helmet>
+        <title>HR and Recruitment Solutions - Phi Consulting</title>
+        <meta name="description" content="Unlock your workforce potential with Phi Consulting's HR and Recruitment solutions. Streamline hiring processes and cultivate a high-performance, motivated team. Partner with us for success!" />
+      </Helmet>
 
 <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>

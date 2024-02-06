@@ -58,7 +58,7 @@ import solarproduct from "../../assets/img/api_images/solar_one.webp";
 import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
-
+import { Helmet } from 'react-helmet';
 import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 
 const IaaS = () => {
@@ -310,6 +310,10 @@ useScrollToTop();
 
     return (
         <>
+<Helmet>
+        <title>Expert IaaS Solutions for Startups | Phi Consulting</title>
+        <meta name="description" content="Unlock the potential of your startup with Phi Consulting's expert IaaS consulting services. Our team guides startups in assessing infrastructure needs, formulating scalable strategies, and navigating financial complexities. Explore our customized solutions for go-to-market strategies, talent acquisition, and investor relations to propel your venture towards success." />
+      </Helmet>
 
 <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>

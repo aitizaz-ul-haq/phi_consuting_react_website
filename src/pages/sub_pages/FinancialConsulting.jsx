@@ -47,7 +47,7 @@ import solarbox from "../../assets/img/api_images/Solarbox.png";
 import bobtailbox from "../../assets/img/api_images/bob.png";
 import joybox from "../../assets/img/api_images/joybox.png";
 import dobox from "../../assets/img/api_images/digitalocean-square.png";
-
+import { Helmet } from 'react-helmet';
 import atobproduct from "../../assets/img/api_images/atob-card.png"; 
 import truckxproduct from "../../assets/img/api_images/truckx-case.png";
 import palletproduct from "../../assets/img/api_images/pallet.png";
@@ -342,6 +342,10 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
   useScrollToTop();
     return(
         <>
+  <Helmet>
+        <title>Strategic Financial Consulting - Phi Consulting</title>
+        <meta name="description" content="Unlock your financial potential with Phi Consulting's tailored Financial Consulting services. Drive profitability, make informed decisions, and optimize financial strategies with our expert guidance." />
+      </Helmet>
 
 <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>

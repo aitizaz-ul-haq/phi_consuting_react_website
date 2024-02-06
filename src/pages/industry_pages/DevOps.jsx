@@ -58,7 +58,7 @@ import solarproduct from "../../assets/img/api_images/solar_one.webp";
 import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
-
+import { Helmet } from 'react-helmet';
 import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 
 const DevOps = () => {
@@ -305,6 +305,10 @@ useScrollToTop();
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (
         <>
+  <Helmet>
+        <title>Welcome to the Future of DevOps | Phi Consulting</title>
+        <meta name="description" content="Unlock the full potential of your DevOps startup with Phi Consulting's expert DevOps consulting services. From GTM strategy to HR & recruitment solutions, financial consulting, and investor relations, we offer tailored solutions to address the unique challenges faced by DevOps companies. Partner with us to revolutionize your startup's growth journey. Contact us today." />
+      </Helmet>
 
 <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>

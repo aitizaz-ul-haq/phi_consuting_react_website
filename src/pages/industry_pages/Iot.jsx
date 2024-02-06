@@ -43,6 +43,8 @@ import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 
+import { Helmet } from 'react-helmet';
+
 import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 const Iot = () => {
   const [sectionOneTitle, setSectionOneTitle] = useState('');
@@ -230,6 +232,11 @@ useScrollToTop();
 };
     return (
         <>
+        <Helmet>
+        <title>Your Gateway to Scalable IoT Innovation | Phi Consulting</title>
+        <meta name="description" content="Unlock the potential of your IoT startup with Phi Consulting's specialized IoT consulting services. Our team guides founders and executives through growth and innovation, crafting custom go-to-market strategies, HR and recruitment solutions, financial management, and investor relations to ensure lasting success." />
+      </Helmet>
+
          <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">

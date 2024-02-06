@@ -10,7 +10,7 @@ import razaportrait from "../assets/img/phi_people/Raza.jpg";
 import ismailportrait from "../assets/img/phi_people/ismail.jpg";
 import { TypeAnimation } from 'react-type-animation';
 import useScrollToTop from '../hooks/useScrollToTop';
-
+import { Helmet } from 'react-helmet';
 
 const AboutUs = () => {
 
@@ -135,6 +135,11 @@ useEffect(() => {
   useScrollToTop();
   return (
     <>
+       <Helmet>
+        <title>About Phi Consulting</title>
+        <meta name="description" content="Learn about Phi Consulting, your strategic partner in business success. Explore our expertise, values, and commitment to delivering innovative solutions for your growth." />
+      </Helmet>
+
      {/* <!-- Hero Section --> */}
       <article class="hero">
         <section class="hero-container-phi-about">

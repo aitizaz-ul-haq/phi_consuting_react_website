@@ -42,7 +42,7 @@ import solarproduct from "../../assets/img/api_images/solar_one.webp";
 import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
-
+import { Helmet } from 'react-helmet';
 import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 
 
@@ -302,6 +302,10 @@ useEffect(() => {
 useScrollToTop();
     return (
         <>
+ <Helmet>
+        <title>Empowering Your FinTech Startup to Scale Efficiently | Phi Consulting</title>
+        <meta name="description" content="Unlock the full potential of your FinTech startup with Phi Consulting's expert consulting services. From GTM strategy to HR & recruitment solutions, financial consulting, and investor relations, we offer tailored solutions to address the unique challenges faced by FinTech companies. Partner with us to revolutionize your startup's growth journey. Contact us today." />
+      </Helmet>
 
 <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>

@@ -32,7 +32,7 @@ import useScrollToTop from '../hooks/useScrollToTop';
 import david from "../assets/video/world.mp4";
 import eye from "../assets/img/eye.png";
 import top from "../assets/img/top Arrow.png";
-
+import { Helmet } from 'react-helmet';
 
 import atobbox from "../assets/img/api_images/AToB-square.jpg";
 import truckxbox from "../assets/img/api_images/truck-square.png";
@@ -366,6 +366,12 @@ const HomePage = () => {
 
   return (
     <>
+<Helmet>
+<title>Phi Consulting - Home</title>
+  <meta name="description" content="Phi Consulting is your trusted tech consulting partner, specializing in startups & SMEs in IoT, Fintech, SaaS, & IaaS. Expertise in Go-To-Market Strategy, HR, Investor Relations & Financial Consulting. Schedule a free consultation." />
+  </Helmet>
+
+    
     <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">

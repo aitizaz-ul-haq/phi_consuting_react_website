@@ -57,7 +57,7 @@ import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 
-
+import { Helmet } from 'react-helmet';
 const SalesConsulting = () => {
   const [caseStudies, setCaseStudies] = useState([]);
   // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
@@ -341,6 +341,12 @@ useScrollToTop();
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (
         <>
+
+<Helmet>
+        <title>Effective Go-To-Market Strategy - Phi Consulting</title>
+        <meta name="description" content="Craft dynamic Go-To-Market strategies with Phi Consulting. Propel your business forward with proven methodologies for successful product launches and market penetration. Partner with us today!" />
+      </Helmet>
+
         <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">

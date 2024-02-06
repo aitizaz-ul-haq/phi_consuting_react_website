@@ -64,6 +64,7 @@ import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 
+import { Helmet } from 'react-helmet';
 const BuisnessConsulting = () => {
   const [caseStudies, setCaseStudies] = useState([]);
   // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
@@ -349,6 +350,11 @@ useScrollToTop();
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (
         <>
+         <Helmet>
+        <title>Investor Relations - Phi Consulting</title>
+        <meta name="description" content="Nurture investor confidence with Phi Consulting's Investor Relations expertise. Enhance communication, build trust, and foster long-term relationships for sustainable growth." />
+      </Helmet>
+
         <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">

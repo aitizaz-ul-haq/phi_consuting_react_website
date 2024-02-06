@@ -8,7 +8,7 @@ import pallet from '../assets/img/new_logos_comps/newer/Pallet Logo.png';
 import digitalOcean from '../assets/img/new_logos_comps/newer/digital-ocean.png';
 import mudflap from '../assets/img/new_logos_comps/newer/Mudflap.png';
 import sungrade from '../assets/img/new_logos_comps/sungrade solar.png';
-
+import { Helmet } from 'react-helmet';
 import clutchone from '../assets/img/achievements-badges/clutch_1.png';
 import BBB from '../assets/img/achievements-badges/BBB.png';
 import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
@@ -79,6 +79,11 @@ const OurWork = () => {
 
   return (
     <>
+      <Helmet>
+        <title>FinTech Consulting Solutions by Phi Consulting</title>
+        <meta name="description" content="Our unique investment approach centers on identifying undervalued businesses and subsequently enhancing their value through strategic business alliances, operational improvements, and financial restructuring." />
+      </Helmet>
+
     {/* <!-- Hero Section --> */}
       <article class="hero">
         <section class="hero-container-our-work">

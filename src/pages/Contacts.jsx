@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import phicontactbanner from "../assets/img/phi_logo.webp";
+import { Helmet } from 'react-helmet';
 
 const Contacts = () => {
 
@@ -46,6 +47,11 @@ const Contacts = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Get in Touch with Phi Consulting - Let's Shape Success Together</title>
+        <meta name="description" content="Contact Phi Consulting for strategic business solutions. Whether you have inquiries or collaboration ideas, we're here to assist you on your journey to success." />
+      </Helmet>
+
     {/* <!-- contact form  Section --> */}
       <article class="contact">
         <section class="contact-container">

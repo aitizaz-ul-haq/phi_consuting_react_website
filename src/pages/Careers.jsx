@@ -13,6 +13,7 @@ import JobCard from '../components/shared/cards/JobCard';
 import jobPostings from "../data/jobPostings.json";
 import { TypeAnimation } from 'react-type-animation';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import axios from 'axios';
 
@@ -66,6 +67,11 @@ const Careers = () => {
   }, []);
   return (
     <>
+      <Helmet>
+        <title>Careers - Phi Consulting</title>
+        <meta name="description" content="Explore exciting career opportunities at Phi Consulting. Join our team of dynamic professionals and contribute to shaping the future of strategic business excellence." />
+      </Helmet>
+
     {/* <!-- Hero Section --> */}
       <article class="hero">
         <section class="hero-container-careers">
