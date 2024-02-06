@@ -200,6 +200,24 @@ const Sidebar = () => {
         </div>
         )}
       </div>
+      <div>
+        <button className='dash-options' onClick={() => setDropdown16(!dropdown16)}>IoT</button>
+        {dropdown16 && (
+          <div className='list-container'>
+             <Link className='list-elements-dash' to="/dashboard/AddIotBan">Add IoT Banner</Link>
+            <Link className='list-elements-dash' to="/dashboard/ShowIotBan">Show Banner Info</Link>
+        </div>
+        )}
+      </div>
+      <div>
+        <button className='dash-options' onClick={() => setDropdown17(!dropdown17)}>Fintech</button>
+        {dropdown17 && (
+          <div className='list-container'>
+             <Link className='list-elements-dash' to="/dashboard/AddFintBan">Add Fintech Banner</Link>
+            <Link className='list-elements-dash' to="/dashboard/ShowFintBan">Show Banner Info</Link>
+        </div>
+        )}
+      </div>
     </div>
   );
 };

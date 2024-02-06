@@ -115,6 +115,15 @@ import AddIaasBan from './pages/dashboard/Industries Banner/Iaas Banner/AddIaasB
 import ShowIaasBan from "./pages/dashboard/Industries Banner/Iaas Banner/ShowIaasBan";
 import EditIaasBan from "./pages/dashboard/Industries Banner/Iaas Banner/EditIaasBan";
 
+import AddIotBan from './pages/dashboard/Industries Banner/Iot Banner/AddIotBan';
+import ShowIotBan from './pages/dashboard/Industries Banner/Iot Banner/ShowIotBan';
+import EditIotBan from './pages/dashboard/Industries Banner/Iot Banner/EditIotBan';
+
+import AddFintBan from './pages/dashboard/Industries Banner/Fintech Banner/AddFintBan';
+import EditFintBan from './pages/dashboard/Industries Banner/Fintech Banner/EditFintBan';
+import ShowFintBan from './pages/dashboard/Industries Banner/Fintech Banner/ShowFintBan';
+
+
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -356,6 +365,13 @@ const ProtectedRoute = ({ children }) => {
           <Route path="AddIaasBan" element={<AddIaasBan />} />
           <Route path="ShowIaasBan" element={<ShowIaasBan />} />
           
+          <Route path="EditIo/:iotbanId" element={<EditIotBan />} />
+          <Route path="AddIotBan" element={<AddIotBan />} />
+          <Route path="ShowIotBan" element={<ShowIotBan />} />
+
+          <Route path="EditFi/:fintbanId" element={<EditFintBan/>} />
+          <Route path="AddFintBan" element={<AddFintBan />} />
+          <Route path="ShowFintBan" element={<ShowFintBan />} />
 
         </Route>
 
