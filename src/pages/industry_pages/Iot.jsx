@@ -55,6 +55,9 @@ const Iot = () => {
   const [sectionFourParagraph, setSectionFourParagraph] = useState('');
   const [sectionFiveTitle, setSectionFiveTitle] = useState('');
   const [sectionFiveParagraph, setSectionFiveParagraph] = useState('');
+
+  const [heroHeading, setHeroHeading] = useState('');
+  const [heroDescription, setHeroDescription] = useState('');
   // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
   // const testiRef = useRef(null);
 
@@ -148,6 +151,23 @@ const Iot = () => {
   
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    const fetchCloudBanData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/iotban`);
+        // Assuming the response data is an array and we want the last item
+        const lastEntry = response.data[response.data.length - 1];
+        // Update state with the last entry's heading and paragraph
+        setHeroHeading(lastEntry.heading);
+        setHeroDescription(lastEntry.bannerDescription);
+      } catch (error) {
+        console.error('Error fetching cloud ban data:', error);
+      }
+    };
+
+    fetchCloudBanData();
+  }, []);
   
   // useEffect(() => {
   //   const observer = new IntersectionObserver(
@@ -229,7 +249,7 @@ useScrollToTop();
         <section class="hero-container-iot">
           <div class="hero-content-iot">
             <h2 class="hero-heading-iot">
-            {windowWidth >= 1200 ? <TypeAnimation
+            {/* {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
         // Same substring at the start will only be typed out once, initially
         'Your Gateway to Scalable IoT Innovation',
@@ -240,12 +260,12 @@ useScrollToTop();
       speed={50}
       style={{ fontSize: '40px', display: 'inline-block' }}
       repeat={Infinity}
-    /> : 'Your Gateway to Scalable IoT Innovation'}
-            
+    /> : 'Your Gateway to Scalable IoT Innovation'} */}
+            {heroHeading}
             </h2>
             <p class="hero-desc-iot">
               
-            Embark on a transformative journey with Phi Consulting, where we specialize in turning potential into success for IoT and technology startups. Our dedicated team guides founders and C-level executives through the intricate landscapes of growth and innovation, ensuring a flawless and efficient journey.
+            {heroDescription}
             </p>
             <div class="consult-button-sales"> <Link to="/contact-us" className='scheduler-set'>Schedule a Free Consultation</Link> </div>
           </div>

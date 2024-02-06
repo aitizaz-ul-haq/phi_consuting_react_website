@@ -72,6 +72,10 @@ const IaaS = () => {
   const [sectionFourParagraph, setSectionFourParagraph] = useState('');
   const [sectionFiveTitle, setSectionFiveTitle] = useState('');
   const [sectionFiveParagraph, setSectionFiveParagraph] = useState('');
+
+  const [heroHeading, setHeroHeading] = useState('');
+  const [heroDescription, setHeroDescription] = useState('');
+
   // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
   // const testiRef = useRef(null);
 
@@ -167,6 +171,23 @@ const IaaS = () => {
     }
   
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const fetchCloudBanData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/iaasban`);
+        // Assuming the response data is an array and we want the last item
+        const lastEntry = response.data[response.data.length - 1];
+        // Update state with the last entry's heading and paragraph
+        setHeroHeading(lastEntry.heading);
+        setHeroDescription(lastEntry.bannerDescription);
+      } catch (error) {
+        console.error('Error fetching cloud ban data:', error);
+      }
+    };
+
+    fetchCloudBanData();
   }, []);
   
   // useEffect(() => {
@@ -310,7 +331,7 @@ useScrollToTop();
           <div class="hero-content-iaas">
             
             <h2 class="hero-heading-iaas">
-            {windowWidth >= 1200 ? <TypeAnimation
+            {/* {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
         // Same substring at the start will only be typed out once, initially
         'Expert IaaS Solutions for Startups',
@@ -321,12 +342,11 @@ useScrollToTop();
       speed={50}
       style={{ fontSize: '40px', display: 'inline-block' }}
       repeat={Infinity}
-    /> : 'Expert IaaS Solutions for Startups'}
-              
+    /> : 'Expert IaaS Solutions for Startups'} */}
+              {heroHeading}
             </h2>
             <p class="hero-desc-iaas">
-            At Phi Consulting, we understand the unique challenges and immense potential of startups in the cutting-edge sector of IaaS. Our mission is to be your strategic partner, guiding your venture towards scalable growth and operational excellence.
-
+            {heroDescription}
             </p>
             <div class="consult-button-sales"> <Link to="/contact-us" className='scheduler-set'>Schedule a Free Consultation</Link> </div>
           </div>

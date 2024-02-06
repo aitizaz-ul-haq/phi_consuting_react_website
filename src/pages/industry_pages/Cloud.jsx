@@ -72,6 +72,9 @@ const Cloud = () => {
   const [sectionFourParagraph, setSectionFourParagraph] = useState('');
   const [sectionFiveTitle, setSectionFiveTitle] = useState('');
   const [sectionFiveParagraph, setSectionFiveParagraph] = useState('');
+
+  const [heroHeading, setHeroHeading] = useState('');
+  const [heroDescription, setHeroDescription] = useState('');
   // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
   // const testiRef = useRef(null);
 
@@ -166,6 +169,22 @@ const Cloud = () => {
     return () => observer.disconnect();
   }, []);
   
+  useEffect(() => {
+    const fetchCloudBanData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/cloudban`);
+        // Assuming the response data is an array and we want the last item
+        const lastEntry = response.data[response.data.length - 1];
+        // Update state with the last entry's heading and paragraph
+        setHeroHeading(lastEntry.heading);
+        setHeroDescription(lastEntry.bannerDescription);
+      } catch (error) {
+        console.error('Error fetching cloud ban data:', error);
+      }
+    };
+
+    fetchCloudBanData();
+  }, []);
   // useEffect(() => {
   //   const observer = new IntersectionObserver(
   //     (entries) => {
@@ -305,7 +324,7 @@ useScrollToTop();
           <div class="hero-content-cloud">
             
             <h2 class="hero-heading-cloud">
-            {windowWidth >= 1200 ? <TypeAnimation
+            {/* {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
         // Same substring at the start will only be typed out once, initially
         ' Empowering Your Vision, Elevating Your Cloud Strategy',
@@ -316,11 +335,11 @@ useScrollToTop();
       speed={50}
       style={{ fontSize: '40px', display: 'inline-block' }}
       repeat={Infinity}
-    /> : ' Empowering Your Vision, Elevating Your Cloud Strategy'}
-             
+    /> : ' Empowering Your Vision, Elevating Your Cloud Strategy'} */}
+             {heroHeading}
             </h2>
             <p class="hero-desc-cloud">
-            At Phi Consulting, we propel startups toward success by delivering comprehensive consulting services focused on efficient scaling and cost optimization. Our expertise lies in transforming challenges into opportunities, paving the way for a sustainable and prosperous future.
+            {heroDescription}
             </p>
             <div class="consult-button-sales"> <Link to="/contact-us" className='scheduler-set'>Schedule a Free Consultation</Link> </div>
           </div>

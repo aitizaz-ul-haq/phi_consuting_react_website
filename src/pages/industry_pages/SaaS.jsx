@@ -56,6 +56,9 @@ const SaaS = () => {
   const [sectionFiveTitle, setSectionFiveTitle] = useState('');
   const [sectionFiveParagraph, setSectionFiveParagraph] = useState('');
 
+  const [heroHeading, setHeroHeading] = useState('');
+  const [heroDescription, setHeroDescription] = useState('');
+
   const apiUrl = import.meta.env.VITE_API_URL_PROD || 'https://prickle-balanced-archaeopteryx.glitch.me';
 
   // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
@@ -154,6 +157,23 @@ const SaaS = () => {
     }
   
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const fetchCloudBanData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/saasban`);
+        // Assuming the response data is an array and we want the last item
+        const lastEntry = response.data[response.data.length - 1];
+        // Update state with the last entry's heading and paragraph
+        setHeroHeading(lastEntry.heading);
+        setHeroDescription(lastEntry.bannerDescription);
+      } catch (error) {
+        console.error('Error fetching cloud ban data:', error);
+      }
+    };
+
+    fetchCloudBanData();
   }, []);
   
   // useEffect(() => {
@@ -290,7 +310,7 @@ const scrollToTop = () => {
           <div class="hero-content-saas">
             
             <h2 class="hero-heading-saas">
-            {windowWidth >= 1200 ? <TypeAnimation
+            {/* {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
         // Same substring at the start will only be typed out once, initially
         ' Expertise at the Intersection of Innovation and Growth',
@@ -301,12 +321,11 @@ const scrollToTop = () => {
       speed={50}
       style={{ fontSize: '40px', display: 'inline-block' }}
       repeat={Infinity}
-    /> : ' Expertise at the Intersection of Innovation and Growth'}
-             
+    /> : ' Expertise at the Intersection of Innovation and Growth'} */}
+              {heroHeading}
             </h2>
             <p class="hero-desc-saas">
-            Embark on a transformative journey with Phi Consulting, where innovation and growth intersect seamlessly. As pioneers in SaaS (Software as a Service) consulting, we go beyond mere consultation; we become your strategic growth partners, bridging the gap between your startup's potential and its ultimate success.
-
+            {heroDescription}
             </p>
             <div class="consult-button-sales"> <Link to="/contact-us" className='scheduler-set'>Schedule a Free Consultation</Link> </div>
           </div>

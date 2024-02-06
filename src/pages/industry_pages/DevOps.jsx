@@ -73,6 +73,9 @@ const DevOps = () => {
   const [sectionFiveTitle, setSectionFiveTitle] = useState('');
   const [sectionFiveParagraph, setSectionFiveParagraph] = useState('');
 
+  const [heroHeading, setHeroHeading] = useState('');
+  const [heroDescription, setHeroDescription] = useState('');
+
   const apiUrl = import.meta.env.VITE_API_URL_PROD || 'https://prickle-balanced-archaeopteryx.glitch.me';
   // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
   // const testiRef = useRef(null);
@@ -165,6 +168,23 @@ const DevOps = () => {
     }
   
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const fetchCloudBanData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/devban`);
+        // Assuming the response data is an array and we want the last item
+        const lastEntry = response.data[response.data.length - 1];
+        // Update state with the last entry's heading and paragraph
+        setHeroHeading(lastEntry.heading);
+        setHeroDescription(lastEntry.bannerDescription);
+      } catch (error) {
+        console.error('Error fetching cloud ban data:', error);
+      }
+    };
+
+    fetchCloudBanData();
   }, []);
   
   // useEffect(() => {
@@ -306,7 +326,7 @@ useScrollToTop();
           <div class="hero-content-dev">
             
             <h2 class="hero-heading-dev">
-            {windowWidth >= 1200 ? <TypeAnimation
+            {/* {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
         // Same substring at the start will only be typed out once, initially
         '  Welcome to the Future of DevOps',
@@ -317,10 +337,12 @@ useScrollToTop();
       speed={50}
       style={{ fontSize: '40px', display: 'inline-block' }}
       repeat={Infinity}
-    /> : '  Welcome to the Future of DevOps'}
+    /> : '  Welcome to the Future of DevOps'} */}
+
+{heroHeading}
             </h2>
             <p class="hero-desc-sales">
-            At Phi Consulting, we understand the pulse of the startup ecosystem. Specializing in IoT, SaaS, IaaS, Fintech, Cloud, and DevOps sectors, we're not just consultants; we're your strategic growth partners. We're here to revolutionize the way startups like yours scale and thrive.
+            {heroDescription}
             </p>
             <div class="consult-button-sales"> <Link to="/contact-us" className='scheduler-set'>Schedule a Free Consultation</Link> </div>
           </div>

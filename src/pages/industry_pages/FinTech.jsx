@@ -56,6 +56,10 @@ const FinTech = () => {
   const [sectionFourTitle, setSectionFourTitle] = useState('');
   const [sectionFourParagraph, setSectionFourParagraph] = useState('');
 
+  const [heroHeading, setHeroHeading] = useState('');
+  const [heroDescription, setHeroDescription] = useState('');
+
+
   const apiUrl = import.meta.env.VITE_API_URL_PROD || 'https://prickle-balanced-archaeopteryx.glitch.me';
 
   const [processNewVisible, setProcessNewVisible] = useState(false);
@@ -143,6 +147,23 @@ useEffect(() => {
     }
   
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const fetchCloudBanData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/fintban`);
+        // Assuming the response data is an array and we want the last item
+        const lastEntry = response.data[response.data.length - 1];
+        // Update state with the last entry's heading and paragraph
+        setHeroHeading(lastEntry.heading);
+        setHeroDescription(lastEntry.bannerDescription);
+      } catch (error) {
+        console.error('Error fetching cloud ban data:', error);
+      }
+    };
+
+    fetchCloudBanData();
   }, []);
 
   // useEffect(() => {
@@ -300,7 +321,7 @@ useScrollToTop();
         <section class="hero-container-fin">
           <div class="hero-content-fin">
             <h2 class="hero-heading-fin">
-            {windowWidth >= 1200 ? <TypeAnimation
+            {/* {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
         // Same substring at the start will only be typed out once, initially
         'Empowering Your FinTech Startup to Scale Efficiently',
@@ -311,11 +332,11 @@ useScrollToTop();
       speed={50}
       style={{ fontSize: '40px', display: 'inline-block' }}
       repeat={Infinity}
-    /> : 'Empowering Your FinTech Startup to Scale Efficiently'}
-              
+    /> : 'Empowering Your FinTech Startup to Scale Efficiently'} */}
+              {heroHeading}
             </h2>
             <p class="hero-desc-fin">
-            We recognize the unique challenges and immense potential in the FinTech sector. Our mission is to guide you through the complexities of scaling efficiently while optimizing cost-effectiveness. We're dedicated to transforming your ambitious vision into a thriving reality.
+            {heroDescription}
             </p>
             <div class="consult-button-sales"> <Link to="/contact-us" className='scheduler-set'>Schedule a Free Consultation</Link> </div>
           </div>
