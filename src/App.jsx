@@ -106,6 +106,10 @@ import FinPage from './pages/dashboard/solutions/Fin Dash/FinPage';
 
 import DashPage from './pages/dashboard/DashPage';
 
+import AddSaasBan from './pages/dashboard/Industries Banner/Saas Banner/AddSaasBan';
+import ShowSaasBan from './pages/dashboard/Industries Banner/Saas Banner/ShowSaasBan';
+import EditSaasBan from './pages/dashboard/Industries Banner/Saas Banner/EditSaasBan';
+
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -335,6 +339,16 @@ const ProtectedRoute = ({ children }) => {
           <Route path="EditFino/:finId" element={<EditFin />} />
 
           <Route path="ShowDash" element={<DashPage />} />
+
+          {/* ---------------------------------------------- */}
+                         {/* Banner Dashborad Routes */}
+          {/*------------------------------------------------*/}
+
+          <Route path="AddSaasBan" element={<AddSaasBan />} />
+          <Route path="ShowSaasBan" element={<ShowSaasBan />} />
+          <Route path="EditSaasBan/:saasbanId" element={<EditSaasBan />} />
+
+
         </Route>
 
       </Routes>
