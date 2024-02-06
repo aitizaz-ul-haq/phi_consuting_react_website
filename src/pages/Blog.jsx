@@ -6,6 +6,7 @@ import BlogCard from '../components/shared/cards/BlogCard';
 import axios from 'axios';
 import useScrollToTop from '../hooks/useScrollToTop';
 import { Spin } from 'antd';
+import blogback from '../assets/img/wrappers/blogback.jpg';
 
 
 const Blog = ({blogpic}) => {
@@ -15,6 +16,25 @@ const Blog = ({blogpic}) => {
   useEffect(() => {
     fetchBlogs();
   }, []);
+
+  useEffect(() => {
+    // Ensure the element exists before attempting to add styles or event listeners
+    const blogedSection = document.querySelector('.bloged');
+    if (!blogedSection) return; // Exit if the element does not exist
+
+    // Apply styles directly or adjust your CSS as needed
+    const handleScroll = () => {
+        const yOffset = window.pageYOffset;
+        blogedSection.style.backgroundPosition = `center ${yOffset * 0.5}px`;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+    };
+}, [isLoading]);
 
   const fetchBlogs = async () => {
     setIsLoading(true);

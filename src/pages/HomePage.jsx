@@ -50,6 +50,13 @@ import bobtailproduct from "../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../assets/img/api_images/joytwo.png";
 import doproduct from "../assets/img/api_images/digitalocean-product.png";
 
+import backwrapper from "../assets/img/wrappers/website_background_wrapper_one.jpg";
+import bactwo from "../assets/img/wrappers/background_wrapper_two.jpg";
+import backthree from "../assets/img/wrappers/back_three.jpg";
+import backClient from "../assets/img/wrappers/client_back.jpg";
+import backcurls from "../assets/img/wrappers/back_curls.jpg";
+import segmented from "../assets/img/wrappers/segemented.jpg";
+import whatback from "../assets/img/wrappers/whatback.jpg";
 
 const HomePage = () => {
 
@@ -222,6 +229,167 @@ useEffect(() => {
 
   const firstTwoBlogs = blogs.slice(0, 2);
   useScrollToTop();
+
+  useEffect(() => {
+    // Function to handle the parallax effect
+    const handleScroll = () => {
+      const offset = window.pageYOffset;
+      document.body.style.backgroundPositionY = offset * 0.5 + 'px'; // Adjust the speed of the parallax effect by changing the multiplier
+    };
+
+    // Set background image on mount
+    document.body.style.backgroundImage = `url(${whatback})`;
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.backgroundAttachment = 'fixed'; // This is necessary for the parallax effect
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up function to remove the event listener and revert styles on unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.body.style.backgroundImage = '';
+      document.body.style.backgroundSize = '';
+      document.body.style.backgroundPosition = '';
+      document.body.style.backgroundAttachment = '';
+    };
+  }, []);
+
+  useEffect(() => {
+    const workArticle = document.querySelector('.work');
+
+    // Function to handle the parallax scrolling effect
+    const handleParallaxScroll = () => {
+      // Adjust the speed of the parallax by changing the multiplier (0.5 in this case)
+      const offset = window.pageYOffset - workArticle.offsetTop;
+      workArticle.style.backgroundPositionY = `${offset * 0.5}px`;
+    };
+
+    if (workArticle) {
+      workArticle.style.backgroundImage = `url(${backcurls})`;
+      workArticle.style.backgroundSize = 'cover';
+      workArticle.style.backgroundPosition = 'center';
+      // workArticle.style.backgroundAttachment = 'fixed'; // Needed for parallax effect
+      workArticle.style.backgroundRepeat = 'no-repeat';
+
+      // Add the event listener for the scroll event to create the parallax effect
+      window.addEventListener('scroll', handleParallaxScroll);
+    }
+
+    // Cleanup function to revert styles and remove the event listener
+    return () => {
+      if (workArticle) {
+        workArticle.style.backgroundImage = '';
+        workArticle.style.backgroundSize = '';
+        workArticle.style.backgroundPosition = '';
+        // workArticle.style.backgroundAttachment = '';
+        workArticle.style.backgroundRepeat = '';
+
+        window.removeEventListener('scroll', handleParallaxScroll);
+      }
+    };
+  }, []); 
+
+  // useEffect(() => {
+  //   const clientContainer = document.querySelector('.client-container');
+
+  //   // Apply the background image to the client-container section
+  //   if (clientContainer) {
+  //     clientContainer.style.backgroundImage = `url(${backClient})`;
+  //     clientContainer.style.backgroundSize = 'cover';
+  //     clientContainer.style.backgroundPosition = 'center';
+  //     clientContainer.style.backgroundRepeat = 'no-repeat';
+  //     // Optionally, apply a parallax effect similar to the work section if desired
+  //   }
+
+  //   // Cleanup function to revert the styles
+  //   return () => {
+  //     if (clientContainer) {
+  //       clientContainer.style.backgroundImage = '';
+  //       clientContainer.style.backgroundSize = '';
+  //       clientContainer.style.backgroundPosition = '';
+  //       clientContainer.style.backgroundRepeat = '';
+  //       // If a parallax effect was applied, ensure to remove associated event listeners or reset styles as needed
+  //     }
+  //   };
+  // }, []);
+
+  useEffect(() => {
+    // Setting the background color with a transparent effect for the services section
+    const servicesSection = document.querySelector('.services');
+    
+    if (servicesSection) {
+      // Apply light blue background color with transparency
+      servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
+      // Apply top and bottom borders
+      servicesSection.style.borderTop = '2px solid #add8e6'; // Light blue color
+      servicesSection.style.borderBottom = '2px solid #add8e6'; // Light blue color
+      // Ensure content inside is not affected by the background color
+      // This is inherently the case with the background color property
+      // but ensure text and other elements have enough contrast
+    }
+
+    // Cleanup function to revert styles
+    return () => {
+      if (servicesSection) {
+        servicesSection.style.backgroundColor = '';
+        servicesSection.style.borderTop = '';
+        servicesSection.style.borderBottom = '';
+      }
+    };
+  }, []); // The empty dependency array ensures this effect runs only once when the component mounts
+
+
+  useEffect(() => {
+    // Setting the background color with a transparent effect for the services section
+    const servicesSection = document.querySelector('.testimonial');
+    
+    if (servicesSection) {
+      // Apply light blue background color with transparency
+      servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
+      // Apply top and bottom borders
+      servicesSection.style.borderTop = '2px solid #add8e6'; // Light blue color
+      servicesSection.style.borderBottom = '2px solid #add8e6'; // Light blue color
+      // Ensure content inside is not affected by the background color
+      // This is inherently the case with the background color property
+      // but ensure text and other elements have enough contrast
+    }
+
+    // Cleanup function to revert styles
+    return () => {
+      if (servicesSection) {
+        servicesSection.style.backgroundColor = '';
+        servicesSection.style.borderTop = '';
+        servicesSection.style.borderBottom = '';
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    // Setting the background color with a transparent effect for the services section
+    const servicesSection = document.querySelector('.blog');
+    
+    if (servicesSection) {
+      // Apply light blue background color with transparency
+      servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
+      // Apply top and bottom borders
+      servicesSection.style.borderTop = '2px solid #add8e6'; // Light blue color
+      servicesSection.style.borderBottom = '2px solid #add8e6'; // Light blue color
+      // Ensure content inside is not affected by the background color
+      // This is inherently the case with the background color property
+      // but ensure text and other elements have enough contrast
+    }
+
+    // Cleanup function to revert styles
+    return () => {
+      if (servicesSection) {
+        servicesSection.style.backgroundColor = '';
+        servicesSection.style.borderTop = '';
+        servicesSection.style.borderBottom = '';
+      }
+    };
+  }, []);
+
   return (
     <>
     <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
@@ -466,7 +634,7 @@ useEffect(() => {
                   </div>
                   <div class="tab-info-container">
                     <div class="tab-title">
-                      <h3 class="title-third">HR & Recruitment Consulting</h3>
+                      <h3 class="title-third">HR & Recruitment</h3>
                     </div>
                     {/* <!-- <div class="tab-desc">
                       Build a dynamic and skilled workforce with our specialized
@@ -638,7 +806,7 @@ useEffect(() => {
               <q
                 ><i
                   >Phi Consulting's work meets the client's expectations and has a strong 60 Net Promoter Score. The team has an easy onboarding process and a turn-key nature that has impressed the client.
-                  Head of Sales & Business Development - AtoB Financials</i
+                  Head of Sales & Business Development AtoB Financials</i
                 ></q
               >
             </p>

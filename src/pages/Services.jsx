@@ -38,8 +38,8 @@ const Services = () => {
 //   const [isVisibleTesti, setIsVisibleTesti] = useState(false);
 //  const testiRef = useRef(null);
 
- const [isVisibleAch, setIsVisibleAch] = useState(false);
-  const achRef = useRef(null);
+//  const [isVisibleAch, setIsVisibleAch] = useState(false);
+//   const achRef = useRef(null);
 
   const [processNewVisible, setProcessNewVisible] = useState(false);
   const processNewRef = useRef(null);
@@ -73,17 +73,17 @@ const Services = () => {
   //   return () => observer.disconnect();
   // }, []);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
-        },
-        { threshold: 0.5 }
-    );
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(
+//         (entries) => {
+//             entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
+//         },
+//         { threshold: 0.5 }
+//     );
 
-    observer.observe(achRef.current);
-    return () => observer.disconnect();
-}, []);
+//     observer.observe(achRef.current);
+//     return () => observer.disconnect();
+// }, []);
 
 useEffect(() => {
   const observer = new IntersectionObserver(
@@ -709,7 +709,7 @@ useEffect(() => {
       </article> */}
 
        {/* <!-- Achievement Section --> */}
-     <article class="achievement">
+     {/* <article class="achievement">
         <section class="achievement-section">
           <h2 class="ach-heading">Our Achievements</h2>
         </section>
@@ -742,7 +742,7 @@ useEffect(() => {
 
        
         </section>
-      </article>
+      </article> */}
 
       {/* <!-- Call to Action Section --> */}
       <article class="cta-container">
