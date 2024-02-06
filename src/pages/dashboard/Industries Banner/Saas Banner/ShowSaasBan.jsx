@@ -1,33 +1,63 @@
 import React, { useState, useEffect } from 'react';
-import { Table } from 'antd';
+import { Table, Button, Popconfirm, message } from 'antd';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const ShowSaasBan = () => {
     const [saasBanData, setSaasBanData] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchSaasBanData = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/saasban'); // Adjust the URL to match your API endpoint
+                const response = await axios.get('http://localhost:3000/saasban');
                 setSaasBanData(response.data);
             } catch (error) {
                 console.error('Failed to fetch SaasBan data:', error);
+                message.error('Failed to fetch data');
             }
         };
 
         fetchSaasBanData();
     }, []);
 
+    const handleEdit = (saasbanId) => {
+        navigate(`/dashboard/EditSaa/${saasbanId}`);
+    };
+
+    const handleDelete = async (saasbanId) => {
+        try {
+            await axios.delete(`http://localhost:3000/saasban/${saasbanId}`);
+            setSaasBanData(saasBanData.filter(item => item._id !== saasbanId));
+            message.success('Record deleted successfully');
+        } catch (error) {
+            console.error('Failed to delete SaasBan data:', error);
+            message.error('Failed to delete record');
+        }
+    };
+
     const columns = [
         {
             title: 'Heading',
-            dataIndex: 'heading', // This should match the data property from your saasban objects
+            dataIndex: 'heading',
             key: 'heading',
         },
         {
             title: 'Description',
-            dataIndex: 'bannerDescription', // Adjust if your saasban objects use a different property name
+            dataIndex: 'bannerDescription',
             key: 'bannerDescription',
+        },
+        {
+            title: 'Actions',
+            key: 'actions',
+            render: (_, record) => (
+                <span>
+                    <Button onClick={() => handleEdit(record._id)} type="link">Edit</Button>
+                    <Popconfirm title="Sure to delete?" onConfirm={() => handleDelete(record._id)}>
+                        <Button type="link">Delete</Button>
+                    </Popconfirm>
+                </span>
+            ),
         },
     ];
 

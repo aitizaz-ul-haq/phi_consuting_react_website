@@ -110,6 +110,11 @@ import AddSaasBan from './pages/dashboard/Industries Banner/Saas Banner/AddSaasB
 import ShowSaasBan from './pages/dashboard/Industries Banner/Saas Banner/ShowSaasBan';
 import EditSaasBan from './pages/dashboard/Industries Banner/Saas Banner/EditSaasBan';
 
+
+import AddIaasBan from './pages/dashboard/Industries Banner/Iaas Banner/AddIaasBan';
+import ShowIaasBan from "./pages/dashboard/Industries Banner/Iaas Banner/ShowIaasBan";
+import EditIaasBan from "./pages/dashboard/Industries Banner/Iaas Banner/EditIaasBan";
+
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -343,11 +348,14 @@ const ProtectedRoute = ({ children }) => {
           {/* ---------------------------------------------- */}
                          {/* Banner Dashborad Routes */}
           {/*------------------------------------------------*/}
-
+          <Route path="EditSaa/:saasbanId" element={<EditSaasBan />} />
           <Route path="AddSaasBan" element={<AddSaasBan />} />
           <Route path="ShowSaasBan" element={<ShowSaasBan />} />
-          <Route path="EditSaasBan/:saasbanId" element={<EditSaasBan />} />
-
+          
+          <Route path="EditIaa/:iaasbanId" element={<EditIaasBan />} />
+          <Route path="AddIaasBan" element={<AddIaasBan />} />
+          <Route path="ShowIaasBan" element={<ShowIaasBan />} />
+          
 
         </Route>
 
