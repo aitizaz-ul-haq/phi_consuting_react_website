@@ -109,6 +109,9 @@ const BuisnessConsulting = () => {
   
     featuresHeadingSix: "",
     featuresDescriptionSix: "",
+
+    processMainHeading:"",
+    processMainDesc:"",
   
     processHedOne:"",
     processDesOne: "",
@@ -181,6 +184,10 @@ const BuisnessConsulting = () => {
             featuresDescriptionFive: gtmData.featuresDescriptionFive,
             featuresHeadingSix: gtmData.featuresHeadingSix,
             featuresDescriptionSix: gtmData.featuresDescriptionSix,
+
+            processMainHeading:gtmData.processMainHeading,
+            processMainDesc: gtmData.processMainDesc,
+
             processHedOne:gtmData.processHedOne,
             processDesOne: gtmData.processDesOne,
             processHedTwo:gtmData.processHedTwo,
@@ -485,11 +492,9 @@ useScrollToTop();
       {/* <!-- Section path  --> */}
       <article class="path">
         <section class="path-container">
-          <h2 class="path-heading">Our Business Consulting Process:</h2>
+          <h2 class="path-heading">{data.processMainHeading}</h2>
           <p class="sales-process-desc">
-            Crafting tailored solutions for guaranteed success, Phi Consulting
-            embraces a systematic approach to elevate your business strategy and
-            operations.
+          {data.processMainDesc}
           </p>
           <div class="process-container">
             <div class="circle-container-sales">
@@ -628,9 +633,9 @@ useScrollToTop();
        {/* <!-- section new process --> */}
        <article class="process-new">
         <section class="process-new-container">
-          <h2 class="path-heading">Our Investment Relations Process</h2>
+          <h2 class="path-heading">{data.processMainHeading}</h2>
           <p class="work-desc">
-          At Phi Consulting, we meticulously navigate the intricacies of Investment Relations to ensure the success of your financial strategies:
+          {data.processMainDesc}
           </p>
           <div class="process-new-section">
             <div class="left-process-section" ref={processNewRef}>

@@ -102,6 +102,9 @@ const FiancialConsulting = () => {
   
     featuresHeadingSix: "",
     featuresDescriptionSix: "",
+
+    processMainHeading:"",
+    processMainDesc:"",
   
     processHedOne:"",
     processDesOne: "",
@@ -174,6 +177,10 @@ const FiancialConsulting = () => {
             featuresDescriptionFive: gtmData.featuresDescriptionFive,
             featuresHeadingSix: gtmData.featuresHeadingSix,
             featuresDescriptionSix: gtmData.featuresDescriptionSix,
+
+            processMainHeading:gtmData.processMainHeading,
+            processMainDesc: gtmData.processMainDesc,
+
             processHedOne:gtmData.processHedOne,
             processDesOne: gtmData.processDesOne,
             processHedTwo:gtmData.processHedTwo,
@@ -485,9 +492,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
       {/* <!-- Section path  --> */}
       <article class="path">
         <section class="path-container">
-          <h2 class="path-heading">Our Process</h2>
+          <h2 class="path-heading"> {data.processMainHeading}</h2>
           <p class="sales-process-desc">
-          Phi Consulting follows a meticulous process to ensure the success of your financial strategies:
+          {data.processMainDesc}
           </p>
           <div class="process-container">
             <div class="circle-container-sales">
@@ -627,11 +634,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
       {/* <!-- section new process --> */}
       <article class="process-new">
         <section class="process-new-container">
-          <h2 class="path-heading">A Proven Path to Success</h2>
+          <h2 class="path-heading"> {data.processMainHeading}</h2>
           <p class="work-desc">
-            Explore the journey to excellence with Phi Consulting's strategic
-            process – your gateway to optimizing sales performance, enhancing
-            customer experience, and achieving sustained growth.
+          {data.processMainDesc}
           </p>
           <div class="process-new-section">
             <div class="left-process-section" ref={processNewRef}>

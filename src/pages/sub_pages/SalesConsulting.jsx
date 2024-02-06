@@ -96,6 +96,9 @@ const SalesConsulting = () => {
   
     featuresHeadingSix: "",
     featuresDescriptionSix: "",
+
+    processMainHeading:"",
+    processMainDesc:"",
   
     processHedOne:"",
     processDesOne: "",
@@ -176,6 +179,10 @@ const SalesConsulting = () => {
             featuresDescriptionFive: gtmData.featuresDescriptionFive,
             featuresHeadingSix: gtmData.featuresHeadingSix,
             featuresDescriptionSix: gtmData.featuresDescriptionSix,
+
+            processMainHeading:gtmData.processMainHeading,
+            processMainDesc: gtmData.processMainDesc,
+            
             processHedOne:gtmData.processHedOne,
             processDesOne: gtmData.processDesOne,
             processHedTwo:gtmData.processHedTwo,
@@ -481,10 +488,10 @@ useScrollToTop();
       <article class="path">
         <section class="path-container">
           <h2 class="path-heading">
-          Our GTM Advisory Process:
+         {data.processMainHeading}
           </h2>
           <p class="sales-process-desc">
-          We possess the know-how to identify precise issues and deliver customized solutions in a matter of days rather than weeks. While we recognize your capability to resolve matters on your own, can you afford to wait for two quarters to confirm you’re right? That’s where we fit in - we’ll unravel the puzzle for you here and now.
+         {data.processMainDesc}
           </p>
           <div class="process-container">
             <div class="circle-container-sales">

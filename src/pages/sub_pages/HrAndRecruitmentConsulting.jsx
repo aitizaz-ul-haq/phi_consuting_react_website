@@ -110,6 +110,9 @@ const HrAndRecruitmentConsulting = () => {
   
     featuresHeadingSix: "",
     featuresDescriptionSix: "",
+
+    processMainHeading:"",
+    processMainDesc:"",
   
     processHedOne:"",
     processDesOne: "",
@@ -490,10 +493,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
       {/* <!-- Section path  --> */}
       <article class="path">
         <section class="path-container">
-          <h2 class="path-heading">Our Process</h2>
+          <h2 class="path-heading">{data.processMainHeading}</h2>
           <p class="sales-process-desc">
-            Phi Consulting follows a structured process to ensure the success of
-            your HR and Recruitment strategies
+          {data.processMainDesc}
           </p>
           <div class="process-container">
             <div class="circle-container-sales">
@@ -632,9 +634,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
       {/* <!-- section new process --> */}
       <article class="process-new">
         <section class="process-new-container">
-          <h2 class="path-heading">Every talent in our network is pre-vetted and qualified on the below parameters.</h2>
+          <h2 class="path-heading">{data.processMainHeading}</h2>
           <p class="work-desc">
-          Right Matchmaking is at the core of everything that Phi does, hence, we put in a great deal of time and effort to ensure that the first shortlisted talent matches your requirements.
+          {data.processMainDesc}
           </p>
           <div class="process-new-section">
             <div class="left-process-section" ref={processNewRef}>
