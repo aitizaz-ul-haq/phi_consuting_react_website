@@ -58,6 +58,8 @@ import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 
+import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
+
 
 const Cloud = () => {
   const [sectionOneTitle, setSectionOneTitle] = useState('');
@@ -326,7 +328,7 @@ useScrollToTop();
       </article>
 
       {/* <IndustryServicesSection /> */}
-      <article className="industry-para-container">
+      {/* <article className="industry-para-container">
         <section className="industry-para-collection" ref={addToRefs}>
         <div className="para-title-industry">
         <h2 className='title-special'>What is <span className='bluer'> Cloud  Consulting</span>?</h2>
@@ -371,7 +373,9 @@ useScrollToTop();
 
         </div>
         </section>
-       </article>
+       </article> */}
+
+<IndustriesArticles Api="cloud" />
 
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
@@ -383,11 +387,10 @@ useScrollToTop();
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Industry Expertise
+                  {sectionOneTitle}
                   </h2>
                   <p class="overlay-desc">
-                  Deep dive into success with our sector-specific knowledge in IoT, SaaS, IaaS, Fintech, Cloud, and DevOps.
-
+                  {sectionOneParagraph}
                   </p>
                 </div>
               </div>
@@ -397,10 +400,10 @@ useScrollToTop();
                 <div class="overlay"></div>
                 <div class="content">
                   <h2 class="overlay-heading">
-                  Customized Solutions
+                  {sectionTwoTitle}
                   </h2>
                   <p class="overlay-desc">
-                  Every startup is unique. We offer customized consulting that aligns with your specific needs and goals.
+                  {sectionTwoParagraph}
                   </p>
                 </div>
               </div>
@@ -411,9 +414,9 @@ useScrollToTop();
               <div class="overlay-container three-why">
                 <div class="overlay"></div>
                 <div class="content">
-                  <h2 class="overlay-heading">Proven Track Record</h2>
+                  <h2 class="overlay-heading">{sectionThreeTitle}</h2>
                   <p class="overlay-desc">
-                  Join a growing list of successful startups that have leveraged our expertise to scale and thrive.
+                  {sectionThreeParagraph}
                   </p>
                 </div>
               </div>
