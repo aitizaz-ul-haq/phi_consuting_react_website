@@ -1372,9 +1372,9 @@ border-bottom: 2px solid var(--LIGHT-PHI-BLUE);
 
 
 
-.value {
-    /* background-color: var(--APPLE-GRAY); */
-}
+/* .value {
+    background-color: var(--APPLE-GRAY);
+} */
 
 .value-content {
     display: flex;
@@ -3282,13 +3282,13 @@ padding: 1rem;
     word-spacing: 4px;
  }
 
-.sales-solutions {
+/* .sales-solutions {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-}
+} */
 
 .sales-heading {
     margin-top: 5rem;
@@ -3317,7 +3317,28 @@ padding: 1rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    background-image: url('../../assets/img/wrappers/section.jpg'); /* Adjust path as necessary */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
+
+.sales-solutions::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5); /* This creates a white overlay; adjust color and opacity as needed */
+    z-index: 1;
+  }
+  
+  .sales-solutions > * {
+    position: relative;
+    z-index: 2;
+  }
 
 .sales-banner-container {
     display: flex;
@@ -3347,6 +3368,7 @@ padding: 1rem;
     font-family: var(--FF-PHI);
     font-size: var(--FS-DESC);
     font-weight: var(--FONT-THICKER); 
+    overflow-wrap: anywhere;
 }
 
 .sales-card-desccription {
@@ -11448,12 +11470,15 @@ display: none;
     justify-content: center;
     align-items: center;
 }
-.sales-heading { 
-    font-size: 36px;
+.sales-heading {
+    font-size: 45px;
+    font-weight: 100;
+    color: #081739;
 }
 
 .sales-banner-desc { 
-    font-size: 15px;
+    font-size: 19px;
+    color: #081739;
 }
 
 .path-heading {
@@ -14788,7 +14813,14 @@ display: none;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 0rem;
+    background-color: #f5f5f5;
+    padding-bottom: 4rem;
+}
+
+.full-scale-banner {
+    padding-top: 0rem; 
+     padding-bottom: 0rem;
 }
 
 .path-heading {

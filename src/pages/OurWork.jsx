@@ -34,7 +34,7 @@ const OurWork = () => {
    useEffect(() => {
     const fetchCaseStudies = async () => {
       try {
-        const response = await fetch('http://localhost:3000/cases'); // Replace with your API endpoint
+        const response = await fetch('https://prickle-balanced-archaeopteryx.glitch.me/cases'); // Replace with your API endpoint
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
