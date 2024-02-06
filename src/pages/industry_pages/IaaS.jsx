@@ -153,8 +153,6 @@ const IaaS = () => {
     fetchFintechInfo();
   }, []);
 
-  
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
