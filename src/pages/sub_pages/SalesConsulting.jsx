@@ -354,12 +354,12 @@ useScrollToTop();
     </button>
     </Tooltip>
             </div>
+
+
       {/* <!-- Hero Section --> */}
       <article class="hero">
-    
         <section class="hero-container-sales">
           <div class="hero-content-sales">
-            
             <h2 class="hero-heading-sales">
             {windowWidth >= 1200 ? <TypeAnimation
       sequence={[

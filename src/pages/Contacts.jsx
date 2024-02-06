@@ -18,7 +18,7 @@ const Contacts = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('https://phi-email-service.vercel.app/send-email', {
+      const response = await fetch('https://prickle-balanced-archaeopteryx.glitch.me/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
