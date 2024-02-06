@@ -103,13 +103,28 @@ const FiancialConsulting = () => {
     featuresHeadingSix: "",
     featuresDescriptionSix: "",
   
+    processHedOne:"",
     processDesOne: "",
+
+    processHedTwo:"",
     processDesTwo: "",
+    
+    processHedThree:"",
     processDesThree: "",
+
+    processHedFour:"",
     processDesFour: "",
+
+    processHedFive:"",
     processDesFive: "",
+
+    processHedSix:"",
     processDesSix: "",
+
+    processHedSeven:"",
     processDesSeven: "",
+
+    processHedEight:"",
     processDesEight: "",
   
     whySectionHeading: "",
@@ -159,13 +174,21 @@ const FiancialConsulting = () => {
             featuresDescriptionFive: gtmData.featuresDescriptionFive,
             featuresHeadingSix: gtmData.featuresHeadingSix,
             featuresDescriptionSix: gtmData.featuresDescriptionSix,
+            processHedOne:gtmData.processHedOne,
             processDesOne: gtmData.processDesOne,
+            processHedTwo:gtmData.processHedTwo,
             processDesTwo: gtmData.processDesTwo,
+            processHedThree:gtmData.processHedThree,
             processDesThree: gtmData.processDesThree,
+            processHedFour:gtmData.processHedFour,
             processDesFour: gtmData.processDesFour,
+            processHedFive:gtmData.processHedFive,
             processDesFive: gtmData.processDesFive,
+            processHedSix:gtmData.processHedSix,
             processDesSix: gtmData.processDesSix,
+            processHedSeven:gtmData.processHedSeven,
             processDesSeven: gtmData.processDesSeven,
+            processHedEight:gtmData.processHedEight,
             processDesEight: gtmData.processDesEight,
             whySectionHeading: gtmData.whySectionHeading,
             whySectionDescription: gtmData.whySectionDescription,
@@ -477,7 +500,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Define Your Goals</h2>
+                <h2 class="circle-heading-sales">{data.processHedOne}</h2>
                 <h3 class="circle-text-sales">
                 {data.processDesOne}
                 </h3>
@@ -493,7 +516,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Plan & Map Your Process</h2>
+                <h2 class="circle-heading-sales">{data.processHedTwo}</h2>
                 <h3 class="circle-text-sales">
                 {data.processDesTwo}
                 </h3>
@@ -509,7 +532,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Set Actions</h2>
+                <h2 class="circle-heading-sales">{data.processHedThree}</h2>
                 <h3 class="circle-text-sales">
                 {data.processDesThree}
                 </h3>
@@ -525,7 +548,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Assign Stakeholders</h2>
+                <h2 class="circle-heading-sales">{data.processHedFour}</h2>
                 <h3 class="circle-text-sales">
                 {data.processDesFour}
                 </h3>
@@ -541,7 +564,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Test the Process</h2>
+                <h2 class="circle-heading-sales">{data.processHedFive}</h2>
                 <h3 class="circle-text-sales">
                 {data.processDesFive}
                 </h3>
@@ -557,7 +580,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Implement</h2>
+                <h2 class="circle-heading-sales">{data.processHedSix}</h2>
                 <h3 class="circle-text-sales">
                 {data.processDesSix}
                 </h3>
@@ -574,7 +597,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Monitor the Results</h2>
+                <h2 class="circle-heading-sales">{data.processHedSeven}</h2>
                 <h3 class="circle-text-sales">
                 {data.processDesSeven}
                 </h3>
@@ -590,7 +613,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Iterate the Process</h2>
+                <h2 class="circle-heading-sales">{data.processHedEight}</h2>
                 <h3 class="circle-text-sales">
                 {data.processDesEight}
                 </h3>
@@ -619,7 +642,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Define Your Goals</div>
+                  <div class="process-new-heading">{data.processHedOne}</div>
                   <div class="process-new-description">
                   {data.processDesOne}
                   </div>
@@ -634,7 +657,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Plan & Map Your Process</div>
+                  <div class="process-new-heading">{data.processHedTwo}</div>
                   <div class="process-new-description-right-side">
                   {data.processDesTwo}
                   </div>
@@ -651,7 +674,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Set Actions</div>
+                  <div class="process-new-heading">{data.processHedThree}</div>
                   <div class="process-new-description">
                   {data.processDesThree}
                   </div>
@@ -666,7 +689,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Assign Stakeholders</div>
+                  <div class="process-new-heading">{data.processHedFour}</div>
                   <div class="process-new-description-right-side">
                   {data.processDesFour}
                   </div>
@@ -683,7 +706,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Test the Process</div>
+                  <div class="process-new-heading">{data.processHedFive}</div>
                   <div class="process-new-description">
                   {data.processDesFive}
                   </div>
@@ -698,7 +721,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Implement</div>
+                  <div class="process-new-heading">{data.processHedSix}</div>
                   <div class="process-new-description-right-side">
                   {data.processDesSix}
                   </div>
@@ -715,7 +738,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Monitor the Results</div>
+                  <div class="process-new-heading">{data.processHedSeven}</div>
                   <div class="process-new-description">
                   {data.processDesSeven}
                   </div>
@@ -730,7 +753,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Iterate the Process</div>
+                  <div class="process-new-heading">{data.processHedSeven}</div>
                   <div class="process-new-description-right-side">
                   {data.processDesEight}
                   </div>

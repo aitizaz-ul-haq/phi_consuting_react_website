@@ -110,13 +110,28 @@ const BuisnessConsulting = () => {
     featuresHeadingSix: "",
     featuresDescriptionSix: "",
   
+    processHedOne:"",
     processDesOne: "",
+
+    processHedTwo:"",
     processDesTwo: "",
+    
+    processHedThree:"",
     processDesThree: "",
+
+    processHedFour:"",
     processDesFour: "",
+
+    processHedFive:"",
     processDesFive: "",
+
+    processHedSix:"",
     processDesSix: "",
+
+    processHedSeven:"",
     processDesSeven: "",
+
+    processHedEight:"",
     processDesEight: "",
   
     whySectionHeading: "",
@@ -166,13 +181,21 @@ const BuisnessConsulting = () => {
             featuresDescriptionFive: gtmData.featuresDescriptionFive,
             featuresHeadingSix: gtmData.featuresHeadingSix,
             featuresDescriptionSix: gtmData.featuresDescriptionSix,
+            processHedOne:gtmData.processHedOne,
             processDesOne: gtmData.processDesOne,
+            processHedTwo:gtmData.processHedTwo,
             processDesTwo: gtmData.processDesTwo,
+            processHedThree:gtmData.processHedThree,
             processDesThree: gtmData.processDesThree,
+            processHedFour:gtmData.processHedFour,
             processDesFour: gtmData.processDesFour,
+            processHedFive:gtmData.processHedFive,
             processDesFive: gtmData.processDesFive,
+            processHedSix:gtmData.processHedSix,
             processDesSix: gtmData.processDesSix,
+            processHedSeven:gtmData.processHedSeven,
             processDesSeven: gtmData.processDesSeven,
+            processHedEight:gtmData.processHedEight,
             processDesEight: gtmData.processDesEight,
             whySectionHeading: gtmData.whySectionHeading,
             whySectionDescription: gtmData.whySectionDescription,
@@ -479,10 +502,9 @@ useScrollToTop();
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Define Your Goals</h2>
+                <h2 class="circle-heading-sales">{data.processHedOne}</h2>
                 <h3 class="circle-text-sales">
-                  Clearly articulate your objectives, laying the foundation for
-                  a targeted consulting strategy.
+                {data.processDesOne}
                 </h3>
               </div>
             </div>
@@ -496,10 +518,9 @@ useScrollToTop();
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Plan & Map Your Process</h2>
+                <h2 class="circle-heading-sales">{data.processHedTwo}</h2>
                 <h3 class="circle-text-sales">
-                  Develop a comprehensive plan, mapping out the steps required
-                  to achieve your goals.
+                {data.processDesTwo}
                 </h3>
               </div>
             </div>
@@ -513,10 +534,9 @@ useScrollToTop();
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Set Actions</h2>
+                <h2 class="circle-heading-sales">{data.processHedThree}</h2>
                 <h3 class="circle-text-sales">
-                  Implement strategic actions, aligning every move with your
-                  overarching business objectives.
+                {data.processDesThree}
                 </h3>
               </div>
             </div>
@@ -530,10 +550,9 @@ useScrollToTop();
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Assign Stakeholders</h2>
+                <h2 class="circle-heading-sales">{data.processHedFour}</h2>
                 <h3 class="circle-text-sales">
-                  Clearly define roles and responsibilities, ensuring flawless
-                  execution of your business plan.
+                {data.processDesFour}
                 </h3>
               </div>
             </div>
@@ -547,10 +566,9 @@ useScrollToTop();
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Test the Process</h2>
+                <h2 class="circle-heading-sales">{data.processHedFive}</h2>
                 <h3 class="circle-text-sales">
-                  Rigorously test your strategies and processes to identify and
-                  address any potential challenges.
+                {data.processDesFive}
                 </h3>
               </div>
             </div>
@@ -564,10 +582,9 @@ useScrollToTop();
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Implementation</h2>
+                <h2 class="circle-heading-sales">{data.processHedSix}</h2>
                 <h3 class="circle-text-sales">
-                  Execute the refined strategies, incorporating feedback and
-                  making real-time adjustments as needed.
+                {data.processDesSix}
                 </h3>
               </div>
             </div>
@@ -582,10 +599,9 @@ useScrollToTop();
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Monitor the Results</h2>
+                <h2 class="circle-heading-sales">{data.processHedSeven}</h2>
                 <h3 class="circle-text-sales">
-                  Utilize robust monitoring systems to gauge the impact of our
-                  consulting services on your business.
+                {data.processDesSeven}
                 </h3>
               </div>
             </div>
@@ -599,10 +615,9 @@ useScrollToTop();
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Iterate the Process</h2>
+                <h2 class="circle-heading-sales">{data.processHedEight}</h2>
                 <h3 class="circle-text-sales">
-                  Embrace a culture of continuous improvement, refining and
-                  iterating the process for sustained success.
+                {data.processDesEight}
                 </h3>
               </div>
             </div>
@@ -626,7 +641,7 @@ useScrollToTop();
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Define Your Goals</div>
+                  <div class="process-new-heading">{data.processHedOne}</div>
                   <div class="process-new-description">
                   {data.processDesOne}
                   </div>
@@ -641,7 +656,7 @@ useScrollToTop();
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Plan & Map Your Process</div>
+                  <div class="process-new-heading">{data.processHedTwo}</div>
                   <div class="process-new-description-right-side">
                   {data.processDesTwo}
 
@@ -659,7 +674,7 @@ useScrollToTop();
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Set Actions</div>
+                  <div class="process-new-heading">{data.processHedThree}</div>
                   <div class="process-new-description">
                   {data.processDesThree}
                   </div>
@@ -674,7 +689,7 @@ useScrollToTop();
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Assign Stakeholders</div>
+                  <div class="process-new-heading">{data.processHedFour}</div>
                   <div class="process-new-description-right-side">
                   {data.processDesFour}
                   </div>
@@ -691,7 +706,7 @@ useScrollToTop();
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Test the Process</div>
+                  <div class="process-new-heading">{data.processHedFive}</div>
                   <div class="process-new-description">
                   {data.processDesFive}
                   </div>
@@ -706,7 +721,7 @@ useScrollToTop();
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Implement Strategies</div>
+                  <div class="process-new-heading">{data.processHedSix}</div>
                   <div class="process-new-description-right-side">
                   {data.processDesSix}
                   </div>
@@ -723,7 +738,7 @@ useScrollToTop();
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Monitor Results</div>
+                  <div class="process-new-heading">{data.processHedSeven}</div>
                   <div class="process-new-description">
                   {data.processDesSeven}
                   </div>
@@ -738,7 +753,7 @@ useScrollToTop();
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Iterate Strategies</div>
+                  <div class="process-new-heading">{data.processHedSeven}</div>
                   <div class="process-new-description-right-side">
                   {data.processDesEight}
                   </div>

@@ -111,13 +111,28 @@ const HrAndRecruitmentConsulting = () => {
     featuresHeadingSix: "",
     featuresDescriptionSix: "",
   
+    processHedOne:"",
     processDesOne: "",
+
+    processHedTwo:"",
     processDesTwo: "",
+    
+    processHedThree:"",
     processDesThree: "",
+
+    processHedFour:"",
     processDesFour: "",
+
+    processHedFive:"",
     processDesFive: "",
+
+    processHedSix:"",
     processDesSix: "",
+
+    processHedSeven:"",
     processDesSeven: "",
+
+    processHedEight:"",
     processDesEight: "",
   
     whySectionHeading: "",
@@ -167,13 +182,21 @@ const HrAndRecruitmentConsulting = () => {
             featuresDescriptionFive: gtmData.featuresDescriptionFive,
             featuresHeadingSix: gtmData.featuresHeadingSix,
             featuresDescriptionSix: gtmData.featuresDescriptionSix,
+            processHedOne:gtmData.processHedOne,
             processDesOne: gtmData.processDesOne,
+            processHedTwo:gtmData.processHedTwo,
             processDesTwo: gtmData.processDesTwo,
+            processHedThree:gtmData.processHedThree,
             processDesThree: gtmData.processDesThree,
+            processHedFour:gtmData.processHedFour,
             processDesFour: gtmData.processDesFour,
+            processHedFive:gtmData.processHedFive,
             processDesFive: gtmData.processDesFive,
+            processHedSix:gtmData.processHedSix,
             processDesSix: gtmData.processDesSix,
+            processHedSeven:gtmData.processHedSeven,
             processDesSeven: gtmData.processDesSeven,
+            processHedEight:gtmData.processHedEight,
             processDesEight: gtmData.processDesEight,
             whySectionHeading: gtmData.whySectionHeading,
             whySectionDescription: gtmData.whySectionDescription,
@@ -483,9 +506,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Define Your Goals</h2>
+                <h2 class="circle-heading-sales">{data.processHedOne}</h2>
                 <h3 class="circle-text-sales">
-                  Collaboratively outline your HR and recruitment objectives.
+                {data.processDesOne}
                 </h3>
               </div>
             </div>
@@ -499,9 +522,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Plan & Map Your Process</h2>
+                <h2 class="circle-heading-sales">{data.processHedTwo}</h2>
                 <h3 class="circle-text-sales">
-                  Develop a customized roadmap tailored to your business needs.
+                {data.processDesTwo}
                 </h3>
               </div>
             </div>
@@ -515,9 +538,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Set Actions</h2>
+                <h2 class="circle-heading-sales">{data.processHedThree}</h2>
                 <h3 class="circle-text-sales">
-                  Implement strategic actions for effective talent management.
+                {data.processDesThree}
                 </h3>
               </div>
             </div>
@@ -531,10 +554,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Assign Stakeholders</h2>
+                <h2 class="circle-heading-sales">{data.processHedFour}</h2>
                 <h3 class="circle-text-sales">
-                  Clearly define roles and responsibilities for flawless
-                  execution.
+                {data.processDesFour}
                 </h3>
               </div>
             </div>
@@ -548,9 +570,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Test the Process</h2>
+                <h2 class="circle-heading-sales">{data.processHedFive}</h2>
                 <h3 class="circle-text-sales">
-                  Rigorously evaluate and fine-tune the proposed strategies.
+                {data.processDesFive}
                 </h3>
               </div>
             </div>
@@ -564,9 +586,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Implementation</h2>
+                <h2 class="circle-heading-sales">{data.processHedSix}</h2>
                 <h3 class="circle-text-sales">
-                  Execute the optimized HR and recruitment plans with precision.
+                {data.processDesSix}
                 </h3>
               </div>
             </div>
@@ -581,9 +603,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Monitor the Results</h2>
+                <h2 class="circle-heading-sales">{data.processHedSeven}</h2>
                 <h3 class="circle-text-sales">
-                  Continuously track and analyze the impact on your workforce.
+                {data.processDesSeven}
                 </h3>
               </div>
             </div>
@@ -597,10 +619,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading-sales">Iterate the Process</h2>
+                <h2 class="circle-heading-sales">{data.processHedEight}</h2>
                 <h3 class="circle-text-sales">
-                  Adapt and refine strategies based on real-time results and
-                  changing business landscapes.
+                {data.processDesEight}
                 </h3>
               </div>
             </div>
@@ -624,7 +645,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Profile Screening & Shortlisting</div>
+                  <div class="process-new-heading">{data.processHedOne}</div>
                   <div class="process-new-description">
                   {data.processDesOne}
                   </div>
@@ -639,7 +660,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Language Proficiency</div>
+                  <div class="process-new-heading">{data.processHedTwo}</div>
                   <div class="process-new-description-right-side">
                   {data.processDesTwo}
 
@@ -657,7 +678,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Aptitude Evaluation</div>
+                  <div class="process-new-heading">{data.processHedThree}</div>
                   <div class="process-new-description">
                   {data.processDesThree}
                   </div>
@@ -672,7 +693,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Technical Assessment</div>
+                  <div class="process-new-heading">{data.processHedFour}</div>
                   <div class="process-new-description-right-side">
                   {data.processDesFour}
                   </div>
@@ -689,7 +710,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Culture-Fit</div>
+                  <div class="process-new-heading">{data.processHedFive}</div>
                   <div class="process-new-description">
                   {data.processDesFive}
                   </div>
