@@ -53,7 +53,7 @@ const Careers = () => {
     // Function to fetch job data
     const fetchJobs = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/jobs');
+        const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/jobs');
         setJobs(response.data); // Update state with fetched data
       } catch (error) {
         console.error('Error fetching jobs:', error);
@@ -190,11 +190,11 @@ const Careers = () => {
               <JobCard key={job._id} job={job} /> 
             ))}
           
-            <div class="explore-button-container">
+            {/* <div class="explore-button-container">
               <div class="right-button-header">
                 <span>Explore More</span>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
       </article>
