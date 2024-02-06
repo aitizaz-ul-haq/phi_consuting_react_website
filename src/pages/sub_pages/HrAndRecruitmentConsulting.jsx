@@ -450,7 +450,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             </div>
             <h3 class="sales-card-title">{data.featuresHeadingFour}</h3>
             <div class="sales-card-description">
-            {data.featuresHeadingFour}
+            {data.featuresDescriptionFour}
             </div>
           </div>
 
@@ -465,7 +465,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             </div>
             <h3 class="sales-card-title">{data.featuresHeadingFive}</h3>
             <div class="sales-card-description">
-            {data.featuresHeadingFive}
+            {data.featuresDescriptionFive}
             </div>
           </div>
           {/* <div class="sales-cards one-with-blue-back">
