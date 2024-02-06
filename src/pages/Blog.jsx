@@ -7,7 +7,7 @@ import axios from 'axios';
 import useScrollToTop from '../hooks/useScrollToTop';
 import { Spin } from 'antd';
 import blogback from '../assets/img/wrappers/blogback.jpg';
-
+import { Helmet } from 'react-helmet';
 
 const Blog = ({blogpic}) => {
   const [blogs, setBlogs] = useState([]);
@@ -71,6 +71,12 @@ const Blog = ({blogpic}) => {
   }
   return (
     <>
+ <Helmet>
+        <title>Informative Blogs - Phi Consulting</title>
+        <meta name="description" content="Discover Phi Consulting's insightful business blogs covering industry trends, best practices, and expert insights. Stay informed, ahead of the curve, and drive success in the competitive business landscape." />
+      </Helmet>
+
+
     {/* <!-- Hero Section --> */}
       <article class="hero">
         <section class="hero-container-blog">

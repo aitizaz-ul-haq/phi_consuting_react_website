@@ -3,7 +3,7 @@ import axios from 'axios';
 import CaseStudyCollectionCard from '../components/shared/cards/caseStudyCollectionCard';
 import useScrollToTop from '../hooks/useScrollToTop';
 import { Spin } from 'antd';
-
+import { Helmet } from 'react-helmet';
 import casestudybluebacl from "../assets/img/wrappers/casestudyblueback.jpg";
 
 const Spotlight = () => {
@@ -50,6 +50,11 @@ const Spotlight = () => {
 
     return (
         <>
+        <Helmet>
+        <title>Success Stories: Phi Consulting Case Studies</title>
+        <meta name="description" content="Explore Phi Consulting's transformative impact through detailed case studies. Dive into real-world success examples with ATOB Financials, TruckX, Digital Ocean, and more." />
+      </Helmet>
+
             <article className="case-study-row" style={{ backgroundImage: `url(${casestudybluebacl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <section className="case-study-container-view">
                     {caseStudies.map(study => (
