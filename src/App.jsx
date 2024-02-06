@@ -247,7 +247,7 @@ const ProtectedRoute = ({ children }) => {
           <Dashboard />
         </ProtectedRoute>
       }>
-          <Route index element={<Navigate replace to="/dashboard/Jobs" />} />
+          <Route index element={<Navigate replace to="/dashboard/ShowDash" />} />
 
           <Route path="Jobs" element={<Jobs />} />
           <Route path="Blogs" element={<Blogs />} />
