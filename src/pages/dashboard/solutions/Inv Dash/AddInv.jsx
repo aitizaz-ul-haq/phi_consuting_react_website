@@ -167,6 +167,13 @@ const AddInv = () => {
           <Input.TextArea />
         </Form.Item>
 
+        <Form.Item
+  label="Process One Heading"
+  name="processHedOne"
+  // Optional: Add validation rules if required
+>
+  <Input />
+</Form.Item>
 
         <Form.Item
           label="Process One Description"
@@ -177,12 +184,27 @@ const AddInv = () => {
         </Form.Item>
 
         <Form.Item
+  label="Process Two Heading"
+  name="processHedTwo"
+  // Optional: Add validation rules if required
+>
+  <Input />
+</Form.Item>
+
+        <Form.Item
           label="Process Two Description"
           name="processDesTwo"
            // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
+
+        <Form.Item
+  label="Process Three Heading"
+  name="processHedThree"
+>
+  <Input />
+</Form.Item>
 
         <Form.Item
           label="Process Three Description"
@@ -193,12 +215,26 @@ const AddInv = () => {
         </Form.Item>
 
         <Form.Item
+  label="Process Four Heading"
+  name="processHedFour"
+>
+  <Input />
+</Form.Item>
+
+        <Form.Item
           label="Process Four Description"
           name="processDesFour"
            // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
+
+        <Form.Item
+  label="Process Five Heading"
+  name="processHedFive"
+>
+  <Input />
+</Form.Item>
 
         <Form.Item
           label="Process Five Description"
@@ -209,12 +245,26 @@ const AddInv = () => {
         </Form.Item>
 
         <Form.Item
+  label="Process Six Heading"
+  name="processHedSix"
+>
+  <Input />
+</Form.Item>
+
+        <Form.Item
           label="Process Six Description"
           name="processDesSix"
            // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
+
+        <Form.Item
+  label="Process Seven Heading"
+  name="processHedSeven"
+>
+  <Input />
+</Form.Item>
 
         <Form.Item
           label="Process Seven Description"
@@ -225,12 +275,20 @@ const AddInv = () => {
         </Form.Item>
 
         <Form.Item
+  label="Process Eight Heading"
+  name="processHedEight"
+>
+  <Input />
+</Form.Item>
+
+        <Form.Item
           label="Process Eight Description"
           name="processDesEight"
            // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
+
 
         <Form.Item
           label="Why Section Heading"

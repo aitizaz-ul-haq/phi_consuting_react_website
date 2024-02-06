@@ -180,12 +180,28 @@ const EditInv = () => {
 
 
         <Form.Item
+  label="Process One Heading"
+  name="processHedOne"
+  // Optional: Add validation rules if required
+>
+  <Input />
+</Form.Item>
+
+        <Form.Item
           label="Process One Description"
           name="processDesOne"
            // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
+
+        <Form.Item
+  label="Process Two Heading"
+  name="processHedTwo"
+  // Optional: Add validation rules if required
+>
+  <Input />
+</Form.Item>
 
         <Form.Item
           label="Process Two Description"
@@ -196,12 +212,26 @@ const EditInv = () => {
         </Form.Item>
 
         <Form.Item
+  label="Process Three Heading"
+  name="processHedThree"
+>
+  <Input />
+</Form.Item>
+
+        <Form.Item
           label="Process Three Description"
           name="processDesThree"
            // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
+
+        <Form.Item
+  label="Process Four Heading"
+  name="processHedFour"
+>
+  <Input />
+</Form.Item>
 
         <Form.Item
           label="Process Four Description"
@@ -212,12 +242,26 @@ const EditInv = () => {
         </Form.Item>
 
         <Form.Item
+  label="Process Five Heading"
+  name="processHedFive"
+>
+  <Input />
+</Form.Item>
+
+        <Form.Item
           label="Process Five Description"
           name="processDesFive"
            // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
+
+        <Form.Item
+  label="Process Six Heading"
+  name="processHedSix"
+>
+  <Input />
+</Form.Item>
 
         <Form.Item
           label="Process Six Description"
@@ -228,6 +272,13 @@ const EditInv = () => {
         </Form.Item>
 
         <Form.Item
+  label="Process Seven Heading"
+  name="processHedSeven"
+>
+  <Input />
+</Form.Item>
+
+        <Form.Item
           label="Process Seven Description"
           name="processDesSeven"
            // rules={[{ required: true }]}
@@ -236,12 +287,20 @@ const EditInv = () => {
         </Form.Item>
 
         <Form.Item
+  label="Process Eight Heading"
+  name="processHedEight"
+>
+  <Input />
+</Form.Item>
+
+        <Form.Item
           label="Process Eight Description"
           name="processDesEight"
            // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
+
 
         <Form.Item
           label="Why Section Heading"
