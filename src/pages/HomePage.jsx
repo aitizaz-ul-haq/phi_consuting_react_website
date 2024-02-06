@@ -157,7 +157,7 @@ const HomePage = () => {
     return () => observer.disconnect();
 }, []);
 
-useEffect(() => {
+  useEffect(() => {
   const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => setIsVisibleFirst(entry.isIntersecting));
   }, { threshold: 0.5 });
@@ -165,7 +165,6 @@ useEffect(() => {
   observer.observe(firstRef.current);
   return () => observer.disconnect();
 }, []);
-
 
   useEffect(() => {
       const observer = new IntersectionObserver(entries => {
@@ -185,7 +184,7 @@ useEffect(() => {
     return () => observer.disconnect();
 }, []);
 
-useEffect(() => {
+  useEffect(() => {
   const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -314,7 +313,6 @@ useEffect(() => {
       }
     };
   }, []); 
-
 
   useEffect(() => {
     // Setting the background color with a transparent effect for the services section
