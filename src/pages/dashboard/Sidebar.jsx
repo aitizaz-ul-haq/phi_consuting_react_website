@@ -20,9 +20,13 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar">
+       <div>
+      <button className='dash-options-butt'> <Link className='list-elements-dash' to="/dashboard/ShowDash">Dashboard</Link></button>
+      </div>
       <div>
         <h4 className='Dash-Heading'>Posts</h4>
       </div>
+     
       <div>
         <button className='dash-options' onClick={() => setDropdown1(!dropdown1)}>Jobs</button>
         {dropdown1 && (

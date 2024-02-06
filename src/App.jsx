@@ -104,6 +104,8 @@ import AddFin from './pages/dashboard/solutions/Fin Dash/AddFin';
 import EditFin from './pages/dashboard/solutions/Fin Dash/EditFin';
 import FinPage from './pages/dashboard/solutions/Fin Dash/FinPage';
 
+import DashPage from './pages/dashboard/DashPage';
+
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -331,6 +333,8 @@ const ProtectedRoute = ({ children }) => {
           <Route path="EditHr/:hrpageId" element={<EditHr />} />
           <Route path="EditInv/:invId" element={<EditInv />} />
           <Route path="EditFino/:finId" element={<EditFin />} />
+
+          <Route path="ShowDash" element={<DashPage />} />
         </Route>
 
       </Routes>
