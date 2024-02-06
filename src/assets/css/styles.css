@@ -4440,8 +4440,8 @@ align-items: center;
 .core-phi-heading {
     text-align: left;
     font-family: var(--FF-PHI);
-    font-size: var(--FS-HEAD);
-    font-weight: var(--FONT-THICKER);
+    font-size: 40px;
+    font-weight: 100;
 }
 
 .core-value-tiles-container {
@@ -15461,8 +15461,9 @@ display: block;
 }
 
 .about-phi-heading { 
-    font-size: 32px;
+    font-size: 38px;
     padding-top: 20px;
+    font-weight: 100;
 }
 
 .phi-logo-about-page {
@@ -15490,13 +15491,13 @@ display: block;
 }
 
 .right-text-intile {
-        line-height: 1.5;
-        margin-top: 0px;
-        width: 100%;
-        word-spacing: 0px;
-        line-height: 1.2;
-        font-size: 30px;
-    font-weight: 600;
+    line-height: 1.5;
+    margin-top: 0px;
+    width: 100%;
+    word-spacing: 0px;
+    line-height: 1.2;
+    font-size: 41px;
+    font-weight: 100;
     font-family: var(--FF-PHI);
     padding: 1rem;
 }
@@ -15536,12 +15537,14 @@ display: block;
 
 .meet-heading { 
     padding-top: 60px;
-    font-size: 25px;
+    font-size: 33px;
+    font-weight: 100;
 }
 
 .meet-desc {
-    font-size: 17px;
+    font-size: 20px;
     width: 100%;
+    font-weight: 100;
 }
 
 .meet {
@@ -15550,16 +15553,19 @@ display: block;
 
 .location-heading {
     padding-top: 30px;
-    font-size: 26px;
+    font-size: 32px;
+    font-weight: 100;
 }
 
 .location-sub-heading {
-    font-size: 20px;
+    font-size: 24px;
+    font-weight: 100;
 }
 
 .locations-desc {
-    font-size: 16px;
-    padding-bottom: 50px;
+    font-size: 19px;
+    font-weight: 100;
+    padding-bottom: 50px
 }
 
 .location-bar-left { 
@@ -15585,8 +15591,9 @@ display: block;
 }
 
 .live-heading {
-    font-size: 26px;
-    padding-bottom: 40px;
+    font-size: 36px;
+    font-weight: 100;
+    padding-bottom: 40px
 }
 
 .live-subheading {
