@@ -79,6 +79,8 @@ const Iot = () => {
 
   const [darkMode, setDarkMode] = useState(false);
 
+  const insightsRefs = useRef([]);
+
   const apiUrl = import.meta.env.VITE_API_URL_PROD || 'https://prickle-balanced-archaeopteryx.glitch.me';
 
   function simplifyFintechData(data) {
@@ -96,13 +98,13 @@ const Iot = () => {
   useEffect(() => {
     const fetchFintechData = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/saas`);
+        const response = await axios.get(`${apiUrl}/iot`);
         console.log(`response data...`, response.data)
         const simplifiedData = simplifyFintechData(response.data);
         setFintechData(simplifiedData);
       
       } catch (error) {
-        console.error('Error fetching saas data:', error);
+        console.error('Error fetching iot data:', error);
       }
     };
   
@@ -112,7 +114,7 @@ const Iot = () => {
   useEffect(() => {
     const fetchFintechInfo = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/saasinfo`);
+        const response = await axios.get(`${apiUrl}/iotinfo`);
         // Assuming the first element of the array has the sections
         const sections = response.data[0].sections;
   
@@ -217,6 +219,34 @@ const Iot = () => {
 //     observer.observe(containerRef.current);
 //     return () => observer.disconnect(); 
 // }, []);
+
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    },
+    {
+      threshold: 0.5, // Adjust as needed
+    }
+  );
+
+  const elements = insightsRefs.current;
+  elements.forEach((el) => {
+    if (el) observer.observe(el);
+  });
+
+  return () => {
+    elements.forEach((el) => {
+      if (el) observer.unobserve(el);
+    });
+  };
+}, []);
 
 useScrollToTop();
 
