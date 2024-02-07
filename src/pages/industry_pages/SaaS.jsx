@@ -44,6 +44,12 @@ import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 import FourCard from './industries Page Components/FourCard';
 import BarCard from './industries Page Components/BarCard';
+
+import cross from '../../assets/img/barcard-icons/close.png';
+import persons from '../../assets/img/barcard-icons/employee.png';
+import circular from '../../assets/img/barcard-icons/b2b.png';
+import stack from '../../assets/img/barcard-icons/coins-stack.png';
+
 import { Helmet } from 'react-helmet';
 import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 const SaaS = () => {
@@ -345,7 +351,59 @@ const scrollToTop = () => {
       {/* <IndustryServicesSection /> */}
 
     {/* Specialities Paragraph */}
-    <BarCard/>
+    <article className="bar-card-container">
+            <section className="bar-content-section">
+
+               <div className="heading-of-barcard">
+                <h2 className="barcard-title">
+                Challenges Financial Service Companies Face
+                </h2>
+               </div>
+
+               <div className="barcard-bar">
+                <div className="barcard-bar-section">
+                    <div className="icon-barcard-container">
+                        <img src={cross} alt="barcard icon" className='barcard-icon-image' />
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        Low quality of generated leads
+                        </h3>
+                    </div>
+                </div>
+                <div className="barcard-bar-section border-left-and-right">
+                    <div className="icon-barcard-container">
+                        <img src={persons} alt="barcard icon" className='barcard-icon-image'/>
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                       Hiring sales specialists with relevant expertise
+                        </h3>
+                    </div>
+                </div>
+                <div className="barcard-bar-section border-right">
+                    <div className="icon-barcard-container">
+                        <img src={circular} alt="barcard icon" className='barcard-icon-image'/>
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        Maintaining a steady flow of opportunities
+                        </h3>
+                    </div>
+                </div>
+                <div className="barcard-bar-section">
+                    <div className="icon-barcard-container">
+                        <img src={stack} alt="barcard icon" className='barcard-icon-image'/>
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        High lead acquisition cost
+                        </h3>
+                    </div>
+                </div>
+               </div>
+            </section>
+        </article>
     <IndustriesArticles Api="saas" />
       {/* <article className="industry-para-container">
         <section className="industry-para-collection" ref={addToRefs}>
@@ -396,7 +454,68 @@ const scrollToTop = () => {
        </article>
      */}
 
-     <FourCard />
+<article className="four-card-container">
+<section className="four-card-header">
+    <h2 className="four-card-heading">
+    Outreach for Financial Service
+Companies by Belkins Is:
+    </h2>
+    </section>    
+    <section className="four-card-cards">
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">50+</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">Satisfied clients in the financial services market</h3>
+
+            </div>
+            <div className="inner-four-card-description">
+            With proven expertise we can fill your pipeline with the highest-quality opportunities bringing your sales engine to full speed.
+            </div>
+        </div>
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">50+</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">Satisfied clients in the financial services market</h3>
+
+            </div>
+            <div className="inner-four-card-description">
+            With proven expertise we can fill your pipeline with the highest-quality opportunities bringing your sales engine to full speed.
+            </div>
+        </div>
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">50+</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">Satisfied clients in the financial services market</h3>
+
+            </div>
+            <div className="inner-four-card-description">
+            With proven expertise we can fill your pipeline with the highest-quality opportunities bringing your sales engine to full speed.
+            </div>
+        </div>
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">50+</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">Satisfied clients in the financial services market</h3>
+
+            </div>
+            <div className="inner-four-card-description">
+            With proven expertise we can fill your pipeline with the highest-quality opportunities bringing your sales engine to full speed.
+            </div>
+        </div>
+        </section>        
+        </article>
 
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">

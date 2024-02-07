@@ -131,6 +131,10 @@ import AddCloudBan from './pages/dashboard/Industries Banner/Cloud Banner/AddClo
 import EditCloudBan from './pages/dashboard/Industries Banner/Cloud Banner/EditCloudBan';
 import ShowCloudBan from './pages/dashboard/Industries Banner/Cloud Banner/ShowCloudBan';
 
+import AddSaasCards from './pages/dashboard/industriesdash/Saas Dash/SaasCards/AddSaasCards';
+import EditSaasCards from './pages/dashboard/industriesdash/Saas Dash/SaasCards/EditSaasCards';
+import ShowSaasCards from './pages/dashboard/industriesdash/Saas Dash/SaasCards/ShowSaasCards';
+
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -387,7 +391,12 @@ const ProtectedRoute = ({ children }) => {
           <Route path="Editcl/:cloudbanId" element={<EditCloudBan/>} />
           <Route path="AddCloudBan" element={<AddCloudBan />} />
           <Route path="ShowCloudBan" element={<ShowCloudBan />} />
+         
+         {/* --------------------------------------------------------- */}
 
+         <Route path="EditSaasCards/:saascardsId" element={<EditSaasCards/>} />
+          <Route path="AddSaasCards" element={<AddSaasCards />} />
+          <Route path="ShowSaasCards" element={<ShowSaasCards />} />
 
         </Route>
 

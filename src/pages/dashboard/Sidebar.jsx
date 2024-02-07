@@ -74,6 +74,7 @@ const Sidebar = () => {
           <Link className='list-elements-dash' to="/dashboard/AddFin">Add Content</Link>
           <Link className='list-elements-dash' to="/dashboard/ShowFinInfo">Show Info</Link>
           <Link className='list-elements-dash' to="/dashboard/AddFinInfo">Add Info</Link>
+         
         </div>
         )}
       </div>
@@ -96,6 +97,8 @@ const Sidebar = () => {
           <Link className='list-elements-dash' to="/dashboard/AddSaas">Add Content</Link>
           <Link className='list-elements-dash' to="/dashboard/ShowSaasInfo">Show Info</Link>
           <Link className='list-elements-dash' to="/dashboard/AddSaasInfo">Add Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddSaasCards">Add Cards Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/ShowSaasCards">Show Cards Info</Link>
         </div>
         )}
       </div>
