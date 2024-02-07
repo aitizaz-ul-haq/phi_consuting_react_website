@@ -5880,7 +5880,7 @@ background-color: rgb(243, 241, 241);
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #d1cfcf;
+    background-color: #EBEBEB;
     width: 70%;
     margin: 1rem;
     padding-top: 2rem;
@@ -5950,6 +5950,51 @@ background-color: rgb(243, 241, 241);
 }
 
 @media screen and (min-width: 320px) {
+    .four-card-heading {
+        width: 100%;
+        font-size: 32px;
+    }
+
+    .four-card-header {
+        padding: 0px;
+    }
+
+    .four-card-tab { 
+        margin: 0px;
+        width: 296px;
+    }
+    .barcard-bar {
+        display: flex;
+        flex-direction: column;
+        width: 91%;
+    }
+
+    .card-four-title {
+        font-size: 23px;
+        margin-top: 11px;
+        margin-bottom: -9px;
+        color: var(--LIGHTER-DARK-PHI-BLUE);
+        font-weight: 900;
+    }
+
+    .border-left-and-right {
+        border-right: none;
+        border-left: none;
+        /* border-top:1px solid #00BCD4;
+        border-bottom:1px solid #00BCD4; */
+    }
+
+    .border-right {
+        border-right: none;
+    }
+
+    .barcard-bar-section {
+        /* background-color: #0056b3; */
+        /* padding-top: 40px; */
+        /* padding-bottom: 40px; */
+        width: 200px;
+        height: 220px;
+    }
     .barcard-title {
         font-size: 23px;
         color: #00BCD4;
@@ -5958,6 +6003,23 @@ background-color: rgb(243, 241, 241);
     .heading-of-barcard {
         width: 86%;
     }
+
+    .inner-four-card-description {
+        font-size: 17px;
+        margin-top: 20px;
+        margin-bottom: -5px;
+        color: var(--LIGHTER-DARK-PHI-BLUE);
+        font-weight: 100;
+    }
+
+    .title-special-new {
+        font-size: 23px;
+    font-weight: 400;
+    }
+.styling-artical-sections {
+    padding: 1rem;
+}
+
     header {
         display: none;
     }
@@ -13212,6 +13274,36 @@ display: none;
 }
 }
 @media screen and (min-width: 1200px) {
+   
+
+    .barcard-description-inner {
+        color: var(--LIGHTER-DARK-PHI-BLUE);
+        font-size: 20px;
+        font-weight: 300;
+    }
+    .barcard-title {
+        font-size: 42px;
+        color: #00BCD4;
+        font-weight: 300;
+    }
+    .barcard-bar-section { 
+        width: 282px;
+    height: 220px
+    }
+    .border-left-and-right {
+        border-right: 1px solid #00BCD4;
+        border-left: 1px solid #00BCD4;
+    }
+
+    .border-right {
+        border-right: 1px solid #00BCD4;
+    }
+    .barcard-bar {
+        display: flex;
+        flex-direction: row;
+        width: 60%;
+    }
+
     .title-special-new {
         font-size: 53px;
         font-weight: 400;
@@ -13255,11 +13347,11 @@ display: none;
     
     
     .four-card-tab {
-        width: 390px;
+        width: 303px;
         height: auto;
-        padding: 2rem;
+        padding: 1rem;
         /* background-color: lightblue; */
-        margin: 20px;
+        margin: 10px;
         border:2px solid var(--LIGHTER-DARK-PHI-BLUE);
         border-radius: 15px;
         display: flex;
