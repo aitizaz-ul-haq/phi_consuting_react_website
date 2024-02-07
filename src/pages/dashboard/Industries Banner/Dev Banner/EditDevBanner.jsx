@@ -12,7 +12,7 @@ const EditDevBanner = () => {
     useEffect(() => {
         const fetchSaasBanData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/devban/${devbanId}`); // Adjust the URL to match your API endpoint
+                const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/devban/${devbanId}`); // Adjust the URL to match your API endpoint
                 form.setFieldsValue({
                     heading: response.data.heading,
                     bannerDescription: response.data.bannerDescription,
@@ -28,7 +28,7 @@ const EditDevBanner = () => {
 
     const onFinish = async (values) => {
         try {
-            await axios.put(`http://localhost:3000/devban/${devbanId }`, values); // Adjust the URL to match your API endpoint
+            await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/devban/${devbanId }`, values); // Adjust the URL to match your API endpoint
             message.success('devban updated successfully');
             setRedirectToCases(true);
         } catch (error) {

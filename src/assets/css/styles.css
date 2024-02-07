@@ -5861,7 +5861,103 @@ align-items: center;
     font-weight: 100;
 }
 
+.heading-of-barcard {
+    margin: 2rem;
+}
+
+.bar-content-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+background-color: rgb(243, 241, 241);
+}
+
+.barcard-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #d1cfcf;
+    width: 70%;
+    margin: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-radius: 18px;
+}
+
+.barcard-bar-section {
+    /* background-color: #0056b3; */
+    width: 400px;
+    height: 220px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+   
+}
+
+.border-right {
+    border-right: 1px solid #00BCD4;
+}
+
+.border-left-and-right {
+     border-right: 1px solid #00BCD4;
+     border-left: 1px solid #00BCD4;
+}
+
+.barcard-description-inner {
+    text-align: center;
+    color: #00BCD4; 
+}
+
+.barcard-icon-image {
+    width: 55px;
+    height: auto;
+}
+
+.icon-barcard-container {
+    background-color: rgb(238, 236, 236);
+    padding: 0.9rem;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+}
+
+.heading-of-barcard {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.barcard-title {
+    font-size: 52px;
+    color: #00BCD4;
+}
+
+.barcard-description-inner {
+    color: var(--LIGHTER-DARK-PHI-BLUE); 
+    font-size: 20px;
+    font-weight: 600;
+}
+
 @media screen and (min-width: 320px) {
+    .barcard-title {
+        font-size: 23px;
+        color: #00BCD4;
+    }
+
+    .heading-of-barcard {
+        width: 86%;
+    }
     header {
         display: none;
     }

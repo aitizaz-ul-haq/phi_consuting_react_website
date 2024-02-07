@@ -14,7 +14,7 @@ const AddSaasBan = () => {
   const onFinish = async (values) => {
     console.log('Success:', values);
     try {
-      const response = await axios.post('http://localhost:3000/saasban', values); 
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/saasban', values); 
       console.log(response);
       message.success('SaasBan created successfully');
     } catch (error) {

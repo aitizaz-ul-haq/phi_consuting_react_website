@@ -16,7 +16,7 @@ const AddSaasBan = () => {
   const onFinish = async (values) => {
     console.log('Success:', values);
     try {
-      const response = await axios.post('http://localhost:3000/iaasban', values); 
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/iaasban', values); 
       console.log(response);
       message.success('IaasBan created successfully');
       setRedirectToCases(true);

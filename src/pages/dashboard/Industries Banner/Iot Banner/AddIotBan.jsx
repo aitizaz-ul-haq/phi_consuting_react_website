@@ -16,7 +16,7 @@ const AddIaasBan = () => {
   const onFinish = async (values) => {
     console.log('Success:', values);
     try {
-      const response = await axios.post('http://localhost:3000/iotban', values); 
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/iotban', values); 
       console.log(response);
       message.success('iotban created successfully');
       setRedirectToCases(true);

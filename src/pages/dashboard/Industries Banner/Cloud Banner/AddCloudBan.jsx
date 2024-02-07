@@ -16,7 +16,7 @@ const AddCloudBan = () => {
   const onFinish = async (values) => {
     console.log('Success:', values);
     try {
-      const response = await axios.post('http://localhost:3000/cloudban', values); 
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/cloudban', values); 
       console.log(response);
       message.success('cloudban created successfully');
       setRedirectToCases(true);

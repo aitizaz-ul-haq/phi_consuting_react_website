@@ -12,7 +12,7 @@ const EditCloudBan = () => {
     useEffect(() => {
         const fetchSaasBanData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/cloudban/${cloudbanId }`); // Adjust the URL to match your API endpoint
+                const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/cloudban/${cloudbanId }`); // Adjust the URL to match your API endpoint
                 form.setFieldsValue({
                     heading: response.data.heading,
                     bannerDescription: response.data.bannerDescription,
@@ -28,7 +28,7 @@ const EditCloudBan = () => {
 
     const onFinish = async (values) => {
         try {
-            await axios.put(`http://localhost:3000/cloudban/${cloudbanId }`, values); // Adjust the URL to match your API endpoint
+            await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/cloudban/${cloudbanId }`, values); // Adjust the URL to match your API endpoint
             message.success('cloudban updated successfully');
             setRedirectToCases(true);
         } catch (error) {

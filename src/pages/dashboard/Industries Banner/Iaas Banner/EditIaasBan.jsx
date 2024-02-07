@@ -12,7 +12,7 @@ const EditSaasBan = () => {
     useEffect(() => {
         const fetchSaasBanData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/iaasban/${iaasbanId }`); // Adjust the URL to match your API endpoint
+                const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/iaasban/${iaasbanId }`); // Adjust the URL to match your API endpoint
                 form.setFieldsValue({
                     heading: response.data.heading,
                     bannerDescription: response.data.bannerDescription,
@@ -28,7 +28,7 @@ const EditSaasBan = () => {
 
     const onFinish = async (values) => {
         try {
-            await axios.put(`http://localhost:3000/iaasban/${iaasbanId }`, values); // Adjust the URL to match your API endpoint
+            await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/iaasban/${iaasbanId }`, values); // Adjust the URL to match your API endpoint
             message.success('IaasBan updated successfully');
             setRedirectToCases(true);
         } catch (error) {

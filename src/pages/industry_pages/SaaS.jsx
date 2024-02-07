@@ -43,6 +43,7 @@ import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 import FourCard from './industries Page Components/FourCard';
+import BarCard from './industries Page Components/BarCard';
 import { Helmet } from 'react-helmet';
 import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 const SaaS = () => {
@@ -344,6 +345,7 @@ const scrollToTop = () => {
       {/* <IndustryServicesSection /> */}
 
     {/* Specialities Paragraph */}
+    <BarCard/>
     <IndustriesArticles Api="saas" />
       {/* <article className="industry-para-container">
         <section className="industry-para-collection" ref={addToRefs}>

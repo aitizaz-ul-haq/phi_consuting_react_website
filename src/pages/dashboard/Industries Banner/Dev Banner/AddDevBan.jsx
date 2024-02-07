@@ -16,7 +16,7 @@ const AddDevBan = () => {
   const onFinish = async (values) => {
     console.log('Success:', values);
     try {
-      const response = await axios.post('http://localhost:3000/devban', values); 
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/devban', values); 
       console.log(response);
       message.success('devban created successfully');
       setRedirectToCases(true);

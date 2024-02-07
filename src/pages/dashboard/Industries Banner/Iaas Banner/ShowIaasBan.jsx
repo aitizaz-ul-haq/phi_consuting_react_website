@@ -10,7 +10,7 @@ const ShowSaasBan = () => {
     useEffect(() => {
         const fetchSaasBanData = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/iaasban');
+                const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/iaasban');
                 setSaasBanData(response.data);
             } catch (error) {
                 console.error('Failed to fetch iaasban data:', error);
@@ -27,7 +27,7 @@ const ShowSaasBan = () => {
 
     const handleDelete = async (iaasbanId) => {
         try {
-            await axios.delete(`http://localhost:3000/iaasban/${iaasbanId}`);
+            await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/iaasban/${iaasbanId}`);
             setSaasBanData(saasBanData.filter(item => item._id !== iaasbanId));
             message.success('Record deleted successfully');
         } catch (error) {

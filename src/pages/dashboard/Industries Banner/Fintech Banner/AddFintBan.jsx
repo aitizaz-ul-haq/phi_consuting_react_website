@@ -16,7 +16,7 @@ const AddFintBan = () => {
   const onFinish = async (values) => {
     console.log('Success:', values);
     try {
-      const response = await axios.post('http://localhost:3000/fintban', values); 
+      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/fintban', values); 
       console.log(response);
       message.success('fintban created successfully');
       setRedirectToCases(true);
