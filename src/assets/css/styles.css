@@ -5775,6 +5775,92 @@ align-items: center;
     color: var(--LIGHTER-DARK-PHI-BLUE);
 }
 
+.four-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    margin-bottom: 10rem;
+}
+
+.four-card-header {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.four-card-heading {
+    width: 60%;
+    font-size: 62px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #00BCD4;
+}
+
+.four-card-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.four-card-tab {
+    width: 390px;
+    height: auto;
+    padding: 2rem;
+    /* background-color: lightblue; */
+    margin: 20px;
+    border:2px solid var(--LIGHTER-DARK-PHI-BLUE);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    text-align: left;   
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    background-color: #ffffff; /* Default background color */
+}
+
+.four-card-tab:hover {
+    background-color: var(--LIGHTER-DARK-PHI-BLUE); /* Change background color on hover */
+    transform: translateY(-22px); /* Move card upward */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Optional: Add shadow for better visual effect */
+}
+
+/* Optional: If you want to also change the border color on hover */
+
+.four-card-tab:hover .card-four-title,.four-card-tab:hover .inner-four-card-description{
+    color: var(--APPLE-GRAY); /* Change border color on hover */
+}
+
+.numeric-heading-four-card {
+    font-size: 4rem;
+    color: #00BCD4;
+}
+
+.card-four-title {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var(--LIGHTER-DARK-PHI-BLUE);
+    font-weight: 900;
+}
+
+.inner-four-card-description {
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var(--LIGHTER-DARK-PHI-BLUE);
+    font-weight: 100;
+}
+
 @media screen and (min-width: 320px) {
     header {
         display: none;
@@ -7291,6 +7377,38 @@ display: none;
 
 }
 @media screen and (min-width: 360px) {
+
+    .styling-articals {
+        padding: 0.5rem;
+    }
+
+    .four-card-heading {
+        width: 100%;
+        font-size: 30px;
+    }
+
+    .title-special-new {
+        font-size: 27px;
+    font-weight: 400;
+    }
+
+    .styling-artical-sections {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+    
+
+    .four-card-tab {
+        width: 336px;
+        height: auto;
+        padding: 1rem;
+        /* background-color: lightblue; */
+        margin: 0px;
+    }
+
+    .four-card-header {
+        padding: 1rem
+    }
     header {
         display: none;
     }
@@ -8086,6 +8204,27 @@ display: none;
 
 }
 @media screen and (min-width: 375px) {
+    .four-card-heading {
+        width: 100%;
+        font-size: 30px;
+    }
+
+    .four-card-tab {
+        width: 357px;
+        height: auto;
+        padding: 0.8rem
+    }
+
+    .four-card-header {
+        padding: 0.5rem
+    }
+
+    .four-card-tab { 
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
 header {
 display : none;
 }
@@ -8893,6 +9032,15 @@ display: none;
 
 }
 @media screen and (min-width: 412px) {
+
+    .four-card-heading {
+        width: 100%;
+        font-size: 37px;
+    }
+
+    .four-card-header {
+        padding: 0.5rem
+    }
 header {
 display : none;
 }
@@ -9651,6 +9799,11 @@ display: none;
 
 }
 @media screen and (min-width: 576px) {
+
+    .four-card-heading {
+        width: 100%;
+        font-size: 45px;
+    }
 header {
 display : none;
 }
@@ -10313,7 +10466,17 @@ display: none;
 }
 @media screen and (min-width: 768px) {
     
-    
+    .four-card-heading {
+        width: 99%;
+        font-size: 45px;
+    }
+
+    .four-card-tab {
+        margin-left: 1rem;
+        margin-right: 0px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
      
 header {
 display : none;
@@ -11099,6 +11262,11 @@ display: none;
     /* .mobile-header {
         display: none;
       } */
+
+      .four-card-heading {
+        width: 99%;
+        font-size: 45px;
+    }
     header {
         display: flex;
         justify-content: space-between;
@@ -12254,6 +12422,11 @@ display: none;
 
 }
 @media screen and (min-width: 992px) {
+
+    .four-card-heading {
+        width: 99%;
+        font-size: 45px;
+    }
     header {
         display: flex;
         justify-content: space-between;
@@ -12943,7 +13116,97 @@ display: none;
 }
 }
 @media screen and (min-width: 1200px) {
-   
+    .title-special-new {
+        font-size: 53px;
+        font-weight: 400;
+    }
+
+    .four-card-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4rem;
+        margin-bottom: 10rem;
+    }
+    
+    .four-card-header {
+        padding: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .four-card-heading {
+        width: 60%;
+        font-size: 62px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #00BCD4;
+    }
+    
+    .four-card-cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    
+    .four-card-tab {
+        width: 390px;
+        height: auto;
+        padding: 2rem;
+        /* background-color: lightblue; */
+        margin: 20px;
+        border:2px solid var(--LIGHTER-DARK-PHI-BLUE);
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+        text-align: left;   
+        transition: all 0.3s ease; /* Smooth transition for hover effects */
+        background-color: #ffffff; /* Default background color */
+    }
+    
+    .four-card-tab:hover {
+        background-color: var(--LIGHTER-DARK-PHI-BLUE); /* Change background color on hover */
+        transform: translateY(-22px); /* Move card upward */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Optional: Add shadow for better visual effect */
+    }
+    
+    /* Optional: If you want to also change the border color on hover */
+    
+    .four-card-tab:hover .card-four-title,.four-card-tab:hover .inner-four-card-description{
+        color: var(--APPLE-GRAY); /* Change border color on hover */
+    }
+    
+    .numeric-heading-four-card {
+        font-size: 4rem;
+        color: #00BCD4;
+    }
+    
+    .card-four-title {
+        font-size: 30px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: var(--LIGHTER-DARK-PHI-BLUE);
+        font-weight: 900;
+    }
+    
+    .inner-four-card-description {
+        font-size: 22px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: var(--LIGHTER-DARK-PHI-BLUE);
+        font-weight: 100;
+    }
+    
     .client-heading {
         font-size: 40px;
         font-weight: 100;

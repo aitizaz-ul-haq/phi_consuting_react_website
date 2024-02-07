@@ -42,6 +42,7 @@ import solarproduct from "../../assets/img/api_images/solar_one.webp";
 import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
+import FourCard from './industries Page Components/FourCard';
 import { Helmet } from 'react-helmet';
 import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 const SaaS = () => {
@@ -392,6 +393,8 @@ const scrollToTop = () => {
         </section>
        </article>
      */}
+
+     <FourCard />
 
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
