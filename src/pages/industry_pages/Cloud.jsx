@@ -172,7 +172,7 @@ const Cloud = () => {
   useEffect(() => {
     const fetchCloudBanData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/cloudban`);
+        const response = await axios.get(`${apiUrl}/cloudban`);
         // Assuming the response data is an array and we want the last item
         const lastEntry = response.data[response.data.length - 1];
         // Update state with the last entry's heading and paragraph

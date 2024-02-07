@@ -162,7 +162,7 @@ const SaaS = () => {
   useEffect(() => {
     const fetchCloudBanData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/saasban`);
+        const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/saasban`);
         // Assuming the response data is an array and we want the last item
         const lastEntry = response.data[response.data.length - 1];
         // Update state with the last entry's heading and paragraph
