@@ -284,6 +284,69 @@ useScrollToTop();
       {/* <IndustryServicesSection/> */}
 
     <IndustriesArticles Api="iot"/>
+
+  {/* <!-- why phi for sale Section --> */}
+  <article class="why-phi-for-sales">
+        <h2 class="why-phi-heading">Why Phi Consulting?</h2>
+        <div class="insights-container">
+          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
+            <div class="left-section-insights">
+              <div class="overlay-container one-why">
+                <div class="overlay"></div>
+                <div class="content">
+                  <h2 class="overlay-heading">
+                  {sectionOneTitle}
+                  </h2>
+                  <p class="overlay-desc">
+                  {sectionOneParagraph}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="right-section-insights">
+              <div class="overlay-container two-why">
+                <div class="overlay"></div>
+                <div class="content">
+                  <h2 class="overlay-heading">
+                  {sectionTwoTitle}
+                  </h2>
+                  <p class="overlay-desc">
+                  {sectionTwoParagraph}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
+            <div class="left-section-insights">
+              <div class="overlay-container three-why">
+                <div class="overlay"></div>
+                <div class="content">
+                  <h2 class="overlay-heading">{sectionThreeTitle}</h2>
+                  <p class="overlay-desc">
+                  {sectionThreeParagraph}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="right-section-insights">
+              <div class="overlay-container four-why">
+                <div class="overlay"></div>
+                <div class="content">
+                  <h2 class="overlay-heading">
+                  {sectionFourTitle}
+                  </h2>
+                  <p class="overlay-desc">
+                  {sectionFourParagraph}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+
      {/* Specialities Paragraph */}
      {/* <IndustrySpecialities /> */}
 
