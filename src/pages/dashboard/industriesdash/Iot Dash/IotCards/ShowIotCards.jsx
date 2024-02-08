@@ -3,7 +3,7 @@ import { Table, Button, message, Space } from 'antd';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const ShowSaasCards = () => {
+const ShowIotCards = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
@@ -13,7 +13,7 @@ const ShowSaasCards = () => {
 
   const fetchSaasCards = async () => {
     try {
-      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/devops/saascards');
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/devops/iotcards');
       setData(response.data);
     } catch (error) {
       console.error('Error fetching saascards data:', error);
@@ -21,13 +21,13 @@ const ShowSaasCards = () => {
     }
   };
 
-  const handleEdit = (saascardsId) => {
-    navigate(`/Dashboard/EditSaasCards/${saascardsId}`);
+  const handleEdit = (iotcardsId) => {
+    navigate(`/Dashboard/EditIotCards/${iotcardsId}`);
   };
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/devops/saascards/${id}`);
+      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/devops/iotcards/${id}`);
       message.success('Entry deleted successfully');
       fetchSaasCards(); // Refresh the data
     } catch (error) {
@@ -72,4 +72,4 @@ const ShowSaasCards = () => {
   );
 };
 
-export default ShowSaasCards;
+export default ShowIotCards;

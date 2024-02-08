@@ -3,16 +3,16 @@ import { Form, Input, Button, message } from 'antd';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 
-const EditSaasCards = () => {
+const EditIaasCards = () => {
     const [form] = Form.useForm();
-    const { saascardsId } = useParams(); // Retrieve the ID from the URL
+    const { iaascardsId } = useParams(); // Retrieve the ID from the URL
     const navigate = useNavigate();
 
     useEffect(() => {
         // Fetch the specific Saas Card data by ID and populate the form
         const fetchData = async () => {
             try {
-                const { data } = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/devops/saascards/${saascardsId}`);
+                const { data } = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/devops/iaascards/${iaascardsId}`);
                 // Assuming the response has the data directly
                 form.setFieldsValue({
                     ...data,
@@ -24,13 +24,13 @@ const EditSaasCards = () => {
             }
         };
         fetchData();
-    }, [saascardsId, form]);
+    }, [iaascardsId, form]);
 
     const onFinish = async (values) => {
         try {
-            await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/devops/saascards/${saascardsId}`, values);
+            await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/devops/iaascards/${iaascardsId}`, values);
             message.success('Card updated successfully');
-            navigate('/dashboard/ShowSaasCards'); // Redirect to the cards display page
+            navigate('/dashboard/ShowIaasCards'); // Redirect to the cards display page
         } catch (error) {
             console.error('Failed to update card', error);
             message.error('Failed to update card');
@@ -88,7 +88,7 @@ const EditSaasCards = () => {
                     label="Bar Card Heading"
                     name="barcardheading"
                     rules={[{ required: true, message: 'Bar Card Heading is required' }]}
-                >
+                >   
                     <Input />
                 </Form.Item>
                 <Form.Item
@@ -107,4 +107,4 @@ const EditSaasCards = () => {
     );
 };
 
-export default EditSaasCards;
+export default EditIaasCards;

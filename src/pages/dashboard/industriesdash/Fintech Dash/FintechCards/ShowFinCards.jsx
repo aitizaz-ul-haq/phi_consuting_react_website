@@ -3,7 +3,7 @@ import { Table, Button, message, Space } from 'antd';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const ShowSaasCards = () => {
+const ShowFinCards = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
@@ -13,25 +13,25 @@ const ShowSaasCards = () => {
 
   const fetchSaasCards = async () => {
     try {
-      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/devops/saascards');
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/devops/fincards');
       setData(response.data);
     } catch (error) {
-      console.error('Error fetching saascards data:', error);
+      console.error('Error fetching fincards data:', error);
       message.error('Failed to fetch data');
     }
   };
 
-  const handleEdit = (saascardsId) => {
-    navigate(`/Dashboard/EditSaasCards/${saascardsId}`);
+  const handleEdit = (fincardsId) => {
+    navigate(`/Dashboard/EditFinCards/${fincardsId}`);
   };
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/devops/saascards/${id}`);
+      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/devops/fincards/${id}`);
       message.success('Entry deleted successfully');
       fetchSaasCards(); // Refresh the data
     } catch (error) {
-      console.error('Error deleting saascards data:', error);
+      console.error('Error deleting fincards data:', error);
       message.error('Failed to delete data');
     }
   };
@@ -72,4 +72,4 @@ const ShowSaasCards = () => {
   );
 };
 
-export default ShowSaasCards;
+export default ShowFinCards;

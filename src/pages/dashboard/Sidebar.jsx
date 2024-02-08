@@ -74,6 +74,8 @@ const Sidebar = () => {
           <Link className='list-elements-dash' to="/dashboard/AddFin">Add Content</Link>
           <Link className='list-elements-dash' to="/dashboard/ShowFinInfo">Show Info</Link>
           <Link className='list-elements-dash' to="/dashboard/AddFinInfo">Add Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddFinCards">Add Cards Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/ShowFinCards">Show Cards Info</Link>
          
         </div>
         )}
@@ -86,6 +88,8 @@ const Sidebar = () => {
           <Link className='list-elements-dash' to="/dashboard/AddIot">Add Content</Link>
           <Link className='list-elements-dash' to="/dashboard/ShowIotInfo">Show Info</Link>
           <Link className='list-elements-dash' to="/dashboard/AddIotInfo">Add Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddIotCards">Add Cards Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/ShowIotCards">Show Cards Info</Link>
         </div>
         )}
       </div>
@@ -110,6 +114,8 @@ const Sidebar = () => {
           <Link className='list-elements-dash' to="/dashboard/AddDev">Add Content</Link>
           <Link className='list-elements-dash' to="/dashboard/ShowDevInfo">Show Info</Link>
           <Link className='list-elements-dash' to="/dashboard/AddDevInfo">Add Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddDevCards">Add Cards Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/ShowDevCards">Show Cards Info</Link>
         </div>
         )}
       </div>
@@ -120,7 +126,9 @@ const Sidebar = () => {
           <Link className='list-elements-dash' to="/dashboard/cloud">Cloud</Link>
           <Link className='list-elements-dash' to="/dashboard/AddCloud">Add Content</Link>
           <Link className='list-elements-dash' to="/dashboard/ShowCloudInfo">Show Info</Link>
-          <Link className='list-elements-dash' to="/dashboard/AddDevInfo">Add Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddCloudInfo">Add Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddCloudCards">Add Cards Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/ShowCloudCards">Show Cards Info</Link>
         </div>
         )}
       </div>
@@ -132,6 +140,8 @@ const Sidebar = () => {
           <Link className='list-elements-dash' to="/dashboard/AddIaas">Add Content</Link>
           <Link className='list-elements-dash' to="/dashboard/ShowIaasInfo">Show Info</Link>
           <Link className='list-elements-dash' to="/dashboard/AddIaasInfo">Add Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/AddIaasCards">Add Cards Info</Link>
+          <Link className='list-elements-dash' to="/dashboard/ShowIaasCards">Show Cards Info</Link>
         </div>
         )}
       </div>

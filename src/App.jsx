@@ -135,6 +135,26 @@ import AddSaasCards from './pages/dashboard/industriesdash/Saas Dash/SaasCards/A
 import EditSaasCards from './pages/dashboard/industriesdash/Saas Dash/SaasCards/EditSaasCards';
 import ShowSaasCards from './pages/dashboard/industriesdash/Saas Dash/SaasCards/ShowSaasCards';
 
+import AddIotCards from './pages/dashboard/industriesdash/Iot Dash/IotCards/AddIotCards';
+import EditIotCards from './pages/dashboard/industriesdash/Iot Dash/IotCards/EditIotCards';
+import ShowIotCards from './pages/dashboard/industriesdash/Iot Dash/IotCards/ShowIotCards';
+
+import AddIaasCards from './pages/dashboard/industriesdash/Iaas Dash/IaasCards/AddIaasCards';
+import EditIaasCards from './pages/dashboard/industriesdash/Iaas Dash/IaasCards/EditIaasCards';
+import ShowIaasCards from './pages/dashboard/industriesdash/Iaas Dash/IaasCards/ShowIaasCards';
+
+import AddCloudCards from './pages/dashboard/industriesdash/Cloud Dash/CloudCards/AddCloudCards';
+import EditCloudCards from './pages/dashboard/industriesdash/Cloud Dash/CloudCards/EditCloudCards';
+import ShowCloudCards from './pages/dashboard/industriesdash/Cloud Dash/CloudCards/ShowCloudCards';
+
+import AddDevCards from './pages/dashboard/industriesdash/Dev Dash/DevCards/AddDevCards';
+import EditDevCards from './pages/dashboard/industriesdash/Dev Dash/DevCards/EditDevCards';
+import ShowDevCards from './pages/dashboard/industriesdash/Dev Dash/DevCards/ShowDevCards';
+
+import AddFinCards from './pages/dashboard/industriesdash/Fintech Dash/FintechCards/AddFinCards';
+import EditFinCards from './pages/dashboard/industriesdash/Fintech Dash/FintechCards/EditFinCards';
+import ShowFinCards from './pages/dashboard/industriesdash/Fintech Dash/FintechCards/ShowFinCards';
+
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -394,9 +414,29 @@ const ProtectedRoute = ({ children }) => {
          
          {/* --------------------------------------------------------- */}
 
-         <Route path="EditSaasCards/:saascardsId" element={<EditSaasCards/>} />
+          <Route path="EditSaasCards/:saascardsId" element={<EditSaasCards/>} />
           <Route path="AddSaasCards" element={<AddSaasCards />} />
           <Route path="ShowSaasCards" element={<ShowSaasCards />} />
+
+          <Route path="EditIotCards/:iotcardsId" element={<EditIotCards/>} />
+          <Route path="AddIotCards" element={<AddIotCards />} />
+          <Route path="ShowIotCards" element={<ShowIotCards />} />
+
+          <Route path="EditIaasCards/:iaascardsId" element={<EditIaasCards/>} />
+          <Route path="AddIaasCards" element={<AddIaasCards />} />
+          <Route path="ShowIaasCards" element={<ShowIaasCards />} />
+
+          <Route path="EditCloudCards/:cloudcardsId" element={<EditCloudCards/>} />
+          <Route path="AddCloudCards" element={<AddCloudCards />} />
+          <Route path="ShowCloudCards" element={<ShowCloudCards />} />
+
+          <Route path="EditDevCards/:devcardsId" element={<EditDevCards/>} />
+          <Route path="AddDevCards" element={<AddDevCards />} />
+          <Route path="ShowDevCards" element={<ShowDevCards />} />
+
+          <Route path="EditFinCards/:fincardsId" element={<EditFinCards/>} />
+          <Route path="AddFinCards" element={<AddFinCards />} />
+          <Route path="ShowFinCards" element={<ShowFinCards />} />
 
         </Route>
 

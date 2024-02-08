@@ -1,43 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Form, Input, Button, message } from 'antd';
 import axios from 'axios';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-const EditSaasCards = () => {
+const AddIotCards = () => {
     const [form] = Form.useForm();
-    const { saascardsId } = useParams(); // Retrieve the ID from the URL
     const navigate = useNavigate();
-
-    useEffect(() => {
-        // Fetch the specific Saas Card data by ID and populate the form
-        const fetchData = async () => {
-            try {
-                const { data } = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/devops/saascards/${saascardsId}`);
-                // Assuming the response has the data directly
-                form.setFieldsValue({
-                    ...data,
-                    // Map your data to the form fields here
-                });
-            } catch (error) {
-                console.error('Failed to fetch card data', error);
-                message.error('Failed to load card data');
-            }
-        };
-        fetchData();
-    }, [saascardsId, form]);
-
     const onFinish = async (values) => {
         try {
-            await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/devops/saascards/${saascardsId}`, values);
-            message.success('Card updated successfully');
-            navigate('/dashboard/ShowSaasCards'); // Redirect to the cards display page
+            await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/devops/iotcards', values);
+            message.success('Data submitted successfully');
+            // form.resetFields(); // Reset form after submission
+            navigate('/dashboard/ShowIotCards');
         } catch (error) {
-            console.error('Failed to update card', error);
-            message.error('Failed to update card');
+            console.error('Error submitting form:', error);
+            message.error('Failed to submit data');
         }
     };
 
-    // The form fields should match the `AddSaasCards` component structure
     return (
         <>
             <Form form={form} layout="vertical" onFinish={onFinish}>
@@ -100,11 +80,11 @@ const EditSaasCards = () => {
                 </Form.Item>
 
                 <Form.Item>
-                    <Button type="primary" htmlType="submit">Update</Button>
+                    <Button type="primary" htmlType="submit">Submit</Button>
                 </Form.Item>
             </Form>
         </>
     );
 };
 
-export default EditSaasCards;
+export default AddIotCards;
