@@ -8,7 +8,7 @@ const AddDevCards = () => {
     const navigate = useNavigate();
     const onFinish = async (values) => {
         try {
-            await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/cloudcards', values);
+            await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/devcards', values);
             message.success('Data submitted successfully');
             // form.resetFields(); // Reset form after submission
             navigate('/dashboard/ShowDevCards');

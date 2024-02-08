@@ -5,14 +5,14 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 const EditDevCards = () => {
     const [form] = Form.useForm();
-    const { cloudcardsId } = useParams(); // Retrieve the ID from the URL
+    const { devcardsId } = useParams(); // Retrieve the ID from the URL
     const navigate = useNavigate();
 
     useEffect(() => {
         // Fetch the specific Saas Card data by ID and populate the form
         const fetchData = async () => {
             try {
-                const { data } = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/cloudcards/${cloudcardsId}`);
+                const { data } = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/devcards/${devcardsId}`);
                 // Assuming the response has the data directly
                 form.setFieldsValue({
                     ...data,
@@ -24,13 +24,13 @@ const EditDevCards = () => {
             }
         };
         fetchData();
-    }, [cloudcardsId, form]);
+    }, [devcardsId, form]);
 
     const onFinish = async (values) => {
         try {
-            await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/cloudcards/${cloudcardsId}`, values);
+            await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/devcards/${devcardsId}`, values);
             message.success('Card updated successfully');
-            navigate('/dashboard/ShowCloudCards'); // Redirect to the cards display page
+            navigate('/dashboard/ShowDevcards'); // Redirect to the cards display page
         } catch (error) {
             console.error('Failed to update card', error);
             message.error('Failed to update card');
