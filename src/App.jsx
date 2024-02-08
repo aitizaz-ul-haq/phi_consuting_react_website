@@ -175,79 +175,12 @@ const App = () => {
     </>
   );
 
-
-// const App = () => {
-//   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-//   useEffect(() => {
-//     const handleResize = () => {
-//       setIsMobile(window.innerWidth <= 768);
-//     };
-
-//     window.addEventListener('resize', handleResize);
-//     return () => window.removeEventListener('resize', handleResize);
-//   }, []);
-
-//   const Layout = () => (
-//     <>
-//       {isMobile ? <MobileHeader /> : <Header />}
-//       <Outlet />
-//       <Footer />
-//     </>
-//   );
-
 const ProtectedRoute = ({ children }) => {
   const isAuthenticated = localStorage.getItem('token');
   return isAuthenticated ? children : <Navigate to="/phi-remote-login" />;
 };
 
   return (
-    // <Router>
-    //   <Routes>
-    //     {/* Separate route for login without header and footer */}
-    //     <Route path="/phi-remote-login" element={<Login />} />
-
-    //     {/* dashboard */}
-    //     <Route path="/dashboard" element={<Dashboard />}>
-    //     <Route path="AddJobs" element={<AddJobs />} />
-    //     <Route path="AddBlogs" element={<AddBlogs />} />
-    //     <Route path="AddCases" element={<AddCases />} />
-    //       <Route path="Jobs" element={<Jobs />} />
-    //       <Route path="Blogs" element={<Blogs />} />
-    //       <Route path="Cases" element={<Cases />} />
-    //       <Route path="EditJob/:jobId" element={<EditJob />} />
-    //       <Route path="EditBlog/:blogId" element={<EditBlog />} />
-    //       <Route path="EditCase/:caseId" element={<EditCases />} />
-    //     </Route>
-
-    //     <Route path="/" element={<Navigate replace to="/home" />} />
-    //     <Route path="/home" element={<Layout />}>
-    //     <Route index element={<HomePage />} />
-    //   <Route path="aboutus" element={<AboutUs />} />
-    //   <Route path="blogs" element={<Blog />} />
-    //   <Route path="casestudies" element={<Spotlight />} />
-    //   <Route path="careers" element={<Careers />} />
-    //   <Route path="contact" element={<Contacts />} />
-    //   <Route path="solutions" element={<Services />} />
-    //   <Route path="valuecreation" element={<OurWork />} />
-    //   <Route path="viewcasestudy/:id" element={<CaseStudyView/>}/>
-    //   <Route path="viewblog/:id" element={<BlogView/>}/>
-    //       <Route path="customer-experience" element={<CustomerExperience />} />
-    //       <Route path="financial-consulting" element={<FinancialConsulting />} />
-    //       <Route path="investor-relations" element={<BuisnessConsulting />} />
-    //       <Route path="hr-consulting" element={<HrConsulting />} />
-    //       <Route path="GTM-advisory" element={<SalesConsulting />} />
-    //       {/* industry pages */}
-    //       <Route path="Iot" element={<Iot />} />
-    //       <Route path="IaaS" element={<IaaS />} />
-    //       <Route path="SaaS" element={<SaaS />} />
-    //       <Route path="dev-ops" element={<DevOps />} />
-    //       <Route path="Cloud" element={<Cloud />} />
-    //       <Route path="FinTech" element={<FinTech />} />
-    //    </Route>
-    //   </Routes>
-    // </Router>
-
     <Router>
       <Routes>
         {/* Redirect from root to /home */}
