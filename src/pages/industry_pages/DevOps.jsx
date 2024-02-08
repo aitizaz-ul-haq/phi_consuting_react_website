@@ -61,6 +61,12 @@ import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 import { Helmet } from 'react-helmet';
 import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 
+
+import cross from '../../assets/img/barcard-icons/close.png';
+import persons from '../../assets/img/barcard-icons/employee.png';
+import circular from '../../assets/img/barcard-icons/b2b.png';
+import stack from '../../assets/img/barcard-icons/coins-stack.png';
+
 const DevOps = () => {
   const [sectionOneTitle, setSectionOneTitle] = useState('');
   const [sectionOneParagraph, setSectionOneParagraph] = useState('');
@@ -97,6 +103,29 @@ const DevOps = () => {
 
   const sectionsRef = useRef([]);
   const insightsRefs = useRef([]);
+
+  const [data, setData] = useState([]);
+  const [cardDetails, setCardDetails] = useState({
+    barCardHeading: '',
+    fourCardHeading: '',
+    barcarddesone: '',
+    barcarddestwo: '',
+    barcarddesthree: '',
+    barcarddesfour: '',
+    card1numericval: '',
+    card1heading: '',
+    card1description: '',
+    card2numericval: '',
+    card2heading: '',
+    card2description: '',
+    card3numericval: '',
+    card3heading: '',
+    card3description: '',
+    card4numericval: '',
+    card4heading: '',
+    card4description: '',
+  });
+
 
   function simplifyFintechData(data) {
     return data.reduce((acc, entry) => {
@@ -186,6 +215,28 @@ const DevOps = () => {
 
     fetchCloudBanData();
   }, []);
+
+  useEffect(() => {
+    fetchSaasCards();
+  }, []);
+  
+  const fetchSaasCards = async () => {
+    try {
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/devcards');
+      if (response.data && response.data.length > 0) {
+        const firstEntry = response.data[0];
+        setCardDetails({
+          barCardHeading: firstEntry.barcardheading,
+          fourCardHeading: firstEntry.fourcardheading,
+          ...firstEntry // This spreads the properties of the first entry into cardDetails
+        });
+      }
+      setData(response.data);
+    } catch (error) {
+      console.error('Error fetching saascards data:', error);
+      message.error('Failed to fetch data');
+    }
+  };
   
   // useEffect(() => {
   //   const observer = new IntersectionObserver(
@@ -353,55 +404,123 @@ useScrollToTop();
         </section>
       </article>
 
-      {/* <IndustryServicesSection /> */}
+      <article className="bar-card-container">
+            <section className="bar-content-section">
+
+               <div className="heading-of-barcard">
+                <h2 className="barcard-title">
+                {cardDetails.barCardHeading}
+                </h2>
+               </div>
+
+               <div className="barcard-bar">
+                <div className="barcard-bar-section">
+                    <div className="icon-barcard-container">
+                        <img src={cross} alt="barcard icon" className='barcard-icon-image' />
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddesone}
+                        </h3>
+                    </div>
+                </div>
+                <div className="barcard-bar-section border-left-and-right">
+                    <div className="icon-barcard-container">
+                        <img src={persons} alt="barcard icon" className='barcard-icon-image'/>
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddestwo}
+                        </h3>
+                    </div>
+                </div>
+                <div className="barcard-bar-section border-right">
+                    <div className="icon-barcard-container">
+                        <img src={circular} alt="barcard icon" className='barcard-icon-image'/>
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddesthree}
+                        </h3>
+                    </div>
+                </div>
+                <div className="barcard-bar-section">
+                    <div className="icon-barcard-container">
+                        <img src={stack} alt="barcard icon" className='barcard-icon-image'/>
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddesfour}
+                        </h3>
+                    </div>
+                </div>
+               </div>
+            </section>
+        </article>
 
       <IndustriesArticles Api="devops" />
 
-      {/* <article className="industry-para-container">
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'>What is <span className='bluer'> DevOps  Consulting</span>?</h2>
-        </div>
-        <div className="para-desc-industry">
-        DevOps consulting is about providing guidance and expertise to organizations in adopting and implementing DevOps practices. The synergy of software development (Dev) and IT operations (Ops) is designed to streamline the development lifecycle, ensuring the continuous delivery of high-quality software. Our DevOps consulting services empower companies to transform their processes, tools, and culture, fostering collaboration and efficiency across development and operations teams.
-        </div>
-        </section>
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'>Revolutionize Your <span className='bluer'>Go-To-Market</span> Strategy</h2>
-        </div>
-        <div className="para-desc-industry">
-        Navigate the complexities of market entry with our bespoke Go-To-Market strategies. Our expertise ensures your DevOps solutions don't just reach the market – they make a lasting impact.
-        </div>
-        </section>
+      <article className="four-card-container">
+<section className="four-card-header">
+    <h2 className="four-card-heading">
+    {cardDetails.fourCardHeading}:
+    </h2>
+    </section>    
+    <section className="four-card-cards">
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card1numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card1heading}</h3>
 
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'><span className='bluer'>Attract, Retain,</span> and <span className='bluer'>Nurture</span> the Best Talent</h2>
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card1description}
+            </div>
         </div>
-        <div className="para-desc-industry">
-        Talent is the cornerstone of success. Our recruitment strategies are designed to attract top-tier talent, perfectly aligned with your startup's culture and technological needs.
-        </div>
-        </section>
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card2numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card2heading}</h3>
 
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'>Navigate <span className='bluer'>Financial Complexities</span> with Ease</h2>
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card2description}
+            </div>
         </div>
-        <div className="para-desc-industry">
-        From budgeting to financial modeling, our financial consulting services ensure your startup's financial health is robust, enabling you to focus on innovation without fiscal worries.
-        </div>
-        </section>
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card3numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card3heading}</h3>
 
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'><span className='bluer'>Building Bridges</span> Between You and Your Investors</h2>
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card3description}
+            </div>
         </div>
-        <div className="para-desc-industry">
-        Secure funding and build lasting relationships with investors. Our investor relations expertise means you're always pitch-ready, turning potential interests into solid investments.
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card4numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card4heading}</h3>
+
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card4description}
+            </div>
         </div>
-        </section>
-       </article> */}
+        </section>        
+        </article>
 
 
       {/* <!-- why phi for sale Section --> */}

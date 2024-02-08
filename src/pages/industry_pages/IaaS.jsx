@@ -61,6 +61,11 @@ import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 import { Helmet } from 'react-helmet';
 import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 
+import cross from '../../assets/img/barcard-icons/close.png';
+import persons from '../../assets/img/barcard-icons/employee.png';
+import circular from '../../assets/img/barcard-icons/b2b.png';
+import stack from '../../assets/img/barcard-icons/coins-stack.png';
+
 const IaaS = () => {
   const [sectionOneTitle, setSectionOneTitle] = useState('');
   const [sectionOneParagraph, setSectionOneParagraph] = useState('');
@@ -99,6 +104,28 @@ const IaaS = () => {
 
   const insightsRefs = useRef([]);
 
+  const [data, setData] = useState([]);
+  const [cardDetails, setCardDetails] = useState({
+    barCardHeading: '',
+    fourCardHeading: '',
+    barcarddesone: '',
+    barcarddestwo: '',
+    barcarddesthree: '',
+    barcarddesfour: '',
+    card1numericval: '',
+    card1heading: '',
+    card1description: '',
+    card2numericval: '',
+    card2heading: '',
+    card2description: '',
+    card3numericval: '',
+    card3heading: '',
+    card3description: '',
+    card4numericval: '',
+    card4heading: '',
+    card4description: '',
+  });
+
   const apiUrl = import.meta.env.VITE_API_URL_PROD || 'https://prickle-balanced-archaeopteryx.glitch.me';
 
   function simplifyFintechData(data) {
@@ -128,6 +155,28 @@ const IaaS = () => {
   
     fetchFintechData();
   }, []);
+
+  useEffect(() => {
+    fetchSaasCards();
+  }, []);
+
+  const fetchSaasCards = async () => {
+    try {
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/iaascards');
+      if (response.data && response.data.length > 0) {
+        const firstEntry = response.data[0];
+        setCardDetails({
+          barCardHeading: firstEntry.barcardheading,
+          fourCardHeading: firstEntry.fourcardheading,
+          ...firstEntry // This spreads the properties of the first entry into cardDetails
+        });
+      }
+      setData(response.data);
+    } catch (error) {
+      console.error('Error fetching saascards data:', error);
+      message.error('Failed to fetch data');
+    }
+  };
   
   useEffect(() => {
     const fetchFintechInfo = async () => {
@@ -357,108 +406,123 @@ useScrollToTop();
         </section>
       </article>
 
+      <article className="bar-card-container">
+            <section className="bar-content-section">
+
+               <div className="heading-of-barcard">
+                <h2 className="barcard-title">
+                {cardDetails.barCardHeading}
+                </h2>
+               </div>
+
+               <div className="barcard-bar">
+                <div className="barcard-bar-section">
+                    <div className="icon-barcard-container">
+                        <img src={cross} alt="barcard icon" className='barcard-icon-image' />
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddesone}
+                        </h3>
+                    </div>
+                </div>
+                <div className="barcard-bar-section border-left-and-right">
+                    <div className="icon-barcard-container">
+                        <img src={persons} alt="barcard icon" className='barcard-icon-image'/>
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddestwo}
+                        </h3>
+                    </div>
+                </div>
+                <div className="barcard-bar-section border-right">
+                    <div className="icon-barcard-container">
+                        <img src={circular} alt="barcard icon" className='barcard-icon-image'/>
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddesthree}
+                        </h3>
+                    </div>
+                </div>
+                <div className="barcard-bar-section">
+                    <div className="icon-barcard-container">
+                        <img src={stack} alt="barcard icon" className='barcard-icon-image'/>
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddesfour}
+                        </h3>
+                    </div>
+                </div>
+               </div>
+            </section>
+        </article>
+
       <IndustriesArticles Api="iaas" />
 
-      {/* Services Section */}
-      {/* <IndustryServicesSection /> */}
+      <article className="four-card-container">
+<section className="four-card-header">
+    <h2 className="four-card-heading">
+    {cardDetails.fourCardHeading}:
+    </h2>
+    </section>    
+    <section className="four-card-cards">
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card1numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card1heading}</h3>
 
-      {/* Specialities Paragraph */}
-      {/* <IndustrySpecialities /> */}
-      {/* <article className="industry-para-container">
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'>What is <span className='bluer'> IaaS Consulting</span>?</h2>
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card1description}
+            </div>
         </div>
-        <div className="para-desc-industry">
-        Our IaaS consulting services are crafted to help businesses assess their infrastructure needs, identify optimal cloud providers, and formulate a scalable, cost-effective strategy. Whether you're migrating existing on-premises infrastructure to the cloud or fine-tuning resource allocation, we've got you covered. Our experts ensure your security and compliance while recommending best practices for seamless management and maintenance.
-        </div>
-        </section>
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card2numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card2heading}</h3>
 
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'>Revolutionize Your <span className='bluer'>Go-To-Market</span> Strategy</h2>
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card2description}
+            </div>
         </div>
-        <div className="para-desc-industry">
-        Your innovation deserves a robust market entry. Our Go-To-Market (GTM) strategies are not just plans, but blueprints for success, designed to capture your target market effectively and efficiently.
-        </div>
-        </section>
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card3numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card3heading}</h3>
 
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'><span className='bluer'>Attract, Retain,</span> and <span className='bluer'>Nurture</span> the Best Talent</h2>
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card3description}
+            </div>
         </div>
-        <div className="para-desc-industry">
-        Talent is the backbone of any startup. We assist you in building a team not just for today, but for the future—a workforce aligned with your vision and ready for the challenges ahead.
-        </div>
-        </section>
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card4numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card4heading}</h3>
 
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'>Navigate <span className='bluer'>Financial Complexities</span> with Ease</h2>
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card4description}
+            </div>
         </div>
-        <div className="para-desc-industry">
-        Navigate the financial complexities of startup growth with our expert advice. From budgeting to fiscal management, we ensure your financial health is robust, enabling you to focus on innovation.
-        </div>
-        </section>
-
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'><span className='bluer'>Building Bridges</span> Between You and Your Investors</h2>
-        </div>
-        <div className="para-desc-industry">
-        Building bridges between your vision and the right investors. Our investor relations services connect you with the right people, ensuring your ideas get the backing they need to soar.
-        </div>
-        </section>
-        </article> */}
-       
-
-        {/* <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'>Tailored<span className='bluer'> IaaS</span>  Consulting Services</h2>
-        </div>
-        <div className="para-desc-industry">
-        At Phi Consulting, we understand the unique challenges faced by founders and C-level executives. Our custom consulting services are designed to cater to your specific needs, ensuring your startup scales efficiently while keeping costs in check.
-        </div>
-        </section>
-
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'><span className='bluer'>Go-To-Market</span> Strategy</h2>
-        </div>
-        <div className="para-desc-industry">
-        Your innovation deserves a robust market entry. Our Go-To-Market (GTM) strategies are not just plans, but blueprints for success, designed to capture your target market effectively and efficiently.
-        </div>
-        </section>
-
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'><span className='bluer'>HR & Recruitment </span> Solutions</h2>
-        </div>
-        <div className="para-desc-industry">
-        Talent is the backbone of any startup. We assist you in building a team not just for today, but for the future—a workforce aligned with your vision and ready for the challenges ahead.
-        </div>
-        </section>
-
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'><span className='bluer'>Financial</span> Consulting</h2>
-        </div>
-        <div className="para-desc-industry">
-        Navigate the financial complexities of startup growth with our expert advice. From budgeting to fiscal management, we ensure your financial health is robust, enabling you to focus on innovation.
-
-        </div>
-        </section>
-
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'><span className='bluer'>Investor Relations</span></h2>
-        </div>
-        <div className="para-desc-industry">
-        Building bridges between your vision and the right investors. Our investor relations services connect you with the right people, ensuring your ideas get the backing they need to soar.
-        </div>
-        </section> */}
-      
-
+        </section>        
+        </article>
     
 
       {/* <!-- Section path  --> */}

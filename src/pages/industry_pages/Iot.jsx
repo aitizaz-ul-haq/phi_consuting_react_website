@@ -43,6 +43,11 @@ import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 
+import cross from '../../assets/img/barcard-icons/close.png';
+import persons from '../../assets/img/barcard-icons/employee.png';
+import circular from '../../assets/img/barcard-icons/b2b.png';
+import stack from '../../assets/img/barcard-icons/coins-stack.png';
+
 import { Helmet } from 'react-helmet';
 
 import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
@@ -80,6 +85,27 @@ const Iot = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   const insightsRefs = useRef([]);
+  const [data, setData] = useState([]);
+  const [cardDetails, setCardDetails] = useState({
+    barCardHeading: '',
+    fourCardHeading: '',
+    barcarddesone: '',
+    barcarddestwo: '',
+    barcarddesthree: '',
+    barcarddesfour: '',
+    card1numericval: '',
+    card1heading: '',
+    card1description: '',
+    card2numericval: '',
+    card2heading: '',
+    card2description: '',
+    card3numericval: '',
+    card3heading: '',
+    card3description: '',
+    card4numericval: '',
+    card4heading: '',
+    card4description: '',
+  });
 
   const apiUrl = import.meta.env.VITE_API_URL_PROD || 'https://prickle-balanced-archaeopteryx.glitch.me';
 
@@ -110,6 +136,28 @@ const Iot = () => {
   
     fetchFintechData();
   }, []);
+
+  useEffect(() => {
+    fetchSaasCards();
+  }, []);
+
+  const fetchSaasCards = async () => {
+    try {
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/iotcards');
+      if (response.data && response.data.length > 0) {
+        const firstEntry = response.data[0];
+        setCardDetails({
+          barCardHeading: firstEntry.barcardheading,
+          fourCardHeading: firstEntry.fourcardheading,
+          ...firstEntry // This spreads the properties of the first entry into cardDetails
+        });
+      }
+      setData(response.data);
+    } catch (error) {
+      console.error('Error fetching saascards data:', error);
+      message.error('Failed to fetch data');
+    }
+  };
   
   useEffect(() => {
     const fetchFintechInfo = async () => {
@@ -312,8 +360,122 @@ useScrollToTop();
 
       {/* Services Section */}
       {/* <IndustryServicesSection/> */}
+      <article className="bar-card-container">
+            <section className="bar-content-section">
 
+               <div className="heading-of-barcard">
+                <h2 className="barcard-title">
+                {cardDetails.barCardHeading}
+                </h2>
+               </div>
+
+               <div className="barcard-bar">
+                <div className="barcard-bar-section">
+                    <div className="icon-barcard-container">
+                        <img src={cross} alt="barcard icon" className='barcard-icon-image' />
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddesone}
+                        </h3>
+                    </div>
+                </div>
+                <div className="barcard-bar-section border-left-and-right">
+                    <div className="icon-barcard-container">
+                        <img src={persons} alt="barcard icon" className='barcard-icon-image'/>
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddestwo}
+                        </h3>
+                    </div>
+                </div>
+                <div className="barcard-bar-section border-right">
+                    <div className="icon-barcard-container">
+                        <img src={circular} alt="barcard icon" className='barcard-icon-image'/>
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddesthree}
+                        </h3>
+                    </div>
+                </div>
+                <div className="barcard-bar-section">
+                    <div className="icon-barcard-container">
+                        <img src={stack} alt="barcard icon" className='barcard-icon-image'/>
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddesfour}
+                        </h3>
+                    </div>
+                </div>
+               </div>
+            </section>
+        </article>
     <IndustriesArticles Api="iot"/>
+
+    <article className="four-card-container">
+<section className="four-card-header">
+    <h2 className="four-card-heading">
+    {cardDetails.fourCardHeading}:
+    </h2>
+    </section>    
+    <section className="four-card-cards">
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card1numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card1heading}</h3>
+
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card1description}
+            </div>
+        </div>
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card2numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card2heading}</h3>
+
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card2description}
+            </div>
+        </div>
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card3numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card3heading}</h3>
+
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card3description}
+            </div>
+        </div>
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card4numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card4heading}</h3>
+
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card4description}
+            </div>
+        </div>
+        </section>        
+        </article>
 
   {/* <!-- why phi for sale Section --> */}
   <article class="why-phi-for-sales">

@@ -89,6 +89,27 @@ const SaaS = () => {
   const sectionsRef = useRef([]);
 
   const insightsRefs = useRef([]);
+  const [data, setData] = useState([]);
+  const [cardDetails, setCardDetails] = useState({
+    barCardHeading: '',
+    fourCardHeading: '',
+    barcarddesone: '',
+    barcarddestwo: '',
+    barcarddesthree: '',
+    barcarddesfour: '',
+    card1numericval: '',
+    card1heading: '',
+    card1description: '',
+    card2numericval: '',
+    card2heading: '',
+    card2description: '',
+    card3numericval: '',
+    card3heading: '',
+    card3description: '',
+    card4numericval: '',
+    card4heading: '',
+    card4description: '',
+  });
 
   function simplifyFintechData(data) {
     return data.reduce((acc, entry) => {
@@ -117,6 +138,28 @@ const SaaS = () => {
   
     fetchFintechData();
   }, []);
+
+  useEffect(() => {
+    fetchSaasCards();
+  }, []);
+
+  const fetchSaasCards = async () => {
+    try {
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/saascards');
+      if (response.data && response.data.length > 0) {
+        const firstEntry = response.data[0];
+        setCardDetails({
+          barCardHeading: firstEntry.barcardheading,
+          fourCardHeading: firstEntry.fourcardheading,
+          ...firstEntry // This spreads the properties of the first entry into cardDetails
+        });
+      }
+      setData(response.data);
+    } catch (error) {
+      console.error('Error fetching saascards data:', error);
+      message.error('Failed to fetch data');
+    }
+  };
   
   useEffect(() => {
     const fetchFintechInfo = async () => {
@@ -356,7 +399,7 @@ const scrollToTop = () => {
 
                <div className="heading-of-barcard">
                 <h2 className="barcard-title">
-                Challenges Financial Service Companies Face
+                {cardDetails.barCardHeading}
                 </h2>
                </div>
 
@@ -367,7 +410,7 @@ const scrollToTop = () => {
                     </div>
                     <div className="title-barcard-container">
                         <h3 className="barcard-description-inner">
-                        Low quality of generated leads
+                        {cardDetails.barcarddesone}
                         </h3>
                     </div>
                 </div>
@@ -377,7 +420,7 @@ const scrollToTop = () => {
                     </div>
                     <div className="title-barcard-container">
                         <h3 className="barcard-description-inner">
-                       Hiring sales specialists with relevant expertise
+                        {cardDetails.barcarddestwo}
                         </h3>
                     </div>
                 </div>
@@ -387,7 +430,7 @@ const scrollToTop = () => {
                     </div>
                     <div className="title-barcard-container">
                         <h3 className="barcard-description-inner">
-                        Maintaining a steady flow of opportunities
+                        {cardDetails.barcarddesthree}
                         </h3>
                     </div>
                 </div>
@@ -397,7 +440,7 @@ const scrollToTop = () => {
                     </div>
                     <div className="title-barcard-container">
                         <h3 className="barcard-description-inner">
-                        High lead acquisition cost
+                        {cardDetails.barcarddesfour}
                         </h3>
                     </div>
                 </div>
@@ -405,113 +448,65 @@ const scrollToTop = () => {
             </section>
         </article>
     <IndustriesArticles Api="saas" />
-      {/* <article className="industry-para-container">
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'>What is <span className='bluer'> SaaS Consulting</span>?</h2>
-        </div>
-        <div className="para-desc-industry">
-        SaaS consulting at Phi involves providing invaluable guidance to businesses navigating the complexities of SaaS solutions. In this dynamic realm, where applications are hosted by third-party providers and accessed via the internet, our services ensure your organization optimally adopts and leverages SaaS applications tailored to your specific needs.
-        </div>
-        </section>
-       
-
-<section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'>Revolutionize Your <span className='bluer'>Go-To-Market</span> Strategy</h2>
-        </div>
-        <div className="para-desc-industry">
-        Our Go-To-Market strategies are more than just plans; they are blueprints for success, meticulously tailored to your startup's unique value proposition and the ever-evolving dynamics of your market.
-        </div>
-        </section>
-
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'><span className='bluer'>Attract, Retain,</span> and <span className='bluer'>Nurture</span> the Best Talent</h2>
-        </div>
-        <div className="para-desc-industry">
-        Talent is the backbone of thriving startups. With our comprehensive HR and recruitment services, we ensure you assemble the right team to drive your vision forward.
-        </div>
-        </section>
-
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'>Navigate <span className='bluer'>Financial Complexities</span> with Ease</h2>
-        </div>
-        <div className="para-desc-industry">
-        In the startup world, financial acumen is paramount. Our financial consulting services provide the insights and strategies needed to optimize your financial performance, securing your company's future.
-        </div>
-        </section>
-
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'><span className='bluer'>Building Bridges</span> Between You and Your Investors</h2>
-        </div>
-        <div className="para-desc-industry">
-        Building bridges with investors is key to your startup's success. Our expertise in investor relations ensures effective communication of your startup's value, fostering trust and securing the funding necessary for growth
-        </div>
-        </section>
-       </article>
-     */}
+    
 
 <article className="four-card-container">
 <section className="four-card-header">
     <h2 className="four-card-heading">
-    Outreach for Financial Service
-Companies by Belkins Is:
+    {cardDetails.fourCardHeading}:
     </h2>
     </section>    
     <section className="four-card-cards">
         <div className="four-card-tab">
             <div className="four-card-inner-numeric">
-                <h2 className="numeric-heading-four-card">50+</h2>
+                <h2 className="numeric-heading-four-card">{cardDetails.card1numericval}</h2>
             </div>
             <hr />
             <div className="inner-heading-four-card">
-                <h3 className="card-four-title">Satisfied clients in the financial services market</h3>
+                <h3 className="card-four-title">{cardDetails.card1heading}</h3>
 
             </div>
             <div className="inner-four-card-description">
-            With proven expertise we can fill your pipeline with the highest-quality opportunities bringing your sales engine to full speed.
+            {cardDetails.card1description}
             </div>
         </div>
         <div className="four-card-tab">
             <div className="four-card-inner-numeric">
-                <h2 className="numeric-heading-four-card">50+</h2>
+                <h2 className="numeric-heading-four-card">{cardDetails.card2numericval}</h2>
             </div>
             <hr />
             <div className="inner-heading-four-card">
-                <h3 className="card-four-title">Satisfied clients in the financial services market</h3>
+                <h3 className="card-four-title">{cardDetails.card2heading}</h3>
 
             </div>
             <div className="inner-four-card-description">
-            With proven expertise we can fill your pipeline with the highest-quality opportunities bringing your sales engine to full speed.
+            {cardDetails.card2description}
             </div>
         </div>
         <div className="four-card-tab">
             <div className="four-card-inner-numeric">
-                <h2 className="numeric-heading-four-card">50+</h2>
+                <h2 className="numeric-heading-four-card">{cardDetails.card3numericval}</h2>
             </div>
             <hr />
             <div className="inner-heading-four-card">
-                <h3 className="card-four-title">Satisfied clients in the financial services market</h3>
+                <h3 className="card-four-title">{cardDetails.card3heading}</h3>
 
             </div>
             <div className="inner-four-card-description">
-            With proven expertise we can fill your pipeline with the highest-quality opportunities bringing your sales engine to full speed.
+            {cardDetails.card3description}
             </div>
         </div>
         <div className="four-card-tab">
             <div className="four-card-inner-numeric">
-                <h2 className="numeric-heading-four-card">50+</h2>
+                <h2 className="numeric-heading-four-card">{cardDetails.card4numericval}</h2>
             </div>
             <hr />
             <div className="inner-heading-four-card">
-                <h3 className="card-four-title">Satisfied clients in the financial services market</h3>
+                <h3 className="card-four-title">{cardDetails.card4heading}</h3>
 
             </div>
             <div className="inner-four-card-description">
-            With proven expertise we can fill your pipeline with the highest-quality opportunities bringing your sales engine to full speed.
+            {cardDetails.card4description}
             </div>
         </div>
         </section>        

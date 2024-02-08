@@ -46,6 +46,11 @@ import { Helmet } from 'react-helmet';
 import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 
 
+import cross from '../../assets/img/barcard-icons/close.png';
+import persons from '../../assets/img/barcard-icons/employee.png';
+import circular from '../../assets/img/barcard-icons/b2b.png';
+import stack from '../../assets/img/barcard-icons/coins-stack.png';
+
 const FinTech = () => {
   const [sectionOneTitle, setSectionOneTitle] = useState('');
   const [sectionOneParagraph, setSectionOneParagraph] = useState('');
@@ -74,6 +79,28 @@ const FinTech = () => {
   const insightsRefs = useRef([]);
 
   const diagonalDivRef = useRef(null);
+
+  const [data, setData] = useState([]);
+  const [cardDetails, setCardDetails] = useState({
+    barCardHeading: '',
+    fourCardHeading: '',
+    barcarddesone: '',
+    barcarddestwo: '',
+    barcarddesthree: '',
+    barcarddesfour: '',
+    card1numericval: '',
+    card1heading: '',
+    card1description: '',
+    card2numericval: '',
+    card2heading: '',
+    card2description: '',
+    card3numericval: '',
+    card3heading: '',
+    card3description: '',
+    card4numericval: '',
+    card4heading: '',
+    card4description: '',
+  });
 
 const Fintech = 'fintech';
 
@@ -104,6 +131,28 @@ useEffect(() => {
 
   fetchFintechData();
 }, []);
+
+useEffect(() => {
+  fetchSaasCards();
+}, []);
+
+const fetchSaasCards = async () => {
+  try {
+    const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/fincards');
+    if (response.data && response.data.length > 0) {
+      const firstEntry = response.data[0];
+      setCardDetails({
+        barCardHeading: firstEntry.barcardheading,
+        fourCardHeading: firstEntry.fourcardheading,
+        ...firstEntry // This spreads the properties of the first entry into cardDetails
+      });
+    }
+    setData(response.data);
+  } catch (error) {
+    console.error('Error fetching saascards data:', error);
+    message.error('Failed to fetch data');
+  }
+};
 
 useEffect(() => {
   const fetchFintechInfo = async () => {
@@ -346,71 +395,123 @@ useScrollToTop();
           </div>
         </section>
       </article>
+      <article className="bar-card-container">
+            <section className="bar-content-section">
 
-      {/* <IndustryServicesSection /> */}
+               <div className="heading-of-barcard">
+                <h2 className="barcard-title">
+                {cardDetails.barCardHeading}
+                </h2>
+               </div>
 
-      {/* <article className="industry-para-container" ref={diagonalDivRef}> */}
-        {/* <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'>What is <span className='bluer'> Fintech  Consulting</span>?</h2>
-        </div>
-        <div className="para-desc-industry">
-        In the realm of financial technology (FinTech), consulting involves offering specialized advisory services tailored to organizations within this sector. FinTech, driven by innovative technologies, aims to deliver financial services in a more efficient, convenient, and disruptive manner. Our FinTech consulting services are designed to assist financial institutions, startups, and businesses in navigating this rapidly evolving landscape.
-
-        </div>
-        </section>
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'>Revolutionize Your <span className='bluer'>Go-To-Market</span> Strategy</h2>
-        </div>
-        <div className="para-desc-industry">
-        Navigating the FinTech landscape requires a robust Go-To-Market (GTM) strategy. Phi Consulting provides a comprehensive approach, offering market analysis, competitive positioning, and tailored marketing strategies. We ensure your launch is impactful and sets the stage for sustained success.
-        </div>
-        </section>
-
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'><span className='bluer'>Attract, Retain,</span> and <span className='bluer'>Nurture</span> the Best Talent</h2>
-        </div>
-        <div className="para-desc-industry">
-        Your team is your greatest asset. We help you build a formidable team of innovators and leaders through strategic HR consulting and recruitment services, ensuring you have the right talent to drive your business forward.
-        </div>
-        </section>
-
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'>Navigate <span className='bluer'>Financial Complexities</span> with Ease</h2>
-        </div>
-        <div className="para-desc-industry">
-        In the fast-paced FinTech world, financial clarity and strategic planning are paramount. Phi Consulting's financial consulting services provide insights and strategies for effective financial management, covering aspects from cash flow management to financial modeling.
-        </div>
-        </section>
-
-        <section className="industry-para-collection">
-        <div className="para-title-industry">
-        <h2 className='title-special'><span className='bluer'>Building Bridges</span> Between You and Your Investors</h2>
-        </div>
-        <div className="para-desc-industry">
-        Building and maintaining strong relationships with investors are vital to your startup's growth. We assist in developing compelling investor relations strategies, ensuring consistent communication, and fostering trust with your investors.
-        </div>
-        </section> */}
-       
-       {/* {fintechData.map((item, index) => (
-  <section className="industry-para-collection" key={index} ref={addToRefs}>
-    <div className="para-title-industry">
-      <h2 className='title-special'>{item.headingText} <span className='bluer'>{item.highlighted}</span></h2>
-    </div>
-    <div className="para-desc-industry">
-      {item.paragraphText}
-    </div>
-  </section>
-))}
-    
-       </article> */}
+               <div className="barcard-bar">
+                <div className="barcard-bar-section">
+                    <div className="icon-barcard-container">
+                        <img src={cross} alt="barcard icon" className='barcard-icon-image' />
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddesone}
+                        </h3>
+                    </div>
+                </div>
+                <div className="barcard-bar-section border-left-and-right">
+                    <div className="icon-barcard-container">
+                        <img src={persons} alt="barcard icon" className='barcard-icon-image'/>
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddestwo}
+                        </h3>
+                    </div>
+                </div>
+                <div className="barcard-bar-section border-right">
+                    <div className="icon-barcard-container">
+                        <img src={circular} alt="barcard icon" className='barcard-icon-image'/>
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddesthree}
+                        </h3>
+                    </div>
+                </div>
+                <div className="barcard-bar-section">
+                    <div className="icon-barcard-container">
+                        <img src={stack} alt="barcard icon" className='barcard-icon-image'/>
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddesfour}
+                        </h3>
+                    </div>
+                </div>
+               </div>
+            </section>
+        </article>
 
        <IndustriesArticles Api="fintech" />
    
+       <article className="four-card-container">
+<section className="four-card-header">
+    <h2 className="four-card-heading">
+    {cardDetails.fourCardHeading}:
+    </h2>
+    </section>    
+    <section className="four-card-cards">
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card1numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card1heading}</h3>
 
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card1description}
+            </div>
+        </div>
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card2numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card2heading}</h3>
+
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card2description}
+            </div>
+        </div>
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card3numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card3heading}</h3>
+
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card3description}
+            </div>
+        </div>
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card4numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card4heading}</h3>
+
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card4description}
+            </div>
+        </div>
+        </section>        
+        </article>
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
         <h2 class="why-phi-heading">Why Phi Consulting?</h2>

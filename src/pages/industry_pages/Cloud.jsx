@@ -60,6 +60,11 @@ import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 import { Helmet } from 'react-helmet';
 import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 
+import cross from '../../assets/img/barcard-icons/close.png';
+import persons from '../../assets/img/barcard-icons/employee.png';
+import circular from '../../assets/img/barcard-icons/b2b.png';
+import stack from '../../assets/img/barcard-icons/coins-stack.png';
+
 
 const Cloud = () => {
   const [sectionOneTitle, setSectionOneTitle] = useState('');
@@ -94,6 +99,28 @@ const Cloud = () => {
   const [darkMode, setDarkMode] = useState(false);
   const sectionsRef = useRef([]);
   const insightsRefs = useRef([]);
+
+  const [data, setData] = useState([]);
+  const [cardDetails, setCardDetails] = useState({
+    barCardHeading: '',
+    fourCardHeading: '',
+    barcarddesone: '',
+    barcarddestwo: '',
+    barcarddesthree: '',
+    barcarddesfour: '',
+    card1numericval: '',
+    card1heading: '',
+    card1description: '',
+    card2numericval: '',
+    card2heading: '',
+    card2description: '',
+    card3numericval: '',
+    card3heading: '',
+    card3description: '',
+    card4numericval: '',
+    card4heading: '',
+    card4description: '',
+  });
 
   const apiUrl = import.meta.env.VITE_API_URL_PROD || 'https://prickle-balanced-archaeopteryx.glitch.me';
 
@@ -185,6 +212,28 @@ const Cloud = () => {
 
     fetchCloudBanData();
   }, []);
+
+  useEffect(() => {
+    fetchSaasCards();
+  }, []);
+  
+  const fetchSaasCards = async () => {
+    try {
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/devcards');
+      if (response.data && response.data.length > 0) {
+        const firstEntry = response.data[0];
+        setCardDetails({
+          barCardHeading: firstEntry.barcardheading,
+          fourCardHeading: firstEntry.fourcardheading,
+          ...firstEntry // This spreads the properties of the first entry into cardDetails
+        });
+      }
+      setData(response.data);
+    } catch (error) {
+      console.error('Error fetching saascards data:', error);
+      message.error('Failed to fetch data');
+    }
+  };
   // useEffect(() => {
   //   const observer = new IntersectionObserver(
   //     (entries) => {
@@ -350,55 +399,124 @@ useScrollToTop();
         </section>
       </article>
 
-      {/* <IndustryServicesSection /> */}
-      {/* <article className="industry-para-container">
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'>What is <span className='bluer'> Cloud  Consulting</span>?</h2>
-        </div>
-        <div className="para-desc-industry">
-        Cloud consulting involves providing expert advice and guidance to businesses seeking to leverage cloud computing technologies and services. Cloud computing allows organizations to store, manage, and access data and applications over the internet, eliminating the need for physical servers or infrastructure. Our cloud consulting services help companies navigate the complexities of cloud solutions, choose the right platforms, and design strategies for seamless adoption and integration.
-        </div>
-        </section>
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'>Revolutionize Your <span className='bluer'>Go-To-Market</span> Strategy</h2>
-        </div>
-        <div className="para-desc-industry">
-        Navigate the market with confidence. Our Go-To-Market strategies are tailored to your unique vision, ensuring a powerful launch and sustained growth
-        </div>
-        </section>
+      <article className="bar-card-container">
+            <section className="bar-content-section">
 
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'><span className='bluer'>Attract, Retain,</span> and <span className='bluer'>Nurture</span> the Best Talent</h2>
-        </div>
-        <div className="para-desc-industry">
-        Build your dream team with us. Our HR experts specialize in recruiting top talent that aligns with your startup's culture and objectives.
-        </div>
-        </section>
+               <div className="heading-of-barcard">
+                <h2 className="barcard-title">
+                {cardDetails.barCardHeading}
+                </h2>
+               </div>
 
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'>Navigate <span className='bluer'>Financial Complexities</span> with Ease</h2>
-        </div>
-        <div className="para-desc-industry">
-        Financial clarity for ambitious visions. We provide insightful financial strategies to optimize your resources and fuel your growth
-        </div>
-        </section>
-
-        <section className="industry-para-collection" ref={addToRefs}>
-        <div className="para-title-industry">
-        <h2 className='title-special'><span className='bluer'>Building Bridges</span> Between You and Your Investors</h2>
-        </div>
-        <div className="para-desc-industry">
-        Connecting visionaries with investors. Our robust network and expertise in investor relations help secure the right funding to elevate your startup.
-
-        </div>
-        </section>
-       </article> */}
+               <div className="barcard-bar">
+                <div className="barcard-bar-section">
+                    <div className="icon-barcard-container">
+                        <img src={cross} alt="barcard icon" className='barcard-icon-image' />
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddesone}
+                        </h3>
+                    </div>
+                </div>
+                <div className="barcard-bar-section border-left-and-right">
+                    <div className="icon-barcard-container">
+                        <img src={persons} alt="barcard icon" className='barcard-icon-image'/>
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddestwo}
+                        </h3>
+                    </div>
+                </div>
+                <div className="barcard-bar-section border-right">
+                    <div className="icon-barcard-container">
+                        <img src={circular} alt="barcard icon" className='barcard-icon-image'/>
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddesthree}
+                        </h3>
+                    </div>
+                </div>
+                <div className="barcard-bar-section">
+                    <div className="icon-barcard-container">
+                        <img src={stack} alt="barcard icon" className='barcard-icon-image'/>
+                    </div>
+                    <div className="title-barcard-container">
+                        <h3 className="barcard-description-inner">
+                        {cardDetails.barcarddesfour}
+                        </h3>
+                    </div>
+                </div>
+               </div>
+            </section>
+        </article>
 
 <IndustriesArticles Api="cloud" />
+
+<article className="four-card-container">
+<section className="four-card-header">
+    <h2 className="four-card-heading">
+    {cardDetails.fourCardHeading}:
+    </h2>
+    </section>    
+    <section className="four-card-cards">
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card1numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card1heading}</h3>
+
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card1description}
+            </div>
+        </div>
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card2numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card2heading}</h3>
+
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card2description}
+            </div>
+        </div>
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card3numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card3heading}</h3>
+
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card3description}
+            </div>
+        </div>
+        <div className="four-card-tab">
+            <div className="four-card-inner-numeric">
+                <h2 className="numeric-heading-four-card">{cardDetails.card4numericval}</h2>
+            </div>
+            <hr />
+            <div className="inner-heading-four-card">
+                <h3 className="card-four-title">{cardDetails.card4heading}</h3>
+
+            </div>
+            <div className="inner-four-card-description">
+            {cardDetails.card4description}
+            </div>
+        </div>
+        </section>        
+        </article>
+
 
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
