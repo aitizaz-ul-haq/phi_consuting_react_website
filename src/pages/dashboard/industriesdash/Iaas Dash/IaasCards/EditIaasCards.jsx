@@ -12,7 +12,7 @@ const EditIaasCards = () => {
         // Fetch the specific Saas Card data by ID and populate the form
         const fetchData = async () => {
             try {
-                const { data } = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/devops/iaascards/${iaascardsId}`);
+                const { data } = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/iaascards/${iaascardsId}`);
                 // Assuming the response has the data directly
                 form.setFieldsValue({
                     ...data,
@@ -28,7 +28,7 @@ const EditIaasCards = () => {
 
     const onFinish = async (values) => {
         try {
-            await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/devops/iaascards/${iaascardsId}`, values);
+            await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/iaascards/${iaascardsId}`, values);
             message.success('Card updated successfully');
             navigate('/dashboard/ShowIaasCards'); // Redirect to the cards display page
         } catch (error) {

@@ -13,7 +13,7 @@ const ShowCloudCards = () => {
 
   const fetchSaasCards = async () => {
     try {
-      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/devops/cloudcards');
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/cloudcards');
       setData(response.data);
     } catch (error) {
       console.error('Error fetching cloudcards data:', error);
@@ -27,7 +27,7 @@ const ShowCloudCards = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/devops/cloudcards/${id}`);
+      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/cloudcards/${id}`);
       message.success('Entry deleted successfully');
       fetchSaasCards(); // Refresh the data
     } catch (error) {

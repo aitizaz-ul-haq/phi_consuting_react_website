@@ -27,7 +27,7 @@ const ShowDevCards = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/devops/cloudcards/${id}`);
+      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/cloudcards/${id}`);
       message.success('Entry deleted successfully');
       fetchSaasCards(); // Refresh the data
     } catch (error) {

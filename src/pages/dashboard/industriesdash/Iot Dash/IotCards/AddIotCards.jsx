@@ -8,7 +8,7 @@ const AddIotCards = () => {
     const navigate = useNavigate();
     const onFinish = async (values) => {
         try {
-            await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/devops/iotcards', values);
+            await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/iotcards', values);
             message.success('Data submitted successfully');
             // form.resetFields(); // Reset form after submission
             navigate('/dashboard/ShowIotCards');

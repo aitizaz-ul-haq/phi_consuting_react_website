@@ -8,7 +8,7 @@ const AddIaasCards = () => {
     const navigate = useNavigate();
     const onFinish = async (values) => {
         try {
-            await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/devops/iaascards', values);
+            await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/iaascards', values);
             message.success('Data submitted successfully');
             // form.resetFields(); // Reset form after submission
             navigate('/dashboard/ShowIaasCards');

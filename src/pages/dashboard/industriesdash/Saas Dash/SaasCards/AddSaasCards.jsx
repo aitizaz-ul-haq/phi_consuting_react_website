@@ -7,7 +7,7 @@ const AddSaasCards = () => {
 
     const onFinish = async (values) => {
         try {
-            await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/devops/saascards', values);
+            await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/saascards', values);
             message.success('Data submitted successfully');
             form.resetFields(); // Reset form after submission
         } catch (error) {
