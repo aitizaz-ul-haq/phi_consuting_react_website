@@ -1,7 +1,6 @@
 import React from 'react';
 
-
-const EditHomPageCont = () => {
+const EditValPageCont = () => {
     return(
         <>
         
@@ -9,4 +8,4 @@ const EditHomPageCont = () => {
     );
 }
 
-export default EditHomPageCont;
+export default EditValPageCont;

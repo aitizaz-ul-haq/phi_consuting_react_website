@@ -25,6 +25,12 @@ const Sidebar = () => {
   const [dropdown18, setDropdown18] = useState(false);
   const [dropdown19, setDropdown19] = useState(false);
 
+  const [dropdown20, setDropdown20] = useState(false);
+  const [dropdown21, setDropdown21] = useState(false);
+  const [dropdown22, setDropdown22] = useState(false);
+  const [dropdown23, setDropdown23] = useState(false);
+  const [dropdown24, setDropdown24] = useState(false);
+
   return (
     <div className="sidebar">
        <div>
@@ -247,6 +253,56 @@ const Sidebar = () => {
           <div className='list-container'>
              <Link className='list-elements-dash' to="/dashboard/AddCloudBan">Add Cloud Banner</Link>
             <Link className='list-elements-dash' to="/dashboard/ShowCloudBan">Show Banner Info</Link>
+        </div>
+        )}
+      </div>
+      <div>
+        <div>
+        <h4 className='Dash-Heading'>Other Pages</h4>
+      </div>
+      </div>
+      <div>
+        <button className='dash-options' onClick={() => setDropdown20(!dropdown20)}>Home Page</button>
+        {dropdown20 && (
+          <div className='list-container'>
+             <Link className='list-elements-dash' to="/dashboard/AddCloudBan">Add Home Page Content</Link>
+            <Link className='list-elements-dash' to="/dashboard/ShowCloudBan">Show Home Page Content</Link>
+        </div>
+        )}
+      </div>
+      <div>
+        <button className='dash-options' onClick={() => setDropdown21(!dropdown21)}>Service Page</button>
+        {dropdown21 && (
+          <div className='list-container'>
+             <Link className='list-elements-dash' to="/dashboard/AddCloudBan">Add Service Page Content</Link>
+            <Link className='list-elements-dash' to="/dashboard/ShowCloudBan">Show Service Page Content</Link>
+        </div>
+        )}
+      </div>
+      <div>
+        <button className='dash-options' onClick={() => setDropdown22(!dropdown22)}>Careers Page</button>
+        {dropdown22 && (
+          <div className='list-container'>
+             <Link className='list-elements-dash' to="/dashboard/AddCloudBan">Add Careers Page Content</Link>
+            <Link className='list-elements-dash' to="/dashboard/ShowCloudBan">Show Careers Page Content</Link>
+        </div>
+        )}
+      </div>
+      <div>
+        <button className='dash-options' onClick={() => setDropdown23(!dropdown23)}>About Us Page</button>
+        {dropdown23 && (
+          <div className='list-container'>
+             <Link className='list-elements-dash' to="/dashboard/AddCloudBan">Add About Us Page Content</Link>
+            <Link className='list-elements-dash' to="/dashboard/ShowCloudBan">Show About Us Page Content</Link>
+        </div>
+        )}
+      </div>
+      <div>
+        <button className='dash-options' onClick={() => setDropdown24(!dropdown24)}>Services Page</button>
+        {dropdown24 && (
+          <div className='list-container'>
+             <Link className='list-elements-dash' to="/dashboard/AddCloudBan">Add Services Page Content</Link>
+            <Link className='list-elements-dash' to="/dashboard/ShowCloudBan">Show Services Page Content</Link>
         </div>
         )}
       </div>

@@ -155,6 +155,30 @@ import AddFinCards from './pages/dashboard/industriesdash/Fintech Dash/FintechCa
 import EditFinCards from './pages/dashboard/industriesdash/Fintech Dash/FintechCards/EditFinCards';
 import ShowFinCards from './pages/dashboard/industriesdash/Fintech Dash/FintechCards/ShowFinCards';
 
+import AddAboutPageCont from './pages/dashboard/Other Pages/about us/AddAboutPageCont';
+import EditAboutPageCont from './pages/dashboard/Other Pages/about us/EditAboutPageCont';
+import ShowAboutPageCont from './pages/dashboard/Other Pages/about us/ShowAboutPageCont';
+
+import AddCarPageCont from "./pages/dashboard/Other Pages/careers/AddCarPageCont";
+import EditCarPageCont from "./pages/dashboard/Other Pages/careers/EditCarPageCont";
+import ShowCarPageCont from './pages/dashboard/Other Pages/careers/ShowCarPageCont';
+
+import AddHomPageCont from './pages/dashboard/Other Pages/homepage/AddHomPageCont';
+import EditHomPageCont from './pages/dashboard/Other Pages/homepage/EditHomPageCont';
+import ShowHomPageCont from './pages/dashboard/Other Pages/homepage/ShowHomPageCont';
+
+import AddServPageCont from './pages/dashboard/Other Pages/services/AddServPageCont';
+import EditSercPageCont from './pages/dashboard/Other Pages/services/EditServPageCont';
+import ShowServPageCont from './pages/dashboard/Other Pages/services/ShowServPageCont';
+
+import AddValPageCont from './pages/dashboard/Other Pages/value creation/AddValPageCont';
+import EditValPageCont from './pages/dashboard/Other Pages/value creation/EditValPageCont';
+import ShowValPageCont from './pages/dashboard/Other Pages/value creation/ShowValPageCont';
+
+
+
+
+
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -370,6 +394,28 @@ const ProtectedRoute = ({ children }) => {
           <Route path="EditFinCards/:fincardsId" element={<EditFinCards/>} />
           <Route path="AddFinCards" element={<AddFinCards />} />
           <Route path="ShowFinCards" element={<ShowFinCards />} />
+
+{/* ---------------------------------------------------------------------- */}
+
+          <Route path="EditAboutPage/:aboutuspageId" element={<EditAboutPageCont/>} />
+          <Route path="AddAboutPage" element={<AddAboutPageCont />} />
+          <Route path="ShowAboutPage" element={<ShowAboutPageCont />} />
+
+          <Route path="EditCareerPage/:careerspageId" element={<EditCarPageCont/>} />
+          <Route path="AddCareerPage" element={<AddCarPageCont />} />
+          <Route path="ShowCareerPage" element={<ShowCarPageCont />} />
+
+          <Route path="EditHomePage/:homepageId" element={<EditHomPageCont/>} />
+          <Route path="AddHomePage" element={<AddHomPageCont />} />
+          <Route path="ShowHomePage" element={<ShowHomPageCont />} />
+
+          <Route path="EditServicePage/:homepageId" element={<EditSercPageCont/>} />
+          <Route path="AddServicePage" element={<AddServPageCont />} />
+          <Route path="ShowServicePage" element={<ShowServPageCont />} />
+
+          <Route path="EditValuecPage/:valuecreationpageId" element={<EditValPageCont/>} />
+          <Route path="AddValuecPage" element={<AddValPageCont />} />
+          <Route path="ShowSValuecPage" element={<ShowValPageCont />} />
 
         </Route>
 
