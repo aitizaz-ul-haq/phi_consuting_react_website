@@ -97,10 +97,11 @@ ctadescription:"",
 
   return (
     <>
-      <Helmet>
-        <title>FinTech Consulting Solutions by Phi Consulting</title>
-        <meta name="description" content="Our unique investment approach centers on identifying undervalued businesses and subsequently enhancing their value through strategic business alliances, operational improvements, and financial restructuring." />
+       <Helmet>
+        <title>Empowering Startups and SMEs | Phi Consulting</title>
+        <meta name="description" content="Phi Consulting empowers startups and SMEs with expertise in Sales, Finance, and HR Consulting. Our unique investment approach enhances business value through strategic alliances and operational improvements. Trusted by industry leaders. Contact us to unlock your company's full potential." />
       </Helmet>
+
 
     {/* <!-- Hero Section --> */}
       <article class="hero">
