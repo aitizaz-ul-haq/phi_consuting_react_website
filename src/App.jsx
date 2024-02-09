@@ -176,7 +176,7 @@ import EditValPageCont from './pages/dashboard/Other Pages/value creation/EditVa
 import ShowValPageCont from './pages/dashboard/Other Pages/value creation/ShowValPageCont';
 
 
-
+import { Helmet } from 'react-helmet';
 
 
 const App = () => {
@@ -204,7 +204,39 @@ const ProtectedRoute = ({ children }) => {
   return isAuthenticated ? children : <Navigate to="/phi-remote-login" />;
 };
 
+const breadcrumbSchema =  {
+  "@context": "https://schema.org/", 
+  "@type": "BreadcrumbList", 
+  "itemListElement": [{
+    "@type": "ListItem", 
+    "position": 1, 
+    "name": "Phi Consulting | Home",
+    "item": "https://phi.consulting/home"  
+  },{
+    "@type": "ListItem", 
+    "position": 2, 
+    "name": "Solutions",
+    "item": "https://phi.consulting/solutions"  
+  },{
+    "@type": "ListItem", 
+    "position": 3, 
+    "name": "Blogs",
+    "item": "https://phi.consulting/blogs"  
+  },{
+    "@type": "ListItem", 
+    "position": 4, 
+    "name": "About Us",
+    "item": "https://phi.consulting/about-us"  
+  }]
+};
+
   return (
+    <>
+    <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+      </Helmet>
     <Router>
       <Routes>
         {/* Redirect from root to /home */}
@@ -421,6 +453,8 @@ const ProtectedRoute = ({ children }) => {
 
       </Routes>
     </Router>
+    </>
+    
   );
 };
 
