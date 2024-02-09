@@ -53,9 +53,6 @@ const AddJob = () => {
 
   return (
     <div className="form-container-dash">
-    <div className="form-wrapper">
-      <div className="heading-form">Add Jobs Below</div>
-      <div className="description-form">Given below is the form to enter jobs please enter title of the jobs in title section and its description in role description</div>
       <Form {...layout} form={form} name="add-job" onFinish={onFinish} style={{ maxWidth: 600 }}>
         <Form.Item name="title" label="Job Title" rules={[{ required: true }]}>
           <Input />
@@ -94,7 +91,6 @@ const AddJob = () => {
           </Space>
         </Form.Item>
       </Form>
-    </div>
     </div>
   );
 };
