@@ -20,7 +20,7 @@ import monitoricon from "../../assets/img/process_icons/monitor.png";
 import improveicon from "../../assets/img/process_icons/improve.png";
 
 import SmallWorkCard from '../../components/shared/cards/SmallWorkCard';
-
+import videosource from '../../assets/video/home-bg.mp4';
 // import workone from "../../assets/img/atob-card.png";
 // import worktwo from "../../assets/img/comp_logos/AToB-square.jpg";
 // import workthree from "../../assets/img/digitalocean-product.png";
@@ -498,6 +498,7 @@ useScrollToTop();
       {/* <!-- Section path  --> */}
       <article class="path">
         <section class="path-container">
+          
           <h2 class="path-heading">{data.processMainHeading}</h2>
           <p class="sales-process-desc">
           {data.processMainDesc}
@@ -638,6 +639,11 @@ useScrollToTop();
 
        {/* <!-- section new process --> */}
        <article class="process-new">
+       <video autoPlay loop muted className="video-background">
+          <source src={videosource} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
         <section class="process-new-container">
           <h2 class="path-heading">{data.processMainHeading}</h2>
           <p class="work-desc">

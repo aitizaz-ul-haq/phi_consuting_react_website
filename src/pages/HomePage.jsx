@@ -813,20 +813,7 @@ const HomePage = () => {
             <h3 class="testi-card-heading">{data.testonedesignation}</h3>
           </div>
 
-          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
-            <div class="circleBase type3 test-two">
-              <img src="" alt="" />
-            </div>
-
-            <p class="testi-quote">
-              <q
-                ><i
-                  >{data.testitwo}</i
-                ></q
-              >
-            </p>
-            <h3 class="testi-card-heading">{data.testtwodesignation}</h3>
-          </div>
+          
 
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-three">
@@ -842,13 +829,28 @@ const HomePage = () => {
             </p>
             <h3 class="testi-card-heading">{data.testthreedesignation}</h3>
           </div>
+
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
+            <div class="circleBase type3 test-two">
+              <img src="" alt="" />
+            </div>
+
+            <p class="testi-quote">
+              <q
+                ><i
+                  >{data.testitwo}</i
+                ></q
+              >
+            </p>
+            <h3 class="testi-card-heading">{data.testtwodesignation}</h3>
+          </div>
         </section>
       </article>
 
       {/* <!-- Achievement Section --> */}
       <article class="achievement">
         <section class="achievement-section">
-          <h2 class="ach-heading">Our Achievements</h2>
+          <h2 class="ach-heading">Recognitions</h2>
         </section>
         <section class="ach-badges-container" ref={achRef}>
           <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>

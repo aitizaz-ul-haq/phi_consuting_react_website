@@ -307,7 +307,7 @@ useEffect(() => {
                   />
                 </div>
                 <div class="benefit-desc">
-                {data.rewarddescription}
+                {data.rewardthree}
                 </div>
               </div>
               <div class="benefit">
