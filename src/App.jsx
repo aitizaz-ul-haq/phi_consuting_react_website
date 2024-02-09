@@ -409,7 +409,7 @@ const ProtectedRoute = ({ children }) => {
           <Route path="AddHomePage" element={<AddHomPageCont />} />
           <Route path="ShowHomePage" element={<ShowHomPageCont />} />
 
-          <Route path="EditServicePage/:homepageId" element={<EditSercPageCont/>} />
+          <Route path="EditServicePage/:servicespageId" element={<EditSercPageCont/>} />
           <Route path="AddServicePage" element={<AddServPageCont />} />
           <Route path="ShowServicePage" element={<ShowServPageCont />} />
 
