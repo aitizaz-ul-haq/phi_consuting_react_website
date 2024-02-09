@@ -29,61 +29,100 @@ import SmallWorkCard from '../components/shared/cards/SmallWorkCard';
 import { TypeAnimation } from 'react-type-animation';
 import caseStudies from "../data/caseStudies.json";
 
-
+import axios from 'axios';
 const Services = () => {
-
-//   const [isVisiblecard, setIsVisiblecard] = useState(false);
-//   const cardsRef = useRef(null);
-
-//   const [isVisibleTesti, setIsVisibleTesti] = useState(false);
-//  const testiRef = useRef(null);
-
-//  const [isVisibleAch, setIsVisibleAch] = useState(false);
-//   const achRef = useRef(null);
 
   const [processNewVisible, setProcessNewVisible] = useState(false);
   const processNewRef = useRef(null);
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         setIsVisiblecard(entry.isIntersecting);
-  //       });
-  //     },
-  //     { threshold: 0.5 }
-  //   );
-
-  //   if (cardsRef.current) {
-  //     observer.observe(cardsRef.current);
-  //   }
-
-  //   return () => observer.disconnect();
-  // }, []);
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(entries => {
-  //       entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
-  //   }, { threshold: 0.5 });
+  const [data, setData] = useState({
+    heroHeading: '',
+    heroDescription: '',
+    solutionsHeading: '',
+    solutionsDescription: '',
+    serviceOneDescription: '',
+    serviceTwoDescription: '',
+    serviceThreeDescription: '',
+    serviceFourDescription: '',
+    servicesPathHeading: '',
+    servicesPathDescription: '',
+    processOneHeading: '',
+    processOneDescription: '',
+    processTwoHeading: '',
+    processTwoDescription: '',
+    processThreeHeading: '',
+    processThreeDescription: '',
+    processFourHeading: '',
+    processFourDescription: '',
+    processFiveHeading: '',
+    processFiveDescription: '',
+    processSixHeading: '',
+    processSixDescription: '',
+    processSevenHeading: '',
+    processSevenDescription: '',
+    insightsHeading: '',
+    insightsDescription: '',
+    boardHeading: '',
+    boardDescription: '',
+    testiHeading: '',
+    testiDescription: '',
+    testiOne: '',
+    testiOneDesignation: '',
+    testiTwo: '',
+    testiTwoDesignation: '',
+    testiThree: '',
+    testiThreeDesignation: '',
+    solutionsctaheading:'',
+    solutionsctadescription:''
+  });
   
-  //   observer.observe(testiRef.current);
-  //   return () => observer.disconnect();
-  // }, []);
 
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//         (entries) => {
-//             entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
-//         },
-//         { threshold: 0.5 }
-//     );
+  useEffect(() => {
+    const fetchHomePageData = async () => {
+      try {
+        const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/servicepage');
+        console.log(`your data`, response.data);
+        if (response.data && response.data.length > 0) {
+          const homepageData = response.data[0]; // Assuming the first entry is what we want
+          setData({
+            heroHeading: homepageData.heroheading,
+            heroDescription: homepageData.herodescription,
+            solutionsHeading: homepageData.solutionsheading,
+            solutionsDescription: homepageData.solutionsdescription,
+            serviceOneDescription: homepageData.serviceonedescription,
+            serviceTwoDescription: homepageData.servicetwodescription,
+            serviceThreeDescription: homepageData.servicethreedescription,
+            serviceFourDescription: homepageData.serviceofourdescription,
+            servicesPathHeading: homepageData.servicespathheading,
+            servicesPathDescription: homepageData.servicesPathDescription,
+            processOneHeading: homepageData.processoneheading,
+            processOneDescription: homepageData.processonedescription,
+            processTwoHeading: homepageData.processtwoheading,
+            processTwoDescription: homepageData.processtwodescription,
+            processThreeHeading: homepageData.processthreeheading,
+            processThreeDescription: homepageData.processthreedescription,
+            processFourHeading: homepageData.processfourheading,
+            processFourDescription: homepageData.processfourdescription,
+            processFiveHeading: homepageData.processfiveheading,
+            processFiveDescription: homepageData.processfivedescription,
+            processsixheading: homepageData.processsixheading,
+            processsixdescription: homepageData.processsixdescription,
+            processsevenheading: homepageData.processsevenheading,
+            processsevendescription: homepageData.processsevendescription,
+            processeightheading: homepageData.processeightheading,
+            processeightdescription: homepageData.processeightdescription,
+            solutionsctaheading: homepageData.solutionsctaheading,
+            solutionsctadescription: homepageData.solutionsctadescription,
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching homepage data:", error);
+      }
+    };
 
-//     observer.observe(achRef.current);
-//     return () => observer.disconnect();
-// }, []);
+    fetchHomePageData();
+  }, []);
 
 useEffect(() => {
   const observer = new IntersectionObserver(
@@ -125,7 +164,6 @@ useEffect(() => {
     window.location.href = '/contact';
   }
 
-  const firstThreeCaseStudies = caseStudies.slice(0, 3);
   return (
     <>
    <Helmet>
@@ -154,11 +192,7 @@ useEffect(() => {
               
             </h2>
             <p class="hero-desc-services-page">
-              Unlock the complete potential of your enterprise through Phi
-              Consulting's comprehensive suite of solutions. Our expertise spans
-              GTM Strategy, HR & Recruitment, Investor Relations & Financial Consulting. We are not just consultants; we are your
-              dedicated partners in navigating challenges and ensuring
-              sustainable growth.
+              {data.heroDescription}
             </p>
             <div class="consult-button-services-page" onClick={gotoContacts}>
               Schedule a Free Consultation
@@ -170,12 +204,10 @@ useEffect(() => {
       {/* <!-- Services page section one strategic solutions --> */}
       <article class="strategic-solutions">
         <h2 class="strategic-heading">
-          Strategic Solutions Tailored to Your Needs
+          {data.solutionsHeading}
         </h2>
         <p class="work-desc">
-          From fine-tuning sales strategies to optimizing financial health,
-          cultivating a dynamic workforce, and enhancing customer experiences –
-          we are your catalyst for achieving unparalleled growth.
+          {data.solutionsDescription}
         </p>
         <div class="services-banner-container">
           <div class="card-row-top">
@@ -191,8 +223,7 @@ useEffect(() => {
               </div>
               <h3 class="card-present-title">GTM Strategy</h3>
               <div class="card-present-desc">
-                Scale your sales operations with precision and excellence,
-                targeting the right customers and optimizing sales cycles.
+                {data.serviceOneDescription}
               </div>
             </div>
             <div class="card-service-show sales-tab-two" onClick={handleTabClickOne}>
@@ -207,8 +238,7 @@ useEffect(() => {
               </div>
               <h3 class="card-present-title">Investor Relations</h3>
               <div class="card-present-desc">
-                Navigate challenges, optimize strategies, and achieve
-                sustainable growth with our proven expertise.
+               {data.serviceTwoDescription}
               </div>
             </div>
             <div class="card-service-show sales-tab-three" onClick={handleTabClickThree}>
@@ -223,8 +253,7 @@ useEffect(() => {
               </div>
               <h3 class="card-present-title">Financial Consulting</h3>
               <div class="card-present-desc">
-                Drive profitability and fiscal responsibility through strategic
-                financial guidance.
+               {data.serviceThreeDescription}
               </div>
             </div>
             <div class="card-service-show sales-tab-four" onClick={handleTabClickFour}>
@@ -239,8 +268,7 @@ useEffect(() => {
               </div>
               <h3 class="card-present-title">HR & Recruitment</h3>
               <div class="card-present-desc">
-                Build a dynamic and skilled workforce with our specialized HR
-                solutions.
+               {data.serviceFourDescription}
               </div>
             </div>
           </div>
@@ -250,11 +278,9 @@ useEffect(() => {
       {/* <!-- Section path  --> */}
       <article class="path">
         <section class="path-container">
-          <h2 class="path-heading">A Proven Path to Success</h2>
+          <h2 class="path-heading">{data.servicesPathHeading}</h2>
           <p class="work-desc">
-            Explore the journey to excellence with Phi Consulting's strategic
-            process – your gateway to optimizing sales performance, enhancing
-            customer experience, and achieving sustained growth.
+            {data.servicesPathDescription}
           </p>
           <div class="process-container">
             <div class="circle-container">
@@ -267,10 +293,9 @@ useEffect(() => {
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading">Define Your Goals</h2>
+                <h2 class="circle-heading">{data.processOneHeading}</h2>
                 <h3 class="circle-text">
-                  We kick off our partnership by understanding your unique
-                  challenges, aspirations, and opportunities.
+                  {data.processOneDescription}
                 </h3>
               </div>
             </div>
@@ -284,9 +309,9 @@ useEffect(() => {
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading">Plan & Map Your Process</h2>
+                <h2 class="circle-heading">{data.processTwoHeading}</h2>
                 <h3 class="circle-text">
-                  Crafting a tailored roadmap is key to success.
+                  {data.processTwoDescription}
                 </h3>
               </div>
             </div>
@@ -300,10 +325,9 @@ useEffect(() => {
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading">Set Actions</h2>
+                <h2 class="circle-heading">{data.processThreeHeading}</h2>
                 <h3 class="circle-text">
-                  Define clear and actionable steps that propel your strategy
-                  forward.
+                 {data.processThreeDescription}
                 </h3>
               </div>
             </div>
@@ -317,10 +341,9 @@ useEffect(() => {
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading">Assign Stakeholders</h2>
+                <h2 class="circle-heading">{data.processFourHeading}</h2>
                 <h3 class="circle-text">
-                  Ensure a unified and accountable effort by assigning
-                  stakeholders to each action.
+                  {data.processFourDescription}
                 </h3>
               </div>
             </div>
@@ -334,10 +357,9 @@ useEffect(() => {
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading">Test the Process</h2>
+                <h2 class="circle-heading">{data.processFiveHeading}</h2>
                 <h3 class="circle-text">
-                  Before full implementation, we rigorously test the devised
-                  strategies.
+                 {data.processFiveDescription}
                 </h3>
               </div>
             </div>
@@ -351,9 +373,9 @@ useEffect(() => {
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading">Implement the Process</h2>
+                <h2 class="circle-heading">{data.processsixheading}</h2>
                 <h3 class="circle-text">
-                  With a well-tested plan in place, we move to implementation.
+                  {data.processsixdescription}
                 </h3>
               </div>
             </div>
@@ -367,10 +389,9 @@ useEffect(() => {
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading">Monitor the Results</h2>
+                <h2 class="circle-heading">{data.processsevenheading}</h2>
                 <h3 class="circle-text">
-                  We don't stop at implementation. Continuous monitoring of
-                  results is integral to our process.
+                 {data.processsevendescription}
                 </h3>
               </div>
             </div>
@@ -384,9 +405,9 @@ useEffect(() => {
                     height="60px"
                   />
                 </div>
-                <h2 class="circle-heading">Make Improvements</h2>
+                <h2 class="circle-heading">{data.processeightheading}</h2>
                 <h3 class="circle-text">
-                  Based on monitored results, we identify areas for improvement.
+                {data.processeightdescription}
                 </h3>
               </div>
             </div>
@@ -394,164 +415,11 @@ useEffect(() => {
         </section>
       </article>
 
-
-
-      {/* <!-- section new process --> */}
-      {/* <article class="process-new">
-        <section class="process-new-container">
-          <h2 class="path-heading">A Proven Path to Success</h2>
-          <p class="work-desc">
-            Explore the journey to excellence with Phi Consulting's strategic
-            process – your gateway to optimizing sales performance, enhancing
-            customer experience, and achieving sustained growth.
-          </p>
-          <div class="process-new-section">
-            <div class="left-process-section">
-              <div class="tooltip-right">
-                <img
-                  src="../assets/img/process_icons/goal.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Define Your Goals</div>
-                  <div class="process-new-description">
-                    Understand your unique challenges, aspirations, and
-                    opportunities to set the foundation for our strategic
-                    approach.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div class="tooltip-left">
-                <img
-                  src="../assets/img/process_icons/plan.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Plan & Map Your Process</div>
-                  <div class="process-new-description-right-side">
-                    Craft a tailored roadmap aligned with your goals, ensuring a
-                    clear path forward.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="process-new-section">
-            <div class="left-process-section">
-              <div class="tooltip-right">
-                <img
-                  src="../assets/img/process_icons/action.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Set Actions</div>
-                  <div class="process-new-description">
-                    Define clear, measurable, and achievable steps, creating a
-                    roadmap for success.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div class="tooltip-left">
-                <img
-                  src="../assets/img/process_icons/assign.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Assign Stakeholders</div>
-                  <div class="process-new-description-right-side">
-                    Foster collaboration by assigning key individuals
-                    responsible for successful execution.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="process-new-section">
-            <div class="left-process-section">
-              <div class="tooltip-right">
-                <img
-                  src="../assets/img/process_icons/test.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Test the Process</div>
-                  <div class="process-new-description">
-                    Rigorously test and refine strategies before full
-                    implementation for effectiveness and adaptability.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div class="tooltip-left">
-                <img
-                  src="../assets/img/process_icons/implement.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Implement the Process</div>
-                  <div class="process-new-description-right-side">
-                    Execute strategies flawlessly with our hands-on approach,
-                    bringing the plan to life.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="process-new-section">
-            <div class="left-process-section">
-              <div class="tooltip-right">
-                <img
-                  src="../assets/img/process_icons/monitor.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Monitor the Results</div>
-                  <div class="process-new-description">
-                    Continuously track key metrics, assess performance, and
-                    ensure strategies yield desired outcomes.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-process-section">
-              <div class="tooltip-left">
-                <img
-                  src="../assets/img/process_icons/improve.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Make Improvements</div>
-                  <div class="process-new-description-right-side">
-                    Identify areas for improvement based on results, refining
-                    strategies for ongoing optimization.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </article> */}
-
 <article class="process-new">
         <section class="process-new-container">
-          <h2 class="path-heading">A Proven Path to Success</h2>
+          <h2 class="path-heading">{data.servicesPathHeading}</h2>
           <p class="work-desc">
-            Explore the journey to excellence with Phi Consulting's strategic
-            process – your gateway to optimizing sales performance, enhancing
-            customer experience, and achieving sustained growth.
+            {data.servicesPathDescription}
           </p>
           <div class="process-new-section">
             <div class="left-process-section" ref={processNewRef}>
@@ -562,11 +430,9 @@ useEffect(() => {
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Define Your Goals</div>
+                  <div class="process-new-heading">{data.processOneHeading}</div>
                   <div class="process-new-description">
-                    Understand your unique challenges, aspirations, and
-                    opportunities to set the foundation for our strategic
-                    approach.
+                    {data.processOneDescription}
                   </div>
                 </div>
               </div>
@@ -579,10 +445,9 @@ useEffect(() => {
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Plan & Map Your Process</div>
+                  <div class="process-new-heading">{data.processTwoHeading}</div>
                   <div class="process-new-description-right-side">
-                    Craft a tailored roadmap aligned with your goals, ensuring a
-                    clear path forward.
+                   {data.processTwoDescription}
                   </div>
                 </div>
               </div>
@@ -597,10 +462,9 @@ useEffect(() => {
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Set Actions</div>
+                  <div class="process-new-heading">{data.processThreeHeading}</div>
                   <div class="process-new-description">
-                    Define clear, measurable, and achievable steps, creating a
-                    roadmap for success.
+                    {data.processThreeDescription}
                   </div>
                 </div>
               </div>
@@ -613,10 +477,9 @@ useEffect(() => {
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Assign Stakeholders</div>
+                  <div class="process-new-heading">{data.processFourHeading}</div>
                   <div class="process-new-description-right-side">
-                    Foster collaboration by assigning key individuals
-                    responsible for successful execution.
+                    {data.processFourDescription}
                   </div>
                 </div>
               </div>
@@ -631,10 +494,9 @@ useEffect(() => {
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Test the Process</div>
+                  <div class="process-new-heading">{data.processFiveHeading}</div>
                   <div class="process-new-description">
-                    Rigorously test and refine strategies before full
-                    implementation for effectiveness and adaptability.
+                    {data.processFiveDescription}
                   </div>
                 </div>
               </div>
@@ -647,10 +509,9 @@ useEffect(() => {
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Implement the Process</div>
+                  <div class="process-new-heading">{data.processsixheading}</div>
                   <div class="process-new-description-right-side">
-                    Execute strategies flawlessly with our hands-on approach,
-                    bringing the plan to life.
+                    {data.processsixdescription}
                   </div>
                 </div>
               </div>
@@ -665,10 +526,9 @@ useEffect(() => {
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Monitor the Results</div>
+                  <div class="process-new-heading">{data.processsevenheading}</div>
                   <div class="process-new-description">
-                    Continuously track key metrics, assess performance, and
-                    ensure strategies yield desired outcomes.
+                    {data.processsevendescription}
                   </div>
                 </div>
               </div>
@@ -681,10 +541,9 @@ useEffect(() => {
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">Make Improvements</div>
+                  <div class="process-new-heading">{data.processeightheading}</div>
                   <div class="process-new-description-right-side">
-                    Identify areas for improvement based on results, refining
-                    strategies for ongoing optimization.
+                   {data.processeightdescription}
                   </div>
                 </div>
               </div>
@@ -693,72 +552,14 @@ useEffect(() => {
         </section>
       </article>
 
-      {/* <!-- Work small version Section --> */}
-      {/* <article class="work" ref={cardsRef}>
-        <section class="work-section">
-          <h2 class="work-heading">Client Success Stories</h2>
-          <p class="work-desc">
-            Explore our portfolio to witness the transformative impact of Phi
-            Consulting on businesses like yours. Each success story is a
-            testament to our commitment to driving sales excellence.
-          </p>
-          <div class="work-row">
-          {firstThreeCaseStudies.map(study => (
-                <SmallWorkCard key={study.id} caseStudy={study} isVisible={isVisiblecard} />
-            ))}
-          </div>
-
-          <div class="right-button spacing-under">
-          <span><Link to="/casestudies" className='morcases'>View More Case Studies</Link></span>
-          </div>
-        </section>
-      </article> */}
-
-       {/* <!-- Achievement Section --> */}
-     {/* <article class="achievement">
-        <section class="achievement-section">
-          <h2 class="ach-heading">Our Achievements</h2>
-        </section>
-        <section class="ach-badges-container" ref={achRef}>
-          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
-            <img
-               src={achiconone}
-              alt=""
-              width="200"
-              height="230"
-            />
-          </div>
-          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
-            <img
-               src={achicontwo}
-              alt=""
-              width="200"
-              height="150"
-            />
-          </div>
-
-          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
-            <img
-             src={achiconthree}
-              alt=""
-              width="250"
-              height="220"
-            />
-          </div>
-
-       
-        </section>
-      </article> */}
 
       {/* <!-- Call to Action Section --> */}
       <article class="cta-container">
         <section class="cta-sections-container">
           <div class="cta-content">
-            <div class="cta-heading">Ready to Elevate Your Business?</div>
+            <div class="cta-heading">{data.solutionsctaheading}</div>
             <div class="cta-descrip">
-              Unlock growth, reduce costs, and maximize efficiency with Phi
-              Consulting. Contact us today for a consultation and take the first
-              step toward business excellence.
+             {data.solutionsctadescription}
             </div>
           </div>
           <div class="cta-button-section">
@@ -773,67 +574,6 @@ useEffect(() => {
         </section>
       </article>
 
-      {/* <!-- Testimonial Section --> */}
-      {/* <article class="testimonial">
-        <section className="testimonial-container">
-          <h2 class="testi-heading">
-          We Have Successfully Retained Our Top 3 Clients For Over 3 Years.
-          </h2>
-          <p class="testi-desc">
-            Our clients speak for the transformative impact of Phi Consulting.
-            Partner with us and discover the potential for unprecedented growth,
-            reduced costs, and optimized efficiency.
-          </p>
-        </section>
-
-        <section className="testi-cards-container" ref={testiRef}>
-          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
-            <div class="circleBase type3 testi-one">
-             
-            </div>
-
-            <p class="testi-quote">
-              <q
-                ><i
-                  >Phi Consulting has delivered the project on time, meeting the client's expectations. They have communicated frequently and promptly via email and virtual meetings, ensuring an effective workflow. Their ability to adapt and willingness to improve the process are hallmarks of their work.
-                  </i
-                ></q
-              >
-            </p>
-            <h3 class="testi-card-heading">Head of Customer Support - AtoB Financials</h3>
-          </div>
-
-
-          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
-            <div class="circleBase type3 test-three">
-              <img src="" alt="" />
-            </div>
-
-            <p class="testi-quote">
-              <q
-                ><i
-                  >Phi Consulting's work meets the client's expectations and has a strong 60 Net Promoter Score. The team has an easy onboarding process and a turn-key nature that has impressed the client.
-                  Head of Sales & Business Development - AtoB Financials</i
-                ></q
-              >
-            </p>
-            <h3 class="testi-card-heading">Head of Sales & Business Development - AtoB Financials</h3>
-          </div>
-        </section>
-      </article> */}
-
-    
-
-      {/* <Routes>
-        <Route path="/" element={<Outlet />}>
-          <Route path="customer-experience" element={<CustomerExperience />} />
-          <Route path="financial-consulting" element={<FinancialConsulting />} />
-          <Route path="buisness-consulting" element={<BuisnessConsulting />} />
-          <Route path="hr-consulting" element={<HrConsulting />} />
-          <Route path="sales-consulting" element={<SalesConsulting />} />
-         
-        </Route>
-      </Routes> */}
     </>
   )
 }

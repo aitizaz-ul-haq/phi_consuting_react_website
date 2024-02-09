@@ -84,8 +84,34 @@ const HomePage = () => {
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-
   const toggleDarkMode = () => setDarkMode(!darkMode);
+  const [data, setData] = useState({
+    _id: '',
+    heroHeading: '',
+    heroDescription: '',
+    clientHeading: '',
+    clientDescription: '',
+    valueHeading: '',
+    valueDescription: '',
+    servicesHeading: '',
+    servicesDescription: '',
+    caseStudyHeading: '',
+    caseStudyDescription: '',
+    ctaHeading: '',
+    ctaDescription: '',
+    testiHeading: '',
+    testiDescription: '',
+    testiOne: '',
+    testiOneDesignation: '',
+    testiTwo: '',
+    testiTwoDesignation: '',
+    testiThree: '',
+    testiThreeDesignation: '',
+    insightsHeading: '',
+    insightsDescription: '',
+    boardHeading: '',
+    boardDescription: '',
+  });
 
     const scrollToTop = () => {
       window.scrollTo({
@@ -95,10 +121,54 @@ const HomePage = () => {
   };
 
   useEffect(() => {
+    const fetchHomePageData = async () => {
+      try {
+        const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/homepage');
+        console.log(`your data`, response.data);
+        if (response.data && response.data.length > 0) {
+          const homepageData = response.data[0]; // Assuming the first entry is what we want
+          setData({
+            _id: homepageData._id,
+            heroheading: homepageData.heroheading,
+            herodescription: homepageData.herodescription,
+            clientheading: homepageData.clientheading,
+            clientdescription: homepageData.clientdescription,
+            valueheading: homepageData.valueheading,
+            valuedescription: homepageData.valuedescription,
+            servicesheading: homepageData.servicesheading,
+            servicesDescription: homepageData.servicesDescription,
+            casestudyheading: homepageData.casestudyheading,
+            casestudyDescription: homepageData.casestudyDescription,
+            ctaheading: homepageData.ctaheading,
+            ctadescription: homepageData.ctadescription,
+            testiheading: homepageData.testiheading,
+            testidescription: homepageData.testidescription,
+            testione: homepageData.testione,
+            testonedesignation: homepageData.testonedesignation,
+            testitwo: homepageData.testitwo,
+            testtwodesignation: homepageData.testtwodesignation,
+            testithree: homepageData.testithree,
+            testthreedesignation: homepageData.testthreedesignation,
+            insightsheading: homepageData.insightsheading,
+            insightsdescription: homepageData.insightsdescription,
+            boardheading: homepageData.boardheading,
+            boarddescription: homepageData.boarddescription,
+            // Set other fields based on your API response structure
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching homepage data:", error);
+      }
+    };
+
+    fetchHomePageData();
+  }, []);
+
+  useEffect(() => {
     const fetchBlogs = async () => {
       try {
         // Replace with your actual API endpoint
-        const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me//blogs'); 
+        const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/blogs'); 
         setBlogs(response.data);
         console.log(response.data);
       } catch (error) {
@@ -133,8 +203,6 @@ const HomePage = () => {
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-  // const firstThreeCaseStudies = caseStudies.slice(0, 3);
 
   useEffect(() => {
       const observer = new IntersectionObserver(
@@ -411,12 +479,7 @@ const HomePage = () => {
                 </span>
             </h2>
             <p class="hero-desc">
-              Phi Consulting is your dedicated technology consulting partner,
-              committed to delivering comprehensive business solutions tailored
-              for Startups and SMEs in the dynamic realms of IoT, Fintech, SaaS,
-              and IaaS. We empower clients to achieve operational excellence,
-              foster business expansion, and enhance the overall customer
-              experience.
+            {data.herodescription}
             </p>
             <div class="consult-button" onClick={gotoContacts}><Tooltip title="Contact Page">Schedule a Free Consultation</Tooltip></div>
           </div>
@@ -427,12 +490,9 @@ const HomePage = () => {
       <article className={`clients ${isVisible ? 'animate' : ''}`} ref={containerRef}>
         <section class="client-container">
           <div class="client-content">
-            <h2 class="client-heading">Trusted by Industry Leaders</h2>
+            <h2 class="client-heading">{data.clientheading}</h2>
             <p class="client-desc">
-              Phi Consulting has empowered startups and SMEs across diverse
-              industries. <br />
-              Our clients trust us for our deep expertise, personalized service,
-              and commitment to delivering tangible results.
+            {data.clientdescription}
             </p>
             <div class="client-logo-container">
               <div class="logo-container-one">
@@ -516,10 +576,9 @@ const HomePage = () => {
           <div class="value-content">
             <div class="new-values">
               <div className={`new-value-left-section ${isVisibleFirst ? 'visible-left' : ''}`}>
-                <h2 class="value-heading">Drive Success with Phi Consulting</h2>
+                <h2 class="value-heading">{data.valueheading}</h2>
                 <p class="value-desc">
-                  We specialize in driving growth by increasing revenue and
-                  driving sales while simultaneously reducing costs and time.
+                {data.valuedescription}
                 </p>
               </div>
               <div  className={`new-value-right-section ${isVisibleFirst ? 'visible-right' : ''}`}>
@@ -531,7 +590,6 @@ const HomePage = () => {
                 />
               </div>
             </div>
-            
           </div>
         </section>
       </article>
@@ -540,12 +598,10 @@ const HomePage = () => {
       <article className='services'>
         <section className={`services-container ${isVisibleServices ? 'visible' : ''}`} ref={servicesRef}>
           <h2 class="services-heading">
-            We have the solutions to propel your success.
+          {data.servicesheading}
           </h2>
           <p class="services-desc">
-            Choose Phi Consulting for end-to-end services tailored to grow your
-            business. Our expertise spans diverse industries, focusing on
-            Fintech, IoT, SaaS, and IaaS.
+          {data.servicesDescription}
           </p>
           <div class="services-material">
             <div class="services-content">
@@ -658,13 +714,10 @@ const HomePage = () => {
       <article class="work">
         <section class="work-section">
           <h2 class="work-heading">
-            Redefining Success Through Strategic Partnerships
+          {data.casestudyheading}
           </h2>
           <p class="work-desc">
-            Our hands-on approach ensures that startups and SMEs thrive in
-            building their consumer base. From launching new products to
-            improving existing ones, we are ready to roll up our sleeves and
-            help you achieve your goals.
+          {data.casestudyDescription}
           </p>
           {caseStudies.map((study, index) => {
   
@@ -715,11 +768,9 @@ const HomePage = () => {
       <article class="cta-container">
         <section class="cta-sections-container">
           <div class="cta-content">
-            <div class="cta-heading">Ready to Scale Your Business?</div>
+            <div class="cta-heading">{data.ctaheading}</div>
             <div class="cta-descrip">
-              Discover the potential for unprecedented growth, reduced costs,
-              and optimized efficiency. Partner with Phi Consulting – Let's
-              Start the Journey Together.
+            {data.ctadescription}
             </div>
           </div>
           <div class="cta-button-section">
@@ -738,30 +789,28 @@ const HomePage = () => {
       <article class="testimonial">
         <section className="testimonial-container">
           <h2 class="testi-heading">
-          We Have Successfully Retained Our Top 3 Clients For Over 3 Years.
+          {data.testiheading}
           </h2>
           <p class="testi-desc">
-            Our clients speak for the transformative impact of Phi Consulting.
-            Partner with us and discover the potential for unprecedented growth,
-            reduced costs, and optimized efficiency.
+          {data.testidescription}
           </p>
         </section>
 
         <section className="testi-cards-container" ref={testiRef}>
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 testi-one">
-              {/* <!-- <img src="./assets/img/testimonial_one.webp" alt="" /> --> */}
+             
             </div>
 
             <p class="testi-quote">
               <q
                 ><i
-                  >Phi Consulting has delivered the project on time, meeting the client's expectations. They have communicated frequently and promptly via email and virtual meetings, ensuring an effective workflow. Their ability to adapt and willingness to improve the process are hallmarks of their work.
+                  >{data.testione}
                   </i
                 ></q
               >
             </p>
-            <h3 class="testi-card-heading">Head of Customer Support - <span className='company-test-desig-one'>AtoB</span> Financials</h3>
+            <h3 class="testi-card-heading">{data.testonedesignation}</h3>
           </div>
 
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
@@ -772,11 +821,11 @@ const HomePage = () => {
             <p class="testi-quote">
               <q
                 ><i
-                  >I have had a very good experience with PHI over the past 3 years. They are able to ramp up very quickly with GTM personnel when directed. The personnel they bring on almost always hit the mark. If someone was not up to caliber, the PHI leadership team was quick to act and upgrade. Phi is very easy to work with and acts more like a partner than a contractor. </i
+                  >{data.testitwo}</i
                 ></q
               >
             </p>
-            <h3 class="testi-card-heading">Brendan Meuse - VP, Revenue Operations <span className='company-test-desig-two'>Digital Ocean</span></h3>
+            <h3 class="testi-card-heading">{data.testtwodesignation}</h3>
           </div>
 
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
@@ -787,12 +836,11 @@ const HomePage = () => {
             <p class="testi-quote">
               <q
                 ><i
-                  >Phi Consulting's work meets the client's expectations and has a strong 60 Net Promoter Score. The team has an easy onboarding process and a turn-key nature that has impressed the client.
-                  Head of Sales & Business Development AtoB Financials</i
+                  >{data.testithree}</i
                 ></q
               >
             </p>
-            <h3 class="testi-card-heading">Head of Sales & Business Development <span className='company-test-desig-one'>AtoB</span> Financials</h3>
+            <h3 class="testi-card-heading">{data.testthreedesignation}</h3>
           </div>
         </section>
       </article>
@@ -828,43 +876,15 @@ const HomePage = () => {
               height="220"
             />
           </div>
-
-          {/* <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
-            <img
-              src={clutchone}
-              alt=""
-              width="200"
-              height="230"
-            />
-          </div>
-          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
-            <img
-              src={BBB}
-              alt=""
-              width="200"
-              height="150"
-            />
-          </div>
-
-          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
-            <img
-              src={clutchtwo}
-              alt=""
-              width="250"
-              height="220"
-            />
-          </div> */}
         </section>
       </article>
 
       {/* <!-- Blog Section --> */}
       <article class="blog">
         <section class="blog-container">
-          <h2 class="blog-title">Explore Our Insights</h2>
+          <h2 class="blog-title">{data.insightsheading}</h2>
           <p class="blog-desc">
-            Dive into the world of business consulting, financial strategies,
-            and industry trends through our blog. Stay informed and inspired as
-            we share our knowledge and expertise.
+          {data.insightsdescription}
           </p>
         </section>
         <section class="blog-cards-container">
@@ -888,19 +908,13 @@ const HomePage = () => {
             Proven Expertise | Personalized Service | Innovation at Core
           </h3>
           <h2 class="banner-title">
-            Phi Consulting isn't just an outsource & offshore consulting firm –
-            we're your dedicated partner in success.
+            {data.boardheading}
           </h2>
 
           <p class="banner-desc"></p>
 
           <p class="banner-desc second-para">
-            Phi Consulting stands out in the consulting landscape, offering a
-            unique blend of expertise, innovation, and personalized service that
-            sets us apart from the rest. Choose Phi Consulting for a partnership
-            that's defined by accountability, adaptability, and a relentless
-            commitment to your success. Together, let's redefine what's possible
-            for your business.
+            {data.boarddescription}
           </p>
 
           <div class="right-button" onClick={gotoContacts}>
@@ -908,8 +922,6 @@ const HomePage = () => {
           </div>
         </section>
       </article>
-
-      {/* <ScrollToTopButton /> */}
     </>
   )
 }

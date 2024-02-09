@@ -30,6 +30,71 @@ const Careers = () => {
   const perkRef = useRef(null);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  const [data, setData] = useState({
+   
+  
+heroheading:"",
+herodescription:"",
+cultureheading:"",
+culturedescription:"",
+nuggetoneheading:"",
+nuggetonedescription:"",
+nuggettwoheading:"",
+nuggettwodescription:"",
+nuggetthreeheading:"",
+nuggetthreedescription:"",
+nuggetfourheading:"",
+nuggetfourdescription:"",
+rewardheading:"",
+rewarddescription:"",
+rewardone:"",
+rewardtwo:"",
+rewardthree:"",
+rewardfour:"",
+careerctaheading:"",
+careerctadescription:"",
+    
+      });
+    
+useEffect(() => {
+        const fetchHomePageData = async () => {
+          try {
+            const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/aboutuspage');
+            console.log(`your data`, response.data);
+            if (response.data && response.data.length > 0) {
+              const homepageData = response.data[0]; // Assuming the first entry is what we want
+              setData({
+                heroheading: homepageData.heroheading,
+                herodescription: homepageData.herodescription,
+                cultureheading: homepageData.excellenceheading, // Assuming excellence maps to culture
+                culturedescription: homepageData.excellencedescription, // Assuming excellence maps to culture
+                nuggetoneheading: homepageData.qualityheading, // Assuming quality maps to nugget one
+                nuggetonedescription: homepageData.qualityonedescription, // Assuming quality maps to nugget one
+                nuggettwoheading: homepageData.qualitytwodescription, // Assuming quality maps to nugget two
+                nuggettwodescription: homepageData.qualitythreedescription, // Adjust based on actual mapping
+                nuggetthreeheading: homepageData.qualityfourdescription, // Adjust based on actual mapping
+                nuggetthreedescription: homepageData.teamheading, // Assuming team maps to nugget three
+                nuggetfourheading: homepageData.teamdescription, // Assuming team maps to nugget four
+                nuggetfourdescription: homepageData.locationheading, // Adjust based on actual mapping
+                rewardheading: homepageData.locationwords, // Assuming locationwords maps to reward
+                rewarddescription: homepageData.maponetitle, // Assuming maponetitle maps to reward description
+                rewardone: homepageData.maptwotitle, // Adjust based on actual mapping
+                rewardtwo: homepageData.rewardtwo, // Directly mapped
+                rewardthree: homepageData.livefromphi, // Assuming livefromphi maps to reward three
+                rewardfour: homepageData.livefromphisubheading, // Assuming livefromphisubheading maps to reward four
+                careerctaheading: homepageData.livefromphidescription, // Assuming livefromphidescription maps to career cta heading
+                careerctadescription: homepageData.testimonilaheading, 
+              });
+            }
+          } catch (error) {
+            console.error("Error fetching homepage data:", error);
+          }
+        };
+    
+        fetchHomePageData();
+  }, []);
+
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -92,10 +157,7 @@ const Careers = () => {
               
             </h2>
             <p class="hero-desc-careers">
-              Welcome to Phi Consulting Careers - where innovation meets
-              opportunity. Explore a rewarding career journey with us and be a
-              part of a dynamic team committed to reshaping industries and
-              driving success.
+              {data.herodescription}
             </p>
             {/* <!-- <div class="consult-button-careers">
               Schedule a Free Consultation
@@ -107,13 +169,9 @@ const Careers = () => {
       {/* <!-- Work Culture Section --> */}
       <article  className={`culture ${isVisibleCulture ? 'visible' : ''}`} ref={cultureRef}>
         <section class="culture-container">
-          <h2 class="culture-heading">Our Work Culture</h2>
+          <h2 class="culture-heading">{data.cultureheading}</h2>
           <p class="culture-desc">
-            At Phi Consulting, we foster a work culture that inspires
-            creativity, values collaboration, and celebrates excellence. Join a
-            team where your ideas are heard, your skills are valued, and your
-            career is nurtured. Discover what makes our workplace truly
-            exceptional.
+          {data.culturedescription}
           </p>
           <div className={`culture-poster-container ${isVisibleCulture ? 'culture-poster-animate' : ''}`}>
             <div class="culture-poster">
@@ -125,9 +183,9 @@ const Careers = () => {
                   height="210"
                 />
               </div>
-              <div class="culture-poster-heading">Innovation</div>
+              <div class="culture-poster-heading">{data.nuggetoneheading}</div>
               <div class="culture-poster-desc">
-                We encourage fresh ideas and a pioneering spirit.
+              {data.nuggetonedescription}
               </div>
             </div>
             <div class="culture-poster">
@@ -139,9 +197,9 @@ const Careers = () => {
                   height="210"
                 />
               </div>
-              <div class="culture-poster-heading">Collaborate</div>
+              <div class="culture-poster-heading">{data.nuggettwoheading}</div>
               <div class="culture-poster-desc">
-                Teamwork is at the heart of our success.
+              {data.nuggettwodescription}
               </div>
             </div>
             <div class="culture-poster">
@@ -153,9 +211,9 @@ const Careers = () => {
                   height="210"
                 />
               </div>
-              <div class="culture-poster-heading">Excellence</div>
+              <div class="culture-poster-heading">{data.nuggetthreeheading}</div>
               <div class="culture-poster-desc">
-                Striving for the highest standards in everything we do.
+              {data.nuggetthreedescription}
               </div>
             </div>
             <div class="culture-poster">
@@ -167,9 +225,9 @@ const Careers = () => {
                   height="210"
                 />
               </div>
-              <div class="culture-poster-heading">Growth</div>
+              <div class="culture-poster-heading">{data.nuggetfourheading}</div>
               <div class="culture-poster-desc">
-                Continuous learning and professional development opportunities.
+              {data.nuggetfourdescription}
               </div>
             </div>
           </div>
@@ -208,14 +266,10 @@ const Careers = () => {
       {/* <!-- perks Section --> */}
       <article className={`perks ${isVisiblePerk ? 'gateway-animate' : ''}`} ref={perkRef}>
         <section class="perks-container">
-          <h2 class="perks-heading">Rewards Beyond the Job</h2>
+          <h2 class="perks-heading">{data.rewardheading}</h2>
           {/* <!-- <h3 class="perks-sub-heading"></h3> --> */}
           <p class="perks-desc">
-            We believe in recognizing and rewarding the hard work and dedication
-            of our team. <br />
-            From competitive salaries to comprehensive benefits, discover the
-            <br />
-            perks that come with being a part of the Phi Consulting family.
+          {data.rewarddescription}
           </p>
           <div class="benefits-container">
             <div class="benefit-couple">
@@ -228,7 +282,7 @@ const Careers = () => {
                     class="ben"
                   />
                 </div>
-                <div class="benefit-desc">Competitive Salary Packages</div>
+                <div class="benefit-desc">{data.rewardone}</div>
               </div>
               <div class="benefit">
                 <div class="benefit-img-container">
@@ -239,7 +293,7 @@ const Careers = () => {
                     class="ben"
                   />
                 </div>
-                <div class="benefit-desc">Health and Wellness Programs</div>
+                <div class="benefit-desc">{data.rewardtwo}</div>
               </div>
             </div>
             <div class="benefit-couple">
@@ -253,7 +307,7 @@ const Careers = () => {
                   />
                 </div>
                 <div class="benefit-desc">
-                  Professional Development Opportunities
+                {data.rewarddescription}
                 </div>
               </div>
               <div class="benefit">
@@ -265,7 +319,7 @@ const Careers = () => {
                     class="ben"
                   />
                 </div>
-                <div class="benefit-desc">Flexible Work Arrangements</div>
+                <div class="benefit-desc">{data.rewardfour}</div>
               </div>
             </div>
           </div>
@@ -276,12 +330,9 @@ const Careers = () => {
       <article class="cta-container">
         <section class="cta-sections-container">
           <div class="cta-content">
-            <div class="cta-heading">Start Your Career at Phi Consulting</div>
+            <div class="cta-heading">{data.careerctaheading}</div>
             <div class="cta-descrip">
-              Ready to embark on a journey of professional growth and
-              innovation? Explore our job openings, learn about our vibrant work
-              culture, and discover the perks of being a part of the Phi team.
-              Your future starts here.
+            {data.careerctadescription}
             </div>
           </div>
           <div class="cta-button-section">

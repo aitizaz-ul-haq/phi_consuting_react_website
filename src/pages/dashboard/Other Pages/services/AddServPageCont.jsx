@@ -131,6 +131,13 @@ const AddServPageCont = () => {
             <Input.TextArea />
           </Form.Item>
 
+          <Form.Item name="processeightheading" label="Process Eight Heading" rules={[{ required: true }]}>
+            <Input />
+          </Form.Item>
+          <Form.Item name="processeightdescription" label="Process Eight Description" rules={[{ required: true }]}>
+            <Input.TextArea />
+          </Form.Item>
+
 
           <Form.Item name="solutionsctaheading" label="Solutions CTA Heading" rules={[{ required: true }]}>
             <Input />

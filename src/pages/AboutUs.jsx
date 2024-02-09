@@ -11,6 +11,7 @@ import ismailportrait from "../assets/img/phi_people/ismail.jpg";
 import { TypeAnimation } from 'react-type-animation';
 import useScrollToTop from '../hooks/useScrollToTop';
 import { Helmet } from 'react-helmet';
+import axios from 'axios';
 
 const AboutUs = () => {
 
@@ -46,6 +47,88 @@ const AboutUs = () => {
   const liveVideoRef = useRef(null);
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [data, setData] = useState({
+   
+    heroheading:'',
+    herodescription:'',
+    excellenceheading:'',
+    excellencedescription:'',
+    qualityheading:'',
+    qualityonedescription:'',
+    qualitytwodescription:'',
+    qualitythreedescription:'',
+    qualityfourdescription:'',
+    teamheading:'',
+    teamdescription:'',
+    locationheading:'',
+    locationwords:'',
+    maponetitle:'',
+    maptwotitle:'',
+    rewardtwo:'',
+    livefromphi:'',
+    livefromphisubheading:'',
+    livefromphidescription:'',
+    testimonilaheading:'',
+    testimonialdescription:'',
+    testione:'',
+    testidesignationone:'',
+    testitwo:'',
+    testidesignationtwo:'',
+    testithree:'',
+    testidesignationthree:'',
+    achievementsline:'',
+    aboutctaheading:'',
+    aboutctadescription:'',
+    
+      });
+    
+useEffect(() => {
+        const fetchHomePageData = async () => {
+          try {
+            const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/aboutuspage');
+            console.log(`your data`, response.data);
+            if (response.data && response.data.length > 0) {
+              const homepageData = response.data[0]; // Assuming the first entry is what we want
+              setData({
+                heroheading: homepageData.heroheading,
+                herodescription: homepageData.herodescription,
+                excellenceheading: homepageData.excellenceheading, // Assuming valuecreation maps to excellence
+                excellencedescription: homepageData.excellencedescription, // Assuming valuecreation maps to excellence
+                qualityheading: homepageData.qualityheading, // Assuming phicreates maps to quality
+                qualityonedescription: homepageData.qualityonedescription, // Assuming ourwayone maps to qualityone description
+                qualitytwodescription: homepageData.qualitytwodescription, // Adjust according to actual mapping
+                qualitythreedescription: homepageData.qualitythreedescription, // Adjust according to actual mapping
+                qualityfourdescription: homepageData.qualityfourdescription, // Adjust according to actual mapping
+                teamheading: homepageData.teamheading, // Assuming ourwaythree maps to team
+                teamdescription: homepageData.teamdescription, // Assuming ourwaythree maps to team
+                locationheading: homepageData.locationheading, // No direct mapping provided
+                locationwords: homepageData.locationwords, // No direct mapping provided
+                maponetitle: homepageData.maponetitle, // No direct mapping provided
+                maptwotitle: homepageData.maptwotitle, // No direct mapping provided
+                rewardtwo: homepageData.rewardtwo, // No direct mapping provided
+                livefromphi: homepageData.livefromphi, // No direct mapping provided
+                livefromphisubheading: homepageData.livefromphisubheading, // No direct mapping provided
+                livefromphidescription: homepageData.livefromphidescription, // No direct mapping provided
+                testimonilaheading: homepageData.testimonilaheading, // No direct mapping provided
+                testimonialdescription: homepageData.testimonialdescription, // No direct mapping provided
+                testione: homepageData.testione, // No direct mapping provided
+                testidesignationone: homepageData.testidesignationone, // No direct mapping provided
+                testitwo: homepageData.testitwo, // No direct mapping provided
+                testidesignationtwo: homepageData.testidesignationtwo, // No direct mapping provided
+                testithree: homepageData.testithree, // No direct mapping provided
+                testidesignationthree: homepageData.testidesignationthree, // No direct mapping provided
+                achievementsline: homepageData.achievementsline, // No direct mapping provided
+                aboutctaheading: homepageData.aboutctaheading,
+                aboutctadescription: homepageData.aboutctadescription,
+              });
+            }
+          } catch (error) {
+            console.error("Error fetching homepage data:", error);
+          }
+        };
+    
+        fetchHomePageData();
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -160,11 +243,7 @@ useEffect(() => {
               
             </h2>
             <p class="hero-desc-phi-about">
-              Welcome to Phi Consulting, where strategic brilliance meets 
-              transformative solutions. We empower <br /> businesses to thrive 
-              in the ever-evolving landscape of industry challenges. Discover
-              
-              a journey of innovation, growth, and success with Phi.
+              {data.herodescription}
             </p>
             <div class="consult-button-phi-about" onClick={gotoContacts}>
               Schedule a Free Consultation
@@ -178,7 +257,7 @@ useEffect(() => {
         <section class="about-phi-container">
           <div class="about-phi-content">
             <h2 class="about-phi-heading">
-              Fueling Excellence for Startups & SMEs
+              {data.excellenceheading}
             </h2>
             <div class="about-content-container">
               <div class="left-photo-section">
@@ -192,11 +271,7 @@ useEffect(() => {
               </div>
               <div class="right-text-description">
                 <p class="phi-about-desc">
-                  At Phi Consulting, we redefine consultancy. Founded on a
-                  commitment to eliminating inefficiencies, we specialize in
-                  crafting custom strategies that drive results. Our mission is
-                  simple: to unlock your company's full potential and lead you
-                  towards sustained success.
+                  {data.excellencedescription}
                 </p>
               </div>
             </div>
@@ -208,7 +283,7 @@ useEffect(() => {
       <article class="core-phi">
         <section class="core-phi-container">
           <div class="core-phi-content">
-            <h2 class="core-phi-heading">Leadership through Partnership</h2>
+            <h2 class="core-phi-heading">{data.excellencedescription}</h2>
             {/* <!-- <h3 class="core-value-text">
               Guided by Excellence, Driven by Values
             </h3> --> */}
@@ -221,7 +296,7 @@ useEffect(() => {
             </div>
             <div class="right-text-paragraph-container">
               <p class="right-text-intile">
-                Pioneering solutions that tranform challenges into opportunities
+              {data.qualityonedescription}
               </p>
             </div>
           </div>
@@ -229,8 +304,7 @@ useEffect(() => {
           <div className={`core-value-tiles-container ${isVisibleCollaboration ? 'fade-in-right' : ''}`} ref={collaborationRef}>
             <div class="right-text-paragraph-container">
               <p class="right-text-intile">
-                Building partnerships that foster <br />
-                growth and success.
+              {data.qualitytwodescription}
               </p>
             </div>
             <div class="left-filled-heading-container-alt">
@@ -248,7 +322,7 @@ useEffect(() => {
             </div>
             <div class="right-text-paragraph-container">
               <p class="right-text-intile">
-                Upholding the highest standards of ethics and transparency.
+              {data.qualitythreedescription}
               </p>
             </div>
           </div>
@@ -256,8 +330,7 @@ useEffect(() => {
           <div className={`core-value-tiles-container ${isVisibleAgility ? 'fade-in-right' : ''}`} ref={agilityRef}>
             <div class="right-text-paragraph-container">
               <p class="right-text-intile">
-                Adapting strategies to align with the dynamic needs of your
-                industry.
+                {data.qualityfourdescription}
               </p>
             </div>
             <div class="left-filled-heading-container-alt">
@@ -273,13 +346,9 @@ useEffect(() => {
       <article  className={`meet ${isTeem ? 'visible' : ''}`} ref={teemRef}>
         <section class="meet-container">
           <div class="meet-people-train">
-            <h2 class="meet-heading">Brains Behind the Brilliance</h2>
+            <h2 class="meet-heading">{data.teamheading}</h2>
             <p class="meet-desc">
-              Our team is a fusion of expertise, creativity, and dedication.
-              Meet the professionals who bring Phi's strategic brilliance to
-              life. <br />
-              Each team member contributes a unique perspective, creating a
-              synergy that fuels the success of our clients.
+            {data.teamdescription}
             </p>
           </div>
           <div class="pic-container">
@@ -320,20 +389,16 @@ useEffect(() => {
       {/* <!-- location section --> */}
       <article class="location">
         <section class="location-container">
-          <h2 class="location-heading">Locations</h2>
-          <h3 class="location-sub-heading">Global Reach, Local Impact</h3>
+          <h2 class="location-heading">{data.locationheading}</h2>
+          <h3 class="location-sub-heading">{data.locationwords}</h3>
           <p class="locations-desc">
-            Phi Consulting has a global presence, strategically positioned to
-            serve you wherever you are. <br />
-            Explore our locations and discover how we bring our transformative
-            solutions to businesses worldwide.
+          {/* {data.locationheading} */}
           </p>
           <div class="location-cards-container">
             <div class="location-cards-one">
               <div class="location-bar-left">
                 <div class="location-card-title-heading">
-                  Phi Consulting <br />
-                  Site Office
+                {data.maponetitle}
                 </div>
                 {/* <!-- <div class="location-card-desc">
                   our office location description
@@ -356,7 +421,7 @@ useEffect(() => {
             <div class="location-cards-one">
               <div class="location-bar-left">
                 <div class="location-card-title-heading">
-                  Phi Consulting Headquarters
+                {data.maptwotitle}
                 </div>
                 {/* <!-- <div class="location-card-desc">
                   our office location description
@@ -383,16 +448,13 @@ useEffect(() => {
       {/* <!-- Live From Phi --> */}
       <article class="live">
         <section class="live-container">
-          <h2 class="live-heading">Live from Phi</h2>
+          <h2 class="live-heading">{data.livefromphi}</h2>
 
           <div class="live-video-container">
             <div className={`live-left-side ${isVisibleLiveText ? 'fade-in-left' : ''}`} ref={liveTextRef}>
-              <h3 class="live-subheading">Insights, Discussions, and More</h3>
+              <h3 class="live-subheading">{data.livefromphisubheading}</h3>
               <p class="live-desc">
-                Tune in to "Live from Phi" for exclusive insights, discussions,
-                and success stories. Subscribe to our YouTube channel to stay
-                updated on the latest industry trends, expert interviews, and
-                highlights from our transformative projects.
+              {data.livefromphidescription}
               </p>
               <div class="live-button-container">
                 <div class="call-button-container">
@@ -425,12 +487,10 @@ useEffect(() => {
          <article class="testimonial">
         <section className="testimonial-container">
           <h2 class="testi-heading">
-          We Have Successfully Retained Our Top 3 Clients For Over 3 Years.
+          {data.testimonilaheading}
           </h2>
           <p class="testi-desc">
-            Our clients speak for the transformative impact of Phi Consulting.
-            Partner with us and discover the potential for unprecedented growth,
-            reduced costs, and optimized efficiency.
+          {data.testimonialdescription}
           </p>
         </section>
 
@@ -443,12 +503,12 @@ useEffect(() => {
             <p class="testi-quote">
               <q
                 ><i
-                  >Phi Consulting has delivered the project on time, meeting the client's expectations. They have communicated frequently and promptly via email and virtual meetings, ensuring an effective workflow. Their ability to adapt and willingness to improve the process are hallmarks of their work.
+                  >{data.testione}
                   </i
                 ></q
               >
             </p>
-            <h3 class="testi-card-heading">Head of Customer Support - <span className='company-test-desig-one'>AtoB</span> Financials</h3>
+            <h3 class="testi-card-heading">{data.testidesignationone}</h3>
           </div>
 
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
@@ -459,11 +519,11 @@ useEffect(() => {
             <p class="testi-quote">
               <q
                 ><i
-                  >I have had a very good experience with PHI over the past 3 years. They are able to ramp up very quickly with GTM personnel when directed. The personnel they bring on almost always hit the mark. If someone was not up to caliber, the PHI leadership team was quick to act and upgrade. Phi is very easy to work with and acts more like a partner than a contractor. </i
+                  >{data.testitwo}</i
                 ></q
               >
             </p>
-            <h3 class="testi-card-heading">Brendan Meuse - VP, Revenue Operations <span className='company-test-desig-two'>Digital Ocean</span></h3>
+            <h3 class="testi-card-heading">{data.testidesignationtwo}</h3>
           </div>
 
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
@@ -474,12 +534,11 @@ useEffect(() => {
             <p class="testi-quote">
               <q
                 ><i
-                  >Phi Consulting's work meets the client's expectations and has a strong 60 Net Promoter Score. The team has an easy onboarding process and a turn-key nature that has impressed the client.
-                  Head of Sales & Business Development AtoB Financials</i
+                  >{data.testithree}</i
                 ></q
               >
             </p>
-            <h3 class="testi-card-heading">Head of Sales & Business Development <span className='company-test-desig-one'>AtoB</span> Financials</h3>
+            <h3 class="testi-card-heading">{data.testidesignationthree}</h3>
           </div>
         </section>
       </article>
@@ -489,7 +548,7 @@ useEffect(() => {
         <section class="achievement-section">
           <h2 class="ach-heading">Our Recognitions</h2>
           <p class="testi-desc">
-          Explore Phi Consulting's hall of achievements – where revenue surges, operational efficiency peaks, and client success stories converge, defining a legacy of transformative impact.
+         {data.achievementsline}
           </p>
         </section>
         <section class="ach-badges-container" ref={achRef}>
@@ -527,13 +586,10 @@ useEffect(() => {
         <section class="cta-sections-container">
           <div class="cta-content">
             <div class="cta-heading">
-              Unlock Your Potential with Phi Consulting
+              {data.aboutctaheading}
             </div>
             <div class="cta-descrip">
-              Ready to elevate your business to new heights? Contact Phi
-              Consulting today to explore how our tailored consultancy services
-              can unlock your company's full potential. Let's embark on a
-              journey of innovation and success together.
+            {data.aboutctadescription}
             </div>
           </div>
           <div class="cta-button-section">
