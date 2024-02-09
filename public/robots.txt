@@ -1,2 +1,5 @@
 User-agent: *
 Disallow:
+
+
+Sitemap: https://phi-react-website.web.app/Sitemap.xml
