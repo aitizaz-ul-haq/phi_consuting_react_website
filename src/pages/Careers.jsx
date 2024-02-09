@@ -267,7 +267,7 @@ useEffect(() => {
       <article className={`perks ${isVisiblePerk ? 'gateway-animate' : ''}`} ref={perkRef}>
         <section class="perks-container">
           <h2 class="perks-heading">{data.rewardheading}</h2>
-          {/* <!-- <h3 class="perks-sub-heading"></h3> --> */}
+         
           <p class="perks-desc">
           {data.rewarddescription}
           </p>
