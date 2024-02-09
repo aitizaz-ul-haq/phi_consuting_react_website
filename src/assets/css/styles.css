@@ -13274,6 +13274,32 @@ display: none;
     padding: 0px;
 }
 }
+
+
+.form-container-dash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px; /* Adjust as needed for spacing from the top */
+  }
+  
+  .form-wrapper {
+    width: 60%;
+    max-width: 600px; /* Keeps form from becoming too wide on larger screens */
+    text-align: center;
+  }
+  
+  .heading-form {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .description-form {
+    font-size: 16px;
+    margin-bottom: 40px;
+    color: #666; /* Example color - adjust as needed */
+  }
 @media screen and (min-width: 1200px) {
    
 
