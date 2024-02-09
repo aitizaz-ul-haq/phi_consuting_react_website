@@ -59,31 +59,31 @@ careerctadescription:"",
 useEffect(() => {
         const fetchHomePageData = async () => {
           try {
-            const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/aboutuspage');
+            const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/careerspage');
             console.log(`your data`, response.data);
             if (response.data && response.data.length > 0) {
               const homepageData = response.data[0]; // Assuming the first entry is what we want
               setData({
                 heroheading: homepageData.heroheading,
                 herodescription: homepageData.herodescription,
-                cultureheading: homepageData.excellenceheading, // Assuming excellence maps to culture
-                culturedescription: homepageData.excellencedescription, // Assuming excellence maps to culture
-                nuggetoneheading: homepageData.qualityheading, // Assuming quality maps to nugget one
-                nuggetonedescription: homepageData.qualityonedescription, // Assuming quality maps to nugget one
-                nuggettwoheading: homepageData.qualitytwodescription, // Assuming quality maps to nugget two
-                nuggettwodescription: homepageData.qualitythreedescription, // Adjust based on actual mapping
-                nuggetthreeheading: homepageData.qualityfourdescription, // Adjust based on actual mapping
-                nuggetthreedescription: homepageData.teamheading, // Assuming team maps to nugget three
-                nuggetfourheading: homepageData.teamdescription, // Assuming team maps to nugget four
-                nuggetfourdescription: homepageData.locationheading, // Adjust based on actual mapping
-                rewardheading: homepageData.locationwords, // Assuming locationwords maps to reward
-                rewarddescription: homepageData.maponetitle, // Assuming maponetitle maps to reward description
-                rewardone: homepageData.maptwotitle, // Adjust based on actual mapping
+                cultureheading: homepageData.cultureheading, // Assuming excellence maps to culture
+                culturedescription: homepageData.culturedescription, // Assuming excellence maps to culture
+                nuggetoneheading: homepageData.nuggetoneheading, // Assuming quality maps to nugget one
+                nuggetonedescription: homepageData.nuggetonedescription, // Assuming quality maps to nugget one
+                nuggettwoheading: homepageData.nuggettwoheading, // Assuming quality maps to nugget two
+                nuggettwodescription: homepageData.nuggettwodescription, // Adjust based on actual mapping
+                nuggetthreeheading: homepageData.nuggetthreeheading, // Adjust based on actual mapping
+                nuggetthreedescription: homepageData.nuggetthreedescription, // Assuming team maps to nugget three
+                nuggetfourheading: homepageData.nuggetfourheading, // Assuming team maps to nugget four
+                nuggetfourdescription: homepageData.nuggetfourdescription, // Adjust based on actual mapping
+                rewardheading: homepageData.rewardheading, // Assuming locationwords maps to reward
+                rewarddescription: homepageData.rewarddescription, // Assuming maponetitle maps to reward description
+                rewardone: homepageData.rewardone, // Adjust based on actual mapping
                 rewardtwo: homepageData.rewardtwo, // Directly mapped
-                rewardthree: homepageData.livefromphi, // Assuming livefromphi maps to reward three
-                rewardfour: homepageData.livefromphisubheading, // Assuming livefromphisubheading maps to reward four
-                careerctaheading: homepageData.livefromphidescription, // Assuming livefromphidescription maps to career cta heading
-                careerctadescription: homepageData.testimonilaheading, 
+                rewardthree: homepageData.rewardthree, // Assuming livefromphi maps to reward three
+                rewardfour: homepageData.rewardfour, // Assuming livefromphisubheading maps to reward four
+                careerctaheading: homepageData.careerctaheading, // Assuming livefromphidescription maps to career cta heading
+                careerctadescription: homepageData.careerctadescription, 
               });
             }
           } catch (error) {
