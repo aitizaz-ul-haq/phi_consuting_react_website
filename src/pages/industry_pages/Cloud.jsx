@@ -219,7 +219,7 @@ const Cloud = () => {
   
   const fetchSaasCards = async () => {
     try {
-      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/devcards');
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/cloudcards');
       if (response.data && response.data.length > 0) {
         const firstEntry = response.data[0];
         setCardDetails({
