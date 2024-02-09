@@ -40,7 +40,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
        <div>
-      <button className='dash-options-butt'> <Link className='list-elements-dash' to="/dashboard/ShowDash">Dashboard</Link></button>
+      <button className='dash-options-butt'> <Link className='list-elements-dash-button' to="/dashboard/ShowDash">Dashboard</Link></button>
       </div>
 
       <div >
