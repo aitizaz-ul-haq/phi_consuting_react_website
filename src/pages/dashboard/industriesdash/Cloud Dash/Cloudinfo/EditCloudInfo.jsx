@@ -13,13 +13,13 @@ const EditCloudInfo = () => {
 
     const [form] = Form.useForm();
     const navigate = useNavigate();
-    const { devinfoId } = useParams();
-  console.log(`saas info id`, devinfoId)
+    const { cloudinfoId } = useParams();
+  console.log(`saas info id`, cloudinfoId)
 
 
     useEffect(() => {
-      if (devinfoId) {
-        axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/devinfo/${devinfoId}`)
+      if (cloudinfoId) {
+        axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/cloudinfo/${cloudinfoId}`)
           .then(response => {
             const data = response.data;
             const formData = data.sections.reduce((acc, section, index) => {
@@ -34,7 +34,7 @@ const EditCloudInfo = () => {
             message.error('Error fetching data for editing');
           });
       }
-    }, [devinfoId, form]);
+    }, [cloudinfoId, form]);
 
     
   
@@ -53,9 +53,9 @@ const EditCloudInfo = () => {
       const dataToPut = { sections: updatedSections };
   
       try {
-        await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/saasinfo/${devinfoId}`, dataToPut);
-        message.success('devinfo info entry updated successfully');
-        navigate('/dashboard/ShowDevInfo');
+        await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/cloudinfo/${cloudinfoId}`, dataToPut);
+        message.success('cloudinfo info entry updated successfully');
+        navigate('/dashboard/ShowCloudInfo');
       } catch (error) {
         console.error('Error updating data:', error);
         message.error('An error occurred while updating the devops info entry');

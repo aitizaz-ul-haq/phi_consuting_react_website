@@ -5961,6 +5961,7 @@ background-color: rgb(243, 241, 241);
 
     .four-card-tab { 
         margin: 0px;
+        height: 479px;
         width: 296px;
     }
     .barcard-bar {
@@ -7558,7 +7559,7 @@ display: none;
 
     .four-card-tab {
         width: 336px;
-        height: auto;
+        height: 479px;
         padding: 1rem;
         /* background-color: lightblue; */
         margin: 0px;
@@ -8367,17 +8368,16 @@ display: none;
         font-size: 30px;
     }
 
-    .four-card-tab {
-        width: 357px;
-        height: auto;
-        padding: 0.8rem
-    }
+   
 
     .four-card-header {
         padding: 0.5rem
     }
 
     .four-card-tab { 
+        width: 357px;
+        height: 479px;
+        padding: 0.8rem;
         margin-left: 0px;
         margin-right: 0px;
         margin-top: 1rem;
@@ -10630,6 +10630,7 @@ display: none;
     }
 
     .four-card-tab {
+        height: 479px;
         margin-left: 1rem;
         margin-right: 0px;
         margin-top: 1rem;
@@ -13348,7 +13349,7 @@ display: none;
     
     .four-card-tab {
         width: 303px;
-        height: auto;
+        height: 479px;
         padding: 1rem;
         /* background-color: lightblue; */
         margin: 10px;
@@ -16023,7 +16024,7 @@ display: block;
 
 .meet-desc {
     font-size: 20px;
-    width: 100%;
+    width: 73%;
     font-weight: 100;
 }
 
@@ -16039,6 +16040,7 @@ display: block;
 
 .location-sub-heading {
     font-size: 24px;
+    width: 73%;
     font-weight: 100;
 }
 
