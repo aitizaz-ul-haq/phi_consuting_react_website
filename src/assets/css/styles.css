@@ -14438,6 +14438,24 @@ display: none;
     color: var(--APPLE-GRAY);
     font-weight: 300;
   }
+
+  .listed-options button {
+    background-color:#C1E1C1;
+    color: black;
+  }
+
+  .listed-options button:hover {
+    background-color:#008080;
+    color: white;
+  }
+
+  .dash-options-butt:hover {
+color: white;
+  }
+
+  .dash-pane {
+    padding: 1rem;
+  }
   
   .sidebar div {
     margin-bottom: 10px;
@@ -14622,6 +14640,7 @@ display: none;
     padding:1rem;
     list-style: none;
     text-decoration: none;
+    
   }
 
   .list-elements-dash {
