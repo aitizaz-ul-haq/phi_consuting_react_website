@@ -283,7 +283,7 @@ useEffect(() => {
       <article class="core-phi">
         <section class="core-phi-container">
           <div class="core-phi-content">
-            <h2 class="core-phi-heading">{data.excellencedescription}</h2>
+            <h2 class="core-phi-heading">{data.qualityheading}</h2>
             {/* <!-- <h3 class="core-value-text">
               Guided by Excellence, Driven by Values
             </h3> --> */}
