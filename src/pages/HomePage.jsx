@@ -56,7 +56,7 @@ import backthree from "../assets/img/wrappers/back_three.jpg";
 import backClient from "../assets/img/wrappers/client_back.jpg";
 import backcurls from "../assets/img/wrappers/back_curls.jpg";
 import segmented from "../assets/img/wrappers/segemented.jpg";
-import whatback from "../assets/img/wrappers/whatback.jpg";
+import whatback from "../assets/img/wrappers/burn.webp";
 
 const HomePage = () => {
 
