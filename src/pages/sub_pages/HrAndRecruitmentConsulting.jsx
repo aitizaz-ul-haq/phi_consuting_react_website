@@ -176,6 +176,8 @@ const HrAndRecruitmentConsulting = () => {
             featuresDescriptionFive: gtmData.featuresDescriptionFive,
             featuresHeadingSix: gtmData.featuresHeadingSix,
             featuresDescriptionSix: gtmData.featuresDescriptionSix,
+            processMainHeading:gtmData.processMainHeading,
+            processMainDesc: gtmData.processMainDesc,
             processHedOne:gtmData.processHedOne,
             processDesOne: gtmData.processDesOne,
             processHedTwo:gtmData.processHedTwo,

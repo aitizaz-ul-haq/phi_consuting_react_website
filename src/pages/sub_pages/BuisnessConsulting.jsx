@@ -69,17 +69,7 @@ import processback from "../../assets/video/home-bg.mp4";
 import { Helmet } from 'react-helmet';
 const BuisnessConsulting = () => {
   const [caseStudies, setCaseStudies] = useState([]);
-  // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
-  // const testiRef = useRef(null);
- 
-  //  const [isVisible, setIsVisible] = useState(false);
-  //  const containerRef = useRef(null);
- 
-  //  const [isVisibleAch, setIsVisibleAch] = useState(false);
-  //  const achRef = useRef(null);
- 
-  //  const [isVisiblecard, setIsVisiblecard] = useState(false);
-  //  const cardsRef = useRef(null);
+
  
    const [processNewVisible, setProcessNewVisible] = useState(false);
    const processNewRef = useRef(null);
@@ -259,57 +249,7 @@ const BuisnessConsulting = () => {
   
     return () => observer.disconnect();
   }, []);
-  
-
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         setIsVisiblecard(entry.isIntersecting);
-  //       });
-  //     },
-  //     { threshold: 0.5 }
-  //   );
-
-  //   if (cardsRef.current) {
-  //     observer.observe(cardsRef.current);
-  //   }
-
-  //   return () => observer.disconnect();
-  // }, []);
-  
-
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//         (entries) => {
-//             entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
-//         },
-//         { threshold: 0.5 }
-//     );
-
-//     observer.observe(achRef.current);
-//     return () => observer.disconnect();
-// }, []);
-
-// useEffect(() => {
-//   const observer = new IntersectionObserver(entries => {
-//       entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
-//   }, { threshold: 0.5 });
-
-//   observer.observe(testiRef.current);
-//   return () => observer.disconnect();
-// }, []);
-
-
-// useEffect(() => {
-//     const observer = new IntersectionObserver(entries => {
-//         entries.forEach(entry => setIsVisible(entry.isIntersecting));
-//     }, { threshold: 0.5 }); 
-
-//     observer.observe(containerRef.current);
-//     return () => observer.disconnect(); 
-// }, []);
+ 
 
 useEffect(() => {
   const observer = new IntersectionObserver(

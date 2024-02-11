@@ -15913,9 +15913,12 @@ display: none;
 } */
 
 .why-phi-desc {
-    font-size: 18px;
-    width: 61%;
-    /* margin-top: 3rem; */
+    
+    width: 70%;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    font-size: 25px;
+    font-weight: 100;
 }
 
 .ach-heading-our-work {
