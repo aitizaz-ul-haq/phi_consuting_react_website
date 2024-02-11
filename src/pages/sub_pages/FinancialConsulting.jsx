@@ -253,56 +253,6 @@ const FiancialConsulting = () => {
    }, []);
    
  
- 
-  //  useEffect(() => {
-  //    const observer = new IntersectionObserver(
-  //      (entries) => {
-  //        entries.forEach((entry) => {
-  //          setIsVisiblecard(entry.isIntersecting);
-  //        });
-  //      },
-  //      { threshold: 0.5 }
-  //    );
- 
-  //    if (cardsRef.current) {
-  //      observer.observe(cardsRef.current);
-  //    }
- 
-  //    return () => observer.disconnect();
-  //  }, []);
-   
- 
-//    useEffect(() => {
-//      const observer = new IntersectionObserver(
-//          (entries) => {
-//              entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
-//          },
-//          { threshold: 0.5 }
-//      );
- 
-//      observer.observe(achRef.current);
-//      return () => observer.disconnect();
-//  }, []);
- 
-//  useEffect(() => {
-//    const observer = new IntersectionObserver(entries => {
-//        entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
-//    }, { threshold: 0.5 });
- 
-//    observer.observe(testiRef.current);
-//    return () => observer.disconnect();
-//  }, []);
- 
- 
-//  useEffect(() => {
-//      const observer = new IntersectionObserver(entries => {
-//          entries.forEach(entry => setIsVisible(entry.isIntersecting));
-//      }, { threshold: 0.5 }); 
- 
-//      observer.observe(containerRef.current);
-//      return () => observer.disconnect(); 
-//  }, []);
- 
  useEffect(() => {
   const observer = new IntersectionObserver(
     (entries) => {

@@ -739,70 +739,60 @@ useScrollToTop();
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
         <h2 class="why-phi-heading">{data.whySectionHeading}</h2>
-        {/* <Button type="primary" onClick={showModal}>
-        Open Modal
-      </Button>
-      <Modal centered title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-      </Modal> */}
-        <div class="insights-container">
-          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
-            <div class="left-section-insights">
-              <div class="overlay-container one-why">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {data.whyBoxOneHeading}
-                  </h2>
-                  <p class="overlay-desc">
-                  {data.whyBoxOneDescription}
-                  </p>
+        <p class="why-phi-desc">
+          {data.whySectionDescription}
+          </p>
+
+<div class="insights-container">
+            <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
+              <div class="left-section-insights">
+                <div class="overlay-container one-why">
+                  <div class="overlay"></div>
+                  <div class="content">
+                    <h2 class="overlay-heading"> {data.whyBoxOneHeading}</h2>
+                    <p class="overlay-desc">
+                    {data.whyBoxOneDescription}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="right-section-insights">
+                <div class="overlay-container two-why">
+                  <div class="overlay"></div>
+                  <div class="content">
+                    <h2 class="overlay-heading"> {data.whyBoxTwoHeading}</h2>
+                    <p class="overlay-desc">
+                    {data.whyBoxTwoDescription}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="right-section-insights">
-              <div class="overlay-container two-why">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {data.whyBoxTwoHeading}
-                  </h2>
-                  <p class="overlay-desc">
-                  {data.whyBoxTwoDescription}
-                  </p>
+            <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
+              <div class="left-section-insights">
+                <div class="overlay-container three-why">
+                  <div class="overlay"></div>
+                  <div class="content">
+                    <h2 class="overlay-heading">{data.whyBoxThreeHeading}</h2>
+                    <p class="overlay-desc">
+                    {data.whyBoxThreeDescription}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
-            <div class="left-section-insights">
-              <div class="overlay-container three-why">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">{data.whyBoxThreeHeading}</h2>
-                  <p class="overlay-desc">
-                  {data.whyBoxThreeDescription}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="right-section-insights">
-              <div class="overlay-container four-why">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {data.whyBoxFourHeading}
-                  </h2>
-                  <p class="overlay-desc">
-                  {data.whyBoxFourDescription}
-                  </p>
+              <div class="right-section-insights">
+                <div class="overlay-container four-why">
+                  <div class="overlay"></div>
+                  <div class="content">
+                    <h2 class="overlay-heading">{data.whyBoxFourHeading}</h2>
+                    <p class="overlay-desc">
+                    {data.whyBoxFourDescription}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
       </article>
 
 
