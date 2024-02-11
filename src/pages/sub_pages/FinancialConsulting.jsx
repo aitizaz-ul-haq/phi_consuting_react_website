@@ -38,6 +38,8 @@ import { Tooltip } from 'antd';
 import eye from "../../assets/img/eye.png";
 import top from "../../assets/img/top Arrow.png";
 
+import processback from "../../assets/video/home-bg.mp4";
+
 import axios from 'axios';
 
 import atobbox from "../../assets/img/api_images/AToB-square.jpg";
@@ -637,6 +639,14 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
 
       {/* <!-- section new process --> */}
       <article class="process-new">
+      <video
+    src={processback}
+    autoPlay
+    loop
+    muted
+    className="background-video"
+  />
+  <div className="white-overlay" />
         <section class="process-new-container">
           <h2 class="path-heading"> {data.processMainHeading}</h2>
           <p class="work-desc">

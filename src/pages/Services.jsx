@@ -28,6 +28,7 @@ import achiconthree from "../assets/img/achievements-badges/clutch_2.png";
 import SmallWorkCard from '../components/shared/cards/SmallWorkCard';
 import { TypeAnimation } from 'react-type-animation';
 import caseStudies from "../data/caseStudies.json";
+import processback from "../assets/video/home-bg.mp4";
 
 import axios from 'axios';
 const Services = () => {
@@ -139,6 +140,23 @@ useEffect(() => {
 
   return () => observer.disconnect();
 }, []);
+
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const entry = entries[0];
+      setProcessNewVisible(entry.isIntersecting);
+    },
+    { threshold: 1 }
+  );
+
+  if (processNewRef.current) {
+    observer.observe(processNewRef.current);
+  }
+
+  return () => observer.disconnect();
+}, []);
+
 
   const handleTabClickOne = () => {
     window.location.href = '/investor-relations';
@@ -416,6 +434,15 @@ useEffect(() => {
       </article>
 
 <article class="process-new">
+<video
+    src={processback}
+    autoPlay
+    loop
+    muted
+    className="background-video"
+  />
+  <div className="white-overlay" />
+   {/* <div className="white-overlay" /> */}
         <section class="process-new-container">
           <h2 class="path-heading">{data.servicesPathHeading}</h2>
           <p class="work-desc">

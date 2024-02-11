@@ -64,6 +64,8 @@ import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 
+import processback from "../../assets/video/home-bg.mp4";
+
 import { Helmet } from 'react-helmet';
 const BuisnessConsulting = () => {
   const [caseStudies, setCaseStudies] = useState([]);
@@ -639,10 +641,14 @@ useScrollToTop();
 
        {/* <!-- section new process --> */}
        <article class="process-new">
-       <video autoPlay loop muted className="video-background">
-          <source src={videosource} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+       <video
+    src={processback}
+    autoPlay
+    loop
+    muted
+    className="background-video"
+  />
+  <div className="white-overlay" />
 
         <section class="process-new-container">
           <h2 class="path-heading">{data.processMainHeading}</h2>
@@ -793,92 +799,7 @@ useScrollToTop();
         </section>
       </article>
 
-       {/* <!-- Clients Section --> */}
-       {/* <article className={`clients ${isVisible ? 'animate' : ''}`} ref={containerRef}>
-        <section class="client-container">
-          <div class="client-content">
-            <h2 class="client-heading">Trusted by Industry Leaders</h2>
-            <p class="client-desc">
-              Phi Consulting has empowered startups and SMEs across diverse
-              industries. <br />
-              Our clients trust us for our deep expertise, personalized service,
-              and commitment to delivering tangible results.
-            </p>
-            <div class="client-logo-container">
-              <div class="logo-container-one">
-                <div class="image-container">
-                  <img
-                    src={ATOB}
-                    alt="AtoB_logo"
-                    title="AtoB"
-                    className='client-logos-sectio-hover'
-                  />
-                </div>
-                <div class="image-container">
-                  <img
-                    src={bobtail}
-                    alt="bobtail_logo"
-                    title="BoBtail"
-                    className='client-logos-sectio-hover'
-                  />
-                </div>
-
-                <div class="image-container">
-                  <img
-                    src={joyride}
-                    alt="joyride_logo"
-                    title="Joyride"
-                    className='client-logos-sectio-hover'
-                  />
-                </div>
-                <div class="image-container">
-                  <img
-                    src={Truckx}
-                    alt="truckx_logo"
-                    title="TruckX"
-                    className='client-logos-sectio-hover'
-                  />
-                </div>
-                <div class="image-container">
-                  <img
-                    src={pallet}
-                    alt="Pallet_logo"
-                    title="Pallet"
-                    className='client-logos-sectio-hover'
-                  />
-                </div>
-              </div>
-              <div class="logo-container-one">
-                <div class="image-container-bottom">
-                  <img
-                    src={digitalOcean}
-                    alt="bobtail_logo"
-                    title="Digital Ocean"
-                    className='client-logos-sectio-hover'
-                  />
-                </div>
-
-                <div class="image-container-bottom">
-                  <img
-                    src={mudflap}
-                    alt="joyride_logo"
-                    title="Mudflap"
-                    className='client-logos-sectio-hover'
-                  />
-                </div>
-                <div class="image-container-bottom">
-                  <img
-                    src={sungrade}
-                    alt="truckx_logo"
-                    title="Sungrade Solar"
-                    className='client-logos-sectio-hover'
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </article> */}
+      
 
       {/* <!-- why phi for customer exp Section --> */}
       <article class="why-phi-for-sales">
@@ -969,126 +890,7 @@ useScrollToTop();
         </div>
       </article>
 
-      {/* <!-- why phi for customer exp Section --> */}
-      {/* <article class="work" ref={cardsRef}>
-        <section class="work-section">
-          <h2 class="work-heading">Portfolio</h2>
-          <p class="work-desc">
-          Explore our portfolio to witness the transformative impact of Phi Consulting on businesses like yours. Each success story is a testament to our commitment to driving sales excellence.
-          </p>
-          <div class="work-row">
-          {firstThreeCaseStudies.map(study => (
-                <SmallWorkCard key={study._id} id={study._id} caseStudy={study} isVisible={isVisiblecard} 
-                logo={study.imagetwo.includes('Atob') ? atobbox :
-                study.imagetwo.includes('truckx') ? truckxbox :
-                study.imagetwo.includes('pallet') ? palletbox :
-                study.imagetwo.includes('solar') ? solarbox :
-                study.imagetwo.includes('bobtail') ? bobtailbox :
-                study.imagetwo.includes('joyride') ? joybox :
-                study.imagetwo.includes('digital ocean') ? dobox :
-                null}  
-                image={study.imageone.includes('Atob') ? atobproduct :
-                study.imageone.includes('truckx') ? truckxproduct :
-                study.imageone.includes('pallet') ? palletproduct :
-                study.imageone.includes('solar') ? solarproduct :
-                study.imageone.includes('bobtail') ? bobtailproduct :
-                study.imageone.includes('joyride') ? joyrideproduct :
-                study.imageone.includes('digital ocean') ? doproduct :
-                null} />
-            ))}
-          </div>
-
-          <div class="right-button spacing-under">
-          <span><Link to="/case-studies" className='morcases'>View More Case Studies</Link></span>
-          </div>
-        </section>
-      </article> */}
-
-    {/* <!-- Testimonial Section --> */}
-    {/* <article class="testimonial">
-        <section className="testimonial-container">
-          <h2 class="testi-heading">
-          We Have Successfully Retained Our Top 3 Clients For Over 3 Years.
-          </h2>
-          <p class="testi-desc">
-            Our clients speak for the transformative impact of Phi Consulting.
-            Partner with us and discover the potential for unprecedented growth,
-            reduced costs, and optimized efficiency.
-          </p>
-        </section>
-
-        <section className="testi-cards-container" ref={testiRef}>
-          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
-            <div class="circleBase type3 testi-one">
-             
-            </div>
-
-            <p class="testi-quote">
-              <q
-                ><i
-                  >Phi Consulting has delivered the project on time, meeting the client's expectations. They have communicated frequently and promptly via email and virtual meetings, ensuring an effective workflow. Their ability to adapt and willingness to improve the process are hallmarks of their work.
-                  </i
-                ></q
-              >
-            </p>
-            <h3 class="testi-card-heading">Head of Customer Support - AtoB Financials</h3>
-          </div>
-
-          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
-            <div class="circleBase type3 test-three">
-              <img src="" alt="" />
-            </div>
-
-            <p class="testi-quote">
-              <q
-                ><i
-                  >Phi Consulting's work meets the client's expectations and has a strong 60 Net Promoter Score. The team has an easy onboarding process and a turn-key nature that has impressed the client.
-                  Head of Sales & Business Development - AtoB Financials</i
-                ></q
-              >
-            </p>
-            <h3 class="testi-card-heading">Head of Sales & Business Development - AtoB Financials</h3>
-          </div>
-        </section>
-      </article> */}
-
-      {/* <!-- Achievement Section --> */}
-      {/* <article class="achievement">
-        <section class="achievement-section">
-          <h2 class="ach-heading">Our Achievements</h2>
-          <p class="testi-desc">
-          Explore Phi Consulting's hall of achievements – where revenue surges, operational efficiency peaks, and client success stories converge, defining a legacy of transformative impact.
-          </p>
-        </section>
-        <section class="ach-badges-container" ref={achRef}>
-          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
-            <img
-               src={achiconone}
-              alt=""
-              width="200"
-              height="230"
-            />
-          </div>
-          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
-            <img
-               src={achicontwo}
-              alt=""
-              width="200"
-              height="150"
-            />
-          </div>
-
-          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
-            <img
-             src={achiconthree}
-              alt=""
-              width="250"
-              height="220"
-            />
-          </div>
-
-        </section>
-      </article> */}
+     
 
       {/* <!-- Call to Action Section --> */}
       <article class="cta-container">

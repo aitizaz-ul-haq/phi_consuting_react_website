@@ -56,21 +56,11 @@ import solarproduct from "../../assets/img/api_images/solar_one.webp";
 import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
+import processback from "../../assets/video/home-bg.mp4";
 
 import { Helmet } from 'react-helmet';
 const SalesConsulting = () => {
   const [caseStudies, setCaseStudies] = useState([]);
-  // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
-  // const testiRef = useRef(null);
-
-  // const [isVisible, setIsVisible] = useState(false);
-  // const containerRef = useRef(null);
-
-  // const [isVisibleAch, setIsVisibleAch] = useState(false);
-  // const achRef = useRef(null);
-
-  // const [isVisiblecard, setIsVisiblecard] = useState(false);
-  // const cardsRef = useRef(null);
 
   const [data, setData] = useState({
     bannerHeading: "",
@@ -252,53 +242,6 @@ const SalesConsulting = () => {
   
     return () => observer.disconnect();
   }, []);
-  
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         setIsVisiblecard(entry.isIntersecting);
-  //       });
-  //     },
-  //     { threshold: 0.5 }
-  //   );
-
-  //   if (cardsRef.current) {
-  //     observer.observe(cardsRef.current);
-  //   }
-
-  //   return () => observer.disconnect();
-  // }, []);
-  
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//         (entries) => {
-//             entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
-//         },
-//         { threshold: 0.5 }
-//     );
-
-//     observer.observe(achRef.current);
-//     return () => observer.disconnect();
-// }, []);
-
-// useEffect(() => {
-//   const observer = new IntersectionObserver(entries => {
-//       entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
-//   }, { threshold: 0.5 });
-
-//   observer.observe(testiRef.current);
-//   return () => observer.disconnect();
-// }, []);
-
-// useEffect(() => {
-//     const observer = new IntersectionObserver(entries => {
-//         entries.forEach(entry => setIsVisible(entry.isIntersecting));
-//     }, { threshold: 0.5 }); 
-
-//     observer.observe(containerRef.current);
-//     return () => observer.disconnect(); 
-// }, []);
 
 useEffect(() => {
   const observer = new IntersectionObserver(
@@ -635,12 +578,18 @@ useScrollToTop();
 
       {/* <!-- section new process --> */}
       <article class="process-new">
+      <video
+    src={processback}
+    autoPlay
+    loop
+    muted
+    className="background-video"
+  />
+  <div className="white-overlay" />
         <section class="process-new-container">
-          <h2 class="path-heading">A Proven Path to Success</h2>
+        <h2 class="path-heading">{data.processMainHeading}</h2>
           <p class="work-desc">
-            Explore the journey to excellence with Phi Consulting's strategic
-            process – your gateway to optimizing sales performance, enhancing
-            customer experience, and achieving sustained growth.
+          {data.processMainDesc}
           </p>
           <div class="process-new-section">
             <div class="left-process-section" ref={processNewRef}>

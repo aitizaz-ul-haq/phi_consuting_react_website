@@ -64,20 +64,11 @@ import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 
+import processback from "../../assets/video/home-bg.mp4";
+
 import { Helmet } from 'react-helmet';
 const HrAndRecruitmentConsulting = () => {
   const [caseStudies, setCaseStudies] = useState([]);
-  // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
-  // const testiRef = useRef(null);
- 
-  //  const [isVisible, setIsVisible] = useState(false);
-  //  const containerRef = useRef(null);
- 
-  //  const [isVisibleAch, setIsVisibleAch] = useState(false);
-  //  const achRef = useRef(null);
- 
-  //  const [isVisiblecard, setIsVisiblecard] = useState(false);
-  //  const cardsRef = useRef(null);
  
    const [processNewVisible, setProcessNewVisible] = useState(false);
    const processNewRef = useRef(null);
@@ -255,55 +246,6 @@ const HrAndRecruitmentConsulting = () => {
    }, []);
    
  
- 
-  //  useEffect(() => {
-  //    const observer = new IntersectionObserver(
-  //      (entries) => {
-  //        entries.forEach((entry) => {
-  //          setIsVisiblecard(entry.isIntersecting);
-  //        });
-  //      },
-  //      { threshold: 0.5 }
-  //    );
- 
-  //    if (cardsRef.current) {
-  //      observer.observe(cardsRef.current);
-  //    }
- 
-  //    return () => observer.disconnect();
-  //  }, []);
-   
- 
-//    useEffect(() => {
-//      const observer = new IntersectionObserver(
-//          (entries) => {
-//              entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
-//          },
-//          { threshold: 0.5 }
-//      );
- 
-//      observer.observe(achRef.current);
-//      return () => observer.disconnect();
-//  }, []);
- 
-//  useEffect(() => {
-//    const observer = new IntersectionObserver(entries => {
-//        entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
-//    }, { threshold: 0.5 });
- 
-//    observer.observe(testiRef.current);
-//    return () => observer.disconnect();
-//  }, []);
- 
- 
-//  useEffect(() => {
-//      const observer = new IntersectionObserver(entries => {
-//          entries.forEach(entry => setIsVisible(entry.isIntersecting));
-//      }, { threshold: 0.5 }); 
- 
-//      observer.observe(containerRef.current);
-//      return () => observer.disconnect(); 
-//  }, []);
 
  useEffect(() => {
   const observer = new IntersectionObserver(
@@ -637,6 +579,14 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
 
       {/* <!-- section new process --> */}
       <article class="process-new">
+      <video
+    src={processback}
+    autoPlay
+    loop
+    muted
+    className="background-video"
+  />
+  <div className="white-overlay" />
         <section class="process-new-container">
           <h2 class="path-heading">{data.processMainHeading}</h2>
           <p class="work-desc">
