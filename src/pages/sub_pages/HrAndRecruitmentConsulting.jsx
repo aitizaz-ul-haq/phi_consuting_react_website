@@ -890,7 +890,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
           <div class="cta-button-section">
             <div class="right-button-header">
               <span
-                ><Link to="/contact" class="inner-header"
+                ><Link to="/contact-us" class="inner-header"
                   >Get in Touch</Link
                 ></span
               >

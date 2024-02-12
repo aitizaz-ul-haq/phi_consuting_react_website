@@ -179,7 +179,7 @@ useEffect(() => {
   } 
 
   const gotoContacts = () => {
-    window.location.href = '/contact';
+    window.location.href = '/contact-us';
   }
 
   return (
@@ -592,7 +592,7 @@ useEffect(() => {
           <div class="cta-button-section">
             <div class="right-button-header">
               <span
-                ><Link to="/contact" class="inner-header"
+                ><Link to="/contact-us" class="inner-header"
                   >Contact Us</Link
                 ></span
               >

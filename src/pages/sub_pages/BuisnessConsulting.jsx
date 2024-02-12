@@ -383,7 +383,7 @@ useScrollToTop();
             {data.bannerDescription}
             </p>
             <div class="consult-button-bui-consul">
-            <Link to="/contact" className='scheduler-set'> Schedule a Free Consultation</Link>
+            <Link to="/contact-us" className='scheduler-set'> Schedule a Free Consultation</Link>
             </div>
           </div>
         </section>
