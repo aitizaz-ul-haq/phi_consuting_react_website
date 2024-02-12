@@ -304,7 +304,7 @@ border-bottom: 2px solid var(--LIGHT-PHI-BLUE);
 }
 
 .inner-header {
-    padding: 8px 9px;
+    padding: 8px 8px;
     color: var(--BLACK-TEXT);
     text-decoration: none;
     font-weight: var(--FONT-THICKY);
@@ -6789,7 +6789,7 @@ display: none;
 
 .left-section-insights { 
     width: 294px;
-    height: 179px;
+    height: auto;
      margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -6798,7 +6798,7 @@ display: none;
 
 .right-section-insights { 
     width: 294px;
-    height: 179px;
+    height: auto;
     margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -7575,6 +7575,7 @@ display: none;
     .styling-artical-sections {
         margin-bottom: 2rem;
         margin-top: 2rem;
+        background: beige;
     }
     
 
@@ -7916,15 +7917,11 @@ width: 90%;
 
 .full-banner-call {
     /* color: var(--LIGHT-PHI-BLUE); */
-    font-size: 32px;
-  }
-
-  .full-scale-banner { 
+    font-size: 26px;
     padding-top: 4rem;
     padding-bottom: 4rem;
-    /* margin-top: 2rem;
-    margin-bottom: 2rem; */
   }
+
 
 
 
@@ -8041,7 +8038,7 @@ display: none;
 
 .left-section-insights { 
     width: 294px;
-    height: 190px;
+    height: auto;
      margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -8050,7 +8047,7 @@ display: none;
 
 .right-section-insights { 
     width: 294px;
-    height: 190px;
+    height: auto;
     margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -8397,8 +8394,8 @@ display: none;
     }
 
     .four-card-tab { 
-        width: 357px;
-        height: 479px;
+        width: 284px;
+    height: 302px;
         padding: 0.8rem;
         margin-left: 0px;
         margin-right: 0px;
@@ -8767,7 +8764,7 @@ display: none;
 
 .left-section-insights { 
     width: 294px;
-    height: 198px;
+    height: auto;
      margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -8776,7 +8773,7 @@ display: none;
 
 .right-section-insights { 
     width: 294px;
-    height: 198px;
+    height: auto;
     margin-left: 0;
      margin-right: 0;
      margin-top: 10;
