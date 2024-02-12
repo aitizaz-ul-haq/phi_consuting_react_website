@@ -404,42 +404,25 @@ useEffect(() => {
                   our office location description
                 </div> --> */}
               </div>
-              <div class="location-bar-right">
-                <iframe
-                  width="938"
-                  height="400"
-                  frameborder="0"
-                  scrolling="no"
-                  marginheight="0"
-                  marginwidth="0"
-                  id="gmap_canvas"
-                  src="https://maps.google.com/maps?width=738&amp;height=561&amp;hl=en&amp;q=24615%20East%20Applewood%20Drive%20aurora,colarado+(phi%20address)&amp;t=p&amp;z=11&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                ></iframe>
-                <a href="https://www.acadoo.de/">Ghostwriter Dissertation</a>
-              </div>
+              {/* <div class="location-bar-right"> */}
+                
+                24615 E Applewood Dr
+24615 E Applewood Dr, Aurora, CO 80016, USA
+              
+              {/* </div> */}
             </div>
             <div class="location-cards-one">
               <div class="location-bar-left">
                 <div class="location-card-title-heading">
                 {data.maptwotitle}
                 </div>
-                {/* <!-- <div class="location-card-desc">
-                  our office location description
-                </div> --> */}
+               
               </div>
-              <div class="location-bar-right">
-                <iframe
-                  width="938"
-                  height="561"
-                  frameborder="0"
-                  scrolling="no"
-                  marginheight="0"
-                  marginwidth="0"
-                  id="gmap_canvas"
-                  src="https://maps.google.com/maps?width=738&amp;height=561&amp;hl=en&amp;q=2nd%20Floor,%20North%20Side,%20Gulberg%20Empire%20Plaza,%20Plot%2033-40%20Civic%20Center,%20Gulberg%20Greens,%20IBCEHS,%20Islamabad,%2044000.%20Islamabad+(phi%20address)&amp;t=p&amp;z=11&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                ></iframe>
-                {/* <!-- <a href="https://www.acadoo.de/">Ghostwriter Dissertation</a> --> */}
-              </div>
+              {/* <div class="location-bar-right"> */}
+               
+               Phi Consulting
+2nd Floor, North Side, Gulberg Empire Plaza, Plot 33-40 Civic Center IBCEHS, 44000
+              {/* </div> */}
             </div>
           </div>
         </section>
@@ -482,8 +465,6 @@ useEffect(() => {
           </div>
         </section>
       </article>
-
-       
 
         {/* <!-- Testimonial Section --> */}
         <article class="testimonial">

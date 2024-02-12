@@ -95,8 +95,8 @@ const Footer = () => {
                   alt=""
                   width="20"
                   class="spacing" /></span
-              >24615 East Applewood Drive, 80016, Aurora, Colorado, United
-              States
+              ><span className='address-in-footer'>24615 East Applewood Drive, 80016, Aurora, Colorado, United
+              States</span>
             </li>
             <li class="list-bold">
               <span
