@@ -746,8 +746,8 @@ useScrollToTop();
 <div class="insights-container">
             <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
               <div class="left-section-insights">
-                <div class="overlay-container one-why">
-                  <div class="overlay"></div>
+                <div class="overlay-container">
+                  {/* <div class="overlay"></div> */}
                   <div class="content">
                     <h2 class="overlay-heading"> {data.whyBoxOneHeading}</h2>
                     <p class="overlay-desc">
@@ -757,8 +757,8 @@ useScrollToTop();
                 </div>
               </div>
               <div class="right-section-insights">
-                <div class="overlay-container two-why">
-                  <div class="overlay"></div>
+                <div class="overlay-container">
+                  {/* <div class="overlay"></div> */}
                   <div class="content">
                     <h2 class="overlay-heading"> {data.whyBoxTwoHeading}</h2>
                     <p class="overlay-desc">
@@ -770,8 +770,8 @@ useScrollToTop();
             </div>
             <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
               <div class="left-section-insights">
-                <div class="overlay-container three-why">
-                  <div class="overlay"></div>
+                <div class="overlay-container">
+                  {/* <div class="overlay"></div> */}
                   <div class="content">
                     <h2 class="overlay-heading">{data.whyBoxThreeHeading}</h2>
                     <p class="overlay-desc">
@@ -781,8 +781,8 @@ useScrollToTop();
                 </div>
               </div>
               <div class="right-section-insights">
-                <div class="overlay-container four-why">
-                  <div class="overlay"></div>
+                <div class="overlay-container">
+                  {/* <div class="overlay"></div> */}
                   <div class="content">
                     <h2 class="overlay-heading">{data.whyBoxFourHeading}</h2>
                     <p class="overlay-desc">
