@@ -296,7 +296,7 @@ const HomePage = () => {
     window.location.href = '/contact-us';
   }
 
-  const firstTwoBlogs = blogs.slice(0, 2);
+  const firstTwoBlogs = blogs.slice(4, 6);
   useScrollToTop();
 
   useEffect(() => {
@@ -829,7 +829,7 @@ const HomePage = () => {
              
             </div>
 
-            <p class="testi-quote">
+            <p class="testi-quote wide-first">
               <q
                 ><i
                   >{data.testione}
@@ -847,7 +847,7 @@ const HomePage = () => {
               <img src="" alt="" />
             </div>
 
-            <p class="testi-quote">
+            <p class="testi-quote wider">
               <q
                 ><i
                   >{data.testithree}</i

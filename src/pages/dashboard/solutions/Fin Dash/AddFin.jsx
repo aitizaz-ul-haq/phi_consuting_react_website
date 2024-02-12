@@ -82,7 +82,7 @@ const AddFin = () => {
           name="featuresDescriptionOne"
            // rules={[{ required: true }]}
         >
-          <Input.TextArea />
+          <Input.TextArea maxLength={100} />
         </Form.Item>
 
 
@@ -99,7 +99,7 @@ const AddFin = () => {
           name="featuresDescriptionTwo"
            // rules={[{ required: true }]}
         >
-          <Input.TextArea />
+          <Input.TextArea maxLength={100} />
         </Form.Item>
 
         <Form.Item
@@ -115,7 +115,7 @@ const AddFin = () => {
           name="featuresDescriptionThree"
            // rules={[{ required: true }]}
         >
-          <Input.TextArea />
+          <Input.TextArea maxLength={100} />
         </Form.Item>
 
         <Form.Item
@@ -131,7 +131,7 @@ const AddFin = () => {
           name="featuresDescriptionFour"
            // rules={[{ required: true }]}
         >
-          <Input.TextArea />
+          <Input.TextArea maxLength={100} />
         </Form.Item>
 
         <Form.Item
@@ -147,7 +147,7 @@ const AddFin = () => {
           name="featuresDescriptionFive"
            // rules={[{ required: true }]}
         >
-          <Input.TextArea />
+          <Input.TextArea maxLength={100} />
         </Form.Item>
 
 
@@ -164,7 +164,7 @@ const AddFin = () => {
           name="featuresDescriptionSix"
            // rules={[{ required: true }]}
         >
-          <Input.TextArea />
+          <Input.TextArea maxLength={100} />
         </Form.Item>
 
         

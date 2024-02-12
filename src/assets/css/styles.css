@@ -3370,7 +3370,7 @@ padding: 1rem;
     /* margin: 0.5rem; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     text-align: center;
 }
@@ -4347,7 +4347,7 @@ align-items: center;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/phi_event_pics/three.JPG'); /* Your background image URL */
+    background-image: url('../img/about_page/about_two.webp'); /* Your background image URL */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -14517,7 +14517,7 @@ color: white;
     display: none;
     position: absolute;
     /* background-color: var(--APPLE-GRAY); */
-     background-color: rgba(255, 255, 255, 0.6); 
+     background-color: rgba(255, 255, 255, 0.9); 
     backdrop-filter: blur(10px); 
     box-shadow: 0 8px 16px var(--LIGHTER-DARK-PHI-BLUE);
     z-index: 1;
@@ -15218,7 +15218,7 @@ color: white;
 
     .blog-card-one {
         width: 360px;
-        height: 620px;
+        height: 553px;
     }
     .blog-heading {
         font-family: var(--FF-PHI);
