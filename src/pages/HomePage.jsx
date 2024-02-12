@@ -7,7 +7,7 @@ import pallet from '../assets/img/new_logos_comps/newer/Pallet Logo.png';
 import digitalOcean from '../assets/img/new_logos_comps/newer/digital-ocean.png';
 import mudflap from '../assets/img/new_logos_comps/newer/Mudflap.png';
 import sungrade from '../assets/img/new_logos_comps/sungrade solar.png';
-import valuegraph from '../assets/img/Traditional Growth mark_2.png';
+// import valuegraph from '../assets/img/Traditional Growth mark_2.png';
 import axios from 'axios';
 
 import buisness from '../assets/img/services-icons/buisness.png';
@@ -57,7 +57,7 @@ import backClient from "../assets/img/wrappers/client_back.jpg";
 import backcurls from "../assets/img/wrappers/back_curls.jpg";
 import segmented from "../assets/img/wrappers/segemented.jpg";
 import whatback from "../assets/img/wrappers/burn.webp";
-
+import graph from "../assets/img/graph.png";
 import iso from "../assets/img/recognitions/iso.webp";
 
 const HomePage = () => {
@@ -610,7 +610,7 @@ const HomePage = () => {
               </div>
               <div  className={`new-value-right-section ${isVisibleFirst ? 'visible-right' : ''}`}>
                 <img
-                  src={valuegraph}
+                  src={graph}
                   alt=""
                   class="graph-biz"
                   title='Unpresedented growth insured with phi consulting'

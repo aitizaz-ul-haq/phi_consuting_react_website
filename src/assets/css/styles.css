@@ -13563,7 +13563,7 @@ display: none;
     .testi-quote {
         font-size: 21px;
         /* color: white; */
-        /* font-weight: 500; */
+        font-weight: 400;
     }
 
     .blog-card-one {
@@ -14919,7 +14919,7 @@ color: white;
     
     .case-button-study-page {
         padding: 8px 15px;
-        background-color: var(--LIGHT-PHI-BLUE);
+        background-color: var(--DARKER-LIGHT-PHI-BLUE);
         border-radius: 6px;
         cursor: pointer;
         transition: background-color 0.3s ease 0s;
