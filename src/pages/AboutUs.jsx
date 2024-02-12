@@ -12,6 +12,7 @@ import { TypeAnimation } from 'react-type-animation';
 import useScrollToTop from '../hooks/useScrollToTop';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
+import recog from '../assets/img/recognitions/iso.webp';
 
 const AboutUs = () => {
 
@@ -289,6 +290,8 @@ useEffect(() => {
             </h3> --> */}
           </div>
           <div className={`core-value-tiles-container ${isVisibleInnovation ? 'fade-in-left' : ''}`} ref={innovationRef}>
+           
+          <div className='collab'>Innovation</div>
             <div class="left-filled-heading-container">
               <h3 class="value-heading-box">
                 I<span class="letters-whitened">nn</span>ovation
@@ -301,12 +304,15 @@ useEffect(() => {
             </div>
           </div>
           <br />
+          
           <div className={`core-value-tiles-container ${isVisibleCollaboration ? 'fade-in-right' : ''}`} ref={collaborationRef}>
+          <div className='collab'>Collaboration</div>
             <div class="right-text-paragraph-container">
               <p class="right-text-intile">
               {data.qualitytwodescription}
               </p>
             </div>
+            
             <div class="left-filled-heading-container-alt">
               <h3 class="value-heading-box">
                 Co<span class="letters-whitened">ll</span>aboration
@@ -315,6 +321,7 @@ useEffect(() => {
           </div>
           <br />
           <div className={`core-value-tiles-container ${isVisibleIntegrity ? 'fade-in-left' : ''}`} ref={integrityRef}>
+          <div className='collab'>Integrity</div>
             <div class="left-filled-heading-container">
               <h3 class="value-heading-box">
                 In<span class="letters-whitened">teg</span>rity
@@ -328,11 +335,13 @@ useEffect(() => {
           </div>
           <br />
           <div className={`core-value-tiles-container ${isVisibleAgility ? 'fade-in-right' : ''}`} ref={agilityRef}>
+          <div className='collab'>Agility</div>
             <div class="right-text-paragraph-container">
               <p class="right-text-intile">
                 {data.qualityfourdescription}
               </p>
             </div>
+            
             <div class="left-filled-heading-container-alt">
               <h3 class="value-heading-box">
                 A<span class="letters-whitened">gil</span>ity
@@ -491,7 +500,7 @@ useEffect(() => {
                 ></q
               >
             </p>
-            <h3 class="testi-card-heading">{data.testonedesignation}</h3>
+            <h3 class="testi-card-heading">{data.testidesignationone}</h3>
           </div>
 
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
@@ -506,7 +515,7 @@ useEffect(() => {
                 ></q
               >
             </p>
-            <h3 class="testi-card-heading">{data.testthreedesignation}</h3>
+            <h3 class="testi-card-heading">{data.testidesignationthree}</h3>
           </div>
 
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
@@ -521,7 +530,7 @@ useEffect(() => {
                 ></q
               >
             </p>
-            <h3 class="testi-card-heading">{data.testtwodesignation}</h3>
+            <h3 class="testi-card-heading">{data.testidesignationtwo}</h3>
           </div>
         </section>
       </article>
@@ -545,7 +554,7 @@ useEffect(() => {
           </div>
           <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-               src={BBB}
+               src={recog}
               alt=""
               width="200"
               height="150"

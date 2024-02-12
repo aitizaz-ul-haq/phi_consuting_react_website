@@ -636,8 +636,8 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
     className="background-video"
   />
   <div className="white-overlay" />
-        <section class="process-new-container">
-          <h2 class="path-heading"> {data.processMainHeading}</h2>
+  <section class="process-new-container">
+          <h2 class="path-heading">{data.processMainHeading}</h2>
           <p class="work-desc">
           {data.processMainDesc}
           </p>
@@ -668,6 +668,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   <div class="process-new-heading">{data.processHedTwo}</div>
                   <div class="process-new-description-right-side">
                   {data.processDesTwo}
+
                   </div>
                 </div>
               </div>

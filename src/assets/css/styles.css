@@ -5978,6 +5978,27 @@ background-color: rgb(243, 241, 241);
 }
 
 @media screen and (min-width: 320px) {
+    .location-cards-one { 
+        width: 52%;
+    }
+
+    .core-phi-heading {
+        text-align: center;
+        font-family: var(--FF-PHI);
+        font-size: 25px;
+        font-weight: 100;
+    }
+
+.collab {
+    font-size: 38px;
+    text-decoration: underline;
+    /* background-color: var(--DARKER-LIGHT-PHI-BLUE);
+    padding: 0.5rem;
+    border-left: 8px solid var(--DARK-PHI-BLUE);
+    border-bottom: 2px solid var(--DARK-PHI-BLUE);
+    border-top-right-radius: 15px; */
+}
+
     .four-card-heading {
         width: 100%;
         font-size: 32px;
@@ -7587,6 +7608,10 @@ display: none;
 }
 @media screen and (min-width: 360px) {
 
+    .location-cards-one { 
+        width: 52%;
+    }
+
     .styling-articals {
         padding: 0.5rem;
     }
@@ -8411,6 +8436,11 @@ display: none;
 
 }
 @media screen and (min-width: 375px) {
+    .location-cards-one { 
+        width: 52%;
+    }
+
+
     .four-card-heading {
         width: 100%;
         font-size: 30px;
@@ -9240,6 +9270,10 @@ display: none;
 }
 @media screen and (min-width: 412px) {
 
+    .location-cards-one { 
+        width: 52%;
+    }
+
     .four-card-heading {
         width: 100%;
         font-size: 37px;
@@ -10010,6 +10044,10 @@ display: none;
 }
 @media screen and (min-width: 576px) {
 
+    .collab {
+        display: none;
+    }
+
     .four-card-heading {
         width: 100%;
         font-size: 45px;
@@ -10676,6 +10714,10 @@ display: none;
 
 }
 @media screen and (min-width: 768px) {
+
+    .collab {
+        display: none;
+    }
     
     .four-card-heading {
         width: 99%;
@@ -11475,6 +11517,10 @@ display: none;
     /* .mobile-header {
         display: none;
       } */
+
+      .collab {
+        display: none;
+    }
 
       .four-card-heading {
         width: 99%;
@@ -12637,7 +12683,9 @@ display: none;
 
 }
 @media screen and (min-width: 992px) {
-
+    .collab {
+        display: none;
+    }
     .four-card-heading {
         width: 99%;
         font-size: 45px;
@@ -12889,6 +12937,9 @@ display: none;
     }
 }
 @media screen and (min-width: 1024px) {
+    .collab {
+        display: none;
+    }
     header {
         display: flex;
         justify-content: space-between;
@@ -13332,6 +13383,15 @@ display: none;
 }
 }
 @media screen and (min-width: 1200px) {
+    .core-phi-heading {
+        text-align: center;
+        font-family: var(--FF-PHI);
+        font-size: 55px;
+        font-weight: 100;
+    }
+    .collab {
+        display: none;
+    }
     .process-new {
         position: relative;
       }
@@ -13594,10 +13654,10 @@ display: none;
     }
 
     .testi-quote {
-        font-size: 21px;
+        font-size: 18px;
         /* color: white; */
         font-weight: 400;
-        width: 678px;
+        /* width: 610px; */
     }
 
     .blog-card-one {
@@ -14903,6 +14963,10 @@ color: white;
     
 
      .testi-card {
+        display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
         width: 33%;
         opacity: 0;
         transform: translateX(-50px); /* Start off-screen to the left */
@@ -15739,7 +15803,7 @@ display: none;
 .overlay-heading {
     text-align: center;
     font-family: var(--FF-PHI);
-    font-size: var(--FS-LARGE-HEADING);
+    font-size: 30px;
     font-weight: var(--FONT-THICKER);
     text-align: left;
     color: midnightblue;

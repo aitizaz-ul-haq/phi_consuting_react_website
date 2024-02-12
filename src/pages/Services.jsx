@@ -443,7 +443,7 @@ useEffect(() => {
   />
   <div className="white-overlay" />
    {/* <div className="white-overlay" /> */}
-        <section class="process-new-container">
+   <section class="process-new-container">
           <h2 class="path-heading">{data.servicesPathHeading}</h2>
           <p class="work-desc">
             {data.servicesPathDescription}
@@ -451,7 +451,7 @@ useEffect(() => {
           <div class="process-new-section">
             <div class="left-process-section" ref={processNewRef}>
               <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
-                <img
+                <img  
                   src="../assets/img/process_icons/goal.png"
                   alt=""
                   class="new-process-icon"
