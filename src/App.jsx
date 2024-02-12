@@ -16,6 +16,7 @@ import CaseStudyView from './components/view_pages/CaseStudyView';
 import BlogView from './components/view_pages/BlogView';
 import Spotlight from './pages/Spotlight';
 import CaseDetails from './components/view_pages/CaseDetails';
+import Apply from './pages/Apply';
 
 import CustomerExperience from './pages/sub_pages/CustomerExperienceConsulting';
 import FinancialConsulting from './pages/sub_pages/FinancialConsulting';
@@ -273,6 +274,7 @@ const breadcrumbSchema =  {
         <Route path="/about-us" element={<Layout><AboutUs /></Layout>} />
         <Route path="/careers" element={<Layout><Careers /></Layout>} />
         <Route path="/contact-us" element={<Layout><Contacts /></Layout>} />
+        <Route path="/apply" element={<Layout><Apply /></Layout>} />
 
          {/* Separate route for login */}
          <Route path="/phi-remote-login" element={<Login />} />

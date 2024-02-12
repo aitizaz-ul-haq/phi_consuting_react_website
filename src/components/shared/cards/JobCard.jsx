@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const JobCard = ({job}) => {
@@ -11,11 +12,11 @@ const JobCard = ({job}) => {
                   {job.role}
                 </div>
               </div>
-              {/* <div class="apply-button-container">
+              <div class="apply-button-container">
                 <div class="right-button">
-                  <span>Apply Now</span>
+                  <span><Link to="/apply" class="explore-more-services">Apply Now</Link></span>
                 </div>
-              </div> */}
+              </div>
             </div>
         </>
     );

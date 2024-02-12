@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import phicontactbanner from "../assets/img/phi_logo.webp";
 import { Helmet } from 'react-helmet';
 import contactback from '../assets/img/wrappers/jill.jpg';
+import useScrollToTop from '../hooks/useScrollToTop';
 
 const Contacts = () => {
 
@@ -95,6 +96,9 @@ const Contacts = () => {
       }
     };
   }, []); 
+
+  
+useScrollToTop();
 
   return (
     <>
