@@ -65,6 +65,8 @@ import persons from '../../assets/img/barcard-icons/employee.png';
 import circular from '../../assets/img/barcard-icons/b2b.png';
 import stack from '../../assets/img/barcard-icons/coins-stack.png';
 
+import whatback from "../../assets/img/wrappers/burn.webp"; 
+
 
 const Cloud = () => {
   const [sectionOneTitle, setSectionOneTitle] = useState('');
@@ -80,17 +82,6 @@ const Cloud = () => {
 
   const [heroHeading, setHeroHeading] = useState('');
   const [heroDescription, setHeroDescription] = useState('');
-  // const [isVisibleTesti, setIsVisibleTesti] = useState(false);
-  // const testiRef = useRef(null);
-
-  // const [isVisible, setIsVisible] = useState(false);
-  // const containerRef = useRef(null);
-
-  // const [isVisibleAch, setIsVisibleAch] = useState(false);
-  // const achRef = useRef(null);
-
-  // const [isVisiblecard, setIsVisiblecard] = useState(false);
-  // const cardsRef = useRef(null);
 
   const [processNewVisible, setProcessNewVisible] = useState(false);
   const processNewRef = useRef(null);
@@ -216,6 +207,56 @@ const Cloud = () => {
   useEffect(() => {
     fetchSaasCards();
   }, []);
+
+  useEffect(() => {
+    // Function to handle the parallax effect
+    const handleScroll = () => {
+      const offset = window.pageYOffset;
+      document.body.style.backgroundPositionY = offset * 0.5 + 'px'; // Adjust the speed of the parallax effect by changing the multiplier
+    };
+  
+    // Set background image on mount
+    document.body.style.backgroundImage = `url(${whatback})`;
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.backgroundAttachment = 'fixed'; // This is necessary for the parallax effect
+  
+    window.addEventListener('scroll', handleScroll);
+  
+    // Clean up function to remove the event listener and revert styles on unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.body.style.backgroundImage = '';
+      document.body.style.backgroundSize = '';
+      document.body.style.backgroundPosition = '';
+      document.body.style.backgroundAttachment = '';
+    };
+  }, []);
+  
+  useEffect(() => {
+    // Setting the background color with a transparent effect for the services section
+    const servicesSection = document.querySelector('.why-phi-for-sales');
+    
+    if (servicesSection) {
+      // Apply light blue background color with transparency
+      servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
+      // Apply top and bottom borders
+      servicesSection.style.borderTop = '2px solid #add8e6'; // Light blue color
+      servicesSection.style.borderBottom = '2px solid #add8e6'; // Light blue color
+      // Ensure content inside is not affected by the background color
+      // This is inherently the case with the background color property
+      // but ensure text and other elements have enough contrast
+    }
+  
+    // Cleanup function to revert styles
+    return () => {
+      if (servicesSection) {
+        servicesSection.style.backgroundColor = '';
+        servicesSection.style.borderTop = '';
+        servicesSection.style.borderBottom = '';
+      }
+    };
+  }, []); 
   
   const fetchSaasCards = async () => {
     try {
@@ -234,52 +275,6 @@ const Cloud = () => {
       message.error('Failed to fetch data');
     }
   };
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         setIsVisiblecard(entry.isIntersecting);
-  //       });
-  //     },
-  //     { threshold: 0.5 }
-  //   );
-
-  //   if (cardsRef.current) {
-  //     observer.observe(cardsRef.current);
-  //   }
-
-  //   return () => observer.disconnect();
-  // }, []);
-  
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//         (entries) => {
-//             entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
-//         },
-//         { threshold: 0.5 }
-//     );
-
-//     observer.observe(achRef.current);
-//     return () => observer.disconnect();
-// }, []);
-
-// useEffect(() => {
-//   const observer = new IntersectionObserver(entries => {
-//       entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
-//   }, { threshold: 0.5 });
-
-//   observer.observe(testiRef.current);
-//   return () => observer.disconnect();
-// }, []);
-
-// useEffect(() => {
-//     const observer = new IntersectionObserver(entries => {
-//         entries.forEach(entry => setIsVisible(entry.isIntersecting));
-//     }, { threshold: 0.5 }); 
-
-//     observer.observe(containerRef.current);
-//     return () => observer.disconnect(); 
-// }, []);
 
 useEffect(() => {
   const observer = new IntersectionObserver(
@@ -524,8 +519,8 @@ useScrollToTop();
         <div class="insights-container">
           <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
             <div class="left-section-insights">
-              <div class="overlay-container one-why">
-                <div class="overlay"></div>
+              <div class="overlay-container">
+                {/* <div class="overlay"></div> */}
                 <div class="content">
                   <h2 class="overlay-heading">
                   {sectionOneTitle}
@@ -537,8 +532,8 @@ useScrollToTop();
               </div>
             </div>
             <div class="right-section-insights">
-              <div class="overlay-container two-why">
-                <div class="overlay"></div>
+              <div class="overlay-container">
+                {/* <div class="overlay"></div> */}
                 <div class="content">
                   <h2 class="overlay-heading">
                   {sectionTwoTitle}
@@ -549,32 +544,6 @@ useScrollToTop();
                 </div>
               </div>
             </div>
-          </div>
-          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
-            <div class="left-section-insights-last">
-              <div class="overlay-container three-why">
-                <div class="overlay"></div>
-                <div class="content">
-                  <h2 class="overlay-heading">{sectionThreeTitle}</h2>
-                  <p class="overlay-desc">
-                  {sectionThreeParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-            {/* <div class="right-section-insights">
-              <div class="overlay-container four-why">
-                <div class="overlay"></div>
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  Long-Term Partnership
-                  </h2>
-                  <p class="overlay-desc">
-                  Your success is our success. We believe in building long-term relationships and supporting your journey from a budding startup to a market leader.
-                  </p>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </article>

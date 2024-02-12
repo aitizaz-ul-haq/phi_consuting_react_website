@@ -12602,6 +12602,7 @@ display: none;
     .four-card-heading {
         width: 99%;
         font-size: 45px;
+        color: var(--DARK-PHI-BLUE);
     }
     header {
         display: flex;
@@ -13378,7 +13379,7 @@ display: none;
         justify-content: center;
         align-items: center;
         text-align: center;
-        color: #00BCD4;
+        color: var(--DARK-PHI-BLUE);
     }
     
     .four-card-cards {
