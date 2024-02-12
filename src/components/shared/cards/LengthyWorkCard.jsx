@@ -36,8 +36,8 @@ const LengthyWorkCard = ({caseStudy}) => {
         <>
             <div class="insights-bundle-our-work">
             <div class="full-section-insights-our-work">
-              <div class="overlay-container five-bui-consul">
-                <div class="overlay"></div>
+              <div class="overlay-container">
+                {/* <div class="overlay"></div> */}
                 <div class="content">
                   <div class="comp-logo-square-container">
                     <img
