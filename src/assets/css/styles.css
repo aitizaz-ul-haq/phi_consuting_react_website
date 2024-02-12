@@ -463,6 +463,7 @@ border-bottom: 2px solid var(--LIGHT-PHI-BLUE);
   .mobile-dropdown-menu a span {
     margin-right: 10px;
     transition: transform 0.3s;
+    color: white;
   }
   
   .mobile-dropdown-show {
