@@ -12,7 +12,7 @@ import { Helmet } from 'react-helmet';
 import clutchone from '../assets/img/achievements-badges/clutch_1.png';
 import BBB from '../assets/img/achievements-badges/BBB.png';
 import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
-
+import backgroundblue from "../assets/img/wrappers/creation.jpg";
 import LengthyWorkCard from '../components/shared/cards/LengthyWorkCard';
 import { TypeAnimation } from 'react-type-animation';
 import useScrollToTop from '../hooks/useScrollToTop';
@@ -87,6 +87,56 @@ ctadescription:"",
 
     fetchCaseStudies();
   }, []);
+
+  useEffect(() => {
+    // Function to handle the parallax effect
+    const handleScroll = () => {
+      const offset = window.pageYOffset;
+      document.body.style.backgroundPositionY = offset * 0.5 + 'px'; // Adjust the speed of the parallax effect by changing the multiplier
+    };
+
+    // Set background image on mount
+    document.body.style.backgroundImage = `url(${backgroundblue})`;
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.backgroundAttachment = 'fixed'; // This is necessary for the parallax effect
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up function to remove the event listener and revert styles on unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.body.style.backgroundImage = '';
+      document.body.style.backgroundSize = '';
+      document.body.style.backgroundPosition = '';
+      document.body.style.backgroundAttachment = '';
+    };
+  }, []);
+
+  useEffect(() => {
+    // Setting the background color with a transparent effect for the services section
+    const servicesSection = document.querySelector('.why-phi-for-sales');
+    
+    if (servicesSection) {
+      // Apply light blue background color with transparency
+      servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.7)';
+      // Apply top and bottom borders
+      servicesSection.style.borderTop = '2px solid #add8e6'; // Light blue color
+      servicesSection.style.borderBottom = '2px solid #add8e6'; // Light blue color
+      // Ensure content inside is not affected by the background color
+      // This is inherently the case with the background color property
+      // but ensure text and other elements have enough contrast
+    }
+
+    // Cleanup function to revert styles
+    return () => {
+      if (servicesSection) {
+        servicesSection.style.backgroundColor = '';
+        servicesSection.style.borderTop = '';
+        servicesSection.style.borderBottom = '';
+      }
+    };
+  }, []); 
 
 
   const gotoContacts = () => {

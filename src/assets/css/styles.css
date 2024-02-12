@@ -2342,8 +2342,10 @@ padding: 1rem;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: var(--DARK-PHI-BLUE);
+    background-color: rgba(23, 41, 85, 0.884);
     padding: 2rem;
+    /* background-color: rgba(255, 255, 255, 0.5); 
+        backdrop-filter: blur(10px); */
 }
 
 
@@ -14515,7 +14517,7 @@ color: white;
     z-index: 1;
     min-width: 160px;
     width: 289px;
-    border-bottom: 8px solid #00BCD4;
+    border-bottom: 8px solid var(--DARKER-LIGHT-PHI-BLUE);
     border-radius: 20px;
 }
 
@@ -14541,17 +14543,19 @@ color: white;
 
 .dropdown-content a:hover span {
     transform: scale(1.12); /* Scale the text up slightly on hover */
-    color: var(--DARK-PHI-BLUE);
+    color: white;
 }
 
 .dropdown-content a:hover {
-    background-color: var(--LIGHT-PHI-BLUE);
+    background-color: var(--DARKER-LIGHT-PHI-BLUE);
+    color: white;
     /* color: var(--DARK-PHI-BLUE); */
     /* transform: scale(1.05); */
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+    
 }
   
   /* Animation */

@@ -58,6 +58,8 @@ import backcurls from "../assets/img/wrappers/back_curls.jpg";
 import segmented from "../assets/img/wrappers/segemented.jpg";
 import whatback from "../assets/img/wrappers/burn.webp";
 
+import iso from "../assets/img/recognitions/iso.webp";
+
 const HomePage = () => {
 
   const [darkMode, setDarkMode] = useState(false);
@@ -321,6 +323,31 @@ const HomePage = () => {
       document.body.style.backgroundAttachment = '';
     };
   }, []);
+
+  useEffect(() => {
+    // Setting the background color with a transparent effect for the services section
+    const servicesSection = document.querySelector('.services');
+    
+    if (servicesSection) {
+      // Apply light blue background color with transparency
+      servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
+      // Apply top and bottom borders
+      servicesSection.style.borderTop = '2px solid #add8e6'; // Light blue color
+      servicesSection.style.borderBottom = '2px solid #add8e6'; // Light blue color
+      // Ensure content inside is not affected by the background color
+      // This is inherently the case with the background color property
+      // but ensure text and other elements have enough contrast
+    }
+
+    // Cleanup function to revert styles
+    return () => {
+      if (servicesSection) {
+        servicesSection.style.backgroundColor = '';
+        servicesSection.style.borderTop = '';
+        servicesSection.style.borderBottom = '';
+      }
+    };
+  }, []); 
 
   useEffect(() => {
     const workArticle = document.querySelector('.work');
@@ -863,7 +890,7 @@ const HomePage = () => {
           </div>
           <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
-              src={BBB}
+              src={iso}
               alt=""
               width="200"
               height="150"
