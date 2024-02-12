@@ -562,22 +562,7 @@ const scrollToTop = () => {
               </div>
             </div>
           </div>
-          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
-            <div class="left-section-insights-last">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {sectionFiveTitle}
-                  </h2>
-                  <p class="overlay-desc">
-                  {sectionFiveParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-           
-          </div>
+         
         </div>
       </article>
 
