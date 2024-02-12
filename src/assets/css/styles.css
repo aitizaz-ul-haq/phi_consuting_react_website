@@ -2098,6 +2098,8 @@ padding: 1rem;
     border-radius: 50%; /* Make it a circle */
     overflow: hidden; /* Ensure the image doesn't overflow the circle */
     /* border: 5px solid var(--LIGHT-PHI-BLUE); */
+    margin-top: 2px;
+    margin-bottom: 30px;
 }
 
 .test-two {
@@ -2106,9 +2108,11 @@ padding: 1rem;
     background-position: center; /* Center the background image */
     width: 80px;
     height: 80px;
+    margin-top: -7px;
     border-radius: 50%; /* Make it a circle */
     overflow: hidden; /* Ensure the image doesn't overflow the circle */
     /* border: 5px solid var(--LIGHT-PHI-BLUE); */
+    margin-bottom: 43px;
 }
 
 .test-three {
@@ -2120,6 +2124,7 @@ padding: 1rem;
     border-radius: 50%; /* Make it a circle */
     overflow: hidden; /* Ensure the image doesn't overflow the circle */
     /* border: 5px solid var(--LIGHT-PHI-BLUE); */
+    margin-bottom: 30px;
 }
 
 .achievement {
@@ -4300,9 +4305,9 @@ align-items: center;
     padding: 12px 45px;
     color: var(--WHITE-TEXT);
     cursor: pointer;
-    background-color: var(--DARKER-LIGHT-PHI-BLUE);
+    background-color: #55bee1;
     transition: background-color 0.3s;
-    color: var(--DARK-PHI-BLUE);
+    color: white;
 }
 
 .left-button-work-small span:hover {
@@ -5812,7 +5817,7 @@ align-items: center;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #00BCD4;
+    color: white;
 }
 
 .four-card-cards {
@@ -12608,7 +12613,7 @@ display: none;
     .four-card-heading {
         width: 99%;
         font-size: 45px;
-        color: var(--DARK-PHI-BLUE);
+        color: white;
     }
     header {
         display: flex;
@@ -13385,7 +13390,7 @@ display: none;
         justify-content: center;
         align-items: center;
         text-align: center;
-        color: var(--DARK-PHI-BLUE);
+        color: white;
     }
     
     .four-card-cards {
@@ -13564,6 +13569,7 @@ display: none;
         font-size: 21px;
         /* color: white; */
         font-weight: 400;
+        width: 678px;
     }
 
     .blog-card-one {

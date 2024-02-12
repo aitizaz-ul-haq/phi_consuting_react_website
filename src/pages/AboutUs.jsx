@@ -146,10 +146,10 @@ useEffect(() => {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
     }, { threshold: 0.5 });
-  
+
     observer.observe(testiRef.current);
     return () => observer.disconnect();
-  }, []);
+}, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -483,8 +483,10 @@ useEffect(() => {
         </section>
       </article>
 
-         {/* <!-- Testimonial Section --> */}
-         <article class="testimonial">
+       
+
+        {/* <!-- Testimonial Section --> */}
+        <article class="testimonial">
         <section className="testimonial-container">
           <h2 class="testi-heading">
           {data.testimonilaheading}
@@ -497,10 +499,10 @@ useEffect(() => {
         <section className="testi-cards-container" ref={testiRef}>
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 testi-one">
-              {/* <!-- <img src="./assets/img/testimonial_one.webp" alt="" /> --> */}
+             
             </div>
 
-            <p class="testi-quote">
+            <p class="testi-quote wide-first">
               <q
                 ><i
                   >{data.testione}
@@ -508,7 +510,22 @@ useEffect(() => {
                 ></q
               >
             </p>
-            <h3 class="testi-card-heading">{data.testidesignationone}</h3>
+            <h3 class="testi-card-heading">{data.testonedesignation}</h3>
+          </div>
+
+          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
+            <div class="circleBase type3 test-three">
+              <img src="" alt="" />
+            </div>
+
+            <p class="testi-quote wider">
+              <q
+                ><i
+                  >{data.testithree}</i
+                ></q
+              >
+            </p>
+            <h3 class="testi-card-heading">{data.testthreedesignation}</h3>
           </div>
 
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
@@ -523,22 +540,7 @@ useEffect(() => {
                 ></q
               >
             </p>
-            <h3 class="testi-card-heading">{data.testidesignationtwo}</h3>
-          </div>
-
-          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
-            <div class="circleBase type3 test-three">
-              <img src="" alt="" />
-            </div>
-
-            <p class="testi-quote">
-              <q
-                ><i
-                  >{data.testithree}</i
-                ></q
-              >
-            </p>
-            <h3 class="testi-card-heading">{data.testidesignationthree}</h3>
+            <h3 class="testi-card-heading">{data.testtwodesignation}</h3>
           </div>
         </section>
       </article>
