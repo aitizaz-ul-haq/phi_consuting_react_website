@@ -63,7 +63,7 @@ import solarproduct from "../../assets/img/api_images/solar_one.webp";
 import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
-
+import whatback from "../../assets/img/wrappers/burn.webp"; 
 import processback from "../../assets/video/home-bg.mp4";
 
 import { Helmet } from 'react-helmet';
@@ -246,8 +246,6 @@ const HrAndRecruitmentConsulting = () => {
    
      return () => observer.disconnect();
    }, []);
-   
- 
 
  useEffect(() => {
   const observer = new IntersectionObserver(
@@ -276,6 +274,56 @@ const HrAndRecruitmentConsulting = () => {
     });
   };
 }, []);
+
+useEffect(() => {
+  // Function to handle the parallax effect
+  const handleScroll = () => {
+    const offset = window.pageYOffset;
+    document.body.style.backgroundPositionY = offset * 0.5 + 'px'; // Adjust the speed of the parallax effect by changing the multiplier
+  };
+
+  // Set background image on mount
+  document.body.style.backgroundImage = `url(${whatback})`;
+  document.body.style.backgroundSize = 'cover';
+  document.body.style.backgroundPosition = 'center';
+  document.body.style.backgroundAttachment = 'fixed'; // This is necessary for the parallax effect
+
+  window.addEventListener('scroll', handleScroll);
+
+  // Clean up function to remove the event listener and revert styles on unmount
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+    document.body.style.backgroundImage = '';
+    document.body.style.backgroundSize = '';
+    document.body.style.backgroundPosition = '';
+    document.body.style.backgroundAttachment = '';
+  };
+}, []);
+
+useEffect(() => {
+  // Setting the background color with a transparent effect for the services section
+  const servicesSection = document.querySelector('.why-phi-for-sales');
+  
+  if (servicesSection) {
+    // Apply light blue background color with transparency
+    servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
+    // Apply top and bottom borders
+    servicesSection.style.borderTop = '2px solid #add8e6'; // Light blue color
+    servicesSection.style.borderBottom = '2px solid #add8e6'; // Light blue color
+    // Ensure content inside is not affected by the background color
+    // This is inherently the case with the background color property
+    // but ensure text and other elements have enough contrast
+  }
+
+  // Cleanup function to revert styles
+  return () => {
+    if (servicesSection) {
+      servicesSection.style.backgroundColor = '';
+      servicesSection.style.borderTop = '';
+      servicesSection.style.borderBottom = '';
+    }
+  };
+}, []); 
 const toggleDarkMode = () => setDarkMode(!darkMode);
 
   const scrollToTop = () => {
@@ -753,8 +801,8 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
           <div class="insights-container">
             <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
               <div class="left-section-insights">
-                <div class="overlay-container one-hr-consul">
-                  <div class="overlay"></div>
+                <div class="overlay-container">
+                  {/* <div class="overlay"></div> */}
                   <div class="content">
                     <h2 class="overlay-heading"> {data.whyBoxOneHeading}</h2>
                     <p class="overlay-desc">
@@ -764,8 +812,8 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 </div>
               </div>
               <div class="right-section-insights">
-                <div class="overlay-container two-hr-consul">
-                  <div class="overlay"></div>
+                <div class="overlay-container">
+                  {/* <div class="overlay"></div> */}
                   <div class="content">
                     <h2 class="overlay-heading"> {data.whyBoxTwoHeading}</h2>
                     <p class="overlay-desc">
@@ -777,8 +825,8 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             </div>
             <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
               <div class="left-section-insights">
-                <div class="overlay-container three-hr-consul">
-                  <div class="overlay"></div>
+                <div class="overlay-container">
+                  {/* <div class="overlay"></div> */}
                   <div class="content">
                     <h2 class="overlay-heading">{data.whyBoxThreeHeading}</h2>
                     <p class="overlay-desc">
@@ -788,8 +836,8 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 </div>
               </div>
               <div class="right-section-insights">
-                <div class="overlay-container four-hr-consul">
-                  <div class="overlay"></div>
+                <div class="overlay-container">
+                  {/* <div class="overlay"></div> */}
                   <div class="content">
                     <h2 class="overlay-heading">{data.whyBoxFourHeading}</h2>
                     <p class="overlay-desc">
@@ -801,8 +849,8 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             </div>
             <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
               <div class="left-section-insights">
-                <div class="overlay-container five-hr-consul">
-                  <div class="overlay"></div>
+                <div class="overlay-container">
+                  {/* <div class="overlay"></div> */}
                   <div class="content">
                     <h2 class="overlay-heading">{data.whyBoxFiveHeading}</h2>
                     <p class="overlay-desc">
@@ -812,8 +860,8 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 </div>
               </div>
               <div class="right-section-insights">
-                <div class="overlay-container six-hr-consul">
-                  <div class="overlay"></div>
+                <div class="overlay-container">
+                  {/* <div class="overlay"></div> */}
                   <div class="content">
                     <h2 class="overlay-heading">{data.whyBoxSixHeading}</h2>
                     <p class="overlay-desc">

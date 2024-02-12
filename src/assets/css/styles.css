@@ -378,7 +378,7 @@ border-bottom: 2px solid var(--LIGHT-PHI-BLUE);
     z-index: 1;
     min-width: 160px;
     width: 289px;
-    border-bottom: 8px solid #00BCD4;
+    border-bottom: 8px solid var(--DARKER-LIGHT-PHI-BLUE);
     border-radius: 20px;
 }
 
@@ -408,7 +408,7 @@ border-bottom: 2px solid var(--LIGHT-PHI-BLUE);
 }
 
 .dropdown-content a:hover {
-    background-color: var(--LIGHT-PHI-BLUE);
+    background-color: var(--DARKER-LIGHT-PHI-BLUE);
     /* color: var(--DARK-PHI-BLUE); */
     /* transform: scale(1.05); */
 }
@@ -4272,7 +4272,7 @@ align-items: center;
     font-size: 28px;
     font-weight: var(--FONT-THICKER);
     text-align: left;
-    color: var(--LIGHT-PHI-BLUE);
+    color: midnightblue;
     margin: 0;
 }
 
@@ -6809,6 +6809,7 @@ display: none;
 }
 
 .overlay-heading {
+    color: midnightblue;
     font-size: 24px;
 }
 
@@ -8059,6 +8060,7 @@ display: none;
 }
 
 .overlay-heading {
+    color: midnightblue;
     font-size: 24px;
 }
 
@@ -8784,6 +8786,7 @@ display: none;
 }
 
 .overlay-heading {
+    color: midnightblue;
     font-size: 24px;
 }
 
@@ -9636,6 +9639,7 @@ display: none;
 }
 
 .overlay-heading {
+    color: midnightblue;
     font-size: 24px;
 }
 
@@ -10331,6 +10335,7 @@ display: none;
 }
 
 .overlay-heading {
+    color: midnightblue;
     font-size: 24px;
 }
 
@@ -10969,6 +10974,7 @@ display: none;
 }
 
 .overlay-heading {
+    color: midnightblue;
     font-size: 24px;
 }
 
@@ -11874,6 +11880,7 @@ display: none;
 }
 
 .overlay-heading {
+    color: midnightblue;
     font-size: 24px;
 }
 
@@ -15610,16 +15617,20 @@ display: none;
 
 .left-section-insights {
     width: 50%;
-    height: 187px;
+    height: 220px;
     margin: 2rem;
     overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(10px);
 }
 
 .right-section-insights {
     width: 50%;
-    height: 187px;
+    height: 220px;
     margin: 2rem;
     overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(10px);
 }
 
 .overlay-container {
@@ -15686,7 +15697,7 @@ display: none;
     font-size: var(--FS-LARGE-HEADING);
     font-weight: var(--FONT-THICKER);
     text-align: left;
-    color: var(--DARKER-LIGHT-PHI-BLUE);
+    color: midnightblue;
 }
 
 .overlay-desc {
