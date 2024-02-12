@@ -454,7 +454,9 @@ border-bottom: 2px solid var(--LIGHT-PHI-BLUE);
   }
   
   .mobile-dropdown-menu a:visited,
-  .mobile-dropdown-menu a:active {
+  .mobile-dropdown-menu a:active,
+  .mobile-dropdown-menu a:focus, 
+  .mobile-dropdown-menu a:hover{
     color: white;
   }
   
@@ -1941,6 +1943,7 @@ padding: 1rem;
 
 .cta-heading {
     font-size: 25px;
+    margin-bottom: 12px;
 }
 
 .cta-content {
@@ -2785,6 +2788,7 @@ padding: 1rem;
       z-index: 1;
       color: white; /* Set text color to contrast with the overlay */
       padding: 20px;
+      background-color: rgba(38, 66, 135, 0.784);
   }
 
   .full-banner-call {
@@ -4242,7 +4246,8 @@ align-items: center;
 }
 
 .full-section-insights {
-    background-color: green;
+    background-color: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(10px);
     width: 1038px;
     height: 181px;
     margin: 1rem;
@@ -4254,7 +4259,7 @@ align-items: center;
     background-color: rgba(255, 255, 255, 0.5); 
         backdrop-filter: blur(10px);
     width: 1038px;
-    height: 400px;
+    height: 100%;
     margin: 1rem;
     box-shadow: -1px 33px 72px -46px var(--DARK-PHI-BLUE);
     border: 1px solid var(--DARKER-LIGHT-PHI-BLUE);
@@ -5980,8 +5985,9 @@ background-color: rgb(243, 241, 241);
 
     .four-card-tab { 
         margin: 0px;
-        height: 479px;
+        height: 330px;
         width: 296px;
+    
     }
     .barcard-bar {
         display: flex;
@@ -6038,6 +6044,8 @@ background-color: rgb(243, 241, 241);
     }
 .styling-artical-sections {
     padding: 1rem;
+    background: white;
+    margin-top: 20px;
 }
 
     header {
@@ -6095,6 +6103,8 @@ background-color: rgb(243, 241, 241);
         }
         .client-desc {
         font-size : 13px;
+        text-align: justify;
+        width: 98%;
         }
 
         .logo-container-one {
@@ -6177,8 +6187,9 @@ background-color: rgb(243, 241, 241);
         }
 
         .work-desc {
-            font-size : 13px;
-            width: 95%;
+            font-size: 13px;
+            width: 86%;
+            text-align: justify;
         }
 
         .how-work {
@@ -6269,6 +6280,7 @@ background-color: rgb(243, 241, 241);
         .cta-content {
             padding: 9px;
             text-align: center;
+            width: 100%;
         }
 
         .services-tab-invisible {
@@ -6349,8 +6361,9 @@ width: 90%;
 }
 
 .blog-desc {
-    font-size : 13px;
+    font-size: 13px;
     width: 95%;
+    margin-bottom: 36px;
 }
 
 .blog-cards-container { 
@@ -6407,7 +6420,7 @@ width: 90%;
 
 .full-banner-call {
     /* color: var(--LIGHT-PHI-BLUE); */
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .full-scale-banner { 
@@ -6614,12 +6627,14 @@ width: 90%;
 .macro-title {
     font-size: 20px;
     text-align: center;
+    width: 80%;
         }
     
         .study-macro-desc-main {
             font-size: 15px;
             text-align: center;
-            
+            width: 84%;
+            text-align: justify;
         }
 
         .services-industry-container {
@@ -6691,7 +6706,8 @@ width: 90%;
 }
 
 .circle-container { 
-    width: 273px;
+    width: 283px;
+    height: 333px;
     border-top-right-radius: 90px;
     border-bottom-left-radius: 90px;
 }
@@ -6760,6 +6776,7 @@ display: none;
 /* ===========================================buisness consulting page======================= */
 .sales-heading { 
     font-size: 18px;
+    color: black;
 }
 
 .sales-banner-desc { 
@@ -7098,9 +7115,10 @@ display: none;
  }
 
  .full-section-insights-our-work {
-    background-color: green;
+    background-color: rgba(255, 255, 255, 0.5); 
+        backdrop-filter: blur(10px);
     width: 311px;
-    height: 730px;
+    height: 100%;
     margin-top: 25px;
     margin-bottom: 25px;
     margin-left: 0;
@@ -7108,7 +7126,8 @@ display: none;
  }
 
  .left-section-insights-our-work {
-    background-color: green;
+    background-color: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(10px);
     width: 311px;
     height: 560px;
     margin-top: 25px;
@@ -7546,11 +7565,17 @@ display: none;
     height: auto;
   }
 
+  .contact-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
   .contact-heading { 
     font-size: 25px;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    margin-top: 10px;
+    color: white;
   }
 
  
@@ -7575,7 +7600,7 @@ display: none;
     .styling-artical-sections {
         margin-bottom: 2rem;
         margin-top: 2rem;
-        background: beige;
+        background: white;
     }
     
 
@@ -9617,7 +9642,7 @@ display: none;
 
 .left-section-insights { 
     width: 294px;
-    height: 184px;
+    height: auto;
      margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -9890,9 +9915,10 @@ display: none;
 
  /* ====================================our work page============================ */
  .full-section-insights-our-work {
-    background-color: green;
+    background-color: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(10px);
     width: 412px;
-    height: 560px;
+    height: 100%;
     margin-top: 25px;
     margin-bottom: 25px;
     margin-left: 0;
@@ -9900,7 +9926,8 @@ display: none;
  }
 
  .left-section-insights-our-work {
-    background-color: green;
+    background-color: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(10px);
     width: 412px;
     height: 560px;
     margin-top: 25px;
@@ -15918,7 +15945,7 @@ display: none;
      background-color: rgba(255, 255, 255, 0.5); 
         backdrop-filter: blur(10px);
     width: 80%;
-    height: 364px;
+    height: 100%;
     margin-top: 25px;
     margin-bottom: 25px;
     margin-left: 0;
