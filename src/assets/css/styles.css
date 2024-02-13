@@ -429,7 +429,9 @@ header {
 .mobile-dropdown-menu {
     display: none;
     position: absolute;
-    background-color: var(--DARK-PHI-BLUE);
+    /* background-color: var(--DARK-PHI-BLUE); */
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
     box-shadow: 0 8px 16px var(--LIGHTER-DARK-PHI-BLUE);
     z-index: 1;
     min-width: 160px;
