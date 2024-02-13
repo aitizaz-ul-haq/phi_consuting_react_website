@@ -86,7 +86,9 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: var(--DARK-PHI-BLUE);
+    /* background-color: var(--DARK-PHI-BLUE); */
+     background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
     color: white;
   }
   
@@ -104,7 +106,7 @@ header {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: var(--DARK-PHI-BLUE);
     margin: 5px 0;
   }
   
@@ -141,17 +143,20 @@ header {
     padding: 20px;
     height: 100vh;
     /* background-color: var(--DARK-PHI-BLUE); */
-    background-color: rgba(0, 51, 102, 0.7);
+    background-color: rgba(0, 51, 102, 0.9);
+     /* /* background-color: rgba(255, 255, 255, 0.6);  */
+    backdrop-filter: blur(20px);  
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: left;
     text-align: left;
   }
 
   .list-element-mobile-menu {
-border-bottom: 2px solid var(--LIGHT-PHI-BLUE);
+  /* border-bottom: px solid var(--LIGHT-PHI-BLUE); */
+  margin-top: 10px;
   }
   
   .mobile-menu {
@@ -167,6 +172,7 @@ border-bottom: 2px solid var(--LIGHT-PHI-BLUE);
 }
   
   .header-mobile-link {
+    font-weight: 100;
     text-decoration: none;
     color: white;
     font-size: 22px;
