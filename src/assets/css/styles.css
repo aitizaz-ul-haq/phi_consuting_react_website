@@ -3571,6 +3571,8 @@ margin: 2rem;
 .right-section-insights {
     width: 500px;
     height: 500px;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
     margin: 1rem;
     box-shadow: -1px 33px 72px -46px var(--DARK-PHI-BLUE);
     border: 1px solid var(--DARKER-LIGHT-PHI-BLUE);
@@ -4276,7 +4278,9 @@ align-items: center;
 
 .right-section-insights {
     width: 500px;
-    height: 181px;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
     margin: 1rem;
     box-shadow: -1px 33px 72px -46px var(--DARK-PHI-BLUE);
     border: 1px solid var(--DARKER-LIGHT-PHI-BLUE);
@@ -6018,9 +6022,9 @@ background-color: rgb(243, 241, 241);
 
     .four-card-tab { 
         margin: 0px;
-        height: 330px;
+        height: auto;
         width: 296px;
-    
+        margin-top: 20px;
     }
     .barcard-bar {
         display: flex;
@@ -6222,7 +6226,7 @@ background-color: rgb(243, 241, 241);
         .work-desc {
             font-size: 13px;
             width: 86%;
-            text-align: justify;
+            /* text-align: justify; */
         }
 
         .how-work {
@@ -6840,6 +6844,8 @@ display: none;
 .left-section-insights { 
     width: 294px;
     height: auto;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
      margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -6849,6 +6855,8 @@ display: none;
 .right-section-insights { 
     width: 294px;
     height: auto;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
     margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -7642,11 +7650,12 @@ display: none;
     
 
     .four-card-tab {
-        width: 336px;
-        height: 479px;
+        width: 316px;
+        height: auto;
         padding: 1rem;
+        margin-top: 20px;
         /* background-color: lightblue; */
-        margin: 0px;
+        /* margin: 0px; */
     }
 
     .four-card-header {
@@ -8101,6 +8110,8 @@ display: none;
 .left-section-insights { 
     width: 294px;
     height: auto;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
      margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -8110,6 +8121,8 @@ display: none;
 .right-section-insights { 
     width: 294px;
     height: auto;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
     margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -8832,6 +8845,8 @@ display: none;
 .left-section-insights { 
     width: 294px;
     height: auto;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
      margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -8841,6 +8856,8 @@ display: none;
 .right-section-insights { 
     width: 294px;
     height: auto;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
     margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -9689,6 +9706,8 @@ display: none;
 .left-section-insights { 
     width: 294px;
     height: auto;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
      margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -9697,7 +9716,9 @@ display: none;
 
 .right-section-insights { 
     width: 294px;
-    height: 184px;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
     margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -9985,6 +10006,7 @@ display: none;
  .right-section-insights-our-work {
     width: 412px;
     height: 560px;
+    
     margin-top: 25px;
     margin-bottom: 25px;
     margin-left: 0;
@@ -10390,7 +10412,9 @@ display: none;
 
 .left-section-insights { 
     width: 294px;
-    height: 186px;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
      margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -10399,7 +10423,9 @@ display: none;
 
 .right-section-insights { 
     width: 294px;
-    height: 186px;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
     margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -10733,7 +10759,7 @@ display: none;
     }
 
     .four-card-tab {
-        height: 479px;
+        height: 339px;
         margin-left: 1rem;
         margin-right: 0px;
         margin-top: 1rem;
@@ -11034,6 +11060,8 @@ display: none;
 .left-section-insights { 
     width: 76%;
     height: 121px;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
      margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -11043,6 +11071,8 @@ display: none;
 .right-section-insights { 
     width: 76%;
     height: 121px;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
     margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -11944,6 +11974,8 @@ display: none;
 .left-section-insights { 
     width: 84%;
     height: 125px;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
      margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -11953,6 +11985,8 @@ display: none;
 .right-section-insights { 
     width: 84%;
     height: 125px;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
     margin-left: 0;
      margin-right: 0;
      margin-top: 10;
@@ -11962,6 +11996,7 @@ display: none;
 .left-section-insights-last { 
     width: 80%;
     height: 440px;
+    
     margin-left: 0;
      margin-right: 0;
      margin-top: 10;

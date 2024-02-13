@@ -60,14 +60,14 @@ const MobileHeader = () => {
   
     return (
       <header className="mobile-header">
-        <div className="logo">
-          <img src={mobileLogo} alt="Mobile Logo" width="70" height="60" />
-        </div>
         <button className="menu-toggle" onClick={toggleMobileMenu}>
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
         </button>
+        <div className="logo">
+          <img src={mobileLogo} alt="Mobile Logo" width="70" height="60" />
+        </div>
         {isMobileMenuOpen && (
           <>
             <div className={`overlay-rock ${isMobileMenuOpen ? 'active' : ''}`} onClick={closeMobileMenu}></div>
