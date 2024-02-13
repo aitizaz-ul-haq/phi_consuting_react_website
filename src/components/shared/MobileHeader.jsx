@@ -26,6 +26,8 @@ import devops from "../../assets/img/white_industry_icons/devops.png";
 import cloud from "../../assets/img/white_industry_icons/server.png";
 import fintech from "../../assets/img/white_industry_icons/cloud-computing.png";
 
+import leftArrow from "../../assets/img/mobile_menu icons/arrowLeft.png";
+
 const MobileHeader = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isSolutionsDropdownOpen, setIsSolutionsDropdownOpen] = useState(false);
@@ -60,19 +62,29 @@ const MobileHeader = () => {
   
     return (
       <header className="mobile-header">
+        
+       
         <button className="menu-toggle" onClick={toggleMobileMenu}>
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
         </button>
+
         <div className="logo">
           <img src={mobileLogo} alt="Mobile Logo" width="70" height="60" />
         </div>
+         
         {isMobileMenuOpen && (
           <>
             <div className={`overlay-rock ${isMobileMenuOpen ? 'active' : ''}`} onClick={closeMobileMenu}></div>
             <nav className={`mobile-menu ${isMobileMenuOpen ? 'mobile-menu-animate' : ''}`} id="mobile-menu">
               <ul>
+              <li className='list-element-mobile-menu'>
+                <a href="" className="header-mobile-link" >
+                 <img src={leftArrow} className='mobile-icons' alt="" width={40} height={40} onClick={closeMobileMenu}/> <p className='back-mobile-menu'>Back</p>
+                </a>
+              </li>
+              <br />
               <li className='list-element-mobile-menu'>
                 <a href="/home" className="header-mobile-link" onClick={closeMobileMenu}>
                  <img src={homeicon} className='mobile-icons' alt="" width={30} height={30}/> Home
