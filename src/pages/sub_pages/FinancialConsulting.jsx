@@ -762,7 +762,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">{data.processHedSeven}</div>
+                  <div class="process-new-heading">{data.processHedEight}</div>
                   <div class="process-new-description-right-side">
                   {data.processDesEight}
                   </div>

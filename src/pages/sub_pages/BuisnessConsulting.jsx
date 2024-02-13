@@ -158,6 +158,7 @@ const BuisnessConsulting = () => {
         const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/invpage');
         console.log(`GTM page data`, response.data);
         if (response.data && response.data.length > 0) {
+          console.log(`dat arecieved on inv page....`,response.data);
           const gtmData = response.data[0]; // Assuming the first entry is what we want
   
           setData({
@@ -765,7 +766,7 @@ useScrollToTop();
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">{data.processHedSeven}</div>
+                  <div class="process-new-heading">{data.processHedEight}</div>
                   <div class="process-new-description-right-side">
                   {data.processDesEight}
                   </div>
