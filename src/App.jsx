@@ -212,22 +212,22 @@ const breadcrumbSchema =  {
     "@type": "ListItem", 
     "position": 1, 
     "name": "Phi Consulting | Home",
-    "item": "https://phi.consulting/home"  
+    "item": "https://phi-verse.com/home"  
   },{
     "@type": "ListItem", 
     "position": 2, 
     "name": "Solutions",
-    "item": "https://phi.consulting/solutions"  
+    "item": "https://phi-verse.com/solutions"  
   },{
     "@type": "ListItem", 
     "position": 3, 
     "name": "Blogs",
-    "item": "https://phi.consulting/blogs"  
+    "item": "https://phi-verse.com/blogs"  
   },{
     "@type": "ListItem", 
     "position": 4, 
     "name": "About Us",
-    "item": "https://phi.consulting/about-us"  
+    "item": "https://phi-verse.com/about-us"  
   }]
 };
 
@@ -278,8 +278,7 @@ const breadcrumbSchema =  {
 
          {/* Separate route for login */}
          <Route path="/phi-remote-login" element={<Login />} />
-
-         {/* <Route path="LandingPage" element={<EditGtm />} /> */}
+         <Route path="/LandingPage" element={<EditGtm />} />
 
         {/* Dashboard and its subpages */}
         <Route path="/dashboard" element={
