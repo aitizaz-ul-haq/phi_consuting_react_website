@@ -13712,7 +13712,7 @@ display: none;
         padding: 5px;
         margin: 1rem;
         width: 92px;
-        background-color: #f5f5f5;
+        /* background-color: #f5f5f5; */
     }
 
     .tab-image {

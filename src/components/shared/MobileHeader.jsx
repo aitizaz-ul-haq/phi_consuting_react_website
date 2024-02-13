@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import mobileLogo from '../../assets/img/phi_logo-filled.png';
+import mobileLogo from '../../assets/img/phi_logo.webp';
 
 import homeicon from "../../assets/img/mobile_menu icons/home.png";
 import solutionsicon from "../../assets/img/mobile_menu icons/solutions.png";
@@ -61,7 +61,7 @@ const MobileHeader = () => {
     return (
       <header className="mobile-header">
         <div className="logo">
-          <img src={mobileLogo} alt="Mobile Logo" width="55" height="55" />
+          <img src={mobileLogo} alt="Mobile Logo" width="70" height="60" />
         </div>
         <button className="menu-toggle" onClick={toggleMobileMenu}>
           <span className="bar"></span>
