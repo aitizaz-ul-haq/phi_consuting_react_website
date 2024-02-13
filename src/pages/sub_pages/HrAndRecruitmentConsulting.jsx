@@ -574,55 +574,6 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
                 </h3>
               </div>
             </div>
-            <div class="circle-container-sales">
-              <div class="circle-content-sales">
-                <div class="icon-process-container">
-                  <img
-                    src={impicon}
-                    alt=""
-                    width="60px"
-                    height="60px"
-                  />
-                </div>
-                <h2 class="circle-heading-sales">{data.processHedSix}</h2>
-                <h3 class="circle-text-sales">
-                {data.processDesSix}
-                </h3>
-              </div>
-            </div>
-
-            <div class="circle-container-sales">
-              <div class="circle-content-sales">
-                <div class="icon-process-container">
-                  <img
-                    src={monitoricon}
-                    alt=""
-                    width="60px"
-                    height="60px"
-                  />
-                </div>
-                <h2 class="circle-heading-sales">{data.processHedSeven}</h2>
-                <h3 class="circle-text-sales">
-                {data.processDesSeven}
-                </h3>
-              </div>
-            </div>
-            <div class="circle-container-sales">
-              <div class="circle-content-sales">
-                <div class="icon-process-container">
-                  <img
-                    src={improveicon}
-                    alt=""
-                    width="60px"
-                    height="60px"
-                  />
-                </div>
-                <h2 class="circle-heading-sales">{data.processHedEight}</h2>
-                <h3 class="circle-text-sales">
-                {data.processDesEight}
-                </h3>
-              </div>
-            </div>
           </div>
         </section>
       </article>
