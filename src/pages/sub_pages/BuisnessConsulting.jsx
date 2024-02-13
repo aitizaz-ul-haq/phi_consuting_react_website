@@ -250,7 +250,6 @@ const BuisnessConsulting = () => {
     return () => observer.disconnect();
   }, []);
  
-
 useEffect(() => {
   const observer = new IntersectionObserver(
     (entries) => {
