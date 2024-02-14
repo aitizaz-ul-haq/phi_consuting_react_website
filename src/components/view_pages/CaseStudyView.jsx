@@ -24,6 +24,8 @@ import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 
+import shareicon from "../../assets/img/shareicon/share.png";
+
 const CaseStudyView = () => {
 
    
@@ -36,8 +38,8 @@ const CaseStudyView = () => {
     const toggleDarkMode = () => setDarkMode(!darkMode);
 
     const copyToClipboard = () => {
-        const caseId = localStorage.getItem('currentcaseId'); // Make sure this is how you've stored the ID
-        const textToCopy = `https://phi-verse.com/casestudy/${caseId}`;
+        
+        const textToCopy = `https://phi-verse.com/viewcasestudy/${caseId}`;
     
         navigator.clipboard.writeText(textToCopy)
           .then(() => {
@@ -145,8 +147,9 @@ const CaseStudyView = () => {
         <div className="left-section-control"></div>
             <div className="right-section-control">
             <Tooltip placement="leftTop" title="Share link">
-            <button onClick={copyToClipboard}>Copy to Clipboard</button>
+            <button onClick={copyToClipboard}><img src={shareicon} alt="eye icon" width={25} height={25}/></button>
             </Tooltip>
+            
             <Tooltip placement="leftTop" title="toggle eye protection">
             <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
             </Tooltip>
