@@ -37,7 +37,7 @@ const viewCaseStudy = () => {
     const toggleDarkMode = () => setDarkMode(!darkMode);
 
     const copyToClipboard = () => {
-        const caseId = localStorage.getItem('currentcaseId'); // Make sure this is how you've stored the ID
+        
         const textToCopy = `https://phi-verse.com/viewcasestudy/${caseId}`;
     
         navigator.clipboard.writeText(textToCopy)
@@ -54,7 +54,7 @@ const viewCaseStudy = () => {
 
      
 
-      useEffect(() => {
+     
         const fetchCaseStudy = async () => {
             try {
                 setLoading(true);
@@ -68,6 +68,11 @@ const viewCaseStudy = () => {
             }
         };
 
+        
+   
+
+    useEffect(() => {
+        console.log("Current caseId: ", caseId); // Debugging log
         if (caseId) {
             fetchCaseStudy();
         }
