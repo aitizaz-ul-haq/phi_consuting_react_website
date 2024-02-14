@@ -45,7 +45,7 @@ const CaseStudyView = () => {
           .then(() => {
             // Success feedback
             alert('Link copied to clipboard!');
-            console.log(textToCopy);
+            // console.log(textToCopy);
           })
           .catch(err => {
             // Error feedback

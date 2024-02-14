@@ -46,7 +46,7 @@ const viewCaseStudy = () => {
           .then(() => {
             // Success feedback
             alert('Link copied to clipboard!');
-            console.log(textToCopy);
+            // console.log(textToCopy);
           })
           .catch(err => {
             // Error feedback
@@ -61,7 +61,7 @@ const viewCaseStudy = () => {
             try {
                 setLoading(true);
                 const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/cases/${caseId}`);
-                console.log(response.data)
+                // console.log(response.data)
                 setCaseStudy(response.data);
                 setLoading(false);
             } catch (error) {
