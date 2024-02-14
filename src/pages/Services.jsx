@@ -159,23 +159,20 @@ useEffect(() => {
 
 
   const handleTabClickOne = () => {
-    window.location.href = '/investor-relations';
+    window.location.href = '/solutions/investors-relation';
   } 
 
-  const handleTabClickTwo = () => {
-    window.location.href = '/customer-experience';
-  } 
 
   const handleTabClickThree = () => {
-    window.location.href = '/financial-consulting';
+    window.location.href = '/solutions/financial-consulting';
   } 
 
   const handleTabClickFour = () => {
-    window.location.href = '/hr-consulting';
+    window.location.href = '/solutions/hr-recruitment';
   } 
 
   const handleTabClickFive = () => {
-    window.location.href = '/GTM-advisory';
+    window.location.href = '/solutions/go-to-market-strategy';
   } 
 
   const gotoContacts = () => {

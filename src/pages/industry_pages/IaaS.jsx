@@ -518,7 +518,7 @@ useScrollToTop();
     
 
       {/* <!-- Section path  --> */}
-      <article class="path">
+      {/* <article class="path">
         <section class="path-container">
           <h2 class="path-heading">
           Our GTM Advisory Process:
@@ -658,7 +658,7 @@ useScrollToTop();
             </div>
           </div>
         </section>
-      </article>
+      </article> */}
 
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">

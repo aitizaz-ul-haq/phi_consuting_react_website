@@ -723,8 +723,7 @@ header {
     font-size: 56px;
     margin-bottom: 0;
     color: var(--WHITE-TEXT);
-    margin-top: 22px;
-    
+    margin-top: 100px;
 }
 
 
@@ -733,7 +732,9 @@ header {
     font-size: 56px;
     margin-bottom: 0;
     color: var(--WHITE-TEXT);
-    margin-top: 22px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-bui-consul {
@@ -741,7 +742,9 @@ header {
     font-size: 56px;
     margin-bottom: 0;
     color: var(--WHITE-TEXT);
-    margin-top: 22px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-sales{
@@ -749,7 +752,7 @@ header {
     font-size: 56px;
     margin-bottom: 0;
     color: var(--WHITE-TEXT);
-    margin-top: 22px;
+    margin-top: 100px;
 }
 
 .hero-heading-fin{
@@ -813,7 +816,9 @@ header {
     font-size: 56px;
     margin-bottom: 0;
     color: var(--WHITE-TEXT);
-    margin-top: 22px;
+    margin-top: 100px;
+    padding-left: 6px;
+    padding-right: 6px;
 }
 
 .hero-heading-exp{
@@ -1028,7 +1033,7 @@ header {
 
 .consult-button {
     padding: 8px 15px;
-    background-color: lightseagreen;
+    background-color: #55c2da;
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease 0s;
@@ -1658,7 +1663,7 @@ width: 60%;
     padding: 5px;
     margin: 1rem;
     width: 30px;
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
 }
 
 .tab-image {
@@ -2127,7 +2132,7 @@ padding: 1rem;
 }
 
 .test-two {
-    background-image: url('../img/digitalocean-square.png');
+    background-image: url('../img/AToB-square.jpg');
     background-size: cover; /* Ensure the background image covers the entire container */
     background-position: center; /* Center the background image */
     width: 80px;
@@ -2140,7 +2145,7 @@ padding: 1rem;
 }
 
 .test-three {
-    background-image: url('../img/AToB-square.jpg');
+    background-image: url('../img/digitalocean-square.png');
     background-size: cover; /* Ensure the background image covers the entire container */
     background-position: center; /* Center the background image */
     width: 80px;
@@ -2973,7 +2978,7 @@ padding: 1rem;
         position: relative;
         width: 300px;
         height: 210px;
-        background-color: var(--DARK-PHI-BLUE); /* Blue background color, you can change this */
+        background-color: var(--DARKER-LIGHT-PHI-BLUE); /* Blue background color, you can change this */
         border-top-right-radius: 100px;
         border-bottom-left-radius: 100px;
         border-top-left-radius: 28px;
@@ -6002,6 +6007,12 @@ background-color: rgb(243, 241, 241);
 }
 
 @media screen and (min-width: 320px) {
+    .ach-heading {
+        font-size: 18px;
+        font-weight: var(--FONT-THICKER);
+        margin-bottom: 30px;
+        color: var(--DARK-PHI-BLUE);
+    }
     .location-cards-one { 
         width: 52%;
     }
@@ -6805,9 +6816,6 @@ display: none;
     cursor: pointer;
 }
 
-.path-heading { 
-    font-size: 20px;
-}
 
 .work-card:hover {
     box-shadow: 24px 63px 128px -53px var(--DARKER-LIGHT-PHI-BLUE);
@@ -6826,6 +6834,8 @@ display: none;
 .sales-heading { 
     font-size: 18px;
     color: black;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .sales-banner-desc { 
@@ -6833,9 +6843,9 @@ display: none;
 }
 
 .path-heading {
-    font-size: 24px;
+    font-size: 18px;
     margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: -1rem;
 }
 
 .circle-container-sales { 
@@ -6887,11 +6897,13 @@ display: none;
 .overlay-desc { 
     font-size: 15px;
     color: black;
+    text-align: center;
 }
 
 .overlay-heading {
     color: midnightblue;
     font-size: 24px;
+    text-align: center;
 }
 
 .content { 
@@ -6905,6 +6917,7 @@ display: none;
 .sales-process-desc {
     font-size: 16px;
     padding: 1rem;
+    font-weight: 100;
 }
 
 
@@ -6947,6 +6960,8 @@ display: none;
  .hero-heading-bui-consul { 
     font-size: 20px;
     margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 .hero-desc-bui-consul { 
     font-size: 13px;
@@ -7011,6 +7026,8 @@ display: none;
  .hero-heading-sales { 
     font-size: 20px;
     margin-top: 100px;
+    padding-left:10px;
+    padding-right: 10px;
 }
 
 .hero-heading-fin { 
@@ -7109,6 +7126,8 @@ display: none;
  .hero-heading-fin-consul { 
     font-size: 20px;
     margin-top: 100px;
+    padding-left: 6px;
+    padding-right: 6px;
 }
 .hero-desc-fin-consul { 
     font-size: 13px;
@@ -8072,9 +8091,7 @@ display: none;
     width: 100%;
 }
 
-.path-heading { 
-    font-size: 20px;
-}
+
 
 .work-card:hover {
     box-shadow: 24px 63px 128px -53px var(--DARKER-LIGHT-PHI-BLUE);
@@ -8099,9 +8116,9 @@ display: none;
 }
 
 .path-heading {
-    font-size: 24px;
+    font-size: 18px;
     margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: -1rem;
 }
 
 .circle-container-sales { 
@@ -8152,6 +8169,7 @@ display: none;
 
 .overlay-desc { 
     font-size: 15px;
+    text-align: center;
 }
 
 .overlay-heading {
@@ -8170,6 +8188,7 @@ display: none;
 .sales-process-desc {
     font-size: 16px;
     padding: 1rem;
+    font-weight: 100;
 }
 
 
@@ -8211,6 +8230,9 @@ display: none;
 
  .hero-heading-bui-consul { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 .hero-desc-bui-consul { 
     font-size: 13px;
@@ -8274,6 +8296,9 @@ display: none;
 
  .hero-heading-sales { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left:7px;
+    padding-right: 7px;
 }
 
 .hero-heading-fin { 
@@ -8344,6 +8369,9 @@ display: none;
 
  .hero-heading-hr-consul { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 .hero-desc-hr-consul { 
     font-size: 13px;
@@ -8364,6 +8392,9 @@ display: none;
 
  .hero-heading-fin-consul { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 6px;
+    padding-right: 6px;
 }
 .hero-desc-fin-consul { 
     font-size: 13px;
@@ -8771,6 +8802,7 @@ width : 186px;
 
 .hero-heading-services-page {
     font-size: 26px;
+    margin-top: 100px;
 }
 
 .hero-content-services-page {
@@ -8807,9 +8839,7 @@ display: none;
     width: 100%;
 }
 
-.path-heading { 
-    font-size: 20px;
-}
+
 
 .work-card:hover {
     box-shadow: 24px 63px 128px -113px var(--DARKER-LIGHT-PHI-BLUE);
@@ -8834,9 +8864,9 @@ display: none;
 }
 
 .path-heading {
-    font-size: 24px;
+    font-size: 18px;
     margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: -1rem;
 }
 
 .circle-container-sales { 
@@ -8905,6 +8935,7 @@ display: none;
 .sales-process-desc {
     font-size: 16px;
     padding: 1rem;
+    font-weight: 100;
 }
 
 
@@ -8946,6 +8977,9 @@ display: none;
 
  .hero-heading-bui-consul { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 .hero-desc-bui-consul { 
     font-size: 13px;
@@ -9036,6 +9070,9 @@ display: none;
 
  .hero-heading-sales { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left:7px;
+    padding-right: 7px;
 }
 
 .hero-heading-fin { 
@@ -9108,6 +9145,9 @@ display: none;
 
  .hero-heading-hr-consul { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 .hero-desc-hr-consul { 
     font-size: 13px;
@@ -9132,6 +9172,9 @@ display: none;
 
  .hero-heading-fin-consul { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 6px;
+    padding-right: 6px;
 }
 .hero-desc-fin-consul { 
     font-size: 13px;
@@ -9306,7 +9349,23 @@ display: none;
 
 }
 @media screen and (min-width: 412px) {
-
+    .hero-heading-fin-consul { 
+        font-size: 30px;
+          margin-top: 100px;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+    .hero-heading-hr-consul { 
+        font-size: 30px;
+        margin-top: 100px;
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+    .tab-image {
+        margin-top: 0px;
+        width: 50px;
+        height: auto;
+    }
     .location-cards-one { 
         width: 52%;
     }
@@ -9631,6 +9690,7 @@ width : 186px;
 
 .hero-heading-services-page {
     font-size: 29px;
+    margin-top: 100px;
 }
 
 .hero-content-services-page {
@@ -9668,9 +9728,7 @@ display: none;
     width: 100%;
 }
 
-.path-heading { 
-    font-size: 20px;
-}
+
 
 .work-card:hover {
     box-shadow: 24px 63px 128px -113px var(--DARKER-LIGHT-PHI-BLUE);
@@ -9695,9 +9753,9 @@ display: none;
 }
 
 .path-heading {
-    font-size: 24px;
+    font-size: 18px;
     margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: -1rem;
 }
 
 .circle-container-sales { 
@@ -9766,6 +9824,7 @@ display: none;
 .sales-process-desc {
     font-size: 16px;
     padding: 1rem;
+    font-weight: 100;
 }
 
 
@@ -9807,6 +9866,9 @@ display: none;
 
  .hero-heading-bui-consul { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 .hero-desc-bui-consul { 
     font-size: 13px;
@@ -9901,6 +9963,9 @@ display: none;
 
  .hero-heading-sales { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left:10px;
+    padding-right: 10px;
 }
 
 .hero-heading-fin { 
@@ -10085,7 +10150,12 @@ display: none;
 
 }
 @media screen and (min-width: 576px) {
-
+    .ach-heading {
+        font-size: 32px;
+        font-weight: var(--FONT-THICKER);
+        margin-bottom: 30px;
+        color: var(--DARK-PHI-BLUE);
+    }
     .collab {
         display: none;
     }
@@ -10460,6 +10530,7 @@ display: none;
 .overlay-heading {
     color: midnightblue;
     font-size: 24px;
+    
 }
 
 .content { 
@@ -10760,7 +10831,12 @@ display: none;
 
 }
 @media screen and (min-width: 768px) {
-
+    .ach-heading {
+        font-size: 23px;
+        font-weight: var(--FONT-THICKER);
+        margin-bottom: 30px;
+        color: var(--DARK-PHI-BLUE);
+    }
     .collab {
         display: none;
     }
@@ -13438,6 +13514,12 @@ display: none;
 }
 }
 @media screen and (min-width: 1200px) {
+    .ach-heading {
+        font-size: 43px;
+        font-weight: 100;
+        margin-bottom: 30px;
+        color: var(--DARK-PHI-BLUE);
+    }
     .core-phi-heading {
         text-align: center;
         font-family: var(--FF-PHI);
@@ -14055,7 +14137,7 @@ display: none;
     }
 
     .blog-title {
-        font-size: 55px;
+        font-size: 43px;
         font-weight: 100;
         /* color: white; */
     }
