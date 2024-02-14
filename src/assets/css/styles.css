@@ -760,7 +760,9 @@ header {
     font-size: 56px;
     margin-bottom: 0;
     color: var(--WHITE-TEXT);
-    margin-top: 22px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-left: 7px;
 }
 
 .hero-heading-cloud{
@@ -768,7 +770,9 @@ header {
     font-size: 56px;
     margin-bottom: 0;
     color: var(--WHITE-TEXT);
-    margin-top: 22px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-dev{
@@ -776,7 +780,9 @@ header {
     font-size: 56px;
     margin-bottom: 0;
     color: var(--WHITE-TEXT);
-    margin-top: 22px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-saas{
@@ -784,7 +790,9 @@ header {
     font-size: 56px;
     margin-bottom: 0;
     color: var(--WHITE-TEXT);
-    margin-top: 22px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-iaas{
@@ -792,7 +800,9 @@ header {
     font-size: 56px;
     margin-bottom: 0;
     color: var(--WHITE-TEXT);
-    margin-top: 22px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-iot{
@@ -800,7 +810,9 @@ header {
     font-size: 56px;
     margin-bottom: 0;
     color: var(--WHITE-TEXT);
-    margin-top: 22px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-hr-consul{
@@ -842,7 +854,9 @@ header {
     font-size: 56px;
     margin-bottom: 0;
     color: var(--WHITE-TEXT);
-    margin-top: 22px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-blog{
@@ -6007,6 +6021,40 @@ background-color: rgb(243, 241, 241);
 }
 
 @media screen and (min-width: 320px) {
+
+    .live-desc {
+        width: 80%;
+    }
+
+    .overlay-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .overlay-heading-our-work {
+    text-align: center;
+    font-size: 22px;
+    }
+
+    .overlay-desc-our-work {
+        text-align: center;
+    }
+
+    .our-work-bubbles {
+        margin-top: 1.5rem;
+        /* margin-right: 1.5rem; */
+        margin-bottom: 1.5rem;
+        margin-right: 0px;
+    }
+
+
+    .styling-artical-sections {
+      
+        text-align: center;
+    }
     .ach-heading {
         font-size: 18px;
         font-weight: var(--FONT-THICKER);
@@ -6035,7 +6083,7 @@ background-color: rgb(243, 241, 241);
 }
 
     .four-card-heading {
-        width: 100%;
+        width: 90%;
         font-size: 32px;
     }
 
@@ -7033,31 +7081,45 @@ display: none;
 .hero-heading-fin { 
     font-size: 20px;
     margin-top: 100px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-left: 7px;
 }
 
 .hero-heading-cloud { 
     font-size: 20px;
     margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-dev { 
     font-size: 20px;
     margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-saas { 
     font-size: 20px;
     margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-iaas { 
     font-size: 20px;
     margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-iot { 
     font-size: 20px;
     margin-top: 100px;
+        padding-left: 7px;
+        padding-right: 7px;
+   
 }
 .hero-desc-sales { 
     font-size: 13px;
@@ -7237,6 +7299,8 @@ display: none;
  .hero-heading-phi-about { 
     font-size: 20px;
     margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-desc-phi-about br{ 
@@ -7654,6 +7718,14 @@ display: none;
 
 }
 @media screen and (min-width: 360px) {
+    .styling-artical-sections {
+       
+        text-align: center;
+    }
+    .why-phi-for-sales {
+      
+        margin-top: 4rem;
+    }
 
     .location-cards-one { 
         width: 52%;
@@ -8301,28 +8373,41 @@ display: none;
     padding-right: 7px;
 }
 
-.hero-heading-fin { 
-    font-size: 30px;
-}
+
 
 .hero-heading-cloud { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-dev { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-saas { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-iaas { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-iot { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 .hero-desc-sales { 
     font-size: 13px;
@@ -9075,27 +9160,39 @@ display: none;
     padding-right: 7px;
 }
 
-.hero-heading-fin { 
-    font-size: 30px;
-}
 
 .hero-heading-cloud { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-dev { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-saas { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 .hero-heading-iaas { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-iot { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 .hero-desc-sales { 
     font-size: 13px;
@@ -9224,6 +9321,9 @@ display: none;
 
  .hero-heading-phi-about { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 .hero-desc-phi-about { 
     font-size: 13px;
@@ -9261,6 +9361,9 @@ display: none;
 
  .hero-heading-phi-about { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 .hero-desc-phi-about { 
     font-size: 13px;
@@ -9349,11 +9452,17 @@ display: none;
 
 }
 @media screen and (min-width: 412px) {
+    .hero-heading-phi-about { 
+        font-size: 30px;
+        margin-top: 100px;
+        padding-left: 7px;
+        padding-right: 7px;
+    }
     .hero-heading-fin-consul { 
         font-size: 30px;
-          margin-top: 100px;
-        padding-left: 6px;
-        padding-right: 6px;
+        margin-top: 100px;
+        padding-left: 7px;
+        padding-left: 7px;
     }
     .hero-heading-hr-consul { 
         font-size: 30px;
@@ -9974,22 +10083,37 @@ display: none;
 
 .hero-heading-cloud { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-dev { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-saas { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-iaas { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .hero-heading-iot { 
     font-size: 30px;
+    margin-top: 100px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 .hero-desc-sales { 
     font-size: 13px;
@@ -10831,6 +10955,10 @@ display: none;
 
 }
 @media screen and (min-width: 768px) {
+    .styling-artical-sections {
+       
+        text-align: center;
+    }
     .ach-heading {
         font-size: 23px;
         font-weight: var(--FONT-THICKER);
@@ -11643,6 +11771,10 @@ display: none;
     /* .mobile-header {
         display: none;
       } */
+      .styling-artical-sections {
+       
+        text-align: center;
+    }
 
       .collab {
         display: none;
@@ -12814,6 +12946,10 @@ display: none;
 
 }
 @media screen and (min-width: 992px) {
+    .styling-artical-sections {
+       
+        text-align: left;
+    }
     .collab {
         display: none;
     }
@@ -13514,6 +13650,29 @@ display: none;
 }
 }
 @media screen and (min-width: 1200px) {
+    .overlay-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: left;
+        text-align: left;
+    }
+
+    .overlay-heading-our-work {
+    text-align: left;
+    font-size: 22px;
+    }
+
+    .overlay-desc-our-work {
+        text-align: left;
+    }
+
+    .our-work-bubbles {
+        margin-top: 1.5rem;
+        margin-right: 1.5rem;
+        margin-bottom: 1.5rem;
+        /* margin-right: 0px; */
+    }
     .ach-heading {
         font-size: 43px;
         font-weight: 100;
@@ -13684,6 +13843,8 @@ display: none;
     .client-desc {
         font-size: 22px;
         font-weight: 100;
+        text-align: center;
+        
     }
     .spinner-container {
         display: flex;

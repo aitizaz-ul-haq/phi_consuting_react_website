@@ -511,11 +511,11 @@ useEffect(() => {
             <p class="testi-quote wider">
               <q
                 ><i
-                  >{data.testithree}</i
+                  > {data.testitwo}</i
                 ></q
               >
             </p>
-            <h3 class="testi-card-heading">{data.testidesignationthree}</h3>
+            <h3 class="testi-card-heading">{data.testidesignationtwo}</h3>
           </div>
 
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
@@ -526,11 +526,11 @@ useEffect(() => {
             <p class="testi-quote">
               <q
                 ><i
-                  >{data.testitwo}</i
+                  >{data.testithree}</i
                 ></q
               >
             </p>
-            <h3 class="testi-card-heading">{data.testidesignationtwo}</h3>
+            <h3 class="testi-card-heading">{data.testidesignationthree}</h3>
           </div>
         </section>
       </article>
