@@ -24,20 +24,21 @@ import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 
-const CaseStudyView = () => {
+const viewCaseStudy = () => {
 
    
     const [caseStudy, setCaseStudy] = useState(null);
-    const caseId = localStorage.getItem('currentcaseId');
+    // const caseId = localStorage.getItem('currentcaseId');
     const headingSectionRef = useRef(null);
     const [darkMode, setDarkMode] = useState(false);
+    const { caseId } = useParams(); // Use useParams to get the case study ID from the URL
     const [loading, setLoading] = useState(true);
     // const caseStudy = caseStudies.find(study => study.id === parseInt(id));
     const toggleDarkMode = () => setDarkMode(!darkMode);
 
     const copyToClipboard = () => {
         const caseId = localStorage.getItem('currentcaseId'); // Make sure this is how you've stored the ID
-        const textToCopy = `https://phi-verse.com/casestudy/${caseId}`;
+        const textToCopy = `https://phi-verse.com/viewcasestudy/${caseId}`;
     
         navigator.clipboard.writeText(textToCopy)
           .then(() => {
@@ -51,24 +52,25 @@ const CaseStudyView = () => {
           });
       };
 
-    useEffect(() => {
-        
+     
+
+      useEffect(() => {
         const fetchCaseStudy = async () => {
             try {
-                // Simulate a delay
-                setTimeout(async () => {
-                    const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/cases/${caseId}`);
-                    setCaseStudy(response.data);
-                   
-                    setLoading(false); // Set loading to false when the API call is complete
-                }, 2000); // Delay in milliseconds (e.g., 2000ms = 2 seconds)
+                setLoading(true);
+                const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/cases/${caseId}`);
+                console.log(response.data)
+                setCaseStudy(response.data);
+                setLoading(false);
             } catch (error) {
                 console.error('Error fetching case study:', error);
-                setLoading(false); // Ensure loading is false even if there's an error
+                setLoading(false);
             }
         };
 
-        fetchCaseStudy();
+        if (caseId) {
+            fetchCaseStudy();
+        }
     }, [caseId]);
      
     const scrollToTop = () => {
@@ -208,4 +210,4 @@ const CaseStudyView = () => {
     )
 }
 
-export default CaseStudyView;
+export default viewCaseStudy;

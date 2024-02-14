@@ -176,6 +176,8 @@ import AddValPageCont from './pages/dashboard/Other Pages/value creation/AddValP
 import EditValPageCont from './pages/dashboard/Other Pages/value creation/EditValPageCont';
 import ShowValPageCont from './pages/dashboard/Other Pages/value creation/ShowValPageCont';
 
+import ViewCasestudy from './components/view_pages/ViewCaseStudy';
+
 
 import { Helmet } from 'react-helmet';
 
@@ -257,6 +259,7 @@ const breadcrumbSchema =  {
         <Route path="/blogs" element={<Layout><Blog /></Layout>} />
         <Route path="/case-studies" element={<Layout><Spotlight /></Layout>} />
         <Route path="casestudy/:id" element={<Layout><CaseStudyView /></Layout>} />
+        <Route path="viewcasestudy/:id" element={<Layout><ViewCasestudy /></Layout>} />
         <Route path="casedetails/:id" element={<Layout><CaseDetails /></Layout>} />
         <Route path="blog/:id" element={<Layout><BlogView/></Layout>}/>
 
