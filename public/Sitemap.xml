@@ -1,87 +1,95 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://phi-verse.com/home</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://phi-verse.com/solutions</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://phi-verse.com/solutions/go-to-market-strategy</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
   </url>
   <url>
     <loc>https://phi-verse.com/solutions/hr-recruitment</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
   </url>
   <url>
     <loc>https://phi-verse.com/solutions/investors-relation</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
   </url>
   <url>
     <loc>https://phi-verse.com/solutions/financial-consulting</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
   </url>
   <url>
     <loc>https://phi-verse.com/blogs</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://phi-verse.com/blog/</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
   </url>
   <url>
     <loc>https://phi-verse.com/case-studies</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
   </url>
   <url>
     <loc>https://phi-verse.com/casestudy/</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
   </url>
   <url>
     <loc>https://phi-verse.com/fin-tech-consulting</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://phi-verse.com/cloud-consulting</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://phi-verse.com/saas-consulting</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://phi-verse.com/iot-consulting</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://phi-verse.com/iaas-consulting</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://phi-verse.com/dev-ops-consulting</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://phi-verse.com/value-creation</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
   </url>
   <url>
     <loc>https://phi-verse.com/about-us</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
   </url>
   <url>
     <loc>https://phi-verse.com/careers</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
   </url>
   <url>
     <loc>https://phi-verse.com/contact-us</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
   </url>
   <url>
     <loc>https://phi-verse.com/apply</loc>
-    <lastmod>15/02/2024</lastmod>
+    <lastmod>2024-02-15</lastmod>
   </url>
 </urlset>
