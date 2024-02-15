@@ -12,7 +12,7 @@ const layout = {
 };
 
 const tailLayout = {
-  wrapperCol: { offset: 8, span: 16 },
+  wrapperCol: { offset: 8, span: 8 },
 };
 
 const AddCases = () => {
@@ -60,8 +60,8 @@ const AddCases = () => {
         <Form.Item name="summary" label="Summary" rules={[{ required: true }]}>
           <Input.TextArea />
         </Form.Item>
-        <Form.Item name="imageone" label="select company product" rules={[{ required: true }]}>
-          <Select placeholder="Select a company for Image One">
+        <Form.Item name="imageone" label="select client name" rules={[{ required: true }]}>
+          <Select placeholder="Select a client company name">
             {/* Add options here */}
             <Option value="Atob">Atob</Option>
             <Option value="pallet">pallet</Option>
@@ -70,7 +70,7 @@ const AddCases = () => {
             <Option value="bobtail">bobtail</Option>
             <Option value="joyride">joyride</Option>
             <Option value="mudflip">mudflip</Option>
-            <Option value="digital ocean">digital ocean</Option>
+            <Option value="digital ocean">digitalocean</Option>
           </Select>
         </Form.Item>
         <Form.Item name="imagetwo" label="select company logo" rules={[{ required: true }]}>
@@ -83,7 +83,7 @@ const AddCases = () => {
             <Option value="bobtail">bobtail</Option>
             <Option value="joyride">joyride</Option>
             <Option value="mudflip">mudflip</Option>
-            <Option value="digital ocean">digital ocean</Option>
+            <Option value="digital ocean">digitalocean</Option>
           </Select>
         </Form.Item>
 
