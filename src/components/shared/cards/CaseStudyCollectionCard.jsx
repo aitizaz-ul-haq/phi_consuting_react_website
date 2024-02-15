@@ -16,7 +16,7 @@ const CaseStudyCollectionCard = ({ caseStudy }) => {
         localStorage.setItem('currentcaseId', caseStudy._id);
       };
 
-    const imageUrl = caseStudy.imageone.includes('Atob') ? atobproduct : caseStudy.imageone.includes('truckx') ? truckxproduct : caseStudy.imageone.includes('pallet') ? palletproduct : caseStudy.imageone.includes('solar') ? solarproduct : caseStudy.imageone.includes('bobtail') ? bobtailproduct : caseStudy.imageone.includes('joyride') ? joyrideproduct : caseStudy.imageone.includes('digital ocean') ? doproduct : caseStudy.imageone;
+    const imageUrl = caseStudy.imageone.includes('Atob') ? atobproduct : caseStudy.imageone.includes('truckx') ? truckxproduct : caseStudy.imageone.includes('pallet') ? palletproduct : caseStudy.imageone.includes('solar') ? solarproduct : caseStudy.imageone.includes('bobtail') ? bobtailproduct : caseStudy.imageone.includes('joyride') ? joyrideproduct : caseStudy.imageone.includes('digitalocean') ? doproduct : caseStudy.imageone;
 
     return(
         <>

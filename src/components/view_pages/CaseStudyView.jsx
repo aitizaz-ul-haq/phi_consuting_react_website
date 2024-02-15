@@ -42,7 +42,7 @@ const CaseStudyView = () => {
 
     const copyToClipboard = () => {
         
-        const textToCopy = `http://phi-verse.com/casestudy/${companyName}`;
+        const textToCopy = `https://phi-verse.com/casestudy/${companyName}`;
 
         // const textToCopy = `http://localhost:5173/casestudy/${companyName}`;
     
@@ -133,7 +133,7 @@ const CaseStudyView = () => {
                     : caseStudy.imageone && caseStudy.imageone.includes('solar') ? solarproduct 
                     : caseStudy.imageone && caseStudy.imageone.includes('bobtail') ? bobtailproduct 
                     : caseStudy.imageone && caseStudy.imageone.includes('joyride') ? joyrideproduct 
-                    : caseStudy.imageone && caseStudy.imageone.includes('digital ocean') ? doproduct 
+                    : caseStudy.imageone && caseStudy.imageone.includes('digitalocean') ? doproduct 
                     : caseStudy.imageone;
     
     const box = caseStudy.imagetwo && caseStudy.imagetwo.includes('Atob') ? atobbox 
@@ -142,7 +142,7 @@ const CaseStudyView = () => {
                     : caseStudy.imagetwo && caseStudy.imagetwo.includes('solar') ? solarbox 
                     : caseStudy.imagetwo && caseStudy.imagetwo.includes('bobtail') ? bobtailbox 
                     : caseStudy.imagetwo && caseStudy.imagetwo.includes('joyride') ? joybox 
-                    : caseStudy.imagetwo && caseStudy.imagetwo.includes('digital ocean') ? dobox 
+                    : caseStudy.imagetwo && caseStudy.imagetwo.includes('digitalocean') ? dobox 
                     : caseStudy.imagetwo;
 
 
