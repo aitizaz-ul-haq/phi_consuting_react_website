@@ -755,13 +755,21 @@ const HomePage = () => {
                     id={study._id}
                     title={study.title}
                     summary={study.summary}
+                    cname={study.imagetwo.includes('Atob') ? 'Atob' :
+                    study.imagetwo.includes('truckx') ? 'truckx' :
+                    study.imagetwo.includes('pallet') ? 'pallet' :
+                    study.imagetwo.includes('solar') ? 'solar' :
+                    study.imagetwo.includes('bobtail') ? 'bobtail' :
+                    study.imagetwo.includes('joyride') ? 'joyride' :
+                    study.imagetwo.includes('digitalocean') ? 'digitalocean' :
+                    null}
                     logo={study.imagetwo.includes('Atob') ? atobbox :
                     study.imagetwo.includes('truckx') ? truckxbox :
                     study.imagetwo.includes('pallet') ? palletbox :
                     study.imagetwo.includes('solar') ? solarbox :
                     study.imagetwo.includes('bobtail') ? bobtailbox :
                     study.imagetwo.includes('joyride') ? joybox :
-                    study.imagetwo.includes('digital ocean') ? dobox :
+                    study.imagetwo.includes('digitalocean') ? dobox :
                     null}
                     image={study.imageone.includes('Atob') ? atobproduct :
                     study.imageone.includes('truckx') ? truckxproduct :
@@ -769,7 +777,7 @@ const HomePage = () => {
                     study.imageone.includes('solar') ? solarproduct :
                     study.imageone.includes('bobtail') ? bobtailproduct :
                     study.imageone.includes('joyride') ? joyrideproduct :
-                    study.imageone.includes('digital ocean') ? doproduct :
+                    study.imageone.includes('digitalocean') ? doproduct :
                     null}
                     isRight={index % 2 === 0}
                     urltag={study.imageone.includes('Atob') ? 'Atob' :

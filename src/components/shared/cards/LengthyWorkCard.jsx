@@ -51,7 +51,7 @@ const LengthyWorkCard = ({caseStudy}) => {
                     {caseStudy.summary}
                     </p>
                     <div class="left-button-work-small our-work-bubbles">
-                   <span> <Link className='work-card-button-link' onClick={handleClick} to={`/value/${caseStudy.imageone}`}>Explore More</Link></span>
+                   <span> <Link className='work-card-button-link' onClick={handleClick} to={`/casestudy/${caseStudy.imageone}`}>Explore More</Link></span>
                     </div>
                   </div>
                 </div>

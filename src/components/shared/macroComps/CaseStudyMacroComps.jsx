@@ -1,7 +1,7 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-const CaseStudyMacroComps = ({ id, title, summary, logo, image, isRight, urltag }) => {
+const CaseStudyMacroComps = ({ id, title, summary, logo, image, isRight, urltag, cname }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
@@ -49,7 +49,7 @@ const CaseStudyMacroComps = ({ id, title, summary, logo, image, isRight, urltag 
               </div>
               <div class="case-button-container">
                 <div class="case-button">
-                    <Link className='macro-button-link-remove' to={`/casedetails/${urltag}`} onClick={handleClick}> View Case Study</Link>
+                    <Link className='macro-button-link-remove' to={`/casestudy/${cname}`} onClick={handleClick}> View Case Study</Link>
                    </div>
               </div>
             </div>
