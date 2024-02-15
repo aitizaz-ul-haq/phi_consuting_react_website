@@ -38,7 +38,7 @@ const CaseStudyView = () => {
     // const caseStudy = caseStudies.find(study => study.id === parseInt(id));
     const toggleDarkMode = () => setDarkMode(!darkMode);
 
-    console.log(`company name i got`,companyName );
+    // console.log(`company name i got`,companyName );
 
     const copyToClipboard = () => {
         
