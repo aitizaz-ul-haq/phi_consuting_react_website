@@ -31,11 +31,14 @@ const CaseStudyView = () => {
    
     const [caseStudy, setCaseStudy] = useState(null);
     const caseId = localStorage.getItem('currentcaseId');
+    const { companyName } = useParams();
     const headingSectionRef = useRef(null);
     const [darkMode, setDarkMode] = useState(false);
     const [loading, setLoading] = useState(true);
     // const caseStudy = caseStudies.find(study => study.id === parseInt(id));
     const toggleDarkMode = () => setDarkMode(!darkMode);
+
+    console.log(`company name i got`,companyName );
 
     const copyToClipboard = () => {
         
@@ -59,7 +62,7 @@ const CaseStudyView = () => {
             try {
                 // Simulate a delay
                 setTimeout(async () => {
-                    const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/cases/${caseId}`);
+                    const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/cases/name/${companyName}`);
                     setCaseStudy(response.data);
                    
                     setLoading(false); // Set loading to false when the API call is complete
@@ -71,7 +74,7 @@ const CaseStudyView = () => {
         };
 
         fetchCaseStudy();
-    }, [caseId]);
+    }, [companyName]);
      
     const scrollToTop = () => {
         window.scrollTo({
