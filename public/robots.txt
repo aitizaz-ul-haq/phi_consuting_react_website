@@ -32,6 +32,7 @@ Disallow: /gtm
 Disallow: /hr
 Disallow: /inv
 Disallow: /fint
+Disallow: /casedetails
 Disallow: /dashboard/ShowDash
 Disallow: /dashboard/Jobs
 Disallow: /dashboard/AddJobs

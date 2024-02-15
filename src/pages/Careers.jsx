@@ -15,6 +15,8 @@ import { TypeAnimation } from 'react-type-animation';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
+import useScrollToTop from '../hooks/useScrollToTop';
+
 import axios from 'axios';
 
 const Careers = () => {
@@ -130,6 +132,8 @@ useEffect(() => {
 
     // ... other useEffect code
   }, []);
+
+  useScrollToTop();
   return (
     <>
       <Helmet>

@@ -30,6 +30,8 @@ import { TypeAnimation } from 'react-type-animation';
 import caseStudies from "../data/caseStudies.json";
 import processback from "../assets/video/home-bg.mp4";
 
+import useScrollToTop from '../hooks/useScrollToTop';
+
 import axios from 'axios';
 const Services = () => {
 
@@ -178,6 +180,8 @@ useEffect(() => {
   const gotoContacts = () => {
     window.location.href = '/contact-us';
   }
+
+  useScrollToTop();
 
   return (
     <>

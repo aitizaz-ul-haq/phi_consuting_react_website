@@ -261,7 +261,7 @@ const breadcrumbSchema =  {
         <Route path="casestudy/:companyName" element={<Layout><CaseStudyView /></Layout>} />
         {/* <Route path="casestudy/:id" element={<Layout><CaseStudyView /></Layout>} /> */}
         {/* <Route path="/viewcasestudy/:caseId" element={<Layout><ViewCasestudy /></Layout>} /> */}
-        <Route path="casedetails/:id" element={<Layout><CaseDetails /></Layout>} />
+        {/* <Route path="casedetails/:id" element={<Layout><CaseDetails /></Layout>} /> */}
         <Route path="blog/:id" element={<Layout><BlogView/></Layout>}/>
 
         {/* Industry and its subpages */}
