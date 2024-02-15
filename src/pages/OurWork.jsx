@@ -151,6 +151,9 @@ ctadescription:"",
         <title>Empowering Startups and SMEs | Phi Consulting</title>
         <meta name="description" content="Phi Consulting empowers startups and SMEs with expertise in Sales, Finance, and HR Consulting. Our unique investment approach enhances business value through strategic alliances and operational improvements. Trusted by industry leaders. Contact us to unlock your company's full potential." />
       </Helmet>
+      <Helmet>
+      <link rel="canonical" href="https://phi-verse.com/value-creation" />
+    </Helmet>
 
 
     {/* <!-- Hero Section --> */}

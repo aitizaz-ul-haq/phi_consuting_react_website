@@ -55,6 +55,11 @@ const Spotlight = () => {
         <meta name="description" content="Explore Phi Consulting's transformative impact through detailed case studies. Dive into real-world success examples with ATOB Financials, TruckX, Digital Ocean, and more." />
       </Helmet>
 
+      <Helmet>
+      <link rel="canonical" href="https://phi-verse.com/case-studies" />
+    </Helmet>
+
+
             <article className="case-study-row" style={{ backgroundImage: `url(${casestudybluebacl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <section className="case-study-container-view">
                     {caseStudies.map(study => (

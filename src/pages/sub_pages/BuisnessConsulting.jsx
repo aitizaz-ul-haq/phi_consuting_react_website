@@ -347,6 +347,11 @@ useScrollToTop();
         <meta name="description" content="Nurture investor confidence with Phi Consulting's Investor Relations expertise. Enhance communication, build trust, and foster long-term relationships for sustainable growth." />
       </Helmet>
 
+      <Helmet>
+      <link rel="canonical" href="https://phi-verse.com/solutions/investors-relation" />
+    </Helmet>
+
+
         <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">

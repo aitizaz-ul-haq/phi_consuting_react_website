@@ -342,6 +342,11 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
         <meta name="description" content="Unlock your workforce potential with Phi Consulting's HR and Recruitment solutions. Streamline hiring processes and cultivate a high-performance, motivated team. Partner with us for success!" />
       </Helmet>
 
+      <Helmet>
+      <link rel="canonical" href="https://phi-verse.com/solutions/hr-recruitment" />
+    </Helmet>
+
+
 <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">

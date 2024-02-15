@@ -352,6 +352,13 @@ useScrollToTop();
         <meta name="description" content="Unlock the full potential of your cloud startup with Phi Consulting's expert cloud consulting services. From GTM strategy to HR & recruitment solutions, financial consulting, and investor relations, we offer tailored solutions to address the unique challenges faced by cloud companies. Partner with us to revolutionize your startup's growth journey. Contact us today." />
       </Helmet>
 
+      <Helmet>
+      <link rel="canonical" href="https://phi-verse.com/cloud-consulting" />
+    </Helmet>
+
+
+
+
 <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">

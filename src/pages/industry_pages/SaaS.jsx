@@ -338,6 +338,12 @@ const scrollToTop = () => {
         <meta name="description" content="Unlock the potential of your B2B SaaS startup with Phi Consulting's expert SaaS consulting services. Our hands-on experience, tested approaches, and flexibility ensure successful GTM strategies, HR & recruitment solutions, financial consulting, and investor relations. Let's shape the future of your SaaS venture together. Contact us to discuss partnership opportunities." />
       </Helmet>
 
+      
+<Helmet>
+      <link rel="canonical" href="https://phi-verse.com/saas-consulting" />
+    </Helmet>
+
+
         <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">

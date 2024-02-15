@@ -358,6 +358,13 @@ useScrollToTop();
         <meta name="description" content="Unlock the full potential of your FinTech startup with Phi Consulting's expert consulting services. From GTM strategy to HR & recruitment solutions, financial consulting, and investor relations, we offer tailored solutions to address the unique challenges faced by FinTech companies. Partner with us to revolutionize your startup's growth journey. Contact us today." />
       </Helmet>
 
+      
+ <Helmet>
+      <link rel="canonical" href="https://phi-verse.com/fin-tech-consulting" />
+    </Helmet>
+
+
+
 <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">

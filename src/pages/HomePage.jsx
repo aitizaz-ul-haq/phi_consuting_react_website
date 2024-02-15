@@ -465,6 +465,11 @@ const HomePage = () => {
 <title>Phi Consulting - Home</title>
   <meta name="description" content="Phi Consulting is your trusted tech consulting partner, specializing in startups & SMEs in IoT, Fintech, SaaS, & IaaS. Expertise in Go-To-Market Strategy, HR, Investor Relations & Financial Consulting. Schedule a free consultation." />
   </Helmet>
+  <Helmet>
+      <link rel="canonical" href="https://phi-verse.com/home" />
+    </Helmet>
+
+
 
     
     <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>

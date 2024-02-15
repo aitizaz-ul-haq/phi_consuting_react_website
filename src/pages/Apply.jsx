@@ -118,9 +118,15 @@ useScrollToTop();
   return (
     <>
       <Helmet>
-        <title>Get in Touch with Phi Consulting - Let's Shape Success Together</title>
-        <meta name="description" content="Contact Phi Consulting for strategic business solutions. Whether you have inquiries or collaboration ideas, we're here to assist you on your journey to success." />
+        <title>Apply for Job Opportunities at Phi Consulting</title>
+        <meta name="description" content="Apply for exciting job opportunities at Phi Consulting. Join our team of dedicated professionals and contribute to transformative projects across various industries." />
+       
       </Helmet>
+
+      <Helmet>
+      <link rel="canonical" href="https://phi-verse.com/apply" />
+      </Helmet>
+
 
     {/* <!-- contact form  Section --> */}
     <article class="contact">

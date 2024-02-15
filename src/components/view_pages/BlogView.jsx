@@ -7,6 +7,7 @@ import eye from "../../assets/img/eye.png";
 import top from "../../assets/img/top Arrow.png";
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const BlogView = () => {
  
@@ -54,6 +55,16 @@ const BlogView = () => {
   }
     return(
         <>
+          <Helmet>
+        <title>Explore Insights and Updates on Phi Consulting's Blog</title>
+        <meta name="description" content="Explore the latest insights, updates, and industry trends on Phi Consulting's blog. Stay informed about transformative projects, innovative solutions, and thought leadership articles across various industries." />
+       
+      </Helmet>
+
+      <Helmet>
+      <link rel="canonical" href="https://phi-verse.com/blog/" />
+      </Helmet>
+
          <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">

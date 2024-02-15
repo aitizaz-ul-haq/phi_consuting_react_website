@@ -185,6 +185,9 @@ useEffect(() => {
         <title>Drive Growth & Excellence with Phi Consulting</title>
         <meta name="description" content="Drive growth with Phi Consulting's expert solutions in GTM Strategy, HR, Investor Relations & Financial Consulting. Maximize your enterprise potential. Schedule a free consultation now!" />
       </Helmet>
+      <Helmet>
+      <link rel="canonical" href="https://phi-verse.com/solutions" />
+    </Helmet>
 
 
    {/* <!-- Hero Section --> */}

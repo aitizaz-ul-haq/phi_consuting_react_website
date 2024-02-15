@@ -338,6 +338,12 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
         <meta name="description" content="Unlock your financial potential with Phi Consulting's tailored Financial Consulting services. Drive profitability, make informed decisions, and optimize financial strategies with our expert guidance." />
       </Helmet>
 
+      
+<Helmet>
+      <link rel="canonical" href="https://phi-verse.com/solutions/financial-consulting" />
+    </Helmet>
+
+
 <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">

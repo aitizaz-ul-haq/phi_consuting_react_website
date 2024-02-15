@@ -342,6 +342,11 @@ useScrollToTop();
         <meta name="description" content="Craft dynamic Go-To-Market strategies with Phi Consulting. Propel your business forward with proven methodologies for successful product launches and market penetration. Partner with us today!" />
       </Helmet>
 
+      <Helmet>
+      <link rel="canonical" href="https://phi-verse.com/solutions/go-to-market-strategy" />
+    </Helmet>
+
+
         <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">

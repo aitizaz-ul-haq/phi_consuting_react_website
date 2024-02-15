@@ -137,6 +137,11 @@ useEffect(() => {
         <meta name="description" content="Explore exciting career opportunities at Phi Consulting. Join our team of dynamic professionals and contribute to shaping the future of strategic business excellence." />
       </Helmet>
 
+      <Helmet>
+      <link rel="canonical" href="https://phi-verse.com/careers" />
+    </Helmet>
+
+
     {/* <!-- Hero Section --> */}
       <article class="hero">
         <section class="hero-container-careers">

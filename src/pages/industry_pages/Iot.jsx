@@ -307,6 +307,12 @@ useScrollToTop();
         <meta name="description" content="Unlock the potential of your IoT startup with Phi Consulting's specialized IoT consulting services. Our team guides founders and executives through growth and innovation, crafting custom go-to-market strategies, HR and recruitment solutions, financial management, and investor relations to ensure lasting success." />
       </Helmet>
 
+      
+<Helmet>
+      <link rel="canonical" href="https://phi-verse.com/iot-consulting" />
+    </Helmet>
+
+
          <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">

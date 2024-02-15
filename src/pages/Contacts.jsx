@@ -107,6 +107,12 @@ useScrollToTop();
         <meta name="description" content="Contact Phi Consulting for strategic business solutions. Whether you have inquiries or collaboration ideas, we're here to assist you on your journey to success." />
       </Helmet>
 
+      
+<Helmet>
+      <link rel="canonical" href="https://phi-verse.com/contact-us" />
+    </Helmet>
+
+
     {/* <!-- contact form  Section --> */}
       <article class="contact">
         <section class="contact-container">

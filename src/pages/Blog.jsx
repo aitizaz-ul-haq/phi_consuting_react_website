@@ -76,6 +76,11 @@ const Blog = ({blogpic}) => {
         <meta name="description" content="Discover Phi Consulting's insightful business blogs covering industry trends, best practices, and expert insights. Stay informed, ahead of the curve, and drive success in the competitive business landscape." />
       </Helmet>
 
+      <Helmet>
+      <link rel="canonical" href="https://phi-verse.com/blogs" />
+    </Helmet>
+
+
 
     {/* <!-- Hero Section --> */}
       <article class="hero">

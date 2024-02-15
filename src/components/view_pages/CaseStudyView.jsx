@@ -23,7 +23,7 @@ import solarproduct from "../../assets/img/api_images/solar_one.webp";
 import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../../assets/img/api_images/joytwo.png";
 import doproduct from "../../assets/img/api_images/digitalocean-product.png";
-
+import { Helmet } from 'react-helmet';
 import shareicon from "../../assets/img/shareicon/share.png";
 
 const CaseStudyView = () => {
@@ -148,6 +148,16 @@ const CaseStudyView = () => {
 
     return(
         <>
+          <Helmet>
+        <title>Phi Consulting Case Studies: Transformative Success Stories</title>
+        <meta name="description" content="Explore a collection of transformative success stories with Phi Consulting's detailed case studies. Dive into real-world examples of strategic interventions and impactful solutions across various industries." />
+       
+      </Helmet>
+
+        <Helmet>
+      <link rel="canonical" href="https://phi-verse.com/casestudy/" />
+    </Helmet>
+
        <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">
