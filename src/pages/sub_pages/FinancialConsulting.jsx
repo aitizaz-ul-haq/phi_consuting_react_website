@@ -4,18 +4,6 @@ import { Link } from 'react-router-dom';
 import fcone from "../../assets/img/financial_consulting_icons/Finance and Accounting Process Optimization.png";
 import fctwo from "../../assets/img/financial_consulting_icons/financial management.png";
 import fcthree from "../../assets/img/financial_consulting_icons/risk management.png";
-import fcfour from "../../assets/img/financial_consulting_icons/Cost and Performance Management.png";
-import fcfive from "../../assets/img/financial_consulting_icons/Business Planning & Analysis.png";
-import fcsix from "../../assets/img/financial_consulting_icons/strategy (1).png";
-
-import ATOB from '../../assets/img/new_logos_comps/newer/AtoB 2.png';
-import bobtail from '../../assets/img/new_logos_comps/bobtail.png';
-import joyride from '../../assets/img/new_logos_comps/joyride.png';
-import Truckx from '../../assets/img/new_logos_comps/TruckX.png';
-import pallet from '../../assets/img/new_logos_comps/newer/Pallet Logo.png';
-import digitalOcean from '../../assets/img/new_logos_comps/newer/digital-ocean.png';
-import mudflap from '../../assets/img/new_logos_comps/newer/Mudflap.png';
-import sungrade from '../../assets/img/new_logos_comps/sungrade solar.png';
 
 import goal from "../../assets/img/process_icons/goal.png";
 import planicon from "../../assets/img/process_icons/plan.png";
@@ -26,37 +14,14 @@ import impicon from "../../assets/img/process_icons/implement.png";
 import monitoricon from "../../assets/img/process_icons/monitor.png";
 import improveicon from "../../assets/img/process_icons/improve.png";
 
-import SmallWorkCard from '../../components/shared/cards/SmallWorkCard';
-
-import achiconone from "../../assets/img/achievements-badges/clutch_1.png";
-import achicontwo from "../../assets/img/achievements-badges/BBB.png";
-import achiconthree from "../../assets/img/achievements-badges/clutch_2.png";
 import useScrollToTop from '../../hooks/useScrollToTop';
-import caseStudies from '../../data/caseStudies.json';
 import { TypeAnimation } from 'react-type-animation';
 import { Tooltip } from 'antd';
 import eye from "../../assets/img/eye.png";
 import top from "../../assets/img/top Arrow.png";
-
 import processback from "../../assets/video/home-bg.mp4";
-
 import axios from 'axios';
-
-import atobbox from "../../assets/img/api_images/AToB-square.jpg";
-import truckxbox from "../../assets/img/api_images/truck-square.png";
-import palletbox from "../../assets/img/api_images/palletbox.png";
-import solarbox from "../../assets/img/api_images/Solarbox.png";
-import bobtailbox from "../../assets/img/api_images/bob.png";
-import joybox from "../../assets/img/api_images/joybox.png";
-import dobox from "../../assets/img/api_images/digitalocean-square.png";
 import { Helmet } from 'react-helmet';
-import atobproduct from "../../assets/img/api_images/atob-card.png"; 
-import truckxproduct from "../../assets/img/api_images/truckx-case.png";
-import palletproduct from "../../assets/img/api_images/pallet.png";
-import solarproduct from "../../assets/img/api_images/solar_one.webp";
-import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
-import joyrideproduct from "../../assets/img/api_images/joytwo.png";
-import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
 const FiancialConsulting = () => {
@@ -149,8 +114,7 @@ const FiancialConsulting = () => {
         const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/finpage');
         console.log(`GTM page data`, response.data);
         if (response.data && response.data.length > 0) {
-          const gtmData = response.data[0]; // Assuming the first entry is what we want
-  
+          const gtmData = response.data[0]; 
           setData({
             bannerHeading: gtmData.bannerHeading,
             bannerDescription: gtmData.bannerDescription,
@@ -168,10 +132,8 @@ const FiancialConsulting = () => {
             featuresDescriptionFive: gtmData.featuresDescriptionFive,
             featuresHeadingSix: gtmData.featuresHeadingSix,
             featuresDescriptionSix: gtmData.featuresDescriptionSix,
-
             processMainHeading:gtmData.processMainHeading,
             processMainDesc: gtmData.processMainDesc,
-
             processHedOne:gtmData.processHedOne,
             processDesOne: gtmData.processDesOne,
             processHedTwo:gtmData.processHedTwo,
@@ -208,7 +170,6 @@ const FiancialConsulting = () => {
         console.error("Error fetching GTM Page data:", error);
       }
     };
-  
     fetchData();
   }, []);
 
@@ -216,12 +177,11 @@ const FiancialConsulting = () => {
     const fetchCaseStudies = async () => {
       try {
         const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/cases');
-        setCaseStudies(response.data.slice(0, 3)); // Fetch only the first three case studies
+        setCaseStudies(response.data.slice(0, 3)); 
       } catch (error) {
         console.error('Error fetching case studies:', error);
       }
     };
-  
     fetchCaseStudies();
   }, []);
    
@@ -233,30 +193,22 @@ const FiancialConsulting = () => {
        },
        { threshold: 1 }
      );
-   
      if (processNewRef.current) {
        observer.observe(processNewRef.current);
      }
-   
      return () => observer.disconnect();
    }, []);
    
    useEffect(() => {
-    // Function to handle the parallax effect
     const handleScroll = () => {
       const offset = window.pageYOffset;
-      document.body.style.backgroundPositionY = offset * 0.5 + 'px'; // Adjust the speed of the parallax effect by changing the multiplier
+      document.body.style.backgroundPositionY = offset * 0.5 + 'px';
     };
-  
-    // Set background image on mount
     document.body.style.backgroundImage = `url(${whatback})`;
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center';
-    document.body.style.backgroundAttachment = 'fixed'; // This is necessary for the parallax effect
-  
+    document.body.style.backgroundAttachment = 'fixed';
     window.addEventListener('scroll', handleScroll);
-  
-    // Clean up function to remove the event listener and revert styles on unmount
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.body.style.backgroundImage = '';
@@ -267,21 +219,11 @@ const FiancialConsulting = () => {
   }, []);
   
   useEffect(() => {
-    // Setting the background color with a transparent effect for the services section
     const servicesSection = document.querySelector('.why-phi-for-sales');
-    
     if (servicesSection) {
-      // Apply light blue background color with transparency
       servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
-      // Apply top and bottom borders
-      servicesSection.style.borderTop = '2px solid #add8e6'; // Light blue color
-      servicesSection.style.borderBottom = '2px solid #add8e6'; // Light blue color
-      // Ensure content inside is not affected by the background color
-      // This is inherently the case with the background color property
-      // but ensure text and other elements have enough contrast
+      servicesSection.style.borderBottom = '2px solid #add8e6';
     }
-  
-    // Cleanup function to revert styles
     return () => {
       if (servicesSection) {
         servicesSection.style.backgroundColor = '';
@@ -290,7 +232,6 @@ const FiancialConsulting = () => {
       }
     };
   }, []); 
-
 
  useEffect(() => {
   const observer = new IntersectionObserver(
@@ -304,7 +245,7 @@ const FiancialConsulting = () => {
       });
     },
     {
-      threshold: 0.5, // Adjust as needed
+      threshold: 0.5, 
     }
   );
 
@@ -333,13 +274,13 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
   useScrollToTop();
     return(
         <>
-  <Helmet>
+        <Helmet>
         <title>Strategic Financial Consulting - Phi Consulting</title>
         <meta name="description" content="Unlock your financial potential with Phi Consulting's tailored Financial Consulting services. Drive profitability, make informed decisions, and optimize financial strategies with our expert guidance." />
       </Helmet>
 
       
-<Helmet>
+        <Helmet>
       <link rel="canonical" href="https://phi-verse.com/solutions/financial-consulting" />
     </Helmet>
 
@@ -351,12 +292,16 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
             </Tooltip>
                  {/* Back to Top Button */}
-                 <Tooltip placement="leftTop" title="back to top">
+            <Tooltip placement="leftTop" title="back to top">
     <button className="back-to-top" onClick={scrollToTop}>
     <img src={top} alt="eye icon" width={25} height={25}/>
     </button>
-    </Tooltip>
+            </Tooltip>
             </div>
+
+
+
+
          {/* <!-- Hero Section --> */}
       <article class="hero">
         <section class="hero-container-fin-consul">
@@ -440,53 +385,6 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
           </div>
         </div>
         <div class="sales-banner-container down-spacing">
-          {/* <div class="sales-cards one-with-blue-back">
-            <div class="icon-container">
-              <img
-                src={fcfour}
-                alt=""
-                width="90"
-                height="90"
-              />
-            </div>
-            <h3 class="sales-card-title">Cost and Performance Management</h3>
-            <div class="sales-card-description">
-              We assist in aligning your costs with business goals, driving
-              efficiency, and maximizing overall performance.
-            </div>
-          </div>
-
-          <div class="sales-cards one-with-white-back">
-            <div class="icon-container">
-              <img
-                src={fcfive}
-                alt=""
-                width="90"
-                height="90"
-              />
-            </div>
-            <h3 class="sales-card-title">Business Planning & Analysis</h3>
-            <div class="sales-card-description">
-              We guide you in creating strategic plans that foster growth,
-              profitability, and long-term success.
-            </div>
-          </div>
-          <div class="sales-cards one-with-blue-back">
-            <div class="icon-container">
-              <img
-                src={fcsix}
-                alt=""
-                width="90"
-                height="90"
-              />
-            </div>
-            <h3 class="sales-card-title">Strategy Management</h3>
-            <div class="sales-card-description">
-              Align your organizational goals, enhance decision-making
-              processes, and drive sustainable growth through strategic
-              initiatives.
-            </div>
-          </div> */}
         </div>
       </article>
 

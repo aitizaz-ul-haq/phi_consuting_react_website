@@ -1,17 +1,10 @@
 import React,{ useState, useEffect, useRef } from 'react';
-import { Routes, Route, Link, Outlet } from 'react-router-dom';
-import CustomerExperience from './sub_pages/CustomerExperienceConsulting';
-import FinancialConsulting from './sub_pages/FinancialConsulting';
-import BuisnessConsulting from './sub_pages/BuisnessConsulting';
-import HrConsulting from './sub_pages/HrAndRecruitmentConsulting';
-import SalesConsulting from './sub_pages/SalesConsulting';
+import { Link } from 'react-router-dom';
 
 import salesicon from "../assets/img/solutions icons/GTM.png";
 import buisnessicon from "../assets/img/solutions icons/Investor Relations.png";
 import financialicon from "../assets/img/solutions icons/fin.png";
 import hricon from "../assets/img/white_icons/human-resources.png";
-import cxicon from "../assets/img/white_icons/customer-experience.png";
-
 import goal from "../assets/img/process_icons/goal.png";
 import planicon from "../assets/img/process_icons/plan.png";
 import actionicon from "../assets/img/process_icons/action.png";
@@ -22,14 +15,8 @@ import monitoricon from "../assets/img/process_icons/monitor.png";
 import improveicon from "../assets/img/process_icons/improve.png";
 
 import { Helmet } from 'react-helmet';
-import achiconone from "../assets/img/achievements-badges/clutch_1.png";
-import achicontwo from "../assets/img/achievements-badges/BBB.png";
-import achiconthree from "../assets/img/achievements-badges/clutch_2.png";
-import SmallWorkCard from '../components/shared/cards/SmallWorkCard';
 import { TypeAnimation } from 'react-type-animation';
-import caseStudies from "../data/caseStudies.json";
 import processback from "../assets/video/home-bg.mp4";
-
 import useScrollToTop from '../hooks/useScrollToTop';
 
 import axios from 'axios';
@@ -87,7 +74,7 @@ const Services = () => {
         const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/servicepage');
         console.log(`your data`, response.data);
         if (response.data && response.data.length > 0) {
-          const homepageData = response.data[0]; // Assuming the first entry is what we want
+          const homepageData = response.data[0];
           setData({
             heroHeading: homepageData.heroheading,
             heroDescription: homepageData.herodescription,
@@ -164,7 +151,6 @@ useEffect(() => {
     window.location.href = '/solutions/investors-relation';
   } 
 
-
   const handleTabClickThree = () => {
     window.location.href = '/solutions/financial-consulting';
   } 
@@ -185,13 +171,13 @@ useEffect(() => {
 
   return (
     <>
-   <Helmet>
+       <Helmet>
         <title>Drive Growth & Excellence with Phi Consulting</title>
         <meta name="description" content="Drive growth with Phi Consulting's expert solutions in GTM Strategy, HR, Investor Relations & Financial Consulting. Maximize your enterprise potential. Schedule a free consultation now!" />
       </Helmet>
-      <Helmet>
+       <Helmet>
       <link rel="canonical" href="https://phi-verse.com/solutions" />
-    </Helmet>
+       </Helmet>
 
 
    {/* <!-- Hero Section --> */}
@@ -201,7 +187,6 @@ useEffect(() => {
             <h2 class="hero-heading-services-page">
             {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
-        // Same substring at the start will only be typed out once, initially
         'Drive Growth & Excellence with Phi Consulting',
         7000, 
        
@@ -437,7 +422,7 @@ useEffect(() => {
         </section>
       </article>
 
-<article class="process-new">
+      <article class="process-new">
 <video
     src={processback}
     autoPlay

@@ -30,15 +30,12 @@ const Spotlight = () => {
         const handleScroll = () => {
             const caseStudyRow = document.querySelector('.case-study-row');
             if (caseStudyRow) {
-                const speed = 0.5; // Adjust the speed of the parallax effect
+                const speed = 0.5; 
                 const yOffset = window.pageYOffset;
                 caseStudyRow.style.backgroundPosition = `center ${yOffset * speed}px`;
             }
         };
-
         window.addEventListener('scroll', handleScroll);
-
-        // Cleanup function to remove the event listener
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -53,13 +50,10 @@ const Spotlight = () => {
         <Helmet>
         <title>Success Stories: Phi Consulting Case Studies</title>
         <meta name="description" content="Explore Phi Consulting's transformative impact through detailed case studies. Dive into real-world success examples with ATOB Financials, TruckX, Digital Ocean, and more." />
-      </Helmet>
-
-      <Helmet>
-      <link rel="canonical" href="https://phi-verse.com/case-studies" />
-    </Helmet>
-
-
+        </Helmet>
+         <Helmet>
+             <link rel="canonical" href="https://phi-verse.com/case-studies" />
+        </Helmet>
             <article className="case-study-row" style={{ backgroundImage: `url(${casestudybluebacl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <section className="case-study-container-view">
                     {caseStudies.map(study => (

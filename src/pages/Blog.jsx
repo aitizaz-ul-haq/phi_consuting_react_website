@@ -1,12 +1,9 @@
 import React,{useState, useEffect} from 'react';
-// import blogpic from "../assets/img/bi.jpg";
 import { Link } from 'react-router-dom';
-import blogs from '../data/blogs.json';
 import BlogCard from '../components/shared/cards/BlogCard';
 import axios from 'axios';
 import useScrollToTop from '../hooks/useScrollToTop';
 import { Spin } from 'antd';
-import blogback from '../assets/img/wrappers/blogback.jpg';
 import { Helmet } from 'react-helmet';
 
 const Blog = ({blogpic}) => {
@@ -18,19 +15,13 @@ const Blog = ({blogpic}) => {
   }, []);
 
   useEffect(() => {
-    // Ensure the element exists before attempting to add styles or event listeners
     const blogedSection = document.querySelector('.bloged');
-    if (!blogedSection) return; // Exit if the element does not exist
-
-    // Apply styles directly or adjust your CSS as needed
+    if (!blogedSection) return; 
     const handleScroll = () => {
         const yOffset = window.pageYOffset;
         blogedSection.style.backgroundPosition = `center ${yOffset * 0.5}px`;
     };
-
     window.addEventListener('scroll', handleScroll);
-
-    // Cleanup
     return () => {
         window.removeEventListener('scroll', handleScroll);
     };
@@ -40,7 +31,7 @@ const Blog = ({blogpic}) => {
     setIsLoading(true);
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // 3000ms = 3 seconds
+    }, 3000);
 
     try {
       const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/blogs');
@@ -54,8 +45,6 @@ const Blog = ({blogpic}) => {
     }
   };
 
-
-  useScrollToTop();
   const gotoContacts = () => {
     window.location.href = '/contact-us';
   }
@@ -69,18 +58,17 @@ const Blog = ({blogpic}) => {
       </div>
     );
   }
+
   return (
     <>
- <Helmet>
+       <Helmet>
         <title>Informative Blogs - Phi Consulting</title>
         <meta name="description" content="Discover Phi Consulting's insightful business blogs covering industry trends, best practices, and expert insights. Stay informed, ahead of the curve, and drive success in the competitive business landscape." />
-      </Helmet>
+       </Helmet>
 
       <Helmet>
       <link rel="canonical" href="https://phi-verse.com/blogs" />
-    </Helmet>
-
-
+      </Helmet>
 
     {/* <!-- Hero Section --> */}
       <article class="hero">

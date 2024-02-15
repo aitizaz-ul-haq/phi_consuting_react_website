@@ -337,7 +337,7 @@ useScrollToTop();
     return (
         <>
 
-<Helmet>
+       <Helmet>
         <title>Effective Go-To-Market Strategy - Phi Consulting</title>
         <meta name="description" content="Craft dynamic Go-To-Market strategies with Phi Consulting. Propel your business forward with proven methodologies for successful product launches and market penetration. Partner with us today!" />
       </Helmet>
@@ -353,8 +353,10 @@ useScrollToTop();
             <Tooltip placement="leftTop" title="toggle eye protection">
             <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
             </Tooltip>
-                 {/* Back to Top Button */}
-                 <Tooltip placement="leftTop" title="back to top">
+
+
+    {/* Back to Top Button */}
+    <Tooltip placement="leftTop" title="back to top">
     <button className="back-to-top" onClick={scrollToTop}>
     <img src={top} alt="eye icon" width={25} height={25}/>
     </button>
@@ -369,10 +371,8 @@ useScrollToTop();
             <h2 class="hero-heading-sales">
             {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
-        // Same substring at the start will only be typed out once, initially
         'Your Gateway to Strategic GTM Consultancy',
         7000, 
-       
       ]}
       wrapper="span"
       speed={50}
@@ -441,52 +441,6 @@ useScrollToTop();
           </div>
         </div>
         <div class="sales-banner-container down-spacing">
-          {/* <div class="sales-cards one-with-blue-back">
-            <div class="icon-container">
-              <img
-                src={salesfour}
-                alt=""
-                width="90"
-                height="90"
-              />
-            </div>
-            <h3 class="sales-card-title">Sales Expansion</h3>
-            <div class="sales-card-description">
-              Expand your market reach and drive growth with our Sales Expansion
-              strategies tailored to your unique business goals.
-            </div>
-          </div>
-
-          <div class="sales-cards one-with-white-back">
-            <div class="icon-container">
-              <img
-                src={salesfive}
-                alt=""
-                width="90"
-                height="90"
-              />
-            </div>
-            <h3 class="sales-card-title">Product-led Growth</h3>
-            <div class="sales-card-description">
-              Leverage your product as a key driver for business growth with our
-              Product-led Growth strategies, turning users into loyal customers.
-            </div>
-          </div>
-          <div class="sales-cards one-with-blue-back">
-            <div class="icon-container">
-              <img
-                src={salessix}
-                alt=""
-                width="90"
-                height="90"
-              />
-            </div>
-            <div class="more-info-container">
-              <div class="right-button">
-                <span>More Info</span>
-              </div>
-            </div>
-          </div> */}
         </div>
       </article>
 
@@ -800,7 +754,7 @@ useScrollToTop();
           {data.whySectionDescription}
           </p>
 
-<div class="insights-container">
+         <div class="insights-container">
             <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
               <div class="left-section-insights">
                 <div class="overlay-container">

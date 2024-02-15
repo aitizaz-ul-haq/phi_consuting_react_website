@@ -10,7 +10,6 @@ import perksthree from "../assets/img/businessman.png";
 import perksfour from "../assets/img/office-hours.png";
 
 import JobCard from '../components/shared/cards/JobCard';
-import jobPostings from "../data/jobPostings.json";
 import { TypeAnimation } from 'react-type-animation';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
@@ -33,8 +32,6 @@ const Careers = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const [data, setData] = useState({
-   
-  
 heroheading:"",
 herodescription:"",
 cultureheading:"",
@@ -55,36 +52,35 @@ rewardthree:"",
 rewardfour:"",
 careerctaheading:"",
 careerctadescription:"",
-    
       });
     
-useEffect(() => {
+  useEffect(() => {
         const fetchHomePageData = async () => {
           try {
             const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/careerspage');
             console.log(`your data`, response.data);
             if (response.data && response.data.length > 0) {
-              const homepageData = response.data[0]; // Assuming the first entry is what we want
+              const homepageData = response.data[0]; 
               setData({
                 heroheading: homepageData.heroheading,
                 herodescription: homepageData.herodescription,
-                cultureheading: homepageData.cultureheading, // Assuming excellence maps to culture
-                culturedescription: homepageData.culturedescription, // Assuming excellence maps to culture
-                nuggetoneheading: homepageData.nuggetoneheading, // Assuming quality maps to nugget one
-                nuggetonedescription: homepageData.nuggetonedescription, // Assuming quality maps to nugget one
-                nuggettwoheading: homepageData.nuggettwoheading, // Assuming quality maps to nugget two
-                nuggettwodescription: homepageData.nuggettwodescription, // Adjust based on actual mapping
-                nuggetthreeheading: homepageData.nuggetthreeheading, // Adjust based on actual mapping
-                nuggetthreedescription: homepageData.nuggetthreedescription, // Assuming team maps to nugget three
-                nuggetfourheading: homepageData.nuggetfourheading, // Assuming team maps to nugget four
-                nuggetfourdescription: homepageData.nuggetfourdescription, // Adjust based on actual mapping
-                rewardheading: homepageData.rewardheading, // Assuming locationwords maps to reward
-                rewarddescription: homepageData.rewarddescription, // Assuming maponetitle maps to reward description
-                rewardone: homepageData.rewardone, // Adjust based on actual mapping
-                rewardtwo: homepageData.rewardtwo, // Directly mapped
-                rewardthree: homepageData.rewardthree, // Assuming livefromphi maps to reward three
-                rewardfour: homepageData.rewardfour, // Assuming livefromphisubheading maps to reward four
-                careerctaheading: homepageData.careerctaheading, // Assuming livefromphidescription maps to career cta heading
+                cultureheading: homepageData.cultureheading, 
+                culturedescription: homepageData.culturedescription,
+                nuggetoneheading: homepageData.nuggetoneheading,
+                nuggetonedescription: homepageData.nuggetonedescription,
+                nuggettwoheading: homepageData.nuggettwoheading,
+                nuggettwodescription: homepageData.nuggettwodescription,
+                nuggetthreeheading: homepageData.nuggetthreeheading,
+                nuggetthreedescription: homepageData.nuggetthreedescription,
+                nuggetfourheading: homepageData.nuggetfourheading,
+                nuggetfourdescription: homepageData.nuggetfourdescription,
+                rewardheading: homepageData.rewardheading,
+                rewarddescription: homepageData.rewarddescription,
+                rewardone: homepageData.rewardone,
+                rewardtwo: homepageData.rewardtwo,
+                rewardthree: homepageData.rewardthree,
+                rewardfour: homepageData.rewardfour,
+                careerctaheading: homepageData.careerctaheading,
                 careerctadescription: homepageData.careerctadescription, 
               });
             }
@@ -95,7 +91,6 @@ useEffect(() => {
     
         fetchHomePageData();
   }, []);
-
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -153,7 +148,6 @@ useEffect(() => {
             <h2 class="hero-heading-careers">
             {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
-        // Same substring at the start will only be typed out once, initially
         'Join Our Team, Ignite Your Future',
         7000, 
        
@@ -247,7 +241,6 @@ useEffect(() => {
       <article className={`jobopenings ${isVisibleGateway ? 'gateway-animate' : ''}`} ref={gatewayRef}>
         <section class="jobs-container">
           <h2 class="jobs-heading">Your Gateway to Professional Growth</h2>
-          {/* <!-- <h3 class="jobs-subheading">Your Gateway to Professional Growth</h3> --> */}
           <p class="jobs-desc">
             Unlock a world of possibilities. Browse our current job openings and
             find the perfect match for your skills and aspirations. <br />
@@ -255,19 +248,9 @@ useEffect(() => {
             solutions. Your next career move starts here.
           </p>
           <div class="openings-container">
-          {/* {jobPostings.map(study => (
-                <JobCard key={study.id} job={study} />
-            ))} */}
-
             {jobs.map(job => (
               <JobCard key={job._id} job={job} /> 
             ))}
-          
-            {/* <div class="explore-button-container">
-              <div class="right-button-header">
-                <span>Explore More</span>
-              </div>
-            </div> */}
           </div>
         </section>
       </article>
@@ -276,7 +259,6 @@ useEffect(() => {
       <article className={`perks ${isVisiblePerk ? 'gateway-animate' : ''}`} ref={perkRef}>
         <section class="perks-container">
           <h2 class="perks-heading">{data.rewardheading}</h2>
-         
           <p class="perks-desc">
           {data.rewarddescription}
           </p>

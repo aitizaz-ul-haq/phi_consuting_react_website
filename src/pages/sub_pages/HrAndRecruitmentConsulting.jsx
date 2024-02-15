@@ -1,45 +1,12 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-import ATOB from '../../assets/img/new_logos_comps/newer/AtoB 2.png';
-import bobtail from '../../assets/img/new_logos_comps/bobtail.png';
-import joyride from '../../assets/img/new_logos_comps/joyride.png';
-import Truckx from '../../assets/img/new_logos_comps/TruckX.png';
-import pallet from '../../assets/img/new_logos_comps/newer/Pallet Logo.png';
-import digitalOcean from '../../assets/img/new_logos_comps/newer/digital-ocean.png';
-import mudflap from '../../assets/img/new_logos_comps/newer/Mudflap.png';
-import sungrade from '../../assets/img/new_logos_comps/sungrade solar.png';
-
-import goal from "../../assets/img/process_icons/goal.png";
-import planicon from "../../assets/img/process_icons/plan.png";
-import actionicon from "../../assets/img/process_icons/action.png";
-import assignicon from "../../assets/img/process_icons/assign.png";
-import testicon from "../../assets/img/process_icons/test.png";
-import impicon from "../../assets/img/process_icons/implement.png";
-import monitoricon from "../../assets/img/process_icons/monitor.png";
-import improveicon from "../../assets/img/process_icons/improve.png";
-
-// import workone from "../../assets/img/atob-card.png";
-// import worktwo from "../../assets/img/comp_logos/AToB-square.jpg";
-// import workthree from "../../assets/img/digitalocean-product.png";
-// import workfour from "../../assets/img/comp_logos/digitalocean-square.png";
-// import workfive from "../../assets/img/truckx-case.png";
-// import worksix from "../../assets/img/comp_logos/truck-square.png";
-
-import achiconone from "../../assets/img/achievements-badges/clutch_1.png";
-import achicontwo from "../../assets/img/achievements-badges/BBB.png";
-import achiconthree from "../../assets/img/achievements-badges/clutch_2.png";
-
-import SmallWorkCard from '../../components/shared/cards/SmallWorkCard';
-
 import hriconone from "../../assets/img/hr_icons/hr service.png";
 import hricontwo from "../../assets/img/hr_icons/Payroll & Benefits.png";
 import hriconthree from "../../assets/img/hr_icons/Talent Development.png";
 import hriconfour from "../../assets/img/hr_icons/executive.png";
 import hriconfive from "../../assets/img/hr_icons/Organization Development.png";
-import hriconsix from "../../assets/img/financial_consulting_icons/strategy (1).png";
 
-import caseStudies from '../../data/caseStudies.json';
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { Tooltip } from 'antd';
 import eye from "../../assets/img/eye.png";
@@ -48,21 +15,6 @@ import { TypeAnimation } from 'react-type-animation';
 
 import axios from 'axios';
 
-import atobbox from "../../assets/img/api_images/AToB-square.jpg";
-import truckxbox from "../../assets/img/api_images/truck-square.png";
-import palletbox from "../../assets/img/api_images/palletbox.png";
-import solarbox from "../../assets/img/api_images/Solarbox.png";
-import bobtailbox from "../../assets/img/api_images/bob.png";
-import joybox from "../../assets/img/api_images/joybox.png";
-import dobox from "../../assets/img/api_images/digitalocean-square.png";
-
-import atobproduct from "../../assets/img/api_images/atob-card.png"; 
-import truckxproduct from "../../assets/img/api_images/truckx-case.png";
-import palletproduct from "../../assets/img/api_images/pallet.png";
-import solarproduct from "../../assets/img/api_images/solar_one.webp";
-import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
-import joyrideproduct from "../../assets/img/api_images/joytwo.png";
-import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 import processback from "../../assets/video/home-bg.mp4";
 
@@ -157,7 +109,7 @@ const HrAndRecruitmentConsulting = () => {
         const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/hrpage');
         console.log(`GTM page data`, response.data);
         if (response.data && response.data.length > 0) {
-          const gtmData = response.data[0]; // Assuming the first entry is what we want
+          const gtmData = response.data[0]; 
   
           setData({
             bannerHeading: gtmData.bannerHeading,
@@ -222,7 +174,7 @@ const HrAndRecruitmentConsulting = () => {
     const fetchCaseStudies = async () => {
       try {
         const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/cases');
-        setCaseStudies(response.data.slice(0, 3)); // Fetch only the first three case studies
+        setCaseStudies(response.data.slice(0, 3)); 
       } catch (error) {
         console.error('Error fetching case studies:', error);
       }
@@ -276,21 +228,15 @@ const HrAndRecruitmentConsulting = () => {
 }, []);
 
 useEffect(() => {
-  // Function to handle the parallax effect
   const handleScroll = () => {
     const offset = window.pageYOffset;
-    document.body.style.backgroundPositionY = offset * 0.5 + 'px'; // Adjust the speed of the parallax effect by changing the multiplier
+    document.body.style.backgroundPositionY = offset * 0.5 + 'px'; 
   };
-
-  // Set background image on mount
   document.body.style.backgroundImage = `url(${whatback})`;
   document.body.style.backgroundSize = 'cover';
   document.body.style.backgroundPosition = 'center';
-  document.body.style.backgroundAttachment = 'fixed'; // This is necessary for the parallax effect
-
+  document.body.style.backgroundAttachment = 'fixed';
   window.addEventListener('scroll', handleScroll);
-
-  // Clean up function to remove the event listener and revert styles on unmount
   return () => {
     window.removeEventListener('scroll', handleScroll);
     document.body.style.backgroundImage = '';
@@ -301,21 +247,12 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
-  // Setting the background color with a transparent effect for the services section
   const servicesSection = document.querySelector('.why-phi-for-sales');
-  
   if (servicesSection) {
-    // Apply light blue background color with transparency
     servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
-    // Apply top and bottom borders
-    servicesSection.style.borderTop = '2px solid #add8e6'; // Light blue color
-    servicesSection.style.borderBottom = '2px solid #add8e6'; // Light blue color
-    // Ensure content inside is not affected by the background color
-    // This is inherently the case with the background color property
-    // but ensure text and other elements have enough contrast
+    servicesSection.style.borderTop = '2px solid #add8e6';
+    servicesSection.style.borderBottom = '2px solid #add8e6';
   }
-
-  // Cleanup function to revert styles
   return () => {
     if (servicesSection) {
       servicesSection.style.backgroundColor = '';
@@ -324,6 +261,7 @@ useEffect(() => {
     }
   };
 }, []); 
+
 const toggleDarkMode = () => setDarkMode(!darkMode);
 
   const scrollToTop = () => {
@@ -337,14 +275,14 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (
         <>
-  <Helmet>
+       <Helmet>
         <title>HR and Recruitment Solutions - Phi Consulting</title>
         <meta name="description" content="Unlock your workforce potential with Phi Consulting's HR and Recruitment solutions. Streamline hiring processes and cultivate a high-performance, motivated team. Partner with us for success!" />
-      </Helmet>
+       </Helmet>
 
       <Helmet>
       <link rel="canonical" href="https://phi-verse.com/solutions/hr-recruitment" />
-    </Helmet>
+      </Helmet>
 
 
 <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
@@ -353,13 +291,17 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             <Tooltip placement="leftTop" title="toggle eye protection">
             <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
             </Tooltip>
-                 {/* Back to Top Button */}
-                 <Tooltip placement="leftTop" title="back to top">
+
+            {/* Back to Top Button */}
+            <Tooltip placement="leftTop" title="back to top">
     <button className="back-to-top" onClick={scrollToTop}>
     <img src={top} alt="eye icon" width={25} height={25}/>
     </button>
-    </Tooltip>
+             </Tooltip>
             </div>
+
+
+
         {/* <!-- Hero Section --> */}
       <article class="hero">
         <section class="hero-container-hr-consul">
@@ -367,7 +309,6 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             <h2 class="hero-heading-hr-consul">
             {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
-        // Same substring at the start will only be typed out once, initially
         ' Hiring that’s efficient on cost and effective on value',
         7000, 
        
@@ -472,22 +413,6 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             {data.featuresDescriptionFive}
             </div>
           </div>
-          {/* <div class="sales-cards one-with-blue-back">
-            <div class="icon-container">
-              <img
-                src={hriconsix}
-                alt=""
-                width="90"
-                height="90"
-              />
-            </div>
-            <h3 class="sales-card-title">Strategy Management</h3>
-            <div class="sales-card-description">
-              Align your organizational goals, enhance decision-making
-              processes, and drive sustainable growth through strategic
-              initiatives.
-            </div>
-          </div> */}
         </div>
       </article>
 
@@ -680,55 +605,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
               </div>
             </div>
             <div class="right-process-section">
-              {/* <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
-                <img
-                  src="../assets/img/process_icons/implement.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Implement the Process</div>
-                  <div class="process-new-description-right-side">
-                    Execute strategies flawlessly with our hands-on approach,
-                    bringing the plan to life.
-                  </div>
-                </div>
-              </div> */}
             </div>
           </div>
           <div class="process-new-section">
-            {/* <div class="left-process-section">
-              <div className={`tooltip-right ${processNewVisible ? 'fade-in' : ''}`}>
-                <img
-                  src="../assets/img/process_icons/monitor.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Monitor the Results</div>
-                  <div class="process-new-description">
-                    Continuously track key metrics, assess performance, and
-                    ensure strategies yield desired outcomes.
-                  </div>
-                </div>
-              </div>
-            </div> */}
-            {/* <div class="right-process-section">
-              <div className={`tooltip-left ${processNewVisible ? 'fade-in' : ''}`}>
-                <img
-                  src="../assets/img/process_icons/improve.png"
-                  alt=""
-                  class="new-process-icon"
-                />
-                <div class="text-container">
-                  <div class="process-new-heading">Make Improvements</div>
-                  <div class="process-new-description-right-side">
-                    Identify areas for improvement based on results, refining
-                    strategies for ongoing optimization.
-                  </div>
-                </div>
-              </div>
-            </div> */}
           </div>
         </section>
       </article>
@@ -745,7 +624,6 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
         </section>
       </article>
 
-    
         {/* <!-- why phi for customer exp Section --> */}
         <article class="why-phi-for-sales">
           <h2 class="why-phi-heading">

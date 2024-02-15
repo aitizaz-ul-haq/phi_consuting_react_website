@@ -1,14 +1,5 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-  
-import ATOB from '../../assets/img/new_logos_comps/newer/AtoB 2.png';
-import bobtail from '../../assets/img/new_logos_comps/bobtail.png';
-import joyride from '../../assets/img/new_logos_comps/joyride.png';
-import Truckx from '../../assets/img/new_logos_comps/TruckX.png';
-import pallet from '../../assets/img/new_logos_comps/newer/Pallet Logo.png';
-import digitalOcean from '../../assets/img/new_logos_comps/newer/digital-ocean.png';
-import mudflap from '../../assets/img/new_logos_comps/newer/Mudflap.png';
-import sungrade from '../../assets/img/new_logos_comps/sungrade solar.png';
 
 import goal from "../../assets/img/process_icons/goal.png";
 import planicon from "../../assets/img/process_icons/plan.png";
@@ -19,18 +10,6 @@ import impicon from "../../assets/img/process_icons/implement.png";
 import monitoricon from "../../assets/img/process_icons/monitor.png";
 import improveicon from "../../assets/img/process_icons/improve.png";
 
-import SmallWorkCard from '../../components/shared/cards/SmallWorkCard';
-import videosource from '../../assets/video/home-bg.mp4';
-// import workone from "../../assets/img/atob-card.png";
-// import worktwo from "../../assets/img/comp_logos/AToB-square.jpg";
-// import workthree from "../../assets/img/digitalocean-product.png";
-// import workfour from "../../assets/img/comp_logos/digitalocean-square.png";
-// import workfive from "../../assets/img/truckx-case.png";
-// import worksix from "../../assets/img/comp_logos/truck-square.png";
-
-import achiconone from "../../assets/img/achievements-badges/clutch_1.png";
-import achicontwo from "../../assets/img/achievements-badges/BBB.png";
-import achiconthree from "../../assets/img/achievements-badges/clutch_2.png";
 
 import bcone from "../../assets/img/investor-realtions-icons/Awareness.png";
 import bctwo from "../../assets/img/investor-realtions-icons/equity.png";
@@ -41,28 +20,12 @@ import bcsix from "../../assets/img/investor-realtions-icons/brand.png";
 
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { TypeAnimation } from 'react-type-animation';
-import caseStudies from '../../data/caseStudies.json';
 import { Tooltip } from 'antd';
 import eye from "../../assets/img/eye.png";
 import top from "../../assets/img/top Arrow.png";
 
 import axios from 'axios';
 
-import atobbox from "../../assets/img/api_images/AToB-square.jpg";
-import truckxbox from "../../assets/img/api_images/truck-square.png";
-import palletbox from "../../assets/img/api_images/palletbox.png";
-import solarbox from "../../assets/img/api_images/Solarbox.png";
-import bobtailbox from "../../assets/img/api_images/bob.png";
-import joybox from "../../assets/img/api_images/joybox.png";
-import dobox from "../../assets/img/api_images/digitalocean-square.png";
-
-import atobproduct from "../../assets/img/api_images/atob-card.png"; 
-import truckxproduct from "../../assets/img/api_images/truckx-case.png";
-import palletproduct from "../../assets/img/api_images/pallet.png";
-import solarproduct from "../../assets/img/api_images/solar_one.webp";
-import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
-import joyrideproduct from "../../assets/img/api_images/joytwo.png";
-import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 import processback from "../../assets/video/home-bg.mp4";
 
@@ -341,14 +304,14 @@ useScrollToTop();
   const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (
         <>
-         <Helmet>
+        <Helmet>
         <title>Investor Relations - Phi Consulting</title>
         <meta name="description" content="Nurture investor confidence with Phi Consulting's Investor Relations expertise. Enhance communication, build trust, and foster long-term relationships for sustainable growth." />
-      </Helmet>
+        </Helmet>
 
-      <Helmet>
-      <link rel="canonical" href="https://phi-verse.com/solutions/investors-relation" />
-    </Helmet>
+        <Helmet>
+        <link rel="canonical" href="https://phi-verse.com/solutions/investors-relation" />
+       </Helmet>
 
 
         <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
@@ -359,12 +322,14 @@ useScrollToTop();
             </Tooltip>
                  {/* Back to Top Button */}
                  <Tooltip placement="leftTop" title="back to top">
-    <button className="back-to-top" onClick={scrollToTop}>
-    <img src={top} alt="eye icon" width={25} height={25}/>
-    </button>
-    </Tooltip>
+                        <button className="back-to-top" onClick={scrollToTop}>
+                           <img src={top} alt="eye icon" width={25} height={25}/>
+                        </button>
+                 </Tooltip>
             </div>
-         {/* <!-- Hero Section --> */}
+
+
+      {/* <!-- Hero Section --> */}
       <article class="hero">
         <section class="hero-container-bui-consul">
           <div class="hero-content-bui-consul">

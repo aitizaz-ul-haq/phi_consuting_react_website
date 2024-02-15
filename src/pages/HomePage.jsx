@@ -7,17 +7,12 @@ import pallet from '../assets/img/new_logos_comps/newer/Pallet Logo.png';
 import digitalOcean from '../assets/img/new_logos_comps/newer/digital-ocean.png';
 import mudflap from '../assets/img/new_logos_comps/newer/Mudflap.png';
 import sungrade from '../assets/img/new_logos_comps/sungrade solar.png';
-// import valuegraph from '../assets/img/Traditional Growth mark_2.png';
 import axios from 'axios';
-
 import buisness from '../assets/img/services-icons/buisness.png';
 import custExp from '../assets/img/services-icons/customer experience.png';
 import financial from '../assets/img/services-icons/financial.png';
 import hr from '../assets/img/services-icons/hr.png';
-import sales from '../assets/img/services-icons/sales.png';
-
 import clutchone from '../assets/img/achievements-badges/clutch_1.png';
-import BBB from '../assets/img/achievements-badges/BBB.png';
 import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
 import { Tooltip } from 'antd';
 import { Link } from 'react-router-dom';
@@ -25,15 +20,11 @@ import CaseStudyMacroComps from '../components/shared/macroComps/CaseStudyMacroC
 import BlogCard from '../components/shared/cards/BlogCard';
 import CustomVideo from '../components/shared/videoComp/CustomVideo';
 import { TypeAnimation } from 'react-type-animation';
-import ScrollToTopButton from '../components/shared/buttons/ScrollToTopButton';
-import blogs from "../data/blogs.json";
-// import caseStudies from "../data/caseStudies.json";
 import useScrollToTop from '../hooks/useScrollToTop';
 import david from "../assets/video/world.mp4";
 import eye from "../assets/img/eye.png";
 import top from "../assets/img/top Arrow.png";
 import { Helmet } from 'react-helmet';
-
 import atobbox from "../assets/img/api_images/AToB-square.jpg";
 import truckxbox from "../assets/img/api_images/truck-square.png";
 import palletbox from "../assets/img/api_images/palletbox.png";
@@ -41,7 +32,6 @@ import solarbox from "../assets/img/api_images/Solarbox.png";
 import bobtailbox from "../assets/img/api_images/bob.png";
 import joybox from "../assets/img/api_images/joybox.png";
 import dobox from "../assets/img/api_images/digitalocean-square.png";
-
 import atobproduct from "../assets/img/api_images/atob-card.png"; 
 import truckxproduct from "../assets/img/api_images/truckx-case.png";
 import palletproduct from "../assets/img/api_images/pallet.png";
@@ -49,13 +39,7 @@ import solarproduct from "../assets/img/api_images/solar_one.webp";
 import bobtailproduct from "../assets/img/api_images/Bobtail.png";
 import joyrideproduct from "../assets/img/api_images/joytwo.png";
 import doproduct from "../assets/img/api_images/digitalocean-product.png";
-
-import backwrapper from "../assets/img/wrappers/website_background_wrapper_one.jpg";
-import bactwo from "../assets/img/wrappers/background_wrapper_two.jpg";
-import backthree from "../assets/img/wrappers/back_three.jpg";
-import backClient from "../assets/img/wrappers/client_back.jpg";
 import backcurls from "../assets/img/wrappers/back_curls.jpg";
-import segmented from "../assets/img/wrappers/segemented.jpg";
 import whatback from "../assets/img/wrappers/burn.webp";
 import graph from "../assets/img/graph.png";
 import iso from "../assets/img/recognitions/iso.webp";
@@ -182,15 +166,13 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    // Fetch case studies from API
     const fetchCaseStudies = async () => {
       try {
         const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me//cases');
-        setCaseStudies(response.data.slice(0, 3)); // Store only the first three entries
+        setCaseStudies(response.data.slice(0, 3));
         console.log(response.data)
       } catch (error) {
         console.error('Error fetching case studies:', error);
-        // Optionally, handle errors, e.g., set an error state
       }
     };
 
@@ -200,9 +182,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
-
     window.addEventListener('resize', handleResize);
-
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
@@ -213,7 +193,6 @@ const HomePage = () => {
           },
           { threshold: 0.5 }
       );
-
       observer.observe(achRef.current);
       return () => observer.disconnect();
   }, []);
@@ -222,7 +201,6 @@ const HomePage = () => {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
     }, { threshold: 0.5 });
-
     observer.observe(testiRef.current);
     return () => observer.disconnect();
 }, []);
@@ -300,21 +278,15 @@ const HomePage = () => {
   useScrollToTop();
 
   useEffect(() => {
-    // Function to handle the parallax effect
     const handleScroll = () => {
       const offset = window.pageYOffset;
-      document.body.style.backgroundPositionY = offset * 0.5 + 'px'; // Adjust the speed of the parallax effect by changing the multiplier
+      document.body.style.backgroundPositionY = offset * 0.5 + 'px'; 
     };
-
-    // Set background image on mount
     document.body.style.backgroundImage = `url(${whatback})`;
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center';
-    document.body.style.backgroundAttachment = 'fixed'; // This is necessary for the parallax effect
-
+    document.body.style.backgroundAttachment = 'fixed';
     window.addEventListener('scroll', handleScroll);
-
-    // Clean up function to remove the event listener and revert styles on unmount
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.body.style.backgroundImage = '';
@@ -325,21 +297,12 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    // Setting the background color with a transparent effect for the services section
     const servicesSection = document.querySelector('.services');
-    
     if (servicesSection) {
-      // Apply light blue background color with transparency
       servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
-      // Apply top and bottom borders
-      servicesSection.style.borderTop = '2px solid #add8e6'; // Light blue color
-      servicesSection.style.borderBottom = '2px solid #add8e6'; // Light blue color
-      // Ensure content inside is not affected by the background color
-      // This is inherently the case with the background color property
-      // but ensure text and other elements have enough contrast
+      servicesSection.style.borderTop = '2px solid #add8e6'; 
+      servicesSection.style.borderBottom = '2px solid #add8e6';
     }
-
-    // Cleanup function to revert styles
     return () => {
       if (servicesSection) {
         servicesSection.style.backgroundColor = '';
@@ -351,10 +314,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const workArticle = document.querySelector('.work');
-
-    // Function to handle the parallax scrolling effect
     const handleParallaxScroll = () => {
-      // Adjust the speed of the parallax by changing the multiplier (0.5 in this case)
       const offset = window.pageYOffset - workArticle.offsetTop;
       workArticle.style.backgroundPositionY = `${offset * 0.5}px`;
     };
@@ -363,14 +323,9 @@ const HomePage = () => {
       workArticle.style.backgroundImage = `url(${backcurls})`;
       workArticle.style.backgroundSize = 'cover';
       workArticle.style.backgroundPosition = 'center';
-      // workArticle.style.backgroundAttachment = 'fixed'; // Needed for parallax effect
       workArticle.style.backgroundRepeat = 'no-repeat';
-
-      // Add the event listener for the scroll event to create the parallax effect
       window.addEventListener('scroll', handleParallaxScroll);
     }
-
-    // Cleanup function to revert styles and remove the event listener
     return () => {
       if (workArticle) {
         workArticle.style.backgroundImage = '';
@@ -378,28 +333,18 @@ const HomePage = () => {
         workArticle.style.backgroundPosition = '';
         // workArticle.style.backgroundAttachment = '';
         workArticle.style.backgroundRepeat = '';
-
         window.removeEventListener('scroll', handleParallaxScroll);
       }
     };
   }, []); 
 
   useEffect(() => {
-    // Setting the background color with a transparent effect for the services section
     const servicesSection = document.querySelector('.services');
-    
     if (servicesSection) {
-      // Apply light blue background color with transparency
       servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
-      // Apply top and bottom borders
-      servicesSection.style.borderTop = '2px solid #add8e6'; // Light blue color
-      servicesSection.style.borderBottom = '2px solid #add8e6'; // Light blue color
-      // Ensure content inside is not affected by the background color
-      // This is inherently the case with the background color property
-      // but ensure text and other elements have enough contrast
+      servicesSection.style.borderTop = '2px solid #add8e6'; 
+      servicesSection.style.borderBottom = '2px solid #add8e6';
     }
-
-    // Cleanup function to revert styles
     return () => {
       if (servicesSection) {
         servicesSection.style.backgroundColor = '';
@@ -410,21 +355,12 @@ const HomePage = () => {
   }, []); 
 
   useEffect(() => {
-    // Setting the background color with a transparent effect for the services section
     const servicesSection = document.querySelector('.testimonial');
-    
     if (servicesSection) {
-      // Apply light blue background color with transparency
       servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
-      // Apply top and bottom borders
-      servicesSection.style.borderTop = '2px solid #add8e6'; // Light blue color
-      servicesSection.style.borderBottom = '2px solid #add8e6'; // Light blue color
-      // Ensure content inside is not affected by the background color
-      // This is inherently the case with the background color property
-      // but ensure text and other elements have enough contrast
+      servicesSection.style.borderTop = '2px solid #add8e6'; 
+      servicesSection.style.borderBottom = '2px solid #add8e6'; 
     }
-
-    // Cleanup function to revert styles
     return () => {
       if (servicesSection) {
         servicesSection.style.backgroundColor = '';
@@ -435,21 +371,12 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    // Setting the background color with a transparent effect for the services section
     const servicesSection = document.querySelector('.blog');
-    
     if (servicesSection) {
-      // Apply light blue background color with transparency
       servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
-      // Apply top and bottom borders
-      servicesSection.style.borderTop = '2px solid #add8e6'; // Light blue color
-      servicesSection.style.borderBottom = '2px solid #add8e6'; // Light blue color
-      // Ensure content inside is not affected by the background color
-      // This is inherently the case with the background color property
-      // but ensure text and other elements have enough contrast
+      servicesSection.style.borderTop = '2px solid #add8e6'; 
+      servicesSection.style.borderBottom = '2px solid #add8e6';
     }
-
-    // Cleanup function to revert styles
     return () => {
       if (servicesSection) {
         servicesSection.style.backgroundColor = '';
@@ -461,29 +388,27 @@ const HomePage = () => {
 
   return (
     <>
-<Helmet>
+     <Helmet>
 <title>Phi Consulting - Home</title>
   <meta name="description" content="Phi Consulting is your trusted tech consulting partner, specializing in startups & SMEs in IoT, Fintech, SaaS, & IaaS. Expertise in Go-To-Market Strategy, HR, Investor Relations & Financial Consulting. Schedule a free consultation." />
-  </Helmet>
-  <Helmet>
+    </Helmet>
+     <Helmet>
       <link rel="canonical" href="https://phi-verse.com/home" />
     </Helmet>
 
-
-
-    
     <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">
             <Tooltip placement="leftTop" title="toggle eye protection">
             <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
             </Tooltip>
-                 {/* Back to Top Button */}
-                 <Tooltip placement="leftTop" title="back to top">
+
+        {/* Back to Top Button */}
+              <Tooltip placement="leftTop" title="back to top">
     <button className="back-to-top" onClick={scrollToTop}>
     <img src={top} alt="eye icon" width={25} height={25}/>
     </button>
-    </Tooltip>
+             </Tooltip>
             </div>
 
 
@@ -491,14 +416,11 @@ const HomePage = () => {
       <article class="hero">
         <section class="hero-container">
           <div class="hero-content">
-          {/* <CustomVideo src={david} /> */}
           {windowWidth >= 1200 && <CustomVideo src={david} />}
-            {/* <!-- <h3 class="line-top">Leadership Through Partnership</h3> --> */}
             <h2 class="hero-heading">
               <span class="phi">
               {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
-        // Same substring at the start will only be typed out once, initially
         'Leadership Through Partnership',
         7000, 
        
@@ -638,7 +560,6 @@ const HomePage = () => {
           <div class="services-material">
             <div class="services-content">
               <div class="services-tab-container-one">
-              
               <div className="services-tab second-tab" onClick={handleTabClickOne}>
                   <div class="tab-icon">
                     <img
@@ -712,24 +633,6 @@ const HomePage = () => {
                     </div> --> */}
                   </div>
                 </div>
-                
-              {/* <div class="services-tab sixth-tab" onClick={handleTabClickFive}>
-                  <div class="tab-icon">
-                    <img
-                      src={sales}
-                      alt="services icons"
-                      class="tab-image"
-                      width="80"
-                      height="80"
-                    />
-                  </div>
-                  <div class="tab-info-container">
-                    <div class="tab-title">
-                      <h3 class="title-third">Sales Consulting</h3>
-                    </div>
-                  </div>
-                </div> */}
-               
                 <div class="services-button-container">
                   <div class="explore-more-button">
                   <Link to="/solutions" class="explore-more-services">Explore More</Link>
@@ -752,9 +655,7 @@ const HomePage = () => {
           {data.casestudyDescription}
           </p>
           {caseStudies.map((study, index) => {
-  
-
-  return (
+              return (
                 <CaseStudyMacroComps
                     key={study.id}
                     id={study._id}
@@ -835,13 +736,10 @@ const HomePage = () => {
           {data.testidescription}
           </p>
         </section>
-
         <section className="testi-cards-container" ref={testiRef}>
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 testi-one">
-             
             </div>
-
             <p class="testi-quote wide-first">
               <q
                 ><i
@@ -852,14 +750,10 @@ const HomePage = () => {
             </p>
             <h3 class="testi-card-heading">{data.testonedesignation}</h3>
           </div>
-
-          
-
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-three">
               <img src="" alt="" />
             </div>
-
             <p class="testi-quote wider">
               <q
                 ><i
@@ -869,12 +763,10 @@ const HomePage = () => {
             </p>
             <h3 class="testi-card-heading">{data.testthreedesignation}</h3>
           </div>
-
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-two">
               <img src="" alt="" />
             </div>
-
             <p class="testi-quote">
               <q
                 ><i
@@ -930,11 +822,9 @@ const HomePage = () => {
           </p>
         </section>
         <section class="blog-cards-container">
-        
         {firstTwoBlogs.map(study => (
                 <BlogCard key={study._id} id={study._id} blogs={study} />
             ))}
-
         </section>
         <section class="button-readmore">
           <div class="right-button">
@@ -952,13 +842,10 @@ const HomePage = () => {
           <h2 class="banner-title">
             {data.boardheading}
           </h2>
-
           <p class="banner-desc"></p>
-
           <p class="banner-desc second-para">
             {data.boarddescription}
           </p>
-
           <div class="right-button" onClick={gotoContacts}>
             <span>Contact us</span>
           </div>

@@ -1,7 +1,6 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import clutchone from '../assets/img/achievements-badges/clutch_1.png';
-import BBB from '../assets/img/achievements-badges/BBB.png';
 import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
 import phiphoto from "../assets/img/phi_logo-filled.png";
 import alizaidiportrait from "../assets/img/phi_people/ali_zaidi.jpg";
@@ -15,7 +14,6 @@ import axios from 'axios';
 import recog from '../assets/img/recognitions/iso.webp';
 
 const AboutUs = () => {
-
 
   const [isVisibleTesti, setIsVisibleTesti] = useState(false);
   const testiRef = useRef(null);
@@ -89,36 +87,36 @@ useEffect(() => {
             const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/aboutuspage');
             console.log(`your data`, response.data);
             if (response.data && response.data.length > 0) {
-              const homepageData = response.data[0]; // Assuming the first entry is what we want
+              const homepageData = response.data[0]; 
               setData({
                 heroheading: homepageData.heroheading,
                 herodescription: homepageData.herodescription,
-                excellenceheading: homepageData.excellenceheading, // Assuming valuecreation maps to excellence
-                excellencedescription: homepageData.excellencedescription, // Assuming valuecreation maps to excellence
-                qualityheading: homepageData.qualityheading, // Assuming phicreates maps to quality
-                qualityonedescription: homepageData.qualityonedescription, // Assuming ourwayone maps to qualityone description
-                qualitytwodescription: homepageData.qualitytwodescription, // Adjust according to actual mapping
-                qualitythreedescription: homepageData.qualitythreedescription, // Adjust according to actual mapping
-                qualityfourdescription: homepageData.qualityfourdescription, // Adjust according to actual mapping
-                teamheading: homepageData.teamheading, // Assuming ourwaythree maps to team
-                teamdescription: homepageData.teamdescription, // Assuming ourwaythree maps to team
-                locationheading: homepageData.locationheading, // No direct mapping provided
-                locationwords: homepageData.locationwords, // No direct mapping provided
-                maponetitle: homepageData.maponetitle, // No direct mapping provided
-                maptwotitle: homepageData.maptwotitle, // No direct mapping provided
-                rewardtwo: homepageData.rewardtwo, // No direct mapping provided
-                livefromphi: homepageData.livefromphi, // No direct mapping provided
-                livefromphisubheading: homepageData.livefromphisubheading, // No direct mapping provided
-                livefromphidescription: homepageData.livefromphidescription, // No direct mapping provided
-                testimonilaheading: homepageData.testimonilaheading, // No direct mapping provided
-                testimonialdescription: homepageData.testimonialdescription, // No direct mapping provided
-                testione: homepageData.testione, // No direct mapping provided
-                testidesignationone: homepageData.testidesignationone, // No direct mapping provided
-                testitwo: homepageData.testitwo, // No direct mapping provided
-                testidesignationtwo: homepageData.testidesignationtwo, // No direct mapping provided
-                testithree: homepageData.testithree, // No direct mapping provided
-                testidesignationthree: homepageData.testidesignationthree, // No direct mapping provided
-                achievementsline: homepageData.achievementsline, // No direct mapping provided
+                excellenceheading: homepageData.excellenceheading, 
+                excellencedescription: homepageData.excellencedescription,
+                qualityheading: homepageData.qualityheading,
+                qualityonedescription: homepageData.qualityonedescription,
+                qualitytwodescription: homepageData.qualitytwodescription,
+                qualitythreedescription: homepageData.qualitythreedescription,
+                qualityfourdescription: homepageData.qualityfourdescription, 
+                teamheading: homepageData.teamheading, 
+                teamdescription: homepageData.teamdescription, 
+                locationheading: homepageData.locationheading, 
+                locationwords: homepageData.locationwords, 
+                maponetitle: homepageData.maponetitle,
+                maptwotitle: homepageData.maptwotitle, 
+                rewardtwo: homepageData.rewardtwo, 
+                livefromphi: homepageData.livefromphi, 
+                livefromphisubheading: homepageData.livefromphisubheading, 
+                livefromphidescription: homepageData.livefromphidescription,
+                testimonilaheading: homepageData.testimonilaheading, 
+                testimonialdescription: homepageData.testimonialdescription, 
+                testione: homepageData.testione, 
+                testidesignationone: homepageData.testidesignationone, 
+                testitwo: homepageData.testitwo,
+                testidesignationtwo: homepageData.testidesignationtwo, 
+                testithree: homepageData.testithree, 
+                testidesignationthree: homepageData.testidesignationthree, 
+                achievementsline: homepageData.achievementsline, 
                 aboutctaheading: homepageData.aboutctaheading,
                 aboutctadescription: homepageData.aboutctadescription,
               });
@@ -155,7 +153,7 @@ useEffect(() => {
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => setIsVisibleServices(entry.isIntersecting));
-    }, { threshold: 0.5 }); // Adjust threshold as needed
+    }, { threshold: 0.5 });
 
     observer.observe(servicesRef.current);
     return () => observer.disconnect();
@@ -164,7 +162,7 @@ useEffect(() => {
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => setIsTeem(entry.isIntersecting));
-    }, { threshold: 0.5 }); // Adjust threshold as needed
+    }, { threshold: 0.5 }); 
 
     observer.observe(teemRef.current);
     return () => observer.disconnect();
@@ -225,9 +223,9 @@ useEffect(() => {
       </Helmet>
 
       
-<Helmet>
+<     Helmet>
       <link rel="canonical" href="https://phi-verse.com/about-us" />
-    </Helmet>
+     </Helmet>
 
 
      {/* <!-- Hero Section --> */}
@@ -237,7 +235,6 @@ useEffect(() => {
             <h2 class="hero-heading-phi-about">
             {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
-        // Same substring at the start will only be typed out once, initially
         'Unleashing Excellence in Consultancy',
         7000, 
        
@@ -495,9 +492,7 @@ useEffect(() => {
         <section className="testi-cards-container" ref={testiRef}>
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 testi-one">
-             
             </div>
-
             <p class="testi-quote wide-first">
               <q
                 ><i
@@ -523,12 +518,10 @@ useEffect(() => {
             </p>
             <h3 class="testi-card-heading">{data.testidesignationtwo}</h3>
           </div>
-
           <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
             <div class="circleBase type3 test-two">
               <img src="" alt="" />
             </div>
-
             <p class="testi-quote">
               <q
                 ><i
