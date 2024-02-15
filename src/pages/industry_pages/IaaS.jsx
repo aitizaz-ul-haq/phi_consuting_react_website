@@ -1,6 +1,5 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import caseStudies from '../../data/caseStudies.json';
 
 import useScrollToTop from '../../hooks/useScrollToTop';
 import eye from "../../assets/img/eye.png";

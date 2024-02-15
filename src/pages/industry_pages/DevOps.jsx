@@ -1,7 +1,5 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-
-import caseStudies from '../../data/caseStudies.json';
 import useScrollToTop from '../../hooks/useScrollToTop';
 import eye from "../../assets/img/eye.png";
 import top from "../../assets/img/top Arrow.png";
@@ -292,7 +290,7 @@ useScrollToTop();
     <button className="back-to-top" onClick={scrollToTop}>
     <img src={top} alt="eye icon" width={25} height={25}/>
     </button>
-               </Tooltip>
+                 </Tooltip>
             </div>
 
       {/* <!-- Hero Section --> */}
