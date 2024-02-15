@@ -15,10 +15,8 @@ import Footer from './components/shared/Footer';
 import CaseStudyView from './components/view_pages/CaseStudyView';
 import BlogView from './components/view_pages/BlogView';
 import Spotlight from './pages/Spotlight';
-import CaseDetails from './components/view_pages/CaseDetails';
 import Apply from './pages/Apply';
 
-import CustomerExperience from './pages/sub_pages/CustomerExperienceConsulting';
 import FinancialConsulting from './pages/sub_pages/FinancialConsulting';
 import BuisnessConsulting from './pages/sub_pages/BuisnessConsulting';
 import HrConsulting from './pages/sub_pages/HrAndRecruitmentConsulting';
@@ -52,7 +50,6 @@ import FinEdit from './pages/dashboard/industriesdash/Fintech Dash/FinEdit';
 import AddFinInfo from './pages/dashboard/industriesdash/Fintech Dash/Fintechinfo/AddFinInfo';
 import ShowInfo from './pages/dashboard/industriesdash/Fintech Dash/Fintechinfo/ShowInfo';
 import EditFinInfo from './pages/dashboard/industriesdash/Fintech Dash/Fintechinfo/EditFinInfo';
-import Value from './components/view_pages/value';
 
 import IotPage from './pages/dashboard/industriesdash/Iot Dash/Iotpage';
 import ShowIotInfo from './pages/dashboard/industriesdash/Iot Dash/Iotinfo/ShowIotInfo';

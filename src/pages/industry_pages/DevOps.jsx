@@ -1,63 +1,13 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-import ATOB from '../../assets/img/new_logos_comps/newer/AtoB 2.png';
-import bobtail from '../../assets/img/new_logos_comps/bobtail.png';
-import joyride from '../../assets/img/new_logos_comps/joyride.png';
-import Truckx from '../../assets/img/new_logos_comps/TruckX.png';
-import pallet from '../../assets/img/new_logos_comps/newer/Pallet Logo.png';
-import digitalOcean from '../../assets/img/new_logos_comps/newer/digital-ocean.png';
-import mudflap from '../../assets/img/new_logos_comps/newer/Mudflap.png';
-import sungrade from '../../assets/img/new_logos_comps/sungrade solar.png';
-
-import salesone from "../../assets/img/GTM Advisory/sales.png";
-import salestwo from "../../assets/img/GTM Advisory/experience.png";
-import salesthree from "../../assets/img/GTM Advisory/enablement.png";
-// import salesfour from "../../assets/img/black_logos/expansion.png";
-// import salesfive from "../../assets/img/black_logos/product led growth.png";
-// import salessix from "../../assets/img/black_logos/button.png";
-
-import goal from "../../assets/img/process_icons/goal.png";
-import planicon from "../../assets/img/process_icons/plan.png";
-import actionicon from "../../assets/img/process_icons/action.png";
-import assignicon from "../../assets/img/process_icons/assign.png";
-import testicon from "../../assets/img/process_icons/test.png";
-import impicon from "../../assets/img/process_icons/implement.png";
-import monitoricon from "../../assets/img/process_icons/monitor.png";
-import improveicon from "../../assets/img/process_icons/improve.png";
-
-import achiconone from "../../assets/img/achievements-badges/clutch_1.png";
-import achicontwo from "../../assets/img/achievements-badges/BBB.png";
-import achiconthree from "../../assets/img/achievements-badges/clutch_2.png";
-
-import SmallWorkCard from '../../components/shared/cards/SmallWorkCard';
 import caseStudies from '../../data/caseStudies.json';
-
 import useScrollToTop from '../../hooks/useScrollToTop';
-// import VantaAnimation from '../../components/shared/vantun';
-import { TypeAnimation } from 'react-type-animation';
-import IndustryServicesSection from '../../components/shared/macroComps/IndustryServicesSection';
 import eye from "../../assets/img/eye.png";
 import top from "../../assets/img/top Arrow.png";
 import { Tooltip } from 'antd';
 
 import axios from 'axios';
-
-import atobbox from "../../assets/img/api_images/AToB-square.jpg";
-import truckxbox from "../../assets/img/api_images/truck-square.png";
-import palletbox from "../../assets/img/api_images/palletbox.png";
-import solarbox from "../../assets/img/api_images/Solarbox.png";
-import bobtailbox from "../../assets/img/api_images/bob.png";
-import joybox from "../../assets/img/api_images/joybox.png";
-import dobox from "../../assets/img/api_images/digitalocean-square.png";
-
-import atobproduct from "../../assets/img/api_images/atob-card.png"; 
-import truckxproduct from "../../assets/img/api_images/truckx-case.png";
-import palletproduct from "../../assets/img/api_images/pallet.png";
-import solarproduct from "../../assets/img/api_images/solar_one.webp";
-import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
-import joyrideproduct from "../../assets/img/api_images/joytwo.png";
-import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 import { Helmet } from 'react-helmet';
 import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 import whatback from "../../assets/img/wrappers/burn.webp"; 
@@ -119,7 +69,7 @@ const DevOps = () => {
   function simplifyFintechData(data) {
     return data.reduce((acc, entry) => {
       const simplifiedContent = entry.content.map(item => ({
-        id: entry._id, // Keeping track of the parent entry ID, if needed
+        id: entry._id,
         headingText: item.headingText,
         highlighted: item.highlighted,
         paragraphText: item.paragraphText
@@ -148,11 +98,8 @@ const DevOps = () => {
     const fetchFintechInfo = async () => {
       try {
         const response = await axios.get(`${apiUrl}/devinfo`);
-        // Assuming the first element of the array has the sections
         const sections = response.data[0].sections;
-  
         if (sections.length >= 2) {
-          // Update state variables based on your data structure
           setSectionOneTitle(sections[0].title);
           setSectionOneParagraph(sections[0].paragraph);
           setSectionTwoTitle(sections[1].title);
@@ -161,11 +108,9 @@ const DevOps = () => {
           setSectionThreeParagraph(sections[2].paragraph);
           setSectionFourTitle(sections[3].title);
           setSectionFourParagraph(sections[3].paragraph);
-          // ... set more states for other sections ...
         }
       } catch (error) {
         console.error('Error fetching fintech info:', error);
-        // Handle the error appropriately
       }
     };
   
@@ -192,9 +137,7 @@ const DevOps = () => {
     const fetchCloudBanData = async () => {
       try {
         const response = await axios.get(`${apiUrl}/devban`);
-        // Assuming the response data is an array and we want the last item
         const lastEntry = response.data[response.data.length - 1];
-        // Update state with the last entry's heading and paragraph
         setHeroHeading(lastEntry.heading);
         setHeroDescription(lastEntry.bannerDescription);
       } catch (error) {
@@ -217,7 +160,7 @@ const DevOps = () => {
         setCardDetails({
           barCardHeading: firstEntry.barcardheading,
           fourCardHeading: firstEntry.fourcardheading,
-          ...firstEntry // This spreads the properties of the first entry into cardDetails
+          ...firstEntry 
         });
       }
       setData(response.data);
@@ -228,21 +171,15 @@ const DevOps = () => {
   };
   
   useEffect(() => {
-    // Function to handle the parallax effect
     const handleScroll = () => {
       const offset = window.pageYOffset;
-      document.body.style.backgroundPositionY = offset * 0.5 + 'px'; // Adjust the speed of the parallax effect by changing the multiplier
+      document.body.style.backgroundPositionY = offset * 0.5 + 'px';
     };
-  
-    // Set background image on mount
     document.body.style.backgroundImage = `url(${whatback})`;
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center';
-    document.body.style.backgroundAttachment = 'fixed'; // This is necessary for the parallax effect
-  
+    document.body.style.backgroundAttachment = 'fixed'; 
     window.addEventListener('scroll', handleScroll);
-  
-    // Clean up function to remove the event listener and revert styles on unmount
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.body.style.backgroundImage = '';
@@ -253,21 +190,12 @@ const DevOps = () => {
   }, []);
   
   useEffect(() => {
-    // Setting the background color with a transparent effect for the services section
     const servicesSection = document.querySelector('.why-phi-for-sales');
-    
     if (servicesSection) {
-      // Apply light blue background color with transparency
       servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
-      // Apply top and bottom borders
-      servicesSection.style.borderTop = '2px solid #add8e6'; // Light blue color
-      servicesSection.style.borderBottom = '2px solid #add8e6'; // Light blue color
-      // Ensure content inside is not affected by the background color
-      // This is inherently the case with the background color property
-      // but ensure text and other elements have enough contrast
+      servicesSection.style.borderTop = '2px solid #add8e6'; 
+      servicesSection.style.borderBottom = '2px solid #add8e6'; 
     }
-  
-    // Cleanup function to revert styles
     return () => {
       if (servicesSection) {
         servicesSection.style.backgroundColor = '';
@@ -278,7 +206,7 @@ const DevOps = () => {
   }, []); 
   
 
-useEffect(() => {
+  useEffect(() => {
   const observer = new IntersectionObserver(
       (entries) => {
           entries.forEach(entry => {
@@ -299,15 +227,10 @@ useEffect(() => {
   elements.forEach(el => observer.observe(el));
 
   return () => elements.forEach(el => observer.unobserve(el));
-}, []);
+ }, []);
 
-const addToRefs = el => {
-  if (el && !sectionsRef.current.includes(el)) {
-      sectionsRef.current.push(el);
-  }
-};
 
-useEffect(() => {
+  useEffect(() => {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -333,7 +256,7 @@ useEffect(() => {
       if (el) observer.unobserve(el);
     });
   };
-}, []);
+ }, []);
 
 const toggleDarkMode = () => setDarkMode(!darkMode);
 
@@ -345,18 +268,16 @@ const scrollToTop = () => {
 };
 
 useScrollToTop();
-
-  const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (
         <>
-  <Helmet>
+       <Helmet>
         <title>Welcome to the Future of DevOps | Phi Consulting</title>
         <meta name="description" content="Unlock the full potential of your DevOps startup with Phi Consulting's expert DevOps consulting services. From GTM strategy to HR & recruitment solutions, financial consulting, and investor relations, we offer tailored solutions to address the unique challenges faced by DevOps companies. Partner with us to revolutionize your startup's growth journey. Contact us today." />
       </Helmet>
 
       <Helmet>
       <link rel="canonical" href="https://phi-verse.com/dev-ops-consulting" />
-    </Helmet>
+     </Helmet>
 
 
 <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
@@ -365,34 +286,21 @@ useScrollToTop();
             <Tooltip placement="leftTop" title="toggle eye protection">
             <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
             </Tooltip>
+
                  {/* Back to Top Button */}
                  <Tooltip placement="leftTop" title="back to top">
     <button className="back-to-top" onClick={scrollToTop}>
     <img src={top} alt="eye icon" width={25} height={25}/>
     </button>
-    </Tooltip>
+               </Tooltip>
             </div>
+
       {/* <!-- Hero Section --> */}
       <article class="hero">
-    
         <section class="hero-container-dev">
           <div class="hero-content-dev">
-            
             <h2 class="hero-heading-dev">
-            {/* {windowWidth >= 1200 ? <TypeAnimation
-      sequence={[
-        // Same substring at the start will only be typed out once, initially
-        '  Welcome to the Future of DevOps',
-        7000, 
-       
-      ]}
-      wrapper="span"
-      speed={50}
-      style={{ fontSize: '40px', display: 'inline-block' }}
-      repeat={Infinity}
-    /> : '  Welcome to the Future of DevOps'} */}
-
-{heroHeading}
+             {heroHeading}
             </h2>
             <p class="hero-desc-sales">
             {heroDescription}
@@ -404,13 +312,11 @@ useScrollToTop();
 
       <article className="bar-card-container">
             <section className="bar-content-section">
-
                <div className="heading-of-barcard">
                 <h2 className="barcard-title">
                 {cardDetails.barCardHeading}
                 </h2>
                </div>
-
                <div className="barcard-bar">
                 <div className="barcard-bar-section">
                     <div className="icon-barcard-container">
@@ -520,7 +426,6 @@ useScrollToTop();
         </section>        
         </article>
 
-
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
         <h2 class="why-phi-heading">Why Phi Consulting?</h2>
@@ -579,25 +484,8 @@ useScrollToTop();
               </div>
             </div>
           </div>
-          {/* <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
-            <div class="left-section-insights-last">
-              <div class="overlay-container five-why">
-                <div class="overlay"></div>
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {sectionFiveTitle}
-                  </h2>
-                  <p class="overlay-desc">
-                  {sectionFiveParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div> */}
         </div>
       </article>
-
-   
 
       {/* <!-- Call to Action Section --> */}
       <article class="cta-container">
