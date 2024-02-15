@@ -42,13 +42,15 @@ const CaseStudyView = () => {
 
     const copyToClipboard = () => {
         
-        const textToCopy = `https://phi-verse.com/viewcasestudy/${caseId}`;
+        const textToCopy = `http://localhost:5173/casestudy/${companyName}`;
+
+        // const textToCopy = `http://localhost:5173/casestudy/${companyName}`;
     
         navigator.clipboard.writeText(textToCopy)
           .then(() => {
             // Success feedback
             alert('Link copied to clipboard!');
-            // console.log(textToCopy);
+            console.log(textToCopy);
           })
           .catch(err => {
             // Error feedback
