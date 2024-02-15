@@ -70,7 +70,6 @@ import { Helmet } from 'react-helmet';
 const BuisnessConsulting = () => {
   const [caseStudies, setCaseStudies] = useState([]);
 
- 
    const [processNewVisible, setProcessNewVisible] = useState(false);
    const processNewRef = useRef(null);
 
@@ -251,7 +250,7 @@ const BuisnessConsulting = () => {
     return () => observer.disconnect();
   }, []);
  
-useEffect(() => {
+   useEffect(() => {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -277,9 +276,9 @@ useEffect(() => {
       if (el) observer.unobserve(el);
     });
   };
-}, []);
+  }, []);
 
-useEffect(() => {
+   useEffect(() => {
   // Function to handle the parallax effect
   const handleScroll = () => {
     const offset = window.pageYOffset;
@@ -302,9 +301,9 @@ useEffect(() => {
     document.body.style.backgroundPosition = '';
     document.body.style.backgroundAttachment = '';
   };
-}, []);
+  }, []);
 
-useEffect(() => {
+   useEffect(() => {
   // Setting the background color with a transparent effect for the services section
   const servicesSection = document.querySelector('.why-phi-for-sales');
   
@@ -327,7 +326,7 @@ useEffect(() => {
       servicesSection.style.borderBottom = '';
     }
   };
-}, []); 
+  }, []); 
 
 const toggleDarkMode = () => setDarkMode(!darkMode);
 
