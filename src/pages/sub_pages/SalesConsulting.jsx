@@ -368,7 +368,7 @@ useScrollToTop();
       <article class="hero">
         <section class="hero-container-sales">
           <div class="hero-content-sales">
-            <h2 class="hero-heading-sales">
+            <h1 class="hero-heading-sales">
             {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
         'Your Gateway to Strategic GTM Consultancy',
@@ -380,7 +380,7 @@ useScrollToTop();
       repeat={Infinity}
     /> : 'Your Gateway to Strategic GTM Consultancy'}
               
-            </h2>
+            </h1>
             <p class="hero-desc-sales">
             {data.bannerDescription}
             </p>

@@ -184,7 +184,7 @@ useEffect(() => {
       <article class="hero">
         <section class="hero-container-services">
           <div class="hero-content-services-page">
-            <h2 class="hero-heading-services-page">
+            <h1 class="hero-heading-services-page">
             {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
         'Drive Growth & Excellence with Phi Consulting',
@@ -197,7 +197,7 @@ useEffect(() => {
       repeat={Infinity}
     /> : 'Drive Growth & Excellence with Phi Consulting'}
               
-            </h2>
+            </h1>
             <p class="hero-desc-services-page">
               {data.heroDescription}
             </p>

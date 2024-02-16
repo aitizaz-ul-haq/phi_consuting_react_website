@@ -306,7 +306,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
       <article class="hero">
         <section class="hero-container-hr-consul">
           <div class="hero-content-hr-consul">
-            <h2 class="hero-heading-hr-consul">
+            <h1 class="hero-heading-hr-consul">
             {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
         ' Hiring that’s efficient on cost and effective on value',
@@ -320,7 +320,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
     /> : ' Hiring that’s efficient on cost and effective on value'}
            
 
-            </h2>
+            </h1>
             <p class="hero-desc-hr-consul">
             {data.bannerDescription}
             </p>

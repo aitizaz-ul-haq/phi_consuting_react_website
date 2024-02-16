@@ -98,10 +98,10 @@ useScrollToTop();
       <article class="contact">
         <section class="contact-container">
           <div class="contact-title-container">
-            <h2 class="contact-heading">
+            <h1 class="contact-heading">
               Please fill out the form below, and our team will reach out to you
               shortly
-            </h2>
+            </h1>
           </div>
           <div class="contact-form-container">
             <div class="background">

@@ -112,9 +112,9 @@ useScrollToTop();
     <article class="contact">
   <section class="contact-container">
     <div class="contact-title-container">
-      <h2 class="contact-heading">
+      <h1 class="contact-heading">
         Please fill out the form below to apply for a job at our company
-      </h2>
+      </h1>
     </div>
     <div class="contact-form-container">
       <div class="background">

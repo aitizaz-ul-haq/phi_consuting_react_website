@@ -145,7 +145,7 @@ careerctadescription:"",
       <article class="hero">
         <section class="hero-container-careers">
           <div class="hero-content-careers">
-            <h2 class="hero-heading-careers">
+            <h1 class="hero-heading-careers">
             {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
         'Join Our Team, Ignite Your Future',
@@ -158,7 +158,7 @@ careerctadescription:"",
       repeat={Infinity}
     /> : 'Join Our Team, Ignite Your Future'}
               
-            </h2>
+            </h1>
             <p class="hero-desc-careers">
               {data.herodescription}
             </p>

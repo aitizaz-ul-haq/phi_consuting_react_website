@@ -74,7 +74,7 @@ const Blog = ({blogpic}) => {
       <article class="hero">
         <section class="hero-container-blog">
           <div class="hero-content-blog">
-            <h2 class="hero-heading-blog">Explore the Phi Consulting Blog</h2>
+            <h1 class="hero-heading-blog">Explore the Phi Consulting Blog</h1>
             <p class="hero-desc-blog">
               Welcome to a reservoir of knowledge and expertise! Dive into the
               Phi Consulting Blog, where we unravel the intricacies of Sales,

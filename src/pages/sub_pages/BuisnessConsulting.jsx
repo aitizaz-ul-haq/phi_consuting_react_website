@@ -333,7 +333,7 @@ useScrollToTop();
       <article class="hero">
         <section class="hero-container-bui-consul">
           <div class="hero-content-bui-consul">
-            <h2 class="hero-heading-bui-consul">
+            <h1 class="hero-heading-bui-consul">
             {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
         // Same substring at the start will only be typed out once, initially
@@ -347,7 +347,7 @@ useScrollToTop();
       repeat={Infinity}
     /> : ' Boost Your Investor Relations Impact'}
            
-            </h2>
+            </h1>
             <p class="hero-desc-bui-consul">
             {data.bannerDescription}
             </p>

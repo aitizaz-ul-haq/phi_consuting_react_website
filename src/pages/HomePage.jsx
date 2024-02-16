@@ -417,7 +417,7 @@ const HomePage = () => {
         <section class="hero-container">
           <div class="hero-content">
           {windowWidth >= 1200 && <CustomVideo src={david} />}
-            <h2 class="hero-heading">
+            <h1 class="hero-heading">
               <span class="phi">
               {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
@@ -431,7 +431,7 @@ const HomePage = () => {
       repeat={Infinity}
     /> : 'Leadership Through Partnership'}
                 </span>
-            </h2>
+            </h1>
             <p class="hero-desc">
             {data.herodescription}
             </p>

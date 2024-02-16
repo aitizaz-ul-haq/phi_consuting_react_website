@@ -131,7 +131,7 @@ ctadescription:"",
       <article class="hero">
         <section class="hero-container-our-work">
           <div class="hero-content-our-work">
-            <h2 class="hero-heading-our-work">
+            <h1 class="hero-heading-our-work">
             {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
         'Success is not just a goal but a proven outcome',
@@ -144,7 +144,7 @@ ctadescription:"",
       repeat={Infinity}
     /> : ' Empowering Your Vision, Elevating Your Cloud Strategy'}
               
-            </h2>
+            </h1>
             <p class="hero-desc-our-work">
              {data.heroDescription}
             </p>

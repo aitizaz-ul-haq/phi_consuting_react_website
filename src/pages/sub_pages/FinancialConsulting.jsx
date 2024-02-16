@@ -306,7 +306,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
       <article class="hero">
         <section class="hero-container-fin-consul">
           <div class="hero-content-fin-consul">
-            <h2 class="hero-heading-fin-consul">
+            <h1 class="hero-heading-fin-consul">
             {windowWidth >= 1200 ? <TypeAnimation
       sequence={[
         // Same substring at the start will only be typed out once, initially
@@ -320,7 +320,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
       repeat={Infinity}
     /> : 'Strategy and Support to Scale Your Growing Business'}
            
-            </h2>
+            </h1>
             <p class="hero-desc-fin-consul">
             {data.bannerDescription}
             </p>
