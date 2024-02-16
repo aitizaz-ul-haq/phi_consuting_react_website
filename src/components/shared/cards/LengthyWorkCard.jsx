@@ -16,7 +16,7 @@ const LengthyWorkCard = ({caseStudy}) => {
     localStorage.setItem('valId', caseStudy._id);
   };
 
-  const imageUrl = caseStudy.imageone.includes('Atob') ? atobsquare : caseStudy.imageone.includes('truckx') ? truckxsquare : caseStudy.imageone.includes('pallet') ? palletsquare : caseStudy.imageone.includes('solar') ? solarsquare : caseStudy.imageone.includes('bobtail') ? bobsquare : caseStudy.imageone.includes('joyride') ? joysquare : caseStudy.imageone.includes('digital ocean') ? dosquare : caseStudy.imageone;
+  const imageUrl = caseStudy.imageone.includes('Atob') ? atobsquare : caseStudy.imageone.includes('truckx') ? truckxsquare : caseStudy.imageone.includes('pallet') ? palletsquare : caseStudy.imageone.includes('solar') ? solarsquare : caseStudy.imageone.includes('bobtail') ? bobsquare : caseStudy.imageone.includes('joyride') ? joysquare : caseStudy.imageone.includes('digitalocean') ? dosquare : caseStudy.imageone;
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
