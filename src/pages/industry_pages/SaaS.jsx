@@ -287,9 +287,9 @@ const scrollToTop = () => {
       <article class="hero">
         <section class="hero-container-saas">
           <div class="hero-content-saas">
-            <h2 class="hero-heading-saas">
+            <h1 class="hero-heading-saas">
               {heroHeading}
-            </h2>
+            </h1>
             <p class="hero-desc-saas">
             {heroDescription}
             </p>

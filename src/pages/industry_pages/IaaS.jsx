@@ -295,9 +295,9 @@ useScrollToTop();
       <article class="hero">
         <section class="hero-container-iaas">
           <div class="hero-content-iaas">
-            <h2 class="hero-heading-iaas">
+            <h1 class="hero-heading-iaas">
               {heroHeading}
-            </h2>
+            </h1>
             <p class="hero-desc-iaas">
             {heroDescription}
             </p>

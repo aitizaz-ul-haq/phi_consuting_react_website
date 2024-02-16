@@ -269,9 +269,9 @@ useScrollToTop();
       <article class="hero">
         <section class="hero-container-iot">
           <div class="hero-content-iot">
-            <h2 class="hero-heading-iot">
+            <h1 class="hero-heading-iot">
             {heroHeading}
-            </h2>
+            </h1>
             <p class="hero-desc-iot">
             {heroDescription}
             </p>

@@ -297,9 +297,9 @@ useScrollToTop();
       <article class="hero">
         <section class="hero-container-dev">
           <div class="hero-content-dev">
-            <h2 class="hero-heading-dev">
+            <h1 class="hero-heading-dev">
              {heroHeading}
-            </h2>
+            </h1>
             <p class="hero-desc-sales">
             {heroDescription}
             </p>
