@@ -427,12 +427,12 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             <div class="circle-container-sales">
               <div class="circle-content-sales">
                 <div class="icon-process-container">
-                  <img
+                  {/* <img
                     src={goal}
                     alt=""
                     width="60px"
                     height="60px"
-                  />
+                  /> */}
                 </div>
                 <h2 class="circle-heading-sales">{data.processHedOne}</h2>
                 <h3 class="circle-text-sales">
@@ -443,12 +443,12 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             <div class="circle-container-sales">
               <div class="circle-content-sales">
                 <div class="icon-process-container">
-                  <img
+                  {/* <img
                     src={planicon}
                     alt=""
                     width="60px"
                     height="60px"
-                  />
+                  /> */}
                 </div>
                 <h2 class="circle-heading-sales">{data.processHedTwo}</h2>
                 <h3 class="circle-text-sales">
@@ -459,12 +459,12 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             <div class="circle-container-sales">
               <div class="circle-content-sales">
                 <div class="icon-process-container">
-                  <img
+                  {/* <img
                     src={actionicon}
                     alt=""
                     width="60px"
                     height="60px"
-                  />
+                  /> */}
                 </div>
                 <h2 class="circle-heading-sales">{data.processHedThree}</h2>
                 <h3 class="circle-text-sales">
@@ -475,12 +475,12 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             <div class="circle-container-sales">
               <div class="circle-content-sales">
                 <div class="icon-process-container">
-                  <img
+                  {/* <img
                    src={assignicon}
                     alt=""
                     width="60px"
                     height="60px"
-                  />
+                  /> */}
                 </div>
                 <h2 class="circle-heading-sales">{data.processHedFour}</h2>
                 <h3 class="circle-text-sales">
@@ -491,12 +491,12 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             <div class="circle-container-sales">
               <div class="circle-content-sales">
                 <div class="icon-process-container">
-                  <img
+                  {/* <img
                     src={testicon}
                     alt=""
                     width="60px"
                     height="60px"
-                  />
+                  /> */}
                 </div>
                 <h2 class="circle-heading-sales">{data.processHedFive}</h2>
                 <h3 class="circle-text-sales">

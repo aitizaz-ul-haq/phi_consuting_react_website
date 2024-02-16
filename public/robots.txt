@@ -103,6 +103,7 @@ Disallow: /dashboard/ShowIotBan
 Disallow: /dashboard/AddFintBan
 Disallow: /dashboard/ShowFintBan
 
+
 Allow: /home
 Allow: /solutions/
 Allow: /solutions/go-to-market-strategy
