@@ -187,9 +187,9 @@ const CaseStudyView = () => {
             <div className="reader-casestudy-logo">
                     <img src={box} alt="" className='casestudyreaderimg' />
             </div> 
-            <div className="reader-casestudy-heading">
+            <h1 className="reader-casestudy-heading">
             {caseStudy.title}
-            </div>
+            </h1>
             <div className="reader-casestudy-desc-new">
             {caseStudy.summary}
             </div>

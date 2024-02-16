@@ -102,7 +102,7 @@ Disallow: /dashboard/AddIotBan
 Disallow: /dashboard/ShowIotBan
 Disallow: /dashboard/AddFintBan
 Disallow: /dashboard/ShowFintBan
-Disallow: /casestudy/
+Disallow: /casestudy
 
 
 Allow: /home
