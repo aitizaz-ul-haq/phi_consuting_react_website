@@ -102,6 +102,7 @@ Disallow: /dashboard/AddIotBan
 Disallow: /dashboard/ShowIotBan
 Disallow: /dashboard/AddFintBan
 Disallow: /dashboard/ShowFintBan
+Disallow: /casestudy/
 
 
 Allow: /home
@@ -113,7 +114,6 @@ Allow: /solutions/financial-consulting
 Allow: /blogs/
 Allow: /blog/
 Allow: /case-studies/
-Allow: /casestudy/
 Allow: /casestudy/Atob
 Allow: /casestudy/truckx
 Allow: /casestudy/digitalocean
