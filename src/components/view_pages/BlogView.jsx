@@ -1,21 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react';
-import blogHeader from "../../assets/img/b2b.webp";
-import { Link, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Tooltip, Spin } from 'antd';
 import useScrollToTop from "../../hooks/useScrollToTop";
 import eye from "../../assets/img/eye.png";
 import top from "../../assets/img/top Arrow.png";
 import axios from 'axios';
-import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
 const BlogView = () => {
  
-  const [blog, setBlog] = useState(null);
-  // const { id } = useParams();
-  const blogId = localStorage.getItem('currentBlogId');
-  const [darkMode, setDarkMode] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [blog, setBlog] = useState({});
+    const blogId = localStorage.getItem('currentBlogId'); // Ensure this is correctly set
+    const [darkMode, setDarkMode] = useState(false);
+    const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     
@@ -78,7 +75,7 @@ const BlogView = () => {
     </button>
     </Tooltip>
             </div>
-          <article className="blog-viewer">
+          {/* <article className="blog-viewer">
             <section className="blog-content-container">
                 <div className="blog-content">
                     <div className="blog-image-header-container">
@@ -112,7 +109,20 @@ const BlogView = () => {
               </div>
                 </div>
             </section>
-          </article>
+          </article> */}
+
+<article className="blog-viewer">
+                <section className="blog-content-container">
+                    <div className="blog-content">
+                        <img src={blog.imageUrl} alt="Blog header" className='blog-image-in-reader' />
+                        <h1 className="blog-heading-read-section">{blog.title}</h1>
+                        <p className="blog-desc-line-section">{blog.summary}</p>
+                        <hr />
+                        <div className="blog-content-text-section" dangerouslySetInnerHTML={{ __html: blog.blogContent }} />
+                        {/* Back and More Blogs Links */}
+                    </div>
+                </section>
+            </article>
         </>
     )
 }

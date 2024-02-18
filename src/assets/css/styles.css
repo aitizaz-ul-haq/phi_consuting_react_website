@@ -6020,6 +6020,10 @@ background-color: rgb(243, 241, 241);
 
 }
 
+.ck-rounded-corners .ck.ck-editor__main>.ck-editor__editable, .ck.ck-editor__main>.ck-editor__editable.ck-rounded-corners {
+    padding: 2rem;
+}
+
 @media screen and (min-width: 320px) {
 
     .live-desc {
@@ -13652,7 +13656,14 @@ display: none;
 
 
 @media screen and (min-width: 1200px) {
-    
+    .blog-content-preview {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        height: 3em; /* Adjust based on line height */
+    }
+   
     .overlay-container {
         display: flex;
         flex-direction: column;
