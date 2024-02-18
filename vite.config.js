@@ -8,4 +8,7 @@ export default defineConfig({
   build: {
     assetsDir: 'assets',
   },
+  define: {
+    global: 'window', // Shim 'global' to 'window'
+  },
 });

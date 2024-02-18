@@ -13649,7 +13649,10 @@ display: none;
     padding: 0px;
 }
 }
+
+
 @media screen and (min-width: 1200px) {
+    
     .overlay-container {
         display: flex;
         flex-direction: column;
