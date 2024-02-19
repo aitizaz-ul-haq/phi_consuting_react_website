@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Tooltip, Spin } from 'antd';
 import useScrollToTop from "../../hooks/useScrollToTop";
@@ -10,15 +11,16 @@ import { Helmet } from 'react-helmet';
 const BlogView = () => {
  
   const [blog, setBlog] = useState({});
-    const blogId = localStorage.getItem('currentBlogId'); // Ensure this is correctly set
+    // const blogId = localStorage.getItem('currentBlogId'); // Ensure this is correctly set
     const [darkMode, setDarkMode] = useState(false);
     const [loading, setLoading] = useState(true);
+    const { urlName } = useParams(); // Destructure urlName from useParams
 
   useEffect(() => {
     
     const fetchBlogData = async () => {
       try {
-        const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/blogs/${blogId}`);
+        const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/blogs/${urlName}`);
         setBlog(response.data);
       } catch (error) {
         console.error('Error fetching blog:', error);
@@ -28,10 +30,10 @@ const BlogView = () => {
       }
     };
 
-    if (blogId) {
+    if (urlName) {
       fetchBlogData();
     }
-  }, [blogId]);
+  }, [urlName]);
 
   const toggleDarkMode = () => setDarkMode(!darkMode);
   const scrollToTop = () => {
@@ -59,7 +61,7 @@ const BlogView = () => {
       </Helmet>
 
       <Helmet>
-      <link rel="canonical" href="https://phi-verse.com/blog/" />
+      <link rel="canonical" href={`https://phi-verse.com/blog/${urlName}`} />
       </Helmet>
 
          <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>

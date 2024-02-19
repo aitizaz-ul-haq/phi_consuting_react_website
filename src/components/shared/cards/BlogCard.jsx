@@ -5,13 +5,13 @@ import blogpic from "../../../assets/img/b2b.webp";
 const BlogCard = ({blogs, id}) => {
   const { title, blogContent, companyName,summary, readTime, dateCreated, imageUrl,urlName } = blogs;
 
-  const handleClick = () => {
-    localStorage.setItem('currentBlogId', id);
-  };
+  // const handleClick = () => {
+  //   localStorage.setItem('currentBlogId', id);
+  // };
     return(
         
-        <div class="blog-card-one" onClick={handleClick}>
-            <Link className='blog-phi-home' to={`/blog/${blogs.urlName}`}>
+        <div class="blog-card-one">
+            <Link className='blog-phi-home' to={`/blogs/${urlName}`}>
             <div class="blog-image">
               <img
                  src={imageUrl}
