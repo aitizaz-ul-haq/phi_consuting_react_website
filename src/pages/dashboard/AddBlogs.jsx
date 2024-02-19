@@ -161,6 +161,7 @@ const AddBlog = () => {
     const [readTime, setReadTime] = useState('');
     const [imageUrl, setImageUrl] = useState('');
     const [summary, setSummary] = useState('');
+    const [urlName, setUrlName] = useState('');
     const [dateCreated, setDateCreated] = useState(moment());
     const [redirectToBlogs, setRedirectToBlogs] = useState(false);
 
@@ -174,6 +175,7 @@ const AddBlog = () => {
             dateCreated: dateCreated.format("YYYY-MM-DD"),
             imageUrl,
             summary,
+            urlName,
         };
         console.log("Submitting form data:", formData);
        
@@ -196,6 +198,10 @@ const AddBlog = () => {
             <div style={{ marginBottom: '20px' }}>
                 <label>Title:</label><br />
                 <Input value={title} onChange={e => setTitle(e.target.value)} />
+            </div>
+            <div style={{ marginBottom: '20px' }}>
+                <label>Url Name:</label><br />
+                <Input value={urlName} onChange={e => setUrlName(e.target.value)} />
             </div>
             <div style={{ marginBottom: '20px' }}>
                 <label>Company Name:</label><br />
