@@ -28,7 +28,7 @@ const Header = () => {
       </div>
       <div className="buttons">
         <div className="dropdown">
-        <Link to="/solutions" className="dropdown-btn"><span className="dropdown-btn">Solutions</span></Link>
+        <Link to="/solutions" className="dropdown-btn"><span className="dropdown-btn-span">Solutions</span></Link>
           <div className="dropdown-content">
             <Link to="/solutions/go-to-market-strategy"><img src={headericonthree} alt="" width="34" height="34" className='header-icons-spacing' /><span>GTM Strategy</span> </Link>
             <Link to="/solutions/hr-recruitment"><img src={headericonone} alt="" width="34" height="34" className='header-icons-spacing' /> <span>HR & Recruitment</span></Link>
@@ -83,3 +83,6 @@ const Header = () => {
 }
 
 export default Header;
+
+
+
