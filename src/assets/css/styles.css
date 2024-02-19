@@ -15568,7 +15568,19 @@ color: white;
         opacity: 1;
     }
     
-    .left-section-control, .right-section-control {
+    .left-section-control {
+        position: fixed;
+        top: 90%;
+        transform: translateY(-500%);
+        /* width: 100px;
+        height: 100px; */
+        background-color: transparent;
+        transition: background-color 0.3s ease;
+        z-index: 11;
+    }
+
+
+     .right-section-control {
         position: fixed;
         top: 90%;
         transform: translateY(-50%);
@@ -15581,6 +15593,8 @@ color: white;
     
     .left-section-control {
         left: 10px;
+        display: flex;
+        flex-direction: column;
     }
     
     .right-section-control {
@@ -15606,6 +15620,18 @@ color: white;
         margin-bottom: 5px;
     }
 
+    .left-section-control button {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 10px;
+        background-color: white;
+        border-radius: 25px;
+        border: 4px solid #55c2da;
+        font-size: 12px;
+        /* background-color: #f0f0f0; */
+        transition: background-color 0.3s;
+        margin-bottom: 5px;
+    }
      
 
     .side-controls {

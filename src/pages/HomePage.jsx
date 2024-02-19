@@ -397,7 +397,15 @@ const HomePage = () => {
     </Helmet>
 
     <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
-        <div className="left-section-control"></div>
+    <div className="left-section-control">
+        <Tooltip placement="leftTop" title="Share link">
+            <button ><img alt="eye icon" width={25} height={25}/></button>
+            </Tooltip>
+            
+            <Tooltip placement="leftTop" title="toggle eye protection">
+            <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
+            </Tooltip>
+        </div>
             <div className="right-section-control">
             <Tooltip placement="leftTop" title="toggle eye protection">
             <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
