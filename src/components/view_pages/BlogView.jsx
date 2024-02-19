@@ -7,15 +7,32 @@ import eye from "../../assets/img/eye.png";
 import top from "../../assets/img/top Arrow.png";
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
+import shareicon from "../../assets/img/shareicon/share.png";
 
 const BlogView = () => {
  
   const [blog, setBlog] = useState({});
-    // const blogId = localStorage.getItem('currentBlogId'); // Ensure this is correctly set
     const [darkMode, setDarkMode] = useState(false);
     const [loading, setLoading] = useState(true);
-    const { urlName } = useParams(); // Destructure urlName from useParams
-console.log(`the url name in url:${urlName}`)
+    const { urlName } = useParams(); 
+
+    const copyToClipboard = () => {
+        
+      const textToCopy = `https://phi-verse.com/blog/${urlName}`;
+  
+      navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+          // Success feedback
+          alert('Link copied to clipboard!');
+          console.log(textToCopy);
+        })
+        .catch(err => {
+          // Error feedback
+          console.error('Failed to copy link: ', err);
+        });
+    };
+
+
   useEffect(() => {
     
     const fetchBlogData = async () => {
@@ -67,6 +84,10 @@ console.log(`the url name in url:${urlName}`)
          <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">
+
+            <Tooltip placement="leftTop" title="Share link">
+            <button onClick={copyToClipboard}><img src={shareicon} alt="eye icon" width={25} height={25}/></button>
+            </Tooltip>
             <Tooltip placement="leftTop" title="toggle eye protection">
             <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
             </Tooltip>
