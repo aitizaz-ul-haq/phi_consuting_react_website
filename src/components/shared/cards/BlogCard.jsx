@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import blogpic from "../../../assets/img/b2b.webp";
 
 const BlogCard = ({blogs, id}) => {
-  const { title, blogContent, companyName,summary, readTime, dateCreated } = blogs;
+  const { title, blogContent, companyName,summary, readTime, dateCreated, imageUrl } = blogs;
 
   const handleClick = () => {
     localStorage.setItem('currentBlogId', id);
@@ -14,7 +14,7 @@ const BlogCard = ({blogs, id}) => {
             <Link className='blog-phi-home' to={`/blog/${blogs.title}`}>
             <div class="blog-image">
               <img
-                 src={blogpic}
+                 src={imageUrl}
                 alt=""
                 width="455"
                 class="blog-image-home"
