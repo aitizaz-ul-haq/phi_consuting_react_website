@@ -11,7 +11,7 @@ const BlogCard = ({blogs, id}) => {
     return(
         
         <div class="blog-card-one">
-            <Link className='blog-phi-home' to={`/blogs/${urlName}`}>
+            <Link className='blog-phi-home' to={`/blog/${urlName}`}>
             <div class="blog-image">
               <img
                  src={imageUrl}

@@ -15,12 +15,12 @@ const BlogView = () => {
     const [darkMode, setDarkMode] = useState(false);
     const [loading, setLoading] = useState(true);
     const { urlName } = useParams(); // Destructure urlName from useParams
-
+console.log(`the url name in url:${urlName}`)
   useEffect(() => {
     
     const fetchBlogData = async () => {
       try {
-        const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/blogs/${urlName}`);
+        const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/blogs/name/${urlName}`);
         setBlog(response.data);
       } catch (error) {
         console.error('Error fetching blog:', error);
