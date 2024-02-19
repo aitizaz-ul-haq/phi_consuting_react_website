@@ -43,6 +43,7 @@ import backcurls from "../assets/img/wrappers/back_curls.jpg";
 import whatback from "../assets/img/wrappers/burn.webp";
 import graph from "../assets/img/graph.png";
 import iso from "../assets/img/recognitions/iso.webp";
+import ScrollDown from "../assets/img/mouse-cursor.png";
 
 const HomePage = () => {
 
@@ -67,6 +68,8 @@ const HomePage = () => {
 
   const [animateServices, setAnimateServices] = useState(false);
   const [animateTabs, setAnimateTabs] = useState(false);
+
+  const [currentSection, setCurrentSection] = useState(null);
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -105,6 +108,59 @@ const HomePage = () => {
           behavior: 'smooth'
       });
   };
+
+  useEffect(() => {
+    const heroSection = document.querySelector('.hero');
+    const scrollBadgeContainer = document.querySelector('.scroll-badge-container');
+    const leftControl = document.querySelector('.left-section-control');
+    const rightControl = document.querySelector('.right-section-control');
+  
+    const checkScroll = () => {
+      const { bottom } = heroSection.getBoundingClientRect();
+  
+      if (bottom <= window.innerHeight) {
+        // When the bottom of the hero section is at or above the bottom of the viewport
+        leftControl.style.display = 'block';
+        rightControl.style.display = 'block';
+        scrollBadgeContainer.style.display = 'none'; // Hide scroll badge
+      } else {
+        // When the hero section is fully in view
+        leftControl.style.display = 'none';
+        rightControl.style.display = 'none';
+        scrollBadgeContainer.style.display = 'block'; // Show scroll badge
+      }
+    };
+  
+    // Initial check in case the page loads not at the top
+    checkScroll();
+  
+    window.addEventListener('scroll', checkScroll);
+  
+    return () => window.removeEventListener('scroll', checkScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+        const sections = document.querySelectorAll('article'); // Assuming your sections are <article> elements
+        let closestSection = null;
+        let minDistance = Infinity;
+
+        sections.forEach((section) => {
+            const distance = Math.abs(section.getBoundingClientRect().top);
+            if (distance < minDistance) {
+                minDistance = distance;
+                closestSection = section.id;
+            }
+        });
+
+        setCurrentSection(closestSection);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initialize on component mount in case the page is not at the top
+
+    return () => window.removeEventListener('scroll', handleScroll);
+}, []);
 
   useEffect(() => {
     const fetchHomePageData = async () => {
@@ -398,13 +454,20 @@ const HomePage = () => {
 
     <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
     <div className="left-section-control">
-        <Tooltip placement="leftTop" title="Share link">
-            <button ><img alt="eye icon" width={25} height={25}/></button>
-            </Tooltip>
-            
-            <Tooltip placement="leftTop" title="toggle eye protection">
-            <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
-            </Tooltip>
+      <div className="dot-container">
+  <div className={`dot ${currentSection === 'clients' ? 'active' : ''}`}></div>
+  <div className={`dot ${currentSection === 'value' ? 'active' : ''}`}></div>
+  <div className={`dot ${currentSection === 'services' ? 'active' : ''}`}></div>
+  <div className={`dot ${currentSection === 'work' ? 'active' : ''}`}></div>
+  <div className={`dot ${currentSection === 'cta' ? 'active' : ''}`}></div>
+  <div className={`dot ${currentSection === 'test' ? 'active' : ''}`}></div>
+  <div className={`dot ${currentSection === 'achievement' ? 'active' : ''}`}></div>
+  <div className={`dot ${currentSection === 'blog' ? 'active' : ''}`}></div>
+  {/* <div className={`dot ${currentSection === 'banner' ? 'active' : ''}`}></div> */}
+      </div>
+
+     
+   
         </div>
             <div className="right-section-control">
             <Tooltip placement="leftTop" title="toggle eye protection">
@@ -412,11 +475,11 @@ const HomePage = () => {
             </Tooltip>
 
         {/* Back to Top Button */}
-              <Tooltip placement="leftTop" title="back to top">
+              {/* <Tooltip placement="leftTop" title="back to top">
     <button className="back-to-top" onClick={scrollToTop}>
     <img src={top} alt="eye icon" width={25} height={25}/>
     </button>
-             </Tooltip>
+             </Tooltip> */}
             </div>
 
 
@@ -445,11 +508,17 @@ const HomePage = () => {
             </p>
             <div class="consult-button" onClick={gotoContacts}><Tooltip title="Contact Page">Schedule a Free Consultation</Tooltip></div>
           </div>
+          
         </section>
       </article>
 
+      <div className="scroll-badge-container">
+        <img src={ScrollDown} className='scroll-down-image-block' alt="scrolling doen image" />
+        <h3 className='scroller-text'>Scroll Down</h3>
+      </div>
+
       {/* <!-- Clients Section --> */}
-      <article className={`clients ${isVisible ? 'animate' : ''}`} ref={containerRef}>
+      <article id="clients" className={`clients ${isVisible ? 'animate' : ''}`} ref={containerRef}>
         <section class="client-container">
           <div class="client-content">
             <h2 class="client-heading">{data.clientheading}</h2>
@@ -533,7 +602,7 @@ const HomePage = () => {
       </article>
 
       {/* <!-- Value Statement Section  --> */}
-      <article class="value">
+      <article id="value" class="value">
         <section class="value-container" ref={firstRef}>
           <div class="value-content">
             <div class="new-values">
@@ -557,7 +626,7 @@ const HomePage = () => {
       </article>
 
       {/* <!-- services section --> */}
-      <article className='services'>
+      <article id="services" className='services'>
         <section className={`services-container ${isVisibleServices ? 'visible' : ''}`} ref={servicesRef}>
           <h2 class="services-heading">
           {data.servicesheading}
@@ -654,7 +723,7 @@ const HomePage = () => {
       </article>
 
       {/* <!-- Work Section --> */}
-      <article class="work">
+      <article id="work" class="work">
         <section class="work-section">
           <h2 class="work-heading">
           {data.casestudyheading}
@@ -714,7 +783,7 @@ const HomePage = () => {
       </article>
 
       {/* <!-- Call to Action Section --> */}
-      <article class="cta-container">
+      <article id="cta" class="cta-container">
         <section class="cta-sections-container">
           <div class="cta-content">
             <div class="cta-heading">{data.ctaheading}</div>
@@ -735,7 +804,7 @@ const HomePage = () => {
       </article>
       
       {/* <!-- Testimonial Section --> */}
-      <article class="testimonial">
+      <article id="test" class="testimonial">
         <section className="testimonial-container">
           <h2 class="testi-heading">
           {data.testiheading}
@@ -788,7 +857,7 @@ const HomePage = () => {
       </article>
 
       {/* <!-- Achievement Section --> */}
-      <article class="achievement">
+      <article id="achievement" class="achievement">
         <section class="achievement-section">
           <h2 class="ach-heading">Recognitions</h2>
         </section>
@@ -822,7 +891,7 @@ const HomePage = () => {
       </article>
 
       {/* <!-- Blog Section --> */}
-      <article class="blog">
+      <article id="blog" class="blog">
         <section class="blog-container">
           <h2 class="blog-title">{data.insightsheading}</h2>
           <p class="blog-desc">
@@ -842,7 +911,7 @@ const HomePage = () => {
       </article>
 
       {/* <!-- banner Section --> */}
-      <article class="banner">
+      <article id="banner" class="banner">
         <section class="banner-container">
           <h3 class="line-top">
             Proven Expertise | Personalized Service | Innovation at Core

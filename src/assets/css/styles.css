@@ -6070,6 +6070,32 @@ background-color: rgb(243, 241, 241);
     padding: 2rem;
 }
 
+.scroll-badge-container {
+    display: block; /* Initially visible */
+    /* flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    position: absolute; /* Or fixed, depending on your layout */
+    bottom: 40px; /* Adjust based on your design */
+    left: 6.5%;
+    transform: translateX(-50%);
+    color: lightgray;
+    width: 100px;
+    height: 100px;
+    z-index: 10; /* Ensure it's above other content */
+    /* Other styling */
+  }
+
+  .scroller-text {
+    font-weight: 200;
+    text-align: center;
+  }
+
+  .scroll-down-image-block {
+    width: 100%;
+    height: auto;
+  }
+
 @media screen and (min-width: 320px) {
 
     .live-desc {
@@ -15571,7 +15597,7 @@ color: white;
     .left-section-control {
         position: fixed;
         top: 90%;
-        transform: translateY(-500%);
+        transform: translateY(-280%);
         /* width: 100px;
         height: 100px; */
         background-color: transparent;
@@ -15579,6 +15605,27 @@ color: white;
         z-index: 11;
     }
 
+    .dot-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+        background-color: var(--LIGHTER-DARK-PHI-BLUE); /* Default color */
+        margin: 5px 0;
+        border-radius: 50%;
+        transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease; /* Smooth transition for size and color */
+      }
+      
+      .dot.active {
+        width: 18px; /* Increased size for the active dot */
+        height: 18px; /* Increased size for the active dot */
+        background-color: var(--DARKER-LIGHT-PHI-BLUE); /* Active color */
+      }
 
      .right-section-control {
         position: fixed;
@@ -15592,7 +15639,7 @@ color: white;
     }
     
     .left-section-control {
-        left: 10px;
+        left: 30px;
         display: flex;
         flex-direction: column;
     }
@@ -15602,6 +15649,8 @@ color: white;
         display: flex;
         flex-direction: column;
     }
+
+
     
     /* .left-section-control:hover, .right-section-control:hover {
         background-color: rgba(255, 255, 255, 0.7);
