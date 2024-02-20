@@ -484,37 +484,9 @@ const HomePage = () => {
 
 
     {/* <!-- Hero Section --> */}
-      {/* <article class="hero">
-        <section class="hero-container">
-          <div class="hero-content">
-          {windowWidth >= 1200 && <CustomVideo src={david} />}
-            <h1 class="hero-heading">
-              <span class="phi">
-              {windowWidth >= 1200 ? <TypeAnimation
-      sequence={[
-        'Leadership Through Partnership',
-        7000, 
-       
-      ]}
-      wrapper="span"
-      speed={50}
-      style={{ fontSize: '40px', display: 'inline-block' }}
-      repeat={Infinity}
-    /> : 'Leadership Through Partnership'}
-                </span>
-            </h1>
-            <p class="hero-desc">
-            {data.herodescription}
-            </p>
-            <div class="consult-button" onClick={gotoContacts}><Tooltip title="Contact Page">Schedule a Free Consultation</Tooltip></div>
-          </div>
-          
-        </section>
-      </article> */}
-
-<HeroSection
+    <HeroSection
       heroHeading={data.heroHeading}
-      heroDescription={data.heroDescription}
+      heroDescription={data.herodescription}
       windowWidth={windowWidth}
       gotoContacts={gotoContacts}
     />
@@ -882,8 +854,6 @@ const HomePage = () => {
           </div>
         </section>
       </article>
-
-
 
       {/* <!-- Blog Section --> */}
       <BlogSection 
