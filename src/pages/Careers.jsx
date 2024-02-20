@@ -1,4 +1,6 @@
 import React,{ useState, useEffect, useRef } from 'react';
+import CareersCtaSection from '../components/Careers_page_Components/Careers Cta Section/CareersCtaSection';
+import CareersHeroSection from '../components/Careers_page_Components/Careers Hero Section/CareersHeroSection';
 import cultpicone from "../assets/img/innovate_two.png";
 import cultpictwo from "../assets/img/collaborate.png";
 import cultpicthree from "../assets/img/excellence.png";
@@ -10,8 +12,6 @@ import perksthree from "../assets/img/businessman.png";
 import perksfour from "../assets/img/office-hours.png";
 
 import JobCard from '../components/shared/cards/JobCard';
-import { TypeAnimation } from 'react-type-animation';
-import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
 import useScrollToTop from '../hooks/useScrollToTop';
@@ -142,32 +142,11 @@ careerctadescription:"",
 
 
     {/* <!-- Hero Section --> */}
-      <article class="hero">
-        <section class="hero-container-careers">
-          <div class="hero-content-careers">
-            <h1 class="hero-heading-careers">
-            {windowWidth >= 1200 ? <TypeAnimation
-      sequence={[
-        'Join Our Team, Ignite Your Future',
-        7000, 
-       
-      ]}
-      wrapper="span"
-      speed={50}
-      style={{ fontSize: '40px', display: 'inline-block' }}
-      repeat={Infinity}
-    /> : 'Join Our Team, Ignite Your Future'}
-              
-            </h1>
-            <p class="hero-desc-careers">
-              {data.herodescription}
-            </p>
-            {/* <!-- <div class="consult-button-careers">
-              Schedule a Free Consultation
-            </div> --> */}
-          </div>
-        </section>
-      </article>
+      <CareersHeroSection
+          heroHeading={data.heroheading}
+          heroDescription={data.herodescription}
+          windowWidth={windowWidth}
+      />
 
       {/* <!-- Work Culture Section --> */}
       <article  className={`culture ${isVisibleCulture ? 'visible' : ''}`} ref={cultureRef}>
@@ -318,25 +297,10 @@ careerctadescription:"",
       </article>
 
       {/* <!-- Call to Action Section --> */}
-      <article class="cta-container">
-        <section class="cta-sections-container">
-          <div class="cta-content">
-            <div class="cta-heading">{data.careerctaheading}</div>
-            <div class="cta-descrip">
-            {data.careerctadescription}
-            </div>
-          </div>
-          <div class="cta-button-section">
-            <div class="right-button-header">
-              <span
-                ><Link to="/contact-us" class="inner-header"
-                  >Contact Us</Link
-                ></span
-              >
-            </div>
-          </div>
-        </section>
-      </article>
+      <CareersCtaSection
+         ctaHeading={data.careerctaheading}
+         ctaDescription={data.careerctadescription}
+      />
     </>
   )
 }
