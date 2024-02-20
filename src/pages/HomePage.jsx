@@ -1,6 +1,7 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import Banner from "../components/Home_page_Components/Banner Section/Banner";
 import BlogSection from '../components/Home_page_Components/Blog Section/BlogSection';
+import CtaSection from '../components/Home_page_Components/Cta Section/CtaSection';
 import ATOB from '../assets/img/new_logos_comps/newer/AtoB 2.png';
 import bobtail from '../assets/img/new_logos_comps/bobtail.png';
 import joyride from '../assets/img/new_logos_comps/joyride.png';
@@ -448,7 +449,7 @@ const HomePage = () => {
   return (
     <>
      <Helmet>
-<title>Phi Consulting - Home</title>
+  <title>Phi Consulting - Home</title>
   <meta name="description" content="Phi Consulting is your trusted tech consulting partner, specializing in startups & SMEs in IoT, Fintech, SaaS, & IaaS. Expertise in Go-To-Market Strategy, HR, Investor Relations & Financial Consulting. Schedule a free consultation." />
     </Helmet>
      <Helmet>
@@ -478,10 +479,10 @@ const HomePage = () => {
             </Tooltip>
 
         {/* Back to Top Button */}
-              {/* <Tooltip placement="leftTop" title="back to top">
-    <button className="back-to-top" onClick={scrollToTop}>
-    <img src={top} alt="eye icon" width={25} height={25}/>
-    </button>
+          {/* <Tooltip placement="leftTop" title="back to top">
+                   <button className="back-to-top" onClick={scrollToTop}>
+                   <img src={top} alt="eye icon" width={25} height={25}/>
+                  </button>
              </Tooltip> */}
             </div>
 
@@ -786,25 +787,11 @@ const HomePage = () => {
       </article>
 
       {/* <!-- Call to Action Section --> */}
-      <article id="cta" class="cta-container">
-        <section class="cta-sections-container">
-          <div class="cta-content">
-            <div class="cta-heading">{data.ctaheading}</div>
-            <div class="cta-descrip">
-            {data.ctadescription}
-            </div>
-          </div>
-          <div class="cta-button-section">
-            <div class="right-button-header">
-              <span
-                ><Link to="/contact-us" class="inner-header" 
-                  >Get a Free Consultation</Link
-                ></span
-              >
-            </div>
-          </div>
-        </section>
-      </article>
+    <CtaSection
+      ctaHeading={data.ctaheading}
+      ctaDescription={data.ctadescription}
+      gotoContacts={gotoContacts}
+    />
       
       {/* <!-- Testimonial Section --> */}
       <article id="test" class="testimonial">
