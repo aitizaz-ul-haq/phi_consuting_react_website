@@ -708,8 +708,6 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
           </div>
         </article>
 
-     
-
       {/* <!-- Call to Action Section --> */}
       <article class="cta-container">
         <section class="cta-sections-container">

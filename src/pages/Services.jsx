@@ -69,7 +69,7 @@ const Services = () => {
   });
   
 
-  useEffect(() => {
+useEffect(() => {
     const fetchHomePageData = async () => {
       try {
         const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/servicepage');
@@ -206,7 +206,7 @@ useEffect(() => {
          businessIcon={buisnessicon}
          financialIcon={financialicon}
          hrIcon={hricon}
-/>
+       />
 
       {/* <!-- Section path  --> */}
       <ServicesPathSection
