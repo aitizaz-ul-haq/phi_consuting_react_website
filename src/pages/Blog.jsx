@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react';
 import BlogHeroSection from '../components/Blog_page_Components/Blog Hero Section/BlogHeroSection';
 import BlogCtaSection from '../components/Blog_page_Components/Blog CTA Section/BlogCtaSection';
-import { Link } from 'react-router-dom';
+import BlogRow from '../components/Blog_page_Components/Blog Row Section/BlogRow';
 import BlogCard from '../components/shared/cards/BlogCard';
 import axios from 'axios';
 import useScrollToTop from '../hooks/useScrollToTop';
@@ -76,16 +76,7 @@ const Blog = ({blogpic}) => {
     <BlogHeroSection gotoContacts={gotoContacts} />
 
       {/* <!-- Blog-Section --> */}
-      <article class="bloged">
-        <section class="bloged-container">
-          <h2 class="bloged-heading">Blogs</h2>
-          <div class="bloged-box-container">
-            {blogs.map(blog => (
-              <BlogCard key={blog._id} id={blog._id} blogs={blog}/>
-            ))}
-          </div>
-        </section>
-      </article>
+     <BlogRow blogs={blogs}/>
 
       {/* <!-- Call to Action Section --> */}
       <BlogCtaSection />
