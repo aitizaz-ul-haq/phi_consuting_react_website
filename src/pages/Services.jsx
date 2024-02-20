@@ -1,21 +1,22 @@
 import React,{ useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-
+import ServicesHeroSection from '../components/Services_page_Components/Services Hero Section/ServicesHeroSection';
+import ServicesCtaSection from '../components/Services_page_Components/Services Cta Section/ServicesCtaSection';
+import ServicesPathSection from '../components/Services_page_Components/Services Path Section/ServicesPathSection';
+import StretegicSolutionsSection from '../components/Services_page_Components/Services Stretegic Solutions Section/StretegicSolutionsSection';
+import planIcon from "../assets/img/process_icons/plan.png";
+import actionIcon from "../assets/img/process_icons/action.png";
+import assignIcon from "../assets/img/process_icons/assign.png";
+import testIcon from "../assets/img/process_icons/test.png";
+import impIcon from "../assets/img/process_icons/implement.png";
+import monitorIcon from "../assets/img/process_icons/monitor.png";
+import improveIcon from "../assets/img/process_icons/improve.png";
+import goalIcon from "../assets/img/process_icons/goal.png";
 import salesicon from "../assets/img/solutions icons/GTM.png";
 import buisnessicon from "../assets/img/solutions icons/Investor Relations.png";
 import financialicon from "../assets/img/solutions icons/fin.png";
 import hricon from "../assets/img/white_icons/human-resources.png";
-import goal from "../assets/img/process_icons/goal.png";
-import planicon from "../assets/img/process_icons/plan.png";
-import actionicon from "../assets/img/process_icons/action.png";
-import assignicon from "../assets/img/process_icons/assign.png";
-import testicon from "../assets/img/process_icons/test.png";
-import impicon from "../assets/img/process_icons/implement.png";
-import monitoricon from "../assets/img/process_icons/monitor.png";
-import improveicon from "../assets/img/process_icons/improve.png";
 
 import { Helmet } from 'react-helmet';
-import { TypeAnimation } from 'react-type-animation';
 import processback from "../assets/video/home-bg.mp4";
 import useScrollToTop from '../hooks/useScrollToTop';
 
@@ -181,246 +182,61 @@ useEffect(() => {
 
 
    {/* <!-- Hero Section --> */}
-      <article class="hero">
-        <section class="hero-container-services">
-          <div class="hero-content-services-page">
-            <h1 class="hero-heading-services-page">
-            {windowWidth >= 1200 ? <TypeAnimation
-      sequence={[
-        'Drive Growth & Excellence with Phi Consulting',
-        7000, 
-       
-      ]}
-      wrapper="span"
-      speed={50}
-      style={{ fontSize: '40px', display: 'inline-block' }}
-      repeat={Infinity}
-    /> : 'Drive Growth & Excellence with Phi Consulting'}
-              
-            </h1>
-            <p class="hero-desc-services-page">
-              {data.heroDescription}
-            </p>
-            <div class="consult-button-services-page" onClick={gotoContacts}>
-              Schedule a Free Consultation
-            </div>
-          </div>
-        </section>
-      </article>
+      <ServicesHeroSection 
+        heroHeading={data.heroHeading} 
+        heroDescription={data.heroDescription} 
+        windowWidth={windowWidth} 
+        gotoContacts={gotoContacts} 
+      />
+      
 
       {/* <!-- Services page section one strategic solutions --> */}
-      <article class="strategic-solutions">
-        <h2 class="strategic-heading">
-          {data.solutionsHeading}
-        </h2>
-        <p class="work-desc">
-          {data.solutionsDescription}
-        </p>
-        <div class="services-banner-container">
-          <div class="card-row-top">
-            <div class="card-service-show sales-tab-one" onClick={handleTabClickFive}>
-              <div class="circleBasetwo typetwo">
-                <img
-                  src={salesicon}
-                  alt=""
-                  width="100"
-                  height="100"
-                  class="icon-adjuster"
-                />
-              </div>
-              <h3 class="card-present-title">GTM Strategy</h3>
-              <div class="card-present-desc">
-                {data.serviceOneDescription}
-              </div>
-            </div>
-            <div class="card-service-show sales-tab-two" onClick={handleTabClickOne}>
-              <div class="circleBasetwo typetwo">
-                <img
-                  src={buisnessicon}
-                  alt=""
-                  width="100"
-                  height="100"
-                  class="icon-adjuster"
-                />
-              </div>
-              <h3 class="card-present-title">Investor Relations</h3>
-              <div class="card-present-desc">
-               {data.serviceTwoDescription}
-              </div>
-            </div>
-            <div class="card-service-show sales-tab-three" onClick={handleTabClickThree}>
-              <div class="circleBasetwo typetwo">
-                <img
-                  src={financialicon}
-                  alt=""
-                  width="100"
-                  height="100"
-                  class="icon-adjuster"
-                />
-              </div>
-              <h3 class="card-present-title">Financial Consulting</h3>
-              <div class="card-present-desc">
-               {data.serviceThreeDescription}
-              </div>
-            </div>
-            <div class="card-service-show sales-tab-four" onClick={handleTabClickFour}>
-              <div class="circleBasetwo typetwo">
-                <img
-                  src={hricon}
-                  alt=""
-                  width="100"
-                  height="100"
-                  class="icon-adjuster"
-                />
-              </div>
-              <h3 class="card-present-title">HR & Recruitment</h3>
-              <div class="card-present-desc">
-               {data.serviceFourDescription}
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
+      <StretegicSolutionsSection
+         solutionsHeading={data.solutionsHeading}
+         solutionsDescription={data.solutionsDescription}
+         serviceOneDescription={data.serviceOneDescription}
+         serviceTwoDescription={data.serviceTwoDescription}
+         serviceThreeDescription={data.serviceThreeDescription}
+         serviceFourDescription={data.serviceFourDescription}
+         handleTabClickOne={handleTabClickOne}
+         handleTabClickThree={handleTabClickThree}
+         handleTabClickFour={handleTabClickFour}
+         handleTabClickFive={handleTabClickFive}
+         salesIcon={salesicon}
+         businessIcon={buisnessicon}
+         financialIcon={financialicon}
+         hrIcon={hricon}
+/>
 
       {/* <!-- Section path  --> */}
-      <article class="path">
-        <section class="path-container">
-          <h2 class="path-heading">{data.servicesPathHeading}</h2>
-          <p class="work-desc">
-            {data.servicesPathDescription}
-          </p>
-          <div class="process-container">
-            <div class="circle-container">
-              <div class="circle-content">
-                <div class="icon-process-container">
-                  <img
-                    src={goal}
-                    alt=""
-                    width="60px"
-                    height="60px"
-                  />
-                </div>
-                <h2 class="circle-heading">{data.processOneHeading}</h2>
-                <h3 class="circle-text">
-                  {data.processOneDescription}
-                </h3>
-              </div>
-            </div>
-            <div class="circle-container">
-              <div class="circle-content">
-                <div class="icon-process-container">
-                  <img
-                    src={planicon}
-                    alt=""
-                    width="60px"
-                    height="60px"
-                  />
-                </div>
-                <h2 class="circle-heading">{data.processTwoHeading}</h2>
-                <h3 class="circle-text">
-                  {data.processTwoDescription}
-                </h3>
-              </div>
-            </div>
-            <div class="circle-container">
-              <div class="circle-content">
-                <div class="icon-process-container">
-                  <img
-                    src={actionicon}
-                    alt=""
-                    width="60px"
-                    height="60px"
-                  />
-                </div>
-                <h2 class="circle-heading">{data.processThreeHeading}</h2>
-                <h3 class="circle-text">
-                 {data.processThreeDescription}
-                </h3>
-              </div>
-            </div>
-            <div class="circle-container">
-              <div class="circle-content">
-                <div class="icon-process-container">
-                  <img
-                    src={assignicon}
-                    alt=""
-                    width="60px"
-                    height="60px"
-                  />
-                </div>
-                <h2 class="circle-heading">{data.processFourHeading}</h2>
-                <h3 class="circle-text">
-                  {data.processFourDescription}
-                </h3>
-              </div>
-            </div>
-            <div class="circle-container">
-              <div class="circle-content">
-                <div class="icon-process-container">
-                  <img
-                    src={testicon}
-                    alt=""
-                    width="60px"
-                    height="60px"
-                  />
-                </div>
-                <h2 class="circle-heading">{data.processFiveHeading}</h2>
-                <h3 class="circle-text">
-                 {data.processFiveDescription}
-                </h3>
-              </div>
-            </div>
-            <div class="circle-container">
-              <div class="circle-content">
-                <div class="icon-process-container">
-                  <img
-                    src={impicon}
-                    alt=""
-                    width="60px"
-                    height="60px"
-                  />
-                </div>
-                <h2 class="circle-heading">{data.processsixheading}</h2>
-                <h3 class="circle-text">
-                  {data.processsixdescription}
-                </h3>
-              </div>
-            </div>
-            <div class="circle-container">
-              <div class="circle-content">
-                <div class="icon-process-container">
-                  <img
-                    src={monitoricon}
-                    alt=""
-                    width="60px"
-                    height="60px"
-                  />
-                </div>
-                <h2 class="circle-heading">{data.processsevenheading}</h2>
-                <h3 class="circle-text">
-                 {data.processsevendescription}
-                </h3>
-              </div>
-            </div>
-            <div class="circle-container">
-              <div class="circle-content">
-                <div class="icon-process-container">
-                  <img
-                    src={improveicon}
-                    alt=""
-                    width="60px"
-                    height="60px"
-                  />
-                </div>
-                <h2 class="circle-heading">{data.processeightheading}</h2>
-                <h3 class="circle-text">
-                {data.processeightdescription}
-                </h3>
-              </div>
-            </div>
-          </div>
-        </section>
-      </article>
+      <ServicesPathSection
+                servicesPathHeading={data.servicesPathHeading}
+                servicesPathDescription={data.servicesPathDescription}
+                processOneHeading={data.processOneHeading}
+                processOneDescription={data.processOneDescription}
+                processTwoHeading={data.processTwoHeading}
+                processTwoDescription={data.processTwoDescription}
+                processThreeHeading={data.processThreeHeading}
+                processThreeDescription={data.processThreeDescription}
+                processFourHeading={data.processFourHeading}
+                processFourDescription={data.processFourDescription}
+                processFiveHeading={data.processFiveHeading}
+                processFiveDescription={data.processFiveDescription}
+                processSixHeading={data.processSixHeading}
+                processSixDescription={data.processSixDescription}
+                processSevenHeading={data.processSevenHeading}
+                processSevenDescription={data.processSevenDescription}
+                processEightHeading={data.processEightHeading}
+                processEightDescription={data.processEightDescription}
+                goalIcon={goalIcon}
+                planIcon={planIcon}
+                actionIcon={actionIcon}
+                assignIcon={assignIcon}
+                testIcon={testIcon}
+                impIcon={impIcon}
+                monitorIcon={monitorIcon}
+                improveIcon={improveIcon}
+            />
 
       <article class="process-new">
 <video
@@ -570,25 +386,10 @@ useEffect(() => {
 
 
       {/* <!-- Call to Action Section --> */}
-      <article class="cta-container">
-        <section class="cta-sections-container">
-          <div class="cta-content">
-            <div class="cta-heading">{data.solutionsctaheading}</div>
-            <div class="cta-descrip">
-             {data.solutionsctadescription}
-            </div>
-          </div>
-          <div class="cta-button-section">
-            <div class="right-button-header">
-              <span
-                ><Link to="/contact-us" class="inner-header"
-                  >Contact Us</Link
-                ></span
-              >
-            </div>
-          </div>
-        </section>
-      </article>
+      <ServicesCtaSection
+        ctaHeading={data.solutionsctaheading}
+        ctaDescription={data.solutionsctadescription}
+      />
 
     </>
   )
