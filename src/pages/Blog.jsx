@@ -1,4 +1,6 @@
 import React,{useState, useEffect} from 'react';
+import BlogHeroSection from '../components/Blog_page_Components/Blog Hero Section/BlogHeroSection';
+import BlogCtaSection from '../components/Blog_page_Components/Blog CTA Section/BlogCtaSection';
 import { Link } from 'react-router-dom';
 import BlogCard from '../components/shared/cards/BlogCard';
 import axios from 'axios';
@@ -71,22 +73,7 @@ const Blog = ({blogpic}) => {
       </Helmet>
 
     {/* <!-- Hero Section --> */}
-      <article class="hero">
-        <section class="hero-container-blog">
-          <div class="hero-content-blog">
-            <h1 class="hero-heading-blog">Explore the Phi Consulting Blog</h1>
-            <p class="hero-desc-blog">
-              Welcome to a reservoir of knowledge and expertise! Dive into the
-              Phi Consulting Blog, where we unravel the intricacies of Sales,
-              Customer Experience, Finance, Business, and HR & Recruitment
-              Consulting. Gain valuable insights, stay updated on industry
-              trends, and discover strategies to elevate your business to new
-              heights.
-            </p>
-            <div class="consult-button-blog" onClick={gotoContacts}>Schedule a Free Consultation</div>
-          </div>
-        </section>
-      </article>
+    <BlogHeroSection gotoContacts={gotoContacts} />
 
       {/* <!-- Blog-Section --> */}
       <article class="bloged">
@@ -101,29 +88,7 @@ const Blog = ({blogpic}) => {
       </article>
 
       {/* <!-- Call to Action Section --> */}
-      <article class="cta-container">
-        <section class="cta-sections-container">
-          <div class="cta-content">
-            <div class="cta-heading">
-              Ready to delve deeper into the world of business success?
-            </div>
-            <div class="cta-descrip">
-              Explore our blog for a wealth of knowledge and actionable
-              insights. Whether you're a startup, SME, or industry enthusiast,
-              Phi Consulting is your guide to unlocking unparalleled success.
-            </div>
-          </div>
-          <div class="cta-button-section">
-            <div class="right-button-header">
-              <span
-                ><Link to="/contact-us" class="inner-header"
-                  >Get in Touch</Link
-                ></span
-              >
-            </div>
-          </div>
-        </section>
-      </article>
+      <BlogCtaSection />
     </>
   )
 }
