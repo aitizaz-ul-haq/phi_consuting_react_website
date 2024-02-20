@@ -1,4 +1,5 @@
 import React,{ useState, useEffect, useRef } from 'react';
+import HeroSection from '../components/Home_page_Components/Hero Section/HeroSection';
 import Banner from "../components/Home_page_Components/Banner Section/Banner";
 import BlogSection from '../components/Home_page_Components/Blog Section/BlogSection';
 import CtaSection from '../components/Home_page_Components/Cta Section/CtaSection';
@@ -20,13 +21,8 @@ import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
 import { Tooltip } from 'antd';
 import { Link } from 'react-router-dom';
 import CaseStudyMacroComps from '../components/shared/macroComps/CaseStudyMacroComps';
-import BlogCard from '../components/shared/cards/BlogCard';
-import CustomVideo from '../components/shared/videoComp/CustomVideo';
-import { TypeAnimation } from 'react-type-animation';
 import useScrollToTop from '../hooks/useScrollToTop';
-import david from "../assets/video/world.mp4";
 import eye from "../assets/img/eye.png";
-import top from "../assets/img/top Arrow.png";
 import { Helmet } from 'react-helmet';
 import atobbox from "../assets/img/api_images/AToB-square.jpg";
 import truckxbox from "../assets/img/api_images/truck-square.png";
@@ -488,7 +484,7 @@ const HomePage = () => {
 
 
     {/* <!-- Hero Section --> */}
-      <article class="hero">
+      {/* <article class="hero">
         <section class="hero-container">
           <div class="hero-content">
           {windowWidth >= 1200 && <CustomVideo src={david} />}
@@ -514,7 +510,14 @@ const HomePage = () => {
           </div>
           
         </section>
-      </article>
+      </article> */}
+
+<HeroSection
+      heroHeading={data.heroHeading}
+      heroDescription={data.heroDescription}
+      windowWidth={windowWidth}
+      gotoContacts={gotoContacts}
+    />
 
       <div className="scroll-badge-container">
         <img src={ScrollDown} className='scroll-down-image-block' alt="scrolling doen image" />
