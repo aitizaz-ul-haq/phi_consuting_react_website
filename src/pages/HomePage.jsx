@@ -1,4 +1,6 @@
 import React,{ useState, useEffect, useRef } from 'react';
+import Banner from "../components/Home_page_Components/Banner Section/Banner";
+import BlogSection from '../components/Home_page_Components/Blog Section/BlogSection';
 import ATOB from '../assets/img/new_logos_comps/newer/AtoB 2.png';
 import bobtail from '../assets/img/new_logos_comps/bobtail.png';
 import joyride from '../assets/img/new_logos_comps/joyride.png';
@@ -44,6 +46,7 @@ import whatback from "../assets/img/wrappers/burn.webp";
 import graph from "../assets/img/graph.png";
 import iso from "../assets/img/recognitions/iso.webp";
 import ScrollDown from "../assets/img/mouse-cursor.png";
+
 
 const HomePage = () => {
 
@@ -890,44 +893,21 @@ const HomePage = () => {
         </section>
       </article>
 
+
+
       {/* <!-- Blog Section --> */}
-      <article id="blog" class="blog">
-        <section class="blog-container">
-          <h2 class="blog-title">{data.insightsheading}</h2>
-          <p class="blog-desc">
-          {data.insightsdescription}
-          </p>
-        </section>
-        <section class="blog-cards-container">
-        {firstTwoBlogs.map(study => (
-                <BlogCard key={study._id} id={study._id} blogs={study} />
-            ))}
-        </section>
-        <section class="button-readmore">
-          <div class="right-button">
-          <span><Link to="/blogs" className='morcases'>Read More</Link></span>
-          </div>
-        </section>
-      </article>
+      <BlogSection 
+        blogs={blogs.slice(0, 2)} // Adjust according to how many blogs you want to display
+        insightsHeading={data.insightsheading}
+        insightsDescription={data.insightsdescription}
+      />
 
       {/* <!-- banner Section --> */}
-      <article id="banner" class="banner">
-        <section class="banner-container">
-          <h3 class="line-top">
-            Proven Expertise | Personalized Service | Innovation at Core
-          </h3>
-          <h2 class="banner-title">
-            {data.boardheading}
-          </h2>
-          <p class="banner-desc"></p>
-          <p class="banner-desc second-para">
-            {data.boarddescription}
-          </p>
-          <div class="right-button" onClick={gotoContacts}>
-            <span>Contact us</span>
-          </div>
-        </section>
-      </article>
+      <Banner 
+        boardHeading={data.boardheading} 
+        boardDescription={data.boarddescription} 
+        gotoContacts={gotoContacts} 
+      />
     </>
   )
 }
