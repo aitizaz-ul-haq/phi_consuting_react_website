@@ -1,9 +1,11 @@
 import React,{ useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import OurWorkCtaSection from '../components/OurWork_page_Components/OurWork Cta Section/OurWorkCtaSection';
+import HowWeWork from '../components/OurWork_page_Components/OurWork HowWeWork Section/HowWeWork';
+import OurWorkHeroSection from '../components/OurWork_page_Components/OurWork Hero Section/OurWorkHeroSection';
+import PhiForSection from '../components/OurWork_page_Components/PhiFor Section/PhiForSection';
+
 import { Helmet } from 'react-helmet';
 import backgroundblue from "../assets/img/wrappers/creation.jpg";
-import LengthyWorkCard from '../components/shared/cards/LengthyWorkCard';
-import { TypeAnimation } from 'react-type-animation';
 import useScrollToTop from '../hooks/useScrollToTop';
 
 import axios from 'axios';
@@ -128,103 +130,28 @@ ctadescription:"",
 
 
     {/* <!-- Hero Section --> */}
-      <article class="hero">
-        <section class="hero-container-our-work">
-          <div class="hero-content-our-work">
-            <h1 class="hero-heading-our-work">
-            {windowWidth >= 1200 ? <TypeAnimation
-      sequence={[
-        'Success is not just a goal but a proven outcome',
-        7000, 
-       
-      ]}
-      wrapper="span"
-      speed={50}
-      style={{ fontSize: '40px', display: 'inline-block' }}
-      repeat={Infinity}
-    /> : ' Empowering Your Vision, Elevating Your Cloud Strategy'}
-              
-            </h1>
-            <p class="hero-desc-our-work">
-             {data.heroDescription}
-            </p>
-            <div class="consult-button-our-work" id="work-consult" onClick={gotoContacts}>
-              Schedule a Free Consultation
-            </div>
-          </div>
-        </section>
-      </article>
+      <OurWorkHeroSection
+         heroHeading={data.heroHeading}
+         heroDescription={data.heroDescription}
+         windowWidth={windowWidth}
+         gotoContacts={gotoContacts}
+      />
 
       {/* <!-- why phi for customer exp Section --> */}
-      <article class="why-phi-for-sales">
-        <h2 class="why-phi-heading">
-          {data.valuecreationheading}
-        </h2>
-        <p class="why-phi-desc">
-          {data.valuecreationdescription}
-        </p>
-        <div class="insights-container">
-        {caseStudies.map(study => (
-                <LengthyWorkCard key={study._id} id={study._id}  caseStudy={study} />
-            ))}
-        </div>
-      </article>
+      <PhiForSection
+        title={data.valuecreationheading}
+        description={data.valuecreationdescription}
+        caseStudies={caseStudies}
+       />
 
       {/* <!-- how we work --> */}
-      <article class="how-work">
-        <section class="how-work-section">
-          <div class="how-work-container">
-            <div class="how-work-section-left">
-              <p class="how-we-top-line">HOW PHI CREATES VALUE</p>
-              <h2 class="how-we-work-heading">
-                {data.phicreatesheading}
-              </h2>
-              <div class="statement">
-                <div class="heading-how-we">1. {data.ourwayoneheading}</div>
-                <div class="description-how-we">
-                  {data.ourwayonedescription}
-                </div>
-              </div>
-              <div class="statement">
-                <div class="heading-how-we">2. {data.ourwaytwoheading}</div>
-                <div class="description-how-we">
-                 {data.ourwaytwodescription}
-                </div>
-              </div>
-              <div class="statement">
-                <div class="heading-how-we">3. {data.ourwaythreeheading}</div>
-                <div class="description-how-we">
-                  {data.ourwaythreedescription}
-                </div>
-              </div>
-            </div>
-           
-          </div>
-        </section>
-      </article>
+      <HowWeWork data={data} />
 
       {/* <!-- Call to Action Section --> */}
-      <article class="cta-container">
-        <section class="cta-sections-container">
-          <div class="cta-content">
-            <div class="cta-heading">
-              {data.ctaheading}
-            </div>
-            <div class="cta-descrip">
-              {data.ctadescription}
-            </div>
-          </div>
-          <div class="cta-button-section">
-            <div class="right-button-header">
-              <span
-                ><Link to="/contact-us" class="inner-header"
-                  >Get in Touch</Link
-                ></span
-              >
-            </div>
-          </div>
-        </section>
-      </article>
+      <OurWorkCtaSection
+        ctaHeading={data.ctaheading}
+        ctaDescription={data.ctadescription}
+      />
     
     </>
   )
