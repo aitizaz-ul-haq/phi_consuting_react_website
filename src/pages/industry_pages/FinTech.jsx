@@ -1,6 +1,9 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-
+import FintechHeroSection from '../../components/Industries_page_componenets/FinTech/Fintech Hero Section/FintechHeroSection';
+import FintechBarCardSection from '../../components/Industries_page_componenets/FinTech/Fintech BarCard Section/FintechBarCardSection';
+import FintechFourCardSection from '../../components/Industries_page_componenets/FinTech/Fintech FourCard Section/FintechFourCardSection';
+import FintechCtaSection from '../../components/Industries_page_componenets/FinTech/Fintech Cta Section/FintechCtaSection';
 import useScrollToTop from '../../hooks/useScrollToTop';
 import eye from "../../assets/img/eye.png";
 import top from "../../assets/img/top Arrow.png";
@@ -314,135 +317,16 @@ useScrollToTop();
             </div>
 
       {/* <!-- Hero Section --> */}
-      <article class="hero">
-        <section class="hero-container-fin">
-          <div class="hero-content-fin">
-            <h1 class="hero-heading-fin">
-              {heroHeading}
-            </h1>
-            <p class="hero-desc-fin">
-            {heroDescription}
-            </p>
-            <div class="consult-button-sales"> <Link to="/contact-us" className='scheduler-set'>Schedule a Free Consultation</Link> </div>
-          </div>
-        </section>
-      </article>
+      <FintechHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
 
-      <article className="bar-card-container">
-            <section className="bar-content-section">
-               <div className="heading-of-barcard">
-                <h2 className="barcard-title">
-                {cardDetails.barCardHeading}
-                </h2>
-               </div>
-               <div className="barcard-bar">
-                <div className="barcard-bar-section">
-                    <div className="icon-barcard-container">
-                        <img src={cross} alt="barcard icon" className='barcard-icon-image' />
-                    </div>
-                    <div className="title-barcard-container">
-                        <h3 className="barcard-description-inner">
-                        {cardDetails.barcarddesone}
-                        </h3>
-                    </div>
-                </div>
-                <div className="barcard-bar-section border-left-and-right">
-                    <div className="icon-barcard-container">
-                        <img src={persons} alt="barcard icon" className='barcard-icon-image'/>
-                    </div>
-                    <div className="title-barcard-container">
-                        <h3 className="barcard-description-inner">
-                        {cardDetails.barcarddestwo}
-                        </h3>
-                    </div>
-                </div>
-                <div className="barcard-bar-section border-right">
-                    <div className="icon-barcard-container">
-                        <img src={circular} alt="barcard icon" className='barcard-icon-image'/>
-                    </div>
-                    <div className="title-barcard-container">
-                        <h3 className="barcard-description-inner">
-                        {cardDetails.barcarddesthree}
-                        </h3>
-                    </div>
-                </div>
-                <div className="barcard-bar-section">
-                    <div className="icon-barcard-container">
-                        <img src={stack} alt="barcard icon" className='barcard-icon-image'/>
-                    </div>
-                    <div className="title-barcard-container">
-                        <h3 className="barcard-description-inner">
-                        {cardDetails.barcarddesfour}
-                        </h3>
-                    </div>
-                </div>
-               </div>
-            </section>
-    </article>
+      {/* Bar Card Section */}
+      <FintechBarCardSection cardDetails={cardDetails} />
 
-       <IndustriesArticles Api="fintech" />
+      {/* Fintech Industries Section */}
+      <IndustriesArticles Api="fintech" />
    
-       <article className="four-card-container">
-<section className="four-card-header">
-    <h2 className="four-card-heading">
-    {cardDetails.fourCardHeading}:
-    </h2>
-    </section>    
-    <section className="four-card-cards">
-        <div className="four-card-tab">
-            <div className="four-card-inner-numeric">
-                <h2 className="numeric-heading-four-card">{cardDetails.card1numericval}</h2>
-            </div>
-            <hr />
-            <div className="inner-heading-four-card">
-                <h3 className="card-four-title">{cardDetails.card1heading}</h3>
-
-            </div>
-            <div className="inner-four-card-description">
-            {cardDetails.card1description}
-            </div>
-        </div>
-        <div className="four-card-tab">
-            <div className="four-card-inner-numeric">
-                <h2 className="numeric-heading-four-card">{cardDetails.card2numericval}</h2>
-            </div>
-            <hr />
-            <div className="inner-heading-four-card">
-                <h3 className="card-four-title">{cardDetails.card2heading}</h3>
-
-            </div>
-            <div className="inner-four-card-description">
-            {cardDetails.card2description}
-            </div>
-        </div>
-        <div className="four-card-tab">
-            <div className="four-card-inner-numeric">
-                <h2 className="numeric-heading-four-card">{cardDetails.card3numericval}</h2>
-            </div>
-            <hr />
-            <div className="inner-heading-four-card">
-                <h3 className="card-four-title">{cardDetails.card3heading}</h3>
-
-            </div>
-            <div className="inner-four-card-description">
-            {cardDetails.card3description}
-            </div>
-        </div>
-        <div className="four-card-tab">
-            <div className="four-card-inner-numeric">
-                <h2 className="numeric-heading-four-card">{cardDetails.card4numericval}</h2>
-            </div>
-            <hr />
-            <div className="inner-heading-four-card">
-                <h3 className="card-four-title">{cardDetails.card4heading}</h3>
-
-            </div>
-            <div className="inner-four-card-description">
-            {cardDetails.card4description}
-            </div>
-        </div>
-        </section>        
-        </article>
+      {/* Fintech Four Card Section */}
+      <FintechFourCardSection cardDetails={cardDetails} />
         
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
@@ -505,29 +389,8 @@ useScrollToTop();
         </div>
       </article>
 
-
       {/* <!-- Call to Action Section --> */}
-      <article class="cta-container">
-        <section class="cta-sections-container">
-          <div class="cta-content">
-            <div class="cta-heading">
-            Ready to Transform Your FinTech Startup?
-            </div>
-            <div class="cta-descrip">
-            Contact us today to schedule a consultation and start your journey towards efficient scaling and strategic growth.
-            </div>
-          </div>
-          <div class="cta-button-section">
-            <div class="right-button-header">
-              <span
-                ><Link to="/contact-us" class="inner-header"
-                  >Get in Touch</Link
-                ></span
-              >
-            </div>
-          </div>
-        </section>
-      </article>
+      <FintechCtaSection />
         </>
     )
 }
