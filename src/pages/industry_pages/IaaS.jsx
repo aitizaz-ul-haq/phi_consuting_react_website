@@ -1,5 +1,4 @@
 import React,{ useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import IaasHeroSection from '../../components/Industries_page_componenets/Iaas/Iaas Hero Section/IaasHeroSection';
 import IaasBarCardSection from '../../components/Industries_page_componenets/Iaas/Iaas BarCard Section/IaasBarCardSection';
 import IaasFourCardSection from '../../components/Industries_page_componenets/Iaas/Iaas FourCard Section/IaasFourCardSection';
