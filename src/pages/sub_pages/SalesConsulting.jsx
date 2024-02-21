@@ -1,22 +1,11 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-import ATOB from '../../assets/img/new_logos_comps/newer/AtoB 2.png';
-import bobtail from '../../assets/img/new_logos_comps/bobtail.png';
-import joyride from '../../assets/img/new_logos_comps/joyride.png';
-import Truckx from '../../assets/img/new_logos_comps/TruckX.png';
-import pallet from '../../assets/img/new_logos_comps/newer/Pallet Logo.png';
-import digitalOcean from '../../assets/img/new_logos_comps/newer/digital-ocean.png';
-import mudflap from '../../assets/img/new_logos_comps/newer/Mudflap.png';
-import sungrade from '../../assets/img/new_logos_comps/sungrade solar.png';
+
 
 import salesone from "../../assets/img/GTM Advisory/sales.png";
 import salestwo from "../../assets/img/GTM Advisory/experience.png";
 import salesthree from "../../assets/img/GTM Advisory/enablement.png";
-// import salesfour from "../../assets/img/black_logos/expansion.png";
-// import salesfive from "../../assets/img/black_logos/product led growth.png";
-// import salessix from "../../assets/img/black_logos/button.png";
-
 import goal from "../../assets/img/process_icons/goal.png";
 import planicon from "../../assets/img/process_icons/plan.png";
 import actionicon from "../../assets/img/process_icons/action.png";
@@ -26,19 +15,12 @@ import impicon from "../../assets/img/process_icons/implement.png";
 import monitoricon from "../../assets/img/process_icons/monitor.png";
 import improveicon from "../../assets/img/process_icons/improve.png";
 
-import achiconone from "../../assets/img/achievements-badges/clutch_1.png";
-import achicontwo from "../../assets/img/achievements-badges/BBB.png";
-import achiconthree from "../../assets/img/achievements-badges/clutch_2.png";
-
-import SmallWorkCard from '../../components/shared/cards/SmallWorkCard';
-import caseStudies from '../../data/caseStudies.json';
 
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { TypeAnimation } from 'react-type-animation';
 import { Tooltip } from 'antd';
 import eye from "../../assets/img/eye.png";
 import top from "../../assets/img/top Arrow.png";
-import { Button, Modal } from 'antd';
 import axios from 'axios';
 
 import atobbox from "../../assets/img/api_images/AToB-square.jpg";
@@ -214,7 +196,6 @@ const SalesConsulting = () => {
   
     fetchData();
   }, []);
-
   
   useEffect(() => {
     const fetchCaseStudies = async () => {
