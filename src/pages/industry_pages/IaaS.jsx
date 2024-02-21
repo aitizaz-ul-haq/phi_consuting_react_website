@@ -1,5 +1,9 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import IaasHeroSection from '../../components/Industries_page_componenets/Iaas/Iaas Hero Section/IaasHeroSection';
+import IaasBarCardSection from '../../components/Industries_page_componenets/Iaas/Iaas BarCard Section/IaasBarCardSection';
+import IaasFourCardSection from '../../components/Industries_page_componenets/Iaas/Iaas FourCard Section/IaasFourCardSection';
+import IaasCtaSection from '../../components/Industries_page_componenets/Iaas/Iaas Cta Section/IaasCtaSection';
 
 import useScrollToTop from '../../hooks/useScrollToTop';
 import eye from "../../assets/img/eye.png";
@@ -10,10 +14,6 @@ import axios from 'axios';
 import { Helmet } from 'react-helmet';
 import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 import whatback from "../../assets/img/wrappers/burn.webp"; 
-import cross from '../../assets/img/barcard-icons/close.png';
-import persons from '../../assets/img/barcard-icons/employee.png';
-import circular from '../../assets/img/barcard-icons/b2b.png';
-import stack from '../../assets/img/barcard-icons/coins-stack.png';
 
 const IaaS = () => {
   const [sectionOneTitle, setSectionOneTitle] = useState('');
@@ -292,136 +292,16 @@ useScrollToTop();
 
 
       {/* <!-- Hero Section --> */}
-      <article class="hero">
-        <section class="hero-container-iaas">
-          <div class="hero-content-iaas">
-            <h1 class="hero-heading-iaas">
-              {heroHeading}
-            </h1>
-            <p class="hero-desc-iaas">
-            {heroDescription}
-            </p>
-            <div class="consult-button-sales"> <Link to="/contact-us" className='scheduler-set'>Schedule a Free Consultation</Link> </div>
-          </div>
-        </section>
-      </article>
+      <IaasHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
 
+       {/* Bar Card Section */}
+      <IaasBarCardSection cardDetails={cardDetails} />
 
-      <article className="bar-card-container">
-            <section className="bar-content-section">
-               <div className="heading-of-barcard">
-                <h2 className="barcard-title">
-                {cardDetails.barCardHeading}
-                </h2>
-               </div>
-               <div className="barcard-bar">
-                <div className="barcard-bar-section">
-                    <div className="icon-barcard-container">
-                        <img src={cross} alt="barcard icon" className='barcard-icon-image' />
-                    </div>
-                    <div className="title-barcard-container">
-                        <h3 className="barcard-description-inner">
-                        {cardDetails.barcarddesone}
-                        </h3>
-                    </div>
-                </div>
-                <div className="barcard-bar-section border-left-and-right">
-                    <div className="icon-barcard-container">
-                        <img src={persons} alt="barcard icon" className='barcard-icon-image'/>
-                    </div>
-                    <div className="title-barcard-container">
-                        <h3 className="barcard-description-inner">
-                        {cardDetails.barcarddestwo}
-                        </h3>
-                    </div>
-                </div>
-                <div className="barcard-bar-section border-right">
-                    <div className="icon-barcard-container">
-                        <img src={circular} alt="barcard icon" className='barcard-icon-image'/>
-                    </div>
-                    <div className="title-barcard-container">
-                        <h3 className="barcard-description-inner">
-                        {cardDetails.barcarddesthree}
-                        </h3>
-                    </div>
-                </div>
-                <div className="barcard-bar-section">
-                    <div className="icon-barcard-container">
-                        <img src={stack} alt="barcard icon" className='barcard-icon-image'/>
-                    </div>
-                    <div className="title-barcard-container">
-                        <h3 className="barcard-description-inner">
-                        {cardDetails.barcarddesfour}
-                        </h3>
-                    </div>
-                </div>
-               </div>
-            </section>
-        </article>
-
+       {/* Industries Articals section */}
       <IndustriesArticles Api="iaas" />
 
-      <article className="four-card-container">
-<section className="four-card-header">
-    <h2 className="four-card-heading">
-    {cardDetails.fourCardHeading}:
-    </h2>
-    </section>    
-    <section className="four-card-cards">
-        <div className="four-card-tab">
-            <div className="four-card-inner-numeric">
-                <h2 className="numeric-heading-four-card">{cardDetails.card1numericval}</h2>
-            </div>
-            <hr />
-            <div className="inner-heading-four-card">
-                <h3 className="card-four-title">{cardDetails.card1heading}</h3>
-
-            </div>
-            <div className="inner-four-card-description">
-            {cardDetails.card1description}
-            </div>
-        </div>
-        <div className="four-card-tab">
-            <div className="four-card-inner-numeric">
-                <h2 className="numeric-heading-four-card">{cardDetails.card2numericval}</h2>
-            </div>
-            <hr />
-            <div className="inner-heading-four-card">
-                <h3 className="card-four-title">{cardDetails.card2heading}</h3>
-
-            </div>
-            <div className="inner-four-card-description">
-            {cardDetails.card2description}
-            </div>
-        </div>
-        <div className="four-card-tab">
-            <div className="four-card-inner-numeric">
-                <h2 className="numeric-heading-four-card">{cardDetails.card3numericval}</h2>
-            </div>
-            <hr />
-            <div className="inner-heading-four-card">
-                <h3 className="card-four-title">{cardDetails.card3heading}</h3>
-
-            </div>
-            <div className="inner-four-card-description">
-            {cardDetails.card3description}
-            </div>
-        </div>
-        <div className="four-card-tab">
-            <div className="four-card-inner-numeric">
-                <h2 className="numeric-heading-four-card">{cardDetails.card4numericval}</h2>
-            </div>
-            <hr />
-            <div className="inner-heading-four-card">
-                <h3 className="card-four-title">{cardDetails.card4heading}</h3>
-
-            </div>
-            <div className="inner-four-card-description">
-            {cardDetails.card4description}
-            </div>
-        </div>
-        </section>        
-        </article>
+       {/* Four Card Section */}
+      <IaasFourCardSection cardDetails={cardDetails} />
     
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
@@ -488,27 +368,7 @@ useScrollToTop();
       </article>
 
       {/* <!-- Call to Action Section --> */}
-      <article class="cta-container">
-        <section class="cta-sections-container">
-          <div class="cta-content">
-            <div class="cta-heading">
-            Ready to Scale New Heights?
-            </div>
-            <div class="cta-descrip">
-            Embark on your journey towards unprecedented growth and efficiency with Phi Consulting. Let's discuss how we can transform your startup's potential into real-world success.
-            </div>
-          </div>
-          <div class="cta-button-section">
-            <div class="right-button-header">
-              <span
-                ><Link to="/contact-us" class="inner-header"
-                  >Get in Touch</Link
-                ></span
-              >
-            </div>
-          </div>
-        </section>
-      </article>
+      <IaasCtaSection />
         </>
     )
 }
