@@ -1,5 +1,4 @@
 import React,{ useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import useScrollToTop from '../../hooks/useScrollToTop';
 
 import IotHeroSection from '../../components/Industries_page_componenets/Iot/Iot Hero Section/IotHeroSection';
