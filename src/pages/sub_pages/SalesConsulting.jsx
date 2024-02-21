@@ -332,37 +332,28 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
     });
 };
 useScrollToTop();
-
-  const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (
         <>
-
        <Helmet>
         <title>Effective Go-To-Market Strategy - Phi Consulting</title>
         <meta name="description" content="Craft dynamic Go-To-Market strategies with Phi Consulting. Propel your business forward with proven methodologies for successful product launches and market penetration. Partner with us today!" />
-      </Helmet>
-
+       </Helmet>
       <Helmet>
       <link rel="canonical" href="https://phi-verse.com/solutions/go-to-market-strategy" />
-    </Helmet>
-
-
-        <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
-        <div className="left-section-control"></div>
+      </Helmet>
+            <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
+            <div className="left-section-control"></div>
             <div className="right-section-control">
             <Tooltip placement="leftTop" title="toggle eye protection">
             <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
             </Tooltip>
-
-
-    {/* Back to Top Button */}
-    <Tooltip placement="leftTop" title="back to top">
+            {/* Back to Top Button */}
+             <Tooltip placement="leftTop" title="back to top">
     <button className="back-to-top" onClick={scrollToTop}>
     <img src={top} alt="eye icon" width={25} height={25}/>
     </button>
-    </Tooltip>
+            </Tooltip>
             </div>
-
 
       {/* <!-- Hero Section --> */}
       <article class="hero">
@@ -805,7 +796,6 @@ useScrollToTop();
             </div>
           </div>
       </article>
-
 
       {/* <!-- Call to Action Section --> */}
       <article class="cta-container">

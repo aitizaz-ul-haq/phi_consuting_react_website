@@ -300,8 +300,6 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
              </Tooltip>
             </div>
 
-
-
         {/* <!-- Hero Section --> */}
       <article class="hero">
         <section class="hero-container-hr-consul">

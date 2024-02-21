@@ -277,12 +277,11 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
         <Helmet>
         <title>Strategic Financial Consulting - Phi Consulting</title>
         <meta name="description" content="Unlock your financial potential with Phi Consulting's tailored Financial Consulting services. Drive profitability, make informed decisions, and optimize financial strategies with our expert guidance." />
-      </Helmet>
+        </Helmet>
 
-      
         <Helmet>
       <link rel="canonical" href="https://phi-verse.com/solutions/financial-consulting" />
-    </Helmet>
+        </Helmet>
 
 
 <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
@@ -298,8 +297,6 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
     </button>
             </Tooltip>
             </div>
-
-
 
 
          {/* <!-- Hero Section --> */}
@@ -529,7 +526,6 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
         </section>
       </article>
 
-
       {/* <!-- section new process --> */}
       <article class="process-new">
       <video
@@ -689,8 +685,6 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
         </section>
       </article>
 
-        
-      
       {/* <!-- why phi for customer exp Section --> */}
       <article class="why-phi-for-sales">
         <h2 class="why-phi-heading">
@@ -750,8 +744,6 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
           </div>
         </div>
       </article>
-
-    
 
       {/* <!-- Call to Action Section --> */}
       <article class="cta-container">
