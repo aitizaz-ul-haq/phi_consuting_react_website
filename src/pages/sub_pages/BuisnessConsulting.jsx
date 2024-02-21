@@ -1,6 +1,5 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-
 import goal from "../../assets/img/process_icons/goal.png";
 import planicon from "../../assets/img/process_icons/plan.png";
 import actionicon from "../../assets/img/process_icons/action.png";
@@ -9,22 +8,18 @@ import testicon from "../../assets/img/process_icons/test.png";
 import impicon from "../../assets/img/process_icons/implement.png";
 import monitoricon from "../../assets/img/process_icons/monitor.png";
 import improveicon from "../../assets/img/process_icons/improve.png";
-
 import bcone from "../../assets/img/investor-realtions-icons/Awareness.png";
 import bctwo from "../../assets/img/investor-realtions-icons/equity.png";
 import bcthree from "../../assets/img/investor-realtions-icons/liquidity.png";
 import bcfour from "../../assets/img/investor-realtions-icons/low hanging fruits.png";
 import bcfive from "../../assets/img/investor-realtions-icons/content.png";
 import bcsix from "../../assets/img/investor-realtions-icons/brand.png";
-
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { TypeAnimation } from 'react-type-animation';
 import { Tooltip } from 'antd';
 import eye from "../../assets/img/eye.png";
 import top from "../../assets/img/top Arrow.png";
-
 import axios from 'axios';
-
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 import processback from "../../assets/video/home-bg.mp4";
 
