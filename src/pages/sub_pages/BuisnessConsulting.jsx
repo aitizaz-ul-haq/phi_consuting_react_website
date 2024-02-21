@@ -10,7 +10,6 @@ import impicon from "../../assets/img/process_icons/implement.png";
 import monitoricon from "../../assets/img/process_icons/monitor.png";
 import improveicon from "../../assets/img/process_icons/improve.png";
 
-
 import bcone from "../../assets/img/investor-realtions-icons/Awareness.png";
 import bctwo from "../../assets/img/investor-realtions-icons/equity.png";
 import bcthree from "../../assets/img/investor-realtions-icons/liquidity.png";
@@ -301,7 +300,6 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
 };
 
 useScrollToTop();
-  const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (
         <>
         <Helmet>

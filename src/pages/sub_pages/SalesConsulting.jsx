@@ -22,24 +22,7 @@ import { Tooltip } from 'antd';
 import eye from "../../assets/img/eye.png";
 import top from "../../assets/img/top Arrow.png";
 import axios from 'axios';
-
-import atobbox from "../../assets/img/api_images/AToB-square.jpg";
-import truckxbox from "../../assets/img/api_images/truck-square.png";
-import palletbox from "../../assets/img/api_images/palletbox.png";
-import solarbox from "../../assets/img/api_images/Solarbox.png";
-import bobtailbox from "../../assets/img/api_images/bob.png";
-import joybox from "../../assets/img/api_images/joybox.png";
-import dobox from "../../assets/img/api_images/digitalocean-square.png";
-
-import atobproduct from "../../assets/img/api_images/atob-card.png"; 
-import truckxproduct from "../../assets/img/api_images/truckx-case.png";
-import palletproduct from "../../assets/img/api_images/pallet.png";
-import solarproduct from "../../assets/img/api_images/solar_one.webp";
-import bobtailproduct from "../../assets/img/api_images/Bobtail.png";
-import joyrideproduct from "../../assets/img/api_images/joytwo.png";
-import doproduct from "../../assets/img/api_images/digitalocean-product.png";
 import processback from "../../assets/video/home-bg.mp4";
-
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
 import { Helmet } from 'react-helmet';
@@ -196,7 +179,7 @@ const SalesConsulting = () => {
   
     fetchData();
   }, []);
-  
+
   useEffect(() => {
     const fetchCaseStudies = async () => {
       try {
