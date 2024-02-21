@@ -78,7 +78,7 @@ const CaseStudyMacroComps = ({ id, title, summary, logo, image, isRight, urltag,
               </div>
               <div class="case-button-container">
                 <div class="case-button">
-                    <Link className='macro-button-link-remove' to={`/casedetails/${urltag}`} onClick={handleClick}> View Case Study</Link>
+                    <Link className='macro-button-link-remove' to={`/casestudy/${urltag}`} onClick={handleClick}> View Case Study</Link>
                    </div>
               </div>
             </div>
