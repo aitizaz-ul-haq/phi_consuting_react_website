@@ -11,7 +11,7 @@ const OurWorkHeroSection = ({ heroHeading, heroDescription, windowWidth, gotoCon
             {windowWidth >= 1200 ? (
               <TypeAnimation
                 sequence={[
-                  heroHeading,
+                  'Success is not just a goal but a proven outcome',
                   7000,
                 ]}
                 wrapper="span"
@@ -19,7 +19,7 @@ const OurWorkHeroSection = ({ heroHeading, heroDescription, windowWidth, gotoCon
                 style={{ fontSize: '40px', display: 'inline-block' }}
                 repeat={Infinity}
               />
-            ) : heroHeading}
+            ) : 'Success is not just a goal but a proven outcome'}
           </h1>
           <p className="hero-desc-our-work">
             {heroDescription}
