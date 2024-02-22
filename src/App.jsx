@@ -175,12 +175,26 @@ import ShowValPageCont from './pages/dashboard/Other Pages/value creation/ShowVa
 
 import { Helmet } from 'react-helmet';
 
+
 import HomepageBackgroundImage from "./assets/img/building-consulting-business.gif";
+
 import ServicesBackgroundImage from "./assets/img/services_page_img/services_image_3.jpg";
 import GtmBackgroundImage from "./assets/img/services_page_img/sales_consulting.webp"; 
 import FinanceBackgroundImage from "./assets/img/financial_consulting/finance1.jpg";
 import HrBackgroundImage from "./assets/img/phi_event_pics/two.jpg";
 import BuisnessBackgroundImage from "./assets/img/buisness_consulting/buisness_consulting_banner.jpg";
+
+import FintechBackgroundImage from "./assets/img/industry_backgrounds/fintech_background.jpeg";
+import DevopsBackgroundImage from "./assets/img/industry_backgrounds/DevOps-background.jpg";
+import CloudBackgroundImage from "./assets/img/industry_backgrounds/Cloud_background.jpg";
+import IaasBackgroundImage from "./assets/img/industry_backgrounds/iaas_background.jpg";
+import IotBackgroundImage from "./assets/img/industry_backgrounds/iot-background.jpg";
+import SaasBackGroundImage from "./assets/img/industry_backgrounds/SaaS_background.jpg";
+
+import OurWorkBackgroundImage from "./assets/img/our_work_page_img/our_work.png";
+import AboutPageBackgroundImage from "./assets/img/about_page/about_two.webp";
+import CareersPagebackgrounImage from "./assets/img/careers_banner.jpg";
+
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -201,6 +215,15 @@ const App = () => {
       FinanceBackgroundImage,
       HrBackgroundImage,
       BuisnessBackgroundImage,
+      FintechBackgroundImage,
+      DevopsBackgroundImage,
+      CloudBackgroundImage,
+      IaasBackgroundImage,
+      IotBackgroundImage,
+      SaasBackGroundImage,
+      OurWorkBackgroundImage,
+      AboutPageBackgroundImage,
+      CareersPagebackgrounImage,
       GtmBackgroundImage
     ];
     const preloadImages = (imageUrls) => {
