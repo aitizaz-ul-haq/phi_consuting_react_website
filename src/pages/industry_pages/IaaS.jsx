@@ -272,7 +272,7 @@ useScrollToTop();
       </Helmet>
 
       <Helmet>
-      <link rel="canonical" href="https://phi-verse.com/iaas-consulting" />
+      <link rel="canonical" href="https://phiconsulting.org/iaas-consulting" />
     </Helmet>
 
 <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>

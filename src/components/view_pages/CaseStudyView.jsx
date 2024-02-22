@@ -42,7 +42,7 @@ const CaseStudyView = () => {
 
     const copyToClipboard = () => {
         
-        const textToCopy = `https://phi-verse.com/casestudy/${companyName}`;
+        const textToCopy = `https://phiconsulting.org/casestudy/${companyName}`;
 
         // const textToCopy = `http://localhost:5173/casestudy/${companyName}`;
     

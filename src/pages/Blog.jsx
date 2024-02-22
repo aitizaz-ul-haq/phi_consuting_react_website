@@ -69,7 +69,7 @@ const Blog = ({blogpic}) => {
        </Helmet>
 
       <Helmet>
-      <link rel="canonical" href="https://phi-verse.com/blogs" />
+      <link rel="canonical" href="https://phiconsulting.org/blogs" />
       </Helmet>
 
     {/* <!-- Hero Section --> */}

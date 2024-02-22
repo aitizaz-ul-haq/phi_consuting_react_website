@@ -280,7 +280,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
         </Helmet>
 
         <Helmet>
-      <link rel="canonical" href="https://phi-verse.com/solutions/financial-consulting" />
+      <link rel="canonical" href="https://phiconsulting.org/solutions/financial-consulting" />
         </Helmet>
 
 

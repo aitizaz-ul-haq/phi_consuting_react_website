@@ -273,7 +273,7 @@ useScrollToTop();
       </Helmet>
 
       <Helmet>
-      <link rel="canonical" href="https://phi-verse.com/cloud-consulting" />
+      <link rel="canonical" href="https://phiconsulting.org/cloud-consulting" />
       </Helmet>
 
 

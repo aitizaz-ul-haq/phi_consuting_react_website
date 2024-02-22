@@ -137,7 +137,7 @@ careerctadescription:"",
       </Helmet>
 
       <Helmet>
-      <link rel="canonical" href="https://phi-verse.com/careers" />
+      <link rel="canonical" href="https://phiconsulting.org/careers" />
     </Helmet>
 
 

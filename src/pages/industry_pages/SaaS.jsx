@@ -265,7 +265,7 @@ const scrollToTop = () => {
         </Helmet>
 
      <Helmet>
-      <link rel="canonical" href="https://phi-verse.com/saas-consulting" />
+      <link rel="canonical" href="https://phiconsulting.org/saas-consulting" />
     </Helmet>
 
         <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>

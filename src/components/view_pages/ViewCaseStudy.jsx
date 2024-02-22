@@ -40,7 +40,7 @@ const viewCaseStudy = () => {
 
     const copyToClipboard = () => {
         
-        const textToCopy = `https://phi-verse.com/viewcasestudy/${caseId}`;
+        const textToCopy = `https://phiconsulting.org/viewcasestudy/${caseId}`;
     
         navigator.clipboard.writeText(textToCopy)
           .then(() => {

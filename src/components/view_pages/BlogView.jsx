@@ -18,7 +18,7 @@ const BlogView = () => {
 
     const copyToClipboard = () => {
         
-      const textToCopy = `https://phi-verse.com/blog/${urlName}`;
+      const textToCopy = `https://phiconsulting.org//blog/${urlName}`;
   
       navigator.clipboard.writeText(textToCopy)
         .then(() => {

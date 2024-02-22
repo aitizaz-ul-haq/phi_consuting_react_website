@@ -303,7 +303,7 @@ useScrollToTop();
         </Helmet>
 
         <Helmet>
-        <link rel="canonical" href="https://phi-verse.com/solutions/investors-relation" />
+        <link rel="canonical" href="https://phiconsulting.org/solutions/investors-relation" />
        </Helmet>
 
 

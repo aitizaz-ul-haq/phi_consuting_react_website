@@ -223,7 +223,7 @@ useEffect(() => {
       </Helmet>
 
      <Helmet>
-      <link rel="canonical" href="https://phi-verse.com/about-us" />
+      <link rel="canonical" href="https://phiconsulting.org/about-us" />
      </Helmet>
 
 
