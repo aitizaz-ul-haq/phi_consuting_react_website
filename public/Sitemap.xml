@@ -1,95 +1,91 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://phi-verse.com/home</loc>
+    <loc>https://phiconsulting.org/home</loc>
     <lastmod>2024-02-15</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://phi-verse.com/solutions</loc>
+    <loc>https://phiconsulting.org/solutions</loc>
     <lastmod>2024-02-15</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://phi-verse.com/solutions/go-to-market-strategy</loc>
+    <loc>https://phiconsulting.org/solutions/go-to-market-strategy</loc>
     <lastmod>2024-02-15</lastmod>
   </url>
   <url>
-    <loc>https://phi-verse.com/solutions/hr-recruitment</loc>
+    <loc>https://phiconsulting.org/solutions/hr-recruitment</loc>
     <lastmod>2024-02-15</lastmod>
   </url>
   <url>
-    <loc>https://phi-verse.com/solutions/investors-relation</loc>
+    <loc>https://phiconsulting.org/solutions/investors-relation</loc>
     <lastmod>2024-02-15</lastmod>
   </url>
   <url>
-    <loc>https://phi-verse.com/solutions/financial-consulting</loc>
+    <loc>https://phiconsulting.org/solutions/financial-consulting</loc>
     <lastmod>2024-02-15</lastmod>
   </url>
   <url>
-    <loc>https://phi-verse.com/blogs</loc>
-    <lastmod>2024-02-15</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://phi-verse.com/blog/</loc>
-    <lastmod>2024-02-15</lastmod>
-  </url>
-  <url>
-    <loc>https://phi-verse.com/case-studies</loc>
-    <lastmod>2024-02-15</lastmod>
-  </url>
-  <url>
-    <loc>https://phi-verse.com/casestudy/</loc>
-    <lastmod>2024-02-15</lastmod>
-  </url>
-  <url>
-    <loc>https://phi-verse.com/fin-tech-consulting</loc>
+    <loc>https://phiconsulting.org/blogs</loc>
     <lastmod>2024-02-15</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://phi-verse.com/cloud-consulting</loc>
+    <loc>https://phiconsulting.org/case-studies</loc>
+    <lastmod>2024-02-15</lastmod>
+  </url>
+  <url>
+    <loc>https://phiconsulting.org/casestudy/</loc>
+    <lastmod>2024-02-15</lastmod>
+  </url>
+  <url>
+    <loc>https://phiconsulting.org/fin-tech-consulting</loc>
     <lastmod>2024-02-15</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://phi-verse.com/saas-consulting</loc>
+    <loc>https://phiconsulting.org/cloud-consulting</loc>
     <lastmod>2024-02-15</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://phi-verse.com/iot-consulting</loc>
+    <loc>https://phiconsulting.org/saas-consulting</loc>
     <lastmod>2024-02-15</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://phi-verse.com/iaas-consulting</loc>
+    <loc>https://phiconsulting.org/iot-consulting</loc>
     <lastmod>2024-02-15</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://phi-verse.com/dev-ops-consulting</loc>
+    <loc>https://phiconsulting.org/iaas-consulting</loc>
     <lastmod>2024-02-15</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://phi-verse.com/value-creation</loc>
+    <loc>https://phiconsulting.org/dev-ops-consulting</loc>
+    <lastmod>2024-02-15</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://phiconsulting.org/value-creation</loc>
     <lastmod>2024-02-15</lastmod>
   </url>
   <url>
-    <loc>https://phi-verse.com/about-us</loc>
+    <loc>https://phiconsulting.org/about-us</loc>
     <lastmod>2024-02-15</lastmod>
   </url>
   <url>
-    <loc>https://phi-verse.com/careers</loc>
+    <loc>https://phiconsulting.org/careers</loc>
     <lastmod>2024-02-15</lastmod>
   </url>
   <url>
-    <loc>https://phi-verse.com/contact-us</loc>
+    <loc>https://phiconsulting.org/contact-us</loc>
     <lastmod>2024-02-15</lastmod>
   </url>
   <url>
-    <loc>https://phi-verse.com/apply</loc>
+    <loc>https://phiconsulting.org/apply</loc>
     <lastmod>2024-02-15</lastmod>
   </url>
 </urlset>

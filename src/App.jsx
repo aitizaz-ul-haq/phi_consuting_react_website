@@ -204,29 +204,29 @@ const ProtectedRoute = ({ children }) => {
   return isAuthenticated ? children : <Navigate to="/phi-remote-login" />;
 };
 
-const breadcrumbSchema =  {
+const breadcrumbSchema =   {
   "@context": "https://schema.org/", 
   "@type": "BreadcrumbList", 
   "itemListElement": [{
     "@type": "ListItem", 
     "position": 1, 
     "name": "Phi Consulting | Home",
-    "item": "https://phi-verse.com/home"  
+    "item": "https://phiconsulting.org/home"  
   },{
     "@type": "ListItem", 
     "position": 2, 
     "name": "Solutions",
-    "item": "https://phi-verse.com/solutions"  
+    "item": "https://phiconsulting.org/solutions"  
   },{
     "@type": "ListItem", 
     "position": 3, 
     "name": "Blogs",
-    "item": "https://phi-verse.com/blogs"  
+    "item": "https://phiconsulting.org/blogs"  
   },{
     "@type": "ListItem", 
     "position": 4, 
     "name": "About Us",
-    "item": "https://phi-verse.com/about-us"  
+    "item": "https://phiconsulting.org/about-us"  
   }]
 };
 

@@ -134,5 +134,5 @@ Allow: /contact-us
 Allow: /apply
 
 
-Sitemap: https://phi-verse.com/sitemap.xml
+Sitemap: https://phiconsulting.org/sitemap.xml
 
