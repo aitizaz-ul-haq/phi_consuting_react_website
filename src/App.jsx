@@ -194,6 +194,9 @@ import SaasBackGroundImage from "./assets/img/industry_backgrounds/SaaS_backgrou
 import OurWorkBackgroundImage from "./assets/img/our_work_page_img/our_work.png";
 import AboutPageBackgroundImage from "./assets/img/about_page/about_two.webp";
 import CareersPagebackgrounImage from "./assets/img/careers_banner.jpg";
+import BlogPageBackgroundImage from "./assets/img/blog_banner.jpg";
+import caseStudyBackgroundImage from "./assets/img/wrappers/casestudyblueback.jpg";
+import jill from "./assets/img/wrappers/jill.jpg";
 
 
 const App = () => {
@@ -224,6 +227,9 @@ const App = () => {
       OurWorkBackgroundImage,
       AboutPageBackgroundImage,
       CareersPagebackgrounImage,
+      BlogPageBackgroundImage,
+      caseStudyBackgroundImage,
+      jill,
       GtmBackgroundImage
     ];
     const preloadImages = (imageUrls) => {
