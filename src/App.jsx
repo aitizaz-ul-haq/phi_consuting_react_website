@@ -173,11 +173,14 @@ import AddValPageCont from './pages/dashboard/Other Pages/value creation/AddValP
 import EditValPageCont from './pages/dashboard/Other Pages/value creation/EditValPageCont';
 import ShowValPageCont from './pages/dashboard/Other Pages/value creation/ShowValPageCont';
 
-import ViewCasestudy from './components/view_pages/ViewCaseStudy';
-
-
 import { Helmet } from 'react-helmet';
 
+import HomepageBackgroundImage from "./assets/img/building-consulting-business.gif";
+import ServicesBackgroundImage from "./assets/img/services_page_img/services_image_3.jpg";
+import GtmBackgroundImage from "./assets/img/services_page_img/sales_consulting.webp"; 
+import FinanceBackgroundImage from "./assets/img/financial_consulting/finance1.jpg";
+import HrBackgroundImage from "./assets/img/phi_event_pics/two.jpg";
+import BuisnessBackgroundImage from "./assets/img/buisness_consulting/buisness_consulting_banner.jpg";
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -189,6 +192,25 @@ const App = () => {
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    const imageUrls = [
+      HomepageBackgroundImage,
+      ServicesBackgroundImage,
+      FinanceBackgroundImage,
+      HrBackgroundImage,
+      BuisnessBackgroundImage,
+      GtmBackgroundImage
+    ];
+    const preloadImages = (imageUrls) => {
+      imageUrls.forEach((url) => {
+        const img = new Image();
+        img.src = url;
+      });
+    };
+
+    preloadImages(imageUrls);
   }, []);
 
   const Layout = ({ children }) => (
