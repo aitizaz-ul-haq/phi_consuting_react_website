@@ -15754,6 +15754,7 @@ color: white;
     .blog-card-one {
         width: 360px;
         height: 553px;
+        overflow: hidden;
     }
     .blog-heading {
         font-family: var(--FF-PHI);

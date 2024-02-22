@@ -32,7 +32,7 @@ const BlogCard = ({blogs, id}) => {
             </div>
             </Link>
           </div>
-         
+        
     )
 }
 
