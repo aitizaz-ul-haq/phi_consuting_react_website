@@ -27,7 +27,7 @@ const ServicesPathSection = (
         actionIcon,
         assignIcon,
         testIcon,
-        implementIcon,
+        impIcon,
         monitorIcon,
         improveIcon
       }
@@ -62,7 +62,7 @@ const ServicesPathSection = (
         }, {
           heading: processSixHeading,
           description: processSixDescription,
-          icon: implementIcon
+          icon: impIcon
         }, {
           heading: processSevenHeading,
           description: processSevenDescription,

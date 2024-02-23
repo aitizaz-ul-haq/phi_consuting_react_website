@@ -11,6 +11,8 @@ import impIcon from "../assets/img/process_icons/implement.png";
 import monitorIcon from "../assets/img/process_icons/monitor.png";
 import improveIcon from "../assets/img/process_icons/improve.png";
 import goalIcon from "../assets/img/process_icons/goal.png";
+
+
 import salesicon from "../assets/img/solutions icons/GTM.png";
 import buisnessicon from "../assets/img/solutions icons/Investor Relations.png";
 import financialicon from "../assets/img/solutions icons/fin.png";
@@ -52,6 +54,8 @@ const Services = () => {
     processSixDescription: '',
     processSevenHeading: '',
     processSevenDescription: '',
+    processEightHeading: '',
+    processEightDescription: '',
     insightsHeading: '',
     insightsDescription: '',
     boardHeading: '',
@@ -97,12 +101,12 @@ useEffect(() => {
             processFourDescription: homepageData.processfourdescription,
             processFiveHeading: homepageData.processfiveheading,
             processFiveDescription: homepageData.processfivedescription,
-            processsixheading: homepageData.processsixheading,
-            processsixdescription: homepageData.processsixdescription,
-            processsevenheading: homepageData.processsevenheading,
-            processsevendescription: homepageData.processsevendescription,
-            processeightheading: homepageData.processeightheading,
-            processeightdescription: homepageData.processeightdescription,
+            processSixHeading: homepageData.processsixheading,
+            processSixDescription: homepageData.processsixdescription,
+            processSevenHeading: homepageData.processsevenheading,
+            processSevenDescription: homepageData.processsevendescription,
+            processEightHeading: homepageData.processeightheading,
+            processEightDescription: homepageData.processeightdescription,
             solutionsctaheading: homepageData.solutionsctaheading,
             solutionsctadescription: homepageData.solutionsctadescription,
           });
@@ -238,8 +242,10 @@ useEffect(() => {
                 improveIcon={improveIcon}
             />
 
+
+
       <article class="process-new">
-<video
+   <video
     src={processback}
     autoPlay
     loop
@@ -341,9 +347,9 @@ useEffect(() => {
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">{data.processsixheading}</div>
+                  <div class="process-new-heading">{data.processSixHeading}</div>
                   <div class="process-new-description-right-side">
-                    {data.processsixdescription}
+                    {data.processSixDescription}
                   </div>
                 </div>
               </div>
@@ -358,9 +364,9 @@ useEffect(() => {
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">{data.processsevenheading}</div>
+                  <div class="process-new-heading">{data.processSevenHeading}</div>
                   <div class="process-new-description">
-                    {data.processsevendescription}
+                    {data.processSevenDescription}
                   </div>
                 </div>
               </div>
@@ -373,9 +379,9 @@ useEffect(() => {
                   class="new-process-icon"
                 />
                 <div class="text-container">
-                  <div class="process-new-heading">{data.processeightheading}</div>
+                  <div class="process-new-heading">{data.processEightHeading}</div>
                   <div class="process-new-description-right-side">
-                   {data.processeightdescription}
+                   {data.processEightDescription}
                   </div>
                 </div>
               </div>
