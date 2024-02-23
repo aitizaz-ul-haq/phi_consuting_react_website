@@ -417,8 +417,7 @@ useEffect(() => {
               </div>
               {/* <div class="location-bar-right"> */}
                 
-                24615 E Applewood Dr
-24615 E Applewood Dr, Aurora, CO 80016, USA
+           <span className='address-string'> 3046 S Macon Cir, Aurora, CO, 80046</span>  
               
               {/* </div> */}
             </div>
@@ -431,8 +430,9 @@ useEffect(() => {
               </div>
               {/* <div class="location-bar-right"> */}
                
-               Phi Consulting
-2nd Floor, North Side, Gulberg Empire Plaza, Plot 33-40 Civic Center IBCEHS, 44000
+              <span className='address-string'> Phi Consulting
+2nd Floor, North Side, Gulberg Empire Plaza, Plot 33-40 Civic Center IBCEHS, 44000</span>
+              
               {/* </div> */}
             </div>
           </div>

@@ -1097,7 +1097,7 @@ header {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease 0s;
-    width: 279px;
+    width: 241px;
     height: 42px;
     display: flex;
     align-items: center;
@@ -1113,7 +1113,7 @@ header {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease 0s;
-    width: 279px;
+    width: 241px;
     height: 42px;
     display: flex;
     align-items: center;
@@ -1129,7 +1129,7 @@ header {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease 0s;
-    width: 279px;
+    width: 241px;
     height: 42px;
     display: flex;
     align-items: center;
@@ -1145,7 +1145,7 @@ header {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease 0s;
-    width: 279px;
+    width: 241px;
     height: 42px;
     display: flex;
     align-items: center;
@@ -1161,7 +1161,7 @@ header {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease 0s;
-    width: 279px;
+    width: 241px;
     height: 42px;
     display: flex;
     align-items: center;
@@ -1177,7 +1177,7 @@ header {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease 0s;
-    width: 279px;
+    width: 241px;
     height: 42px;
     display: flex;
     align-items: center;
@@ -1225,7 +1225,7 @@ header {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease 0s;
-    width: 279px;
+    width: 241px;
     height: 42px;
     display: flex;
     align-items: center;
@@ -2411,7 +2411,7 @@ padding: 1rem;
 }
 
 .footer-container {
-    background-color: var(--APPLE-GRAY);
+    background-color: rgba(255, 255, 255, 0.5); /* Adjusted for glass effect, using white with 50% opacity */
     color: var(--DARK-PHI-BLUE);
     padding: 0.2rem;
     display: flex;
@@ -2419,6 +2419,9 @@ padding: 1rem;
     justify-content: center;
     align-items: center;
     text-align: center;
+    backdrop-filter: blur(10px); /* Blur effect for background elements */
+    -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Optional: adds a subtle border for more glass-like effect */
 }
 
 .list-foolter {
@@ -5128,7 +5131,7 @@ align-items: center;
 .culture-heading {
     text-align: center;
     font-family: var(--FF-PHI);
-    font-size: var(--FS-HEAD);
+    font-size: 40px;
     font-weight: var(--FONT-THICKER);
     color: var(--WHITE-TEXT);
 }
@@ -5190,7 +5193,7 @@ align-items: center;
 .culture-poster-desc {
     text-align: center;
     font-family: var(--FF-PHI);
-    font-size: var(--FS-NANO-MICRO);
+    font-size: 22px;
     font-weight: var(--FONT-THICK);
     margin: 0;
     color: var(--WHITE-TEXT);
@@ -5365,7 +5368,7 @@ align-items: center;
 .benefit-desc {
     text-align: center;
     font-family: var(--FF-PHI);
-    font-size: var(--FS-DESC);
+    font-size: 22px;
     font-weight: var(--FONT-THICKER);
     margin: 0;
     color: var(--LIGHTER-DARK-PHI-BLUE);
@@ -13252,8 +13255,9 @@ display: none;
         text-align: left;
     }
 
-    .consult-button { 
+    .consult-button {
         margin-left: 0px;
+        width: 257px;
     }
 
     .client-desc { 
@@ -13664,6 +13668,10 @@ display: none;
 
 
 @media screen and (min-width: 1200px) {
+    .address-string {
+        font-size: 22px;
+        font-weight: 100;
+    }
     .cta-descrip {
         font-size: 22px;
     }
@@ -16584,12 +16592,12 @@ display: block;
 
 .meet-heading { 
     padding-top: 60px;
-    font-size: 33px;
+    font-size: 40px;
     font-weight: 100;
 }
 
 .meet-desc {
-    font-size: 20px;
+    font-size: 22px;
     width: 73%;
     font-weight: 100;
 }
@@ -16600,12 +16608,12 @@ display: block;
 
 .location-heading {
     padding-top: 30px;
-    font-size: 32px;
+    font-size: 40px;
     font-weight: 100;
 }
 
 .location-sub-heading {
-    font-size: 24px;
+    font-size: 22px;
     width: 73%;
     font-weight: 100;
 }
@@ -16645,12 +16653,12 @@ display: block;
 }
 
 .live-subheading {
-    font-size: 20px;
+    font-size: 22px;
     padding-bottom: 40px;
 }
 
 .live-desc {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .ach-heading-abouts-us {
@@ -16735,7 +16743,7 @@ display: none;
     text-align: left; 
     margin: 0;
     font-weight: var(--FONT-THICKY);
-    font-size: 16px;
+    font-size: 22px;
     color: var(--WHITE-TEXT);
     word-spacing: 4px;
     width: 100%;
@@ -16748,7 +16756,7 @@ display: none;
 
  .culture-desc {
     width: 82%;
-    font-size: 18px;
+    font-size: 22px;
  }
 
  .culture-poster-container {
@@ -16763,7 +16771,7 @@ display: none;
 }
 
 .jobs-heading {
-    font-size: 27px;
+    font-size: 40px;
     padding-bottom: 2rem;
 }
 
@@ -16771,7 +16779,7 @@ display: none;
     font-size: 20px;
 }
 .jobs-desc {
-    font-size: 18px;
+    font-size: 22px;
     width: 60%;
 }
 
@@ -16799,7 +16807,7 @@ display: none;
 }
 
 .perks-heading {
-    font-size: 27px;
+    font-size: 40px;
 }
 
 .perks-sub-heading {
@@ -16807,7 +16815,7 @@ display: none;
 }
 
 .perks-desc {
-    font-size: 18px;
+    font-size: 22px;
     width: 76%;
 }
 

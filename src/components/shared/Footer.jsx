@@ -95,8 +95,7 @@ const Footer = () => {
                   alt=""
                   width="20"
                   class="spacing" /></span
-              ><span className='address-in-footer'>24615 East Applewood Drive, 80016, Aurora, Colorado, United
-              States</span>
+              ><span className='address-in-footer'>3046 S Macon Cir, Aurora, CO, 80046</span>
             </li>
             <li class="list-bold">
               <span
@@ -114,7 +113,7 @@ const Footer = () => {
                   alt=""
                   width="20"
                   class="spacing" /></span
-              >info@phi.consulting
+              >contact@phi.consulting
             </li>
           </ul>
         </div>
