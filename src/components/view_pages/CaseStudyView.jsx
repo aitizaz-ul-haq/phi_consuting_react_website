@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import caseStudies from '../../data/caseStudies.json';
 import eye from "../../assets/img/eye.png"
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { Tooltip, Spin  } from 'antd';
