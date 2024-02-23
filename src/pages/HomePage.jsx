@@ -111,7 +111,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const heroSection = document.querySelector('.hero');
-    const scrollBadgeContainer = document.querySelector('.scroll-badge-container');
+    // const scrollBadgeContainer = document.querySelector('.scroll-badge-container');
     const leftControl = document.querySelector('.left-section-control');
     const rightControl = document.querySelector('.right-section-control');
   
@@ -122,12 +122,12 @@ const HomePage = () => {
         // When the bottom of the hero section is at or above the bottom of the viewport
         leftControl.style.display = 'block';
         rightControl.style.display = 'block';
-        scrollBadgeContainer.style.display = 'none'; // Hide scroll badge
+        // scrollBadgeContainer.style.display = 'none'; 
       } else {
         // When the hero section is fully in view
         leftControl.style.display = 'none';
         rightControl.style.display = 'none';
-        scrollBadgeContainer.style.display = 'block'; // Show scroll badge
+        // scrollBadgeContainer.style.display = 'block'; 
       }
     };
   
@@ -491,10 +491,6 @@ const HomePage = () => {
       gotoContacts={gotoContacts}
     />
 
-      <div className="scroll-badge-container">
-        <img src={ScrollDown} className='scroll-down-image-block' alt="scrolling doen image" />
-        <h3 className='scroller-text'>Scroll Down</h3>
-      </div>
 
       {/* <!-- Clients Section --> */}
       <article id="clients" className={`clients ${isVisible ? 'animate' : ''}`} ref={containerRef}>
