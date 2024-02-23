@@ -13927,7 +13927,7 @@ display: none;
     }
 
     .hero-desc {
-        font-weight: var(--FONT-THICKY);
+        font-weight: 100;
         font-size: 22px;
         margin-top: 10px;
         margin-bottom: 18px; 
