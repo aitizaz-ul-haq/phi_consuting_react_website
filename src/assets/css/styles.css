@@ -13699,7 +13699,7 @@ display: none;
         /* margin-right: 0px; */
     }
     .ach-heading {
-        font-size: 43px;
+        font-size: 40px;
         font-weight: 100;
         margin-bottom: 30px;
         color: var(--DARK-PHI-BLUE);
@@ -13928,7 +13928,7 @@ display: none;
 
     .hero-desc {
         font-weight: var(--FONT-THICKY);
-        font-size: 16px;
+        font-size: 22px;
         margin-top: 10px;
         margin-bottom: 18px; 
         color: var(--WHITE-TEXT);
@@ -14126,7 +14126,7 @@ display: none;
     }
 
     .value-heading {
-        font-size: 47px;
+        font-size: 40px;
         color: white;
         font-weight: 100;
     }
@@ -14308,24 +14308,24 @@ display: none;
       
 
       .services-heading {
-        font-size: 44px;
+        font-size: 40px;
         font-weight: 100;
     }
 
     .work-heading {
         margin-top: 9rem;
-        font-size: 43px;
+        font-size: 40px;
         font-weight: 100;
     }
 
     .testi-heading {
-        font-size: 43px;
+        font-size: 40px;
         /* color: white; */
         font-weight: 100;
     }
 
     .blog-title {
-        font-size: 43px;
+        font-size: 40px;
         font-weight: 100;
         /* color: white; */
     }
