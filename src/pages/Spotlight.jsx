@@ -12,6 +12,7 @@ const Spotlight = () => {
     const [caseStudies, setCaseStudies] = useState([]);
     const [loading, setLoading] = useState(true);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
     const [data, setData] = useState({
         heroheading:"",
         herodescription:"",
@@ -28,7 +29,7 @@ const Spotlight = () => {
         ctadescription:"",
           });
         
-          useEffect(() => {
+    useEffect(() => {
             const fetchHomePageData = async () => {
               try {
                 const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/valuecreationpage');
@@ -57,7 +58,7 @@ const Spotlight = () => {
             };
         
             fetchHomePageData();
-          }, []);
+    }, []);
 
     useScrollToTop();
 
@@ -108,6 +109,7 @@ const Spotlight = () => {
          <Helmet>
              <link rel="canonical" href="https://phiconsulting.org/case-studies" />
         </Helmet>
+
         {/* <!-- Hero Section --> */}
       <OurWorkHeroSection
          heroHeading={data.heroHeading}
@@ -115,6 +117,7 @@ const Spotlight = () => {
          windowWidth={windowWidth}
          gotoContacts={gotoContacts}
       />
+
             <article className="case-study-row" style={{ backgroundImage: `url(${casestudybluebacl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <section className="case-study-container-view">
                     {caseStudies.map(study => (
