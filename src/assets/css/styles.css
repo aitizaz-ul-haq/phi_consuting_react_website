@@ -1907,11 +1907,10 @@ padding: 1rem;
     display: flex;
     flex-direction: row;
     background-color: var(--DARK-PHI-BLUE);
-    background-image: url('../img/windows_new_cta.jpg'); /* Your background image URL */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed; /* Add parallax effect */
+    background-attachment: fixed; 
 }
 
 .call-container {
@@ -3987,42 +3986,7 @@ align-items: center;
 }
 /* =================================================Customer Experience page======================= */
 
-.hero-container-exp {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    overflow: hidden; /* Ensure content doesn't overflow */
-    padding-top: 100px;
-}
 
-.hero-container-exp::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(8, 23, 58,0.7);/* Adjust the color values and opacity */
-    z-index: -1; /* Place the pseudo-element behind the content */
-}
-
-.hero-container-exp::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../img/customer_experience_banner.webp'); /* Your background image URL */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed; /* Add parallax effect */
-    z-index: -2; /* Place the pseudo-element with the image behind the tint */
-}
 
 .why-phi-desc {
     text-align: center;
@@ -4031,22 +3995,6 @@ align-items: center;
     font-weight: var(--FONT-THICK);
 }
 
-.one-exp {
-    background: url('../img/customer_exp_images/customer_support.jpg') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
-    
-}
-
-.two-exp {
-    background: url('../img/customer_exp_images/soft_skills.webp') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
-}
-
-.three-exp {
-    background: url('../img/customer_exp_images/dev_team.webp') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
-}
-
-.four-exp {
-    background: url('../img/customer_exp_images/bilingual.webp') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
-}
 
 .ach-desc {
     font-family: var(--FF-PHI);
@@ -4127,47 +4075,47 @@ align-items: center;
     z-index: -2; /* Place the pseudo-element with the image behind the tint */
 }
 
-.one-bui-consul {
-    background: url('../img/buisness_consulting/expertise.avif') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
+/* .one-bui-consul {
+    background: url('../img/buisness_consulting/expertise.avif') center/cover no-repeat;
     
 }
 
 .two-bui-consul {
-    background: url('../img/buisness_consulting/tailord_solutions.jpg') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
+    background: url('../img/buisness_consulting/tailord_solutions.jpg') center/cover no-repeat; 
 }
 
 .three-bui-consul {
-    background: url('../img/buisness_consulting/collab.jpg') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
+    background: url('../img/buisness_consulting/collab.jpg') center/cover no-repeat;
 }
 
 .four-bui-consul {
-    background: url('../img/buisness_consulting/startegic.jpg') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
+    background: url('../img/buisness_consulting/startegic.jpg') center/cover no-repeat; 
 }
 
 .five-bui-consul {
-    background: url('../img/buisness_consulting/innovative.jpg') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
+    background: url('../img/buisness_consulting/innovative.jpg') center/cover no-repeat; 
     
 }
 
 .six-bui-consul {
-    background: url('../img/buisness_consulting/data-driven.jpg') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
+    background: url('../img/buisness_consulting/data-driven.jpg') center/cover no-repeat; 
 }
 
 .seven-bui-consul {
-    background: url('../img/buisness_consulting/global.webp') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
+    background: url('../img/buisness_consulting/global.webp') center/cover no-repeat; 
 }
 
 .eight-bui-consul {
-    background: url('../img/buisness_consulting/customer_centric.jpg') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
+    background: url('../img/buisness_consulting/customer_centric.jpg') center/cover no-repeat; 
 }
 
 .nine-bui-consul {
-    background: url('../img/buisness_consulting/cont_improv.jpg') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
+    background: url('../img/buisness_consulting/cont_improv.jpg') center/cover no-repeat; 
 }
 
 .ten-bui-consul {
-    background: url('../img/buisness_consulting/support.jpg') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
-}
+    background: url('../img/buisness_consulting/support.jpg') center/cover no-repeat; 
+} */
 
 /* ===========================================Financial Consulting========================= */
 .hero-container-fin-consul {
@@ -4640,14 +4588,14 @@ align-items: center;
 
 /* ================================Contact Us=========================== */
 
-.hero-container-phi-contact {
+/* .hero-container-phi-contact {
     position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: left;
     align-items: left;
-    overflow: hidden; /* Ensure content doesn't overflow */
+    overflow: hidden; 
     padding-top: 90px;
 }
 
@@ -4658,8 +4606,8 @@ align-items: center;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(8, 23, 58,0.7);/* Adjust the color values and opacity */
-    z-index: -1; /* Place the pseudo-element behind the content */
+    background-color: rgba(8, 23, 58,0.7);
+    z-index: -1; 
 }
 
 .hero-container-phi-contact::after {
@@ -4669,13 +4617,13 @@ align-items: center;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/contact_us_banner.jpg'); /* Your background image URL */
+    background-image: url('../img/contact_us_banner.jpg'); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top right;
-    background-attachment: fixed; /* Add parallax effect */
-    z-index: -2; /* Place the pseudo-element with the image behind the tint */
-}
+    background-attachment: fixed; 
+    z-index: -2; 
+} */
 
 .contact {
     display: flex;
@@ -9940,7 +9888,7 @@ display: none;
 .path-heading {
     font-size: 18px;
     margin-top: 3rem;
-    margin-bottom: -1rem;
+    margin-bottom: 2rem;
 }
 
 .circle-container-sales { 
