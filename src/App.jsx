@@ -321,7 +321,7 @@ const breadcrumbSchema =   {
         <Route path="/fin-tech-consulting" element={<Layout><FinTech /></Layout>} />
 
         {/* Single Pages */}
-        <Route path="/value-creation" element={<Layout><OurWork /></Layout>} />
+        {/* <Route path="/value-creation" element={<Layout><OurWork /></Layout>} /> */}
         {/* <Route path="value/:id" element={<Layout><Value /></Layout>} /> */}
         <Route path="/about-us" element={<Layout><AboutUs /></Layout>} />
         <Route path="/careers" element={<Layout><Careers /></Layout>} />
