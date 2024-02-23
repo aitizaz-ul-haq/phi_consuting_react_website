@@ -454,7 +454,7 @@ const HomePage = () => {
 
     <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
     <div className="left-section-control">
-      <div className="dot-container">
+      {/* <div className="dot-container">
   <div className={`dot ${currentSection === 'clients' ? 'active' : ''}`}></div>
   <div className={`dot ${currentSection === 'value' ? 'active' : ''}`}></div>
   <div className={`dot ${currentSection === 'services' ? 'active' : ''}`}></div>
@@ -462,9 +462,9 @@ const HomePage = () => {
   <div className={`dot ${currentSection === 'cta' ? 'active' : ''}`}></div>
   <div className={`dot ${currentSection === 'test' ? 'active' : ''}`}></div>
   <div className={`dot ${currentSection === 'achievement' ? 'active' : ''}`}></div>
-  <div className={`dot ${currentSection === 'blog' ? 'active' : ''}`}></div>
+  <div className={`dot ${currentSection === 'blog' ? 'active' : ''}`}></div> */}
   {/* <div className={`dot ${currentSection === 'banner' ? 'active' : ''}`}></div> */}
-      </div>
+      {/* </div> */}
 
      
    
