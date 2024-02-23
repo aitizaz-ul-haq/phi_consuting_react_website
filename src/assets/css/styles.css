@@ -36,7 +36,7 @@
    --FS-LARGE-HEADING:38px;
   
     /* FONT FAMILY */
-    --FF-PHI:'DM Sans', sans-serif;
+    --FF-PHI:"EB Garamond", serif;
 
   }
 
@@ -2742,9 +2742,9 @@ padding: 1rem;
     border-bottom-left-radius: 15px;
     display: flex;
     flex-direction: row;
-    justify-content: right;
-    align-items: right;
-    text-align: right;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     color:#172955;
     font-size: 18px;
     font-weight: 600;
@@ -2785,9 +2785,9 @@ padding: 1rem;
     border-radius: 15px;
     display: flex;
     flex-direction:row-reverse;
-    justify-content: left;
-    align-items: left;
-    text-align: left;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     color:#172955;
     font-size: 18px;
     font-weight: 600;
@@ -8050,7 +8050,7 @@ width: 90%;
 }
 
 .banner-desc { 
-    font-size: 16px;
+    font-size: 22px;
 }
 
 .blog-title {
@@ -13265,7 +13265,7 @@ display: none;
     }
 
     .value-desc {
-        font-size: 27px;
+        font-size: 22px;
         padding-left: 2rem;
         font-weight: 100;
         color: white;
@@ -13285,7 +13285,7 @@ display: none;
     }
 
     .services-desc {
-        font-size: 20px;
+        font-size: 22px;
         font-weight: 100;
     }
 
@@ -13664,6 +13664,9 @@ display: none;
 
 
 @media screen and (min-width: 1200px) {
+    .cta-descrip {
+        font-size: 22px;
+    }
     .blog-content-preview {
         overflow: hidden;
         display: -webkit-box;
@@ -13970,7 +13973,7 @@ display: none;
 
     .testi-desc {
         margin-bottom: 3rem;
-        font-size: 23px;
+        font-size: 22px;
         /* color: white; */
         font-weight: 100;
     }
@@ -15702,7 +15705,7 @@ color: white;
     }
     
     .blog-desc {
-        font-size: 23px;
+        font-size: 22px;
         /* color: white; */
         font-weight: 100;
         margin-bottom: 4rem;
@@ -15867,7 +15870,7 @@ display: none;
     width: 70%;
     margin-top: 1rem;
     margin-bottom: 4rem;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 100;
 }
 
@@ -16415,7 +16418,7 @@ display: none;
     width: 70%;
     margin-top: 1rem;
     margin-bottom: 4rem;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 100;
 }
 
