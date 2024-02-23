@@ -3400,7 +3400,7 @@ padding: 1rem;
     margin-top: 5rem;
     text-align: center;
     font-family: var(--FF-PHI);
-    font-size: var(--FS-HEAD);
+    font-size: 40px;
     font-weight: var(--FONT-THICKER);
     margin-top: 6rem;
     color: var(--WHITE-TEXT);
@@ -4838,8 +4838,8 @@ align-items: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .meet-people-train {
@@ -12170,14 +12170,14 @@ display: none;
     align-items: center;
 }
 .sales-heading {
-    font-size: 45px;
+    font-size: 40px;
     width: 50%;
     font-weight: 100;
     color: #081739;
 }
 
 .sales-banner-desc { 
-    font-size: 19px;
+    font-size: 22px;
     color: #081739;
 }
 
@@ -13743,11 +13743,11 @@ display: none;
 
     .barcard-description-inner {
         color: var(--LIGHTER-DARK-PHI-BLUE);
-        font-size: 20px;
+        font-size: 22px;
         font-weight: 300;
     }
     .barcard-title {
-        font-size: 42px;
+        font-size: 40px;
         color: #00BCD4;
         font-weight: 300;
     }
@@ -14783,7 +14783,7 @@ display: none;
     }
 
     .styling-articals {
-        padding: 8rem;
+        padding: 0rem;
     }
 
     .styling-artical-sections {
@@ -15813,7 +15813,7 @@ display: none;
     text-align: left; 
     margin: 0;
     font-weight: var(--FONT-THICKY);
-    font-size: 16px;
+    font-size: 22px;
     color: var(--WHITE-TEXT);
     word-spacing: 4px;
  }
@@ -15825,7 +15825,7 @@ display: none;
 
  .strategic-heading {
     font-family: var(--FF-PHI);
-    font-size: 44px;
+    font-size: 40px;
     /* font-weight: var(--FONT-THICKER); */
     margin-top: 30px;
     color: var(--DARK-PHI-BLUE);
@@ -15860,7 +15860,7 @@ display: none;
 }
 
 .path-heading {
-    font-size: 47px;
+    font-size: 40px;
     margin-top: 4rem;
     margin-bottom: 20px;
     font-weight: 100;
@@ -16034,8 +16034,8 @@ display: none;
  .hero-desc-sales { 
     text-align: left; 
     margin: 0;
-    font-weight: var(--FONT-THICKY);
-    font-size: 16px;
+    font-weight: 100;
+    font-size: 22px;
     color: var(--WHITE-TEXT);
     word-spacing: 4px;
     width: 100%;
@@ -16045,7 +16045,7 @@ display: none;
     text-align: left; 
     margin: 0;
     font-weight: var(--FONT-THICKY);
-    font-size: 16px;
+    font-size: 22px;
     color: var(--WHITE-TEXT);
     word-spacing: 4px;
     width: 100%;
@@ -16055,7 +16055,7 @@ display: none;
     text-align: left; 
     margin: 0;
     font-weight: var(--FONT-THICKY);
-    font-size: 16px;
+    font-size: 22px;
     color: var(--WHITE-TEXT);
     word-spacing: 4px;
     width: 100%;
@@ -16065,7 +16065,7 @@ display: none;
     text-align: left; 
     margin: 0;
     font-weight: var(--FONT-THICKY);
-    font-size: 16px;
+    font-size: 22px;
     color: var(--WHITE-TEXT);
     word-spacing: 4px;
     width: 100%;
@@ -16075,7 +16075,7 @@ display: none;
     text-align: left; 
     margin: 0;
     font-weight: var(--FONT-THICKY);
-    font-size: 16px;
+    font-size: 22px;
     color: var(--WHITE-TEXT);
     word-spacing: 4px;
     width: 100%;
@@ -16085,7 +16085,7 @@ display: none;
     text-align: left; 
     margin: 0;
     font-weight: var(--FONT-THICKY);
-    font-size: 16px;
+    font-size: 22px;
     color: var(--WHITE-TEXT);
     word-spacing: 4px;
     width: 100%;
@@ -16230,7 +16230,7 @@ display: none;
     text-align: left; 
     margin: 0;
     font-weight: var(--FONT-THICKY);
-    font-size: 16px;
+    font-size: 22px;
     color: var(--WHITE-TEXT);
     word-spacing: 4px;
     width: 100%;
@@ -16269,7 +16269,7 @@ display: none;
     text-align: left; 
     margin: 0;
     font-weight: var(--FONT-THICKY);
-    font-size: 16px;
+    font-size: 22px;
     color: var(--WHITE-TEXT);
     word-spacing: 4px;
     width: 100%;
@@ -16304,7 +16304,7 @@ display: none;
     text-align: left; 
     margin: 0;
     font-weight: var(--FONT-THICKY);
-    font-size: 16px;
+    font-size: 22px;
     color: var(--WHITE-TEXT);
     word-spacing: 4px;
     width: 100%;
@@ -16375,7 +16375,7 @@ display: none;
     text-align: left; 
     margin: 0;
     font-weight: var(--FONT-THICKY);
-    font-size: 16px;
+    font-size: 22px;
     color: var(--WHITE-TEXT);
     word-spacing: 4px;
     width: 100%;
@@ -16403,7 +16403,7 @@ display: none;
 }
 
 .why-phi-heading {
-    font-size: 42px;
+    font-size: 40px;
     width: 94%;
     font-weight: 100;
 }
@@ -16457,7 +16457,7 @@ display: block;
     text-align: left; 
     margin: 0;
     font-weight: var(--FONT-THICKY);
-    font-size: 16px;
+    font-size: 22px;
     color: var(--WHITE-TEXT);
     word-spacing: 4px;
     width: 100%;
@@ -16475,6 +16475,7 @@ display: block;
 .location-cards-one {
     flex-direction: row;
     padding: 0;
+    width: 100%;
 }
 
 .location-bar-right {
@@ -16507,7 +16508,7 @@ display: block;
 }
 
 .about-phi-heading { 
-    font-size: 38px;
+    font-size: 40px;
     padding-top: 20px;
     font-weight: 100;
 }
@@ -16690,7 +16691,7 @@ display: none;
     text-align: left; 
     margin: 0;
     font-weight: var(--FONT-THICKY);
-    font-size: 16px;
+    font-size: 22px;
     color: var(--WHITE-TEXT);
     word-spacing: 4px;
     width: 100%;
