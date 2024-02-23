@@ -41,7 +41,7 @@ const Header = () => {
         <Link className="dropdown-btn"><span className="dropdown-btn">Insights</span></Link>
           <div className="dropdown-content">
             <Link to="/blogs"> <img src={insughtsone} alt="" width="34" height="34" className='header-icons-spacing' /><span>Blogs</span></Link>
-            <Link to="/case-studies"> <img src={insughtstwo} alt="" width="34" height="34" className='header-icons-spacing' /><span>Case Studies</span></Link>
+            {/* <Link to="/case-studies"> <img src={insughtstwo} alt="" width="34" height="34" className='header-icons-spacing' /><span>Case Studies</span></Link> */}
           </div>
         </div>
 
@@ -60,7 +60,7 @@ const Header = () => {
             <Link  className="inner-header">Industry</Link>
         </span> */}
         <span>
-            <Link to="/value-creation" className="inner-header">Value Creation</Link>
+            <Link to="/case-studies" className="inner-header">Case Studies</Link>
             </span>
         <span
           > <Link to="/about-us" className="inner-header">About us</Link></span

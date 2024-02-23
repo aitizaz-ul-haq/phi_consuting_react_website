@@ -6,9 +6,58 @@ import { Spin } from 'antd';
 import { Helmet } from 'react-helmet';
 import casestudybluebacl from "../assets/img/wrappers/casestudyblueback.jpg";
 
+import OurWorkHeroSection from '../components/OurWork_page_Components/OurWork Hero Section/OurWorkHeroSection';
+
 const Spotlight = () => {
     const [caseStudies, setCaseStudies] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [data, setData] = useState({
+        heroheading:"",
+        herodescription:"",
+        valuecreationheading:"",
+        valuecreationdescription:"",
+        phicreatesheading:"",
+        ourwayoneheading:"",
+        ourwayonedescription:"",
+        ourwaytwoheading:"",
+        ourwaytwodescription:"",
+        ourwaythreeheading:"",
+        ourwaythreedescription:"",
+        ctaheading:"",
+        ctadescription:"",
+          });
+        
+          useEffect(() => {
+            const fetchHomePageData = async () => {
+              try {
+                const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/valuecreationpage');
+                console.log(`your data`, response.data);
+                if (response.data && response.data.length > 0) {
+                  const homepageData = response.data[0]; 
+                  setData({
+                    heroHeading: homepageData.heroheading,
+                    heroDescription: homepageData.herodescription,
+                    valuecreationheading: homepageData.valuecreationheading,
+                    valuecreationdescription: homepageData.valuecreationdescription,
+                    phicreatesheading: homepageData.phicreatesheading,
+                    ourwayoneheading: homepageData.ourwayoneheading,
+                    ourwayonedescription: homepageData.ourwayonedescription,
+                    ourwaytwoheading: homepageData.ourwaytwoheading,
+                    ourwaytwodescription: homepageData.ourwaytwodescription,
+                    ourwaythreeheading: homepageData.ourwaythreeheading,
+                    ourwaythreedescription: homepageData.ourwaythreedescription,
+                    ctaheading: homepageData.ctaheading,
+                    ctadescription: homepageData.ctadescription,
+                  });
+                }
+              } catch (error) {
+                console.error("Error fetching homepage data:", error);
+              }
+            };
+        
+            fetchHomePageData();
+          }, []);
 
     useScrollToTop();
 
@@ -30,7 +79,7 @@ const Spotlight = () => {
         const handleScroll = () => {
             const caseStudyRow = document.querySelector('.case-study-row');
             if (caseStudyRow) {
-                const speed = 0.5; 
+                const speed = 0.1; 
                 const yOffset = window.pageYOffset;
                 caseStudyRow.style.backgroundPosition = `center ${yOffset * speed}px`;
             }
@@ -45,6 +94,11 @@ const Spotlight = () => {
         return <div className="spinner-container"><Spin size="large" /></div>;
     }
 
+    const gotoContacts = () => {
+        window.location.href = '/contact-us';
+      }
+    
+
     return (
         <>
         <Helmet>
@@ -54,6 +108,13 @@ const Spotlight = () => {
          <Helmet>
              <link rel="canonical" href="https://phiconsulting.org/case-studies" />
         </Helmet>
+        {/* <!-- Hero Section --> */}
+      <OurWorkHeroSection
+         heroHeading={data.heroHeading}
+         heroDescription={data.heroDescription}
+         windowWidth={windowWidth}
+         gotoContacts={gotoContacts}
+      />
             <article className="case-study-row" style={{ backgroundImage: `url(${casestudybluebacl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <section className="case-study-container-view">
                     {caseStudies.map(study => (

@@ -3864,9 +3864,9 @@ align-items: center;
     color: var(--DARK-PHI-BLUE);
 }
 
-.case-study-row {
+/* .case-study-row {
     margin-top: 8rem;
-}
+} */
 
 .case-study-container-view {
     padding: 4rem;
@@ -6720,9 +6720,9 @@ width: 90%;
     color: var(--APPLE-GRAY);
 }
 
-.case-study-row {
+/* .case-study-row {
     margin-top: 4rem;
-}
+} */
 
 .case-study-container-view {
     padding: 0.5rem;
@@ -12058,9 +12058,9 @@ display: none;
         width: 322px;
         height: auto;
     }
-    .case-study-row {
+    /* .case-study-row {
         margin-top: 6rem;
-    }
+    } */
 
     .blog-card-one {
         width: 400px;
