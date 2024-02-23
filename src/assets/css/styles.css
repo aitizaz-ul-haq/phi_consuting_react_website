@@ -4946,6 +4946,24 @@ align-items: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url('../img/site-office-phi-consulting.webp'); /* Update with your image path */
+    background-size: cover; /* Ensure it covers the entire div and remains responsive */
+    background-position: center 43%;; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    width: 100%; /* Ensures the div takes up the full width of its container */
+    height: auto; /* Adjust based on content, or set a specific height */
+   color: white;
+}
+
+.location-cards-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Example overlay: black with 50% opacity */
+    z-index: 1; /* Ensures the overlay is above the background image but below the content */
 }
 
 .location-cards-one {
@@ -4981,7 +4999,8 @@ align-items: center;
     font-family: var(--FF-PHI);
     font-size: var(--FS-MINI-HEADING);
     font-weight: var(--FONT-THICKER);
-    color: var(--DARK-PHI-BLUE);
+    color: white;
+    text-decoration: underline;
 }
 
 .location-card-desc {
