@@ -3129,7 +3129,7 @@ padding: 1rem;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/services_page_img/sales_consulting.webp'); 
+    background-image: url('../img/gtm-strategy-phi-consulting.webp'); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -4067,10 +4067,10 @@ align-items: center;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/buisness_consulting/buisness_consulting_banner.jpg'); /* Your background image URL */
+    background-image: url('../img/investor-relation-phi-consulting.webp'); /* Your background image URL */
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center 0%;
     background-attachment: fixed; /* Add parallax effect */
     z-index: -2; /* Place the pseudo-element with the image behind the tint */
 }
@@ -4147,24 +4147,12 @@ align-items: center;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/financial_consulting/finance1.jpg'); /* Your background image URL */
+    background-image: url('../img/financial-phi-consulting.webp'); /* Your background image URL */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed; /* Add parallax effect */
     z-index: -2; /* Place the pseudo-element with the image behind the tint */
-}
-
-.two-fin-consul {
-    background: url('../img/financial_consulting/future.webp') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
-}
-
-.three-fin-consul {
-    background: url('../img/buisness_consulting/collab.jpg') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
-}
-
-.four-fin-consul {
-    background: url('../img/financial_consulting/startups.jpg') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
 }
 
 /* ==============================================HR and Consulting ======================================= */
@@ -4198,7 +4186,7 @@ align-items: center;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/phi_event_pics/two.JPG'); /* Your background image URL */
+    background-image: url('../img/hr-recruitment-phi-consulting.webp'); /* Your background image URL */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -4395,7 +4383,7 @@ align-items: center;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/about_page/about_two.webp'); /* Your background image URL */
+    background-image: url('../img/about-us-phi-consulting.webp'); /* Your background image URL */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

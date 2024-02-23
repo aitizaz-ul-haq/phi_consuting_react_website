@@ -178,10 +178,10 @@ import { Helmet } from 'react-helmet';
 import HomepageBackgroundImage from "./assets/img/building-consulting-business.gif";
 
 import ServicesBackgroundImage from "./assets/img/services_page_img/services_image_3.jpg";
-import GtmBackgroundImage from "./assets/img/services_page_img/sales_consulting.webp"; 
-import FinanceBackgroundImage from "./assets/img/financial_consulting/finance1.jpg";
-import HrBackgroundImage from "./assets/img/phi_event_pics/two.jpg";
-import BuisnessBackgroundImage from "./assets/img/buisness_consulting/buisness_consulting_banner.jpg";
+import GtmBackgroundImage from "./assets/img/gtm-strategy-phi-consulting.webp"; 
+import FinanceBackgroundImage from "./assets/img/financial-phi-consulting.webp";
+import HrBackgroundImage from "./assets/img/hr-recruitment-phi-consulting.webp";
+import BuisnessBackgroundImage from "./assets/img/investor-relation-phi-consulting.webp";
 
 import FintechBackgroundImage from "./assets/img/industry_backgrounds/fintech_background.jpeg";
 import DevopsBackgroundImage from "./assets/img/industry_backgrounds/DevOps-background.jpg";
@@ -191,7 +191,7 @@ import IotBackgroundImage from "./assets/img/industry_backgrounds/iot-background
 import SaasBackGroundImage from "./assets/img/industry_backgrounds/SaaS_background.jpg";
 
 import OurWorkBackgroundImage from "./assets/img/our_work_page_img/our_work.png";
-import AboutPageBackgroundImage from "./assets/img/about_page/about_two.webp";
+import AboutPageBackgroundImage from "./assets/img/about-us-phi-consulting.webp";
 import CareersPagebackgrounImage from "./assets/img/careers_banner.jpg";
 import BlogPageBackgroundImage from "./assets/img/blog_banner.jpg";
 import caseStudyBackgroundImage from "./assets/img/wrappers/casestudyblueback.jpg";
