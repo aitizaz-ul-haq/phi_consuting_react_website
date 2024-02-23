@@ -1,17 +1,17 @@
 import React from 'react';
 import { Tooltip } from 'antd';
 import { TypeAnimation } from 'react-type-animation';
-import CustomVideo from '../../shared/videoComp/CustomVideo';
-import david from "../../../assets/video/world.mp4";
+// import CustomVideo from '../../shared/videoComp/CustomVideo';
+// import david from "../../../assets/video/world.mp4";
 
-
+{/* <CustomVideo src={david}/> */}
 
 const HeroSection = ({ heroHeading, heroDescription, windowWidth, gotoContacts }) => {
     return(
         <article className="hero">
         <section className="hero-container">
           <div className="hero-content">
-            {windowWidth >= 1200 && <CustomVideo src={david} />}
+            {windowWidth >= 1200 && '' }
             <h1 className="hero-heading">
               <span className="phi">
                 {windowWidth >= 1200 ? (
