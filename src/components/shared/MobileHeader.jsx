@@ -145,9 +145,7 @@ const MobileHeader = () => {
                     <a href="/blogs" onClick={closeMobileMenu}>
                       <img src={blogicon} className='dropdown-icon' alt="" width={28} height={28}/> <span>Blogs</span>
                     </a>
-                    <a href="/case-studies" onClick={closeMobileMenu}>
-                      <img src={casestudy} className='dropdown-icon' alt="" width={28} height={28}/> <span>Case Studies</span>
-                    </a>
+                   
                     
                   </div>
               </li>
@@ -172,9 +170,12 @@ const MobileHeader = () => {
                 </a>
               </li> */}
               <li className='list-element-mobile-menu'>
-                <a href="/value-creation" className="header-mobile-link" onClick={closeMobileMenu}>
+                {/* <a href="/value-creation" className="header-mobile-link" onClick={closeMobileMenu}>
                 <img src={valuecreation} className='mobile-icons' alt="" width={32} height={32}/> Value Creation
-                </a>
+                </a> */}
+                 <a href="/case-studies" className="header-mobile-link" onClick={closeMobileMenu}>
+                      <img src={casestudy} className='mobile-icons' alt="" width={32} height={32}/> <span>Case Studies</span>
+                    </a>
               </li>
               <li className='list-element-mobile-menu'>
                 <a href="/about-us" className="header-mobile-link" onClick={closeMobileMenu}>

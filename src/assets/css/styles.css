@@ -594,7 +594,7 @@ header {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease 0s;
-    width: 179px;
+    width: 158px;
     height: 42px;
     display: flex;
     align-items: center;
@@ -1209,7 +1209,7 @@ header {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease 0s;
-    width: 279px;
+    width: 237px;
     height: 42px;
     display: flex;
     align-items: center;
@@ -1241,7 +1241,7 @@ header {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease 0s;
-    width: 279px;
+    width: 237px;
     height: 42px;
     display: flex;
     align-items: center;
@@ -1861,7 +1861,7 @@ padding: 1rem;
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease 0s;
-    width: 179px;
+    width: 152px;
     height: 42px;
     display: flex;
     align-items: center;
@@ -4953,6 +4953,7 @@ align-items: center;
     width: 100%; /* Ensures the div takes up the full width of its container */
     height: auto; /* Adjust based on content, or set a specific height */
    color: white;
+   position: relative;
 }
 
 .location-cards-container::before {
@@ -4962,9 +4963,14 @@ align-items: center;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Example overlay: black with 50% opacity */
+    background-color: rgba(8, 23, 58,0.7); 
     z-index: 1; /* Ensures the overlay is above the background image but below the content */
 }
+
+.location-cards-container > * {
+    position: relative; /* Ensure content sits above the overlay */
+    z-index: 1;
+  }
 
 .location-cards-one {
     display: flex;
@@ -6221,7 +6227,8 @@ background-color: rgb(243, 241, 241);
 
     .consult-button {
         padding: 8px 25px;
-        width: 299px;
+        width: 258px;
+    margin-left: 20px;
     }
 
     .client-container { 
@@ -6880,7 +6887,7 @@ display: none;
 
 
  .consult-button-services-page { 
-    margin-left:20px;
+    margin-left:40px;
  }
 
  .strategic-heading {
@@ -7051,7 +7058,7 @@ display: none;
  }
 
  .consult-button-bui-consul { 
-    margin-left: 20px;
+    margin-left: 42px;
  }
 
  /* ========================================sales page========================= */
@@ -7184,7 +7191,7 @@ display: none;
  }
 
  .consult-button-sales {
-    margin-left: 20px;
+    margin-left: 38px;
  }
 
  /* ============================================hr page=========================== */
@@ -7206,7 +7213,7 @@ display: none;
  }
 
  .consult-button-hr-consul {
-    margin-left: 20px;
+    margin-left: 38px;
  }
 
  /* ================================financial consulting============= */
@@ -7231,7 +7238,7 @@ display: none;
  }
 
  .consult-button-fin-consul {
-    margin-left: 20px;
+    margin-left: 38px;
  }
 
  /* ====================================exp consulting====================== */
@@ -7279,7 +7286,7 @@ display: none;
  }
 
  .consult-button-our-work {
-    margin-left: 20px;
+    margin-left: 41px;
  }
 
  .full-section-insights-our-work {
@@ -7346,7 +7353,7 @@ display: none;
  }
 
  .consult-button-phi-about {
-    margin-left: 20px;
+    margin-left: 39px;
  }
 
  .pics-lane {
@@ -7541,7 +7548,7 @@ display: none;
  }
 
  .consult-button-blog {
-    margin-left: 20px;
+    margin-left: 39px;
  }
 
  .bloged-box {
@@ -7831,8 +7838,8 @@ display: none;
 
     .consult-button {
         padding: 8px 25px;
-        width: 299px;
-        margin-left: 1.2rem;
+        width: 257px;
+        margin-left: 39px;
     }
 
     .client-container { 
@@ -8180,7 +8187,7 @@ display: none;
  }
 
  .consult-button-services-page { 
-    margin-left:38px;
+    margin-left:64px;
  }
 
  .strategic-heading {
@@ -8346,7 +8353,7 @@ display: none;
  }
 
  .consult-button-bui-consul { 
-    margin-left: 38px;
+    margin-left: 62px;
  }
 
  /* =============================sales page================================== */
@@ -8474,7 +8481,7 @@ display: none;
  }
 
  .consult-button-sales {
-    margin-left: 45px;
+    margin-left: 59px;
  }
 
  /* =====================================hr page =============================== */
@@ -8498,7 +8505,7 @@ display: none;
  }
 
  .consult-button-hr-consul {
-    margin-left: 45px;
+    margin-left: 63px;
  }
 
  /* ========================================financila consulting====== */
@@ -8521,7 +8528,7 @@ display: none;
  }
 
  .consult-button-fin-consul {
-    margin-left: 45px;
+    margin-left: 65px;
  }
 
  /* =======================================exp consulting===================== */
@@ -8562,18 +8569,18 @@ display: none;
  }
 
  .consult-button-our-work {
-    margin-left: 45px;
+    margin-left: 65px;
  }
 
 /* ==========================================about us======================== */
 .consult-button-phi-about {
-    margin-left: 45px;
+    margin-left: 61px;
  }
 
  /* ====================================blog page========================== */
 
  .consult-button-blog {
-    margin-left: 45px;
+    margin-left: 61px;
  }
 
  /* ======================================careers page==================== */
@@ -8619,6 +8626,9 @@ display: none;
 
 }
 @media screen and (min-width: 375px) {
+    .consult-button-blog {
+        margin-left: 68px;
+     }
     .location-cards-one { 
         width: 52%;
     }
@@ -8673,7 +8683,7 @@ font-size : 14px;
 }
 
 .consult-button {
-    margin-left: 1.4rem;
+    margin-left: 36px;
 }
 .client-heading {
 font-size : 23px;
@@ -8941,7 +8951,7 @@ display: none;
  }
 
  .consult-button-services-page { 
-    margin-left:47px;
+    margin-left:71px;
  }
 
  .strategic-heading {
@@ -9106,7 +9116,7 @@ display: none;
  }
 
  .consult-button-bui-consul { 
-    margin-left: 44px;
+    margin-left: 66px;
  }
 
  /* =====================================================sales consulting page===== */
@@ -9258,7 +9268,7 @@ display: none;
  }
 
  .consult-button-sales {
-    margin-left: 45px;
+    margin-left: 66px;
  }
 
  /* =========================================================hr consulting page========= */
@@ -9286,7 +9296,7 @@ display: none;
  }
 
  .consult-button-hr-consul {
-    margin-left: 45px;
+    margin-left: 68px;
  }
 
  /* ==========================================financial consulting====== */
@@ -9313,7 +9323,7 @@ display: none;
  }
 
  .consult-button-fin-consul {
-    margin-left: 45px;
+    margin-left: 68px;
  }
 /* =======================================exp consulting=============== */
 
@@ -9365,7 +9375,7 @@ display: none;
  }
 
  .consult-button-phi-about {
-    margin-left: 45px;
+    margin-left: 70px;
  }
 
  .locations-desc br{
@@ -9404,9 +9414,7 @@ display: none;
     padding: 1rem;
  }
 
- .consult-button-phi-about {
-    margin-left: 45px;
- }
+ 
 
  /* ==============================================careers page============== */
 
@@ -9528,7 +9536,7 @@ display : none;
 text-align : center;
 }
 .consult-button {
-    margin-left: 1.9rem;
+    margin-left: 54px;
 }
 .line-top {
 font-size : 17px;
@@ -9854,7 +9862,7 @@ display: none;
  }
 
  .consult-button-services-page { 
-    margin-left:62px;
+    margin-left:87px;
  }
 
  .strategic-heading {
@@ -10019,7 +10027,7 @@ display: none;
  }
 
  .consult-button-bui-consul { 
-    margin-left: 64px;
+    margin-left: 90px;
  }
 
  /* ======================================sales consulting page ================= */
@@ -10052,7 +10060,7 @@ display: none;
     text-align: center;
 }
  .consult-button-sales {
-    margin-left: 45px;
+    margin-left: 88px;
  }
 
  .hero-content-sales {
@@ -10184,9 +10192,7 @@ display: none;
     padding: 1rem;
  }
 
- .consult-button-sales { 
-    margin-left: 64px;
- }
+
 
  .ach-heading-sales {
     font-size: 18px;
@@ -10200,13 +10206,13 @@ display: none;
  /* =============================================hr consulting====================== */
 
  .consult-button-hr-consul {
-    margin-left: 70px;
+    margin-left: 88px;
  }
 
  /* ===============================================financial consulting=============== */
 
  .consult-button-fin-consul {
-    margin-left: 70px;
+    margin-left: 93px;
  }
 
  /* ========================================exp consulting==================== */
@@ -10249,7 +10255,7 @@ display: none;
  }
  
  .consult-button-our-work {
-    margin-left: 70px;
+    margin-left: 90px;
  }
 
  /* =================================About us======================= */
@@ -10258,12 +10264,12 @@ display: none;
 }
 
 .consult-button-phi-about {
-    margin-left: 70px;
+    margin-left: 90px;
  }
 
 /* ======================================blog page============================ */
 .consult-button-blog {
-    margin-left: 70px;
+    margin-left: 91px;
  }
 
  /* ========================================careers page================ */
@@ -10342,7 +10348,7 @@ display : none;
 font-size : 16px;
 }
 .consult-button {
-margin-left : 7rem;
+margin-left : 133px;
 }
 .client-content {
 width : 84%;
@@ -10586,7 +10592,7 @@ display: none;
  }
 
  .consult-button-services-page { 
-    margin-left:153px;
+    margin-left:171px;
  }
 
  .strategic-heading {
@@ -10750,12 +10756,12 @@ display: none;
  }
 
  .consult-button-bui-consul { 
-    margin-left: 149px;
+    margin-left: 167px;
  }
 
  /* =====================================sales consulting page==================== */
  .consult-button-sales {
-    margin-left: 132px;
+    margin-left: 169px;
  }
 
  .hero-content-sales {
@@ -10867,7 +10873,7 @@ display: none;
  /* =======================================hr consulting page===================== */
 
  .consult-button-hr-consul {
-    margin-left: 156px;
+    margin-left: 168px;
  }
 
  .hero-content-hr-consul {
@@ -10888,7 +10894,7 @@ display: none;
  /* ======================================financial consultin======================== */
 
  .consult-button-fin-consul {
-    margin-left: 156px;
+    margin-left: 169px;
  }
 
  .hero-content-fin-consul {
@@ -10929,12 +10935,12 @@ display: none;
 
  /* ============================our work page========================= */
  .consult-button-our-work {
-    margin-left: 156px;
+    margin-left: 176px;
  }
 
  /* =================================About us======================= */
  .consult-button-phi-about {
-    margin-left: 156px;
+    margin-left: 168px;
  }
  
  .video-container {
@@ -10947,7 +10953,7 @@ display: none;
 /* ====================================blog========================================= */
 
 .consult-button-blog {
-    margin-left: 156px;
+    margin-left: 166px;
  }
 
  /* =======================================careers page========================= */
@@ -11029,7 +11035,7 @@ text-align : center;
 text-align : center;
 }
 .consult-button {
-margin-left : 10rem;
+margin-left : 185px;
 }
 .client-desc {
 font-size : 13px;
@@ -11239,7 +11245,7 @@ display: none;
  }
 
  .consult-button-services-page { 
-    margin-left:164px;
+    margin-left:192px;
  }
 
  .strategic-heading {
@@ -11406,7 +11412,7 @@ display: none;
  }
 
  .consult-button-bui-consul { 
-    margin-left: 172px;
+    margin-left: 191px;
  }
 
  .sales-cards {
@@ -11557,7 +11563,7 @@ display: none;
  }
 
  .consult-button-sales {
-    margin-left: 173px;
+    margin-left: 182px;
 }
 
 /* ======================================hr consulting page===================== */
@@ -11583,7 +11589,7 @@ display: none;
  }
 
  .consult-button-hr-consul {
-    margin-left: 173px;
+    margin-left: 191px;
 }
 
 /* =====================================financial consulting============= */
@@ -11610,7 +11616,7 @@ display: none;
  }
 
  .consult-button-fin-consul {
-    margin-left: 173px;
+    margin-left: 188px;
 }
 
 /* ===================================exp consulting================== */
@@ -11661,7 +11667,7 @@ display: none;
  }
 
  .consult-button-our-work {
-    margin-left: 173px;
+    margin-left: 194px;
 }
 
 /* =======================================about us====================== */
@@ -11686,7 +11692,7 @@ display: none;
  }
 
  .consult-button-phi-about {
-    margin-left: 173px;
+    margin-left: 196px;
 }
 
 /* =======================================blog page====================== */
@@ -11710,7 +11716,7 @@ display: none;
     padding: 1rem;
  }
 .consult-button-blog {
-    margin-left: 173px;
+    margin-left: 189px;
 }
 
 .bloged-box {
