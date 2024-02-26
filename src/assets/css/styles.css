@@ -3731,6 +3731,8 @@ margin: 2rem;
     padding: 20px;
 }
 
+
+
 .overlay-heading {
     text-align: center;
     font-family: var(--FF-PHI);
@@ -16205,6 +16207,7 @@ display: none;
 
 .content {
     position: relative;
+    width: 100%;
     z-index: 1;
     color: var(--WHITE-TEXT);
     padding: 20px;
