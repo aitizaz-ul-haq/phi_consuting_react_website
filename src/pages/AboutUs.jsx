@@ -366,28 +366,28 @@ useEffect(() => {
             <div class="pics-lane">
               <div class="pic-box">
                 <div class="pic">
-                  <img src={alizaidiportrait} alt="" width="120" />
+                  <img src={alizaidiportrait} alt="" />
                 </div>
                 <div class="team-name">Ali Zaidi</div>
                 <div class="designation">CEO</div>
               </div>
               <div class="pic-box">
                 <div class="pic">
-                  <img src={abudullahportrait} alt="" width="120" />
+                  <img src={abudullahportrait} alt="" />
                 </div>
                 <div class="team-name">Muhammad Abdullah Ahsan</div>
                 <div class="designation">Director Support And Success</div>
               </div>
               <div class="pic-box">
                 <div class="pic">
-                  <img src={razaportrait} alt=""width="120"/>
+                  <img src={razaportrait} alt="" />
                 </div>
                 <div class="team-name">Raza ur Rehman</div>
                 <div class="designation">Director Buisness Development</div>
               </div>
               <div class="pic-box">
                 <div class="pic">
-                  <img src={ismailportrait} alt="" width="120"/>
+                  <img src={ismailportrait} alt="" />
                 </div>
                 <div class="team-name">Abdullah Ismaeel</div>
                 <div class="designation">Director Sales</div>
