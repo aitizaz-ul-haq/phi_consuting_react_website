@@ -1,9 +1,9 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-import fcone from "../../assets/img/financial_consulting_icons/Finance and Accounting Process Optimization.png";
-import fctwo from "../../assets/img/financial_consulting_icons/financial management.png";
-import fcthree from "../../assets/img/financial_consulting_icons/risk management.png";
+import fcone from "../../assets/img/financial_consulting_icons/Finance and Accounting Process Optimization.webp";
+import fctwo from "../../assets/img/financial_consulting_icons/financial management.webp";
+import fcthree from "../../assets/img/financial_consulting_icons/risk management.webp";
 
 import goal from "../../assets/img/process_icons/goal.png";
 import planicon from "../../assets/img/process_icons/plan.png";

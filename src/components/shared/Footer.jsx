@@ -6,9 +6,9 @@ import linkdin from '../../assets/img/socil-media/linkedin.webp';
 import twitter from '../../assets/img/socil-media/twitter.webp';
 import youtube from '../../assets/img/socil-media/youtube.webp';
 import footerphilogo from '../../assets/img/phi_logo.webp';
-import emailtag from '../../assets/img/icons-footer/email.png';
-import phonetag from '../../assets/img/icons-footer/phone-call.png';
-import pintag from '../../assets/img/icons-footer/pin.png';
+import emailtag from '../../assets/img/icons-footer/email.webp';
+import phonetag from '../../assets/img/icons-footer/phone-call.webp';
+import pintag from '../../assets/img/icons-footer/pin.webp';
 import { Tooltip } from 'antd';
 
 const Footer = () => {

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 
 
-import salesone from "../../assets/img/GTM Advisory/sales.png";
-import salestwo from "../../assets/img/GTM Advisory/experience.png";
-import salesthree from "../../assets/img/GTM Advisory/enablement.png";
+import salesone from "../../assets/img/GTM Advisory/sales.webp";
+import salestwo from "../../assets/img/GTM Advisory/experience.webp";
+import salesthree from "../../assets/img/GTM Advisory/enablement.webp";
 import goal from "../../assets/img/process_icons/goal.png";
 import planicon from "../../assets/img/process_icons/plan.png";
 import actionicon from "../../assets/img/process_icons/action.png";

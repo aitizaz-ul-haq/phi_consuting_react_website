@@ -1,13 +1,13 @@
 import React from 'react';
 import philogomainpage from '../../assets/img/phi_logo.webp';
 
-import headericonone from "../../assets/img/Header-icons/human-resources.png";
-import headericontwo from "../../assets/img/Header-icons/relations.png";
-import headericonthree from "../../assets/img/Header-icons/research.png";
-import headericonfour from "../../assets/img/Header-icons/risk.png";
+import headericonone from "../../assets/img/Header-icons/human-resources.webp";
+import headericontwo from "../../assets/img/Header-icons/relations.webp";
+import headericonthree from "../../assets/img/Header-icons/research.webp";
+import headericonfour from "../../assets/img/Header-icons/risk.webp";
 
-import insughtsone from "../../assets/img/Header-icons/blog.png";
-import insughtstwo from "../../assets/img/Header-icons/case-study.png";
+import insughtsone from "../../assets/img/Header-icons/blog.webp";
+import insughtstwo from "../../assets/img/Header-icons/case-study.webp";
 
 import iot from "../../assets/img/industry_icons/internet-of-things.png";
 import iaas from "../../assets/img/industry_icons/iaas.png";

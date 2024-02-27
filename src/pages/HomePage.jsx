@@ -3,14 +3,14 @@ import HeroSection from '../components/Home_page_Components/Hero Section/HeroSec
 import Banner from "../components/Home_page_Components/Banner Section/Banner";
 import BlogSection from '../components/Home_page_Components/Blog Section/BlogSection';
 import CtaSection from '../components/Home_page_Components/Cta Section/CtaSection';
-import ATOB from '../assets/img/new_logos_comps/newer/AtoB 2.png';
-import bobtail from '../assets/img/new_logos_comps/bobtail.png';
-import joyride from '../assets/img/new_logos_comps/joyride.png';
-import Truckx from '../assets/img/new_logos_comps/TruckX.png';
-import pallet from '../assets/img/new_logos_comps/newer/Pallet Logo.png';
-import digitalOcean from '../assets/img/new_logos_comps/newer/digital-ocean.png';
-import mudflap from '../assets/img/new_logos_comps/newer/Mudflap.png';
-import sungrade from '../assets/img/new_logos_comps/sungrade solar.png';
+import ATOB from '../assets/img/new_logos_comps/newer/AtoB 2.webp';
+import bobtail from '../assets/img/new_logos_comps/bobtail.webp';
+import joyride from '../assets/img/new_logos_comps/joyride.webp';
+import Truckx from '../assets/img/new_logos_comps/TruckX.webp';
+import pallet from '../assets/img/new_logos_comps/newer/Pallet Logo.webp';
+import digitalOcean from '../assets/img/new_logos_comps/newer/digital-ocean.webp';
+import mudflap from '../assets/img/new_logos_comps/newer/Mudflap.webp';
+import sungrade from '../assets/img/new_logos_comps/sungrade solar.webp';
 import axios from 'axios';
 import buisness from '../assets/img/services-icons/buisness.png';
 import custExp from '../assets/img/services-icons/customer experience.png';
@@ -42,7 +42,7 @@ import backcurls from "../assets/img/wrappers/back_curls.webp";
 import whatback from "../assets/img/wrappers/burn.webp";
 import graph from "../assets/img/graph.webp";
 import iso from "../assets/img/recognitions/iso.webp";
-import ScrollDown from "../assets/img/mouse-cursor.png";
+
 
 
 const HomePage = () => {

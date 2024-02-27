@@ -13,9 +13,9 @@ import improveIcon from "../assets/img/process_icons/improve.png";
 import goalIcon from "../assets/img/process_icons/goal.png";
 
 
-import salesicon from "../assets/img/solutions icons/GTM.png";
-import buisnessicon from "../assets/img/solutions icons/Investor Relations.png";
-import financialicon from "../assets/img/solutions icons/fin.png";
+import salesicon from "../assets/img/solutions icons/GTM.webp";
+import buisnessicon from "../assets/img/solutions icons/Investor Relations.webp";
+import financialicon from "../assets/img/solutions icons/fin.webp";
 import hricon from "../assets/img/white_icons/human-resources.png";
 
 import { Helmet } from 'react-helmet';

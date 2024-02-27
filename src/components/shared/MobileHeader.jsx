@@ -8,9 +8,9 @@ import valuecreation from "../../assets/img/mobile_menu icons/creation.webp";
 import careersicon from "../../assets/img/mobile_menu icons/career.webp";
 import contactsicon from "../../assets/img/mobile_menu icons/contact-mail.webp";
 
-import gtnicon from "../../assets/img/solutions icons/GTM.png";
-import finicon from "../../assets/img/solutions icons/fin.png";
-import invicon from "../../assets/img/solutions icons/Investor Relations.png";
+import gtnicon from "../../assets/img/solutions icons/GTM.webp";
+import finicon from "../../assets/img/solutions icons/fin.webp";
+import invicon from "../../assets/img/solutions icons/Investor Relations.webp";
 
 import blogicon from "../../assets/img/mobile_menu icons/blog.webp";
 import casestudy from "../../assets/img/mobile_menu icons/case-study.webp"; 
