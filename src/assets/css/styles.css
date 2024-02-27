@@ -4258,7 +4258,7 @@ align-items: center;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/our_work_page_img/our_work.png'); /* Your background image URL */
+    background-image: url('../img/our_work_page_img/our_work.webp'); /* Your background image URL */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -5133,7 +5133,7 @@ align-items: center;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/careers_banner.jpg'); /* Your background image URL */
+    background-image: url('../img/careers_banner.webp'); /* Your background image URL */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -5436,7 +5436,7 @@ align-items: center;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/blog_banner.jpg'); /* Your background image URL */
+    background-image: url('../img/blog_banner.webp'); /* Your background image URL */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
