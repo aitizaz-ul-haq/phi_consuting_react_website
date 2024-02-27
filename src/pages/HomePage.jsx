@@ -102,13 +102,6 @@ const HomePage = () => {
     boardDescription: '',
   });
 
-    const scrollToTop = () => {
-      window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-      });
-  };
-
   useEffect(() => {
     const heroSection = document.querySelector('.hero');
     // const scrollBadgeContainer = document.querySelector('.scroll-badge-container');
@@ -330,9 +323,6 @@ const HomePage = () => {
     window.location.href = '/contact-us';
   }
 
-  const firstTwoBlogs = blogs.slice(4, 6);
-  useScrollToTop();
-
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.pageYOffset;
@@ -442,6 +432,8 @@ const HomePage = () => {
     };
   }, []);
 
+  useScrollToTop();
+
   return (
     <>
      <Helmet>
@@ -454,33 +446,12 @@ const HomePage = () => {
 
     <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
     <div className="left-section-control">
-      {/* <div className="dot-container">
-  <div className={`dot ${currentSection === 'clients' ? 'active' : ''}`}></div>
-  <div className={`dot ${currentSection === 'value' ? 'active' : ''}`}></div>
-  <div className={`dot ${currentSection === 'services' ? 'active' : ''}`}></div>
-  <div className={`dot ${currentSection === 'work' ? 'active' : ''}`}></div>
-  <div className={`dot ${currentSection === 'cta' ? 'active' : ''}`}></div>
-  <div className={`dot ${currentSection === 'test' ? 'active' : ''}`}></div>
-  <div className={`dot ${currentSection === 'achievement' ? 'active' : ''}`}></div>
-  <div className={`dot ${currentSection === 'blog' ? 'active' : ''}`}></div> */}
-  {/* <div className={`dot ${currentSection === 'banner' ? 'active' : ''}`}></div> */}
-      {/* </div> */}
-
-     
-   
-        </div>
-            <div className="right-section-control">
+   </div>
+    <div className="right-section-control">
             <Tooltip placement="leftTop" title="toggle eye protection">
             <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
             </Tooltip>
-
-        {/* Back to Top Button */}
-          {/* <Tooltip placement="leftTop" title="back to top">
-                   <button className="back-to-top" onClick={scrollToTop}>
-                   <img src={top} alt="eye icon" width={25} height={25}/>
-                  </button>
-             </Tooltip> */}
-            </div>
+   </div>
 
 
     {/* <!-- Hero Section --> */}
