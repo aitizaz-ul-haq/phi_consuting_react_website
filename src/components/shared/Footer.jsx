@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import facebook from '../../assets/img/socil-media/facebook.png';
-import instagram from '../../assets/img/socil-media/instagram.png';
-import linkdin from '../../assets/img/socil-media/linkedin.png';
-import twitter from '../../assets/img/socil-media/twitter.png';
-import youtube from '../../assets/img/socil-media/youtube.png';
+import facebook from '../../assets/img/socil-media/facebook.webp';
+import instagram from '../../assets/img/socil-media/instagram.webp';
+import linkdin from '../../assets/img/socil-media/linkedin.webp';
+import twitter from '../../assets/img/socil-media/twitter.webp';
+import youtube from '../../assets/img/socil-media/youtube.webp';
 import footerphilogo from '../../assets/img/phi_logo.webp';
 import emailtag from '../../assets/img/icons-footer/email.png';
 import phonetag from '../../assets/img/icons-footer/phone-call.png';
@@ -130,7 +130,7 @@ const Footer = () => {
         <div class="link-row">
         <Tooltip placement="bottom" title="Follow us on insta">
         <a href="https://www.instagram.com/phisaasllc/" target="_blank" rel="noopener noreferrer">
-          <img src={instagram} className='social-icon' alt="" width="60" />
+          <img src={instagram} className='social-icon' alt="" width="50" />
           </a>
           </Tooltip>
         </div>
