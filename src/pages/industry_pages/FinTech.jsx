@@ -14,11 +14,6 @@ import { Helmet } from 'react-helmet';
 import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
-import cross from '../../assets/img/barcard-icons/close.png';
-import persons from '../../assets/img/barcard-icons/employee.png';
-import circular from '../../assets/img/barcard-icons/b2b.png';
-import stack from '../../assets/img/barcard-icons/coins-stack.png';
-
 const FinTech = () => {
   const [sectionOneTitle, setSectionOneTitle] = useState('');
   const [sectionOneParagraph, setSectionOneParagraph] = useState('');

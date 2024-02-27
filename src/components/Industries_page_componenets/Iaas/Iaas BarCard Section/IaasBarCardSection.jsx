@@ -1,8 +1,8 @@
 import React from 'react';
-import cross from '../../../../assets/img/barcard-icons/close.png';
-import persons from '../../../../assets/img/barcard-icons/employee.png';
-import circular from '../../../../assets/img/barcard-icons/b2b.png';
-import stack from '../../../../assets/img/barcard-icons/coins-stack.png';
+import cross from '../../../../assets/img/barcard-icons/close.webp';
+import persons from '../../../../assets/img/barcard-icons/employee.webp';
+import circular from '../../../../assets/img/barcard-icons/b2b.webp';
+import stack from '../../../../assets/img/barcard-icons/coins-stack.webp';
 
 
 const IaasBarCardSection = ({ cardDetails }) => {

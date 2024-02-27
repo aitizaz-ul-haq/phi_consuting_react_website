@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import mobileLogo from '../../assets/img/phi_logo.webp';
 
-import homeicon from "../../assets/img/mobile_menu icons/home.png";
-import solutionsicon from "../../assets/img/mobile_menu icons/solutions.png";
-import aboutusicon from "../../assets/img/mobile_menu icons/information-button.png";
-import valuecreation from "../../assets/img/mobile_menu icons/creation.png";
-import careersicon from "../../assets/img/mobile_menu icons/career.png";
-import contactsicon from "../../assets/img/mobile_menu icons/contact-mail.png";
+import homeicon from "../../assets/img/mobile_menu icons/home.webp";
+import solutionsicon from "../../assets/img/mobile_menu icons/solutions.webp";
+import aboutusicon from "../../assets/img/mobile_menu icons/information-button.webp";
+import valuecreation from "../../assets/img/mobile_menu icons/creation.webp";
+import careersicon from "../../assets/img/mobile_menu icons/career.webp";
+import contactsicon from "../../assets/img/mobile_menu icons/contact-mail.webp";
 
 import gtnicon from "../../assets/img/solutions icons/GTM.png";
 import finicon from "../../assets/img/solutions icons/fin.png";
 import invicon from "../../assets/img/solutions icons/Investor Relations.png";
 
-import blogicon from "../../assets/img/mobile_menu icons/blog.png";
-import casestudy from "../../assets/img/mobile_menu icons/case-study.png"; 
+import blogicon from "../../assets/img/mobile_menu icons/blog.webp";
+import casestudy from "../../assets/img/mobile_menu icons/case-study.webp"; 
 import hricon from "../../assets/img/white_icons/human-resources.png"
 
-import insight from "../../assets/img/mobile_menu icons/insight.png";
-import industry from "../../assets/img/mobile_menu icons/industry.png";
+import insight from "../../assets/img/mobile_menu icons/insight.webp";
+import industry from "../../assets/img/mobile_menu icons/industry.webp";
 
 import iot from "../../assets/img/white_industry_icons/iot.png";
 import iaas from "../../assets/img/white_industry_icons/iaas.png";
@@ -26,7 +26,7 @@ import devops from "../../assets/img/white_industry_icons/devops.png";
 import cloud from "../../assets/img/white_industry_icons/server.png";
 import fintech from "../../assets/img/white_industry_icons/cloud-computing.png";
 
-import leftArrow from "../../assets/img/mobile_menu icons/arrowLeft.png";
+import leftArrow from "../../assets/img/mobile_menu icons/arrowLeft.webp";
 
 const MobileHeader = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

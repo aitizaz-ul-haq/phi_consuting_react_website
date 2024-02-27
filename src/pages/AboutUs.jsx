@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import clutchone from '../assets/img/achievements-badges/clutch_1.png';
 import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
 import phiphoto from "../assets/img/phi_logo-filled.png";
-import alizaidiportrait from "../assets/img/phi_people/ali_zaidi.jpg";
-import abudullahportrait from "../assets/img/phi_people/Abdullah.jpg";
-import razaportrait from "../assets/img/phi_people/Raza.jpg";
-import ismailportrait from "../assets/img/phi_people/ismail.jpg";
+import alizaidiportrait from "../assets/img/phi_people/ali_zaidi.webp";
+import abudullahportrait from "../assets/img/phi_people/Abdullah.webp";
+import razaportrait from "../assets/img/phi_people/Raza.webp";
+import ismailportrait from "../assets/img/phi_people/ismail.webp";
 import { TypeAnimation } from 'react-type-animation';
 import useScrollToTop from '../hooks/useScrollToTop';
 import { Helmet } from 'react-helmet';
@@ -366,28 +366,28 @@ useEffect(() => {
             <div class="pics-lane">
               <div class="pic-box">
                 <div class="pic">
-                  <img src={alizaidiportrait} alt="" />
+                  <img src={alizaidiportrait} alt="" width="120" />
                 </div>
                 <div class="team-name">Ali Zaidi</div>
                 <div class="designation">CEO</div>
               </div>
               <div class="pic-box">
                 <div class="pic">
-                  <img src={abudullahportrait} alt="" />
+                  <img src={abudullahportrait} alt="" width="120" />
                 </div>
                 <div class="team-name">Muhammad Abdullah Ahsan</div>
                 <div class="designation">Director Support And Success</div>
               </div>
               <div class="pic-box">
                 <div class="pic">
-                  <img src={razaportrait} alt="" />
+                  <img src={razaportrait} alt=""width="120"/>
                 </div>
                 <div class="team-name">Raza ur Rehman</div>
                 <div class="designation">Director Buisness Development</div>
               </div>
               <div class="pic-box">
                 <div class="pic">
-                  <img src={ismailportrait} alt="" />
+                  <img src={ismailportrait} alt="" width="120"/>
                 </div>
                 <div class="team-name">Abdullah Ismaeel</div>
                 <div class="designation">Director Sales</div>
