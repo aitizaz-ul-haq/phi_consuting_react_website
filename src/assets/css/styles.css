@@ -14915,9 +14915,9 @@ display: none;
     flex-shrink: 0;
   }
 
-  ::-webkit-scrollbar {
+  /* ::-webkit-scrollbar {
     display: none;
-}
+} */
 
 
   
