@@ -315,10 +315,6 @@ const HomePage = () => {
     window.location.href = '/solutions/hr-recruitment';
   } 
 
-  const handleTabClickFive = () => {
-    window.location.href = '/sales-consulting';
-  } 
-
   const gotoContacts = () => {
     window.location.href = '/contact-us';
   }
