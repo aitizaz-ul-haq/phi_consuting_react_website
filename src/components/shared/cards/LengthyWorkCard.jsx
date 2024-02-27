@@ -1,13 +1,13 @@
 import React,{useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
-import atobsquare from "../../../assets/img/api_images/AToB-square.jpg";
-import bobsquare from "../../../assets/img/api_images/bob.png";
-import dosquare from "../../../assets/img/api_images/digitalocean-square.png";
-import joysquare from "../../../assets/img/api_images/joybox.png";
-import solarsquare from "../../../assets/img/api_images/Solarbox.png";
-import palletsquare from "../../../assets/img/api_images/palletbox.png";
-import truckxsquare from "../../../assets/img/api_images/truck-square.png";
+import atobsquare from "../../../assets/img/api_images/AToB-square.webp";
+import bobsquare from "../../../assets/img/api_images/bob.webp";
+import dosquare from "../../../assets/img/api_images/digitalocean-square.webp";
+import joysquare from "../../../assets/img/api_images/joybox.webp";
+import solarsquare from "../../../assets/img/api_images/Solarbox.webp";
+import palletsquare from "../../../assets/img/api_images/palletbox.webp";
+import truckxsquare from "../../../assets/img/api_images/truck-square.webp";
 
 
 const LengthyWorkCard = ({caseStudy}) => {

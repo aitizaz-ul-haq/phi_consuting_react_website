@@ -5,7 +5,7 @@ import IaasFourCardSection from '../../components/Industries_page_componenets/Ia
 import IaasCtaSection from '../../components/Industries_page_componenets/Iaas/Iaas Cta Section/IaasCtaSection';
 
 import useScrollToTop from '../../hooks/useScrollToTop';
-import eye from "../../assets/img/eye.png";
+import eye from "../../assets/img/eye.webp";
 import top from "../../assets/img/top Arrow.png";
 import { Tooltip } from 'antd';
 

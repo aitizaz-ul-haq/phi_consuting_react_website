@@ -19,7 +19,7 @@ import improveicon from "../../assets/img/process_icons/improve.png";
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { TypeAnimation } from 'react-type-animation';
 import { Tooltip } from 'antd';
-import eye from "../../assets/img/eye.png";
+import eye from "../../assets/img/eye.webp";
 import top from "../../assets/img/top Arrow.png";
 import axios from 'axios';
 import processback from "../../assets/video/home-bg.mp4";

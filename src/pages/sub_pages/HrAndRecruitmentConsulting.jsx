@@ -9,7 +9,7 @@ import hriconfive from "../../assets/img/hr_icons/Organization Development.png";
 
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { Tooltip } from 'antd';
-import eye from "../../assets/img/eye.png";
+import eye from "../../assets/img/eye.webp";
 import top from "../../assets/img/top Arrow.png";
 import { TypeAnimation } from 'react-type-animation';
 

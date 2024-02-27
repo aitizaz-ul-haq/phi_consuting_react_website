@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Tooltip, Spin } from 'antd';
 import useScrollToTop from "../../hooks/useScrollToTop";
-import eye from "../../assets/img/eye.png";
+import eye from "../../assets/img/eye.webp";
 import top from "../../assets/img/top Arrow.png";
 import axios from 'axios';
 import { Helmet } from 'react-helmet';

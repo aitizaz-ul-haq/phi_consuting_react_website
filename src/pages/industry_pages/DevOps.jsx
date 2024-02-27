@@ -1,6 +1,6 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import useScrollToTop from '../../hooks/useScrollToTop';
-import eye from "../../assets/img/eye.png";
+import eye from "../../assets/img/eye.webp";
 import top from "../../assets/img/top Arrow.png";
 import { Tooltip } from 'antd';
 

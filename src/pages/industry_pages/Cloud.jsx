@@ -6,7 +6,7 @@ import CloudBarCardSection from '../../components/Industries_page_componenets/Cl
 import CloudFourCardSection from '../../components/Industries_page_componenets/Cloud/Cloud FourCard Section/CloudFourCardSection';
 import CloudCtaSection from '../../components/Industries_page_componenets/Cloud/Cloud Cta Section/CloudCtaSection';
 import useScrollToTop from '../../hooks/useScrollToTop';
-import eye from "../../assets/img/eye.png";
+import eye from "../../assets/img/eye.webp";
 import top from "../../assets/img/top Arrow.png";
 import { Tooltip } from 'antd';
 

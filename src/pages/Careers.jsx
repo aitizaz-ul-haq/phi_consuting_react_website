@@ -1,15 +1,15 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import CareersCtaSection from '../components/Careers_page_Components/Careers Cta Section/CareersCtaSection';
 import CareersHeroSection from '../components/Careers_page_Components/Careers Hero Section/CareersHeroSection';
-import cultpicone from "../assets/img/innovate_two.png";
-import cultpictwo from "../assets/img/collaborate.png";
-import cultpicthree from "../assets/img/excellence.png";
-import cultpicfour from "../assets/img/growth.png";
+import cultpicone from "../assets/img/innovate_two.webp";
+import cultpictwo from "../assets/img/collaborate.webp";
+import cultpicthree from "../assets/img/excellence.webp";
+import cultpicfour from "../assets/img/growth.webp";
 
-import perksone from "../assets/img/salary_icon.png";
-import perkstwo from "../assets/img/healthcare.png";
-import perksthree from "../assets/img/businessman.png";
-import perksfour from "../assets/img/office-hours.png";
+import perksone from "../assets/img/salary_icon.webp";
+import perkstwo from "../assets/img/healthcare.webp";
+import perksthree from "../assets/img/businessman.webp";
+import perksfour from "../assets/img/office-hours.webp";
 
 import JobCard from '../components/shared/cards/JobCard';
 import { Helmet } from 'react-helmet';

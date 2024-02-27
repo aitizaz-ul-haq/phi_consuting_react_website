@@ -6,7 +6,7 @@ import SaasFourCardSection from '../../components/Industries_page_componenets/Sa
 import SaasCtaSection from '../../components/Industries_page_componenets/Saas/Saas Cta Section/SaasCtaSection';
 
 import { Tooltip } from 'antd';
-import eye from "../../assets/img/eye.png";
+import eye from "../../assets/img/eye.webp";
 import top from "../../assets/img/top Arrow.png";
 import axios from 'axios';
 import whatback from "../../assets/img/wrappers/burn.webp"; 

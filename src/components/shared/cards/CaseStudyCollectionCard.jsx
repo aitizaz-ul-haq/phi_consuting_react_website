@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import atobproduct from "../../../assets/img/api_images/atob-card.png"; 
-import truckxproduct from "../../../assets/img/api_images/truckx-case.png";
-import palletproduct from "../../../assets/img/api_images/pallet.png";
+import atobproduct from "../../../assets/img/api_images/atob-card.webp"; 
+import truckxproduct from "../../../assets/img/api_images/truckx-case.webp";
+import palletproduct from "../../../assets/img/api_images/pallet.webp";
 import solarproduct from "../../../assets/img/api_images/solar_one.webp";
-import bobtailproduct from "../../../assets/img/api_images/Bobtail.png";
-import joyrideproduct from "../../../assets/img/api_images/joytwo.png";
-import doproduct from "../../../assets/img/api_images/digitalocean-product.png";
+import bobtailproduct from "../../../assets/img/api_images/Bobtail.webp";
+import joyrideproduct from "../../../assets/img/api_images/joytwo.webp";
+import doproduct from "../../../assets/img/api_images/digitalocean-product.webp";
  
 
 

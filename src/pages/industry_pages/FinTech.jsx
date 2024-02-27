@@ -5,7 +5,7 @@ import FintechBarCardSection from '../../components/Industries_page_componenets/
 import FintechFourCardSection from '../../components/Industries_page_componenets/FinTech/Fintech FourCard Section/FintechFourCardSection';
 import FintechCtaSection from '../../components/Industries_page_componenets/FinTech/Fintech Cta Section/FintechCtaSection';
 import useScrollToTop from '../../hooks/useScrollToTop';
-import eye from "../../assets/img/eye.png";
+import eye from "../../assets/img/eye.webp";
 import top from "../../assets/img/top Arrow.png";
 import { Tooltip } from 'antd';
 

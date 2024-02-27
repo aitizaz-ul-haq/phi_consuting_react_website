@@ -4,7 +4,7 @@ import CaseStudyCollectionCard from '../components/shared/cards/caseStudyCollect
 import useScrollToTop from '../hooks/useScrollToTop';
 import { Spin } from 'antd';
 import { Helmet } from 'react-helmet';
-import casestudybluebacl from "../assets/img/wrappers/casestudyblueback.jpg";
+import casestudybluebacl from "../assets/img/wrappers/casestudyblueback.webp";
 
 import OurWorkHeroSection from '../components/OurWork_page_Components/OurWork Hero Section/OurWorkHeroSection';
 

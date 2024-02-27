@@ -7,7 +7,7 @@ import IotFourCardSection from '../../components/Industries_page_componenets/Iot
 import IotCtaSection from '../../components/Industries_page_componenets/Iot/Iot Cta Section/IotCtaSection';
 
 import { Tooltip } from 'antd';
-import eye from "../../assets/img/eye.png";
+import eye from "../../assets/img/eye.webp";
 import top from "../../assets/img/top Arrow.png";
 
 import axios from 'axios';
