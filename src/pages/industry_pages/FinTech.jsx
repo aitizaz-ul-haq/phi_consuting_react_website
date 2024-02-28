@@ -1,10 +1,15 @@
 import React,{ useState, useEffect, useRef } from 'react';
+
 // import FintechHeroSection from '../../components/Industries_page_componenets/FinTech/Fintech Hero Section/FintechHeroSection';
 // import FintechBarCardSection from '../../components/Industries_page_componenets/FinTech/Fintech BarCard Section/FintechBarCardSection';
+// import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
+// import FintechFourCardSection from '../../components/Industries_page_componenets/FinTech/Fintech FourCard Section/FintechFourCardSection';
 
 const FintechHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech Hero Section/FintechHeroSection'));
 const FintechBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech BarCard Section/FintechBarCardSection'));
-import FintechFourCardSection from '../../components/Industries_page_componenets/FinTech/Fintech FourCard Section/FintechFourCardSection';
+const FintechFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech FourCard Section/FintechFourCardSection'));
+const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
+
 import FintechCtaSection from '../../components/Industries_page_componenets/FinTech/Fintech Cta Section/FintechCtaSection';
 import useScrollToTop from '../../hooks/useScrollToTop';
 import eye from "../../assets/img/eye.webp";
@@ -13,7 +18,6 @@ import { Tooltip } from 'antd';
 import { Suspense } from 'react';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
-import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
 const FinTech = () => {
@@ -312,19 +316,23 @@ useScrollToTop();
     </button>
                  </Tooltip>
             </div>
-            <Suspense fallback={<div>Loading...</div>}>
+
+
+      <Suspense fallback={<div>Loading...</div>}>
+
       {/* <!-- Hero Section --> */}
       <FintechHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
 
       {/* Bar Card Section */}
       <FintechBarCardSection cardDetails={cardDetails} />
-      </Suspense>
+
+    
       {/* Fintech Industries Section */}
       <IndustriesArticles Api="fintech" />
    
       {/* Fintech Four Card Section */}
       <FintechFourCardSection cardDetails={cardDetails} />
-        
+      </Suspense>
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
         <h2 class="why-phi-heading">Why Phi Consulting?</h2>
