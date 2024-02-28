@@ -1,20 +1,22 @@
-import React,{ useState, useEffect, useRef } from 'react';
+import React,{ useState, useEffect, useRef, Suspense } from 'react';
 import useScrollToTop from '../../hooks/useScrollToTop';
-
-import IotHeroSection from '../../components/Industries_page_componenets/Iot/Iot Hero Section/IotHeroSection';
-import IotBarCardSection from '../../components/Industries_page_componenets/Iot/Iot BarCard Section/IotBarCardSection';
-import IotFourCardSection from '../../components/Industries_page_componenets/Iot/Iot FourCard Section/IotFourCardSection';
-import IotCtaSection from '../../components/Industries_page_componenets/Iot/Iot Cta Section/IotCtaSection';
-
+import { Helmet } from 'react-helmet';
 import { Tooltip } from 'antd';
+import axios from 'axios';
+
+const IotHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/Iot/Iot Hero Section/IotHeroSection'));
+const IotBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Iot/Iot BarCard Section/IotBarCardSection'));
+const IotFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Iot/Iot FourCard Section/IotFourCardSection'));
+const IotCtaSection = React.lazy(() => import('../../components/Industries_page_componenets/Iot/Iot Cta Section/IotCtaSection'));
+const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
+
+
 import eye from "../../assets/img/eye.webp";
 import top from "../../assets/img/top Arrow.webp";
-
-import axios from 'axios';
 import whatback from "../../assets/img/wrappers/burn.webp"; 
-import { Helmet } from 'react-helmet';
 
-import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
+
+
 const Iot = () => {
   const [sectionOneTitle, setSectionOneTitle] = useState('');
   const [sectionOneParagraph, setSectionOneParagraph] = useState('');
@@ -30,15 +32,11 @@ const Iot = () => {
   const [heroHeading, setHeroHeading] = useState('');
   const [heroDescription, setHeroDescription] = useState('');
  
-  const [processNewVisible, setProcessNewVisible] = useState(false);
   const processNewRef = useRef(null);
-
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const [darkMode, setDarkMode] = useState(false);
 
   const insightsRefs = useRef([]);
-  const [data, setData] = useState([]);
   const [cardDetails, setCardDetails] = useState({
     barCardHeading: '',
     fourCardHeading: '',
@@ -264,6 +262,7 @@ useScrollToTop();
                </Tooltip>
              </div>
 
+  <Suspense fallback={<div>Loading...</div>}>
       {/* <!-- Hero Section --> */}
       <IotHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
 
@@ -275,7 +274,7 @@ useScrollToTop();
 
        {/* Four Card Section */}
       <IotFourCardSection cardDetails={cardDetails} />
-
+</Suspense>
        {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
         <h2 class="why-phi-heading">Why Phi Consulting?</h2>
@@ -337,8 +336,10 @@ useScrollToTop();
         </div>
       </article>
 
+      <Suspense fallback={<div>Loading...</div>}>
       {/* <!-- Call to Action Section --> */}
       <IotCtaSection />
+      </Suspense>
         </>
     )
 }

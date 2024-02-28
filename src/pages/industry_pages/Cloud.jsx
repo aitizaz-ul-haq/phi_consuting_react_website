@@ -1,19 +1,17 @@
-import React,{ useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React,{ useState, useEffect, useRef, Suspense } from 'react';
+import { Tooltip } from 'antd';
+import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
-import CloudHeroSection from '../../components/Industries_page_componenets/Cloud/Cloud Hero Section/CloudHeroSection';
-import CloudBarCardSection from '../../components/Industries_page_componenets/Cloud/Cloud BarCard Section/CloudBarCardSection';
-import CloudFourCardSection from '../../components/Industries_page_componenets/Cloud/Cloud FourCard Section/CloudFourCardSection';
-import CloudCtaSection from '../../components/Industries_page_componenets/Cloud/Cloud Cta Section/CloudCtaSection';
+const CloudHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/Cloud/Cloud Hero Section/CloudHeroSection'));
+const CloudBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Cloud/Cloud BarCard Section/CloudBarCardSection'));
+const CloudFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Cloud/Cloud FourCard Section/CloudFourCardSection'));
+const CloudCtaSection = React.lazy(() => import('../../components/Industries_page_componenets/Cloud/Cloud Cta Section/CloudCtaSection'));
+const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
+
 import useScrollToTop from '../../hooks/useScrollToTop';
 import eye from "../../assets/img/eye.webp";
 import top from "../../assets/img/top Arrow.webp";
-import { Tooltip } from 'antd';
-
-import axios from 'axios';
-import { Helmet } from 'react-helmet';
-import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
-
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
 
@@ -32,15 +30,12 @@ const Cloud = () => {
   const [heroHeading, setHeroHeading] = useState('');
   const [heroDescription, setHeroDescription] = useState('');
 
-  const [processNewVisible, setProcessNewVisible] = useState(false);
   const processNewRef = useRef(null);
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [darkMode, setDarkMode] = useState(false);
   const sectionsRef = useRef([]);
   const insightsRefs = useRef([]);
 
-  const [data, setData] = useState([]);
   const [cardDetails, setCardDetails] = useState({
     barCardHeading: '',
     fourCardHeading: '',
@@ -293,6 +288,7 @@ useScrollToTop();
                 </Tooltip>
             </div>
 
+    <Suspense fallback={<div>Loading...</div>}>
 
       {/* <!-- Hero Section --> */}
       <CloudHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
@@ -305,7 +301,8 @@ useScrollToTop();
 
       {/* Four Card Section */}
       <CloudFourCardSection cardDetails={cardDetails} />
-
+      
+    </Suspense>
 
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
@@ -342,9 +339,12 @@ useScrollToTop();
         </div>
       </article>
 
-       
-      {/* <!-- Call to Action Section --> */}
-      <CloudCtaSection />
+      <Suspense fallback={<div>Loading...</div>}>
+
+        {/* <!-- Call to Action Section --> */}
+        <CloudCtaSection />
+
+      </Suspense>
         </>
     )
 }

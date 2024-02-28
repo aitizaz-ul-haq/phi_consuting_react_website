@@ -1,17 +1,25 @@
 import React,{ useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import SaasHeroSection from '../../components/Industries_page_componenets/Saas/Saas Hero Section/SaasHeroSection';
-import SaasBarCardSection from '../../components/Industries_page_componenets/Saas/Saas BarCard Section/SaasBarCardSection';
-import SaasFourCardSection from '../../components/Industries_page_componenets/Saas/Saas FourCard Section/SaasFourCardSection';
-import SaasCtaSection from '../../components/Industries_page_componenets/Saas/Saas Cta Section/SaasCtaSection';
-
+import { Helmet } from 'react-helmet';
 import { Tooltip } from 'antd';
+import axios from 'axios';
+
+// import SaasHeroSection from '../../components/Industries_page_componenets/Saas/Saas Hero Section/SaasHeroSection';
+// import SaasBarCardSection from '../../components/Industries_page_componenets/Saas/Saas BarCard Section/SaasBarCardSection';
+// import SaasFourCardSection from '../../components/Industries_page_componenets/Saas/Saas FourCard Section/SaasFourCardSection';
+// import SaasCtaSection from '../../components/Industries_page_componenets/Saas/Saas Cta Section/SaasCtaSection';
+// import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
+
+const SaasHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas Hero Section/SaasHeroSection'));
+const SaasBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas BarCard Section/SaasBarCardSection'));
+const SaasFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas FourCard Section/SaasFourCardSection'));
+const SaasCtaSection = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas Cta Section/SaasCtaSection'));
+const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
+
 import eye from "../../assets/img/eye.webp";
 import top from "../../assets/img/top Arrow.webp";
-import axios from 'axios';
 import whatback from "../../assets/img/wrappers/burn.webp"; 
-import { Helmet } from 'react-helmet';
-import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
+
+
 const SaaS = () => {
   const [sectionOneTitle, setSectionOneTitle] = useState('');
   const [sectionOneParagraph, setSectionOneParagraph] = useState('');
@@ -28,16 +36,12 @@ const SaaS = () => {
   const [heroDescription, setHeroDescription] = useState('');
 
   const apiUrl = import.meta.env.VITE_API_URL_PROD || 'https://prickle-balanced-archaeopteryx.glitch.me';
-
-  const [processNewVisible, setProcessNewVisible] = useState(false);
   
   const [darkMode, setDarkMode] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const processNewRef = useRef(null);
   const sectionsRef = useRef([]);
 
   const insightsRefs = useRef([]);
-  const [data, setData] = useState([]);
   const [cardDetails, setCardDetails] = useState({
     barCardHeading: '',
     fourCardHeading: '',
@@ -283,6 +287,7 @@ const scrollToTop = () => {
           </Tooltip>
             </div>
 
+  <Suspense fallback={<div>Loading...</div>}>
       {/* <!-- Hero Section --> */}
       <SaasHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
 
@@ -294,7 +299,7 @@ const scrollToTop = () => {
     
       {/* Four Card Section */}
       <SaasFourCardSection cardDetails={cardDetails} />
-
+  </Suspense>
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
         <h2 class="why-phi-heading">Why Phi Consulting?</h2>
@@ -356,8 +361,10 @@ const scrollToTop = () => {
         </div>
       </article>
 
+      <Suspense fallback={<div>Loading...</div>}>
       {/* <!-- Call to Action Section --> */}
       <SaasCtaSection />
+      </Suspense>
         </>
     )
 }

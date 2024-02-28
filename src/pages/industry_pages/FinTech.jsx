@@ -3,12 +3,6 @@ import { Tooltip } from 'antd';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
 
-// import FintechHeroSection from '../../components/Industries_page_componenets/FinTech/Fintech Hero Section/FintechHeroSection';
-// import FintechBarCardSection from '../../components/Industries_page_componenets/FinTech/Fintech BarCard Section/FintechBarCardSection';
-// import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
-// import FintechFourCardSection from '../../components/Industries_page_componenets/FinTech/Fintech FourCard Section/FintechFourCardSection';
-// import FintechCtaSection from '../../components/Industries_page_componenets/FinTech/Fintech Cta Section/FintechCtaSection';
-
 const FintechHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech Hero Section/FintechHeroSection'));
 const FintechBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech BarCard Section/FintechBarCardSection'));
 const FintechFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech FourCard Section/FintechFourCardSection'));

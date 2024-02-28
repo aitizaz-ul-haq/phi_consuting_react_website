@@ -1,17 +1,18 @@
-import React,{ useState, useEffect, useRef } from 'react';
-import useScrollToTop from '../../hooks/useScrollToTop';
-import eye from "../../assets/img/eye.webp";
-import top from "../../assets/img/top Arrow.webp";
-import { Tooltip } from 'antd';
-
-import DevopsHeroSection from '../../components/Industries_page_componenets/Devops/Devops Hero Section/DevopsHeroSection';
-import DevopsBarCardSection from '../../components/Industries_page_componenets/Devops/Devops BarCard Section/DevopsBarCardSection';
-import DevopsFourCardSection from '../../components/Industries_page_componenets/Devops/Devops FourCard Section/DevopsFourCardSection';
-import DevopsCtaSection from '../../components/Industries_page_componenets/Devops/Devops Cta Section/DevopsCtaSection';
-
+import React,{ useState, useEffect, useRef, Suspense } from 'react';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
-import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
+import useScrollToTop from '../../hooks/useScrollToTop';
+import { Tooltip } from 'antd';
+
+const DevopsHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/Devops/Devops Hero Section/DevopsHeroSection'));
+const DevopsBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Devops/Devops BarCard Section/DevopsBarCardSection'));
+const DevopsFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Devops/Devops FourCard Section/DevopsFourCardSection'));
+const DevopsCtaSection = React.lazy(() => import('../../components/Industries_page_componenets/Devops/Devops Cta Section/DevopsCtaSection'));
+const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
+
+
+import eye from "../../assets/img/eye.webp";
+import top from "../../assets/img/top Arrow.webp";
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
 const DevOps = () => {
@@ -31,16 +32,13 @@ const DevOps = () => {
 
   const apiUrl = import.meta.env.VITE_API_URL_PROD || 'https://prickle-balanced-archaeopteryx.glitch.me';
 
-  const [processNewVisible, setProcessNewVisible] = useState(false);
   const processNewRef = useRef(null);
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [darkMode, setDarkMode] = useState(false);
 
   const sectionsRef = useRef([]);
   const insightsRefs = useRef([]);
 
-  const [data, setData] = useState([]);
   const [cardDetails, setCardDetails] = useState({
     barCardHeading: '',
     fourCardHeading: '',
@@ -292,6 +290,7 @@ useScrollToTop();
                  </Tooltip>
             </div>
 
+  <Suspense fallback={<div>Loading...</div>}>
       {/* <!-- Hero Section --> */}
       <DevopsHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
 
@@ -303,6 +302,8 @@ useScrollToTop();
 
       {/* Devops Four Card section */}
       <DevopsFourCardSection cardDetails={cardDetails} />
+
+      </Suspense>
 
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
@@ -365,8 +366,12 @@ useScrollToTop();
         </div>
       </article>
 
+      <Suspense fallback={<div>Loading...</div>}>
+
       {/* <!-- Call to Action Section --> */}
       <DevopsCtaSection />
+
+      </Suspense>
         </>
     )
 }

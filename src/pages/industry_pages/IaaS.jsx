@@ -1,17 +1,17 @@
-import React,{ useState, useEffect, useRef } from 'react';
-import IaasHeroSection from '../../components/Industries_page_componenets/Iaas/Iaas Hero Section/IaasHeroSection';
-import IaasBarCardSection from '../../components/Industries_page_componenets/Iaas/Iaas BarCard Section/IaasBarCardSection';
-import IaasFourCardSection from '../../components/Industries_page_componenets/Iaas/Iaas FourCard Section/IaasFourCardSection';
-import IaasCtaSection from '../../components/Industries_page_componenets/Iaas/Iaas Cta Section/IaasCtaSection';
+import React,{ useState, useEffect, useRef, Suspense } from 'react';
+import { Tooltip } from 'antd';
+import axios from 'axios';
+import { Helmet } from 'react-helmet';
+
+const IaasHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/Iaas/Iaas Hero Section/IaasHeroSection'));
+const IaasBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Iaas/Iaas BarCard Section/IaasBarCardSection'));
+const IaasFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Iaas/Iaas FourCard Section/IaasFourCardSection'));
+const IaasCtaSection = React.lazy(() => import('../../components/Industries_page_componenets/Iaas/Iaas Cta Section/IaasCtaSection'));
+const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
 
 import useScrollToTop from '../../hooks/useScrollToTop';
 import eye from "../../assets/img/eye.webp";
 import top from "../../assets/img/top Arrow.webp";
-import { Tooltip } from 'antd';
-
-import axios from 'axios';
-import { Helmet } from 'react-helmet';
-import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
 const IaaS = () => {
@@ -29,10 +29,7 @@ const IaaS = () => {
   const [heroHeading, setHeroHeading] = useState('');
   const [heroDescription, setHeroDescription] = useState('');
 
-  const [processNewVisible, setProcessNewVisible] = useState(false);
   const processNewRef = useRef(null);
-
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const [darkMode, setDarkMode] = useState(false);
 
@@ -40,7 +37,6 @@ const IaaS = () => {
 
   const insightsRefs = useRef([]);
 
-  const [data, setData] = useState([]);
   const [cardDetails, setCardDetails] = useState({
     barCardHeading: '',
     fourCardHeading: '',
@@ -289,7 +285,7 @@ useScrollToTop();
                 </Tooltip>
             </div>
 
-
+  <Suspense fallback={<div>Loading...</div>}>
       {/* <!-- Hero Section --> */}
       <IaasHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
 
@@ -301,7 +297,8 @@ useScrollToTop();
 
        {/* Four Card Section */}
       <IaasFourCardSection cardDetails={cardDetails} />
-    
+
+   </Suspense>  
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
         <h2 class="why-phi-heading">Why Phi Consulting?</h2>
@@ -366,8 +363,10 @@ useScrollToTop();
         </div>
       </article>
 
+      <Suspense fallback={<div>Loading...</div>}>
       {/* <!-- Call to Action Section --> */}
       <IaasCtaSection />
+      </Suspense>
         </>
     )
 }
