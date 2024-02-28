@@ -270,7 +270,6 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
     });
 };
 
-  const firstThreeCaseStudies = caseStudies.slice(0, 3);
   useScrollToTop();
     return(
         <>
@@ -285,7 +284,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
 
 
 <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
-        <div className="left-section-control"></div>
+       
             <div className="right-section-control">
             <Tooltip placement="leftTop" title="toggle eye protection">
             <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 

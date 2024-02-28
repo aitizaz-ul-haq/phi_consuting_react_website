@@ -12,9 +12,6 @@ import planicon from "../../assets/img/process_icons/plan.webp";
 import actionicon from "../../assets/img/process_icons/action.webp";
 import assignicon from "../../assets/img/process_icons/assign.webp";
 import testicon from "../../assets/img/process_icons/test.webp";
-import impicon from "../../assets/img/process_icons/implement.webp";
-import monitoricon from "../../assets/img/process_icons/monitor.webp";
-import improveicon from "../../assets/img/process_icons/improve.webp";
 
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { Tooltip } from 'antd';
@@ -29,7 +26,6 @@ import processback from "../../assets/video/home-bg.mp4";
 
 import { Helmet } from 'react-helmet';
 const HrAndRecruitmentConsulting = () => {
-  const [caseStudies, setCaseStudies] = useState([]);
  
    const [processNewVisible, setProcessNewVisible] = useState(false);
    const processNewRef = useRef(null);
@@ -294,7 +290,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
 
 
 <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
-        <div className="left-section-control"></div>
+       
             <div className="right-section-control">
             <Tooltip placement="leftTop" title="toggle eye protection">
             <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 

@@ -1,23 +1,23 @@
-import React,{ useState, useEffect, useRef } from 'react';
+import React,{ useState, useEffect, useRef, Suspense } from 'react';
+import { Tooltip } from 'antd';
+import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 // import FintechHeroSection from '../../components/Industries_page_componenets/FinTech/Fintech Hero Section/FintechHeroSection';
 // import FintechBarCardSection from '../../components/Industries_page_componenets/FinTech/Fintech BarCard Section/FintechBarCardSection';
 // import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 // import FintechFourCardSection from '../../components/Industries_page_componenets/FinTech/Fintech FourCard Section/FintechFourCardSection';
+// import FintechCtaSection from '../../components/Industries_page_componenets/FinTech/Fintech Cta Section/FintechCtaSection';
 
 const FintechHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech Hero Section/FintechHeroSection'));
 const FintechBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech BarCard Section/FintechBarCardSection'));
 const FintechFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech FourCard Section/FintechFourCardSection'));
 const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
+const FintechCtaSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech Cta Section/FintechCtaSection'));
 
-import FintechCtaSection from '../../components/Industries_page_componenets/FinTech/Fintech Cta Section/FintechCtaSection';
 import useScrollToTop from '../../hooks/useScrollToTop';
 import eye from "../../assets/img/eye.webp";
 import top from "../../assets/img/top Arrow.webp";
-import { Tooltip } from 'antd';
-import { Suspense } from 'react';
-import axios from 'axios';
-import { Helmet } from 'react-helmet';
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
 const FinTech = () => {
@@ -33,22 +33,14 @@ const FinTech = () => {
   const [heroDescription, setHeroDescription] = useState('');
 
 
-  const apiUrl = import.meta.env.VITE_API_URL_PROD || 'https://prickle-balanced-archaeopteryx.glitch.me';
 
-  const [processNewVisible, setProcessNewVisible] = useState(false);
   const processNewRef = useRef(null);
-
   const [darkMode, setDarkMode] = useState(false);
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
   const sectionsRef = useRef([]);
-
   const insightsRefs = useRef([]);
-
   const diagonalDivRef = useRef(null);
 
-  const [data, setData] = useState([]);
   const [cardDetails, setCardDetails] = useState({
     barCardHeading: '',
     fourCardHeading: '',
@@ -305,15 +297,17 @@ useScrollToTop();
 <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">
-            <Tooltip placement="leftTop" title="toggle eye protection">
-            <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
-            </Tooltip>
+                      <Tooltip placement="leftTop" title="toggle eye protection">
+                               <button onClick={toggleDarkMode}> 
+                                   <img src={eye} alt="eye icon" width={25} height={25}/>
+                               </button> 
+                      </Tooltip>
 
                  {/* Back to Top Button */}
                  <Tooltip placement="leftTop" title="back to top">
-    <button className="back-to-top" onClick={scrollToTop}>
-    <img src={top} alt="eye icon" width={25} height={25}/>
-    </button>
+                     <button className="back-to-top" onClick={scrollToTop}>
+                        <img src={top} alt="eye icon" width={25} height={25}/>
+                     </button>
                  </Tooltip>
             </div>
 
@@ -326,13 +320,15 @@ useScrollToTop();
       {/* Bar Card Section */}
       <FintechBarCardSection cardDetails={cardDetails} />
 
-    
       {/* Fintech Industries Section */}
       <IndustriesArticles Api="fintech" />
    
       {/* Fintech Four Card Section */}
       <FintechFourCardSection cardDetails={cardDetails} />
+
       </Suspense>
+
+
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
         <h2 class="why-phi-heading">Why Phi Consulting?</h2>
@@ -394,8 +390,12 @@ useScrollToTop();
         </div>
       </article>
 
+      <Suspense fallback={<div>Loading...</div>}>
       {/* <!-- Call to Action Section --> */}
       <FintechCtaSection />
+      </Suspense>
+
+      
         </>
     )
 }

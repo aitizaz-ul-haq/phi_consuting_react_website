@@ -25,7 +25,6 @@ import processback from "../../assets/video/home-bg.mp4";
 
 import { Helmet } from 'react-helmet';
 const BuisnessConsulting = () => {
-  const [caseStudies, setCaseStudies] = useState([]);
 
    const [processNewVisible, setProcessNewVisible] = useState(false);
    const processNewRef = useRef(null);

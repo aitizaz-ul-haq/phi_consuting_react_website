@@ -1,8 +1,6 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 import salesone from "../../assets/img/GTM Advisory/sales.webp";
 import salestwo from "../../assets/img/GTM Advisory/experience.webp";
 import salesthree from "../../assets/img/GTM Advisory/enablement.webp";
@@ -28,7 +26,7 @@ import whatback from "../../assets/img/wrappers/burn.webp";
 
 import { Helmet } from 'react-helmet';
 const SalesConsulting = () => {
-  const [caseStudies, setCaseStudies] = useState([]);
+  
 
   const [data, setData] = useState({
     bannerHeading: "",
@@ -307,7 +305,7 @@ useScrollToTop();
       <link rel="canonical" href="https://phiconsulting.org/solutions/go-to-market-strategy" />
       </Helmet>
             <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
-            <div className="left-section-control"></div>
+            
             <div className="right-section-control">
             <Tooltip placement="leftTop" title="toggle eye protection">
             <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
