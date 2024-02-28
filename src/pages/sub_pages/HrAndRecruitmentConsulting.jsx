@@ -7,10 +7,19 @@ import hriconthree from "../../assets/img/hr_icons/Talent Development.webp";
 import hriconfour from "../../assets/img/hr_icons/executive.webp";
 import hriconfive from "../../assets/img/hr_icons/Organization Development.webp";
 
+import goal from "../../assets/img/process_icons/goal.webp";
+import planicon from "../../assets/img/process_icons/plan.webp";
+import actionicon from "../../assets/img/process_icons/action.webp";
+import assignicon from "../../assets/img/process_icons/assign.webp";
+import testicon from "../../assets/img/process_icons/test.webp";
+import impicon from "../../assets/img/process_icons/implement.webp";
+import monitoricon from "../../assets/img/process_icons/monitor.webp";
+import improveicon from "../../assets/img/process_icons/improve.webp";
+
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { Tooltip } from 'antd';
 import eye from "../../assets/img/eye.webp";
-import top from "../../assets/img/top Arrow.png";
+import top from "../../assets/img/top Arrow.webp";
 import { TypeAnimation } from 'react-type-animation';
 
 import axios from 'axios';
@@ -424,12 +433,12 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             <div class="circle-container-sales">
               <div class="circle-content-sales">
                 <div class="icon-process-container">
-                  {/* <img
+                  <img
                     src={goal}
                     alt=""
                     width="60px"
                     height="60px"
-                  /> */}
+                  />
                 </div>
                 <h2 class="circle-heading-sales">{data.processHedOne}</h2>
                 <h3 class="circle-text-sales">
@@ -440,12 +449,12 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             <div class="circle-container-sales">
               <div class="circle-content-sales">
                 <div class="icon-process-container">
-                  {/* <img
+                  <img
                     src={planicon}
                     alt=""
                     width="60px"
                     height="60px"
-                  /> */}
+                  />
                 </div>
                 <h2 class="circle-heading-sales">{data.processHedTwo}</h2>
                 <h3 class="circle-text-sales">
@@ -456,12 +465,12 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             <div class="circle-container-sales">
               <div class="circle-content-sales">
                 <div class="icon-process-container">
-                  {/* <img
+                  <img
                     src={actionicon}
                     alt=""
                     width="60px"
                     height="60px"
-                  /> */}
+                  />
                 </div>
                 <h2 class="circle-heading-sales">{data.processHedThree}</h2>
                 <h3 class="circle-text-sales">
@@ -472,12 +481,12 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             <div class="circle-container-sales">
               <div class="circle-content-sales">
                 <div class="icon-process-container">
-                  {/* <img
+                  <img
                    src={assignicon}
                     alt=""
                     width="60px"
                     height="60px"
-                  /> */}
+                  />
                 </div>
                 <h2 class="circle-heading-sales">{data.processHedFour}</h2>
                 <h3 class="circle-text-sales">
@@ -488,12 +497,12 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             <div class="circle-container-sales">
               <div class="circle-content-sales">
                 <div class="icon-process-container">
-                  {/* <img
+                  <img
                     src={testicon}
                     alt=""
                     width="60px"
                     height="60px"
-                  /> */}
+                  />
                 </div>
                 <h2 class="circle-heading-sales">{data.processHedFive}</h2>
                 <h3 class="circle-text-sales">

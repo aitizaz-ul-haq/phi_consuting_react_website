@@ -12,10 +12,10 @@ import digitalOcean from '../assets/img/new_logos_comps/newer/digital-ocean.webp
 import mudflap from '../assets/img/new_logos_comps/newer/Mudflap.webp';
 import sungrade from '../assets/img/new_logos_comps/sungrade solar.webp';
 import axios from 'axios';
-import buisness from '../assets/img/services-icons/buisness.png';
-import custExp from '../assets/img/services-icons/customer experience.png';
-import financial from '../assets/img/services-icons/financial.png';
-import hr from '../assets/img/services-icons/hr.png';
+import buisness from '../assets/img/services-icons/buisness.webp';
+import custExp from '../assets/img/services-icons/customer experience.webp';
+import financial from '../assets/img/services-icons/financial.webp';
+import hr from '../assets/img/services-icons/hr.webp';
 import clutchone from '../assets/img/achievements-badges/clutch_1.png';
 import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
 import { Tooltip } from 'antd';

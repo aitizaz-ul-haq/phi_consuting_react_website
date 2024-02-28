@@ -3,14 +3,14 @@ import ServicesHeroSection from '../components/Services_page_Components/Services
 import ServicesCtaSection from '../components/Services_page_Components/Services Cta Section/ServicesCtaSection';
 import ServicesPathSection from '../components/Services_page_Components/Services Path Section/ServicesPathSection';
 import StretegicSolutionsSection from '../components/Services_page_Components/Services Stretegic Solutions Section/StretegicSolutionsSection';
-import planIcon from "../assets/img/process_icons/plan.png";
-import actionIcon from "../assets/img/process_icons/action.png";
-import assignIcon from "../assets/img/process_icons/assign.png";
-import testIcon from "../assets/img/process_icons/test.png";
-import impIcon from "../assets/img/process_icons/implement.png";
-import monitorIcon from "../assets/img/process_icons/monitor.png";
-import improveIcon from "../assets/img/process_icons/improve.png";
-import goalIcon from "../assets/img/process_icons/goal.png";
+import planIcon from "../assets/img/process_icons/plan.webp";
+import actionIcon from "../assets/img/process_icons/action.webp";
+import assignIcon from "../assets/img/process_icons/assign.webp";
+import testIcon from "../assets/img/process_icons/test.webp";
+import impIcon from "../assets/img/process_icons/implement.webp";
+import monitorIcon from "../assets/img/process_icons/monitor.webp";
+import improveIcon from "../assets/img/process_icons/improve.webp";
+import goalIcon from "../assets/img/process_icons/goal.webp";
 
 
 import salesicon from "../assets/img/solutions icons/GTM.webp";

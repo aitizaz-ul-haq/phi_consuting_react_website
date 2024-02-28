@@ -1,7 +1,7 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import useScrollToTop from '../../hooks/useScrollToTop';
 import eye from "../../assets/img/eye.webp";
-import top from "../../assets/img/top Arrow.png";
+import top from "../../assets/img/top Arrow.webp";
 import { Tooltip } from 'antd';
 
 import DevopsHeroSection from '../../components/Industries_page_componenets/Devops/Devops Hero Section/DevopsHeroSection';

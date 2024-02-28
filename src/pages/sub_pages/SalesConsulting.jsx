@@ -7,21 +7,21 @@ import salesone from "../../assets/img/GTM Advisory/sales.webp";
 import salestwo from "../../assets/img/GTM Advisory/experience.webp";
 import salesthree from "../../assets/img/GTM Advisory/enablement.webp";
 
-import goal from "../../assets/img/process_icons/goal.png";
-import planicon from "../../assets/img/process_icons/plan.png";
-import actionicon from "../../assets/img/process_icons/action.png";
-import assignicon from "../../assets/img/process_icons/assign.png";
-import testicon from "../../assets/img/process_icons/test.png";
-import impicon from "../../assets/img/process_icons/implement.png";
-import monitoricon from "../../assets/img/process_icons/monitor.png";
-import improveicon from "../../assets/img/process_icons/improve.png";
+import goal from "../../assets/img/process_icons/goal.webp";
+import planicon from "../../assets/img/process_icons/plan.webp";
+import actionicon from "../../assets/img/process_icons/action.webp";
+import assignicon from "../../assets/img/process_icons/assign.webp";
+import testicon from "../../assets/img/process_icons/test.webp";
+import impicon from "../../assets/img/process_icons/implement.webp";
+import monitoricon from "../../assets/img/process_icons/monitor.webp";
+import improveicon from "../../assets/img/process_icons/improve.webp";
 
 
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { TypeAnimation } from 'react-type-animation';
 import { Tooltip } from 'antd';
 import eye from "../../assets/img/eye.webp";
-import top from "../../assets/img/top Arrow.png";
+import top from "../../assets/img/top Arrow.webp";
 import axios from 'axios';
 import processback from "../../assets/video/home-bg.mp4";
 import whatback from "../../assets/img/wrappers/burn.webp"; 

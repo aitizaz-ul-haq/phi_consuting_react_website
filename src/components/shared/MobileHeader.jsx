@@ -19,12 +19,12 @@ import hricon from "../../assets/img/white_icons/human-resources.png"
 import insight from "../../assets/img/mobile_menu icons/insight.webp";
 import industry from "../../assets/img/mobile_menu icons/industry.webp";
 
-import iot from "../../assets/img/white_industry_icons/iot.png";
-import iaas from "../../assets/img/white_industry_icons/iaas.png";
-import saas from "../../assets/img/white_industry_icons/saas.png";
-import devops from "../../assets/img/white_industry_icons/devops.png";
-import cloud from "../../assets/img/white_industry_icons/server.png";
-import fintech from "../../assets/img/white_industry_icons/cloud-computing.png";
+import iot from "../../assets/img/white_industry_icons/iot.webp";
+import iaas from "../../assets/img/white_industry_icons/iaas.webp";
+import saas from "../../assets/img/white_industry_icons/saas.webp";
+import devops from "../../assets/img/white_industry_icons/devops.webp";
+import cloud from "../../assets/img/white_industry_icons/server.webp";
+import fintech from "../../assets/img/white_industry_icons/cloud-computing.webp";
 
 import leftArrow from "../../assets/img/mobile_menu icons/arrowLeft.webp";
 

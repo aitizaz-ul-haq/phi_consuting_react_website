@@ -5,20 +5,20 @@ import fcone from "../../assets/img/financial_consulting_icons/Finance and Accou
 import fctwo from "../../assets/img/financial_consulting_icons/financial management.webp";
 import fcthree from "../../assets/img/financial_consulting_icons/risk management.webp";
 
-import goal from "../../assets/img/process_icons/goal.png";
-import planicon from "../../assets/img/process_icons/plan.png";
-import actionicon from "../../assets/img/process_icons/action.png";
-import assignicon from "../../assets/img/process_icons/assign.png";
-import testicon from "../../assets/img/process_icons/test.png";
-import impicon from "../../assets/img/process_icons/implement.png";
-import monitoricon from "../../assets/img/process_icons/monitor.png";
-import improveicon from "../../assets/img/process_icons/improve.png";
+import goal from "../../assets/img/process_icons/goal.webp";
+import planicon from "../../assets/img/process_icons/plan.webp";
+import actionicon from "../../assets/img/process_icons/action.webp";
+import assignicon from "../../assets/img/process_icons/assign.webp";
+import testicon from "../../assets/img/process_icons/test.webp";
+import impicon from "../../assets/img/process_icons/implement.webp";
+import monitoricon from "../../assets/img/process_icons/monitor.webp";
+import improveicon from "../../assets/img/process_icons/improve.webp";
 
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { TypeAnimation } from 'react-type-animation';
 import { Tooltip } from 'antd';
 import eye from "../../assets/img/eye.webp";
-import top from "../../assets/img/top Arrow.png";
+import top from "../../assets/img/top Arrow.webp";
 import processback from "../../assets/video/home-bg.mp4";
 import axios from 'axios';
 import { Helmet } from 'react-helmet';

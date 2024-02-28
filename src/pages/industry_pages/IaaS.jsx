@@ -6,7 +6,7 @@ import IaasCtaSection from '../../components/Industries_page_componenets/Iaas/Ia
 
 import useScrollToTop from '../../hooks/useScrollToTop';
 import eye from "../../assets/img/eye.webp";
-import top from "../../assets/img/top Arrow.png";
+import top from "../../assets/img/top Arrow.webp";
 import { Tooltip } from 'antd';
 
 import axios from 'axios';

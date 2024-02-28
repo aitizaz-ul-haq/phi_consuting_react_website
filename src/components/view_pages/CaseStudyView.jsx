@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import eye from "../../assets/img/eye.webp"
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { Tooltip, Spin  } from 'antd';
-import top from "../../assets/img/top Arrow.png";
+import top from "../../assets/img/top Arrow.webp";
 import axios from 'axios';
 
 import atobbox from "../../assets/img/api_images/AToB-square.webp"; 
@@ -23,7 +23,7 @@ import bobtailproduct from "../../assets/img/api_images/Bobtail.webp";
 import joyrideproduct from "../../assets/img/api_images/joytwo.webp";
 import doproduct from "../../assets/img/api_images/digitalocean-product.webp";
 import { Helmet } from 'react-helmet';
-import shareicon from "../../assets/img/shareicon/share.png";
+import shareicon from "../../assets/img/shareicon/share.webp";
 
 const CaseStudyView = () => {
 

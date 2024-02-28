@@ -7,7 +7,7 @@ import CloudFourCardSection from '../../components/Industries_page_componenets/C
 import CloudCtaSection from '../../components/Industries_page_componenets/Cloud/Cloud Cta Section/CloudCtaSection';
 import useScrollToTop from '../../hooks/useScrollToTop';
 import eye from "../../assets/img/eye.webp";
-import top from "../../assets/img/top Arrow.png";
+import top from "../../assets/img/top Arrow.webp";
 import { Tooltip } from 'antd';
 
 import axios from 'axios';

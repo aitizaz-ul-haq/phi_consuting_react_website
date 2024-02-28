@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { Tooltip, Spin } from 'antd';
 import useScrollToTop from "../../hooks/useScrollToTop";
 import eye from "../../assets/img/eye.webp";
-import top from "../../assets/img/top Arrow.png";
+import top from "../../assets/img/top Arrow.webp";
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
-import shareicon from "../../assets/img/shareicon/share.png";
+import shareicon from "../../assets/img/shareicon/share.webp";
 
 const BlogView = () => {
  

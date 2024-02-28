@@ -8,7 +8,7 @@ import IotCtaSection from '../../components/Industries_page_componenets/Iot/Iot 
 
 import { Tooltip } from 'antd';
 import eye from "../../assets/img/eye.webp";
-import top from "../../assets/img/top Arrow.png";
+import top from "../../assets/img/top Arrow.webp";
 
 import axios from 'axios';
 import whatback from "../../assets/img/wrappers/burn.webp"; 
