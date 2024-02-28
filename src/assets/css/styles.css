@@ -4199,31 +4199,6 @@ align-items: center;
     z-index: -2; /* Place the pseudo-element with the image behind the tint */
 }
 
-.one-hr-consul {
-    background: url('../img/hr_consulting/fast_hiring.jpg') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
-    
-}
-
-.two-hr-consul {
-    background: url('../img/hr_consulting/vetted.jpg') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
-}
-
-.three-hr-consul {
-    background: url('../img/hr_consulting/timezone.jpg') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
-}
-
-.four-hr-consul {
-    background: url('../img/hr_consulting/progress.jpg') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
-}
-
-.five-hr-consul {
-    background: url('../img/hr_consulting/guarenteed.webp') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
-    
-}
-
-.six-hr-consul {
-    background: url('../img/hr_consulting/Agile.webp') center/cover no-repeat; /* Replace 'your-image.jpg' with the actual image URL */
-}
 
 
 /* ==================================================our work page styles====================================== */
