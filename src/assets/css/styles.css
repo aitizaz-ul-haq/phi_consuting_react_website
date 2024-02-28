@@ -2178,7 +2178,7 @@ padding: 1rem;
 /* } */
 
 .testi-one {
-    background-image: url('../img/AToB-square.jpg');
+    background-image: url('../img/api_images/AToB-square.webp');
     background-size: cover; /* Ensure the background image covers the entire container */
     background-position: center; /* Center the background image */
     width: 80px;
@@ -2191,7 +2191,7 @@ padding: 1rem;
 }
 
 .test-two {
-    background-image: url('../img/AToB-square.jpg');
+    background-image: url('../img/api_images/AToB-square.webp');
     background-size: cover; /* Ensure the background image covers the entire container */
     background-position: center; /* Center the background image */
     width: 80px;
@@ -2204,7 +2204,7 @@ padding: 1rem;
 }
 
 .test-three {
-    background-image: url('../img/digitalocean-square.png');
+    background-image: url('../img/api_images/digitalocean-square.webp');
     background-size: cover; /* Ensure the background image covers the entire container */
     background-position: center; /* Center the background image */
     width: 80px;
