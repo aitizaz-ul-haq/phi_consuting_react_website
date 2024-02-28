@@ -175,27 +175,27 @@ import ShowValPageCont from './pages/dashboard/Other Pages/value creation/ShowVa
 
 import { Helmet } from 'react-helmet';
 
-import HomepageBackgroundImage from "./assets/img/new_Back.webp";
+// import HomepageBackgroundImage from "./assets/img/new_Back.webp";
 
-import ServicesBackgroundImage from "./assets/img/services_page_img/services_image_3.webp";
-import GtmBackgroundImage from "./assets/img/gtm-strategy-phi-consulting.webp"; 
-import FinanceBackgroundImage from "./assets/img/financial-phi-consulting.webp";
-import HrBackgroundImage from "./assets/img/hr-recruitment-phi-consulting.webp";
-import BuisnessBackgroundImage from "./assets/img/investor-relation-phi-consulting.webp";
+// import ServicesBackgroundImage from "./assets/img/services_page_img/services_image_3.webp";
+// import GtmBackgroundImage from "./assets/img/gtm-strategy-phi-consulting.webp"; 
+// import FinanceBackgroundImage from "./assets/img/financial-phi-consulting.webp";
+// import HrBackgroundImage from "./assets/img/hr-recruitment-phi-consulting.webp";
+// import BuisnessBackgroundImage from "./assets/img/investor-relation-phi-consulting.webp";
 
-import FintechBackgroundImage from "./assets/img/industry_backgrounds/fintech_background.webp";
-import DevopsBackgroundImage from "./assets/img/industry_backgrounds/DevOps-background.webp";
-import CloudBackgroundImage from "./assets/img/industry_backgrounds/Cloud_background.webp";
-import IaasBackgroundImage from "./assets/img/industry_backgrounds/iaas_background.webp";
-import IotBackgroundImage from "./assets/img/industry_backgrounds/iot-background.webp";
-import SaasBackGroundImage from "./assets/img/industry_backgrounds/SaaS_background.webp";
+// import FintechBackgroundImage from "./assets/img/industry_backgrounds/fintech_background.webp";
+// import DevopsBackgroundImage from "./assets/img/industry_backgrounds/DevOps-background.webp";
+// import CloudBackgroundImage from "./assets/img/industry_backgrounds/Cloud_background.webp";
+// import IaasBackgroundImage from "./assets/img/industry_backgrounds/iaas_background.webp";
+// import IotBackgroundImage from "./assets/img/industry_backgrounds/iot-background.webp";
+// import SaasBackGroundImage from "./assets/img/industry_backgrounds/SaaS_background.webp";
 
-import OurWorkBackgroundImage from "./assets/img/our_work_page_img/our_work.webp";
-import AboutPageBackgroundImage from "./assets/img/about-us-phi-consulting.webp";
-import CareersPagebackgrounImage from "./assets/img/careers_banner.webp";
-import BlogPageBackgroundImage from "./assets/img/blog_banner.webp";
-import caseStudyBackgroundImage from "./assets/img/wrappers/casestudyblueback.webp";
-import jill from "./assets/img/wrappers/jill.webp";
+// import OurWorkBackgroundImage from "./assets/img/our_work_page_img/our_work.webp";
+// import AboutPageBackgroundImage from "./assets/img/about-us-phi-consulting.webp";
+// import CareersPagebackgrounImage from "./assets/img/careers_banner.webp";
+// import BlogPageBackgroundImage from "./assets/img/blog_banner.webp";
+// import caseStudyBackgroundImage from "./assets/img/wrappers/casestudyblueback.webp";
+// import jill from "./assets/img/wrappers/jill.webp";
 
 
 const App = () => {
@@ -210,36 +210,36 @@ const App = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    const imageUrls = [
-      HomepageBackgroundImage,
-      ServicesBackgroundImage,
-      FinanceBackgroundImage,
-      HrBackgroundImage,
-      BuisnessBackgroundImage,
-      FintechBackgroundImage,
-      DevopsBackgroundImage,
-      CloudBackgroundImage,
-      IaasBackgroundImage,
-      IotBackgroundImage,
-      SaasBackGroundImage,
-      OurWorkBackgroundImage,
-      AboutPageBackgroundImage,
-      CareersPagebackgrounImage,
-      BlogPageBackgroundImage,
-      caseStudyBackgroundImage,
-      jill,
-      GtmBackgroundImage
-    ];
-    const preloadImages = (imageUrls) => {
-      imageUrls.forEach((url) => {
-        const img = new Image();
-        img.src = url;
-      });
-    };
+  // useEffect(() => {
+  //   const imageUrls = [
+  //     HomepageBackgroundImage,
+  //     ServicesBackgroundImage,
+  //     FinanceBackgroundImage,
+  //     HrBackgroundImage,
+  //     BuisnessBackgroundImage,
+  //     FintechBackgroundImage,
+  //     DevopsBackgroundImage,
+  //     CloudBackgroundImage,
+  //     IaasBackgroundImage,
+  //     IotBackgroundImage,
+  //     SaasBackGroundImage,
+  //     OurWorkBackgroundImage,
+  //     AboutPageBackgroundImage,
+  //     CareersPagebackgrounImage,
+  //     BlogPageBackgroundImage,
+  //     caseStudyBackgroundImage,
+  //     jill,
+  //     GtmBackgroundImage
+  //   ];
+  //   const preloadImages = (imageUrls) => {
+  //     imageUrls.forEach((url) => {
+  //       const img = new Image();
+  //       img.src = url;
+  //     });
+  //   };
 
-    preloadImages(imageUrls);
-  }, []);
+  //   preloadImages(imageUrls);
+  // }, []);
 
   const Layout = ({ children }) => (
     <>
