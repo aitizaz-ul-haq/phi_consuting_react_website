@@ -235,10 +235,9 @@ const BuisnessConsulting = () => {
   }, []);
 
    useEffect(() => {
-  // Function to handle the parallax effect
   const handleScroll = () => {
     const offset = window.pageYOffset;
-    document.body.style.backgroundPositionY = offset * 0.5 + 'px'; // Adjust the speed of the parallax effect by changing the multiplier
+    document.body.style.backgroundPositionY = offset * 0.5 + 'px'; 
   };
 
   // Set background image on mount
@@ -260,21 +259,14 @@ const BuisnessConsulting = () => {
   }, []);
 
    useEffect(() => {
-  // Setting the background color with a transparent effect for the services section
   const servicesSection = document.querySelector('.why-phi-for-sales');
   
   if (servicesSection) {
-    // Apply light blue background color with transparency
     servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
-    // Apply top and bottom borders
-    servicesSection.style.borderTop = '2px solid #add8e6'; // Light blue color
-    servicesSection.style.borderBottom = '2px solid #add8e6'; // Light blue color
-    // Ensure content inside is not affected by the background color
-    // This is inherently the case with the background color property
-    // but ensure text and other elements have enough contrast
+    servicesSection.style.borderTop = '2px solid #add8e6'; 
+    servicesSection.style.borderBottom = '2px solid #add8e6'; 
   }
 
-  // Cleanup function to revert styles
   return () => {
     if (servicesSection) {
       servicesSection.style.backgroundColor = '';
