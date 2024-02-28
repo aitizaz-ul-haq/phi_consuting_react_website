@@ -1,13 +1,7 @@
-import React,{ useState, useEffect, useRef } from 'react';
+import React,{ useState, useEffect, useRef, Suspense } from 'react';
 import { Helmet } from 'react-helmet';
 import { Tooltip } from 'antd';
 import axios from 'axios';
-
-// import SaasHeroSection from '../../components/Industries_page_componenets/Saas/Saas Hero Section/SaasHeroSection';
-// import SaasBarCardSection from '../../components/Industries_page_componenets/Saas/Saas BarCard Section/SaasBarCardSection';
-// import SaasFourCardSection from '../../components/Industries_page_componenets/Saas/Saas FourCard Section/SaasFourCardSection';
-// import SaasCtaSection from '../../components/Industries_page_componenets/Saas/Saas Cta Section/SaasCtaSection';
-// import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
 
 const SaasHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas Hero Section/SaasHeroSection'));
 const SaasBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas BarCard Section/SaasBarCardSection'));
