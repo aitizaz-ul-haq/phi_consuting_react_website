@@ -7,6 +7,8 @@ import alizaidiportrait from "../assets/img/phi_people/ali_zaidi.png";
 import abudullahportrait from "../assets/img/phi_people/Abdullah.png";
 import razaportrait from "../assets/img/phi_people/Raza.png";
 import ismailportrait from "../assets/img/phi_people/ismail.png";
+import waqarsb from "../assets/img/phi_people/waqar.png";
+import dani from "../assets/img/phi_people/Danial Nadeem.png";
 import { TypeAnimation } from 'react-type-animation';
 import useScrollToTop from '../hooks/useScrollToTop';
 import { Helmet } from 'react-helmet';
@@ -366,28 +368,42 @@ useEffect(() => {
             <div class="pics-lane">
               <div class="pic-box">
                 <div class="pic">
-                  <img src={alizaidiportrait} alt="" width={250} />
+                  <img src={alizaidiportrait} className='phi-people-pics' alt="" width={370} />
                 </div>
                 <div class="team-name">Ali Zaidi</div>
                 <div class="designation">CEO</div>
               </div>
               <div class="pic-box">
                 <div class="pic">
-                  <img src={abudullahportrait} alt="" width={250} />
+                  <img src={abudullahportrait} className='phi-people-pics' alt="" width={370} />
                 </div>
                 <div class="team-name">Muhammad Abdullah Ahsan</div>
                 <div class="designation">Director Support And Success</div>
               </div>
               <div class="pic-box">
                 <div class="pic">
-                  <img src={razaportrait} alt="" width={250} />
+                  <img src={razaportrait} className='phi-people-pics' alt="" width={370} />
                 </div>
                 <div class="team-name">Raza ur Rehman</div>
                 <div class="designation">Director Buisness Development</div>
               </div>
               <div class="pic-box">
                 <div class="pic">
-                  <img src={ismailportrait} alt="" width={250} />
+                  <img src={ismailportrait} className='phi-people-pics' alt="" width={370} />
+                </div>
+                <div class="team-name">Abdullah Ismaeel</div>
+                <div class="designation">Director Sales</div>
+              </div>
+              <div class="pic-box">
+                <div class="pic">
+                  <img src={waqarsb} className='phi-people-pics' alt="" width={370} />
+                </div>
+                <div class="team-name">Abdullah Ismaeel</div>
+                <div class="designation">Director Sales</div>
+              </div>
+              <div class="pic-box">
+                <div class="pic">
+                  <img src={dani} className='phi-people-pics' alt="" width={370} />
                 </div>
                 <div class="team-name">Abdullah Ismaeel</div>
                 <div class="designation">Director Sales</div>

@@ -1,14 +1,16 @@
 import React,{ useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import FintechHeroSection from '../../components/Industries_page_componenets/FinTech/Fintech Hero Section/FintechHeroSection';
-import FintechBarCardSection from '../../components/Industries_page_componenets/FinTech/Fintech BarCard Section/FintechBarCardSection';
+// import FintechHeroSection from '../../components/Industries_page_componenets/FinTech/Fintech Hero Section/FintechHeroSection';
+// import FintechBarCardSection from '../../components/Industries_page_componenets/FinTech/Fintech BarCard Section/FintechBarCardSection';
+
+const FintechHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech Hero Section/FintechHeroSection'));
+const FintechBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech BarCard Section/FintechBarCardSection'));
 import FintechFourCardSection from '../../components/Industries_page_componenets/FinTech/Fintech FourCard Section/FintechFourCardSection';
 import FintechCtaSection from '../../components/Industries_page_componenets/FinTech/Fintech Cta Section/FintechCtaSection';
 import useScrollToTop from '../../hooks/useScrollToTop';
 import eye from "../../assets/img/eye.webp";
 import top from "../../assets/img/top Arrow.webp";
 import { Tooltip } from 'antd';
-
+import { Suspense } from 'react';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
 import IndustriesArticles from '../../components/shared/macroComps/IndustriesArticles';
@@ -310,13 +312,13 @@ useScrollToTop();
     </button>
                  </Tooltip>
             </div>
-
+            <Suspense fallback={<div>Loading...</div>}>
       {/* <!-- Hero Section --> */}
       <FintechHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
 
       {/* Bar Card Section */}
       <FintechBarCardSection cardDetails={cardDetails} />
-
+      </Suspense>
       {/* Fintech Industries Section */}
       <IndustriesArticles Api="fintech" />
    
