@@ -1,24 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import CloudHeroHeading from './Cloud Hero Subcomps/CloudHeroHeading';
+import CloudHeroDescription from './Cloud Hero Subcomps/CloudHeroDescription';
+import CloudHeroButton from './Cloud Hero Subcomps/CloudHeroButton';
 
 
 const CloudHeroSection = ({ heroHeading, heroDescription }) => {
     return(
-        <article className="hero">
-        <section className="hero-container-cloud">
+      <article className="hero">
+      <section className="hero-container-cloud">
           <div className="hero-content-cloud">
-            <h1 className="hero-heading-cloud">
-              {heroHeading}
-            </h1>
-            <p className="hero-desc-cloud">
-              {heroDescription}
-            </p>
-            <div className="consult-button-sales"> 
-              <Link to="/contact-us" className='scheduler-set'>Schedule a Free Consultation</Link> 
-            </div>
+              <CloudHeroHeading text={heroHeading} />
+              <CloudHeroDescription text={heroDescription} />
+              <CloudHeroButton to="/contact-us" buttonText="Schedule a Free Consultation" />
           </div>
-        </section>
-      </article>
+      </section>
+  </article>
     )
 }
 
