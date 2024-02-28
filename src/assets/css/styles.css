@@ -1565,7 +1565,7 @@ header {
 }
 
 .how-work {
-    background-image: url('../img/work_background_two.jpg'); /* Replace with the path to your image file */
+    /* background-image: url('../img/work_background_two.jpg');  */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; /* Adjust if needed */

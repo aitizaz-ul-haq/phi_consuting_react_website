@@ -8,7 +8,6 @@ import Blog from './pages/Blog';
 import Careers from './pages/Careers';
 import Contacts from './pages/Contacts';
 import Services from './pages/Services';
-import OurWork from './pages/OurWork';
 import Header from './components/shared/Header';
 import MobileHeader from "./components/shared/MobileHeader";
 import Footer from './components/shared/Footer';
