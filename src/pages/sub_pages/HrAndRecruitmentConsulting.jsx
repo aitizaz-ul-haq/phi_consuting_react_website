@@ -272,7 +272,6 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
 };
  useScrollToTop();
   
-  const firstThreeCaseStudies = caseStudies.slice(0, 3);
     return (
         <>
        <Helmet>
