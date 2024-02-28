@@ -9,12 +9,12 @@ import headericonfour from "../../assets/img/Header-icons/risk.webp";
 import insughtsone from "../../assets/img/Header-icons/blog.webp";
 import insughtstwo from "../../assets/img/Header-icons/case-study.webp";
 
-import iot from "../../assets/img/industry_icons/internet-of-things.png";
-import iaas from "../../assets/img/industry_icons/iaas.png";
-import saas from "../../assets/img/industry_icons/saas.png";
-import devops from "../../assets/img/industry_icons/devops.png";
-import cloud from "../../assets/img/industry_icons/server.png";
-import fintech from "../../assets/img/industry_icons/cloud-computing.png";
+import iot from "../../assets/img/industry_icons/internet-of-things.webp";
+import iaas from "../../assets/img/industry_icons/iaas.webp";
+import saas from "../../assets/img/industry_icons/saas.webp";
+import devops from "../../assets/img/industry_icons/devops.webp";
+import cloud from "../../assets/img/industry_icons/server.webp";
+import fintech from "../../assets/img/industry_icons/cloud-computing.webp";
 
 import { Link } from 'react-router-dom';
 import { Tooltip } from 'antd';

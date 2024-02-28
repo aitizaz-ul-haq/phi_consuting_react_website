@@ -1,11 +1,11 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-import hriconone from "../../assets/img/hr_icons/hr service.png";
-import hricontwo from "../../assets/img/hr_icons/Payroll & Benefits.png";
-import hriconthree from "../../assets/img/hr_icons/Talent Development.png";
-import hriconfour from "../../assets/img/hr_icons/executive.png";
-import hriconfive from "../../assets/img/hr_icons/Organization Development.png";
+import hriconone from "../../assets/img/hr_icons/hr service.webp";
+import hricontwo from "../../assets/img/hr_icons/Payroll & Benefits.webp";
+import hriconthree from "../../assets/img/hr_icons/Talent Development.webp";
+import hriconfour from "../../assets/img/hr_icons/executive.webp";
+import hriconfive from "../../assets/img/hr_icons/Organization Development.webp";
 
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { Tooltip } from 'antd';

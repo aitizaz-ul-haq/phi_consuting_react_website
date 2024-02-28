@@ -175,7 +175,7 @@ import ShowValPageCont from './pages/dashboard/Other Pages/value creation/ShowVa
 
 import { Helmet } from 'react-helmet';
 
-import HomepageBackgroundImage from "./assets/img/building-consulting-business.gif";
+import HomepageBackgroundImage from "./assets/img/new_Back.webp";
 
 import ServicesBackgroundImage from "./assets/img/services_page_img/services_image_3.webp";
 import GtmBackgroundImage from "./assets/img/gtm-strategy-phi-consulting.webp"; 
