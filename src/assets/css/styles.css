@@ -2848,7 +2848,7 @@ padding: 1rem;
 
   .banner-full-exp {
     position: relative;
-    background: url('../img/Buildings-cta.jpg') center/cover no-repeat; /* Replace with the path to your image file */
+    background: url('../img/Buildings-cta.webp') center/cover no-repeat; /* Replace with the path to your image file */
     height: 330px; /* Adjust the height as needed */
     display: flex;
     flex-direction: column;
