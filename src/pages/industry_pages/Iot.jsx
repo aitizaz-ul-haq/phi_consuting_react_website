@@ -1,18 +1,14 @@
 import React,{ useState, useEffect, useRef, Suspense } from 'react';
 import useScrollToTop from '../../hooks/useScrollToTop';
-import { Helmet } from 'react-helmet';
-import { Tooltip } from 'antd';
 import axios from 'axios';
-
 const IotHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/Iot/Iot Hero Section/IotHeroSection'));
 const IotBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Iot/Iot BarCard Section/IotBarCardSection'));
 const IotFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Iot/Iot FourCard Section/IotFourCardSection'));
 const IotCtaSection = React.lazy(() => import('../../components/Industries_page_componenets/Iot/Iot Cta Section/IotCtaSection'));
 const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
-
-
-import eye from "../../assets/img/eye.webp";
-import top from "../../assets/img/top Arrow.webp";
+const IotRightSectionControl = React.lazy(() => import('../../components/Industries_page_componenets/Iot/Iot Right Section/IotRightSectionControl'));
+const IotWhyPhiForSales = React.lazy(() => import('../../components/Industries_page_componenets/Iot/Iot WhyPhiForSales Section/IotWhyPhiForSales'));
+import IotPageHelmet from '../../components/Industries_page_componenets/Iot/Iot PageHelmet Section/IotPageHelmet';
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
 
@@ -28,14 +24,10 @@ const Iot = () => {
   const [sectionFourParagraph, setSectionFourParagraph] = useState('');
   const [sectionFiveTitle, setSectionFiveTitle] = useState('');
   const [sectionFiveParagraph, setSectionFiveParagraph] = useState('');
-
   const [heroHeading, setHeroHeading] = useState('');
   const [heroDescription, setHeroDescription] = useState('');
- 
   const processNewRef = useRef(null);
-
   const [darkMode, setDarkMode] = useState(false);
-
   const insightsRefs = useRef([]);
   const [cardDetails, setCardDetails] = useState({
     barCardHeading: '',
@@ -71,6 +63,24 @@ const Iot = () => {
       return acc.concat(simplifiedContent);
     }, []);
   }
+
+  const fetchSaasCards = async () => {
+    try {
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/iotcards');
+      if (response.data && response.data.length > 0) {
+        const firstEntry = response.data[0];
+        setCardDetails({
+          barCardHeading: firstEntry.barcardheading,
+          fourCardHeading: firstEntry.fourcardheading,
+          ...firstEntry 
+        });
+      }
+      setData(response.data);
+    } catch (error) {
+      console.error('Error fetching saascards data:', error);
+      message.error('Failed to fetch data');
+    }
+  };
   
   useEffect(() => {
     const fetchFintechData = async () => {
@@ -92,24 +102,6 @@ const Iot = () => {
     fetchSaasCards();
   }, []);
 
-  const fetchSaasCards = async () => {
-    try {
-      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/iotcards');
-      if (response.data && response.data.length > 0) {
-        const firstEntry = response.data[0];
-        setCardDetails({
-          barCardHeading: firstEntry.barcardheading,
-          fourCardHeading: firstEntry.fourcardheading,
-          ...firstEntry 
-        });
-      }
-      setData(response.data);
-    } catch (error) {
-      console.error('Error fetching saascards data:', error);
-      message.error('Failed to fetch data');
-    }
-  };
-  
   useEffect(() => {
     const fetchFintechInfo = async () => {
       try {
@@ -199,144 +191,33 @@ const Iot = () => {
     };
   }, []); 
 
-useEffect(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        } else {
-          entry.target.classList.remove('visible');
-        }
-      });
-    },
-    {
-      threshold: 0.5, 
-    }
-  );
 
-  const elements = insightsRefs.current;
-  elements.forEach((el) => {
-    if (el) observer.observe(el);
-  });
-
-  return () => {
-    elements.forEach((el) => {
-      if (el) observer.unobserve(el);
-    });
-  };
-}, []);
 
 useScrollToTop();
-
-  const toggleDarkMode = () => setDarkMode(!darkMode);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-};
     return (
-        <>
-        <Helmet>
-        <title>Your Gateway to Scalable IoT Innovation | Phi Consulting</title>
-        <meta name="description" content="Unlock the potential of your IoT startup with Phi Consulting's specialized IoT consulting services. Our team guides founders and executives through growth and innovation, crafting custom go-to-market strategies, HR and recruitment solutions, financial management, and investor relations to ensure lasting success." />
-      </Helmet>
-      <Helmet>
-      <link rel="canonical" href="https://phiconsulting.org/iot-consulting" />
-      </Helmet>
-
-
-         <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
-        <div className="left-section-control"></div>
-            <div className="right-section-control">
-            <Tooltip placement="leftTop" title="toggle eye protection">
-            <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
-            </Tooltip>
-                 {/* Back to Top Button */}
-                 <Tooltip placement="leftTop" title="back to top">
-    <button className="back-to-top" onClick={scrollToTop}>
-    <img src={top} alt="eye icon" width={25} height={25}/>
-    </button>
-               </Tooltip>
-             </div>
-
-  <Suspense fallback={<div>Loading...</div>}>
+        <>      
+  <IotPageHelmet />
+   <Suspense fallback={<div>Loading...</div>}>
+      <IotRightSectionControl/>
       {/* <!-- Hero Section --> */}
       <IotHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
-
       {/* Bar Card Section */}
       <IotBarCardSection cardDetails={cardDetails} />
-
        {/* Industries Articals section */}
       <IndustriesArticles Api="iot"/>
-
        {/* Four Card Section */}
       <IotFourCardSection cardDetails={cardDetails} />
-</Suspense>
        {/* <!-- why phi for sale Section --> */}
-      <article class="why-phi-for-sales">
-        <h2 class="why-phi-heading">Why Phi Consulting?</h2>
-        <div class="insights-container">
-          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
-            <div class="left-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {sectionOneTitle}
-                  </h2>
-                  <p class="overlay-desc">
-                  {sectionOneParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="right-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {sectionTwoTitle}
-                  </h2>
-                  <p class="overlay-desc">
-                  {sectionTwoParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
-            <div class="left-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">{sectionThreeTitle}</h2>
-                  <p class="overlay-desc">
-                  {sectionThreeParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="right-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {sectionFourTitle}
-                  </h2>
-                  <p class="overlay-desc">
-                  {sectionFourParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <Suspense fallback={<div>Loading...</div>}>
+      <IotWhyPhiForSales
+            sectionOneTitle={sectionOneTitle}
+            sectionOneParagraph={sectionOneParagraph}
+            sectionTwoTitle={sectionTwoTitle}
+            sectionTwoParagraph={sectionTwoParagraph}
+            sectionThreeTitle={sectionThreeTitle}
+            sectionThreeParagraph={sectionThreeParagraph}
+            sectionFourTitle={sectionFourTitle}
+            sectionFourParagraph={sectionFourParagraph}
+        />
       {/* <!-- Call to Action Section --> */}
       <IotCtaSection />
       </Suspense>

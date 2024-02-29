@@ -64,6 +64,24 @@ const IaaS = () => {
       return acc.concat(simplifiedContent);
     }, []);
   }
+
+  const fetchSaasCards = async () => {
+    try {
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/iaascards');
+      if (response.data && response.data.length > 0) {
+        const firstEntry = response.data[0];
+        setCardDetails({
+          barCardHeading: firstEntry.barcardheading,
+          fourCardHeading: firstEntry.fourcardheading,
+          ...firstEntry 
+        });
+      }
+      setData(response.data);
+    } catch (error) {
+      console.error('Error fetching saascards data:', error);
+      message.error('Failed to fetch data');
+    }
+  };
   
   useEffect(() => {
     const fetchFintechData = async () => {
@@ -84,25 +102,7 @@ const IaaS = () => {
   useEffect(() => {
     fetchSaasCards();
   }, []);
-
-  const fetchSaasCards = async () => {
-    try {
-      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/iaascards');
-      if (response.data && response.data.length > 0) {
-        const firstEntry = response.data[0];
-        setCardDetails({
-          barCardHeading: firstEntry.barcardheading,
-          fourCardHeading: firstEntry.fourcardheading,
-          ...firstEntry 
-        });
-      }
-      setData(response.data);
-    } catch (error) {
-      console.error('Error fetching saascards data:', error);
-      message.error('Failed to fetch data');
-    }
-  };
-  
+ 
   useEffect(() => {
     const fetchFintechInfo = async () => {
       try {
@@ -227,22 +227,7 @@ const IaaS = () => {
       };
     }, []);
     
-    useEffect(() => {
-      const servicesSection = document.querySelector('.why-phi-for-sales');
-      if (servicesSection) {
-        servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
-        servicesSection.style.borderTop = '2px solid #add8e6'; 
-        servicesSection.style.borderBottom = '2px solid #add8e6'; 
-      }
-      return () => {
-        if (servicesSection) {
-          servicesSection.style.backgroundColor = '';
-          servicesSection.style.borderTop = '';
-          servicesSection.style.borderBottom = '';
-        }
-      };
-    }, []); 
-
+  
  
 
 useScrollToTop();
