@@ -1,17 +1,16 @@
 import React,{ useState, useEffect, useRef, Suspense } from 'react';
-import { Tooltip } from 'antd';
 import axios from 'axios';
-import { Helmet } from 'react-helmet';
+
 
 const IaasHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/Iaas/Iaas Hero Section/IaasHeroSection'));
 const IaasBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Iaas/Iaas BarCard Section/IaasBarCardSection'));
 const IaasFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Iaas/Iaas FourCard Section/IaasFourCardSection'));
 const IaasCtaSection = React.lazy(() => import('../../components/Industries_page_componenets/Iaas/Iaas Cta Section/IaasCtaSection'));
 const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
-
+const IaasRightSectionControl = React.lazy(() => import('../../components/Industries_page_componenets/Iaas/Iaas Right Section/IaasRightSectionControl'));
+const IaasWhyPhiForSales = React.lazy(() => import('../../components/Industries_page_componenets/Iaas/Iaas WhyPhiForSales Section/IaasWhyPhiForSales'));
+import IaasPageHelmet from '../../components/Industries_page_componenets/Iaas/Iaas PageHelmet Section/IaasPageHelmet';
 import useScrollToTop from '../../hooks/useScrollToTop';
-import eye from "../../assets/img/eye.webp";
-import top from "../../assets/img/top Arrow.webp";
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
 const IaaS = () => {
@@ -25,18 +24,12 @@ const IaaS = () => {
   const [sectionFourParagraph, setSectionFourParagraph] = useState('');
   const [sectionFiveTitle, setSectionFiveTitle] = useState('');
   const [sectionFiveParagraph, setSectionFiveParagraph] = useState('');
-
   const [heroHeading, setHeroHeading] = useState('');
   const [heroDescription, setHeroDescription] = useState('');
-
   const processNewRef = useRef(null);
-
   const [darkMode, setDarkMode] = useState(false);
-
   const sectionsRef = useRef([]);
-
   const insightsRefs = useRef([]);
-
   const [cardDetails, setCardDetails] = useState({
     barCardHeading: '',
     fourCardHeading: '',
@@ -250,120 +243,33 @@ const IaaS = () => {
       };
     }, []); 
 
-    const toggleDarkMode = () => setDarkMode(!darkMode);
-
-const scrollToTop = () => {
-  window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-  });
-};
+ 
 
 useScrollToTop();
     return (
         <>
-       <Helmet>
-        <title>Expert IaaS Solutions for Startups | Phi Consulting</title>
-        <meta name="description" content="Unlock the potential of your startup with Phi Consulting's expert IaaS consulting services. Our team guides startups in assessing infrastructure needs, formulating scalable strategies, and navigating financial complexities. Explore our customized solutions for go-to-market strategies, talent acquisition, and investor relations to propel your venture towards success." />
-      </Helmet>
-
-      <Helmet>
-      <link rel="canonical" href="https://phiconsulting.org/iaas-consulting" />
-    </Helmet>
-
-<div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
-        <div className="left-section-control"></div>
-            <div className="right-section-control">
-            <Tooltip placement="leftTop" title="toggle eye protection">
-            <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
-            </Tooltip>
-                 {/* Back to Top Button */}
-                 <Tooltip placement="leftTop" title="back to top">
-    <button className="back-to-top" onClick={scrollToTop}>
-    <img src={top} alt="eye icon" width={25} height={25}/>
-    </button>
-                </Tooltip>
-            </div>
-
+   <IaasPageHelmet/>
   <Suspense fallback={<div>Loading...</div>}>
+    <IaasRightSectionControl />
       {/* <!-- Hero Section --> */}
       <IaasHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
-
        {/* Bar Card Section */}
       <IaasBarCardSection cardDetails={cardDetails} />
-
        {/* Industries Articals section */}
       <IndustriesArticles Api="iaas" />
-
        {/* Four Card Section */}
       <IaasFourCardSection cardDetails={cardDetails} />
-
-   </Suspense>  
-      {/* <!-- why phi for sale Section --> */}
-      <article class="why-phi-for-sales">
-        <h2 class="why-phi-heading">Why Phi Consulting?</h2>
-        <div class="insights-container">
-          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
-            <div class="left-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {sectionOneTitle}
-                  </h2>
-                  <p class="overlay-desc">
-                  {sectionOneParagraph}
-
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="right-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {sectionTwoTitle}
-                  </h2>
-                  <p class="overlay-desc">
-                  {sectionTwoParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
-            <div class="left-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">{sectionThreeTitle}</h2>
-                  <p class="overlay-desc">
-                  {sectionThreeParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="right-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {sectionFourTitle}
-                  </h2>
-                  <p class="overlay-desc">
-                  {sectionFourParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-          
-        </div>
-      </article>
-
-      <Suspense fallback={<div>Loading...</div>}>
+       {/* <!-- why phi for sale Section --> */}
+       <IaasWhyPhiForSales
+            sectionOneTitle={sectionOneTitle}
+            sectionOneParagraph={sectionOneParagraph}
+            sectionTwoTitle={sectionTwoTitle}
+            sectionTwoParagraph={sectionTwoParagraph}
+            sectionThreeTitle={sectionThreeTitle}
+            sectionThreeParagraph={sectionThreeParagraph}
+            sectionFourTitle={sectionFourTitle}
+            sectionFourParagraph={sectionFourParagraph}
+        />
       {/* <!-- Call to Action Section --> */}
       <IaasCtaSection />
       </Suspense>
