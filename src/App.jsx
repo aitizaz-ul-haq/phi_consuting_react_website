@@ -21,7 +21,7 @@ import BuisnessConsulting from './pages/sub_pages/BuisnessConsulting';
 import HrConsulting from './pages/sub_pages/HrAndRecruitmentConsulting';
 import SalesConsulting from './pages/sub_pages/SalesConsulting';
 
-import Iot from './pages/industry_pages/iot';
+import Iot from './pages/industry_pages/Iot';
 import IaaS from './pages/industry_pages/IaaS';
 import SaaS from './pages/industry_pages/SaaS';
 import DevOps from './pages/industry_pages/DevOps';
