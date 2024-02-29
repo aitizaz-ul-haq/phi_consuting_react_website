@@ -25,7 +25,6 @@ const Cloud = () => {
   const [heroHeading, setHeroHeading] = useState('');
   const [heroDescription, setHeroDescription] = useState('');
   const processNewRef = useRef(null);
-  const [darkMode, setDarkMode] = useState(false);
   const sectionsRef = useRef([]);
   const [cardDetails, setCardDetails] = useState({
     barCardHeading: '',
@@ -195,28 +194,21 @@ const Cloud = () => {
   return () => elements.forEach(el => observer.unobserve(el));
  }, []);
 
-const toggleDarkMode = () => setDarkMode(!darkMode);
-
 useScrollToTop();
     return (
         <>
   <CloudPageHelmet />
     <Suspense fallback={<div>Loading...</div>}>
      {/* Cloud Right Section Control Panel */}
-    <CloudRightSectionControl toggleDarkMode={toggleDarkMode} />
-
+    <CloudRightSectionControl />
       {/* <!-- Hero Section --> */}
       <CloudHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
-
       {/* Bar Card Section */}
       <CloudBarCardSection cardDetails={cardDetails} />
-
       {/* Industries Articals Section  */}
       <IndustriesArticles Api="cloud" />
-
       {/* Four Card Section */}
       <CloudFourCardSection cardDetails={cardDetails} />
-
        {/* <!-- why phi for sale Section --> */}
       <CloudWhyPhiForSales
             sectionOneTitle={sectionOneTitle}
@@ -224,7 +216,6 @@ useScrollToTop();
             sectionTwoTitle={sectionTwoTitle}
             sectionTwoParagraph={sectionTwoParagraph}
         />
-
         {/* <!-- Call to Action Section --> */}
         <CloudCtaSection />
     </Suspense>

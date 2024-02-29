@@ -2,7 +2,7 @@ import React from 'react';
 import { Tooltip } from 'antd';
 import top from "../../../../assets/img/top Arrow.webp";
 
-const CloudRightSectionControl = () => {
+const DevopsRightSectionControl = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -22,4 +22,4 @@ const CloudRightSectionControl = () => {
   );
 };
 
-export default CloudRightSectionControl;
+export default DevopsRightSectionControl;

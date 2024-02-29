@@ -1,18 +1,14 @@
 import React,{ useState, useEffect, useRef, Suspense } from 'react';
 import axios from 'axios';
-import { Helmet } from 'react-helmet';
-import useScrollToTop from '../../hooks/useScrollToTop';
-import { Tooltip } from 'antd';
-
 const DevopsHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/Devops/Devops Hero Section/DevopsHeroSection'));
 const DevopsBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Devops/Devops BarCard Section/DevopsBarCardSection'));
 const DevopsFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Devops/Devops FourCard Section/DevopsFourCardSection'));
 const DevopsCtaSection = React.lazy(() => import('../../components/Industries_page_componenets/Devops/Devops Cta Section/DevopsCtaSection'));
 const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
-
-
-import eye from "../../assets/img/eye.webp";
-import top from "../../assets/img/top Arrow.webp";
+const DevopsRightSectionControl = React.lazy(() => import('../../components/Industries_page_componenets/Devops/Devops Right Section/DevopsRightSectionControl'));
+const DevopsWhyPhiForSales = React.lazy(() => import('../../components/Industries_page_componenets/Devops/Devops WhyPhiForSales Section/DevopsWhyPhiForSales'));
+import DevopsPageHelmet from '../../components/Industries_page_componenets/Devops/Devops PageHelmet Section/DevopsPageHelmet';
+import useScrollToTop from '../../hooks/useScrollToTop';
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
 const DevOps = () => {
@@ -26,18 +22,10 @@ const DevOps = () => {
   const [sectionFourParagraph, setSectionFourParagraph] = useState('');
   const [sectionFiveTitle, setSectionFiveTitle] = useState('');
   const [sectionFiveParagraph, setSectionFiveParagraph] = useState('');
-
   const [heroHeading, setHeroHeading] = useState('');
   const [heroDescription, setHeroDescription] = useState('');
-
-  const apiUrl = import.meta.env.VITE_API_URL_PROD || 'https://prickle-balanced-archaeopteryx.glitch.me';
-
   const processNewRef = useRef(null);
-
-  const [darkMode, setDarkMode] = useState(false);
-
   const sectionsRef = useRef([]);
-  const insightsRefs = useRef([]);
 
   const [cardDetails, setCardDetails] = useState({
     barCardHeading: '',
@@ -60,6 +48,7 @@ const DevOps = () => {
     card4description: '',
   });
 
+  const apiUrl = import.meta.env.VITE_API_URL_PROD || 'https://prickle-balanced-archaeopteryx.glitch.me';
 
   function simplifyFintechData(data) {
     return data.reduce((acc, entry) => {
@@ -72,6 +61,24 @@ const DevOps = () => {
       return acc.concat(simplifiedContent);
     }, []);
   }
+
+  const fetchSaasCards = async () => {
+    try {
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/devcards');
+      if (response.data && response.data.length > 0) {
+        const firstEntry = response.data[0];
+        setCardDetails({
+          barCardHeading: firstEntry.barcardheading,
+          fourCardHeading: firstEntry.fourcardheading,
+          ...firstEntry 
+        });
+      }
+      setData(response.data);
+    } catch (error) {
+      console.error('Error fetching saascards data:', error);
+      message.error('Failed to fetch data');
+    }
+  };
   
   useEffect(() => {
     const fetchFintechData = async () => {
@@ -146,25 +153,7 @@ const DevOps = () => {
   useEffect(() => {
     fetchSaasCards();
   }, []);
-  
-  const fetchSaasCards = async () => {
-    try {
-      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/devcards');
-      if (response.data && response.data.length > 0) {
-        const firstEntry = response.data[0];
-        setCardDetails({
-          barCardHeading: firstEntry.barcardheading,
-          fourCardHeading: firstEntry.fourcardheading,
-          ...firstEntry 
-        });
-      }
-      setData(response.data);
-    } catch (error) {
-      console.error('Error fetching saascards data:', error);
-      message.error('Failed to fetch data');
-    }
-  };
-  
+
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.pageYOffset;
@@ -184,23 +173,6 @@ const DevOps = () => {
     };
   }, []);
   
-  useEffect(() => {
-    const servicesSection = document.querySelector('.why-phi-for-sales');
-    if (servicesSection) {
-      servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
-      servicesSection.style.borderTop = '2px solid #add8e6'; 
-      servicesSection.style.borderBottom = '2px solid #add8e6'; 
-    }
-    return () => {
-      if (servicesSection) {
-        servicesSection.style.backgroundColor = '';
-        servicesSection.style.borderTop = '';
-        servicesSection.style.borderBottom = '';
-      }
-    };
-  }, []); 
-  
-
   useEffect(() => {
   const observer = new IntersectionObserver(
       (entries) => {
@@ -225,152 +197,36 @@ const DevOps = () => {
  }, []);
 
 
-  useEffect(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        } else {
-          entry.target.classList.remove('visible');
-        }
-      });
-    },
-    {
-      threshold: 0.5, // Adjust as needed
-    }
-  );
 
-  const elements = insightsRefs.current;
-  elements.forEach((el) => {
-    if (el) observer.observe(el);
-  });
-
-  return () => {
-    elements.forEach((el) => {
-      if (el) observer.unobserve(el);
-    });
-  };
- }, []);
-
-const toggleDarkMode = () => setDarkMode(!darkMode);
-
-const scrollToTop = () => {
-  window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-  });
-};
 
 useScrollToTop();
     return (
         <>
-       <Helmet>
-        <title>Welcome to the Future of DevOps | Phi Consulting</title>
-        <meta name="description" content="Unlock the full potential of your DevOps startup with Phi Consulting's expert DevOps consulting services. From GTM strategy to HR & recruitment solutions, financial consulting, and investor relations, we offer tailored solutions to address the unique challenges faced by DevOps companies. Partner with us to revolutionize your startup's growth journey. Contact us today." />
-      </Helmet>
-
-      <Helmet>
-      <link rel="canonical" href="https://phiconsulting.org/dev-ops-consulting" />
-     </Helmet>
-
-
-<div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
-        <div className="left-section-control"></div>
-            <div className="right-section-control">
-            <Tooltip placement="leftTop" title="toggle eye protection">
-            <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
-            </Tooltip>
-
-                 {/* Back to Top Button */}
-                 <Tooltip placement="leftTop" title="back to top">
-    <button className="back-to-top" onClick={scrollToTop}>
-    <img src={top} alt="eye icon" width={25} height={25}/>
-    </button>
-                 </Tooltip>
-            </div>
-
+ <DevopsPageHelmet />
   <Suspense fallback={<div>Loading...</div>}>
+       {/* Devops Right Section Control Panel */}
+      <DevopsRightSectionControl />
       {/* <!-- Hero Section --> */}
       <DevopsHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
-
       {/* Bar Card Section */}
       <DevopsBarCardSection cardDetails={cardDetails} />
-
        {/* Devops Industries Section */}
       <IndustriesArticles Api="devops" />
-
       {/* Devops Four Card section */}
       <DevopsFourCardSection cardDetails={cardDetails} />
-
-      </Suspense>
-
       {/* <!-- why phi for sale Section --> */}
-      <article class="why-phi-for-sales">
-        <h2 class="why-phi-heading">Why Phi Consulting?</h2>
-        <div class="insights-container">
-          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
-            <div class="left-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {sectionOneTitle}
-                  </h2>
-                  <p class="overlay-desc">
-                  {sectionOneParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="right-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {sectionTwoTitle}
-                  </h2>
-                  <p class="overlay-desc">
-                  {sectionTwoParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
-            <div class="left-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">{sectionThreeTitle}</h2>
-                  <p class="overlay-desc">
-                  {sectionThreeParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="right-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {sectionFourTitle}
-                  </h2>
-                  <p class="overlay-desc">
-                  {sectionFourParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <Suspense fallback={<div>Loading...</div>}>
-
+      <DevopsWhyPhiForSales
+            sectionOneTitle={sectionOneTitle}
+            sectionOneParagraph={sectionOneParagraph}
+            sectionTwoTitle={sectionTwoTitle}
+            sectionTwoParagraph={sectionTwoParagraph}
+            sectionThreeTitle={sectionThreeTitle}
+            sectionThreeParagraph={sectionThreeParagraph}
+            sectionFourTitle={sectionFourTitle}
+            sectionFourParagraph={sectionFourParagraph}
+        />
       {/* <!-- Call to Action Section --> */}
       <DevopsCtaSection />
-
       </Suspense>
         </>
     )

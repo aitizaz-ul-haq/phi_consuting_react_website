@@ -1,4 +1,3 @@
-// WhyPhiForSalesSection.js
 import React, { useRef, useEffect } from 'react';
 
 const CloudWhyPhiForSales = ({ sectionOneTitle, sectionOneParagraph, sectionTwoTitle, sectionTwoParagraph }) => {
