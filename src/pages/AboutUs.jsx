@@ -16,7 +16,7 @@ import axios from 'axios';
 import recog from '../assets/img/recognitions/iso.webp';
 import { Tooltip } from 'antd';
 import linkdin from '../assets/img/socil-media/linkedin.webp';
-import twitter from '../assets/img/socil-media/twitter.webp';
+import twitter from '../assets/img/socil-media/twitter11.webp';
 
 const AboutUs = () => {
 
@@ -376,12 +376,12 @@ useEffect(() => {
                 <div class="team-name">Ali zaidi</div>
                 <div class="designation">founder & ceo</div>
                 <div className="phi_people_social_container">
-                  <Tooltip placement="top" title="Alis Linkdin">
+                  <Tooltip placement="top" title="Ali's Linkdin">
                     <a href="https://www.linkedin.com/in/alizaidiphi/" target="_blank" rel="noopener noreferrer">
                          <img src={linkdin} className='social-icon' alt="" width="38" />
                     </a>
                   </Tooltip>
-                  <Tooltip placement="bottom" title="Alis Twitter">
+                  <Tooltip placement="bottom" title="Ali's Twitter">
                      <a href="https://twitter.com/phisaasllc" target="_blank" rel="noopener noreferrer">
                        <img src={twitter} className='social-icon' alt="" width="38" />
                       </a>
