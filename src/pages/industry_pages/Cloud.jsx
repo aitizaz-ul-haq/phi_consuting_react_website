@@ -1,5 +1,4 @@
 import React,{ useState, useEffect, useRef, Suspense } from 'react';
-import { Tooltip } from 'antd';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
 
@@ -8,10 +7,10 @@ const CloudBarCardSection = React.lazy(() => import('../../components/Industries
 const CloudFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Cloud/Cloud FourCard Section/CloudFourCardSection'));
 const CloudCtaSection = React.lazy(() => import('../../components/Industries_page_componenets/Cloud/Cloud Cta Section/CloudCtaSection'));
 const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
+const CloudRightSectionControl = React.lazy(() => import('../../components/Industries_page_componenets/Cloud/Cloud Right Section/CloudRightSectionControl'));
 
+import CloudPageHelmet from '../../components/Industries_page_componenets/Cloud/Cloud PageHelmet Section/CloudPageHelmet';
 import useScrollToTop from '../../hooks/useScrollToTop';
-import eye from "../../assets/img/eye.webp";
-import top from "../../assets/img/top Arrow.webp";
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
 
@@ -221,7 +220,6 @@ useEffect(() => {
   return () => elements.forEach(el => observer.unobserve(el));
 }, []);
 
-
 useEffect(() => {
   const observer = new IntersectionObserver(
     (entries) => {
@@ -252,43 +250,16 @@ useEffect(() => {
 
 const toggleDarkMode = () => setDarkMode(!darkMode);
 
-const scrollToTop = () => {
-  window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-  });
-};
 
 useScrollToTop();
     return (
         <>
-       <Helmet>
-        <title>Empowering Your Vision, Elevating Your Cloud Strategy | Phi Consulting</title>
-        <meta name="description" content="Unlock the full potential of your cloud startup with Phi Consulting's expert cloud consulting services. From GTM strategy to HR & recruitment solutions, financial consulting, and investor relations, we offer tailored solutions to address the unique challenges faced by cloud companies. Partner with us to revolutionize your startup's growth journey. Contact us today." />
-      </Helmet>
+       <CloudPageHelmet />
 
-      <Helmet>
-      <link rel="canonical" href="https://phiconsulting.org/cloud-consulting" />
-      </Helmet>
-
-
-
-
-<div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
-        <div className="left-section-control"></div>
-            <div className="right-section-control">
-            <Tooltip placement="leftTop" title="toggle eye protection">
-            <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
-            </Tooltip>
-                 {/* Back to Top Button */}
-                 <Tooltip placement="leftTop" title="back to top">
-    <button className="back-to-top" onClick={scrollToTop}>
-    <img src={top} alt="eye icon" width={25} height={25}/>
-    </button>
-                </Tooltip>
-            </div>
-
+       
     <Suspense fallback={<div>Loading...</div>}>
+     {/* Cloud Right Section Control Panel */}
+    <CloudRightSectionControl toggleDarkMode={toggleDarkMode} />
 
       {/* <!-- Hero Section --> */}
       <CloudHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
