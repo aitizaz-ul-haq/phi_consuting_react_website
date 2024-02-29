@@ -99,7 +99,7 @@ const fetchSaasCards = async () => {
   }
 };
 
-useEffect(() => {
+  useEffect(() => {
   const fetchFintechInfo = async () => {
     try {
       const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/fintechinfo`);
@@ -120,7 +120,7 @@ useEffect(() => {
   };
 
   fetchFintechInfo();
-}, []);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -231,35 +231,6 @@ useEffect(() => {
     }
   };
   }, []);
-
-  useEffect(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        } else {
-          entry.target.classList.remove('visible');
-        }
-      });
-    },
-    {
-      threshold: 0.5, // Adjust as needed
-    }
-  );
-
-  const elements = insightsRefs.current;
-  elements.forEach((el) => {
-    if (el) observer.observe(el);
-  });
-
-  return () => {
-    elements.forEach((el) => {
-      if (el) observer.unobserve(el);
-    });
-  };
-  }, []);
-
 
 useScrollToTop();
     return (
