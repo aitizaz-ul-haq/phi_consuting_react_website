@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import facebook from '../../assets/img/socil-media/facebook.webp';
 import instagram from '../../assets/img/socil-media/instagram.webp';
+import facebook from '../../assets/img/socil-media/facebook.webp';
 import linkdin from '../../assets/img/socil-media/linkedin.webp';
 import twitter from '../../assets/img/socil-media/twitter.webp';
 import youtube from '../../assets/img/socil-media/youtube.webp';

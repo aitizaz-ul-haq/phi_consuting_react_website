@@ -14,6 +14,9 @@ import useScrollToTop from '../hooks/useScrollToTop';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import recog from '../assets/img/recognitions/iso.webp';
+import { Tooltip } from 'antd';
+import linkdin from '../assets/img/socil-media/linkedin.webp';
+import twitter from '../assets/img/socil-media/twitter.webp';
 
 const AboutUs = () => {
 
@@ -372,6 +375,18 @@ useEffect(() => {
                 </div>
                 <div class="team-name">Ali zaidi</div>
                 <div class="designation">founder & ceo</div>
+                <div className="phi_people_social_container">
+                  <Tooltip placement="top" title="Find us on Linkdin">
+                    <a href="https://www.linkedin.com/company/phisaas/" target="_blank" rel="noopener noreferrer">
+                         <img src={linkdin} className='social-icon' alt="" width="38" />
+                    </a>
+                  </Tooltip>
+                  <Tooltip placement="bottom" title="Talk to us on Twitter">
+                     <a href="https://twitter.com/phisaasllc" target="_blank" rel="noopener noreferrer">
+                       <img src={twitter} className='social-icon' alt="" width="38" />
+                      </a>
+                 </Tooltip>
+                </div>
               </div>
               <div class="pic-box">
                 <div class="pic">
@@ -379,6 +394,18 @@ useEffect(() => {
                 </div>
                 <div class="team-name">Muhammad Abdullah Ahsan</div>
                 <div class="designation">director professional services- customer experience</div>
+                <div className="phi_people_social_container">
+                  <Tooltip placement="top" title="Find us on Linkdin">
+                    <a href="https://www.linkedin.com/company/phisaas/" target="_blank" rel="noopener noreferrer">
+                         <img src={linkdin} className='social-icon' alt="" width="38" />
+                    </a>
+                  </Tooltip>
+                  <Tooltip placement="bottom" title="Talk to us on Twitter">
+                     <a href="https://twitter.com/phisaasllc" target="_blank" rel="noopener noreferrer">
+                       <img src={twitter} className='social-icon' alt="" width="38" />
+                      </a>
+                 </Tooltip>
+                </div>
               </div>
               <div class="pic-box">
                 <div class="pic">
@@ -386,6 +413,18 @@ useEffect(() => {
                 </div>
                 <div class="team-name">Raza ur Rehman</div>
                 <div class="designation">Director Commercial</div>
+                <div className="phi_people_social_container">
+                  <Tooltip placement="top" title="Find us on Linkdin">
+                    <a href="https://www.linkedin.com/company/phisaas/" target="_blank" rel="noopener noreferrer">
+                         <img src={linkdin} className='social-icon' alt="" width="38" />
+                    </a>
+                  </Tooltip>
+                  <Tooltip placement="bottom" title="Talk to us on Twitter">
+                     <a href="https://twitter.com/phisaasllc" target="_blank" rel="noopener noreferrer">
+                       <img src={twitter} className='social-icon' alt="" width="38" />
+                      </a>
+                 </Tooltip>
+                </div>
               </div>
               <div class="pic-box">
                 <div class="pic">
@@ -393,6 +432,18 @@ useEffect(() => {
                 </div>
                 <div class="team-name">Abdullah Ismaeel</div>
                 <div class="designation">Director people excellence & culture</div>
+                <div className="phi_people_social_container">
+                  <Tooltip placement="top" title="Find us on Linkdin">
+                    <a href="https://www.linkedin.com/company/phisaas/" target="_blank" rel="noopener noreferrer">
+                         <img src={linkdin} className='social-icon' alt="" width="38" />
+                    </a>
+                  </Tooltip>
+                  <Tooltip placement="bottom" title="Talk to us on Twitter">
+                     <a href="https://twitter.com/phisaasllc" target="_blank" rel="noopener noreferrer">
+                       <img src={twitter} className='social-icon' alt="" width="38" />
+                      </a>
+                 </Tooltip>
+                </div>
               </div>
               <div class="pic-box">
                 <div class="pic">
@@ -400,6 +451,18 @@ useEffect(() => {
                 </div>
                 <div class="team-name">Waqar Rizvi</div>
                 <div class="designation">Director Finance</div>
+                <div className="phi_people_social_container">
+                  <Tooltip placement="top" title="Find us on Linkdin">
+                    <a href="https://www.linkedin.com/company/phisaas/" target="_blank" rel="noopener noreferrer">
+                         <img src={linkdin} className='social-icon' alt="" width="38" />
+                    </a>
+                  </Tooltip>
+                  <Tooltip placement="bottom" title="Talk to us on Twitter">
+                     <a href="https://twitter.com/phisaasllc" target="_blank" rel="noopener noreferrer">
+                       <img src={twitter} className='social-icon' alt="" width="38" />
+                      </a>
+                 </Tooltip>
+                </div>
               </div>
               <div class="pic-box">
                 <div class="pic">
@@ -407,6 +470,18 @@ useEffect(() => {
                 </div>
                 <div class="team-name">Danial Nadeem</div>
                 <div class="designation">Director Professional Services - Sales</div>
+                <div className="phi_people_social_container">
+                  <Tooltip placement="top" title="Find us on Linkdin">
+                    <a href="https://www.linkedin.com/company/phisaas/" target="_blank" rel="noopener noreferrer">
+                         <img src={linkdin} className='social-icon' alt="" width="38" />
+                    </a>
+                  </Tooltip>
+                  <Tooltip placement="bottom" title="Talk to us on Twitter">
+                     <a href="https://twitter.com/phisaasllc" target="_blank" rel="noopener noreferrer">
+                       <img src={twitter} className='social-icon' alt="" width="38" />
+                      </a>
+                 </Tooltip>
+                </div>
               </div>
             </div>
           </div>
