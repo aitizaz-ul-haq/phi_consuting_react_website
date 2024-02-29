@@ -1,6 +1,4 @@
 import React,{ useState, useEffect, useRef, Suspense } from 'react';
-import { Helmet } from 'react-helmet';
-import { Tooltip } from 'antd';
 import axios from 'axios';
 
 const SaasHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas Hero Section/SaasHeroSection'));
@@ -8,9 +6,10 @@ const SaasBarCardSection = React.lazy(() => import('../../components/Industries_
 const SaasFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas FourCard Section/SaasFourCardSection'));
 const SaasCtaSection = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas Cta Section/SaasCtaSection'));
 const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
+const SaasRightSectionControl = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas Right Section/SaasRightSectionControl'));
+const SaasWhyPhiForSales = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas WhyPhiForSales Section/SaasWhyPhiForSales'));
 
-import eye from "../../assets/img/eye.webp";
-import top from "../../assets/img/top Arrow.webp";
+import SaasPageHelmet from '../../components/Industries_page_componenets/Saas/Saas PageHelmet Section/SaasPageHelmet';
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
 
@@ -247,41 +246,15 @@ useEffect(() => {
   };
 }, []); 
 
-const toggleDarkMode = () => setDarkMode(!darkMode);
-const scrollToTop = () => {
-  window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-  });
-};
 
     return (
         <>
-        <Helmet>
-        <title>Expertise at the Intersection of Innovation and Growth | Phi Consulting</title>
-        <meta name="description" content="Unlock the potential of your B2B SaaS startup with Phi Consulting's expert SaaS consulting services. Our hands-on experience, tested approaches, and flexibility ensure successful GTM strategies, HR & recruitment solutions, financial consulting, and investor relations. Let's shape the future of your SaaS venture together. Contact us to discuss partnership opportunities." />
-        </Helmet>
-
-     <Helmet>
-      <link rel="canonical" href="https://phiconsulting.org/saas-consulting" />
-    </Helmet>
-
-        <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
-        <div className="left-section-control"></div>
-            <div className="right-section-control">
-            <Tooltip placement="leftTop" title="toggle eye protection">
-            <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
-            </Tooltip>
-
-          {/* Back to Top Button */}
-          <Tooltip placement="leftTop" title="back to top">
-    <button className="back-to-top" onClick={scrollToTop}>
-    <img src={top} alt="eye icon" width={25} height={25}/>
-    </button>
-          </Tooltip>
-            </div>
+      
+<SaasPageHelmet/>
+        
 
   <Suspense fallback={<div>Loading...</div>}>
+      <SaasRightSectionControl/>
       {/* <!-- Hero Section --> */}
       <SaasHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
 
@@ -293,69 +266,18 @@ const scrollToTop = () => {
     
       {/* Four Card Section */}
       <SaasFourCardSection cardDetails={cardDetails} />
-  </Suspense>
+  
       {/* <!-- why phi for sale Section --> */}
-      <article class="why-phi-for-sales">
-        <h2 class="why-phi-heading">Why Phi Consulting?</h2>
-        <div class="insights-container">
-          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
-            <div class="left-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {sectionOneTitle}
-                  </h2>
-                  <p class="overlay-desc">
-                  {sectionOneParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="right-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {sectionTwoTitle}
-                  </h2>
-                  <p class="overlay-desc">
-                  {sectionTwoParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
-            <div class="left-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">{sectionThreeTitle}</h2>
-                  <p class="overlay-desc">
-                  {sectionThreeParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="right-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {sectionFourTitle}
-                  </h2>
-                  <p class="overlay-desc">
-                  {sectionFourParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <Suspense fallback={<div>Loading...</div>}>
+      <SaasWhyPhiForSales
+            sectionOneTitle={sectionOneTitle}
+            sectionOneParagraph={sectionOneParagraph}
+            sectionTwoTitle={sectionTwoTitle}
+            sectionTwoParagraph={sectionTwoParagraph}
+            sectionThreeTitle={sectionThreeTitle}
+            sectionThreeParagraph={sectionThreeParagraph}
+            sectionFourTitle={sectionFourTitle}
+            sectionFourParagraph={sectionFourParagraph}
+        />
       {/* <!-- Call to Action Section --> */}
       <SaasCtaSection />
       </Suspense>
