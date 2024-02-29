@@ -195,10 +195,7 @@ const Cloud = () => {
   return () => elements.forEach(el => observer.unobserve(el));
  }, []);
 
-
-
 const toggleDarkMode = () => setDarkMode(!darkMode);
-
 
 useScrollToTop();
     return (
@@ -230,7 +227,6 @@ useScrollToTop();
 
         {/* <!-- Call to Action Section --> */}
         <CloudCtaSection />
-      
     </Suspense>
         </>
     )
