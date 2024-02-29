@@ -370,43 +370,43 @@ useEffect(() => {
                 <div class="pic">
                   <img src={alizaidiportrait} className='phi-people-pics' alt="" width={370} />
                 </div>
-                <div class="team-name">Ali Zaidi</div>
-                <div class="designation">CEO</div>
+                <div class="team-name">Ali zaidi</div>
+                <div class="designation">founder & ceo</div>
               </div>
               <div class="pic-box">
                 <div class="pic">
                   <img src={abudullahportrait} className='phi-people-pics' alt="" width={370} />
                 </div>
                 <div class="team-name">Muhammad Abdullah Ahsan</div>
-                <div class="designation">Director Support And Success</div>
+                <div class="designation">director professional services- customer experience</div>
               </div>
               <div class="pic-box">
                 <div class="pic">
                   <img src={razaportrait} className='phi-people-pics' alt="" width={370} />
                 </div>
                 <div class="team-name">Raza ur Rehman</div>
-                <div class="designation">Director Buisness Development</div>
+                <div class="designation">Director Commercial</div>
               </div>
               <div class="pic-box">
                 <div class="pic">
                   <img src={ismailportrait} className='phi-people-pics' alt="" width={370} />
                 </div>
                 <div class="team-name">Abdullah Ismaeel</div>
-                <div class="designation">Director Sales</div>
+                <div class="designation">Director people excellence & culture</div>
               </div>
               <div class="pic-box">
                 <div class="pic">
                   <img src={waqarsb} className='phi-people-pics' alt="" width={370} />
                 </div>
-                <div class="team-name">Abdullah Ismaeel</div>
-                <div class="designation">Director Sales</div>
+                <div class="team-name">Waqar Rizvi</div>
+                <div class="designation">Director Finance</div>
               </div>
               <div class="pic-box">
                 <div class="pic">
                   <img src={dani} className='phi-people-pics' alt="" width={370} />
                 </div>
-                <div class="team-name">Abdullah Ismaeel</div>
-                <div class="designation">Director Sales</div>
+                <div class="team-name">Danial Nadeem</div>
+                <div class="designation">Director Professional Services - Sales</div>
               </div>
             </div>
           </div>
