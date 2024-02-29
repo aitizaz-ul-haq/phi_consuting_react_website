@@ -11,7 +11,6 @@ const CloudWhyPhiForSales = React.lazy(() => import('../../components/Industries
 
 import CloudPageHelmet from '../../components/Industries_page_componenets/Cloud/Cloud PageHelmet Section/CloudPageHelmet';
 
-
 import useScrollToTop from '../../hooks/useScrollToTop';
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
@@ -27,15 +26,11 @@ const Cloud = () => {
   const [sectionFourParagraph, setSectionFourParagraph] = useState('');
   const [sectionFiveTitle, setSectionFiveTitle] = useState('');
   const [sectionFiveParagraph, setSectionFiveParagraph] = useState('');
-
   const [heroHeading, setHeroHeading] = useState('');
   const [heroDescription, setHeroDescription] = useState('');
-
   const processNewRef = useRef(null);
-
   const [darkMode, setDarkMode] = useState(false);
   const sectionsRef = useRef([]);
-
   const [cardDetails, setCardDetails] = useState({
     barCardHeading: '',
     fourCardHeading: '',
@@ -56,7 +51,6 @@ const Cloud = () => {
     card4heading: '',
     card4description: '',
   });
-
   const apiUrl = import.meta.env.VITE_API_URL_PROD || 'https://prickle-balanced-archaeopteryx.glitch.me';
 
   function simplifyFintechData(data) {
@@ -73,7 +67,7 @@ const Cloud = () => {
 
   const fetchSaasCards = async () => {
     try {
-      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/cloudcards');
+      const response = await axios.get(`${apiUrl}/cloudcards`);
       if (response.data && response.data.length > 0) {
         const firstEntry = response.data[0];
         setCardDetails({
@@ -182,11 +176,7 @@ const Cloud = () => {
     };
   }, []);
   
- 
-  
-
-
-useEffect(() => {
+ useEffect(() => {
   const observer = new IntersectionObserver(
       (entries) => {
           entries.forEach(entry => {
@@ -207,7 +197,7 @@ useEffect(() => {
   elements.forEach(el => observer.observe(el));
 
   return () => elements.forEach(el => observer.unobserve(el));
-}, []);
+ }, []);
 
 
 
