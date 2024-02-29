@@ -195,11 +195,12 @@ useScrollToTop();
     return (
         <>      
   <IotPageHelmet />
-   <Suspense fallback={<div>Loading...</div>}>
+  
       <IotRightSectionControl/>
       {/* <!-- Hero Section --> */}
       <IotHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
       {/* Bar Card Section */}
+      <Suspense fallback={<div>Loading...</div>}>
       <IotBarCardSection cardDetails={cardDetails} />
        {/* Industries Articals section */}
       <IndustriesArticles Api="iot"/>

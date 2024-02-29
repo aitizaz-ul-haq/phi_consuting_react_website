@@ -234,11 +234,12 @@ useScrollToTop();
     return (
         <>
    <IaasPageHelmet/>
-  <Suspense fallback={<div>Loading...</div>}>
+ 
     <IaasRightSectionControl />
       {/* <!-- Hero Section --> */}
       <IaasHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
        {/* Bar Card Section */}
+       <Suspense fallback={<div>Loading...</div>}>
       <IaasBarCardSection cardDetails={cardDetails} />
        {/* Industries Articals section */}
       <IndustriesArticles Api="iaas" />

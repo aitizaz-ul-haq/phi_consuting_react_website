@@ -227,15 +227,11 @@ const SaaS = () => {
 
     return (
         <>
-      
 <SaasPageHelmet/>
-        
-
-  <Suspense fallback={<div>Loading...</div>}>
       <SaasRightSectionControl/>
       {/* <!-- Hero Section --> */}
       <SaasHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
-
+      <Suspense fallback={<div>Loading...</div>}>
       {/* Bar Card Section */}
       <SaasBarCardSection cardDetails={cardDetails} />
 

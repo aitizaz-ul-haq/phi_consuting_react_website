@@ -236,12 +236,13 @@ useScrollToTop();
     return (
         <>
       <FintechPageHelmet />
-      <Suspense fallback={<div>Loading...</div>}>
+     
        {/* Fintech Right Section Control Panel */}
       <FintechRightSectionControl />
       {/* <!-- Hero Section --> */}
       <FintechHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
       {/* Bar Card Section */}
+      <Suspense fallback={<div>Loading...</div>}>
       <FintechBarCardSection cardDetails={cardDetails} />
       {/* Fintech Industries Section */}
       <IndustriesArticles Api="fintech" />

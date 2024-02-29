@@ -200,12 +200,13 @@ useScrollToTop();
     return (
         <>
  <DevopsPageHelmet />
-  <Suspense fallback={<div>Loading...</div>}>
+  
        {/* Devops Right Section Control Panel */}
       <DevopsRightSectionControl />
       {/* <!-- Hero Section --> */}
       <DevopsHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
       {/* Bar Card Section */}
+      <Suspense fallback={<div>Loading...</div>}>
       <DevopsBarCardSection cardDetails={cardDetails} />
        {/* Devops Industries Section */}
       <IndustriesArticles Api="devops" />

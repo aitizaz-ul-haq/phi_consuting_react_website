@@ -198,12 +198,13 @@ useScrollToTop();
     return (
         <>
   <CloudPageHelmet />
-    <Suspense fallback={<div>Loading...</div>}>
+   
      {/* Cloud Right Section Control Panel */}
     <CloudRightSectionControl />
       {/* <!-- Hero Section --> */}
       <CloudHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
       {/* Bar Card Section */}
+      <Suspense fallback={<div>Loading...</div>}>
       <CloudBarCardSection cardDetails={cardDetails} />
       {/* Industries Articals Section  */}
       <IndustriesArticles Api="cloud" />
