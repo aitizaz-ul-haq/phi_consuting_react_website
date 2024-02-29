@@ -32,6 +32,22 @@ const CloudWhyPhiForSales = ({ sectionOneTitle, sectionOneParagraph, sectionTwoT
     };
   }, []);
 
+  useEffect(() => {
+    const servicesSection = document.querySelector('.why-phi-for-sales');
+    if (servicesSection) {
+      servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
+      servicesSection.style.borderTop = '2px solid #add8e6'; 
+      servicesSection.style.borderBottom = '2px solid #add8e6'; 
+    }
+    return () => {
+      if (servicesSection) {
+        servicesSection.style.backgroundColor = '';
+        servicesSection.style.borderTop = '';
+        servicesSection.style.borderBottom = '';
+      }
+    };
+  }, []); 
+
   return (
     <article className="why-phi-for-sales">
       <h2 className="why-phi-heading">Why Choose Phi Consulting?</h2>

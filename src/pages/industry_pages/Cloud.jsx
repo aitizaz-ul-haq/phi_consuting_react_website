@@ -35,7 +35,6 @@ const Cloud = () => {
 
   const [darkMode, setDarkMode] = useState(false);
   const sectionsRef = useRef([]);
-  const insightsRefs = useRef([]);
 
   const [cardDetails, setCardDetails] = useState({
     barCardHeading: '',
@@ -71,6 +70,24 @@ const Cloud = () => {
       return acc.concat(simplifiedContent);
     }, []);
   }
+
+  const fetchSaasCards = async () => {
+    try {
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/cloudcards');
+      if (response.data && response.data.length > 0) {
+        const firstEntry = response.data[0];
+        setCardDetails({
+          barCardHeading: firstEntry.barcardheading,
+          fourCardHeading: firstEntry.fourcardheading,
+          ...firstEntry
+        });
+      }
+      setData(response.data);
+    } catch (error) {
+      console.error('Error fetching saascards data:', error);
+      message.error('Failed to fetch data');
+    }
+  };
   
   useEffect(() => {
     const fetchFintechData = async () => {
@@ -165,39 +182,9 @@ const Cloud = () => {
     };
   }, []);
   
-  useEffect(() => {
-    const servicesSection = document.querySelector('.why-phi-for-sales');
-    if (servicesSection) {
-      servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
-      servicesSection.style.borderTop = '2px solid #add8e6'; 
-      servicesSection.style.borderBottom = '2px solid #add8e6'; 
-    }
-    return () => {
-      if (servicesSection) {
-        servicesSection.style.backgroundColor = '';
-        servicesSection.style.borderTop = '';
-        servicesSection.style.borderBottom = '';
-      }
-    };
-  }, []); 
+ 
   
-  const fetchSaasCards = async () => {
-    try {
-      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/cloudcards');
-      if (response.data && response.data.length > 0) {
-        const firstEntry = response.data[0];
-        setCardDetails({
-          barCardHeading: firstEntry.barcardheading,
-          fourCardHeading: firstEntry.fourcardheading,
-          ...firstEntry
-        });
-      }
-      setData(response.data);
-    } catch (error) {
-      console.error('Error fetching saascards data:', error);
-      message.error('Failed to fetch data');
-    }
-  };
+
 
 useEffect(() => {
   const observer = new IntersectionObserver(
@@ -222,33 +209,7 @@ useEffect(() => {
   return () => elements.forEach(el => observer.unobserve(el));
 }, []);
 
-useEffect(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        } else {
-          entry.target.classList.remove('visible');
-        }
-      });
-    },
-    {
-      threshold: 0.5, // Adjust as needed
-    }
-  );
 
-  const elements = insightsRefs.current;
-  elements.forEach((el) => {
-    if (el) observer.observe(el);
-  });
-
-  return () => {
-    elements.forEach((el) => {
-      if (el) observer.unobserve(el);
-    });
-  };
-}, []);
 
 const toggleDarkMode = () => setDarkMode(!darkMode);
 
