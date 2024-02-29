@@ -155,7 +155,7 @@ const SaaS = () => {
     fetchCloudBanData();
   }, []);
   
-useEffect(() => {
+  useEffect(() => {
   const observer = new IntersectionObserver(
       (entries) => {
           entries.forEach(entry => {
@@ -176,9 +176,9 @@ useEffect(() => {
   elements.forEach(el => observer.observe(el));
 
   return () => elements.forEach(el => observer.unobserve(el));
-}, []);
+  }, []);
 
-useEffect(() => {
+  useEffect(() => {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -204,9 +204,9 @@ useEffect(() => {
       if (el) observer.unobserve(el);
     });
   };
-}, []);
+  }, []);
 
-useEffect(() => {
+  useEffect(() => {
   const handleScroll = () => {
     const offset = window.pageYOffset;
     document.body.style.backgroundPositionY = offset * 0.5 + 'px'; 
@@ -223,7 +223,7 @@ useEffect(() => {
     document.body.style.backgroundPosition = '';
     document.body.style.backgroundAttachment = '';
   };
-}, []);
+  }, []);
 
     return (
         <>
