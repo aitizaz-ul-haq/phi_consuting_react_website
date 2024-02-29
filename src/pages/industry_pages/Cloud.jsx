@@ -7,8 +7,11 @@ const CloudFourCardSection = React.lazy(() => import('../../components/Industrie
 const CloudCtaSection = React.lazy(() => import('../../components/Industries_page_componenets/Cloud/Cloud Cta Section/CloudCtaSection'));
 const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
 const CloudRightSectionControl = React.lazy(() => import('../../components/Industries_page_componenets/Cloud/Cloud Right Section/CloudRightSectionControl'));
+const CloudWhyPhiForSales = React.lazy(() => import('../../components/Industries_page_componenets/Cloud/Cloud WhyPhiForSales Section/CloudWhyPhiForSales'));
 
 import CloudPageHelmet from '../../components/Industries_page_componenets/Cloud/Cloud PageHelmet Section/CloudPageHelmet';
+
+
 import useScrollToTop from '../../hooks/useScrollToTop';
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
@@ -269,50 +272,19 @@ useScrollToTop();
 
       {/* Four Card Section */}
       <CloudFourCardSection cardDetails={cardDetails} />
-      
-    </Suspense>
 
-      {/* <!-- why phi for sale Section --> */}
-      <article class="why-phi-for-sales">
-        <h2 class="why-phi-heading">Why Choose Phi Consulting?</h2>
-        <div class="insights-container">
-          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
-            <div class="left-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {sectionOneTitle}
-                  </h2>
-                  <p class="overlay-desc">
-                  {sectionOneParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="right-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {sectionTwoTitle}
-                  </h2>
-                  <p class="overlay-desc">
-                  {sectionTwoParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <Suspense fallback={<div>Loading...</div>}>
+       {/* <!-- why phi for sale Section --> */}
+      <CloudWhyPhiForSales
+            sectionOneTitle={sectionOneTitle}
+            sectionOneParagraph={sectionOneParagraph}
+            sectionTwoTitle={sectionTwoTitle}
+            sectionTwoParagraph={sectionTwoParagraph}
+        />
 
         {/* <!-- Call to Action Section --> */}
         <CloudCtaSection />
-
-      </Suspense>
+      
+    </Suspense>
         </>
     )
 }
