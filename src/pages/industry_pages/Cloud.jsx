@@ -1,6 +1,5 @@
 import React,{ useState, useEffect, useRef, Suspense } from 'react';
 import axios from 'axios';
-import { Helmet } from 'react-helmet';
 
 const CloudHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/Cloud/Cloud Hero Section/CloudHeroSection'));
 const CloudBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Cloud/Cloud BarCard Section/CloudBarCardSection'));
@@ -254,9 +253,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
 useScrollToTop();
     return (
         <>
-       <CloudPageHelmet />
-
-       
+  <CloudPageHelmet />
     <Suspense fallback={<div>Loading...</div>}>
      {/* Cloud Right Section Control Panel */}
     <CloudRightSectionControl toggleDarkMode={toggleDarkMode} />
