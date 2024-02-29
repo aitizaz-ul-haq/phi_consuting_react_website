@@ -31,73 +31,50 @@ const SalesConsulting = () => {
   const [data, setData] = useState({
     bannerHeading: "",
     bannerDescription: "",
-  
     featuresMainHeading: "",
     featuresMainDescription: "",
-  
     featuresHeadingOne: "",
     featuresDescriptionOne: "",
-  
     featuresHeadingTwo: "",
     featuresDescriptionTwo: "",
-  
     featuresHeadingThree: "",
     featuresDescriptionThree: "",
-  
     featuresHeadingFour: "",
     featuresDescriptionFour: "",
-  
     featuresHeadingFive: "",
     featuresDescriptionFive: "",
-  
     featuresHeadingSix: "",
     featuresDescriptionSix: "",
-
     processMainHeading:"",
     processMainDesc:"",
-  
     processHedOne:"",
     processDesOne: "",
-
     processHedTwo:"",
     processDesTwo: "",
-    
     processHedThree:"",
     processDesThree: "",
-
     processHedFour:"",
     processDesFour: "",
-
     processHedFive:"",
     processDesFive: "",
-
     processHedSix:"",
     processDesSix: "",
-
     processHedSeven:"",
     processDesSeven: "",
-
     processHedEight:"",
     processDesEight: "",
-  
     whySectionHeading: "",
     whySectionDescription: "",
-  
     whyBoxOneHeading: "",
     whyBoxOneDescription: "",
-  
     whyBoxTwoHeading: "",
     whyBoxTwoDescription: "",
-  
     whyBoxThreeHeading: "",
     whyBoxThreeDescription: "",
-  
     whyBoxFourHeading: "",
     whyBoxFourDescription: "",
-  
     whyBoxFiveHeading: "",
     whyBoxFiveDescription: "",
-  
     whyBoxSixHeading: "",
     whyBoxSixDescription: ""
   });
@@ -116,8 +93,7 @@ const SalesConsulting = () => {
         const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/gtmpage');
         console.log(`GTM page data`, response.data);
         if (response.data && response.data.length > 0) {
-          const gtmData = response.data[0]; // Assuming the first entry is what we want
-  
+          const gtmData = response.data[0]; 
           setData({
             bannerHeading: gtmData.bannerHeading,
             bannerDescription: gtmData.bannerDescription,
@@ -135,10 +111,8 @@ const SalesConsulting = () => {
             featuresDescriptionFive: gtmData.featuresDescriptionFive,
             featuresHeadingSix: gtmData.featuresHeadingSix,
             featuresDescriptionSix: gtmData.featuresDescriptionSix,
-
             processMainHeading:gtmData.processMainHeading,
             processMainDesc: gtmData.processMainDesc,
-            
             processHedOne:gtmData.processHedOne,
             processDesOne: gtmData.processDesOne,
             processHedTwo:gtmData.processHedTwo,
@@ -183,7 +157,7 @@ const SalesConsulting = () => {
     const fetchCaseStudies = async () => {
       try {
         const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/cases');
-        setCaseStudies(response.data.slice(0, 3)); // Fetch only the first three case studies
+        setCaseStudies(response.data.slice(0, 3)); 
       } catch (error) {
         console.error('Error fetching case studies:', error);
       }
@@ -208,7 +182,7 @@ const SalesConsulting = () => {
     return () => observer.disconnect();
   }, []);
 
-useEffect(() => {
+  useEffect(() => {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -220,7 +194,7 @@ useEffect(() => {
       });
     },
     {
-      threshold: 0.5, // Adjust as needed
+      threshold: 0.5, 
     }
   );
 
@@ -234,24 +208,18 @@ useEffect(() => {
       if (el) observer.unobserve(el);
     });
   };
-}, []);
+  }, []);
 
-useEffect(() => {
-  // Function to handle the parallax effect
+  useEffect(() => {
   const handleScroll = () => {
     const offset = window.pageYOffset;
-    document.body.style.backgroundPositionY = offset * 0.5 + 'px'; // Adjust the speed of the parallax effect by changing the multiplier
+    document.body.style.backgroundPositionY = offset * 0.5 + 'px';
   };
-
-  // Set background image on mount
   document.body.style.backgroundImage = `url(${whatback})`;
   document.body.style.backgroundSize = 'cover';
   document.body.style.backgroundPosition = 'center';
-  document.body.style.backgroundAttachment = 'fixed'; // This is necessary for the parallax effect
-
+  document.body.style.backgroundAttachment = 'fixed'; 
   window.addEventListener('scroll', handleScroll);
-
-  // Clean up function to remove the event listener and revert styles on unmount
   return () => {
     window.removeEventListener('scroll', handleScroll);
     document.body.style.backgroundImage = '';
@@ -259,24 +227,16 @@ useEffect(() => {
     document.body.style.backgroundPosition = '';
     document.body.style.backgroundAttachment = '';
   };
-}, []);
+  }, []);
 
-useEffect(() => {
-  // Setting the background color with a transparent effect for the services section
+  useEffect(() => {
   const servicesSection = document.querySelector('.why-phi-for-sales');
   
   if (servicesSection) {
-    // Apply light blue background color with transparency
     servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
-    // Apply top and bottom borders
-    servicesSection.style.borderTop = '2px solid #add8e6'; // Light blue color
-    servicesSection.style.borderBottom = '2px solid #add8e6'; // Light blue color
-    // Ensure content inside is not affected by the background color
-    // This is inherently the case with the background color property
-    // but ensure text and other elements have enough contrast
+    servicesSection.style.borderTop = '2px solid #add8e6';
+    servicesSection.style.borderBottom = '2px solid #add8e6'; 
   }
-
-  // Cleanup function to revert styles
   return () => {
     if (servicesSection) {
       servicesSection.style.backgroundColor = '';
