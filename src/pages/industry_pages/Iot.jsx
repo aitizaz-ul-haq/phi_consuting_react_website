@@ -1,12 +1,12 @@
 import React,{ useState, useEffect, useRef, Suspense } from 'react';
 import useScrollToTop from '../../hooks/useScrollToTop';
 import axios from 'axios';
-const IotHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/Iot/Iot Hero Section/IotHeroSection'));
+import IotHeroSection from '../../components/Industries_page_componenets/Iot/Iot Hero Section/IotHeroSection';
 const IotBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Iot/Iot BarCard Section/IotBarCardSection'));
 const IotFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Iot/Iot FourCard Section/IotFourCardSection'));
 const IotCtaSection = React.lazy(() => import('../../components/Industries_page_componenets/Iot/Iot Cta Section/IotCtaSection'));
 const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
-const IotRightSectionControl = React.lazy(() => import('../../components/Industries_page_componenets/Iot/Iot Right Section/IotRightSectionControl'));
+import IotRightSectionControl from '../../components/Industries_page_componenets/Iot/Iot Right Section/IotRightSectionControl';
 const IotWhyPhiForSales = React.lazy(() => import('../../components/Industries_page_componenets/Iot/Iot WhyPhiForSales Section/IotWhyPhiForSales'));
 import IotPageHelmet from '../../components/Industries_page_componenets/Iot/Iot PageHelmet Section/IotPageHelmet';
 import whatback from "../../assets/img/wrappers/burn.webp"; 

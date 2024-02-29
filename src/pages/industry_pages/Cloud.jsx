@@ -1,11 +1,11 @@
 import React,{ useState, useEffect, useRef, Suspense } from 'react';
 import axios from 'axios';
-const CloudHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/Cloud/Cloud Hero Section/CloudHeroSection'));
+import CloudHeroSection from '../../components/Industries_page_componenets/Cloud/Cloud Hero Section/CloudHeroSection';
 const CloudBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Cloud/Cloud BarCard Section/CloudBarCardSection'));
 const CloudFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Cloud/Cloud FourCard Section/CloudFourCardSection'));
 const CloudCtaSection = React.lazy(() => import('../../components/Industries_page_componenets/Cloud/Cloud Cta Section/CloudCtaSection'));
 const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
-const CloudRightSectionControl = React.lazy(() => import('../../components/Industries_page_componenets/Cloud/Cloud Right Section/CloudRightSectionControl'));
+import CloudRightSectionControl from '../../components/Industries_page_componenets/Cloud/Cloud Right Section/CloudRightSectionControl';
 const CloudWhyPhiForSales = React.lazy(() => import('../../components/Industries_page_componenets/Cloud/Cloud WhyPhiForSales Section/CloudWhyPhiForSales'));
 import CloudPageHelmet from '../../components/Industries_page_componenets/Cloud/Cloud PageHelmet Section/CloudPageHelmet';
 import useScrollToTop from '../../hooks/useScrollToTop';

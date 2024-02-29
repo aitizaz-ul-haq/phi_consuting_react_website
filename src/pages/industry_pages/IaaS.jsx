@@ -2,12 +2,12 @@ import React,{ useState, useEffect, useRef, Suspense } from 'react';
 import axios from 'axios';
 
 
-const IaasHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/Iaas/Iaas Hero Section/IaasHeroSection'));
+import IaasHeroSection from '../../components/Industries_page_componenets/Iaas/Iaas Hero Section/IaasHeroSection';
 const IaasBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Iaas/Iaas BarCard Section/IaasBarCardSection'));
 const IaasFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Iaas/Iaas FourCard Section/IaasFourCardSection'));
 const IaasCtaSection = React.lazy(() => import('../../components/Industries_page_componenets/Iaas/Iaas Cta Section/IaasCtaSection'));
 const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
-const IaasRightSectionControl = React.lazy(() => import('../../components/Industries_page_componenets/Iaas/Iaas Right Section/IaasRightSectionControl'));
+import IaasRightSectionControl from '../../components/Industries_page_componenets/Iaas/Iaas Right Section/IaasRightSectionControl';
 const IaasWhyPhiForSales = React.lazy(() => import('../../components/Industries_page_componenets/Iaas/Iaas WhyPhiForSales Section/IaasWhyPhiForSales'));
 import IaasPageHelmet from '../../components/Industries_page_componenets/Iaas/Iaas PageHelmet Section/IaasPageHelmet';
 import useScrollToTop from '../../hooks/useScrollToTop';

@@ -1,11 +1,11 @@
 import React,{ useState, useEffect, useRef, Suspense } from 'react';
 import axios from 'axios';
-const FintechHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech Hero Section/FintechHeroSection'));
+import FintechHeroSection from '../../components/Industries_page_componenets/FinTech/Fintech Hero Section/FintechHeroSection';
 const FintechBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech BarCard Section/FintechBarCardSection'));
 const FintechFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech FourCard Section/FintechFourCardSection'));
 const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
 const FintechCtaSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech Cta Section/FintechCtaSection'));
-const FintechRightSectionControl = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech Right Section/FintechRightSectionControl'));
+import  FintechRightSectionControl from '../../components/Industries_page_componenets/FinTech/Fintech Right Section/FintechRightSectionControl';
 const FintechWhyPhiForSales = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech WhyPhiForSales Section/FintechWhyPhiForSales'));
 import FintechPageHelmet from '../../components/Industries_page_componenets/FinTech/Fintech PageHelmet Section/FintechPageHelmet';
 import useScrollToTop from '../../hooks/useScrollToTop';

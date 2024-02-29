@@ -1,11 +1,11 @@
 import React,{ useState, useEffect, useRef, Suspense } from 'react';
 import axios from 'axios';
-const SaasHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas Hero Section/SaasHeroSection'));
+import SaasHeroSection from '../../components/Industries_page_componenets/Saas/Saas Hero Section/SaasHeroSection';
 const SaasBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas BarCard Section/SaasBarCardSection'));
 const SaasFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas FourCard Section/SaasFourCardSection'));
 const SaasCtaSection = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas Cta Section/SaasCtaSection'));
 const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
-const SaasRightSectionControl = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas Right Section/SaasRightSectionControl'));
+import SaasRightSectionControl from '../../components/Industries_page_componenets/Saas/Saas Right Section/SaasRightSectionControl';
 const SaasWhyPhiForSales = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas WhyPhiForSales Section/SaasWhyPhiForSales'));
 import SaasPageHelmet from '../../components/Industries_page_componenets/Saas/Saas PageHelmet Section/SaasPageHelmet';
 import whatback from "../../assets/img/wrappers/burn.webp"; 

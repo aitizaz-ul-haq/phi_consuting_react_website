@@ -1,11 +1,11 @@
 import React,{ useState, useEffect, useRef, Suspense } from 'react';
 import axios from 'axios';
-const DevopsHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/Devops/Devops Hero Section/DevopsHeroSection'));
+import DevopsHeroSection from '../../components/Industries_page_componenets/Devops/Devops Hero Section/DevopsHeroSection';
 const DevopsBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Devops/Devops BarCard Section/DevopsBarCardSection'));
 const DevopsFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Devops/Devops FourCard Section/DevopsFourCardSection'));
 const DevopsCtaSection = React.lazy(() => import('../../components/Industries_page_componenets/Devops/Devops Cta Section/DevopsCtaSection'));
 const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
-const DevopsRightSectionControl = React.lazy(() => import('../../components/Industries_page_componenets/Devops/Devops Right Section/DevopsRightSectionControl'));
+import DevopsRightSectionControl from '../../components/Industries_page_componenets/Devops/Devops Right Section/DevopsRightSectionControl';
 const DevopsWhyPhiForSales = React.lazy(() => import('../../components/Industries_page_componenets/Devops/Devops WhyPhiForSales Section/DevopsWhyPhiForSales'));
 import DevopsPageHelmet from '../../components/Industries_page_componenets/Devops/Devops PageHelmet Section/DevopsPageHelmet';
 import useScrollToTop from '../../hooks/useScrollToTop';
