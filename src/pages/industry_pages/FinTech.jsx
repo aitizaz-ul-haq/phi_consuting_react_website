@@ -1,17 +1,14 @@
 import React,{ useState, useEffect, useRef, Suspense } from 'react';
-import { Tooltip } from 'antd';
 import axios from 'axios';
-import { Helmet } from 'react-helmet';
-
 const FintechHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech Hero Section/FintechHeroSection'));
 const FintechBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech BarCard Section/FintechBarCardSection'));
 const FintechFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech FourCard Section/FintechFourCardSection'));
 const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
 const FintechCtaSection = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech Cta Section/FintechCtaSection'));
-
+const FintechRightSectionControl = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech Right Section/FintechRightSectionControl'));
+const FintechWhyPhiForSales = React.lazy(() => import('../../components/Industries_page_componenets/FinTech/Fintech WhyPhiForSales Section/FintechWhyPhiForSales'));
+import FintechPageHelmet from '../../components/Industries_page_componenets/FinTech/Fintech PageHelmet Section/FintechPageHelmet';
 import useScrollToTop from '../../hooks/useScrollToTop';
-import eye from "../../assets/img/eye.webp";
-import top from "../../assets/img/top Arrow.webp";
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
 const FinTech = () => {
@@ -25,12 +22,7 @@ const FinTech = () => {
   const [sectionFourParagraph, setSectionFourParagraph] = useState('');
   const [heroHeading, setHeroHeading] = useState('');
   const [heroDescription, setHeroDescription] = useState('');
-
-
-
   const processNewRef = useRef(null);
-  const [darkMode, setDarkMode] = useState(false);
-
   const sectionsRef = useRef([]);
   const insightsRefs = useRef([]);
   const diagonalDivRef = useRef(null);
@@ -196,7 +188,7 @@ useEffect(() => {
     };
   }, []); 
 
-useEffect(() => {
+  useEffect(() => {
   const observer = new IntersectionObserver(
       (entries) => {
           entries.forEach(entry => {
@@ -217,9 +209,9 @@ useEffect(() => {
   elements.forEach(el => observer.observe(el));
 
   return () => elements.forEach(el => observer.unobserve(el));
-}, []);
+  }, []);
 
-useEffect(() => {
+  useEffect(() => {
   const observer = new IntersectionObserver(
     (entries) => {
       if (entries[0].isIntersecting) {
@@ -238,9 +230,9 @@ useEffect(() => {
       observer.unobserve(diagonalDivRef.current);
     }
   };
-}, []);
+  }, []);
 
-useEffect(() => {
+  useEffect(() => {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -266,125 +258,35 @@ useEffect(() => {
       if (el) observer.unobserve(el);
     });
   };
-}, []);
+  }, []);
 
-  const toggleDarkMode = () => setDarkMode(!darkMode);
-  const scrollToTop = () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-};
 
 useScrollToTop();
     return (
         <>
-       <Helmet>
-        <title>Empowering Your FinTech Startup to Scale Efficiently | Phi Consulting</title>
-        <meta name="description" content="Unlock the full potential of your FinTech startup with Phi Consulting's expert consulting services. From GTM strategy to HR & recruitment solutions, financial consulting, and investor relations, we offer tailored solutions to address the unique challenges faced by FinTech companies. Partner with us to revolutionize your startup's growth journey. Contact us today." />
-      </Helmet>
-
-     <Helmet>
-      <link rel="canonical" href="https://phiconsulting.org/fin-tech-consulting" />
-    </Helmet>
-
-<div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
-        <div className="left-section-control"></div>
-            <div className="right-section-control">
-                      <Tooltip placement="leftTop" title="toggle eye protection">
-                               <button onClick={toggleDarkMode}> 
-                                   <img src={eye} alt="eye icon" width={25} height={25}/>
-                               </button> 
-                      </Tooltip>
-
-                 {/* Back to Top Button */}
-                 <Tooltip placement="leftTop" title="back to top">
-                     <button className="back-to-top" onClick={scrollToTop}>
-                        <img src={top} alt="eye icon" width={25} height={25}/>
-                     </button>
-                 </Tooltip>
-            </div>
-
-
+      <FintechPageHelmet />
       <Suspense fallback={<div>Loading...</div>}>
-
+       {/* Fintech Right Section Control Panel */}
+      <FintechRightSectionControl />
       {/* <!-- Hero Section --> */}
       <FintechHeroSection heroHeading={heroHeading} heroDescription={heroDescription} />
-
       {/* Bar Card Section */}
       <FintechBarCardSection cardDetails={cardDetails} />
-
       {/* Fintech Industries Section */}
       <IndustriesArticles Api="fintech" />
-   
       {/* Fintech Four Card Section */}
       <FintechFourCardSection cardDetails={cardDetails} />
-
-      </Suspense>
-
-
       {/* <!-- why phi for sale Section --> */}
-      <article class="why-phi-for-sales">
-        <h2 class="why-phi-heading">Why Phi Consulting?</h2>
-        <div class="insights-container">
-          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
-            <div class="left-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {sectionOneTitle}
-                  </h2>
-                  <p class="overlay-desc">
-                  {sectionOneParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="right-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {sectionTwoTitle}
-                  </h2>
-                  <p class="overlay-desc">
-                  {sectionTwoParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="insights-bundle" ref={(el) => insightsRefs.current.push(el)}>
-            <div class="left-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">{sectionThreeTitle}</h2>
-                  <p class="overlay-desc">
-                  {sectionThreeParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="right-section-insights">
-              <div class="overlay-container">
-                {/* <div class="overlay"></div> */}
-                <div class="content">
-                  <h2 class="overlay-heading">
-                  {sectionFourTitle}
-                  </h2>
-                  <p class="overlay-desc">
-                  {sectionFourParagraph}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <Suspense fallback={<div>Loading...</div>}>
+      <FintechWhyPhiForSales
+            sectionOneTitle={sectionOneTitle}
+            sectionOneParagraph={sectionOneParagraph}
+            sectionTwoTitle={sectionTwoTitle}
+            sectionTwoParagraph={sectionTwoParagraph}
+            sectionThreeTitle={sectionThreeTitle}
+            sectionThreeParagraph={sectionThreeParagraph}
+            sectionFourTitle={sectionFourTitle}
+            sectionFourParagraph={sectionFourParagraph}
+        />
       {/* <!-- Call to Action Section --> */}
       <FintechCtaSection />
       </Suspense>
