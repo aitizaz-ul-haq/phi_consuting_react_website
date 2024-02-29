@@ -196,9 +196,6 @@ const DevOps = () => {
   return () => elements.forEach(el => observer.unobserve(el));
  }, []);
 
-
-
-
 useScrollToTop();
     return (
         <>
@@ -227,7 +224,7 @@ useScrollToTop();
         />
       {/* <!-- Call to Action Section --> */}
       <DevopsCtaSection />
-      </Suspense>
+    </Suspense>
         </>
     )
 }
