@@ -16,8 +16,8 @@ import buisness from '../assets/img/services-icons/buisness.webp';
 import custExp from '../assets/img/services-icons/customer experience.webp';
 import financial from '../assets/img/services-icons/financial.webp';
 import hr from '../assets/img/services-icons/hr.webp';
-import clutchone from '../assets/img/achievements-badges/clutch_1.png';
-import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
+import clutchone from '../assets/img/achievements-badges/clutch_1.webp';
+import clutchtwo from '../assets/img/achievements-badges/clutch_2.webp';
 import { Tooltip } from 'antd';
 import { Link } from 'react-router-dom';
 import CaseStudyMacroComps from '../components/shared/macroComps/CaseStudyMacroComps';
@@ -794,16 +794,16 @@ const HomePage = () => {
             <img
               src={clutchone}
               alt=""
-              width="200"
-              height="230"
+              // width="600"
+              // height="600"
             />
           </div>
           <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
             <img
               src={iso}
               alt=""
-              width="200"
-              height="150"
+              // width="200"
+              // height="150"
             />
           </div>
 
@@ -811,8 +811,8 @@ const HomePage = () => {
             <img
               src={clutchtwo}
               alt=""
-              width="250"
-              height="220"
+              // width="250"
+              // height="220"
             />
           </div>
         </section>

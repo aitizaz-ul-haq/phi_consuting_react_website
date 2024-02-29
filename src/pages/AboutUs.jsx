@@ -1,7 +1,7 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import clutchone from '../assets/img/achievements-badges/clutch_1.png';
-import clutchtwo from '../assets/img/achievements-badges/clutch_2.png';
+import clutchone from '../assets/img/achievements-badges/clutch_1.webp';
+import clutchtwo from '../assets/img/achievements-badges/clutch_2.webp';
 import phiphoto from "../assets/img/phi_logo-filled.webp";
 import alizaidiportrait from "../assets/img/phi_people/ali_zaidi.png";
 import abudullahportrait from "../assets/img/phi_people/Abdullah.png";

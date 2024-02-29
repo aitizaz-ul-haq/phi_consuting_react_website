@@ -4860,10 +4860,10 @@ align-items: center;
   }
 
   .pic-box {
-    background: var(--WHITE-TEXT);
+    /* background: var(--WHITE-TEXT); */
     margin: 2rem;
     text-align: center;
-    box-shadow: 1px 0px 76px -53px var(--DARKER-LIGHT-PHI-BLUE);
+    /* box-shadow: 1px 0px 76px -53px var(--DARKER-LIGHT-PHI-BLUE); */
   }
 
   .team-name {
