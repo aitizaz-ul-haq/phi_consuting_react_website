@@ -1,6 +1,5 @@
 import React,{ useState, useEffect, useRef, Suspense } from 'react';
 import axios from 'axios';
-
 const SaasHeroSection = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas Hero Section/SaasHeroSection'));
 const SaasBarCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas BarCard Section/SaasBarCardSection'));
 const SaasFourCardSection = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas FourCard Section/SaasFourCardSection'));
@@ -8,7 +7,6 @@ const SaasCtaSection = React.lazy(() => import('../../components/Industries_page
 const IndustriesArticles = React.lazy(() => import('../../components/shared/macroComps/IndustriesArticles'));
 const SaasRightSectionControl = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas Right Section/SaasRightSectionControl'));
 const SaasWhyPhiForSales = React.lazy(() => import('../../components/Industries_page_componenets/Saas/Saas WhyPhiForSales Section/SaasWhyPhiForSales'));
-
 import SaasPageHelmet from '../../components/Industries_page_componenets/Saas/Saas PageHelmet Section/SaasPageHelmet';
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
@@ -29,11 +27,8 @@ const SaaS = () => {
   const [heroDescription, setHeroDescription] = useState('');
 
   const apiUrl = import.meta.env.VITE_API_URL_PROD || 'https://prickle-balanced-archaeopteryx.glitch.me';
-  
-  const [darkMode, setDarkMode] = useState(false);
   const processNewRef = useRef(null);
   const sectionsRef = useRef([]);
-
   const insightsRefs = useRef([]);
   const [cardDetails, setCardDetails] = useState({
     barCardHeading: '',
@@ -67,6 +62,24 @@ const SaaS = () => {
       return acc.concat(simplifiedContent);
     }, []);
   }
+
+  const fetchSaasCards = async () => {
+    try {
+      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/saascards');
+      if (response.data && response.data.length > 0) {
+        const firstEntry = response.data[0];
+        setCardDetails({
+          barCardHeading: firstEntry.barcardheading,
+          fourCardHeading: firstEntry.fourcardheading,
+          ...firstEntry 
+        });
+      }
+      setData(response.data);
+    } catch (error) {
+      console.error('Error fetching saascards data:', error);
+      message.error('Failed to fetch data');
+    }
+  };
   
   useEffect(() => {
     const fetchFintechData = async () => {
@@ -88,24 +101,6 @@ const SaaS = () => {
     fetchSaasCards();
   }, []);
 
-  const fetchSaasCards = async () => {
-    try {
-      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/saascards');
-      if (response.data && response.data.length > 0) {
-        const firstEntry = response.data[0];
-        setCardDetails({
-          barCardHeading: firstEntry.barcardheading,
-          fourCardHeading: firstEntry.fourcardheading,
-          ...firstEntry 
-        });
-      }
-      setData(response.data);
-    } catch (error) {
-      console.error('Error fetching saascards data:', error);
-      message.error('Failed to fetch data');
-    }
-  };
-  
   useEffect(() => {
     const fetchFintechInfo = async () => {
       try {
@@ -229,23 +224,6 @@ useEffect(() => {
     document.body.style.backgroundAttachment = '';
   };
 }, []);
-
-useEffect(() => {
-  const servicesSection = document.querySelector('.why-phi-for-sales');
-  if (servicesSection) {
-    servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
-    servicesSection.style.borderTop = '2px solid #add8e6'; 
-    servicesSection.style.borderBottom = '2px solid #add8e6'; 
-  }
-  return () => {
-    if (servicesSection) {
-      servicesSection.style.backgroundColor = '';
-      servicesSection.style.borderTop = '';
-      servicesSection.style.borderBottom = '';
-    }
-  };
-}, []); 
-
 
     return (
         <>

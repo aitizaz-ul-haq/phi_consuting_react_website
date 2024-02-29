@@ -27,8 +27,6 @@ const Iot = () => {
   const [heroHeading, setHeroHeading] = useState('');
   const [heroDescription, setHeroDescription] = useState('');
   const processNewRef = useRef(null);
-  const [darkMode, setDarkMode] = useState(false);
-  const insightsRefs = useRef([]);
   const [cardDetails, setCardDetails] = useState({
     barCardHeading: '',
     fourCardHeading: '',
