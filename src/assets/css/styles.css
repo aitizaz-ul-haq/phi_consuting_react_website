@@ -15768,6 +15768,8 @@ color: white;
         margin-top: 30px;
         color: var(--DARK-PHI-BLUE);
         margin-bottom: 30px;
+        white-space: normal;
+        overflow: hidden;
     }
     
     .blog-desc {

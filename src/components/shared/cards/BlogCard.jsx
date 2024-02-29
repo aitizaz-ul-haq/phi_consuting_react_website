@@ -1,13 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import blogpic from "../../../assets/img/b2b.webp";
 
 const BlogCard = ({blogs, id}) => {
   const { title, blogContent, companyName,summary, readTime, dateCreated, imageUrl,urlName } = blogs;
 
-  // const handleClick = () => {
-  //   localStorage.setItem('currentBlogId', id);
-  // };
     return(
         
         <div class="blog-card-one">
@@ -27,8 +23,12 @@ const BlogCard = ({blogs, id}) => {
             <div class="blog-heading">
              {title}
             </div>
-            <div class="blog-desc-card">
+            {/* <div class="blog-desc-card">
              {summary}
+            </div> */}
+
+            <div className="blog-tag">
+              {}
             </div>
             </Link>
           </div>
