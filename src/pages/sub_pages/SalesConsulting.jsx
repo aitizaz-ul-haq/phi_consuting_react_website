@@ -239,7 +239,7 @@ const SalesConsulting = () => {
       servicesSection.style.borderBottom = '';
     }
   };
-}, []); 
+  }, []); 
 
 const toggleDarkMode = () => setDarkMode(!darkMode);
 
