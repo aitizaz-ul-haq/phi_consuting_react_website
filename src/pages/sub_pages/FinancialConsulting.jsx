@@ -25,8 +25,6 @@ import { Helmet } from 'react-helmet';
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
 const FiancialConsulting = () => {
-  const [caseStudies, setCaseStudies] = useState([]);
- 
    const [processNewVisible, setProcessNewVisible] = useState(false);
    const processNewRef = useRef(null);
  
