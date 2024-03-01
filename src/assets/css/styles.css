@@ -6043,6 +6043,10 @@ background-color: rgb(243, 241, 241);
     height: auto;
   }
 
+  .about-spacing {
+    margin-right: 5px;
+  }
+
 @media screen and (min-width: 320px) {
     .ach-badge img {
         width: 56%;
