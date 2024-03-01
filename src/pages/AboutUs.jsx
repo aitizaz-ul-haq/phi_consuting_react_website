@@ -86,7 +86,7 @@ const AboutUs = () => {
     
       });
     
-useEffect(() => {
+  useEffect(() => {
         const fetchHomePageData = async () => {
           try {
             const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/aboutuspage');
@@ -153,7 +153,7 @@ useEffect(() => {
 
     observer.observe(testiRef.current);
     return () => observer.disconnect();
-}, []);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -162,7 +162,7 @@ useEffect(() => {
 
     observer.observe(servicesRef.current);
     return () => observer.disconnect();
-}, []);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -171,9 +171,9 @@ useEffect(() => {
 
     observer.observe(teemRef.current);
     return () => observer.disconnect();
-}, []);
+  }, []);
 
-useEffect(() => {
+  useEffect(() => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.target === innovationRef.current) {
@@ -196,9 +196,9 @@ useEffect(() => {
   // Add observe for other refs
 
   return () => observer.disconnect();
-}, []);
+  }, []);
 
-useEffect(() => {
+  useEffect(() => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.target === liveTextRef.current) {
@@ -213,7 +213,7 @@ useEffect(() => {
   if (liveVideoRef.current) observer.observe(liveVideoRef.current);
 
   return () => observer.disconnect();
-}, []);
+  }, []);
 
   const gotoContacts = () => {
     window.location.href = '/contact-us';
