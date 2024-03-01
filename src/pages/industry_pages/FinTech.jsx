@@ -61,26 +61,6 @@ const FinTech = () => {
   }, []);
 }
 
-useEffect(() => {
-  const fetchFintechData = async () => {
-    try {
-      const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/fintech`);
-      console.log(`response data...`, response.data)
-      const simplifiedData = simplifyFintechData(response.data);
-      setFintechData(simplifiedData);
-    
-    } catch (error) {
-      console.error('Error fetching fintech data:', error);
-    }
-  };
-
-  fetchFintechData();
-}, []);
-
-useEffect(() => {
-  fetchSaasCards();
-}, []);
-
 const fetchSaasCards = async () => {
   try {
     const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/fincards');
@@ -98,6 +78,26 @@ const fetchSaasCards = async () => {
     message.error('Failed to fetch data');
   }
 };
+
+  useEffect(() => {
+  const fetchFintechData = async () => {
+    try {
+      const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/fintech`);
+      console.log(`response data...`, response.data)
+      const simplifiedData = simplifyFintechData(response.data);
+      setFintechData(simplifiedData);
+    
+    } catch (error) {
+      console.error('Error fetching fintech data:', error);
+    }
+  };
+
+  fetchFintechData();
+  }, []);
+
+  useEffect(() => {
+  fetchSaasCards();
+  }, []);
 
   useEffect(() => {
   const fetchFintechInfo = async () => {
@@ -236,7 +236,6 @@ useScrollToTop();
     return (
         <>
       <FintechPageHelmet />
-     
        {/* Fintech Right Section Control Panel */}
       <FintechRightSectionControl />
       {/* <!-- Hero Section --> */}
@@ -261,9 +260,7 @@ useScrollToTop();
         />
       {/* <!-- Call to Action Section --> */}
       <FintechCtaSection />
-      </Suspense>
-
-      
+      </Suspense> 
         </>
     )
 }
