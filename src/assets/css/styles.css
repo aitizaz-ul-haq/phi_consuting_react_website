@@ -2848,7 +2848,7 @@ padding: 1rem;
 
   .banner-full-exp {
     position: relative;
-    background: url('../img/glassbuildings.webp') center/cover no-repeat; /* Replace with the path to your image file */
+    /* background: url('../img/glassbuildings.webp') center/cover no-repeat;  */
     height: 330px; /* Adjust the height as needed */
     display: flex;
     flex-direction: column;
@@ -2863,8 +2863,14 @@ padding: 1rem;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed (0 to 1) */
-  }
+    background-color: rgba(38, 66, 135, 0.784); /* Adjust the opacity as needed (0 to 1) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
 
   .banner-new-full-scale-container {
     display: flex;
@@ -7758,10 +7764,10 @@ display: none;
        
         text-align: center;
     }
-    .why-phi-for-sales {
+    /* .why-phi-for-sales {
       
         margin-top: 4rem;
-    }
+    } */
 
     .location-cards-one { 
         width: 52%;

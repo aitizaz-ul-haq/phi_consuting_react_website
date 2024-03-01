@@ -675,10 +675,9 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
       {/* <!-- full scale banner --> */}
       <article class="full-scale-banner">
         <section class="banner-full-exp">
-          <div class="overlay"></div>
-          <div class="banner-new-full-scale-container">
-            <h2 class="full-banner-call">
-            71% of financial service executives outsource or offshore some of their services. While 61% of organizations said geopolitical world events like COVID accelerated their digital transformation efforts.
+          <div class="overlay-banner-full">
+          <h2 class="full-banner-call">
+          71% of financial service executives outsource or offshore some of their services. While 61% of organizations said geopolitical world events like COVID accelerated their digital transformation efforts.
             </h2>
           </div>
         </section>

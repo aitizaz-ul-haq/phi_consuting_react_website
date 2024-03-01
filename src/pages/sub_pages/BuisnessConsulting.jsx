@@ -733,10 +733,9 @@ useScrollToTop();
       {/* <!-- full scale banner --> */}
       <article class="full-scale-banner">
         <section class="banner-full-exp">
-          <div class="overlay"></div>
-          <div class="banner-new-full-scale-container">
-            <h2 class="full-banner-call">
-            Shareholder registration is the most outsourced IR activity, with 77 percent of investor relations teams relying on external providers. Shareholder identification and annual report design follow closely at 64 percent and 58 percent, respectively.
+          <div class="overlay-banner-full">
+          <h2 class="full-banner-call">
+          Shareholder registration is the most outsourced IR activity, with 77 percent of investor relations teams relying on external providers. Shareholder identification and annual report design follow closely at 64 percent and 58 percent, respectively.
             </h2>
           </div>
         </section>

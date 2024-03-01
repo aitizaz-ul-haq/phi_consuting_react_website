@@ -615,12 +615,11 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
       </article>
 
        {/* <!-- full scale banner --> */}
-       <article class="full-scale-banner">
+      <article class="full-scale-banner">
         <section class="banner-full-exp">
-          <div class="overlay"></div>
-          <div class="banner-new-full-scale-container">
-            <h2 class="full-banner-call">
-            In United States, 32% of organizations delegate at least one HR activity to external providers and 51% of organizations choose to outsource administration. Impressively, remarkable 97% satisfaction rate.
+          <div class="overlay-banner-full">
+          <h2 class="full-banner-call">
+          In United States, 32% of organizations delegate at least one HR activity to external providers and 51% of organizations choose to outsource administration. Impressively, remarkable 97% satisfaction rate.
             </h2>
           </div>
         </section>
