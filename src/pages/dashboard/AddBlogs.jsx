@@ -31,6 +31,7 @@ const AddBlog = () => {
             dateCreated: dateCreated.format("YYYY-MM-DD"),
             imageUrl,
             summary,
+            category,
             urlName,
         };
         console.log("Submitting form data:", formData);
