@@ -12,7 +12,7 @@ const { Option } = Select;
 const AddBlog = () => {
     const [title, setTitle] = useState('');
     const [blogContent, setBlogContent] = useState('');
-    const [companyName, setCompanyName] = useState('');
+    // const [companyName, setCompanyName] = useState('');
     const [readTime, setReadTime] = useState('');
     const [imageUrl, setImageUrl] = useState('');
     const [summary, setSummary] = useState('');
@@ -26,7 +26,7 @@ const AddBlog = () => {
         const formData = {
             title,
             blogContent,
-            companyName,
+            // companyName,
             readTime,
             dateCreated: dateCreated.format("YYYY-MM-DD"),
             imageUrl,
@@ -67,7 +67,7 @@ const AddBlog = () => {
                     <Option value="Customer Experience">Customer Experience</Option>
                 </Select>
             </div>
-            <div style={{ marginBottom: '20px' }}>
+            {/* <div style={{ marginBottom: '20px' }}>
                 <label>Company Name:</label><br />
                 <Select value={companyName} onChange={setCompanyName} style={{ width: '100%' }}>
                     <Option value="Atob">Atob</Option>
@@ -79,7 +79,7 @@ const AddBlog = () => {
                     <Option value="mudflip">mudflip</Option>
                     <Option value="digital ocean">digital ocean</Option>
                 </Select>
-            </div>
+            </div> */}
             <div style={{ marginBottom: '20px' }}>
                 <label>Date Created:</label><br />
                 <DatePicker 
