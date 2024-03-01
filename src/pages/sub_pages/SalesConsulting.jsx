@@ -264,17 +264,18 @@ useScrollToTop();
       <Helmet>
       <link rel="canonical" href="https://phiconsulting.org/solutions/go-to-market-strategy" />
       </Helmet>
-            <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
-            
+            <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div> 
             <div className="right-section-control">
             <Tooltip placement="leftTop" title="toggle eye protection">
-            <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
+                <button onClick={toggleDarkMode}> 
+                   <img src={eye} alt="eye icon" width={25} height={25}/>
+                </button> 
             </Tooltip>
             {/* Back to Top Button */}
              <Tooltip placement="leftTop" title="back to top">
-    <button className="back-to-top" onClick={scrollToTop}>
-    <img src={top} alt="eye icon" width={25} height={25}/>
-    </button>
+                 <button className="back-to-top" onClick={scrollToTop}>
+                    <img src={top} alt="eye icon" width={25} height={25}/>
+                 </button>
             </Tooltip>
             </div>
 
@@ -324,7 +325,6 @@ useScrollToTop();
             {data.featuresDescriptionOne}
             </div>
           </div>
-
           <div class="sales-cards one-with-blue-back">
             <div class="icon-container">
               <img
@@ -504,13 +504,13 @@ useScrollToTop();
       {/* <!-- section new process --> */}
       <article class="process-new">
       <video
-    src={processback}
-    autoPlay
-    loop
-    muted
-    className="background-video"
-  />
-  <div className="white-overlay" />
+         src={processback}
+         autoPlay
+         loop
+         muted
+         className="background-video"
+        />
+       <div className="white-overlay" />
         <section class="process-new-container">
         <h2 class="path-heading">{data.processMainHeading}</h2>
           <p class="work-desc">
