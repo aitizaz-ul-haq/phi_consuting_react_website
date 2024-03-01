@@ -71,21 +71,37 @@ const BlogView = () => {
     return <div>Loading blog data...</div>;
   }
 
-const fbookColor = 'blue'
 
     return(
         <>
-    <Helmet>
-    <title>{blog.title}</title>
-    <meta name="description" content={blog.summary} />
+   <Helmet>
+    <title>{blog.title || "Default Blog Title"}</title>
+    <meta name="description" content={blog.summary || "Default blog summary."} />
     <link rel="canonical" href={`https://phiconsulting.org/blog/${urlName}`} />
+    
     {/* Open Graph tags */}
-    <meta property="og:title" content={blog.title} />
-    <meta property="og:description" content={blog.summary} />
-    <meta property="og:image" content={blog.imageUrl} />
+    <meta property="og:title" content={blog.title || "Default Blog Title"} />
+    <meta property="og:description" content={blog.summary || "Default blog summary."} />
+    <meta property="og:image" content={blog.imageUrl || "https://example.com/default-image.jpg"} />
     <meta property="og:url" content={`https://phiconsulting.org/blog/${urlName}`} />
-    <meta property="og:type" content={blog.category} />
-    </Helmet>
+    <meta property="og:type" content="article" />
+    
+    {/* Additional tags for better handling and to specify image dimensions (optional but recommended) */}
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    
+    {/* Ensure the site name is set for better branding */}
+    <meta property="og:site_name" content="Your Site Name" />
+    
+    {/* If you have a Twitter account, also include Twitter Card tags */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={blog.title || "Default Blog Title"} />
+    <meta name="twitter:description" content={blog.summary || "Default blog summary."} />
+    <meta name="twitter:image" content={blog.imageUrl || "https://example.com/default-image.jpg"} />
+</Helmet>
+
+
+
          <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">
