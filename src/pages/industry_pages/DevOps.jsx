@@ -200,7 +200,6 @@ useScrollToTop();
     return (
         <>
  <DevopsPageHelmet />
-  
        {/* Devops Right Section Control Panel */}
       <DevopsRightSectionControl />
       {/* <!-- Hero Section --> */}
