@@ -62,7 +62,10 @@ const AddBlog = () => {
             </div>
             <div style={{ marginBottom: '20px' }}>
                 <label>Category:</label><br />
-                <Input value={category} onChange={e => setCategory(e.target.value)} />
+                <Select value={category} onChange={setCategory} style={{ width: '100%' }}>
+                    <Option value="GTM Strategy">GTM Strategy</Option>
+                    <Option value="Customer Experience">Customer Experience</Option>
+                </Select>
             </div>
             <div style={{ marginBottom: '20px' }}>
                 <label>Company Name:</label><br />
