@@ -47,7 +47,6 @@ const FinTech = () => {
     card4description: '',
   });
 
-
  function simplifyFintechData(data) {
   return data.reduce((acc, entry) => {
     const simplifiedContent = entry.content.map(item => ({
