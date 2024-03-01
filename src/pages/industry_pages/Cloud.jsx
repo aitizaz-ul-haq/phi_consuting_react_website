@@ -198,7 +198,6 @@ useScrollToTop();
     return (
         <>
   <CloudPageHelmet />
-   
      {/* Cloud Right Section Control Panel */}
     <CloudRightSectionControl />
       {/* <!-- Hero Section --> */}
