@@ -26,8 +26,6 @@ import whatback from "../../assets/img/wrappers/burn.webp";
 
 import { Helmet } from 'react-helmet';
 const SalesConsulting = () => {
-  
-
   const [data, setData] = useState({
     bannerHeading: "",
     bannerDescription: "",
@@ -78,11 +76,8 @@ const SalesConsulting = () => {
     whyBoxSixHeading: "",
     whyBoxSixDescription: ""
   });
-  
-
   const [processNewVisible, setProcessNewVisible] = useState(false);
   const processNewRef = useRef(null);
-
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [darkMode, setDarkMode] = useState(false);
   const insightsRefs = useRef([]);
@@ -266,17 +261,17 @@ useScrollToTop();
       </Helmet>
             <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div> 
             <div className="right-section-control">
-            <Tooltip placement="leftTop" title="toggle eye protection">
+                <Tooltip placement="leftTop" title="toggle eye protection">
                 <button onClick={toggleDarkMode}> 
                    <img src={eye} alt="eye icon" width={25} height={25}/>
                 </button> 
-            </Tooltip>
+                </Tooltip>
             {/* Back to Top Button */}
-             <Tooltip placement="leftTop" title="back to top">
+                 <Tooltip placement="leftTop" title="back to top">
                  <button className="back-to-top" onClick={scrollToTop}>
                     <img src={top} alt="eye icon" width={25} height={25}/>
                  </button>
-            </Tooltip>
+                 </Tooltip>
             </div>
 
       {/* <!-- Hero Section --> */}
