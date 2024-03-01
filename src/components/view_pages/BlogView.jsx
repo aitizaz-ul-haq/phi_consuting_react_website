@@ -84,7 +84,7 @@ const fbookColor = 'blue'
     <meta property="og:description" content={blog.summary} />
     <meta property="og:image" content={blog.imageUrl} />
     <meta property="og:url" content={`https://phiconsulting.org/blog/${urlName}`} />
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content={blog.category} />
     </Helmet>
          <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
