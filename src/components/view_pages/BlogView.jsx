@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import { Tooltip, Spin } from 'antd';
 import useScrollToTop from "../../hooks/useScrollToTop";
 import eye from "../../assets/img/eye.webp";
@@ -71,6 +70,9 @@ const BlogView = () => {
   if (!blog) {
     return <div>Loading blog data...</div>;
   }
+
+const fbookColor = 'blue'
+
     return(
         <>
           <Helmet>
@@ -106,16 +108,23 @@ const BlogView = () => {
                     <div className="blog-content">
                         <img src={blog.imageUrl} alt="Blog header" className='blog-image-in-reader' />
                         <div className="share-blog-social-row">
+                        <Tooltip title="Share on Facebook" placement="bottom" color='blue'>
                         <a href={`https://www.facebook.com/sharer/sharer.php?u=https://phiconsulting.org/blog/${urlName}`} target="_blank" rel="noopener noreferrer">
                             <img src={facebookicon} alt='Facebook icon' width={40}/>
                        </a>
+                       </Tooltip>
+                       <Tooltip title="Share on Linkdin" placement="bottom" color='blue'>
                         <a href={`https://www.linkedin.com/sharing/share-offsite/?url=https://phiconsulting.org/blog/${urlName}`} target="_blank" rel="noopener noreferrer" className='middle-blog-icon-share'>
                              <img src={linkdinicon} alt='LinkedIn icon' width={40}/>
                         </a>
+                        </Tooltip>
+                        <Tooltip title="share on X" placement="bottom" color='black'>
                         <a href={`https://twitter.com/intent/tweet?url=https://phiconsulting.org/blog/${urlName}`} target="_blank" rel="noopener noreferrer">
                              <img src={twittericon} alt='Twitter icon' width={40} />
                           </a>
+                          </Tooltip>
                         </div>
+                        
                         <h1 className="blog-heading-read-section">{blog.title}</h1>
                         <p className="blog-desc-line-section">{blog.summary}</p>
                         <hr />
