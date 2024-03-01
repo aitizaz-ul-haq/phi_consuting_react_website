@@ -188,7 +188,7 @@ const HrAndRecruitmentConsulting = () => {
     fetchCaseStudies();
   }, []);
    
-   useEffect(() => {
+  useEffect(() => {
      const observer = new IntersectionObserver(
        (entries) => {
          const entry = entries[0];
@@ -202,9 +202,9 @@ const HrAndRecruitmentConsulting = () => {
      }
    
      return () => observer.disconnect();
-   }, []);
+  }, []);
 
- useEffect(() => {
+  useEffect(() => {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -230,9 +230,9 @@ const HrAndRecruitmentConsulting = () => {
       if (el) observer.unobserve(el);
     });
   };
-}, []);
+  }, []);
 
-useEffect(() => {
+  useEffect(() => {
   const handleScroll = () => {
     const offset = window.pageYOffset;
     document.body.style.backgroundPositionY = offset * 0.5 + 'px'; 
@@ -249,9 +249,9 @@ useEffect(() => {
     document.body.style.backgroundPosition = '';
     document.body.style.backgroundAttachment = '';
   };
-}, []);
+  }, []);
 
-useEffect(() => {
+  useEffect(() => {
   const servicesSection = document.querySelector('.why-phi-for-sales');
   if (servicesSection) {
     servicesSection.style.backgroundColor = 'rgba(173, 216, 230, 0.5)';
@@ -265,7 +265,7 @@ useEffect(() => {
       servicesSection.style.borderBottom = '';
     }
   };
-}, []); 
+  }, []); 
 
 const toggleDarkMode = () => setDarkMode(!darkMode);
 
@@ -287,7 +287,6 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
       <Helmet>
       <link rel="canonical" href="https://phiconsulting.org/solutions/hr-recruitment" />
       </Helmet>
-
 
 <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
        
