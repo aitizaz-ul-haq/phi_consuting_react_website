@@ -24,7 +24,6 @@ const FinTech = () => {
   const [heroDescription, setHeroDescription] = useState('');
   const processNewRef = useRef(null);
   const sectionsRef = useRef([]);
-  const insightsRefs = useRef([]);
   const diagonalDivRef = useRef(null);
 
   const [cardDetails, setCardDetails] = useState({
