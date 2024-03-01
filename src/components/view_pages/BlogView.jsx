@@ -88,7 +88,7 @@ const fbookColor = 'blue'
          <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">
-{/* 
+            {/* 
             <Tooltip placement="leftTop" title="Share link">
             <button onClick={copyToClipboard}><img src={shareicon} alt="eye icon" width={25} height={25}/></button>
             </Tooltip> */}
