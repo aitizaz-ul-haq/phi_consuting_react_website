@@ -280,20 +280,20 @@ useScrollToTop();
           <div class="hero-content-sales">
             <h1 class="hero-heading-sales">
             {windowWidth >= 1200 ? <TypeAnimation
-      sequence={[
-        'Your Gateway to Strategic GTM Consultancy',
-        7000, 
-      ]}
-      wrapper="span"
-      speed={50}
-      style={{ fontSize: '40px', display: 'inline-block' }}
-      repeat={Infinity}
-    /> : 'Your Gateway to Strategic GTM Consultancy'}
+                 sequence={[
+                   'Your Gateway to Strategic GTM Consultancy',
+                     7000, 
+                   ]}
+                   wrapper="span"
+                   speed={50}
+                   style={{ fontSize: '40px', display: 'inline-block' }}
+                   repeat={Infinity}
+                   /> : 'Your Gateway to Strategic GTM Consultancy'}
               
-            </h1>
-            <p class="hero-desc-sales">
-            {data.bannerDescription}
-            </p>
+             </h1>
+              <p class="hero-desc-sales">
+                  {data.bannerDescription}
+              </p>
             <div class="consult-button-sales"> <Link to="/contact-us" className='scheduler-set'>Schedule a Free Consultation</Link> </div>
           </div>
         </section>
