@@ -75,23 +75,20 @@ const fbookColor = 'blue'
 
     return(
         <>
-          <Helmet>
-        <title>Explore Insights and Updates on Phi Consulting's Blog</title>
-        <meta name="description" content="Explore the latest insights, updates, and industry trends on Phi Consulting's blog. Stay informed about transformative projects, innovative solutions, and thought leadership articles across various industries." />
-       
-      </Helmet>
-
-      <Helmet>
-      <link rel="canonical" href={`https://phi-verse.com/blog/${urlName}`} />
-      </Helmet>
-
+    <Helmet>
+    <title>{blog.title}</title>
+    <meta name="description" content={blog.summary} />
+    <link rel="canonical" href={`https://phiconsulting.org/blog/${urlName}`} />
+    {/* Open Graph tags */}
+    <meta property="og:title" content={blog.title} />
+    <meta property="og:description" content={blog.summary} />
+    <meta property="og:image" content={blog.imageUrl} />
+    <meta property="og:url" content={`https://phiconsulting.org/blog/${urlName}`} />
+    <meta property="og:type" content="article" />
+    </Helmet>
          <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
             <div className="right-section-control">
-{/* 
-            <Tooltip placement="leftTop" title="Share link">
-            <button onClick={copyToClipboard}><img src={shareicon} alt="eye icon" width={25} height={25}/></button>
-            </Tooltip> */}
             <Tooltip placement="leftTop" title="toggle eye protection">
             <button onClick={toggleDarkMode}> <img src={eye} alt="eye icon" width={25} height={25}/></button> 
             </Tooltip>
