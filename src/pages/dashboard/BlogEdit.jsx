@@ -76,6 +76,13 @@ const EditBlog = () => {
                 <Input value={title} onChange={e => setTitle(e.target.value)} />
             </div>
             <div style={{ marginBottom: '20px' }}>
+                <label>Category:</label><br />
+                <Select value={category} onChange={setCategory} style={{ width: '100%' }}>
+                    <Option value="GTM Strategy">GTM Strategy</Option>
+                    <Option value="Customer Experience">Customer Experience</Option>
+                </Select>
+            </div>
+            {/* <div style={{ marginBottom: '20px' }}>
                 <label>Company Name:</label>
                 <Select value={companyName} onChange={value => setCompanyName(value)} style={{ width: '100%' }}>
                 <Option value="Atob">Atob</Option>
@@ -87,7 +94,7 @@ const EditBlog = () => {
                     <Option value="mudflip">mudflip</Option>
                     <Option value="digital ocean">digital ocean</Option>
                 </Select>
-            </div>
+            </div> */}
             <div style={{ marginBottom: '20px' }}>
                 <label>Date Created:</label><br />
                 <DatePicker 

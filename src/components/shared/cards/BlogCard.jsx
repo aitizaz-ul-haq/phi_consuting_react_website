@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { Tag } from 'antd';
 const BlogCard = ({blogs, id}) => {
-  const { title, blogContent, companyName,summary, readTime, dateCreated, imageUrl,urlName } = blogs;
+  const { title, blogContent,category, companyName,summary, readTime, dateCreated, imageUrl,urlName } = blogs;
 
     return(
         
@@ -20,16 +20,17 @@ const BlogCard = ({blogs, id}) => {
               <p class="date">{dateCreated}</p>
               <p class="read-time">{readTime}</p>
             </div>
+            <div className="blog-card-stuff-cont">
             <div class="blog-heading">
              {title}
             </div>
             {/* <div class="blog-desc-card">
              {summary}
             </div> */}
-
-            <div className="blog-tag">
-              {}
+            <Tag color="cyan">{category}</Tag>
             </div>
+           
+            
             </Link>
           </div>
         

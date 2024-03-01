@@ -6047,6 +6047,8 @@ background-color: rgb(243, 241, 241);
     margin-right: 5px;
   }
 
+  
+
 @media screen and (min-width: 320px) {
     .ach-badge img {
         width: 56%;
@@ -11131,7 +11133,7 @@ height : auto;
 }
 .blog-card-one {
     width: 600px;
-    height: 620px;
+    height: 570px;
 }
 
 .how-work {
@@ -12116,7 +12118,7 @@ display: none;
 
     .blog-card-one {
         width: 400px;
-        height: auto;
+        height: 440px;
         margin: 1rem;
     }
     .blog-heading {
@@ -13258,7 +13260,7 @@ display: none;
 
     .blog-card-one {
         width: 400px;
-        height: auto;
+        height: 438px;
         margin: 1rem;
     }
     .blog-heading {
@@ -14059,11 +14061,7 @@ display: none;
         /* width: 610px; */
     }
 
-    .blog-card-one {
-        width: 600px;
-        height: 620px;
-        margin: 1rem;
-    }
+ 
 
     .blog-card-two {
         width: 38%;
@@ -15768,8 +15766,17 @@ color: white;
 
     .blog-card-one {
         width: 360px;
-        height: 553px;
+        height: 425px;
         overflow: hidden;
+    }
+
+   .middle-blog-icon-share {
+    margin-left: 5px;
+    margin-right: 5px;
+   }
+
+    .blog-card-stuff-cont {
+        padding: 0.5rem;
     }
     .blog-heading {
         font-family: var(--FF-PHI);
