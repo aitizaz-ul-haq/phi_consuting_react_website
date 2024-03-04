@@ -76,13 +76,14 @@ const fbookColor = 'blue'
     return(
         <>
           <Helmet>
-            <title>Explore Insights and Updates on Phi Consulting's Blog</title>
-            <meta name="description" content="Explore the latest insights, updates, and industry trends on Phi Consulting's blog. Stay informed about transformative projects, innovative solutions, and thought leadership articles across various industries." />
-         </Helmet>
-
-          <Helmet>
-             <link rel="canonical" href={`https://phi-verse.com/blog/${urlName}`} />
-          </Helmet>
+  <title>{blog.title}</title>
+  <meta name="description" content={blog.summary} />
+  <meta property="og:title" content={blog.title} />
+  <meta property="og:description" content={blog.summary} />
+  <meta property="og:image" content={blog.imageUrl} />
+  <meta property="og:url" content={`https://phiconsulting.org/blog/${urlName}`} />
+  <link rel="canonical" href={`https://phi-verse.com/blog/${urlName}`} />
+</Helmet>
 
       <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
