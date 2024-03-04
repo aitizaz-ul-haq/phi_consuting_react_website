@@ -76,14 +76,36 @@ const fbookColor = 'blue'
     return(
         <>
           <Helmet>
-  <title>{blog.title}</title>
-  <meta name="description" content={blog.summary} />
-  <meta property="og:title" content={blog.title} />
-  <meta property="og:description" content={blog.summary} />
-  <meta property="og:image" content={blog.imageUrl} />
+  {/* Title Tag */}
+  <title>{blog.title ? `${blog.title} | Your Blog Name` : 'Your Blog Name'}</title>
+
+  {/* Meta Tags for SEO */}
+  <meta name="description" content={blog.summary || 'Default summary about your blog'} />
+  <meta name="keywords" content={blog.keywords ? blog.keywords.join(', ') : 'default, keywords, for, your, blog'} />
+  <link rel="canonical" href={`https://phiconsulting.org/blog/${urlName}`} />
+
+  {/* OpenGraph Tags for Facebook & LinkedIn */}
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content={blog.title || 'Your Blog Title'} />
+  <meta property="og:description" content={blog.summary || 'A brief summary of your blog'} />
+  <meta property="og:image" content={blog.imageUrl || 'default_image_url'} />
   <meta property="og:url" content={`https://phiconsulting.org/blog/${urlName}`} />
-  <link rel="canonical" href={`https://phi-verse.com/blog/${urlName}`} />
+  <meta property="og:site_name" content="Your Blog or Company Name" />
+
+  {/* Twitter Card Tags */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={blog.title || 'Your Blog Title'} />
+  <meta name="twitter:description" content={blog.summary || 'A brief summary of your blog'} />
+  <meta name="twitter:image" content={blog.imageUrl || 'default_image_url'} />
+
+  {/* Additional Tags for Enhancing Link Sharing on Social Media */}
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="A descriptive alternate text for your image" />
+  <meta name="twitter:site" content="@YourTwitterHandle" />
+  <meta name="twitter:creator" content="@AuthorTwitterHandle" />
 </Helmet>
+
 
       <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
         <div className="left-section-control"></div>
