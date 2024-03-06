@@ -2,7 +2,7 @@ import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 
 
-const AboutUsHeroSection = ({ windowWidth, herodescription, gotoContacts }) => {
+const AboutusHeroSection = ({ windowWidth, herodescription, gotoContacts }) => {
 <article className="hero">
     <section className="hero-container-phi-about">
       <div className="hero-content-phi-about">
@@ -29,4 +29,4 @@ const AboutUsHeroSection = ({ windowWidth, herodescription, gotoContacts }) => {
   </article>
 }
 
-export default AboutUsHeroSection;
+export default AboutusHeroSection;

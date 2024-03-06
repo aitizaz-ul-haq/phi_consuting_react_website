@@ -1,7 +1,7 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import AboutusHelemetSection from '../components/Aboutus_page_Components/AboutusHelmetSection/AboutusHelmetSection';
 import AboutUsHeroSection from '../components/Aboutus_page_Components/AboutusHeroSection/AboutusHeroSection';
-import Testing from '../components/Aboutus_page_Components/AboutusHeroSection/testing';
+import Test from '../components/Aboutus_page_Components/AboutusHeroSection/Test';
 import { Link } from 'react-router-dom';
 import clutchone from '../assets/img/achievements-badges/clutch_1.webp';
 import clutchtwo from '../assets/img/achievements-badges/clutch_2.webp';
@@ -226,7 +226,7 @@ const AboutUs = () => {
   return (
     <>
       <AboutusHelemetSection/>
-      <Testing/>
+      <Test/>
       <AboutUsHeroSection windowWidth={windowWidth} herodescription={data.herodescription} gotoContacts={gotoContacts} />
 
      {/* <!-- Hero Section --> */}
