@@ -18,6 +18,7 @@ import { Tooltip } from 'antd';
 import linkdin from '../assets/img/socil-media/linkedin.webp';
 import twitter from '../assets/img/socil-media/twitter11.webp';
 
+
 const AboutUs = () => {
 
   const [isVisibleTesti, setIsVisibleTesti] = useState(false);
