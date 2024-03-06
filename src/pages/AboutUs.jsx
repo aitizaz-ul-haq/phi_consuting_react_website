@@ -226,11 +226,11 @@ const AboutUs = () => {
   return (
     <>
       <AboutusHelemetSection/>
-      <Test/>
-      <AboutUsHeroSection windowWidth={windowWidth} herodescription={data.herodescription} gotoContacts={gotoContacts} />
+      {/* <Test/>
+      <AboutUsHeroSection windowWidth={windowWidth} herodescription={data.herodescription} gotoContacts={gotoContacts} /> */}
 
      {/* <!-- Hero Section --> */}
-      {/* <article class="hero">
+      <article class="hero">
         <section class="hero-container-phi-about">
           <div class="hero-content-phi-about">
             <h1 class="hero-heading-phi-about">
@@ -255,7 +255,7 @@ const AboutUs = () => {
             </div>
           </div>
         </section>
-      </article> */}
+      </article>
 
       {/* <!-- about phi Section --> */}
       <article className={`about-phi ${isVisibleServices ? 'visible' : ''}`} ref={servicesRef}>
