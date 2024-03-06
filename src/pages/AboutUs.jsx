@@ -1,6 +1,7 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import AboutusHelemetSection from '../components/Aboutus_page_Components/AboutusHelmetSection/AboutusHelmetSection';
-import AboutusHeroSection from '../components/Aboutus_page_Components/AboutusHeroSection/AboutusHeroSection';
+import AboutUsHeroSection from '../components/Aboutus_page_Components/AboutusHeroSection/AboutusHeroSection';
+import Testing from '../components/Aboutus_page_Components/AboutusHeroSection/testing';
 import { Link } from 'react-router-dom';
 import clutchone from '../assets/img/achievements-badges/clutch_1.webp';
 import clutchtwo from '../assets/img/achievements-badges/clutch_2.webp';
@@ -18,7 +19,6 @@ import recog from '../assets/img/recognitions/iso.webp';
 import { Tooltip } from 'antd';
 import linkdin from '../assets/img/socil-media/linkedin.webp';
 import twitter from '../assets/img/socil-media/twitter11.webp';
-
 
 
 const AboutUs = () => {
@@ -226,7 +226,8 @@ const AboutUs = () => {
   return (
     <>
       <AboutusHelemetSection/>
-      <HeroSection windowWidth={windowWidth} herodescription={data.herodescription} gotoContacts={gotoContacts} />
+      <Testing/>
+      <AboutUsHeroSection windowWidth={windowWidth} herodescription={data.herodescription} gotoContacts={gotoContacts} />
 
      {/* <!-- Hero Section --> */}
       {/* <article class="hero">
