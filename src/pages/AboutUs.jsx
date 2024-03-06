@@ -11,12 +11,12 @@ import waqarsb from "../assets/img/phi_people/waqar.png";
 import dani from "../assets/img/phi_people/Danial Nadeem.png";
 import { TypeAnimation } from 'react-type-animation';
 import useScrollToTop from '../hooks/useScrollToTop';
-import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import recog from '../assets/img/recognitions/iso.webp';
 import { Tooltip } from 'antd';
 import linkdin from '../assets/img/socil-media/linkedin.webp';
 import twitter from '../assets/img/socil-media/twitter11.webp';
+import AboutusHelemetSection from '../components/Aboutus_page_Components/AboutusHelmetSection/AboutusHelmetSection';
 
 
 const AboutUs = () => {
@@ -223,15 +223,7 @@ const AboutUs = () => {
   useScrollToTop();
   return (
     <>
-       <Helmet>
-        <title>About Phi Consulting</title>
-        <meta name="description" content="Learn about Phi Consulting, your strategic partner in business success. Explore our expertise, values, and commitment to delivering innovative solutions for your growth." />
-      </Helmet>
-
-     <Helmet>
-      <link rel="canonical" href="https://phiconsulting.org/about-us" />
-     </Helmet>
-
+      <AboutusHelemetSection/>
 
      {/* <!-- Hero Section --> */}
       <article class="hero">
