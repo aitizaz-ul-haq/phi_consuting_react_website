@@ -1,4 +1,6 @@
 import React,{ useState, useEffect, useRef } from 'react';
+import AboutusHelemetSection from '../components/Aboutus_page_Components/AboutusHelmetSection/AboutusHelmetSection';
+import AboutusHeroSection from '../components/Aboutus_page_Components/AboutusHeroSection/AboutusHeroSection';
 import { Link } from 'react-router-dom';
 import clutchone from '../assets/img/achievements-badges/clutch_1.webp';
 import clutchtwo from '../assets/img/achievements-badges/clutch_2.webp';
@@ -16,7 +18,7 @@ import recog from '../assets/img/recognitions/iso.webp';
 import { Tooltip } from 'antd';
 import linkdin from '../assets/img/socil-media/linkedin.webp';
 import twitter from '../assets/img/socil-media/twitter11.webp';
-import AboutusHelemetSection from '../components/Aboutus_page_Components/AboutusHelmetSection/AboutusHelmetSection';
+
 
 
 const AboutUs = () => {
@@ -224,9 +226,10 @@ const AboutUs = () => {
   return (
     <>
       <AboutusHelemetSection/>
+      <HeroSection windowWidth={windowWidth} herodescription={data.herodescription} gotoContacts={gotoContacts} />
 
      {/* <!-- Hero Section --> */}
-      <article class="hero">
+      {/* <article class="hero">
         <section class="hero-container-phi-about">
           <div class="hero-content-phi-about">
             <h1 class="hero-heading-phi-about">
@@ -251,7 +254,7 @@ const AboutUs = () => {
             </div>
           </div>
         </section>
-      </article>
+      </article> */}
 
       {/* <!-- about phi Section --> */}
       <article className={`about-phi ${isVisibleServices ? 'visible' : ''}`} ref={servicesRef}>
