@@ -117,7 +117,7 @@ const BlogView = () => {
   <meta property="og:image:alt" content="A descriptive alternate text for your image" />
   <meta name="twitter:site" content="@YourTwitterHandle" />
   <meta name="twitter:creator" content="@AuthorTwitterHandle" />
-</Helmet>
+         </Helmet>
 
 
       <div className={`overlayscreen ${darkMode ? 'activate' : ''}`}></div>
