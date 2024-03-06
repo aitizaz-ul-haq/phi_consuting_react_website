@@ -71,7 +71,20 @@ const BlogView = () => {
     return <div>Loading blog data...</div>;
   }
 
-const fbookColor = 'blue'
+  const shareOnLinkedIn = async () => {
+    try {
+      const postData = {
+        title: blog.title,
+        text: blog.summary,
+        url: `https://phiconsulting.org/blog/${urlName}`
+      };
+      await axios.post('/api/share/linkedin', postData);
+      alert('Content shared successfully on LinkedIn!');
+    } catch (error) {
+      console.error('Error sharing content on LinkedIn:', error);
+      alert('Failed to share content on LinkedIn');
+    }
+  };
 
     return(
         <>
@@ -135,11 +148,16 @@ const fbookColor = 'blue'
                             <img src={facebookicon} alt='Facebook icon' width={40}/>
                        </a>
                        </Tooltip>
-                       <Tooltip title="Share on Linkdin" placement="bottom" color='blue'>
+                       {/* <Tooltip title="Share on Linkdin" placement="bottom" color='blue'>
                         <a href={`https://www.linkedin.com/sharing/share-offsite/?url=https://phiconsulting.org/blog/${urlName}`} target="_blank" rel="noopener noreferrer" className='middle-blog-icon-share'>
                              <img src={linkdinicon} alt='LinkedIn icon' width={40}/>
                         </a>
-                        </Tooltip>
+                        </Tooltip> */}
+                        <Tooltip title="Share on LinkedIn" placement="bottom" color='blue'>
+                          <button onClick={shareOnLinkedIn}>
+                             <img src={linkdinicon} alt='LinkedIn icon' width={40}/>
+                          </button>
+                      </Tooltip>
                         <Tooltip title="share on X" placement="bottom" color='black'>
                         <a href={`https://twitter.com/intent/tweet?url=https://phiconsulting.org/blog/${urlName}`} target="_blank" rel="noopener noreferrer">
                              <img src={twittericon} alt='Twitter icon' width={40} />
