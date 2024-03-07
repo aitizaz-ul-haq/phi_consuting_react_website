@@ -258,11 +258,11 @@ const Sidebar = () => {
         )}
       </div>
       <div className='listed-options'>
-        <button className='dash-options' onClick={() => setDropdown24(!dropdown24)}>Value Creation Page</button>
+        <button className='dash-options' onClick={() => setDropdown24(!dropdown24)}>Case Study Page</button>
         {dropdown24 && (
           <div className='list-container'>
-             <Link className='list-elements-dash' to="/dashboard/AddValuecPage">Add Value Page Content</Link>
-            <Link className='list-elements-dash' to="/dashboard/ShowSValuecPage">Show Value Page Content</Link>
+             <Link className='list-elements-dash' to="/dashboard/AddValuecPage">Add Content</Link>
+            <Link className='list-elements-dash' to="/dashboard/ShowSValuecPage">Show Content</Link>
         </div>
         )}
       </div>
