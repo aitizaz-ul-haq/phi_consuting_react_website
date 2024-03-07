@@ -129,7 +129,7 @@ useScrollToTop();
                         <img src={phicontactbanner} alt="" />
                       </div>
                       <div class="app-contact">
-                        CONTACT INFO : info@phi.consulting
+                        CONTACT INFO : marketing@phi.consulting
                       </div>
                     </div>
                     <div class="screen-body-item">
