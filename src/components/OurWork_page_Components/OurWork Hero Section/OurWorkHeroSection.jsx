@@ -8,7 +8,7 @@ const OurWorkHeroSection = ({ heroHeading, heroDescription, windowWidth, gotoCon
       <section className="hero-container-our-work">
         <div className="hero-content-our-work">
           <h1 className="hero-heading-our-work">
-            {windowWidth >= 1200 ? (
+            {/* {windowWidth >= 1200 ? (
               <TypeAnimation
                 sequence={[
                   'Success is not just a goal but a proven outcome',
@@ -19,7 +19,8 @@ const OurWorkHeroSection = ({ heroHeading, heroDescription, windowWidth, gotoCon
                 style={{ fontSize: '40px', display: 'inline-block' }}
                 repeat={Infinity}
               />
-            ) : 'Success is not just a goal but a proven outcome'}
+            ) : 'Success is not just a goal but a proven outcome'} */}
+            {heroHeading}
           </h1>
           <p className="hero-desc-our-work">
             {heroDescription}
