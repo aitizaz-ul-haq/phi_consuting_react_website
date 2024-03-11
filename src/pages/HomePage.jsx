@@ -19,7 +19,7 @@ import financial from '../assets/img/services-icons/financial.webp';
 import hr from '../assets/img/services-icons/hr.webp';
 import clutchone from '../assets/img/achievements-badges/clutch_1.webp';
 import clutchtwo from '../assets/img/achievements-badges/clutch_2.webp';
-import { Tooltip, Slider, Input, Row, Col } from 'antd';
+import { Tooltip, Slider, Input, Button, Modal } from 'antd';
 import { Link } from 'react-router-dom';
 import CaseStudyMacroComps from '../components/shared/macroComps/CaseStudyMacroComps';
 import useScrollToTop from '../hooks/useScrollToTop';
@@ -74,6 +74,8 @@ const HomePage = () => {
   const [currentSection, setCurrentSection] = useState(null);
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   // State for the left calculator
   const [leftExecutives, setLeftExecutives] = useState(1);
@@ -441,6 +443,18 @@ const HomePage = () => {
       }
     };
   }, []);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+  
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+  
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
 
   useScrollToTop();
 
@@ -833,10 +847,19 @@ const HomePage = () => {
       </article>
 
       <article className="comparison-calculator">
+      <section className="testimonial-container">
+          <h2 class="testi-heading">
+          ROI Calculator
+          </h2>
+          <p class="testi-desc">
+          The cost of hiring an SDR vs Phi Consulting. No lockups. All month-to-month. As long as we’re getting results, you’ll likely stick with us for a while.
+          </p>
+        </section>
   <section className="calculator-carrier-section">
+ 
     <div className="calculator left-calculator">
-      <h2>Cost of hiring an SDR:</h2>
-      <div>Number of Account Executives:</div>
+      <h2 className="calculator-heading">Cost of hiring an SDR:</h2>
+      <p className='heading-top-calculator'>Number of Account Executives:</p>
       <Slider
         min={1}
         max={100}
@@ -847,8 +870,9 @@ const HomePage = () => {
         addonBefore="Executives"
         value={leftExecutives}
         onChange={(e) => setLeftExecutives(Number(e.target.value))}
+        style={{ color:'white', width:"50%" }}
       />
-      <div>Total Pay Per Executive:</div>
+      <div className='heading-top-calculator'>Total Pay Per Executive:</div>
       <Slider
         min={1000}
         max={1000000}
@@ -859,13 +883,14 @@ const HomePage = () => {
         addonBefore="Pay/Executive"
         value={leftPayPerExecutive}
         onChange={(e) => setLeftPayPerExecutive(Number(e.target.value))}
+        className='calc-input-spacing'
       />
-      <h3>TOTAL COST: absolute minimum ${leftTotalPay}</h3>
+      <h3 className="calculator-heading">Total Cost: minimum ${leftTotalPay}/year</h3>
     </div>
 
     <div className="calculator right-calculator">
-      <h2>Cost of hiring Phi Consulting:</h2>
-      <div>Number of Account Executives:</div>
+      <h2 className="calculator-heading">Cost of hiring Phi Consulting:</h2>
+      <div className='heading-top-calculator'>Number of Account Executives:</div>
       <Slider
         min={1}
         max={100}
@@ -876,9 +901,9 @@ const HomePage = () => {
         addonBefore="Executives"
         value={rightExecutives}
         onChange={(e) => setRightExecutives(Number(e.target.value))}
-        className="custom-addon"
+        style={{ color:'white', width:"50%" }}
       />
-      <div>Total Pay Per Executive:</div>
+      <div className='heading-top-calculator'>Total Pay Per Executive:</div>
       <Slider
         min={1000}
         max={1000000}
@@ -889,15 +914,38 @@ const HomePage = () => {
         addonBefore="Pay/Executive"
         value={rightPayPerExecutive}
         onChange={(e) => setRightPayPerExecutive(Number(e.target.value))}
-        className="custom-addon"
+        className="calc-input-spacing"
       />
-      <h3>TOTAL COST: minimum ${rightTotalPay}</h3>
+      <h3 className="calculator-heading">Total Cost: minimum ${rightTotalPay}/year</h3>
     </div>
   </section>
 
   <section className="calculated-total-saving">
   <div className="savings-section">
-  <h2>Total Savings with Phi Consulting: ${leftTotalPay - rightTotalPay}</h2>
+  {/* <h2 className="calculator-heading">Total Savings with Phi Consulting: ${leftTotalPay - rightTotalPay}/year</h2> */}
+  <Button className='calculate-button-text' type="primary" onClick={showModal}>
+      Calculate
+    </Button>
+    <Modal
+      title="Total Savings with Phi Consulting"
+      visible={isModalVisible}
+      onOk={handleOk}
+      onCancel={handleCancel}
+      footer={[
+        <Button key="back" onClick={handleCancel}>
+          Return
+        </Button>,
+        <Button key="submit" type="primary" onClick={handleOk}>
+          OK
+        </Button>,
+      ]}
+    >
+      <p>Number of Account Executives (Left): {leftExecutives}</p>
+      <p>Total Cost of Hiring an SDR: ${leftTotalPay}/year</p>
+      {/* <p>Number of Account Executives (Right): {rightExecutives}</p> */}
+      {/* <p>Total Cost of Hiring Phi Consulting: ${rightTotalPay}/year</p> */}
+      <p>Total Savings: ${leftTotalPay - rightTotalPay}/year</p>
+    </Modal>
     </div>
   </section>
 </article>

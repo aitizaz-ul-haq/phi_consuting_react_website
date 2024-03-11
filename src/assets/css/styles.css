@@ -6060,6 +6060,36 @@ background-color: rgb(243, 241, 241);
     gap: 16px; /* Adds space between calculators */
   }
 
+  .calculator-heading {
+    font-family: var(--FF-PHI);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--DARK-PHI-BLUE);
+    width: 100%;
+    /* text-align: center; */
+  }
+
+  .heading-top-calculator {
+    margin-top: 2rem;
+    font-family: var(--FF-PHI);
+    font-size: 20px;
+    /* font-weight: var(--FONT-THICK); */
+    color: var(--DARK-PHI-BLUE);
+  }
+
+  .calculate-button-text {
+    margin-top: 2rem;
+    font-family: var(--FF-PHI);
+    font-size: 28px;
+    /* font-weight: var(--FONT-THICK); */
+    color: white;
+    width: 300px;
+    height: 80px;
+    background-color: #55c2da;
+    transition: background-color 0.3s ease 0s;
+    box-shadow: 0px 0px 37px -2px var(--LIGHT-PHI-BLUE);
+  }
+
   .calculated-total-saving {
     display: flex;
     flex-direction: row;
@@ -6074,9 +6104,9 @@ background-color: rgb(243, 241, 241);
     min-width: 300px; /* Minimum width of each calculator to ensure content fits */
     max-width: 52%; /* Ensure it doesn't grow beyond the viewport width */
     padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: Adds some shadow for depth */
-    border-radius: 8px; /* Optional: Rounds the corners */
-    background-color: rgb(209, 229, 236); 
+    /* box-shadow: 0 2px 4px rgba(0,0,0,0.1);  */
+    border-radius: 8px; 
+    /* background-color: white;  */
     text-align: center;  
 }
   
@@ -6087,13 +6117,17 @@ background-color: rgb(243, 241, 241);
     padding: 1rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: Adds some shadow for depth */
     border-radius: 8px; /* Optional: Rounds the corners */
-    background-color: rgb(209, 229, 236); 
+    /* background-color: rgb(24, 70, 208);  */
     text-align: left;
+    background-image: url('../img/cal.avif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100% center;
   }
 
-  .custom-addon .ant-input-group-addon {
-    background-color: #4CAF50; /* Change to your desired background color */
-    color: white; /* Change to your desired text color */
+  .calc-input-spacing {
+    padding-bottom: 1rem;
+    width: 50%;
   }
   
 
