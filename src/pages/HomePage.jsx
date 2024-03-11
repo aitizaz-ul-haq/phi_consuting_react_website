@@ -835,7 +835,7 @@ const HomePage = () => {
       <article className="comparison-calculator">
   <section className="calculator-carrier-section">
     <div className="calculator left-calculator">
-      <h2>Left Calculator</h2>
+      <h2>Cost of hiring an SDR:</h2>
       <div>Number of Account Executives:</div>
       <Slider
         min={1}
@@ -851,7 +851,7 @@ const HomePage = () => {
       <div>Total Pay Per Executive:</div>
       <Slider
         min={1000}
-        max={100000}
+        max={1000000}
         value={leftPayPerExecutive}
         onChange={(value) => setLeftPayPerExecutive(value)}
       />
@@ -860,11 +860,11 @@ const HomePage = () => {
         value={leftPayPerExecutive}
         onChange={(e) => setLeftPayPerExecutive(Number(e.target.value))}
       />
-      <h3>Total Pay: ${leftTotalPay}</h3>
+      <h3>TOTAL COST: absolute minimum ${leftTotalPay}</h3>
     </div>
 
     <div className="calculator right-calculator">
-      <h2>Right Calculator</h2>
+      <h2>Cost of hiring Phi Consulting:</h2>
       <div>Number of Account Executives:</div>
       <Slider
         min={1}
@@ -880,7 +880,7 @@ const HomePage = () => {
       <div>Total Pay Per Executive:</div>
       <Slider
         min={1000}
-        max={100000}
+        max={1000000}
         value={rightPayPerExecutive}
         onChange={(value) => setRightPayPerExecutive(value)}
       />
@@ -889,7 +889,13 @@ const HomePage = () => {
         value={rightPayPerExecutive}
         onChange={(e) => setRightPayPerExecutive(Number(e.target.value))}
       />
-      <h3>Total Pay: ${rightTotalPay}</h3>
+      <h3>TOTAL COST: minimum ${rightTotalPay}</h3>
+    </div>
+  </section>
+
+  <section className="calculated-total-saving">
+  <div className="calculator">
+  <h2>Total Savings with Phi Consulting: ${leftTotalPay - rightTotalPay}</h2>
     </div>
   </section>
 </article>

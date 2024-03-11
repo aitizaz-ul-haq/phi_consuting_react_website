@@ -6059,6 +6059,15 @@ background-color: rgb(243, 241, 241);
     flex-wrap: wrap;
     gap: 16px; /* Adds space between calculators */
   }
+
+  .calculated-total-saving {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 1rem;
+  }
   
   .calculator {
     flex: 1; /* Each calculator will take equal width */
@@ -6067,7 +6076,7 @@ background-color: rgb(243, 241, 241);
     padding: 1rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: Adds some shadow for depth */
     border-radius: 8px; /* Optional: Rounds the corners */
-    background-color: #fff; 
+    background-color: rgb(209, 229, 236); 
   }
   
 
