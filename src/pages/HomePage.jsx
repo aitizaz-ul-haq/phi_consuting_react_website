@@ -77,7 +77,7 @@ const HomePage = () => {
 
   // State for the left calculator
   const [leftExecutives, setLeftExecutives] = useState(1);
-  const [leftPayPerExecutive, setLeftPayPerExecutive] = useState(125000);
+  const [leftPayPerExecutive, setLeftPayPerExecutive] = useState(150000);
 
   // State for the right calculator
   const [rightExecutives, setRightExecutives] = useState(1);
@@ -876,6 +876,7 @@ const HomePage = () => {
         addonBefore="Executives"
         value={rightExecutives}
         onChange={(e) => setRightExecutives(Number(e.target.value))}
+        className="custom-addon"
       />
       <div>Total Pay Per Executive:</div>
       <Slider
@@ -888,6 +889,7 @@ const HomePage = () => {
         addonBefore="Pay/Executive"
         value={rightPayPerExecutive}
         onChange={(e) => setRightPayPerExecutive(Number(e.target.value))}
+        className="custom-addon"
       />
       <h3>TOTAL COST: minimum ${rightTotalPay}</h3>
     </div>

@@ -6088,7 +6088,12 @@ background-color: rgb(243, 241, 241);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: Adds some shadow for depth */
     border-radius: 8px; /* Optional: Rounds the corners */
     background-color: rgb(209, 229, 236); 
-    text-align: center;
+    text-align: left;
+  }
+
+  .custom-addon .ant-input-group-addon {
+    background-color: #4CAF50; /* Change to your desired background color */
+    color: white; /* Change to your desired text color */
   }
   
 
