@@ -944,7 +944,7 @@ const HomePage = () => {
     >
       <section className="popup-container">
         <div className="left-section-inpopup">
-        <p className='heading-modal-large'>Total Savings with phi consulting:</p>
+        <p className='heading-modal-large'>Total Savings with Phi Consulting:</p>
         <p className='heading-modal-large'>${leftTotalPay - rightPayPerExecutive} - USD per year</p>
         </div>
         <div className="right-section-inpopup">
@@ -965,7 +965,7 @@ const HomePage = () => {
     </Modal>
     </div>
   </section>
-</article>
+      </article>
       
 
       {/* <!-- Blog Section --> */}
