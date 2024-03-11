@@ -945,20 +945,20 @@ const HomePage = () => {
       <section className="popup-container">
         <div className="left-section-inpopup">
         <p className='heading-modal-large'>Total Savings with phi consulting:</p>
-        <p className='heading-modal-large'>${leftTotalPay - rightPayPerExecutive} USD per year</p>
+        <p className='heading-modal-large'>${leftTotalPay - rightPayPerExecutive} - USD per year</p>
         </div>
         <div className="right-section-inpopup">
         <p className='heading-modal-smaller'>Selected Number of Account Executives(SDR):</p>
         <p className='heading-modal-smaller'>{leftExecutives}</p>
         <br />
         <p className='heading-modal-smaller'>Total Cost of Hiring an SDR:</p>
-        <p className='heading-modal-smaller'>${leftTotalPay} USD per year</p>
+        <p className='heading-modal-smaller'>${leftTotalPay} - USD per year</p>
         <br />
         <p className='heading-modal-smaller'>Same Number of Phi Executives:</p>
         <p className='heading-modal-smaller'>{leftExecutives}</p>
         <br />
         <p className='heading-modal-smaller'>Total Cost of Hiring with Phi Consulting:</p>
-        <p className='heading-modal-smaller'>${rightPayPerExecutive * leftExecutives} USD per year</p>
+        <p className='heading-modal-smaller'>${rightPayPerExecutive * leftExecutives} - USD per year</p>
         <br />
         </div>
       </section>
