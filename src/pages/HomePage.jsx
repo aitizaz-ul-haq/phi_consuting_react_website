@@ -927,10 +927,12 @@ const HomePage = () => {
       Calculate
     </Button>
     <Modal
-      title="Total Savings with Phi Consulting"
+      // title="Total Savings with Phi Consulting"
       visible={isModalVisible}
       onOk={handleOk}
       onCancel={handleCancel}
+      width="75%"
+      className="modal-homepage"
       footer={[
         <Button key="back" onClick={handleCancel}>
           Return
@@ -940,11 +942,31 @@ const HomePage = () => {
         </Button>,
       ]}
     >
-      <p>Number of Account Executives (Left): {leftExecutives}</p>
-      <p>Total Cost of Hiring an SDR: ${leftTotalPay}/year</p>
+      
       {/* <p>Number of Account Executives (Right): {rightExecutives}</p> */}
       {/* <p>Total Cost of Hiring Phi Consulting: ${rightTotalPay}/year</p> */}
-      <p>Total Savings: ${leftTotalPay - rightTotalPay}/year</p>
+      
+
+      <section className="popup-container">
+        <div className="left-section-inpopup">
+        <p className='heading-modal-large'>Total Savings with phi consulting:</p>
+        <p className='heading-modal-large'>${leftTotalPay - rightTotalPay}/year</p>
+        </div>
+        <div className="right-section-inpopup">
+        <p className='heading-modal-smaller'>Selected Number of Account Executives(SDR):</p>
+        <p className='heading-modal-smaller'>{leftExecutives}</p>
+        <br />
+        <p className='heading-modal-smaller'>Total Cost of Hiring an SDR:</p>
+        <p className='heading-modal-smaller'>${leftTotalPay}/year</p>
+        <br />
+        <p className='heading-modal-smaller'>Selected Number of Phi Executives:</p>
+        <p className='heading-modal-smaller'>{rightExecutives}</p>
+        <br />
+        <p className='heading-modal-smaller'>Total Cost of Hiring Phi Consulting:</p>
+        <p className='heading-modal-smaller'>${rightTotalPay}/year</p>
+        <br />
+        </div>
+      </section>
     </Modal>
     </div>
   </section>
