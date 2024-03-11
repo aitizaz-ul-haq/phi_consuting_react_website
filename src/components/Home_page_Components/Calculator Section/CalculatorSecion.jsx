@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Slider, Input, Row, Col } from 'antd';
 
-const ComparisonSection = () => {
+const CalculatorSecion = () => {
   // State for the left calculator
   const [leftExecutives, setLeftExecutives] = useState(1);
   const [leftPayPerExecutive, setLeftPayPerExecutive] = useState(5000);
@@ -77,4 +77,4 @@ const ComparisonSection = () => {
   );
 };
 
-export default ComparisonSection;
+export default CalculatorSecion;

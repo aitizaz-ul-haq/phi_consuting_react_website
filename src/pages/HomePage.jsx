@@ -3,6 +3,7 @@ import HeroSection from '../components/Home_page_Components/Hero Section/HeroSec
 import Banner from "../components/Home_page_Components/Banner Section/Banner";
 import BlogSection from '../components/Home_page_Components/Blog Section/BlogSection';
 import CtaSection from '../components/Home_page_Components/Cta Section/CtaSection';
+// import CalculatorSecion from "../components/Home_page_Components/Calculator Section/CalculatorSection";
 import ATOB from '../assets/img/new_logos_comps/newer/AtoB 2.webp';
 import bobtail from '../assets/img/new_logos_comps/bobtail.webp';
 import joyride from '../assets/img/new_logos_comps/joyride.webp';
@@ -18,7 +19,7 @@ import financial from '../assets/img/services-icons/financial.webp';
 import hr from '../assets/img/services-icons/hr.webp';
 import clutchone from '../assets/img/achievements-badges/clutch_1.webp';
 import clutchtwo from '../assets/img/achievements-badges/clutch_2.webp';
-import { Tooltip } from 'antd';
+import { Tooltip, Slider, Input, Row, Col } from 'antd';
 import { Link } from 'react-router-dom';
 import CaseStudyMacroComps from '../components/shared/macroComps/CaseStudyMacroComps';
 import useScrollToTop from '../hooks/useScrollToTop';
@@ -73,6 +74,18 @@ const HomePage = () => {
   const [currentSection, setCurrentSection] = useState(null);
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  // State for the left calculator
+  const [leftExecutives, setLeftExecutives] = useState(1);
+  const [leftPayPerExecutive, setLeftPayPerExecutive] = useState(5000);
+
+  // State for the right calculator
+  const [rightExecutives, setRightExecutives] = useState(1);
+  const [rightPayPerExecutive, setRightPayPerExecutive] = useState(5000);
+
+  // Calculating totals
+  const leftTotalPay = leftExecutives * leftPayPerExecutive;
+  const rightTotalPay = rightExecutives * rightPayPerExecutive;
 
   const toggleDarkMode = () => setDarkMode(!darkMode);
   const [data, setData] = useState({
@@ -818,6 +831,69 @@ const HomePage = () => {
           </div>
         </section>
       </article>
+
+      <article className="comparison-calculator">
+  <section className="calculator-carrier-section">
+    <div className="calculator left-calculator">
+      <h2>Left Calculator</h2>
+      <div>Number of Account Executives:</div>
+      <Slider
+        min={1}
+        max={100}
+        value={leftExecutives}
+        onChange={(value) => setLeftExecutives(value)}
+      />
+      <Input
+        addonBefore="Executives"
+        value={leftExecutives}
+        onChange={(e) => setLeftExecutives(Number(e.target.value))}
+      />
+      <div>Total Pay Per Executive:</div>
+      <Slider
+        min={1000}
+        max={100000}
+        value={leftPayPerExecutive}
+        onChange={(value) => setLeftPayPerExecutive(value)}
+      />
+      <Input
+        addonBefore="Pay/Executive"
+        value={leftPayPerExecutive}
+        onChange={(e) => setLeftPayPerExecutive(Number(e.target.value))}
+      />
+      <h3>Total Pay: ${leftTotalPay}</h3>
+    </div>
+
+    <div className="calculator right-calculator">
+      <h2>Right Calculator</h2>
+      <div>Number of Account Executives:</div>
+      <Slider
+        min={1}
+        max={100}
+        value={rightExecutives}
+        onChange={(value) => setRightExecutives(value)}
+      />
+      <Input
+        addonBefore="Executives"
+        value={rightExecutives}
+        onChange={(e) => setRightExecutives(Number(e.target.value))}
+      />
+      <div>Total Pay Per Executive:</div>
+      <Slider
+        min={1000}
+        max={100000}
+        value={rightPayPerExecutive}
+        onChange={(value) => setRightPayPerExecutive(value)}
+      />
+      <Input
+        addonBefore="Pay/Executive"
+        value={rightPayPerExecutive}
+        onChange={(e) => setRightPayPerExecutive(Number(e.target.value))}
+      />
+      <h3>Total Pay: ${rightTotalPay}</h3>
+    </div>
+  </section>
+</article>
+      
 
       {/* <!-- Blog Section --> */}
       <BlogSection 

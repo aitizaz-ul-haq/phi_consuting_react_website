@@ -6047,6 +6047,28 @@ background-color: rgb(243, 241, 241);
     margin-right: 5px;
   }
 
+  .comparison-calculator {
+    padding: 1rem;
+  }
+  
+  .calculator-carrier-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px; /* Adds space between calculators */
+  }
+  
+  .calculator {
+    flex: 1; /* Each calculator will take equal width */
+    min-width: 150px; /* Minimum width of each calculator to ensure content fits */
+    max-width: 25%; /* Ensure it doesn't grow beyond the viewport width */
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: Adds some shadow for depth */
+    border-radius: 8px; /* Optional: Rounds the corners */
+    background-color: #fff; 
+  }
   
 
 @media screen and (min-width: 320px) {
