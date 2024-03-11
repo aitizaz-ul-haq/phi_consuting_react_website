@@ -820,7 +820,7 @@ const HomePage = () => {
 
       {/* <!-- Blog Section --> */}
       <BlogSection 
-        blogs={blogs.slice(0, 2)} // Adjust according to how many blogs you want to display
+        blogs={blogs.slice(0, 2)}
         insightsHeading={data.insightsheading}
         insightsDescription={data.insightsdescription}
       />
