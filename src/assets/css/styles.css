@@ -6060,6 +6060,23 @@ background-color: rgb(243, 241, 241);
     gap: 16px; /* Adds space between calculators */
   }
 
+  .cal-title-heading {
+    margin-top: 6rem;
+    font-family: var(--FF-PHI);
+    font-size: 44px;
+    font-weight: 200;
+    margin-top: 30px;
+    color: white;
+  }
+
+  .cal-title-description {
+    font-family: var(--FF-PHI);
+    font-size: 22px;
+    font-weight: var(--FONT-THICK);
+    margin-bottom: 4rem;
+    color: white;
+  }
+
   .calculator-heading {
     font-family: var(--FF-PHI);
     font-size: 22px;
@@ -6078,7 +6095,7 @@ background-color: rgb(243, 241, 241);
   }
 
   .calculate-button-text {
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     font-family: var(--FF-PHI);
     font-size: 28px;
     /* font-weight: var(--FONT-THICK); */
@@ -6113,7 +6130,7 @@ background-color: rgb(243, 241, 241);
   .calculator {
     flex: 1; /* Each calculator will take equal width */
     min-width: 150px; /* Minimum width of each calculator to ensure content fits */
-    max-width: 25%; /* Ensure it doesn't grow beyond the viewport width */
+    max-width: 27%; /* Ensure it doesn't grow beyond the viewport width */
     padding: 1rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: Adds some shadow for depth */
     border-radius: 8px; /* Optional: Rounds the corners */
@@ -6127,7 +6144,7 @@ background-color: rgb(243, 241, 241);
 
   .calc-input-spacing {
     padding-bottom: 1rem;
-    width: 50%;
+    width: 80%;
   }
   
   .popup-container {

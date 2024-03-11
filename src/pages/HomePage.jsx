@@ -848,10 +848,10 @@ const HomePage = () => {
 
       <article className="comparison-calculator">
       <section className="testimonial-container">
-          <h2 class="testi-heading">
+          <h2 class="cal-title-heading">
           ROI Calculator
           </h2>
-          <p class="testi-desc">
+          <p class="cal-title-description">
           The cost of hiring an SDR vs Phi Consulting. No lockups. All month-to-month. As long as we’re getting results, you’ll likely stick with us for a while.
           </p>
         </section>
@@ -870,7 +870,7 @@ const HomePage = () => {
         addonBefore="Executives"
         value={leftExecutives}
         onChange={(e) => setLeftExecutives(Number(e.target.value))}
-        style={{ color:'white', width:"50%" }}
+        style={{ color:'white', width:"80%" }}
       />
       <div className='heading-top-calculator'>Total Pay Per Executive:</div>
       <Slider
@@ -885,10 +885,10 @@ const HomePage = () => {
         onChange={(e) => setLeftPayPerExecutive(Number(e.target.value))}
         className='calc-input-spacing'
       />
-      <h3 className="calculator-heading">Total Cost: minimum ${leftTotalPay}/year</h3>
+      {/* <h3 className="calculator-heading">Total Cost: minimum ${leftTotalPay}/year</h3> */}
     </div>
 
-    <div className="calculator right-calculator">
+    {/* <div className="calculator right-calculator">
       <h2 className="calculator-heading">Cost of hiring Phi Consulting:</h2>
       <div className='heading-top-calculator'>Number of Account Executives:</div>
       <Slider
@@ -901,7 +901,7 @@ const HomePage = () => {
         addonBefore="Executives"
         value={rightExecutives}
         onChange={(e) => setRightExecutives(Number(e.target.value))}
-        style={{ color:'white', width:"50%" }}
+        style={{ color:'white', width:"80%" }}
       />
       <div className='heading-top-calculator'>Total Pay Per Executive:</div>
       <Slider
@@ -916,8 +916,8 @@ const HomePage = () => {
         onChange={(e) => setRightPayPerExecutive(Number(e.target.value))}
         className="calc-input-spacing"
       />
-      <h3 className="calculator-heading">Total Cost: minimum ${rightTotalPay}/year</h3>
-    </div>
+      
+    </div> */}
   </section>
 
   <section className="calculated-total-saving">
@@ -942,28 +942,23 @@ const HomePage = () => {
         </Button>,
       ]}
     >
-      
-      {/* <p>Number of Account Executives (Right): {rightExecutives}</p> */}
-      {/* <p>Total Cost of Hiring Phi Consulting: ${rightTotalPay}/year</p> */}
-      
-
       <section className="popup-container">
         <div className="left-section-inpopup">
         <p className='heading-modal-large'>Total Savings with phi consulting:</p>
-        <p className='heading-modal-large'>${leftTotalPay - rightTotalPay}/year</p>
+        <p className='heading-modal-large'>${leftTotalPay - rightPayPerExecutive} USD per year</p>
         </div>
         <div className="right-section-inpopup">
         <p className='heading-modal-smaller'>Selected Number of Account Executives(SDR):</p>
         <p className='heading-modal-smaller'>{leftExecutives}</p>
         <br />
         <p className='heading-modal-smaller'>Total Cost of Hiring an SDR:</p>
-        <p className='heading-modal-smaller'>${leftTotalPay}/year</p>
+        <p className='heading-modal-smaller'>${leftTotalPay} USD per year</p>
         <br />
-        <p className='heading-modal-smaller'>Selected Number of Phi Executives:</p>
-        <p className='heading-modal-smaller'>{rightExecutives}</p>
+        <p className='heading-modal-smaller'>Same Number of Phi Executives:</p>
+        <p className='heading-modal-smaller'>{leftExecutives}</p>
         <br />
-        <p className='heading-modal-smaller'>Total Cost of Hiring Phi Consulting:</p>
-        <p className='heading-modal-smaller'>${rightTotalPay}/year</p>
+        <p className='heading-modal-smaller'>Total Cost of Hiring with Phi Consulting:</p>
+        <p className='heading-modal-smaller'>${rightPayPerExecutive * leftExecutives} USD per year</p>
         <br />
         </div>
       </section>
