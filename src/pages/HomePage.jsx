@@ -77,11 +77,11 @@ const HomePage = () => {
 
   // State for the left calculator
   const [leftExecutives, setLeftExecutives] = useState(1);
-  const [leftPayPerExecutive, setLeftPayPerExecutive] = useState(5000);
+  const [leftPayPerExecutive, setLeftPayPerExecutive] = useState(125000);
 
   // State for the right calculator
   const [rightExecutives, setRightExecutives] = useState(1);
-  const [rightPayPerExecutive, setRightPayPerExecutive] = useState(5000);
+  const [rightPayPerExecutive, setRightPayPerExecutive] = useState(48000);
 
   // Calculating totals
   const leftTotalPay = leftExecutives * leftPayPerExecutive;
@@ -894,7 +894,7 @@ const HomePage = () => {
   </section>
 
   <section className="calculated-total-saving">
-  <div className="calculator">
+  <div className="savings-section">
   <h2>Total Savings with Phi Consulting: ${leftTotalPay - rightTotalPay}</h2>
     </div>
   </section>
