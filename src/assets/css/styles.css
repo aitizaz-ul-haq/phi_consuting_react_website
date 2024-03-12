@@ -6117,9 +6117,9 @@ background-color: rgb(243, 241, 241);
   }
 
   .savings-section {
-    flex: 1; /* Each calculator will take equal width */
-    min-width: 300px; /* Minimum width of each calculator to ensure content fits */
-    max-width: 52%; /* Ensure it doesn't grow beyond the viewport width */
+    flex: 1; 
+    min-width: 300px; 
+    max-width: 52%; 
     padding: 1rem;
     /* box-shadow: 0 2px 4px rgba(0,0,0,0.1);  */
     border-radius: 8px; 
@@ -6128,12 +6128,12 @@ background-color: rgb(243, 241, 241);
 }
   
   .calculator {
-    flex: 1; /* Each calculator will take equal width */
-    min-width: 150px; /* Minimum width of each calculator to ensure content fits */
-    max-width: 27%; /* Ensure it doesn't grow beyond the viewport width */
+    flex: 1; 
+    min-width: 150px; 
+    max-width: 27%;
     padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: Adds some shadow for depth */
-    border-radius: 8px; /* Optional: Rounds the corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    border-radius: 8px; 
     /* background-color: rgb(24, 70, 208);  */
     text-align: left;
     background-image: url('../img/cal.avif');
