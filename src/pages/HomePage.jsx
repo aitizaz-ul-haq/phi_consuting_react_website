@@ -855,11 +855,11 @@ const HomePage = () => {
           The cost of hiring an SDR vs Phi Consulting. No lockups. All month-to-month. As long as we’re getting results, you’ll likely stick with us for a while.
           </p>
         </section>
-  <section className="calculator-carrier-section">
+      <section className="calculator-carrier-section">
  
     <div className="calculator left-calculator">
       <h2 className="calculator-heading">Cost of hiring an SDR:</h2>
-      <p className='heading-top-calculator'>Number of Account Executives:</p>
+      <p className='heading-top-calculator'>Number of Sales Executives:</p>
       <Slider
         min={1}
         max={100}
@@ -948,7 +948,7 @@ const HomePage = () => {
         <p className='heading-modal-large'>${leftTotalPay - rightPayPerExecutive} - USD per year</p>
         </div>
         <div className="right-section-inpopup">
-        <p className='heading-modal-smaller'>Selected Number of Account Executives(SDR):</p>
+        <p className='heading-modal-smaller'>Selected Number of Sales Executives(SDR):</p>
         <p className='heading-modal-smaller'>{leftExecutives}</p>
         <br />
         <p className='heading-modal-smaller'>Total Cost of Hiring an SDR:</p>
