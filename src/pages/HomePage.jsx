@@ -846,7 +846,7 @@ const HomePage = () => {
         </section>
       </article>
 
-      <article className="comparison-calculator">
+      {/* <article className="comparison-calculator">
       <section className="testimonial-container">
           <h2 class="cal-title-heading">
           ROI Calculator
@@ -885,49 +885,17 @@ const HomePage = () => {
         onChange={(e) => setLeftPayPerExecutive(Number(e.target.value))}
         className='calc-input-spacing'
       />
-      {/* <h3 className="calculator-heading">Total Cost: minimum ${leftTotalPay}/year</h3> */}
+    
     </div>
 
-    {/* <div className="calculator right-calculator">
-      <h2 className="calculator-heading">Cost of hiring Phi Consulting:</h2>
-      <div className='heading-top-calculator'>Number of Account Executives:</div>
-      <Slider
-        min={1}
-        max={100}
-        value={rightExecutives}
-        onChange={(value) => setRightExecutives(value)}
-      />
-      <Input
-        addonBefore="Executives"
-        value={rightExecutives}
-        onChange={(e) => setRightExecutives(Number(e.target.value))}
-        style={{ color:'white', width:"80%" }}
-      />
-      <div className='heading-top-calculator'>Total Pay Per Executive:</div>
-      <Slider
-        min={1000}
-        max={1000000}
-        value={rightPayPerExecutive}
-        onChange={(value) => setRightPayPerExecutive(value)}
-      />
-      <Input
-        addonBefore="Pay/Executive"
-        value={rightPayPerExecutive}
-        onChange={(e) => setRightPayPerExecutive(Number(e.target.value))}
-        className="calc-input-spacing"
-      />
-      
-    </div> */}
   </section>
 
   <section className="calculated-total-saving">
   <div className="savings-section">
-  {/* <h2 className="calculator-heading">Total Savings with Phi Consulting: ${leftTotalPay - rightTotalPay}/year</h2> */}
   <Button className='calculate-button-text' type="primary" onClick={showModal}>
       Calculate
     </Button>
     <Modal
-      // title="Total Savings with Phi Consulting"
       visible={isModalVisible}
       onOk={handleOk}
       onCancel={handleCancel}
@@ -965,7 +933,7 @@ const HomePage = () => {
     </Modal>
     </div>
   </section>
-      </article>
+      </article> */}
       
 
       {/* <!-- Blog Section --> */}
