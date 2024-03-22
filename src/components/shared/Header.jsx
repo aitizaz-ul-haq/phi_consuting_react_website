@@ -21,7 +21,7 @@ import { Tooltip } from 'antd';
 
 const Header = () => {
     return(
-        <header >
+        <header>
       <div className="logo-mobile-header">
       <Link to="/"><Tooltip title="Home"><img className="logo-image" src={philogomainpage} alt="Logo"
         /></Tooltip></Link>
