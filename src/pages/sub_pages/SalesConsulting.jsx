@@ -671,7 +671,6 @@ useScrollToTop();
               <div className="dollor-val">$0</div>
             </div>
               </div>
-              
           </div>
         </section>
       </article> */}
