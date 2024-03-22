@@ -86,8 +86,18 @@ const SalesConsulting = () => {
   const insightsRefs = useRef([]);
 
   const [inputValue, setInputValue] = useState(1);
+  const [inputValueTwo, setInputValueTwo] = useState(1);
+  const [inputValueThree, setInputValueThree] = useState(1);
   const onChange = (newValue) => {
     setInputValue(newValue);
+  };
+
+  const onChangetwo = (newValue) => {
+    setInputValueTwo(newValue);
+  };
+
+  const onChangethree = (newValue) => {
+    setInputValueThree(newValue);
   };
 
   useEffect(() => {
@@ -672,7 +682,6 @@ useScrollToTop();
           </div>
           <div className="right-calulator-collection">
             <div className="cac-calculator-container">
-
               <div className="cac-header-section">
               <h3 className="cac-heading">
                 Customer Aquisition Cost (CAC)
@@ -680,18 +689,14 @@ useScrollToTop();
               <div className="dollor-val">$0</div>
             </div>
 
+            {/* Cost of Marketing */}
+            <div className="slider-section">
             <div className="cac-slider-container">
-            <Row>
-      <Col span={12}>
-        <Slider
-          min={1}
-          max={20}
-          onChange={onChange}
-          value={typeof inputValue === 'number' ? inputValue : 0}
-        />
-      </Col>
-      <Col span={4}>
-        <InputNumber
+              <div className="cac-subheading-container">
+                <h4 className="cal-subheading">
+                  Cost Of Marketing
+                </h4>
+                <InputNumber
           min={1}
           max={20}
           style={{
@@ -700,9 +705,75 @@ useScrollToTop();
           value={inputValue}
           onChange={onChange}
         />
-      </Col>
-    </Row>
+              </div>
             </div>
+            <div className="slider-container">
+        <Slider
+          min={1}
+          max={20}
+          onChange={onChange}
+          value={typeof inputValue === 'number' ? inputValue : 0}
+        />
+            </div>
+            </div>
+
+             {/* Cost of Marketing */}
+             <div className="slider-section">
+            <div className="cac-slider-container">
+              <div className="cac-subheading-container">
+                <h4 className="cal-subheading">
+                  Cost Of Sales
+                </h4>
+                <InputNumber
+          min={1}
+          max={20}
+          style={{
+            margin: '0 16px',
+          }}
+          value={inputValueTwo}
+          onChange={onChangetwo}
+        />
+              </div>
+            </div>
+            <div className="slider-container">
+        <Slider
+          min={1}
+          max={20}
+          onChange={onChangetwo}
+          value={typeof inputValueTwo === 'number' ? inputValueTwo : 0}
+        />
+            </div>
+            </div>
+           
+             {/* Cost of Marketing */}
+             <div className="slider-section">
+            <div className="cac-slider-container">
+              <div className="cac-subheading-container">
+                <h4 className="cal-subheading">
+                 Number Of New Customers
+                </h4>
+                <InputNumber
+          min={1}
+          max={20}
+          style={{
+            margin: '0 16px',
+          }}
+          value={inputValueThree}
+          onChange={onChangethree}
+        />
+              </div>
+            </div>
+            <div className="slider-container">
+        <Slider
+          min={1}
+          max={20}
+          onChange={onChangethree}
+          value={typeof inputValueThree === 'number' ? inputValueThree : 0}
+        />
+            </div>
+            </div>
+
+
               </div>
           </div>
         </section>
