@@ -90,17 +90,7 @@ const SalesConsulting = () => {
   const [costOfMarketing, setCostOfMarketing] = useState(0);
   const [costOfSales, setCostOfSales] = useState(0);
   const [numberOfNewCustomers, setNumberOfNewCustomers] = useState(1);
-  // const onChange = (newValue) => {
-  //   setInputValue(newValue);
-  // };
-
-  // const onChangetwo = (newValue) => {
-  //   setInputValueTwo(newValue);
-  // };
-
-  // const onChangethree = (newValue) => {
-  //   setInputValueThree(newValue);
-  // };
+ 
 
   const calculateCAC = () => {
     if (numberOfNewCustomers > 0) { // Ensure no division by zero
@@ -690,9 +680,9 @@ useScrollToTop();
       <article className="calcualtor-container">
         <section className="calculator-section">
           <div className="left-button-row">
-            <button className="cal-button-wide" onClick={showCAC}>CAC</button>
-            <button className="cal-button-wide" onClick={showCSR}>CSR</button>
-            <button className="cal-button-wide" onClick={showSDR}>SDR</button>
+            <button className={`cal-button-wide ${activeCalculator === "CAC" ? 'cal-button-active' : ''}`} onClick={showCAC}>CAC</button>
+            <button className={`cal-button-wide ${activeCalculator === "CSR" ? 'cal-button-active' : ''}`} onClick={showCSR}>CSR</button>
+            <button className={`cal-button-wide ${activeCalculator === "SDR" ? 'cal-button-active' : ''}`} onClick={showSDR}>SDR</button>
           </div>
           <div className="right-calulator-collection">
           {activeCalculator === "CAC" && (
