@@ -6271,19 +6271,35 @@ background-color: rgb(243, 241, 241);
   .slider-section {
     margin-top: 2rem;
     margin-bottom: 1rem;
-    width: 350px;
+    width: 360px;
   }
 
   .cac-header-section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: baseline;
   }
 
   .cac-subheading-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .cac-heading {
+    font-size: 22px;
+    font-weight: 500;
+  } 
+
+  .cal-subheading {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .dollor-val {
+    font-size: 30px;
+    color: red;
   }
   
 

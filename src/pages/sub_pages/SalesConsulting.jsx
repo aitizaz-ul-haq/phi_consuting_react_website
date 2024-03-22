@@ -673,6 +673,7 @@ useScrollToTop();
         </section>
       </article>
 
+     {/* Calculator Section */}
       <article className="calcualtor-container">
         <section className="calculator-section">
           <div className="left-button-row">
@@ -772,8 +773,6 @@ useScrollToTop();
         />
             </div>
             </div>
-
-
               </div>
           </div>
         </section>
