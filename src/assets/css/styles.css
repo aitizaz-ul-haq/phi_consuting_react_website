@@ -6301,6 +6301,12 @@ background-color: rgb(243, 241, 241);
     font-size: 30px;
     color: red;
   }
+
+  .cal-button-active {
+    background-color: #09B4FE; /* Change color to red for active state */
+    color: white;
+  }
+
   
 
 @media screen and (min-width: 320px) {
