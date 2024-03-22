@@ -6306,6 +6306,27 @@ background-color: rgb(243, 241, 241);
     background-color: #09B4FE; /* Change color to red for active state */
     color: white;
   }
+
+  /* Making the slider track thicker */
+.ant-slider .ant-slider-rail {
+    height: 10px; /* Adjust the thickness of the rail */
+}
+
+.ant-slider .ant-slider-track {
+    height: 10px; /* Adjust the thickness of the track */
+}
+
+/* Making the handle larger */
+.ant-slider .ant-slider-handle {
+    width: 20px; /* Adjust the width of the handle */
+    height: 20px; /* Adjust the height of the handle */
+    margin-top: -6px; /* Adjust this value to center the handle on the track */
+}
+
+/* Optional: Adjust the focus border of the handle */
+.ant-slider .ant-slider-handle:focus {
+    box-shadow: 0 0 0 5px rgba(0,0,0,0.1); /* Adjust focus style as needed */
+}
   
 
 @media screen and (min-width: 320px) {
