@@ -6276,7 +6276,7 @@ background-color: rgb(243, 241, 241);
 
   .cac-header-section {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: baseline;
   }
@@ -6288,7 +6288,7 @@ background-color: rgb(243, 241, 241);
   }
 
   .cac-heading {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 500;
   } 
 

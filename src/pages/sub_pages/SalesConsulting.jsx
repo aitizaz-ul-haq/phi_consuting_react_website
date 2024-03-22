@@ -85,20 +85,33 @@ const SalesConsulting = () => {
   const [darkMode, setDarkMode] = useState(false);
   const insightsRefs = useRef([]);
 
-  const [inputValue, setInputValue] = useState(1);
-  const [inputValueTwo, setInputValueTwo] = useState(1);
-  const [inputValueThree, setInputValueThree] = useState(1);
-  const onChange = (newValue) => {
-    setInputValue(newValue);
+  const [activeCalculator, setActiveCalculator] = useState("CAC");
+
+  const [costOfMarketing, setCostOfMarketing] = useState(0);
+  const [costOfSales, setCostOfSales] = useState(0);
+  const [numberOfNewCustomers, setNumberOfNewCustomers] = useState(1);
+  // const onChange = (newValue) => {
+  //   setInputValue(newValue);
+  // };
+
+  // const onChangetwo = (newValue) => {
+  //   setInputValueTwo(newValue);
+  // };
+
+  // const onChangethree = (newValue) => {
+  //   setInputValueThree(newValue);
+  // };
+
+  const calculateCAC = () => {
+    if (numberOfNewCustomers > 0) { // Ensure no division by zero
+      return (costOfMarketing + costOfSales) / numberOfNewCustomers;
+    }
+    return 0; // Default to 0 if no new customers
   };
 
-  const onChangetwo = (newValue) => {
-    setInputValueTwo(newValue);
-  };
-
-  const onChangethree = (newValue) => {
-    setInputValueThree(newValue);
-  };
+  const showCAC = () => setActiveCalculator("CAC");
+  const showCSR = () => setActiveCalculator("CSR");
+  const showSDR = () => setActiveCalculator("SDR");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -677,103 +690,107 @@ useScrollToTop();
       <article className="calcualtor-container">
         <section className="calculator-section">
           <div className="left-button-row">
-            <button className="cal-button-wide">CAC</button>
-            <button className="cal-button-wide">CSR</button>
-            <button className="cal-button-wide">SDR</button>
+            <button className="cal-button-wide" onClick={showCAC}>CAC</button>
+            <button className="cal-button-wide" onClick={showCSR}>CSR</button>
+            <button className="cal-button-wide" onClick={showSDR}>SDR</button>
           </div>
           <div className="right-calulator-collection">
-            <div className="cac-calculator-container">
-              <div className="cac-header-section">
-              <h3 className="cac-heading">
-                Customer Aquisition Cost (CAC)
-              </h3>
-              <div className="dollor-val">$0</div>
-            </div>
+          {activeCalculator === "CAC" && (
+          <div className="cac-calculator-container">
+          <div className="cac-header-section">
+          <h3 className="cac-heading">
+            Customer Aquisition Cost (CAC)
+          </h3>
+          <div className="dollor-val">${calculateCAC().toFixed(2)}</div>
+        </div>
 
-            {/* Cost of Marketing */}
-            <div className="slider-section">
-            <div className="cac-slider-container">
-              <div className="cac-subheading-container">
-                <h4 className="cal-subheading">
-                  Cost Of Marketing
-                </h4>
-                <InputNumber
-          min={1}
-          max={20}
-          style={{
-            margin: '0 16px',
-          }}
-          value={inputValue}
-          onChange={onChange}
-        />
-              </div>
-            </div>
-            <div className="slider-container">
-        <Slider
-          min={1}
-          max={20}
-          onChange={onChange}
-          value={typeof inputValue === 'number' ? inputValue : 0}
-        />
-            </div>
-            </div>
+        {/* Cost of Marketing */}
+        <div className="slider-section">
+<div className="cac-slider-container">
+<div className="cac-subheading-container">
+  <h4 className="cal-subheading">Cost Of Marketing</h4>
+  <InputNumber
+  prefix="$"
+    min={0}
+    max={100000} // Adjust max as needed
+    style={{ margin: '0 16px' }}
+    value={costOfMarketing}
+    onChange={value => setCostOfMarketing(value)}
+  />
+</div>
+</div>
+<div className="slider-container">
+<Slider
+  min={0}
+  max={100000} // Adjust max as needed
+  onChange={value => setCostOfMarketing(value)}
+  value={costOfMarketing}
+/>
+</div>
+         </div>
 
-             {/* Cost of Marketing */}
-             <div className="slider-section">
-            <div className="cac-slider-container">
-              <div className="cac-subheading-container">
-                <h4 className="cal-subheading">
-                  Cost Of Sales
-                </h4>
-                <InputNumber
-          min={1}
-          max={20}
-          style={{
-            margin: '0 16px',
-          }}
-          value={inputValueTwo}
-          onChange={onChangetwo}
-        />
-              </div>
+         {/* Cost of Sales */}
+         <div className="slider-section">
+<div className="cac-slider-container">
+<div className="cac-subheading-container">
+  <h4 className="cal-subheading">Cost Of Sales</h4>
+  <InputNumber
+   prefix="$"
+    min={0}
+    max={100000} // Adjust max as needed
+    style={{ margin: '0 16px' }}
+    value={costOfSales}
+    onChange={value => setCostOfSales(value)}
+  />
+</div>
+</div>
+<div className="slider-container">
+<Slider
+  min={0}
+  max={100000} // Adjust max as needed
+  onChange={value => setCostOfSales(value)}
+  value={costOfSales}
+/>
+</div>
+        </div>
+       
+         {/* Number Of New Customers */}
+         <div className="slider-section">
+<div className="cac-slider-container">
+<div className="cac-subheading-container">
+  <h4 className="cal-subheading">Number Of New Customers</h4>
+  <InputNumber
+  prefix="$"
+    min={1} // Starting at 1 to avoid division by zero
+    max={10000} // Adjust max as needed
+    style={{ margin: '0 16px' }}
+    value={numberOfNewCustomers}
+    onChange={value => setNumberOfNewCustomers(value)}
+  />
+</div>
+</div>
+<div className="slider-container">
+<Slider
+  min={1} // Starting at 1 to ensure there's at least one customer
+  max={10000} // Adjust max as needed
+  onChange={value => setNumberOfNewCustomers(value)}
+  value={numberOfNewCustomers}
+/>
+</div>
+         </div>
+          </div>
+          )}
+          {activeCalculator === "CSR" && (
+            <div className="csr-calculator-container">
+              <h3>csr here...</h3>
             </div>
-            <div className="slider-container">
-        <Slider
-          min={1}
-          max={20}
-          onChange={onChangetwo}
-          value={typeof inputValueTwo === 'number' ? inputValueTwo : 0}
-        />
+          )}
+          {activeCalculator === "SDR" && (
+            <div className="sdr-calculator-container">
+              <h3>Sdr here...</h3>
             </div>
-            </div>
-           
-             {/* Cost of Marketing */}
-             <div className="slider-section">
-            <div className="cac-slider-container">
-              <div className="cac-subheading-container">
-                <h4 className="cal-subheading">
-                 Number Of New Customers
-                </h4>
-                <InputNumber
-          min={1}
-          max={20}
-          style={{
-            margin: '0 16px',
-          }}
-          value={inputValueThree}
-          onChange={onChangethree}
-        />
-              </div>
-            </div>
-            <div className="slider-container">
-        <Slider
-          min={1}
-          max={20}
-          onChange={onChangethree}
-          value={typeof inputValueThree === 'number' ? inputValueThree : 0}
-        />
-            </div>
-            </div>
-              </div>
+          )}
+            
           </div>
         </section>
       </article>
