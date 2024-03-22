@@ -441,17 +441,7 @@ const HomePage = () => {
     };
   }, []);
 
-  const showModal = () => {
-    setIsModalVisible(true);
-  };
-  
-  const handleOk = () => {
-    setIsModalVisible(false);
-  };
-  
-  const handleCancel = () => {
-    setIsModalVisible(false);
-  };
+
 
   useScrollToTop();
 

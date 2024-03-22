@@ -24,7 +24,10 @@ import axios from 'axios';
 import processback from "../../assets/video/home-bg.mp4";
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
+import { Col, InputNumber, Row, Slider, Space } from 'antd';
+
 import { Helmet } from 'react-helmet';
+
 const SalesConsulting = () => {
   const [data, setData] = useState({
     bannerHeading: "",
@@ -81,6 +84,11 @@ const SalesConsulting = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [darkMode, setDarkMode] = useState(false);
   const insightsRefs = useRef([]);
+
+  const [inputValue, setInputValue] = useState(1);
+  const onChange = (newValue) => {
+    setInputValue(newValue);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -655,7 +663,7 @@ useScrollToTop();
         </section>
       </article>
 
-      {/* <article className="calcualtor-container">
+      <article className="calcualtor-container">
         <section className="calculator-section">
           <div className="left-button-row">
             <button className="cal-button-wide">CAC</button>
@@ -664,16 +672,41 @@ useScrollToTop();
           </div>
           <div className="right-calulator-collection">
             <div className="cac-calculator-container">
+
               <div className="cac-header-section">
               <h3 className="cac-heading">
                 Customer Aquisition Cost (CAC)
               </h3>
               <div className="dollor-val">$0</div>
             </div>
+
+            <div className="cac-slider-container">
+            <Row>
+      <Col span={12}>
+        <Slider
+          min={1}
+          max={20}
+          onChange={onChange}
+          value={typeof inputValue === 'number' ? inputValue : 0}
+        />
+      </Col>
+      <Col span={4}>
+        <InputNumber
+          min={1}
+          max={20}
+          style={{
+            margin: '0 16px',
+          }}
+          value={inputValue}
+          onChange={onChange}
+        />
+      </Col>
+    </Row>
+            </div>
               </div>
           </div>
         </section>
-      </article> */}
+      </article>
 
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
