@@ -44,9 +44,6 @@ import whatback from "../assets/img/wrappers/burn.webp";
 import graph from "../assets/img/graph.webp";
 import iso from "../assets/img/recognitions/iso.webp";
 
-
-
-
 const HomePage = () => {
 
   const [darkMode, setDarkMode] = useState(false);
