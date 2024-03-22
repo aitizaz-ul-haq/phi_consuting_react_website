@@ -519,7 +519,7 @@ const AboutUs = () => {
               {/* <div class="location-bar-right"> */}
                
               <span className='address-string'> Phi Consulting
-2nd Floor, North Side, Gulberg Empire Plaza, Plot 33-40 Civic Center IBCEHS, 44000</span>
+               2nd Floor, North Side, Gulberg Empire Plaza, Plot 33-40 Civic Center IBCEHS, 44000</span>
               
               {/* </div> */}
             </div>
