@@ -676,8 +676,12 @@ useScrollToTop();
         </section>
       </article>
 
-     {/* Calculator Section */}
+     {/* Calculator Section */}   
       <article className="calcualtor-container">
+      <h2 class="why-phi-heading">{data.whySectionHeading}</h2>
+        <p class="why-phi-desc">
+          {data.whySectionDescription}
+          </p>
         <section className="calculator-section">
           <div className="left-button-row">
             <button className={`cal-button-wide ${activeCalculator === "CAC" ? 'cal-button-active' : ''}`} onClick={showCAC}>CAC</button>
