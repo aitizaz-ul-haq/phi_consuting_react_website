@@ -655,6 +655,27 @@ useScrollToTop();
         </section>
       </article>
 
+      {/* <article className="calcualtor-container">
+        <section className="calculator-section">
+          <div className="left-button-row">
+            <button className="cal-button-wide">CAC</button>
+            <button className="cal-button-wide">CSR</button>
+            <button className="cal-button-wide">SDR</button>
+          </div>
+          <div className="right-calulator-collection">
+            <div className="cac-calculator-container">
+              <div className="cac-header-section">
+              <h3 className="cac-heading">
+                Customer Aquisition Cost (CAC)
+              </h3>
+              <div className="dollor-val">$0</div>
+            </div>
+              </div>
+              
+          </div>
+        </section>
+      </article> */}
+
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
         <h2 class="why-phi-heading">{data.whySectionHeading}</h2>

@@ -6207,6 +6207,38 @@ background-color: rgb(243, 241, 241);
     background-position: 100% center;
   }
 
+  .calcualtor-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding:2rem;
+  }
+
+  .calculator-section {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+  }
+
+  .left-button-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cal-button-wide {
+    width: 300px;
+    padding: 1rem;
+    margin: 0.6rem;
+    border: none;
+    border-radius: 5px;
+    background-color: lightgray;
+  }
+  
+
 @media screen and (min-width: 320px) {
     .ach-badge img {
         width: 56%;
@@ -13891,8 +13923,6 @@ display: none;
     padding: 0px;
 }
 }
-
-
 @media screen and (min-width: 1200px) {
     .address-string {
         font-size: 22px;
