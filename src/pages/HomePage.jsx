@@ -72,19 +72,8 @@ const HomePage = () => {
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const [isModalVisible, setIsModalVisible] = useState(false);
 
-  // State for the left calculator
-  const [leftExecutives, setLeftExecutives] = useState(1);
-  const [leftPayPerExecutive, setLeftPayPerExecutive] = useState(150000);
 
-  // State for the right calculator
-  const [rightExecutives, setRightExecutives] = useState(1);
-  const [rightPayPerExecutive, setRightPayPerExecutive] = useState(48000);
-
-  // Calculating totals
-  const leftTotalPay = leftExecutives * leftPayPerExecutive;
-  const rightTotalPay = rightExecutives * rightPayPerExecutive;
 
   const toggleDarkMode = () => setDarkMode(!darkMode);
   const [data, setData] = useState({
