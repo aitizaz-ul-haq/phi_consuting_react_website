@@ -93,10 +93,10 @@ const SalesConsulting = () => {
  
 
   const calculateCAC = () => {
-    if (numberOfNewCustomers > 0) { // Ensure no division by zero
+    if (numberOfNewCustomers > 0) { 
       return (costOfMarketing + costOfSales) / numberOfNewCustomers;
     }
-    return 0; // Default to 0 if no new customers
+    return 0; 
   };
 
   const showCAC = () => setActiveCalculator("CAC");
