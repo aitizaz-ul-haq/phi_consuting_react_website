@@ -24,7 +24,7 @@ import axios from 'axios';
 import processback from "../../assets/video/home-bg.mp4";
 import whatback from "../../assets/img/wrappers/burn.webp"; 
 
-import { Col, InputNumber, Row, Slider, Space } from 'antd';
+import { InputNumber, Slider } from 'antd';
 
 import { Helmet } from 'react-helmet';
 
