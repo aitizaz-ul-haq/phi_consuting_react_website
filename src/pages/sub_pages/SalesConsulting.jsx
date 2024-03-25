@@ -641,7 +641,7 @@ const SalesConsulting = () => {
 
       {/* Calculator Section */}
       <article className="calcualtor-container">
-        <h2 class="why-phi-heading">{data.whySectionHeading}</h2>
+        <h2 class="why-phi-heading">Cost Calculator</h2>
         <p class="why-phi-desc">{data.whySectionDescription}</p>
         <section className="calculator-section">
           <div className="left-button-row">
