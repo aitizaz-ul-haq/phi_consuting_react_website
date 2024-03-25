@@ -950,14 +950,6 @@ const SalesConsulting = () => {
         </section>
       </article>
 
-      {/* react clone url
-      https://github.com/aitizaz-ul-haq/phi_consuting_react_website.git 
-      */}
-
-      {/* node clone url
-      https://github.com/aitizaz-ul-haq/phi-email-service.git 
-      */}
-
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
         <h2 class="why-phi-heading">{data.whySectionHeading}</h2>
