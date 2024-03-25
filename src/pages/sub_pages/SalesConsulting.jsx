@@ -775,14 +775,174 @@ useScrollToTop();
           </div>
           )}
           {activeCalculator === "CSR" && (
-            <div className="csr-calculator-container">
-              <h3>csr here...</h3>
-            </div>
+           <div className="cac-calculator-container">
+           <div className="cac-header-section">
+           <h3 className="cac-heading">
+            Customer Sales Rep Cost (SDR)
+           </h3>
+           <div className="dollor-val">${calculateCAC().toFixed(2)}</div>
+         </div>
+ 
+         {/* Number of Customer Sales Rep  */}
+         <div className="slider-section">
+ <div className="cac-slider-container">
+ <div className="cac-subheading-container">
+   <h4 className="cal-subheading">Number of Customer Sales Rep</h4>
+   <InputNumber
+   prefix="$"
+     min={0}
+     max={100000} // Adjust max as needed
+     style={{ margin: '0 16px' }}
+     value={costOfMarketing}
+     onChange={value => setCostOfMarketing(value)}
+   />
+ </div>
+ </div>
+ <div className="slider-container">
+ <Slider
+   min={0}
+   max={100000} // Adjust max as needed
+   onChange={value => setCostOfMarketing(value)}
+   value={costOfMarketing}
+ />
+ </div>
+          </div>
+ 
+          {/* Cost Per Customer Sales Rep */}
+          <div className="slider-section">
+ <div className="cac-slider-container">
+ <div className="cac-subheading-container">
+   <h4 className="cal-subheading">Cost Per Customer Sales Rep</h4>
+   <InputNumber
+    prefix="$"
+     min={0}
+     max={100000} // Adjust max as needed
+     style={{ margin: '0 16px' }}
+     value={costOfSales}
+     onChange={value => setCostOfSales(value)}
+   />
+ </div>
+ </div>
+ <div className="slider-container">
+ <Slider
+   min={0}
+   max={100000} // Adjust max as needed
+   onChange={value => setCostOfSales(value)}
+   value={costOfSales}
+ />
+ </div>
+         </div>
+        
+          {/* Savings Per Sales Rep */}
+          <div className="slider-section">
+ <div className="cac-slider-container">
+ <div className="cac-subheading-container">
+   <h4 className="cal-subheading">Savings Per Sales Rep</h4>
+   <InputNumber
+   prefix="$"
+     min={1} // Starting at 1 to avoid division by zero
+     max={10000} // Adjust max as needed
+     style={{ margin: '0 16px' }}
+     value={numberOfNewCustomers}
+     onChange={value => setNumberOfNewCustomers(value)}
+   />
+ </div>
+ </div>
+ <div className="slider-container">
+ <Slider
+   min={1} // Starting at 1 to ensure there's at least one customer
+   max={10000} // Adjust max as needed
+   onChange={value => setNumberOfNewCustomers(value)}
+   value={numberOfNewCustomers}
+ />
+ </div>
+          </div>
+           </div>
           )}
           {activeCalculator === "SDR" && (
-            <div className="sdr-calculator-container">
-              <h3>Sdr here...</h3>
-            </div>
+           <div className="cac-calculator-container">
+           <div className="cac-header-section">
+           <h3 className="cac-heading">
+             Customer Aquisition Cost (CAC)
+           </h3>
+           <div className="dollor-val">${calculateCAC().toFixed(2)}</div>
+         </div>
+ 
+         {/* Cost of Marketing */}
+         <div className="slider-section">
+ <div className="cac-slider-container">
+ <div className="cac-subheading-container">
+   <h4 className="cal-subheading">Cost Of Marketing</h4>
+   <InputNumber
+   prefix="$"
+     min={0}
+     max={100000} // Adjust max as needed
+     style={{ margin: '0 16px' }}
+     value={costOfMarketing}
+     onChange={value => setCostOfMarketing(value)}
+   />
+ </div>
+ </div>
+ <div className="slider-container">
+ <Slider
+   min={0}
+   max={100000} // Adjust max as needed
+   onChange={value => setCostOfMarketing(value)}
+   value={costOfMarketing}
+ />
+ </div>
+          </div>
+ 
+          {/* Cost of Sales */}
+          <div className="slider-section">
+ <div className="cac-slider-container">
+ <div className="cac-subheading-container">
+   <h4 className="cal-subheading">Cost Of Sales</h4>
+   <InputNumber
+    prefix="$"
+     min={0}
+     max={100000} // Adjust max as needed
+     style={{ margin: '0 16px' }}
+     value={costOfSales}
+     onChange={value => setCostOfSales(value)}
+   />
+ </div>
+ </div>
+ <div className="slider-container">
+ <Slider
+   min={0}
+   max={100000} // Adjust max as needed
+   onChange={value => setCostOfSales(value)}
+   value={costOfSales}
+ />
+ </div>
+         </div>
+        
+          {/* Number Of New Customers */}
+          <div className="slider-section">
+ <div className="cac-slider-container">
+ <div className="cac-subheading-container">
+   <h4 className="cal-subheading">Number Of New Customers</h4>
+   <InputNumber
+   prefix="$"
+     min={1} // Starting at 1 to avoid division by zero
+     max={10000} // Adjust max as needed
+     style={{ margin: '0 16px' }}
+     value={numberOfNewCustomers}
+     onChange={value => setNumberOfNewCustomers(value)}
+   />
+ </div>
+ </div>
+ <div className="slider-container">
+ <Slider
+   min={1} // Starting at 1 to ensure there's at least one customer
+   max={10000} // Adjust max as needed
+   onChange={value => setNumberOfNewCustomers(value)}
+   value={numberOfNewCustomers}
+ />
+ </div>
+          </div>
+           </div>
           )}
             
           </div>
