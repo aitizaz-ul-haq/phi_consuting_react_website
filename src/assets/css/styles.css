@@ -6285,7 +6285,7 @@ align-items: center; */
 @media screen and (min-width: 320px) {
   .calculator-section {
     flex-direction: column-reverse;
-    width: 377px;
+    width: 370px;
     padding-left: 0.2rem;
     padding-right: 0.2rem;
   }
@@ -6304,7 +6304,11 @@ align-items: center; */
   }
 
   .left-button-row {
-    width: 377px;
+    width: 365px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
   }
 
   .ach-badge img {

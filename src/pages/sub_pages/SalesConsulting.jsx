@@ -761,7 +761,7 @@ const SalesConsulting = () => {
             {activeCalculator === "CSR" && (
               <div className="cac-calculator-container">
                 <div className="cac-header-section">
-                  <h3 className="cac-heading">Customer Sales Rep Cost (SDR)</h3>
+                  <h3 className="cac-heading">Customer Sales Rep Cost (CSR)</h3>
                   <div className="dollor-val">${calculateCAC().toFixed(2)}</div>
                 </div>
 
