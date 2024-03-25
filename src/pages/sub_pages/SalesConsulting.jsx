@@ -866,7 +866,7 @@ const SalesConsulting = () => {
                       <InputNumber
                         //  prefix="$"
                         min={0}
-                        max={100} // Adjust max as needed
+                        max={30} // Adjust max as needed
                         style={{ margin: "0 16px" }}
                         value={numberOfSalesExecutives}
                         onChange={(value) => setNumberOfSalesExecutives(value)}
@@ -897,7 +897,7 @@ const SalesConsulting = () => {
                       <InputNumber
                         prefix="$"
                         min={0}
-                        max={50000} // Adjust max as needed
+                        max={4000} // Adjust max as needed
                         style={{ margin: "0 16px" }}
                         value={costPerSalesExecutive}
                         onChange={(value) => setCostPerSalesExecutive(value)}
