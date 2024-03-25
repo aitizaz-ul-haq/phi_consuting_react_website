@@ -1,10 +1,10 @@
-import React,{ useState, useEffect, useRef } from 'react';
-import AboutusHelemetSection from '../components/Aboutus_page_Components/AboutusHelmetSection/AboutusHelmetSection';
+import React, { useState, useEffect, useRef } from "react";
+import AboutusHelemetSection from "../components/Aboutus_page_Components/AboutusHelmetSection/AboutusHelmetSection";
 // import AboutUsHeroSection from '../components/Aboutus_page_Components/AboutusHeroSection/AboutusHeroSection';
 // import Test from '../components/Aboutus_page_Components/AboutusHeroSection/Test';
-import { Link } from 'react-router-dom';
-import clutchone from '../assets/img/achievements-badges/clutch_1.webp';
-import clutchtwo from '../assets/img/achievements-badges/clutch_2.webp';
+import { Link } from "react-router-dom";
+import clutchone from "../assets/img/achievements-badges/clutch_1.webp";
+import clutchtwo from "../assets/img/achievements-badges/clutch_2.webp";
 import phiphoto from "../assets/img/phi_logo-filled.webp";
 import alizaidiportrait from "../assets/img/phi_people/ali_zaidi.png";
 import abudullahportrait from "../assets/img/phi_people/Abdullah.png";
@@ -12,17 +12,15 @@ import razaportrait from "../assets/img/phi_people/Raza.png";
 import ismailportrait from "../assets/img/phi_people/ismail.png";
 import waqarsb from "../assets/img/phi_people/waqar.png";
 import dani from "../assets/img/phi_people/Danial Nadeem.png";
-import { TypeAnimation } from 'react-type-animation';
-import useScrollToTop from '../hooks/useScrollToTop';
-import axios from 'axios';
-import recog from '../assets/img/recognitions/iso.webp';
-import { Tooltip } from 'antd';
-import linkdin from '../assets/img/socil-media/linkedin.webp';
-import twitter from '../assets/img/socil-media/twitter11.webp';
-
+import { TypeAnimation } from "react-type-animation";
+import useScrollToTop from "../hooks/useScrollToTop";
+import axios from "axios";
+import recog from "../assets/img/recognitions/iso.webp";
+import { Tooltip } from "antd";
+import linkdin from "../assets/img/socil-media/linkedin.webp";
+import twitter from "../assets/img/socil-media/twitter11.webp";
 
 const AboutUs = () => {
-
   const [isVisibleTesti, setIsVisibleTesti] = useState(false);
   const testiRef = useRef(null);
 
@@ -55,94 +53,94 @@ const AboutUs = () => {
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [data, setData] = useState({
-   
-    heroheading:'',
-    herodescription:'',
-    excellenceheading:'',
-    excellencedescription:'',
-    qualityheading:'',
-    qualityonedescription:'',
-    qualitytwodescription:'',
-    qualitythreedescription:'',
-    qualityfourdescription:'',
-    teamheading:'',
-    teamdescription:'',
-    locationheading:'',
-    locationwords:'',
-    maponetitle:'',
-    maptwotitle:'',
-    rewardtwo:'',
-    livefromphi:'',
-    livefromphisubheading:'',
-    livefromphidescription:'',
-    testimonilaheading:'',
-    testimonialdescription:'',
-    testione:'',
-    testidesignationone:'',
-    testitwo:'',
-    testidesignationtwo:'',
-    testithree:'',
-    testidesignationthree:'',
-    achievementsline:'',
-    aboutctaheading:'',
-    aboutctadescription:'',
-    
-      });
-    
+    heroheading: "",
+    herodescription: "",
+    excellenceheading: "",
+    excellencedescription: "",
+    qualityheading: "",
+    qualityonedescription: "",
+    qualitytwodescription: "",
+    qualitythreedescription: "",
+    qualityfourdescription: "",
+    teamheading: "",
+    teamdescription: "",
+    locationheading: "",
+    locationwords: "",
+    maponetitle: "",
+    maptwotitle: "",
+    rewardtwo: "",
+    livefromphi: "",
+    livefromphisubheading: "",
+    livefromphidescription: "",
+    testimonilaheading: "",
+    testimonialdescription: "",
+    testione: "",
+    testidesignationone: "",
+    testitwo: "",
+    testidesignationtwo: "",
+    testithree: "",
+    testidesignationthree: "",
+    achievementsline: "",
+    aboutctaheading: "",
+    aboutctadescription: "",
+  });
+
   useEffect(() => {
-        const fetchHomePageData = async () => {
-          try {
-            const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/aboutuspage');
-            console.log(`your data`, response.data);
-            if (response.data && response.data.length > 0) {
-              const homepageData = response.data[0]; 
-              setData({
-                heroheading: homepageData.heroheading,
-                herodescription: homepageData.herodescription,
-                excellenceheading: homepageData.excellenceheading, 
-                excellencedescription: homepageData.excellencedescription,
-                qualityheading: homepageData.qualityheading,
-                qualityonedescription: homepageData.qualityonedescription,
-                qualitytwodescription: homepageData.qualitytwodescription,
-                qualitythreedescription: homepageData.qualitythreedescription,
-                qualityfourdescription: homepageData.qualityfourdescription, 
-                teamheading: homepageData.teamheading, 
-                teamdescription: homepageData.teamdescription, 
-                locationheading: homepageData.locationheading, 
-                locationwords: homepageData.locationwords, 
-                maponetitle: homepageData.maponetitle,
-                maptwotitle: homepageData.maptwotitle, 
-                rewardtwo: homepageData.rewardtwo, 
-                livefromphi: homepageData.livefromphi, 
-                livefromphisubheading: homepageData.livefromphisubheading, 
-                livefromphidescription: homepageData.livefromphidescription,
-                testimonilaheading: homepageData.testimonilaheading, 
-                testimonialdescription: homepageData.testimonialdescription, 
-                testione: homepageData.testione, 
-                testidesignationone: homepageData.testidesignationone, 
-                testitwo: homepageData.testitwo,
-                testidesignationtwo: homepageData.testidesignationtwo, 
-                testithree: homepageData.testithree, 
-                testidesignationthree: homepageData.testidesignationthree, 
-                achievementsline: homepageData.achievementsline, 
-                aboutctaheading: homepageData.aboutctaheading,
-                aboutctadescription: homepageData.aboutctadescription,
-              });
-            }
-          } catch (error) {
-            console.error("Error fetching homepage data:", error);
-          }
-        };
-    
-        fetchHomePageData();
+    const fetchHomePageData = async () => {
+      try {
+        const response = await axios.get(
+          "http://64.23.206.154:3000/aboutuspage"
+        );
+        console.log(`your data`, response.data);
+        if (response.data && response.data.length > 0) {
+          const homepageData = response.data[0];
+          setData({
+            heroheading: homepageData.heroheading,
+            herodescription: homepageData.herodescription,
+            excellenceheading: homepageData.excellenceheading,
+            excellencedescription: homepageData.excellencedescription,
+            qualityheading: homepageData.qualityheading,
+            qualityonedescription: homepageData.qualityonedescription,
+            qualitytwodescription: homepageData.qualitytwodescription,
+            qualitythreedescription: homepageData.qualitythreedescription,
+            qualityfourdescription: homepageData.qualityfourdescription,
+            teamheading: homepageData.teamheading,
+            teamdescription: homepageData.teamdescription,
+            locationheading: homepageData.locationheading,
+            locationwords: homepageData.locationwords,
+            maponetitle: homepageData.maponetitle,
+            maptwotitle: homepageData.maptwotitle,
+            rewardtwo: homepageData.rewardtwo,
+            livefromphi: homepageData.livefromphi,
+            livefromphisubheading: homepageData.livefromphisubheading,
+            livefromphidescription: homepageData.livefromphidescription,
+            testimonilaheading: homepageData.testimonilaheading,
+            testimonialdescription: homepageData.testimonialdescription,
+            testione: homepageData.testione,
+            testidesignationone: homepageData.testidesignationone,
+            testitwo: homepageData.testitwo,
+            testidesignationtwo: homepageData.testidesignationtwo,
+            testithree: homepageData.testithree,
+            testidesignationthree: homepageData.testidesignationthree,
+            achievementsline: homepageData.achievementsline,
+            aboutctaheading: homepageData.aboutctaheading,
+            aboutctadescription: homepageData.aboutctadescription,
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching homepage data:", error);
+      }
+    };
+
+    fetchHomePageData();
   }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
-        },
-        { threshold: 0.5 }
+      (entries) => {
+        entries.forEach((entry) => setIsVisibleAch(entry.isIntersecting));
+      },
+      { threshold: 0.5 }
     );
 
     observer.observe(achRef.current);
@@ -150,106 +148,118 @@ const AboutUs = () => {
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => setIsVisibleTesti(entry.isIntersecting));
-    }, { threshold: 0.5 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => setIsVisibleTesti(entry.isIntersecting));
+      },
+      { threshold: 0.5 }
+    );
 
     observer.observe(testiRef.current);
     return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => setIsVisibleServices(entry.isIntersecting));
-    }, { threshold: 0.5 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => setIsVisibleServices(entry.isIntersecting));
+      },
+      { threshold: 0.5 }
+    );
 
     observer.observe(servicesRef.current);
     return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => setIsTeem(entry.isIntersecting));
-    }, { threshold: 0.5 }); 
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => setIsTeem(entry.isIntersecting));
+      },
+      { threshold: 0.5 }
+    );
 
     observer.observe(teemRef.current);
     return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.target === innovationRef.current) {
-        setIsVisibleInnovation(entry.isIntersecting);
-      } else if (entry.target === collaborationRef.current) {
-        setIsVisibleCollaboration(entry.isIntersecting);
-      }else if (entry.target === integrityRef.current) {
-        setIsVisibleIntegrity(entry.isIntersecting);
-      }else if (entry.target === agilityRef.current) {
-        setIsVisibleAgility(entry.isIntersecting);
-      }
-      // Add similar conditions for other sections
-    });
-  }, { threshold: 0.5 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === innovationRef.current) {
+            setIsVisibleInnovation(entry.isIntersecting);
+          } else if (entry.target === collaborationRef.current) {
+            setIsVisibleCollaboration(entry.isIntersecting);
+          } else if (entry.target === integrityRef.current) {
+            setIsVisibleIntegrity(entry.isIntersecting);
+          } else if (entry.target === agilityRef.current) {
+            setIsVisibleAgility(entry.isIntersecting);
+          }
+          // Add similar conditions for other sections
+        });
+      },
+      { threshold: 0.5 }
+    );
 
-  if (innovationRef.current) observer.observe(innovationRef.current);
-  if (collaborationRef.current) observer.observe(collaborationRef.current);
-  if (integrityRef.current) observer.observe(integrityRef.current);
-  if (agilityRef.current) observer.observe(agilityRef.current);
-  // Add observe for other refs
+    if (innovationRef.current) observer.observe(innovationRef.current);
+    if (collaborationRef.current) observer.observe(collaborationRef.current);
+    if (integrityRef.current) observer.observe(integrityRef.current);
+    if (agilityRef.current) observer.observe(agilityRef.current);
+    // Add observe for other refs
 
-  return () => observer.disconnect();
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.target === liveTextRef.current) {
-        setIsVisibleLiveText(entry.isIntersecting);
-      } else if (entry.target === liveVideoRef.current) {
-        setIsVisibleLiveVideo(entry.isIntersecting);
-      }
-    });
-  }, { threshold: 0.5 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === liveTextRef.current) {
+            setIsVisibleLiveText(entry.isIntersecting);
+          } else if (entry.target === liveVideoRef.current) {
+            setIsVisibleLiveVideo(entry.isIntersecting);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
 
-  if (liveTextRef.current) observer.observe(liveTextRef.current);
-  if (liveVideoRef.current) observer.observe(liveVideoRef.current);
+    if (liveTextRef.current) observer.observe(liveTextRef.current);
+    if (liveVideoRef.current) observer.observe(liveVideoRef.current);
 
-  return () => observer.disconnect();
+    return () => observer.disconnect();
   }, []);
 
   const gotoContacts = () => {
-    window.location.href = '/contact-us';
-  }
+    window.location.href = "/contact-us";
+  };
 
   useScrollToTop();
   return (
     <>
-      <AboutusHelemetSection/>
+      <AboutusHelemetSection />
       {/* <Test/>
       <AboutUsHeroSection windowWidth={windowWidth} herodescription={data.herodescription} gotoContacts={gotoContacts} /> */}
 
-     {/* <!-- Hero Section --> */}
+      {/* <!-- Hero Section --> */}
       <article class="hero">
         <section class="hero-container-phi-about">
           <div class="hero-content-phi-about">
             <h1 class="hero-heading-phi-about">
-            {windowWidth >= 1200 ? <TypeAnimation
-      sequence={[
-        'Unleashing Excellence in Consultancy',
-        7000, 
-       
-      ]}
-      wrapper="span"
-      speed={50}
-      style={{ fontSize: '40px', display: 'inline-block' }}
-      repeat={Infinity}
-    /> : 'Unleashing Excellence in Consultancy'}
-              
+              {windowWidth >= 1200 ? (
+                <TypeAnimation
+                  sequence={["Unleashing Excellence in Consultancy", 7000]}
+                  wrapper="span"
+                  speed={50}
+                  style={{ fontSize: "40px", display: "inline-block" }}
+                  repeat={Infinity}
+                />
+              ) : (
+                "Unleashing Excellence in Consultancy"
+              )}
             </h1>
-            <p class="hero-desc-phi-about">
-              {data.herodescription}
-            </p>
+            <p class="hero-desc-phi-about">{data.herodescription}</p>
             <div class="consult-button-phi-about" onClick={gotoContacts}>
               Schedule a Free Consultation
             </div>
@@ -258,12 +268,13 @@ const AboutUs = () => {
       </article>
 
       {/* <!-- about phi Section --> */}
-      <article className={`about-phi ${isVisibleServices ? 'visible' : ''}`} ref={servicesRef}>
+      <article
+        className={`about-phi ${isVisibleServices ? "visible" : ""}`}
+        ref={servicesRef}
+      >
         <section class="about-phi-container">
           <div class="about-phi-content">
-            <h2 class="about-phi-heading">
-              {data.excellenceheading}
-            </h2>
+            <h2 class="about-phi-heading">{data.excellenceheading}</h2>
             <div class="about-content-container">
               <div class="left-photo-section">
                 <img
@@ -275,9 +286,7 @@ const AboutUs = () => {
                 />
               </div>
               <div class="right-text-description">
-                <p class="phi-about-desc">
-                  {data.excellencedescription}
-                </p>
+                <p class="phi-about-desc">{data.excellencedescription}</p>
               </div>
             </div>
           </div>
@@ -293,30 +302,35 @@ const AboutUs = () => {
               Guided by Excellence, Driven by Values
             </h3> --> */}
           </div>
-          <div className={`core-value-tiles-container ${isVisibleInnovation ? 'fade-in-left' : ''}`} ref={innovationRef}>
-           
-          <div className='collab'>Innovation</div>
+          <div
+            className={`core-value-tiles-container ${
+              isVisibleInnovation ? "fade-in-left" : ""
+            }`}
+            ref={innovationRef}
+          >
+            <div className="collab">Innovation</div>
             <div class="left-filled-heading-container">
               <h3 class="value-heading-box">
                 I<span class="letters-whitened">nn</span>ovation
               </h3>
             </div>
             <div class="right-text-paragraph-container">
-              <p class="right-text-intile">
-              {data.qualityonedescription}
-              </p>
+              <p class="right-text-intile">{data.qualityonedescription}</p>
             </div>
           </div>
           <br />
-          
-          <div className={`core-value-tiles-container ${isVisibleCollaboration ? 'fade-in-right' : ''}`} ref={collaborationRef}>
-          <div className='collab'>Collaboration</div>
+
+          <div
+            className={`core-value-tiles-container ${
+              isVisibleCollaboration ? "fade-in-right" : ""
+            }`}
+            ref={collaborationRef}
+          >
+            <div className="collab">Collaboration</div>
             <div class="right-text-paragraph-container">
-              <p class="right-text-intile">
-              {data.qualitytwodescription}
-              </p>
+              <p class="right-text-intile">{data.qualitytwodescription}</p>
             </div>
-            
+
             <div class="left-filled-heading-container-alt">
               <h3 class="value-heading-box">
                 Co<span class="letters-whitened">ll</span>aboration
@@ -324,28 +338,34 @@ const AboutUs = () => {
             </div>
           </div>
           <br />
-          <div className={`core-value-tiles-container ${isVisibleIntegrity ? 'fade-in-left' : ''}`} ref={integrityRef}>
-          <div className='collab'>Integrity</div>
+          <div
+            className={`core-value-tiles-container ${
+              isVisibleIntegrity ? "fade-in-left" : ""
+            }`}
+            ref={integrityRef}
+          >
+            <div className="collab">Integrity</div>
             <div class="left-filled-heading-container">
               <h3 class="value-heading-box">
                 In<span class="letters-whitened">teg</span>rity
               </h3>
             </div>
             <div class="right-text-paragraph-container">
-              <p class="right-text-intile">
-              {data.qualitythreedescription}
-              </p>
+              <p class="right-text-intile">{data.qualitythreedescription}</p>
             </div>
           </div>
           <br />
-          <div className={`core-value-tiles-container ${isVisibleAgility ? 'fade-in-right' : ''}`} ref={agilityRef}>
-          <div className='collab'>Agility</div>
+          <div
+            className={`core-value-tiles-container ${
+              isVisibleAgility ? "fade-in-right" : ""
+            }`}
+            ref={agilityRef}
+          >
+            <div className="collab">Agility</div>
             <div class="right-text-paragraph-container">
-              <p class="right-text-intile">
-                {data.qualityfourdescription}
-              </p>
+              <p class="right-text-intile">{data.qualityfourdescription}</p>
             </div>
-            
+
             <div class="left-filled-heading-container-alt">
               <h3 class="value-heading-box">
                 A<span class="letters-whitened">gil</span>ity
@@ -356,128 +376,276 @@ const AboutUs = () => {
       </article>
 
       {/* <!-- Meet the team --> */}
-      <article  className={`meet ${isTeem ? 'visible' : ''}`} ref={teemRef}>
+      <article className={`meet ${isTeem ? "visible" : ""}`} ref={teemRef}>
         <section class="meet-container">
           <div class="meet-people-train">
             <h2 class="meet-heading">{data.teamheading}</h2>
-            <p class="meet-desc">
-            {data.teamdescription}
-            </p>
+            <p class="meet-desc">{data.teamdescription}</p>
           </div>
           <div class="pic-container">
             <div class="pics-lane">
               <div class="pic-box">
                 <div class="pic">
-                  <img src={alizaidiportrait} className='phi-people-pics' alt="" width={370} />
+                  <img
+                    src={alizaidiportrait}
+                    className="phi-people-pics"
+                    alt=""
+                    width={370}
+                  />
                 </div>
                 <div class="team-name">Ali zaidi</div>
                 <div class="designation">Founder & CEO</div>
                 <div className="phi_people_social_container">
                   <Tooltip placement="top" title="Ali's Linkdin">
-                    <a className='about-spacing' href="https://www.linkedin.com/in/alizaidiphi/" target="_blank" rel="noopener noreferrer">
-                         <img src={linkdin} className='social-icon' alt="" width="30" />
+                    <a
+                      className="about-spacing"
+                      href="https://www.linkedin.com/in/alizaidiphi/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={linkdin}
+                        className="social-icon"
+                        alt=""
+                        width="30"
+                      />
                     </a>
                   </Tooltip>
                   <Tooltip placement="bottom" title="Ali's Twitter">
-                     <a href="https://twitter.com/phisaasllc" target="_blank" rel="noopener noreferrer">
-                       <img src={twitter} className='social-icon' alt="" width="30" />
-                      </a>
-                 </Tooltip>
+                    <a
+                      href="https://twitter.com/phisaasllc"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={twitter}
+                        className="social-icon"
+                        alt=""
+                        width="30"
+                      />
+                    </a>
+                  </Tooltip>
                 </div>
               </div>
               <div class="pic-box">
                 <div class="pic">
-                  <img src={abudullahportrait} className='phi-people-pics' alt="" width={370} />
+                  <img
+                    src={abudullahportrait}
+                    className="phi-people-pics"
+                    alt=""
+                    width={370}
+                  />
                 </div>
                 <div class="team-name">Muhammad Abdullah Ahsan</div>
-                <div class="designation">Director Professional Services- Customer Experience</div>
+                <div class="designation">
+                  Director Professional Services- Customer Experience
+                </div>
                 <div className="phi_people_social_container">
                   <Tooltip placement="top" title="Abdullah's Linkdin">
-                    <a className='about-spacing' href="https://www.linkedin.com/in/muhammad-abdullah-ahsan-710994166/" target="_blank" rel="noopener noreferrer">
-                         <img src={linkdin} className='social-icon' alt="" width="30" />
+                    <a
+                      className="about-spacing"
+                      href="https://www.linkedin.com/in/muhammad-abdullah-ahsan-710994166/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={linkdin}
+                        className="social-icon"
+                        alt=""
+                        width="30"
+                      />
                     </a>
                   </Tooltip>
                   <Tooltip placement="bottom" title="Abdullah's Twitter">
-                     <a href="https://twitter.com/phisaasllc" target="_blank" rel="noopener noreferrer">
-                       <img src={twitter} className='social-icon' alt="" width="30" />
-                      </a>
-                 </Tooltip>
+                    <a
+                      href="https://twitter.com/phisaasllc"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={twitter}
+                        className="social-icon"
+                        alt=""
+                        width="30"
+                      />
+                    </a>
+                  </Tooltip>
                 </div>
               </div>
               <div class="pic-box">
                 <div class="pic">
-                  <img src={razaportrait} className='phi-people-pics' alt="" width={370} />
+                  <img
+                    src={razaportrait}
+                    className="phi-people-pics"
+                    alt=""
+                    width={370}
+                  />
                 </div>
                 <div class="team-name">Raza ur Rehman</div>
                 <div class="designation">Director Commercial</div>
                 <div className="phi_people_social_container">
                   <Tooltip placement="top" title="Raza's Linkdin">
-                    <a className='about-spacing' href="https://twitter.com/razarehmann5" target="_blank" rel="noopener noreferrer">
-                         <img src={linkdin} className='social-icon' alt="" width="30" />
+                    <a
+                      className="about-spacing"
+                      href="https://twitter.com/razarehmann5"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={linkdin}
+                        className="social-icon"
+                        alt=""
+                        width="30"
+                      />
                     </a>
                   </Tooltip>
                   <Tooltip placement="bottom" title="Raza's Twitter">
-                     <a href="https://twitter.com/phisaasllc" target="_blank" rel="noopener noreferrer">
-                       <img src={twitter} className='social-icon' alt="" width="30" />
-                      </a>
-                 </Tooltip>
+                    <a
+                      href="https://twitter.com/phisaasllc"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={twitter}
+                        className="social-icon"
+                        alt=""
+                        width="30"
+                      />
+                    </a>
+                  </Tooltip>
                 </div>
               </div>
               <div class="pic-box">
                 <div class="pic">
-                  <img src={ismailportrait} className='phi-people-pics' alt="" width={370} />
+                  <img
+                    src={ismailportrait}
+                    className="phi-people-pics"
+                    alt=""
+                    width={370}
+                  />
                 </div>
                 <div class="team-name">Abdullah Ismaeel</div>
-                <div class="designation">Director People Excellence & Culture</div>
+                <div class="designation">
+                  Director People Excellence & Culture
+                </div>
                 <div className="phi_people_social_container">
                   <Tooltip placement="top" title="Ismaeel's Linkdin">
-                    <a className='about-spacing' href="https://www.linkedin.com/in/abdullah-ismaeel-702597129/" target="_blank" rel="noopener noreferrer">
-                         <img src={linkdin} className='social-icon' alt="" width="30" />
+                    <a
+                      className="about-spacing"
+                      href="https://www.linkedin.com/in/abdullah-ismaeel-702597129/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={linkdin}
+                        className="social-icon"
+                        alt=""
+                        width="30"
+                      />
                     </a>
                   </Tooltip>
                   <Tooltip placement="bottom" title="Ismaeel's Twitter">
-                     <a href="https://twitter.com/phisaasllc" target="_blank" rel="noopener noreferrer">
-                       <img src={twitter} className='social-icon' alt="" width="30" />
-                      </a>
-                 </Tooltip>
+                    <a
+                      href="https://twitter.com/phisaasllc"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={twitter}
+                        className="social-icon"
+                        alt=""
+                        width="30"
+                      />
+                    </a>
+                  </Tooltip>
                 </div>
               </div>
               <div class="pic-box">
                 <div class="pic">
-                  <img src={waqarsb} className='phi-people-pics' alt="" width={370} />
+                  <img
+                    src={waqarsb}
+                    className="phi-people-pics"
+                    alt=""
+                    width={370}
+                  />
                 </div>
                 <div class="team-name">Waqar Rizvi</div>
                 <div class="designation">Director Finance</div>
                 <div className="phi_people_social_container">
                   <Tooltip placement="top" title="Waqar's Linkdin">
-                    <a className='about-spacing' href="https://twitter.com/waqar_riz" target="_blank" rel="noopener noreferrer">
-                         <img src={linkdin} className='social-icon' alt="" width="30" />
+                    <a
+                      className="about-spacing"
+                      href="https://twitter.com/waqar_riz"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={linkdin}
+                        className="social-icon"
+                        alt=""
+                        width="30"
+                      />
                     </a>
                   </Tooltip>
                   <Tooltip placement="bottom" title="Waqar's Twitter">
-                     <a href="https://twitter.com/phisaasllc" target="_blank" rel="noopener noreferrer">
-                       <img src={twitter} className='social-icon' alt="" width="30" />
-                      </a>
-                 </Tooltip>
+                    <a
+                      href="https://twitter.com/phisaasllc"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={twitter}
+                        className="social-icon"
+                        alt=""
+                        width="30"
+                      />
+                    </a>
+                  </Tooltip>
                 </div>
               </div>
               <div class="pic-box">
                 <div class="pic">
-                  <img src={dani} className='phi-people-pics' alt="" width={370} />
+                  <img
+                    src={dani}
+                    className="phi-people-pics"
+                    alt=""
+                    width={370}
+                  />
                 </div>
                 <div class="team-name">Danial Nadeem</div>
-                <div class="designation">Director Professional Services - Sales</div>
+                <div class="designation">
+                  Director Professional Services - Sales
+                </div>
                 <div className="phi_people_social_container">
                   <Tooltip placement="top" title="Danial's Linkdin">
-                    <a className='about-spacing' href="https://www.linkedin.com/in/deenadeem/" target="_blank" rel="noopener noreferrer">
-                         <img src={linkdin} className='social-icon' alt="" width="30" />
+                    <a
+                      className="about-spacing"
+                      href="https://www.linkedin.com/in/deenadeem/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={linkdin}
+                        className="social-icon"
+                        alt=""
+                        width="30"
+                      />
                     </a>
                   </Tooltip>
                   <Tooltip placement="bottom" title="Danial's Twitter">
-                     <a href="https://twitter.com/phisaasllc" target="_blank" rel="noopener noreferrer">
-                       <img src={twitter} className='social-icon' alt="" width="30" />
-                      </a>
-                 </Tooltip>
+                    <a
+                      href="https://twitter.com/phisaasllc"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={twitter}
+                        className="social-icon"
+                        alt=""
+                        width="30"
+                      />
+                    </a>
+                  </Tooltip>
                 </div>
               </div>
             </div>
@@ -490,37 +658,40 @@ const AboutUs = () => {
         <section class="location-container">
           <h2 class="location-heading">{data.locationheading}</h2>
           <h3 class="location-sub-heading">{data.locationwords}</h3>
-          <p class="locations-desc">
-          {/* {data.locationheading} */}
-          </p>
+          <p class="locations-desc">{/* {data.locationheading} */}</p>
           <div class="location-cards-container">
             <div class="location-cards-one">
               <div class="location-bar-left">
                 <div class="location-card-title-heading">
-                {data.maponetitle}
+                  {data.maponetitle}
                 </div>
                 {/* <!-- <div class="location-card-desc">
                   our office location description
                 </div> --> */}
               </div>
               {/* <div class="location-bar-right"> */}
-                
-           <span className='address-string'> 3046 S Macon Cir, Aurora, CO, 80046</span>  
-              
+
+              <span className="address-string">
+                {" "}
+                3046 S Macon Cir, Aurora, CO, 80046
+              </span>
+
               {/* </div> */}
             </div>
             <div class="location-cards-one">
               <div class="location-bar-left">
                 <div class="location-card-title-heading">
-                {data.maptwotitle}
+                  {data.maptwotitle}
                 </div>
-               
               </div>
               {/* <div class="location-bar-right"> */}
-               
-              <span className='address-string'> Phi Consulting
-               2nd Floor, North Side, Gulberg Empire Plaza, Plot 33-40 Civic Center IBCEHS, 44000</span>
-              
+
+              <span className="address-string">
+                {" "}
+                Phi Consulting 2nd Floor, North Side, Gulberg Empire Plaza, Plot
+                33-40 Civic Center IBCEHS, 44000
+              </span>
+
               {/* </div> */}
             </div>
           </div>
@@ -533,11 +704,14 @@ const AboutUs = () => {
           <h2 class="live-heading">{data.livefromphi}</h2>
 
           <div class="live-video-container">
-            <div className={`live-left-side ${isVisibleLiveText ? 'fade-in-left' : ''}`} ref={liveTextRef}>
+            <div
+              className={`live-left-side ${
+                isVisibleLiveText ? "fade-in-left" : ""
+              }`}
+              ref={liveTextRef}
+            >
               <h3 class="live-subheading">{data.livefromphisubheading}</h3>
-              <p class="live-desc">
-              {data.livefromphidescription}
-              </p>
+              <p class="live-desc">{data.livefromphidescription}</p>
               <div class="live-button-container">
                 <div class="call-button-container">
                   <div class="cta-button">
@@ -546,7 +720,12 @@ const AboutUs = () => {
                 </div>
               </div>
             </div>
-            <div className={`live-right-side ${isVisibleLiveVideo ? 'fade-in-right' : ''}`} ref={liveVideoRef}>
+            <div
+              className={`live-right-side ${
+                isVisibleLiveVideo ? "fade-in-right" : ""
+              }`}
+              ref={liveVideoRef}
+            >
               <div class="video-container">
                 <div class="video-overlay"></div>
                 <iframe
@@ -565,56 +744,44 @@ const AboutUs = () => {
         </section>
       </article>
 
-        {/* <!-- Testimonial Section --> */}
-        <article class="testimonial">
+      {/* <!-- Testimonial Section --> */}
+      <article class="testimonial">
         <section className="testimonial-container">
-          <h2 class="testi-heading">
-          {data.testimonilaheading}
-          </h2>
-          <p class="testi-desc">
-          {data.testimonialdescription}
-          </p>
+          <h2 class="testi-heading">{data.testimonilaheading}</h2>
+          <p class="testi-desc">{data.testimonialdescription}</p>
         </section>
 
         <section className="testi-cards-container" ref={testiRef}>
-          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
-            <div class="circleBase type3 testi-one">
-            </div>
+          <div className={`testi-card ${isVisibleTesti ? "animate" : ""}`}>
+            <div class="circleBase type3 testi-one"></div>
             <p class="testi-quote wide-first">
-              <q
-                ><i
-                  >{data.testione}
-                  </i
-                ></q
-              >
+              <q>
+                <i>{data.testione}</i>
+              </q>
             </p>
             <h3 class="testi-card-heading">{data.testidesignationone}</h3>
           </div>
 
-          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
+          <div className={`testi-card ${isVisibleTesti ? "animate" : ""}`}>
             <div class="circleBase type3 test-three">
               <img src="" alt="" />
             </div>
 
             <p class="testi-quote wider">
-              <q
-                ><i
-                  > {data.testitwo}</i
-                ></q
-              >
+              <q>
+                <i> {data.testitwo}</i>
+              </q>
             </p>
             <h3 class="testi-card-heading">{data.testidesignationtwo}</h3>
           </div>
-          <div className={`testi-card ${isVisibleTesti ? 'animate' : ''}`}>
+          <div className={`testi-card ${isVisibleTesti ? "animate" : ""}`}>
             <div class="circleBase type3 test-two">
               <img src="" alt="" />
             </div>
             <p class="testi-quote">
-              <q
-                ><i
-                  >{data.testithree}</i
-                ></q
-              >
+              <q>
+                <i>{data.testithree}</i>
+              </q>
             </p>
             <h3 class="testi-card-heading">{data.testidesignationthree}</h3>
           </div>
@@ -622,40 +789,22 @@ const AboutUs = () => {
       </article>
 
       {/* <!-- Achievement Section --> */}
-     <article class="achievement">
+      <article class="achievement">
         <section class="achievement-section">
           <h2 class="ach-heading">Our Recognitions</h2>
-          <p class="testi-desc">
-         {data.achievementsline}
-          </p>
+          <p class="testi-desc">{data.achievementsline}</p>
         </section>
         <section class="ach-badges-container" ref={achRef}>
-          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
-            <img
-              src={clutchone}
-              alt=""
-              width="200"
-              height="230"
-            />
+          <div className={`ach-badge ${isVisibleAch ? "animate" : ""}`}>
+            <img src={clutchone} alt="" width="200" height="230" />
           </div>
-          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
-            <img
-               src={recog}
-              alt=""
-              width="200"
-              height="150"
-            />
+          <div className={`ach-badge ${isVisibleAch ? "animate" : ""}`}>
+            <img src={recog} alt="" width="200" height="150" />
           </div>
 
-          <div className={`ach-badge ${isVisibleAch ? 'animate' : ''}`}>
-            <img
-             src={clutchtwo}
-              alt=""
-              width="250"
-              height="220"
-            />
+          <div className={`ach-badge ${isVisibleAch ? "animate" : ""}`}>
+            <img src={clutchtwo} alt="" width="250" height="220" />
           </div>
-
         </section>
       </article>
 
@@ -663,27 +812,22 @@ const AboutUs = () => {
       <article class="cta-container">
         <section class="cta-sections-container">
           <div class="cta-content">
-            <div class="cta-heading">
-              {data.aboutctaheading}
-            </div>
-            <div class="cta-descrip">
-            {data.aboutctadescription}
-            </div>
+            <div class="cta-heading">{data.aboutctaheading}</div>
+            <div class="cta-descrip">{data.aboutctadescription}</div>
           </div>
           <div class="cta-button-section">
             <div class="right-button-header">
-              <span
-                ><Link to="/contact-us" class="inner-header"
-                  >Get in Touch</Link
-                ></span
-              >
+              <span>
+                <Link to="/contact-us" class="inner-header">
+                  Get in Touch
+                </Link>
+              </span>
             </div>
           </div>
         </section>
       </article>
-    
     </>
-  )
-}
+  );
+};
 
 export default AboutUs;
