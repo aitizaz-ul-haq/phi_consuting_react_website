@@ -90,11 +90,19 @@ const SalesConsulting = () => {
   const [costOfSales, setCostOfSales] = useState(0);
   const [numberOfNewCustomers, setNumberOfNewCustomers] = useState(1);
 
+  const [numberOfSalesExecutives, setNumberOfSalesExecutives] = useState(1);
+  const [costPerSalesExecutive, setCostPerSalesExecutive] = useState(1000);
+  const [savingsPerSalesExecutive, setSavingsPerSalesExecutive] = useState(0);
+
   const calculateCAC = () => {
     if (numberOfNewCustomers > 0) {
       return (costOfMarketing + costOfSales) / numberOfNewCustomers;
     }
     return 0;
+  };
+
+  const calculateTotalCostPerSDR = () => {
+    return numberOfSalesExecutives * costPerSalesExecutive;
   };
 
   const showCAC = () => setActiveCalculator("CAC");
@@ -843,7 +851,9 @@ const SalesConsulting = () => {
                   <h3 className="cac-heading">
                     Sales Dev Representative (SDR)
                   </h3>
-                  <div className="dollor-val">${calculateCAC().toFixed(2)}</div>
+                  <div className="dollor-val">
+                    ${calculateTotalCostPerSDR().toFixed(2)}
+                  </div>
                 </div>
 
                 {/* Number of Sales Executives */}
@@ -856,24 +866,28 @@ const SalesConsulting = () => {
                       <InputNumber
                         //  prefix="$"
                         min={0}
-                        max={100000} // Adjust max as needed
+                        max={100} // Adjust max as needed
                         style={{ margin: "0 16px" }}
-                        value={costOfMarketing}
-                        onChange={(value) => setCostOfMarketing(value)}
+                        value={numberOfSalesExecutives}
+                        onChange={(value) => setNumberOfSalesExecutives(value)}
                       />
                     </div>
                   </div>
                   <div className="slider-container">
                     <Slider
                       min={0}
-                      max={100000} // Adjust max as needed
-                      onChange={(value) => setCostOfMarketing(value)}
-                      value={costOfMarketing}
+                      max={100} // Adjust max as needed
+                      value={
+                        typeof numberOfSalesExecutives === "number"
+                          ? numberOfSalesExecutives
+                          : 0
+                      }
+                      onChange={(value) => setNumberOfSalesExecutives(value)}
                     />
                   </div>
                 </div>
 
-                {/* Cost Of Cost Per Sales Executive */}
+                {/* Cost Per Sales Executive */}
                 <div className="slider-section">
                   <div className="cac-slider-container">
                     <div className="cac-subheading-container">
@@ -883,19 +897,23 @@ const SalesConsulting = () => {
                       <InputNumber
                         prefix="$"
                         min={0}
-                        max={100000} // Adjust max as needed
+                        max={50000} // Adjust max as needed
                         style={{ margin: "0 16px" }}
-                        value={costOfSales}
-                        onChange={(value) => setCostOfSales(value)}
+                        value={costPerSalesExecutive}
+                        onChange={(value) => setCostPerSalesExecutive(value)}
                       />
                     </div>
                   </div>
                   <div className="slider-container">
                     <Slider
                       min={0}
-                      max={100000} // Adjust max as needed
-                      onChange={(value) => setCostOfSales(value)}
-                      value={costOfSales}
+                      max={50000} // Example max
+                      value={
+                        typeof costPerSalesExecutive === "number"
+                          ? costPerSalesExecutive
+                          : 0
+                      }
+                      onChange={(value) => setCostPerSalesExecutive(value)}
                     />
                   </div>
                 </div>
