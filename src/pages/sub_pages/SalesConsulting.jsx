@@ -754,7 +754,7 @@ useScrollToTop();
 <div className="cac-subheading-container">
   <h4 className="cal-subheading">Number Of New Customers</h4>
   <InputNumber
-  prefix="$"
+  // prefix="$"
     min={1} // Starting at 1 to avoid division by zero
     max={10000} // Adjust max as needed
     style={{ margin: '0 16px' }}
@@ -789,7 +789,7 @@ useScrollToTop();
  <div className="cac-subheading-container">
    <h4 className="cal-subheading">Number of Customer Sales Rep</h4>
    <InputNumber
-   prefix="$"
+  //  prefix="$"
      min={0}
      max={100000} // Adjust max as needed
      style={{ margin: '0 16px' }}
@@ -849,12 +849,12 @@ useScrollToTop();
  </div>
  </div>
  <div className="slider-container">
- <Slider
+ {/* <Slider
    min={1} // Starting at 1 to ensure there's at least one customer
    max={10000} // Adjust max as needed
    onChange={value => setNumberOfNewCustomers(value)}
    value={numberOfNewCustomers}
- />
+ /> */}
  </div>
           </div>
            </div>
