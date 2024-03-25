@@ -863,18 +863,18 @@ useScrollToTop();
            <div className="cac-calculator-container">
            <div className="cac-header-section">
            <h3 className="cac-heading">
-             Customer Aquisition Cost (CAC)
+             Sales Dev Representative (SDR)
            </h3>
            <div className="dollor-val">${calculateCAC().toFixed(2)}</div>
          </div>
  
-         {/* Cost of Marketing */}
+         {/* Number of Sales Executives */}
          <div className="slider-section">
  <div className="cac-slider-container">
  <div className="cac-subheading-container">
-   <h4 className="cal-subheading">Cost Of Marketing</h4>
+   <h4 className="cal-subheading">Number of Sales Executives</h4>
    <InputNumber
-   prefix="$"
+  //  prefix="$"
      min={0}
      max={100000} // Adjust max as needed
      style={{ margin: '0 16px' }}
@@ -893,11 +893,11 @@ useScrollToTop();
  </div>
           </div>
  
-          {/* Cost of Sales */}
+          {/* Cost Of Cost Per Sales Executive */}
           <div className="slider-section">
  <div className="cac-slider-container">
  <div className="cac-subheading-container">
-   <h4 className="cal-subheading">Cost Of Sales</h4>
+   <h4 className="cal-subheading">Cost Per Sales Executive</h4>
    <InputNumber
     prefix="$"
      min={0}
@@ -918,11 +918,11 @@ useScrollToTop();
  </div>
          </div>
         
-          {/* Number Of New Customers */}
+          {/* Savings Per Sales Executive */}
           <div className="slider-section">
  <div className="cac-slider-container">
  <div className="cac-subheading-container">
-   <h4 className="cal-subheading">Number Of New Customers</h4>
+   <h4 className="cal-subheading">Savings Per Sales Executive</h4>
    <InputNumber
    prefix="$"
      min={1} // Starting at 1 to avoid division by zero
@@ -934,12 +934,12 @@ useScrollToTop();
  </div>
  </div>
  <div className="slider-container">
- <Slider
+ {/* <Slider
    min={1} // Starting at 1 to ensure there's at least one customer
    max={10000} // Adjust max as needed
    onChange={value => setNumberOfNewCustomers(value)}
    value={numberOfNewCustomers}
- />
+ /> */}
  </div>
           </div>
            </div>
