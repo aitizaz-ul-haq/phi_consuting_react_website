@@ -109,7 +109,9 @@ const FiancialConsulting = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://64.23.206.154:3000/finpage");
+        const response = await axios.get(
+          "https://prickle-balanced-archaeopteryx.glitch.me/finpage"
+        );
         console.log(`GTM page data`, response.data);
         if (response.data && response.data.length > 0) {
           const gtmData = response.data[0];
@@ -174,7 +176,9 @@ const FiancialConsulting = () => {
   useEffect(() => {
     const fetchCaseStudies = async () => {
       try {
-        const response = await axios.get("http://64.23.206.154:3000/cases");
+        const response = await axios.get(
+          "https://prickle-balanced-archaeopteryx.glitch.me/cases"
+        );
         setCaseStudies(response.data.slice(0, 3));
       } catch (error) {
         console.error("Error fetching case studies:", error);

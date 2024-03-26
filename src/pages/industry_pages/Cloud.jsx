@@ -65,7 +65,8 @@ const Cloud = () => {
     card4description: "",
   });
   const apiUrl =
-    import.meta.env.VITE_API_URL_PROD || "http://64.23.206.154:3000";
+    import.meta.env.VITE_API_URL_PROD ||
+    "https://prickle-balanced-archaeopteryx.glitch.me";
 
   function simplifyFintechData(data) {
     return data.reduce((acc, entry) => {

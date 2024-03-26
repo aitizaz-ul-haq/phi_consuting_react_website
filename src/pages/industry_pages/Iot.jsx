@@ -65,7 +65,8 @@ const Iot = () => {
   });
 
   const apiUrl =
-    import.meta.env.VITE_API_URL_PROD || "http://64.23.206.154:3000";
+    import.meta.env.VITE_API_URL_PROD ||
+    "https://prickle-balanced-archaeopteryx.glitch.me";
 
   function simplifyFintechData(data) {
     return data.reduce((acc, entry) => {
@@ -81,7 +82,9 @@ const Iot = () => {
 
   const fetchSaasCards = async () => {
     try {
-      const response = await axios.get("http://64.23.206.154:3000/iotcards");
+      const response = await axios.get(
+        "https://prickle-balanced-archaeopteryx.glitch.me/iotcards"
+      );
       if (response.data && response.data.length > 0) {
         const firstEntry = response.data[0];
         setCardDetails({
@@ -158,7 +161,9 @@ const Iot = () => {
   useEffect(() => {
     const fetchCloudBanData = async () => {
       try {
-        const response = await axios.get(`http://64.23.206.154:3000/iotban`);
+        const response = await axios.get(
+          `https://prickle-balanced-archaeopteryx.glitch.me/iotban`
+        );
         const lastEntry = response.data[response.data.length - 1];
         setHeroHeading(lastEntry.heading);
         setHeroDescription(lastEntry.bannerDescription);

@@ -109,7 +109,9 @@ const BuisnessConsulting = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://64.23.206.154:3000/invpage");
+        const response = await axios.get(
+          "https://prickle-balanced-archaeopteryx.glitch.me/invpage"
+        );
         console.log(`GTM page data`, response.data);
         if (response.data && response.data.length > 0) {
           console.log(`dat arecieved on inv page....`, response.data);
@@ -179,7 +181,9 @@ const BuisnessConsulting = () => {
   useEffect(() => {
     const fetchCaseStudies = async () => {
       try {
-        const response = await axios.get("http://64.23.206.154:3000/cases");
+        const response = await axios.get(
+          "https://prickle-balanced-archaeopteryx.glitch.me/cases"
+        );
         setCaseStudies(response.data.slice(0, 3)); // Fetch only the first three case studies
       } catch (error) {
         console.error("Error fetching case studies:", error);

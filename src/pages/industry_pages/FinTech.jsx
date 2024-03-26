@@ -79,7 +79,9 @@ const FinTech = () => {
 
   const fetchSaasCards = async () => {
     try {
-      const response = await axios.get("http://64.23.206.154:3000/fincards");
+      const response = await axios.get(
+        "https://prickle-balanced-archaeopteryx.glitch.me/fincards"
+      );
       if (response.data && response.data.length > 0) {
         const firstEntry = response.data[0];
         setCardDetails({
@@ -98,7 +100,9 @@ const FinTech = () => {
   useEffect(() => {
     const fetchFintechData = async () => {
       try {
-        const response = await axios.get(`http://64.23.206.154:3000/fintech`);
+        const response = await axios.get(
+          `https://prickle-balanced-archaeopteryx.glitch.me/fintech`
+        );
         console.log(`response data...`, response.data);
         const simplifiedData = simplifyFintechData(response.data);
         setFintechData(simplifiedData);
@@ -118,7 +122,7 @@ const FinTech = () => {
     const fetchFintechInfo = async () => {
       try {
         const response = await axios.get(
-          `http://64.23.206.154:3000/fintechinfo`
+          `https://prickle-balanced-archaeopteryx.glitch.me/fintechinfo`
         );
         const sections = response.data[0].sections;
         if (sections.length >= 2) {
@@ -158,7 +162,9 @@ const FinTech = () => {
   useEffect(() => {
     const fetchCloudBanData = async () => {
       try {
-        const response = await axios.get(`http://64.23.206.154:3000/fintban`);
+        const response = await axios.get(
+          `https://prickle-balanced-archaeopteryx.glitch.me/fintban`
+        );
         const lastEntry = response.data[response.data.length - 1];
         setHeroHeading(lastEntry.heading);
         setHeroDescription(lastEntry.bannerDescription);
