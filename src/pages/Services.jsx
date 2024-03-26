@@ -74,7 +74,7 @@ const Services = () => {
     const fetchHomePageData = async () => {
       try {
         const response = await axios.get(
-          "http://64.23.206.154:3000/servicepage"
+          "https://prickle-balanced-archaeopteryx.glitch.me/servicepage"
         );
         console.log(`your data`, response.data);
         if (response.data && response.data.length > 0) {

@@ -57,7 +57,7 @@ const Careers = () => {
     const fetchHomePageData = async () => {
       try {
         const response = await axios.get(
-          "http://64.23.206.154:3000/careerspage"
+          "https://prickle-balanced-archaeopteryx.glitch.me/careerspage"
         );
         console.log(`your data`, response.data);
         if (response.data && response.data.length > 0) {
@@ -120,7 +120,9 @@ const Careers = () => {
     // Function to fetch job data
     const fetchJobs = async () => {
       try {
-        const response = await axios.get("http://64.23.206.154:3000/jobs");
+        const response = await axios.get(
+          "https://prickle-balanced-archaeopteryx.glitch.me/jobs"
+        );
         setJobs(response.data); // Update state with fetched data
       } catch (error) {
         console.error("Error fetching jobs:", error);

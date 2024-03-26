@@ -19,13 +19,16 @@ const Contacts = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch("http://64.23.206.154:3000/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://prickle-balanced-archaeopteryx.glitch.me/send-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.ok) {
         console.log("Form data sent successfully");

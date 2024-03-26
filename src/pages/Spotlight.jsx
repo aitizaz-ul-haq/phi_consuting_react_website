@@ -33,7 +33,7 @@ const Spotlight = () => {
     const fetchHomePageData = async () => {
       try {
         const response = await axios.get(
-          "http://64.23.206.154:3000/valuecreationpage"
+          "https://prickle-balanced-archaeopteryx.glitch.me/valuecreationpage"
         );
         console.log(`your data`, response.data);
         if (response.data && response.data.length > 0) {
@@ -67,7 +67,9 @@ const Spotlight = () => {
   useEffect(() => {
     const fetchCaseStudies = async () => {
       try {
-        const response = await axios.get("http://64.23.206.154:3000/cases");
+        const response = await axios.get(
+          "https://prickle-balanced-archaeopteryx.glitch.me/cases"
+        );
         setCaseStudies(response.data);
       } catch (error) {
         console.error("Error fetching case studies:", error);
