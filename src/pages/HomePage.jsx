@@ -156,7 +156,9 @@ const HomePage = () => {
   useEffect(() => {
     const fetchHomePageData = async () => {
       try {
-        const response = await axios.get("http://64.23.206.154:3000/homepage");
+        const response = await axios.get(
+          "https://prickle-balanced-archaeopteryx.glitch.me/homepage"
+        );
         console.log(`your data`, response.data);
         if (response.data && response.data.length > 0) {
           const homepageData = response.data[0]; // Assuming the first entry is what we want
@@ -201,7 +203,9 @@ const HomePage = () => {
     const fetchBlogs = async () => {
       try {
         // Replace with your actual API endpoint
-        const response = await axios.get("http://64.23.206.154:3000/blogs");
+        const response = await axios.get(
+          "https://prickle-balanced-archaeopteryx.glitch.me/blogs"
+        );
         setBlogs(response.data);
         console.log(response.data);
       } catch (error) {
@@ -215,7 +219,9 @@ const HomePage = () => {
   useEffect(() => {
     const fetchCaseStudies = async () => {
       try {
-        const response = await axios.get("http://64.23.206.154:3000/cases");
+        const response = await axios.get(
+          "https://prickle-balanced-archaeopteryx.glitch.me/cases"
+        );
         setCaseStudies(response.data.slice(0, 3));
         console.log(response.data);
       } catch (error) {
