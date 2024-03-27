@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Button, Form, Input, Typography } from 'antd';
-import axios from 'axios';
-import { message } from 'antd';
-import { Navigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { Button, Form, Input, Typography } from "antd";
+import axios from "axios";
+import { message } from "antd";
+import { Navigate } from "react-router-dom";
 
 const { Title } = Typography;
 const layout = {
@@ -15,15 +15,18 @@ const AddGtm = () => {
   const [redirectToCases, setRedirectToCases] = useState(false);
 
   const onFinish = async (values) => {
-    console.log('the data submitted', values);
+    console.log("the data submitted", values);
     try {
-      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/gtmpage', values);
-      console.log('Response:', response.data);
-      message.success('gtmpage entry created successfully');
+      const response = await axios.post(
+        "https://backend.phiconsulting.org/gtmpage",
+        values
+      );
+      console.log("Response:", response.data);
+      message.success("gtmpage entry created successfully");
       setRedirectToCases(true);
     } catch (error) {
-      console.error('Error posting data:', error);
-      message.error('An error occurred while adding the gtmpage entry');
+      console.error("Error posting data:", error);
+      message.error("An error occurred while adding the gtmpage entry");
     }
   };
 
@@ -33,9 +36,10 @@ const AddGtm = () => {
 
   return (
     <div className="form-container-dash">
-      <Title level={2} style={{ fontWeight: 100, fontSize: '32px' }}>Add GTM Page Content</Title>
+      <Title level={2} style={{ fontWeight: 100, fontSize: "32px" }}>
+        Add GTM Page Content
+      </Title>
       <Form {...layout} form={form} name="add-cloud-con" onFinish={onFinish}>
-        
         {/* Add form fields based on the given structure */}
         <Form.Item
           label="Banner Heading"
@@ -51,9 +55,9 @@ const AddGtm = () => {
           // rules={[{ required: true }]}
         >
           <Input.TextArea />
-          </Form.Item>
+        </Form.Item>
 
-          <Form.Item
+        <Form.Item
           label="Features Main Heading"
           name="featuresMainHeading"
           // rules={[{ required: true }]}
@@ -66,7 +70,7 @@ const AddGtm = () => {
           name="featuresMainDescription"
           // rules={[{ required: true }]}
         >
-         <Input.TextArea />
+          <Input.TextArea />
         </Form.Item>
 
         <Form.Item
@@ -84,7 +88,6 @@ const AddGtm = () => {
         >
           <Input.TextArea maxLength={100} />
         </Form.Item>
-
 
         <Form.Item
           label="Features Heading Two"
@@ -150,7 +153,6 @@ const AddGtm = () => {
           <Input.TextArea maxLength={100} />
         </Form.Item>
 
-
         <Form.Item
           label="Features Heading Six"
           name="featuresHeadingSix"
@@ -167,142 +169,122 @@ const AddGtm = () => {
           <Input.TextArea maxLength={100} />
         </Form.Item>
 
-        
         <Form.Item
-  label="Process Main Heading"
-  name="processMainHeading"
-  // Optional: Add validation rules if required
->
-  <Input />
-</Form.Item>
+          label="Process Main Heading"
+          name="processMainHeading"
+          // Optional: Add validation rules if required
+        >
+          <Input />
+        </Form.Item>
 
         <Form.Item
           label="Process Main Description"
           name="processMainDesc"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
 
-
         <Form.Item
-  label="Process One Heading"
-  name="processHedOne"
-  // Optional: Add validation rules if required
->
-  <Input />
-</Form.Item>
+          label="Process One Heading"
+          name="processHedOne"
+          // Optional: Add validation rules if required
+        >
+          <Input />
+        </Form.Item>
 
         <Form.Item
           label="Process One Description"
           name="processDesOne"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
 
         <Form.Item
-  label="Process Two Heading"
-  name="processHedTwo"
-  // Optional: Add validation rules if required
->
-  <Input />
-</Form.Item>
+          label="Process Two Heading"
+          name="processHedTwo"
+          // Optional: Add validation rules if required
+        >
+          <Input />
+        </Form.Item>
 
         <Form.Item
           label="Process Two Description"
           name="processDesTwo"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
 
-        <Form.Item
-  label="Process Three Heading"
-  name="processHedThree"
->
-  <Input />
-</Form.Item>
+        <Form.Item label="Process Three Heading" name="processHedThree">
+          <Input />
+        </Form.Item>
 
         <Form.Item
           label="Process Three Description"
           name="processDesThree"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
 
-        <Form.Item
-  label="Process Four Heading"
-  name="processHedFour"
->
-  <Input />
-</Form.Item>
+        <Form.Item label="Process Four Heading" name="processHedFour">
+          <Input />
+        </Form.Item>
 
         <Form.Item
           label="Process Four Description"
           name="processDesFour"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
 
-        <Form.Item
-  label="Process Five Heading"
-  name="processHedFive"
->
-  <Input />
-</Form.Item>
+        <Form.Item label="Process Five Heading" name="processHedFive">
+          <Input />
+        </Form.Item>
 
         <Form.Item
           label="Process Five Description"
           name="processDesFive"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
 
-        <Form.Item
-  label="Process Six Heading"
-  name="processHedSix"
->
-  <Input />
-</Form.Item>
+        <Form.Item label="Process Six Heading" name="processHedSix">
+          <Input />
+        </Form.Item>
 
         <Form.Item
           label="Process Six Description"
           name="processDesSix"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
 
-        <Form.Item
-  label="Process Seven Heading"
-  name="processHedSeven"
->
-  <Input />
-</Form.Item>
+        <Form.Item label="Process Seven Heading" name="processHedSeven">
+          <Input />
+        </Form.Item>
 
         <Form.Item
           label="Process Seven Description"
           name="processDesSeven"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
 
-        <Form.Item
-  label="Process Eight Heading"
-  name="processHedEight"
->
-  <Input />
-</Form.Item>
+        <Form.Item label="Process Eight Heading" name="processHedEight">
+          <Input />
+        </Form.Item>
 
         <Form.Item
           label="Process Eight Description"
           name="processDesEight"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
@@ -338,7 +320,6 @@ const AddGtm = () => {
         >
           <Input.TextArea />
         </Form.Item>
-
 
         <Form.Item
           label="Why Box Two Heading"
@@ -420,11 +401,13 @@ const AddGtm = () => {
           <Input.TextArea />
         </Form.Item>
 
-       
-
         <Form.Item {...layout}>
-          <Button type="primary" htmlType="submit">Submit</Button>
-          <Button htmlType="button" onClick={() => form.resetFields()}>Reset</Button>
+          <Button type="primary" htmlType="submit">
+            Submit
+          </Button>
+          <Button htmlType="button" onClick={() => form.resetFields()}>
+            Reset
+          </Button>
         </Form.Item>
       </Form>
     </div>

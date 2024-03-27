@@ -74,7 +74,7 @@ const Services = () => {
     const fetchHomePageData = async () => {
       try {
         const response = await axios.get(
-          "https://prickle-balanced-archaeopteryx.glitch.me/servicepage"
+          "https://backend.phiconsulting.org/servicepage"
         );
         console.log(`your data`, response.data);
         if (response.data && response.data.length > 0) {

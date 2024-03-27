@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Table, Space, Button, Spin, message } from 'antd';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Table, Space, Button, Spin, message } from "antd";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const DevPage = () => {
   const [fintechEntries, setFintechEntries] = useState([]);
@@ -15,16 +15,20 @@ const DevPage = () => {
   const fetchFintechEntries = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/devops');
-      setFintechEntries(response.data.map(entry => ({
-        key: entry._id,
-        headingText: entry.headingText,
-        highlighted: entry.highlighted,
-        paragraphText: entry.paragraphText,
-      })));
+      const response = await axios.get(
+        "https://backend.phiconsulting.org/devops"
+      );
+      setFintechEntries(
+        response.data.map((entry) => ({
+          key: entry._id,
+          headingText: entry.headingText,
+          highlighted: entry.highlighted,
+          paragraphText: entry.paragraphText,
+        }))
+      );
       setIsLoading(false);
     } catch (error) {
-      console.error('Error fetching fintech entries:', error);
+      console.error("Error fetching fintech entries:", error);
       setIsLoading(false);
     }
   };
@@ -36,39 +40,45 @@ const DevPage = () => {
   const handleDelete = async (devopsId) => {
     setIsLoading(true);
     try {
-      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/devops/${devopsId}`);
-      message.success('devops entry deleted successfully');
+      await axios.delete(
+        `https://backend.phiconsulting.org/devops/${devopsId}`
+      );
+      message.success("devops entry deleted successfully");
       fetchFintechEntries();
     } catch (error) {
-      message.error('Error deleting devops entry');
-      console.error('Error deleting devops entry:', error);
+      message.error("Error deleting devops entry");
+      console.error("Error deleting devops entry:", error);
     }
     setIsLoading(false);
   };
 
   const columns = [
     {
-      title: 'Heading',
-      dataIndex: 'headingText',
-      key: 'headingText',
+      title: "Heading",
+      dataIndex: "headingText",
+      key: "headingText",
     },
     {
-      title: 'Highlighted',
-      dataIndex: 'highlighted',
-      key: 'highlighted',
+      title: "Highlighted",
+      dataIndex: "highlighted",
+      key: "highlighted",
     },
     {
-      title: 'Paragraph',
-      dataIndex: 'paragraphText',
-      key: 'paragraphText',
+      title: "Paragraph",
+      dataIndex: "paragraphText",
+      key: "paragraphText",
     },
     {
-      title: 'Action',
-      key: 'action',
+      title: "Action",
+      key: "action",
       render: (_, record) => (
         <Space size="middle">
-          <Button type="link" onClick={() => handleEdit(record.key)}>Edit</Button>
-          <Button type="link" onClick={() => handleDelete(record.key)}>Delete</Button>
+          <Button type="link" onClick={() => handleEdit(record.key)}>
+            Edit
+          </Button>
+          <Button type="link" onClick={() => handleDelete(record.key)}>
+            Delete
+          </Button>
         </Space>
       ),
     },

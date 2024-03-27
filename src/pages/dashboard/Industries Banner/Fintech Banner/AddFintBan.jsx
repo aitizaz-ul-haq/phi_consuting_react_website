@@ -1,7 +1,7 @@
-import React,{useState} from 'react';
-import { Form, Input, Button, message } from 'antd';
-import {Navigate} from "react-router-dom";
-import axios from 'axios';
+import React, { useState } from "react";
+import { Form, Input, Button, message } from "antd";
+import { Navigate } from "react-router-dom";
+import axios from "axios";
 
 const layout = {
   labelCol: { span: 8 },
@@ -12,30 +12,31 @@ const tailLayout = {
 };
 
 const AddFintBan = () => {
-    const [redirectToCases, setRedirectToCases] = useState(false);
+  const [redirectToCases, setRedirectToCases] = useState(false);
   const onFinish = async (values) => {
-    console.log('Success:', values);
+    console.log("Success:", values);
     try {
-      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/fintban', values); 
+      const response = await axios.post(
+        "https://backend.phiconsulting.org/fintban",
+        values
+      );
       console.log(response);
-      message.success('fintban created successfully');
+      message.success("fintban created successfully");
       setRedirectToCases(true);
     } catch (error) {
-      console.error('Error creating fintban:', error);
-      message.error('Failed to create fintban');
+      console.error("Error creating fintban:", error);
+      message.error("Failed to create fintban");
     }
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-    message.error('Submit failed!');
+    console.log("Failed:", errorInfo);
+    message.error("Submit failed!");
   };
 
-     
   if (redirectToCases) {
     return <Navigate to="/dashboard/ShowFintBan" />;
   }
-
 
   return (
     <div className="form-container">
@@ -50,7 +51,7 @@ const AddFintBan = () => {
         <Form.Item
           label="Heading"
           name="heading"
-          rules={[{ required: true, message: 'Please input the heading!' }]}
+          rules={[{ required: true, message: "Please input the heading!" }]}
         >
           <Input />
         </Form.Item>
@@ -58,7 +59,9 @@ const AddFintBan = () => {
         <Form.Item
           label="Banner Description"
           name="bannerDescription"
-          rules={[{ required: true, message: 'Please input the banner description!' }]}
+          rules={[
+            { required: true, message: "Please input the banner description!" },
+          ]}
         >
           <Input.TextArea />
         </Form.Item>

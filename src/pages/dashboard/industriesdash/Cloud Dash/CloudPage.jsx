@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Table, Space, Button, Spin, message } from 'antd';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Table, Space, Button, Spin, message } from "antd";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CloudPage = () => {
   const [fintechEntries, setFintechEntries] = useState([]);
@@ -15,17 +15,21 @@ const CloudPage = () => {
   const fetchFintechEntries = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/cloud');
-      setFintechEntries(response.data.map(entry => ({
-        key: entry._id,
-        headingText: entry.headingText,
-        highlighted: entry.highlighted,
-        paragraphText: entry.paragraphText,
-      })));
+      const response = await axios.get(
+        "https://backend.phiconsulting.org/cloud"
+      );
+      setFintechEntries(
+        response.data.map((entry) => ({
+          key: entry._id,
+          headingText: entry.headingText,
+          highlighted: entry.highlighted,
+          paragraphText: entry.paragraphText,
+        }))
+      );
       console.log(`hello data`, response.data);
       setIsLoading(false);
     } catch (error) {
-      console.error('Error fetching fintech entries:', error);
+      console.error("Error fetching fintech entries:", error);
       setIsLoading(false);
     }
   };
@@ -37,39 +41,43 @@ const CloudPage = () => {
   const handleDelete = async (cloudId) => {
     setIsLoading(true);
     try {
-      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/cloud/${cloudId}`);
-      message.success('cloud entry deleted successfully');
+      await axios.delete(`https://backend.phiconsulting.org/cloud/${cloudId}`);
+      message.success("cloud entry deleted successfully");
       fetchFintechEntries();
     } catch (error) {
-      message.error('Error deleting cloud entry');
-      console.error('Error deleting cloud entry:', error);
+      message.error("Error deleting cloud entry");
+      console.error("Error deleting cloud entry:", error);
     }
     setIsLoading(false);
   };
 
   const columns = [
     {
-      title: 'Heading',
-      dataIndex: 'headingText',
-      key: 'headingText',
+      title: "Heading",
+      dataIndex: "headingText",
+      key: "headingText",
     },
     {
-      title: 'Highlighted',
-      dataIndex: 'highlighted',
-      key: 'highlighted',
+      title: "Highlighted",
+      dataIndex: "highlighted",
+      key: "highlighted",
     },
     {
-      title: 'Paragraph',
-      dataIndex: 'paragraphText',
-      key: 'paragraphText',
+      title: "Paragraph",
+      dataIndex: "paragraphText",
+      key: "paragraphText",
     },
     {
-      title: 'Action',
-      key: 'action',
+      title: "Action",
+      key: "action",
       render: (_, record) => (
         <Space size="middle">
-          <Button type="link" onClick={() => handleEdit(record.key)}>Edit</Button>
-          <Button type="link" onClick={() => handleDelete(record.key)}>Delete</Button>
+          <Button type="link" onClick={() => handleEdit(record.key)}>
+            Edit
+          </Button>
+          <Button type="link" onClick={() => handleDelete(record.key)}>
+            Delete
+          </Button>
         </Space>
       ),
     },

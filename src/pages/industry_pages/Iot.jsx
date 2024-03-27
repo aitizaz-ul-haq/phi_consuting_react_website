@@ -65,8 +65,7 @@ const Iot = () => {
   });
 
   const apiUrl =
-    import.meta.env.VITE_API_URL_PROD ||
-    "https://prickle-balanced-archaeopteryx.glitch.me";
+    import.meta.env.VITE_API_URL_PROD || "https://backend.phiconsulting.org";
 
   function simplifyFintechData(data) {
     return data.reduce((acc, entry) => {
@@ -83,7 +82,7 @@ const Iot = () => {
   const fetchSaasCards = async () => {
     try {
       const response = await axios.get(
-        "https://prickle-balanced-archaeopteryx.glitch.me/iotcards"
+        "https://backend.phiconsulting.org/iotcards"
       );
       if (response.data && response.data.length > 0) {
         const firstEntry = response.data[0];
@@ -162,7 +161,7 @@ const Iot = () => {
     const fetchCloudBanData = async () => {
       try {
         const response = await axios.get(
-          `https://prickle-balanced-archaeopteryx.glitch.me/iotban`
+          `https://backend.phiconsulting.org/iotban`
         );
         const lastEntry = response.data[response.data.length - 1];
         setHeroHeading(lastEntry.heading);

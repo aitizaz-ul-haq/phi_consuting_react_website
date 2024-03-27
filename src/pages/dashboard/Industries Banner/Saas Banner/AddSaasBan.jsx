@@ -1,6 +1,6 @@
-import React from 'react';
-import { Form, Input, Button, message } from 'antd';
-import axios from 'axios';
+import React from "react";
+import { Form, Input, Button, message } from "antd";
+import axios from "axios";
 
 const layout = {
   labelCol: { span: 8 },
@@ -12,20 +12,23 @@ const tailLayout = {
 
 const AddSaasBan = () => {
   const onFinish = async (values) => {
-    console.log('Success:', values);
+    console.log("Success:", values);
     try {
-      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/saasban', values); 
+      const response = await axios.post(
+        "https://backend.phiconsulting.org/saasban",
+        values
+      );
       console.log(response);
-      message.success('SaasBan created successfully');
+      message.success("SaasBan created successfully");
     } catch (error) {
-      console.error('Error creating SaasBan:', error);
-      message.error('Failed to create SaasBan');
+      console.error("Error creating SaasBan:", error);
+      message.error("Failed to create SaasBan");
     }
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-    message.error('Submit failed!');
+    console.log("Failed:", errorInfo);
+    message.error("Submit failed!");
   };
 
   return (
@@ -41,7 +44,7 @@ const AddSaasBan = () => {
         <Form.Item
           label="Heading"
           name="heading"
-          rules={[{ required: true, message: 'Please input the heading!' }]}
+          rules={[{ required: true, message: "Please input the heading!" }]}
         >
           <Input />
         </Form.Item>
@@ -49,7 +52,9 @@ const AddSaasBan = () => {
         <Form.Item
           label="Banner Description"
           name="bannerDescription"
-          rules={[{ required: true, message: 'Please input the banner description!' }]}
+          rules={[
+            { required: true, message: "Please input the banner description!" },
+          ]}
         >
           <Input.TextArea />
         </Form.Item>

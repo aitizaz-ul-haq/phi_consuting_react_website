@@ -57,7 +57,7 @@ const Careers = () => {
     const fetchHomePageData = async () => {
       try {
         const response = await axios.get(
-          "https://prickle-balanced-archaeopteryx.glitch.me/careerspage"
+          "https://backend.phiconsulting.org/careerspage"
         );
         console.log(`your data`, response.data);
         if (response.data && response.data.length > 0) {
@@ -121,7 +121,7 @@ const Careers = () => {
     const fetchJobs = async () => {
       try {
         const response = await axios.get(
-          "https://prickle-balanced-archaeopteryx.glitch.me/jobs"
+          "https://backend.phiconsulting.org/jobs"
         );
         setJobs(response.data); // Update state with fetched data
       } catch (error) {

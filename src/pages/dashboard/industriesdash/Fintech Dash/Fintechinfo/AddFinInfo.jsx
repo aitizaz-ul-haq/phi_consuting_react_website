@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Button, Form, Input, Typography } from 'antd';
-import axios from 'axios';
-import { message } from 'antd';
-import { Navigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { Button, Form, Input, Typography } from "antd";
+import axios from "axios";
+import { message } from "antd";
+import { Navigate } from "react-router-dom";
 
 const { Title } = Typography;
 const layout = {
@@ -21,16 +21,19 @@ const AddFinInfo = () => {
         { title: values.section2_title, paragraph: values.section2_paragraph },
         { title: values.section3_title, paragraph: values.section3_paragraph },
         { title: values.section4_title, paragraph: values.section4_paragraph },
-      ]
+      ],
     };
 
     try {
-      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/fintechinfo', dataToPost);
-      message.success('Fintech info entry created successfully');
+      const response = await axios.post(
+        "https://backend.phiconsulting.org/fintechinfo",
+        dataToPost
+      );
+      message.success("Fintech info entry created successfully");
       setRedirectToCases(true);
     } catch (error) {
-      console.error('Error posting data:', error);
-      message.error('An error occurred while adding the fintech info entry');
+      console.error("Error posting data:", error);
+      message.error("An error occurred while adding the fintech info entry");
     }
   };
 
@@ -40,7 +43,9 @@ const AddFinInfo = () => {
 
   return (
     <div className="form-container-dash">
-      <Title level={2} style={{ fontWeight: 100, fontSize: '32px' }}>Add Fintech Information</Title>
+      <Title level={2} style={{ fontWeight: 100, fontSize: "32px" }}>
+        Add Fintech Information
+      </Title>
       <Form {...layout} form={form} name="add-fin-info" onFinish={onFinish}>
         {/* Four static sections */}
         {[...Array(4)].map((_, index) => (
@@ -49,7 +54,7 @@ const AddFinInfo = () => {
             <Form.Item
               name={`section${index + 1}_title`}
               label={`Section ${index + 1} Title`}
-              rules={[{ required: true, message: 'Title is required' }]}
+              rules={[{ required: true, message: "Title is required" }]}
             >
               <Input />
             </Form.Item>
@@ -58,7 +63,7 @@ const AddFinInfo = () => {
             <Form.Item
               name={`section${index + 1}_paragraph`}
               label={`Section ${index + 1} Paragraph`}
-              rules={[{ required: true, message: 'Paragraph is required' }]}
+              rules={[{ required: true, message: "Paragraph is required" }]}
             >
               <Input.TextArea />
             </Form.Item>
@@ -66,8 +71,12 @@ const AddFinInfo = () => {
         ))}
 
         <Form.Item>
-          <Button type="primary" htmlType="submit">Submit</Button>
-          <Button htmlType="button" onClick={() => form.resetFields()}>Reset</Button>
+          <Button type="primary" htmlType="submit">
+            Submit
+          </Button>
+          <Button htmlType="button" onClick={() => form.resetFields()}>
+            Reset
+          </Button>
         </Form.Item>
       </Form>
     </div>

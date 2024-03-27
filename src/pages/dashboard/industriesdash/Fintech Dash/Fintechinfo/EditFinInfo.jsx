@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Button, Form, Input, Typography, message } from 'antd';
-import axios from 'axios';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Button, Form, Input, Typography, message } from "antd";
+import axios from "axios";
+import { useNavigate, useParams } from "react-router-dom";
 
 const { Title } = Typography;
 const layout = {
@@ -16,8 +16,9 @@ const EditFinInfo = () => {
 
   useEffect(() => {
     if (infoId) {
-      axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/fintechinfo/${infoId}`)
-        .then(response => {
+      axios
+        .get(`https://backend.phiconsulting.org/fintechinfo/${infoId}`)
+        .then((response) => {
           const data = response.data;
           const formData = data.sections.reduce((acc, section, index) => {
             acc[`section${index + 1}_title`] = section.title;
@@ -26,9 +27,9 @@ const EditFinInfo = () => {
           }, {});
           form.setFieldsValue(formData);
         })
-        .catch(error => {
-          console.error('Error fetching data:', error);
-          message.error('Error fetching data for editing');
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+          message.error("Error fetching data for editing");
         });
     }
   }, [infoId, form]);
@@ -48,12 +49,15 @@ const EditFinInfo = () => {
     const dataToPut = { sections: updatedSections };
 
     try {
-      await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/fintechinfo/${infoId}`, dataToPut);
-      message.success('Fintech info entry updated successfully');
-      navigate('/dashboard/ShowFinInfo');
+      await axios.put(
+        `https://backend.phiconsulting.org/fintechinfo/${infoId}`,
+        dataToPut
+      );
+      message.success("Fintech info entry updated successfully");
+      navigate("/dashboard/ShowFinInfo");
     } catch (error) {
-      console.error('Error updating data:', error);
-      message.error('An error occurred while updating the fintech info entry');
+      console.error("Error updating data:", error);
+      message.error("An error occurred while updating the fintech info entry");
     }
   };
 
@@ -67,22 +71,26 @@ const EditFinInfo = () => {
             <Form.Item
               name={`section${index + 1}_title`}
               label={`Section ${index + 1} Title`}
-              rules={[{ required: true, message: 'Title is required' }]}
+              rules={[{ required: true, message: "Title is required" }]}
             >
               <Input />
             </Form.Item>
             <Form.Item
               name={`section${index + 1}_paragraph`}
               label={`Section ${index + 1} Paragraph`}
-              rules={[{ required: true, message: 'Paragraph is required' }]}
+              rules={[{ required: true, message: "Paragraph is required" }]}
             >
               <Input.TextArea />
             </Form.Item>
           </div>
         ))}
         <Form.Item>
-          <Button type="primary" htmlType="submit">Update</Button>
-          <Button htmlType="button" onClick={() => form.resetFields()}>Reset</Button>
+          <Button type="primary" htmlType="submit">
+            Update
+          </Button>
+          <Button htmlType="button" onClick={() => form.resetFields()}>
+            Reset
+          </Button>
         </Form.Item>
       </Form>
     </div>

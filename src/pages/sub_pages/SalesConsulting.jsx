@@ -113,7 +113,7 @@ const SalesConsulting = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://prickle-balanced-archaeopteryx.glitch.me/gtmpage"
+          "https://backend.phiconsulting.org/gtmpage"
         );
         console.log(`GTM page data`, response.data);
         if (response.data && response.data.length > 0) {
@@ -181,7 +181,7 @@ const SalesConsulting = () => {
     const fetchCaseStudies = async () => {
       try {
         const response = await axios.get(
-          "https://prickle-balanced-archaeopteryx.glitch.me/cases"
+          "https://backend.phiconsulting.org/cases"
         );
         setCaseStudies(response.data.slice(0, 3));
       } catch (error) {

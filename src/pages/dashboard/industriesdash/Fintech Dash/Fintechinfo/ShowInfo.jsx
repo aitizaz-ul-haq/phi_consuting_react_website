@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Table, Space, Button, Spin, message } from 'antd';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Table, Space, Button, Spin, message } from "antd";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const ShowInfo = () => {
   const [infoEntries, setInfoEntries] = useState([]);
@@ -15,18 +15,20 @@ const ShowInfo = () => {
   const fetchInfoEntries = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/fintechinfo');
-      const formattedData = response.data.map(entry => ({
+      const response = await axios.get(
+        "https://backend.phiconsulting.org/fintechinfo"
+      );
+      const formattedData = response.data.map((entry) => ({
         key: entry._id,
         ...entry.sections.reduce((acc, section, index) => {
           acc[`section${index + 1}`] = `${section.title}: ${section.paragraph}`;
           return acc;
-        }, {})
+        }, {}),
       }));
       setInfoEntries(formattedData);
       setIsLoading(false);
     } catch (error) {
-      console.error('Error fetching info entries:', error);
+      console.error("Error fetching info entries:", error);
       setIsLoading(false);
     }
   };
@@ -38,31 +40,41 @@ const ShowInfo = () => {
   const handleDelete = async (infoId) => {
     setIsLoading(true);
     try {
-      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/fintechinfo/${infoId}`);
-      message.success('Info entry deleted successfully');
+      await axios.delete(
+        `https://backend.phiconsulting.org/fintechinfo/${infoId}`
+      );
+      message.success("Info entry deleted successfully");
       fetchInfoEntries();
     } catch (error) {
-      message.error('Error deleting info entry');
-      console.error('Error deleting info entry:', error);
+      message.error("Error deleting info entry");
+      console.error("Error deleting info entry:", error);
     }
     setIsLoading(false);
   };
 
   // Columns setup
-  const columns = [...Array(4)].map((_, index) => ({
-    title: `Section ${index + 1}`,
-    dataIndex: `section${index + 1}`,
-    key: `section${index + 1}`,
-  })).concat([{
-    title: 'Action',
-    key: 'action',
-    render: (_, record) => (
-      <Space size="middle">
-        <Button type="link" onClick={() => handleEdit(record.key)}>Edit</Button>
-        <Button type="link" onClick={() => handleDelete(record.key)}>Delete</Button>
-      </Space>
-    ),
-  }]);
+  const columns = [...Array(4)]
+    .map((_, index) => ({
+      title: `Section ${index + 1}`,
+      dataIndex: `section${index + 1}`,
+      key: `section${index + 1}`,
+    }))
+    .concat([
+      {
+        title: "Action",
+        key: "action",
+        render: (_, record) => (
+          <Space size="middle">
+            <Button type="link" onClick={() => handleEdit(record.key)}>
+              Edit
+            </Button>
+            <Button type="link" onClick={() => handleDelete(record.key)}>
+              Delete
+            </Button>
+          </Space>
+        ),
+      },
+    ]);
 
   return (
     <Spin spinning={isLoading} delay={300}>

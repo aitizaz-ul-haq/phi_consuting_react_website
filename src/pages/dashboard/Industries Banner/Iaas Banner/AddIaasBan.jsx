@@ -1,7 +1,7 @@
-import React,{useState} from 'react';
-import { Form, Input, Button, message } from 'antd';
-import {Navigate} from "react-router-dom";
-import axios from 'axios';
+import React, { useState } from "react";
+import { Form, Input, Button, message } from "antd";
+import { Navigate } from "react-router-dom";
+import axios from "axios";
 
 const layout = {
   labelCol: { span: 8 },
@@ -12,30 +12,31 @@ const tailLayout = {
 };
 
 const AddSaasBan = () => {
-    const [redirectToCases, setRedirectToCases] = useState(false);
+  const [redirectToCases, setRedirectToCases] = useState(false);
   const onFinish = async (values) => {
-    console.log('Success:', values);
+    console.log("Success:", values);
     try {
-      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/iaasban', values); 
+      const response = await axios.post(
+        "https://backend.phiconsulting.org/iaasban",
+        values
+      );
       console.log(response);
-      message.success('IaasBan created successfully');
+      message.success("IaasBan created successfully");
       setRedirectToCases(true);
     } catch (error) {
-      console.error('Error creating IaasBan:', error);
-      message.error('Failed to create IaasBan');
+      console.error("Error creating IaasBan:", error);
+      message.error("Failed to create IaasBan");
     }
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-    message.error('Submit failed!');
+    console.log("Failed:", errorInfo);
+    message.error("Submit failed!");
   };
 
-     
   if (redirectToCases) {
     return <Navigate to="/dashboard/ShowIaasBan" />;
   }
-
 
   return (
     <div className="form-container">
@@ -50,7 +51,7 @@ const AddSaasBan = () => {
         <Form.Item
           label="Heading"
           name="heading"
-          rules={[{ required: true, message: 'Please input the heading!' }]}
+          rules={[{ required: true, message: "Please input the heading!" }]}
         >
           <Input />
         </Form.Item>
@@ -58,7 +59,9 @@ const AddSaasBan = () => {
         <Form.Item
           label="Banner Description"
           name="bannerDescription"
-          rules={[{ required: true, message: 'Please input the banner description!' }]}
+          rules={[
+            { required: true, message: "Please input the banner description!" },
+          ]}
         >
           <Input.TextArea />
         </Form.Item>

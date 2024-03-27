@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Button, Form, Input, Typography, message } from 'antd';
-import axios from 'axios';
-import { useParams, Navigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Button, Form, Input, Typography, message } from "antd";
+import axios from "axios";
+import { useParams, Navigate } from "react-router-dom";
 
 const { Title } = Typography;
 const layout = {
@@ -17,11 +17,13 @@ const CloudEdit = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/gtmpage/${gtmpageId}`);
+        const response = await axios.get(
+          `https://backend.phiconsulting.org/gtmpage/${gtmpageId}`
+        );
         form.setFieldsValue(response.data);
       } catch (error) {
-        console.error('Error fetching data:', error);
-        message.error('An error occurred while fetching the data');
+        console.error("Error fetching data:", error);
+        message.error("An error occurred while fetching the data");
       }
     };
 
@@ -30,12 +32,15 @@ const CloudEdit = () => {
 
   const onFinish = async (values) => {
     try {
-      await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/gtmpage/${gtmpageId}`, values);
-      message.success('GTM content updated successfully');
+      await axios.put(
+        `https://backend.phiconsulting.org/gtmpage/${gtmpageId}`,
+        values
+      );
+      message.success("GTM content updated successfully");
       setRedirectToCases(true);
     } catch (error) {
-      console.error('Error updating data:', error);
-      message.error('An error occurred while updating the GTM content');
+      console.error("Error updating data:", error);
+      message.error("An error occurred while updating the GTM content");
     }
   };
 
@@ -49,7 +54,7 @@ const CloudEdit = () => {
       <Form {...layout} form={form} name="edit-gtm-content" onFinish={onFinish}>
         {/* Add all the form fields as per the provided JSON structure */}
         {/* ... Add other form items here as per your JSON structure */}
-        
+
         {/* Example form items */}
         <Form.Item
           label="Banner Heading"
@@ -65,9 +70,9 @@ const CloudEdit = () => {
           // rules={[{ required: true }]}
         >
           <Input.TextArea />
-          </Form.Item>
+        </Form.Item>
 
-          <Form.Item
+        <Form.Item
           label="Features Main Heading"
           name="featuresMainHeading"
           // rules={[{ required: true }]}
@@ -78,15 +83,15 @@ const CloudEdit = () => {
         <Form.Item
           label="Features Main Description"
           name="featuresMainDescription"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
-         <Input.TextArea />
+          <Input.TextArea />
         </Form.Item>
 
         <Form.Item
           label="Features Heading One"
           name="featuresHeadingOne"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
@@ -94,11 +99,10 @@ const CloudEdit = () => {
         <Form.Item
           label="Features Description One"
           name="featuresDescriptionOne"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input.TextArea />
         </Form.Item>
-
 
         <Form.Item
           label="Features Heading Two"
@@ -111,7 +115,7 @@ const CloudEdit = () => {
         <Form.Item
           label="Features Description Two"
           name="featuresDescriptionTwo"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input.TextArea />
         </Form.Item>
@@ -119,7 +123,7 @@ const CloudEdit = () => {
         <Form.Item
           label="Features Heading Three"
           name="featuresHeadingThree"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
@@ -127,7 +131,7 @@ const CloudEdit = () => {
         <Form.Item
           label="Features Description Three"
           name="featuresDescriptionThree"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input.TextArea />
         </Form.Item>
@@ -135,7 +139,7 @@ const CloudEdit = () => {
         <Form.Item
           label="Features Heading Four"
           name="featuresHeadingFour"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
@@ -143,7 +147,7 @@ const CloudEdit = () => {
         <Form.Item
           label="Features Description Four"
           name="featuresDescriptionFour"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input.TextArea />
         </Form.Item>
@@ -164,11 +168,10 @@ const CloudEdit = () => {
           <Input.TextArea />
         </Form.Item>
 
-
         <Form.Item
           label="Features Heading Six"
           name="featuresHeadingSix"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
@@ -176,156 +179,135 @@ const CloudEdit = () => {
         <Form.Item
           label="Features Description Six"
           name="featuresDescriptionSix"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input.TextArea />
         </Form.Item>
 
-        
         <Form.Item
-  label="Process Main Heading"
-  name="processMainHeading"
-  // Optional: Add validation rules if required
->
-  <Input />
-</Form.Item>
+          label="Process Main Heading"
+          name="processMainHeading"
+          // Optional: Add validation rules if required
+        >
+          <Input />
+        </Form.Item>
 
         <Form.Item
           label="Process Main Description"
           name="processMainDesc"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
 
-
         <Form.Item
-  label="Process One Heading"
-  name="processHedOne"
-  // Optional: Add validation rules if required
->
-  <Input />
-</Form.Item>
+          label="Process One Heading"
+          name="processHedOne"
+          // Optional: Add validation rules if required
+        >
+          <Input />
+        </Form.Item>
 
         <Form.Item
           label="Process One Description"
           name="processDesOne"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
 
         <Form.Item
-  label="Process Two Heading"
-  name="processHedTwo"
-  // Optional: Add validation rules if required
->
-  <Input />
-</Form.Item>
+          label="Process Two Heading"
+          name="processHedTwo"
+          // Optional: Add validation rules if required
+        >
+          <Input />
+        </Form.Item>
 
         <Form.Item
           label="Process Two Description"
           name="processDesTwo"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
 
-        <Form.Item
-  label="Process Three Heading"
-  name="processHedThree"
->
-  <Input />
-</Form.Item>
+        <Form.Item label="Process Three Heading" name="processHedThree">
+          <Input />
+        </Form.Item>
 
         <Form.Item
           label="Process Three Description"
           name="processDesThree"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
 
-        <Form.Item
-  label="Process Four Heading"
-  name="processHedFour"
->
-  <Input />
-</Form.Item>
+        <Form.Item label="Process Four Heading" name="processHedFour">
+          <Input />
+        </Form.Item>
 
         <Form.Item
           label="Process Four Description"
           name="processDesFour"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
 
-        <Form.Item
-  label="Process Five Heading"
-  name="processHedFive"
->
-  <Input />
-</Form.Item>
+        <Form.Item label="Process Five Heading" name="processHedFive">
+          <Input />
+        </Form.Item>
 
         <Form.Item
           label="Process Five Description"
           name="processDesFive"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
 
-        <Form.Item
-  label="Process Six Heading"
-  name="processHedSix"
->
-  <Input />
-</Form.Item>
+        <Form.Item label="Process Six Heading" name="processHedSix">
+          <Input />
+        </Form.Item>
 
         <Form.Item
           label="Process Six Description"
           name="processDesSix"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
 
-        <Form.Item
-  label="Process Seven Heading"
-  name="processHedSeven"
->
-  <Input />
-</Form.Item>
+        <Form.Item label="Process Seven Heading" name="processHedSeven">
+          <Input />
+        </Form.Item>
 
         <Form.Item
           label="Process Seven Description"
           name="processDesSeven"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
 
-        <Form.Item
-  label="Process Eight Heading"
-  name="processHedEight"
->
-  <Input />
-</Form.Item>
+        <Form.Item label="Process Eight Heading" name="processHedEight">
+          <Input />
+        </Form.Item>
 
         <Form.Item
           label="Process Eight Description"
           name="processDesEight"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
 
-
         <Form.Item
           label="Why Section Heading"
           name="whySectionHeading"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
@@ -333,7 +315,7 @@ const CloudEdit = () => {
         <Form.Item
           label="Why Section Description"
           name="whySectionDescription"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
@@ -349,16 +331,15 @@ const CloudEdit = () => {
         <Form.Item
           label="Why Section One Description"
           name="whyBoxOneDescription"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input.TextArea />
         </Form.Item>
 
-
         <Form.Item
           label="Why Box Two Heading"
           name="whyBoxTwoHeading"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input />
         </Form.Item>
@@ -366,7 +347,7 @@ const CloudEdit = () => {
         <Form.Item
           label="Why Section Two Description"
           name="whyBoxTwoDescription"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input.TextArea />
         </Form.Item>
@@ -382,7 +363,7 @@ const CloudEdit = () => {
         <Form.Item
           label="Why Section Three Description"
           name="whyBoxThreeDescription"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input.TextArea />
         </Form.Item>
@@ -398,7 +379,7 @@ const CloudEdit = () => {
         <Form.Item
           label="Why Section Four Description"
           name="whyBoxFourDescription"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input.TextArea />
         </Form.Item>
@@ -414,7 +395,7 @@ const CloudEdit = () => {
         <Form.Item
           label="Why Section Five Description"
           name="whyBoxFiveDescription"
-           // rules={[{ required: true }]}
+          // rules={[{ required: true }]}
         >
           <Input.TextArea />
         </Form.Item>
@@ -434,11 +415,14 @@ const CloudEdit = () => {
         >
           <Input.TextArea />
         </Form.Item>
-       
 
         <Form.Item>
-          <Button type="primary" htmlType="submit">Update</Button>
-          <Button htmlType="button" onClick={() => form.resetFields()}>Reset</Button>
+          <Button type="primary" htmlType="submit">
+            Update
+          </Button>
+          <Button htmlType="button" onClick={() => form.resetFields()}>
+            Reset
+          </Button>
         </Form.Item>
       </Form>
     </div>

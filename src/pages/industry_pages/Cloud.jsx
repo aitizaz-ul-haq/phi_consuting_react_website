@@ -65,8 +65,7 @@ const Cloud = () => {
     card4description: "",
   });
   const apiUrl =
-    import.meta.env.VITE_API_URL_PROD ||
-    "https://prickle-balanced-archaeopteryx.glitch.me";
+    import.meta.env.VITE_API_URL_PROD || "https://backend.phiconsulting.org";
 
   function simplifyFintechData(data) {
     return data.reduce((acc, entry) => {

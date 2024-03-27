@@ -44,8 +44,7 @@ const SaaS = () => {
   const [heroDescription, setHeroDescription] = useState("");
 
   const apiUrl =
-    import.meta.env.VITE_API_URL_PROD ||
-    "https://prickle-balanced-archaeopteryx.glitch.me";
+    import.meta.env.VITE_API_URL_PROD || "https://backend.phiconsulting.org";
   const processNewRef = useRef(null);
   const sectionsRef = useRef([]);
   const insightsRefs = useRef([]);
@@ -85,7 +84,7 @@ const SaaS = () => {
   const fetchSaasCards = async () => {
     try {
       const response = await axios.get(
-        "https://prickle-balanced-archaeopteryx.glitch.me/saascards"
+        "https://backend.phiconsulting.org/saascards"
       );
       if (response.data && response.data.length > 0) {
         const firstEntry = response.data[0];
@@ -164,7 +163,7 @@ const SaaS = () => {
     const fetchCloudBanData = async () => {
       try {
         const response = await axios.get(
-          `https://prickle-balanced-archaeopteryx.glitch.me/saasban`
+          `https://backend.phiconsulting.org/saasban`
         );
         const lastEntry = response.data[response.data.length - 1];
         setHeroHeading(lastEntry.heading);

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Button, Form, Input, Select, Typography, message } from 'antd';
-import axios from 'axios';
-import { useParams, Navigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Button, Form, Input, Select, Typography, message } from "antd";
+import axios from "axios";
+import { useParams, Navigate } from "react-router-dom";
 
 const { Option } = Select;
 const { Title } = Typography;
@@ -20,11 +20,13 @@ const FinEdit = () => {
   useEffect(() => {
     const fetchFintechEntry = async () => {
       try {
-        const response = await axios.get(`https://prickle-balanced-archaeopteryx.glitch.me/fintech/${fintechId}`);
+        const response = await axios.get(
+          `https://backend.phiconsulting.org/fintech/${fintechId}`
+        );
         form.setFieldsValue(response.data); // Set form values with the fetched data
       } catch (error) {
-        console.error('Error fetching fintech entry:', error);
-        message.error('An error occurred while fetching the fintech entry');
+        console.error("Error fetching fintech entry:", error);
+        message.error("An error occurred while fetching the fintech entry");
       }
     };
     fetchFintechEntry();
@@ -32,13 +34,16 @@ const FinEdit = () => {
 
   const onFinish = async (values) => {
     try {
-      const response = await axios.put(`https://prickle-balanced-archaeopteryx.glitch.me/fintech/${fintechId}`, values);
-      console.log('Response:', response.data);
-      message.success('Fintech entry updated successfully');
+      const response = await axios.put(
+        `https://backend.phiconsulting.org/fintech/${fintechId}`,
+        values
+      );
+      console.log("Response:", response.data);
+      message.success("Fintech entry updated successfully");
       setRedirectToCases(true);
     } catch (error) {
-      console.error('Error updating data:', error);
-      message.error('An error occurred while updating the fintech entry');
+      console.error("Error updating data:", error);
+      message.error("An error occurred while updating the fintech entry");
     }
   };
 
@@ -50,8 +55,8 @@ const FinEdit = () => {
     <div className="form-container-dash">
       <Title level={2}>Edit Financial Consulting Case</Title>
       <Form {...layout} form={form} name="control-hooks" onFinish={onFinish}>
-       {/* Heading Type Field */}
-       <Form.Item
+        {/* Heading Type Field */}
+        <Form.Item
           label="Heading Type"
           name="headingType"
           rules={[{ required: true }]}
@@ -72,10 +77,7 @@ const FinEdit = () => {
         </Form.Item>
 
         {/* Highlighted Field */}
-        <Form.Item
-          label="Highlighted"
-          name="highlighted"
-        >
+        <Form.Item label="Highlighted" name="highlighted">
           <Input />
         </Form.Item>
 
@@ -89,8 +91,12 @@ const FinEdit = () => {
         </Form.Item>
 
         <Form.Item {...layout}>
-          <Button type="primary" htmlType="submit">Submit</Button>
-          <Button htmlType="button" onClick={() => form.resetFields()}>Reset</Button>
+          <Button type="primary" htmlType="submit">
+            Submit
+          </Button>
+          <Button htmlType="button" onClick={() => form.resetFields()}>
+            Reset
+          </Button>
         </Form.Item>
       </Form>
     </div>

@@ -20,7 +20,7 @@ const Contacts = () => {
   const handleSubmit = async () => {
     try {
       const response = await fetch(
-        "https://prickle-balanced-archaeopteryx.glitch.me/send-email",
+        "https://backend.phiconsulting.org/send-email",
         {
           method: "POST",
           headers: {

@@ -33,7 +33,7 @@ const Spotlight = () => {
     const fetchHomePageData = async () => {
       try {
         const response = await axios.get(
-          "https://prickle-balanced-archaeopteryx.glitch.me/valuecreationpage"
+          "https://backend.phiconsulting.org/valuecreationpage"
         );
         console.log(`your data`, response.data);
         if (response.data && response.data.length > 0) {
@@ -68,7 +68,7 @@ const Spotlight = () => {
     const fetchCaseStudies = async () => {
       try {
         const response = await axios.get(
-          "https://prickle-balanced-archaeopteryx.glitch.me/cases"
+          "https://backend.phiconsulting.org/cases"
         );
         setCaseStudies(response.data);
       } catch (error) {

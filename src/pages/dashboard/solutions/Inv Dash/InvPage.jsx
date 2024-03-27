@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Table, Space, Button, Spin, message } from 'antd';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Table, Space, Button, Spin, message } from "antd";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const InvPage = () => {
   const [cloudEntries, setCloudEntries] = useState([]);
@@ -15,19 +15,23 @@ const InvPage = () => {
   const fetchCloudEntries = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('https://prickle-balanced-archaeopteryx.glitch.me/invpage');
-      setCloudEntries(response.data.map(entry => ({
-        key: entry._id,
-        bannerHeading: entry.bannerHeading,
-        bannerDescription: entry.bannerDescription,
-        featuresMainHeading: entry.featuresMainHeading,
-        featuresMainDescription: entry.featuresMainDescription,
-        featuresHeadingOne: entry.featuresHeadingOne,
-        featuresDescriptionOne: entry.featuresDescriptionOne,
-      })));
+      const response = await axios.get(
+        "https://backend.phiconsulting.org/invpage"
+      );
+      setCloudEntries(
+        response.data.map((entry) => ({
+          key: entry._id,
+          bannerHeading: entry.bannerHeading,
+          bannerDescription: entry.bannerDescription,
+          featuresMainHeading: entry.featuresMainHeading,
+          featuresMainDescription: entry.featuresMainDescription,
+          featuresHeadingOne: entry.featuresHeadingOne,
+          featuresDescriptionOne: entry.featuresDescriptionOne,
+        }))
+      );
       setIsLoading(false);
     } catch (error) {
-      console.error('Error fetching invpage entries:', error);
+      console.error("Error fetching invpage entries:", error);
       setIsLoading(false);
     }
   };
@@ -39,49 +43,53 @@ const InvPage = () => {
   const handleDelete = async (invId) => {
     setIsLoading(true);
     try {
-      await axios.delete(`https://prickle-balanced-archaeopteryx.glitch.me/invpage/${invId}`);
-      message.success('invpage entry deleted successfully');
+      await axios.delete(`https://backend.phiconsulting.org/invpage/${invId}`);
+      message.success("invpage entry deleted successfully");
       fetchCloudEntries();
     } catch (error) {
-      message.error('Error deleting invpage entry');
-      console.error('Error deleting invpage entry:', error);
+      message.error("Error deleting invpage entry");
+      console.error("Error deleting invpage entry:", error);
     }
     setIsLoading(false);
   };
 
   const columns = [
     {
-      title: 'Banner Heading',
-      dataIndex: 'bannerHeading',
-      key: 'bannerHeading',
+      title: "Banner Heading",
+      dataIndex: "bannerHeading",
+      key: "bannerHeading",
     },
     {
-      title: 'Banner Description',
-      dataIndex: 'bannerDescription',
-      key: 'bannerDescription',
+      title: "Banner Description",
+      dataIndex: "bannerDescription",
+      key: "bannerDescription",
     },
     {
-      title: 'Features Main Heading',
-      dataIndex: 'featuresMainHeading',
-      key: 'featuresMainHeading',
+      title: "Features Main Heading",
+      dataIndex: "featuresMainHeading",
+      key: "featuresMainHeading",
     },
     {
-      title: 'Features Main Description',
-      dataIndex: 'featuresMainDescription',
-      key: 'featuresMainDescription',
+      title: "Features Main Description",
+      dataIndex: "featuresMainDescription",
+      key: "featuresMainDescription",
     },
     {
-      title: 'Features Heading One',
-      dataIndex: 'featuresHeadingOne',
-      key: 'featuresHeadingOne',
+      title: "Features Heading One",
+      dataIndex: "featuresHeadingOne",
+      key: "featuresHeadingOne",
     },
     {
-      title: 'Action',
-      key: 'action',
+      title: "Action",
+      key: "action",
       render: (_, record) => (
         <Space size="middle">
-          <Button type="link" onClick={() => handleEdit(record.key)}>Edit</Button>
-          <Button type="link" onClick={() => handleDelete(record.key)}>Delete</Button>
+          <Button type="link" onClick={() => handleEdit(record.key)}>
+            Edit
+          </Button>
+          <Button type="link" onClick={() => handleDelete(record.key)}>
+            Delete
+          </Button>
         </Space>
       ),
     },

@@ -80,7 +80,7 @@ const FinTech = () => {
   const fetchSaasCards = async () => {
     try {
       const response = await axios.get(
-        "https://prickle-balanced-archaeopteryx.glitch.me/fincards"
+        "https://backend.phiconsulting.org/fincards"
       );
       if (response.data && response.data.length > 0) {
         const firstEntry = response.data[0];
@@ -101,7 +101,7 @@ const FinTech = () => {
     const fetchFintechData = async () => {
       try {
         const response = await axios.get(
-          `https://prickle-balanced-archaeopteryx.glitch.me/fintech`
+          `https://backend.phiconsulting.org/fintech`
         );
         console.log(`response data...`, response.data);
         const simplifiedData = simplifyFintechData(response.data);
@@ -122,7 +122,7 @@ const FinTech = () => {
     const fetchFintechInfo = async () => {
       try {
         const response = await axios.get(
-          `https://prickle-balanced-archaeopteryx.glitch.me/fintechinfo`
+          `https://backend.phiconsulting.org/fintechinfo`
         );
         const sections = response.data[0].sections;
         if (sections.length >= 2) {
@@ -163,7 +163,7 @@ const FinTech = () => {
     const fetchCloudBanData = async () => {
       try {
         const response = await axios.get(
-          `https://prickle-balanced-archaeopteryx.glitch.me/fintban`
+          `https://backend.phiconsulting.org/fintban`
         );
         const lastEntry = response.data[response.data.length - 1];
         setHeroHeading(lastEntry.heading);

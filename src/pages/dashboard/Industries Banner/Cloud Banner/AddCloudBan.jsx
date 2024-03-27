@@ -1,7 +1,7 @@
-import React,{useState} from 'react';
-import { Form, Input, Button, message } from 'antd';
-import {Navigate} from "react-router-dom";
-import axios from 'axios';
+import React, { useState } from "react";
+import { Form, Input, Button, message } from "antd";
+import { Navigate } from "react-router-dom";
+import axios from "axios";
 
 const layout = {
   labelCol: { span: 8 },
@@ -12,30 +12,31 @@ const tailLayout = {
 };
 
 const AddCloudBan = () => {
-    const [redirectToCases, setRedirectToCases] = useState(false);
+  const [redirectToCases, setRedirectToCases] = useState(false);
   const onFinish = async (values) => {
-    console.log('Success:', values);
+    console.log("Success:", values);
     try {
-      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/cloudban', values); 
+      const response = await axios.post(
+        "https://backend.phiconsulting.org/cloudban",
+        values
+      );
       console.log(response);
-      message.success('cloudban created successfully');
+      message.success("cloudban created successfully");
       setRedirectToCases(true);
     } catch (error) {
-      console.error('Error creating cloudban:', error);
-      message.error('Failed to create cloudban');
+      console.error("Error creating cloudban:", error);
+      message.error("Failed to create cloudban");
     }
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-    message.error('Submit failed!');
+    console.log("Failed:", errorInfo);
+    message.error("Submit failed!");
   };
 
-     
   if (redirectToCases) {
     return <Navigate to="/dashboard/ShowCloudBan" />;
   }
-
 
   return (
     <div className="form-container">
@@ -50,7 +51,7 @@ const AddCloudBan = () => {
         <Form.Item
           label="Heading"
           name="heading"
-          rules={[{ required: true, message: 'Please input the heading!' }]}
+          rules={[{ required: true, message: "Please input the heading!" }]}
         >
           <Input />
         </Form.Item>
@@ -58,7 +59,9 @@ const AddCloudBan = () => {
         <Form.Item
           label="Banner Description"
           name="bannerDescription"
-          rules={[{ required: true, message: 'Please input the banner description!' }]}
+          rules={[
+            { required: true, message: "Please input the banner description!" },
+          ]}
         >
           <Input.TextArea />
         </Form.Item>

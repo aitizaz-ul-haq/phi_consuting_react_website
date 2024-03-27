@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Button, Card, Form, Input, Space, Select } from 'antd';
-import { CloseOutlined } from '@ant-design/icons';
-import axios from 'axios';
-import { message } from 'antd';
-import { Navigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { Button, Card, Form, Input, Space, Select } from "antd";
+import { CloseOutlined } from "@ant-design/icons";
+import axios from "axios";
+import { message } from "antd";
+import { Navigate } from "react-router-dom";
 
 const { TextArea } = Input;
 const { Option } = Select;
@@ -24,24 +24,27 @@ const AddJob = () => {
     const formattedData = {
       title: values.title,
       role: values.role,
-      content: values.items?.map(item => ({ // Use optional chaining here
-        type: item.type,
-        text: item.text
-      })) || [] // Fallback to an empty array if items is undefined
+      content:
+        values.items?.map((item) => ({
+          // Use optional chaining here
+          type: item.type,
+          text: item.text,
+        })) || [], // Fallback to an empty array if items is undefined
     };
-  
+
     try {
-      const response = await axios.post('https://prickle-balanced-archaeopteryx.glitch.me/jobs', formattedData); // Adjust the URL to your API endpoint
-      console.log('Job created successfully:', response.data);
-      message.success('Job posted successfully');
+      const response = await axios.post(
+        "https://backend.phiconsulting.org/jobs",
+        formattedData
+      ); // Adjust the URL to your API endpoint
+      console.log("Job created successfully:", response.data);
+      message.success("Job posted successfully");
       setRedirectToJobs(true); // Triggers redirection
     } catch (error) {
-      console.error('Error posting job:', error);
-      message.error('An error occurred while posting the job');
+      console.error("Error posting job:", error);
+      message.error("An error occurred while posting the job");
     }
   };
-  
-  
 
   const onReset = () => {
     form.resetFields();
@@ -53,11 +56,21 @@ const AddJob = () => {
 
   return (
     <div className="form-container-dash">
-      <Form {...layout} form={form} name="add-job" onFinish={onFinish} style={{ maxWidth: 600 }}>
+      <Form
+        {...layout}
+        form={form}
+        name="add-job"
+        onFinish={onFinish}
+        style={{ maxWidth: 600 }}
+      >
         <Form.Item name="title" label="Job Title" rules={[{ required: true }]}>
           <Input />
         </Form.Item>
-        <Form.Item name="role" label="Role Description" rules={[{ required: true }]}>
+        <Form.Item
+          name="role"
+          label="Role Description"
+          rules={[{ required: true }]}
+        >
           <TextArea />
         </Form.Item>
         {/* Dynamic Form List for Content */}
@@ -65,29 +78,48 @@ const AddJob = () => {
           {(fields, { add, remove }) => (
             <>
               {fields.map(({ key, name, ...restField }) => (
-                <Card size="small" title={`Content Section ${name + 1}`} key={key} extra={
-                  <CloseOutlined onClick={() => remove(name)} />
-                }>
-                  <Form.Item {...restField} name={[name, 'type']} label="Type" rules={[{ required: true }]}>
+                <Card
+                  size="small"
+                  title={`Content Section ${name + 1}`}
+                  key={key}
+                  extra={<CloseOutlined onClick={() => remove(name)} />}
+                >
+                  <Form.Item
+                    {...restField}
+                    name={[name, "type"]}
+                    label="Type"
+                    rules={[{ required: true }]}
+                  >
                     <Select placeholder="Select type">
                       <Option value="subheading">Subheading</Option>
                       <Option value="paragraph">Paragraph</Option>
                     </Select>
                   </Form.Item>
-                  <Form.Item {...restField} name={[name, 'text']} label="Text" rules={[{ required: true }]}>
+                  <Form.Item
+                    {...restField}
+                    name={[name, "text"]}
+                    label="Text"
+                    rules={[{ required: true }]}
+                  >
                     <TextArea placeholder="Text" />
                   </Form.Item>
                 </Card>
               ))}
-              <Button type="dashed"  onClick={() => add()} block>+ Add Content Section</Button>
+              <Button type="dashed" onClick={() => add()} block>
+                + Add Content Section
+              </Button>
             </>
           )}
         </Form.List>
 
         <Form.Item {...tailLayout}>
           <Space>
-            <Button type="primary" htmlType="submit">Submit</Button>
-            <Button htmlType="button" onClick={onReset}>Reset</Button>
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+            <Button htmlType="button" onClick={onReset}>
+              Reset
+            </Button>
           </Space>
         </Form.Item>
       </Form>
