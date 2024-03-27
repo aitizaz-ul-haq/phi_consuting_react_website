@@ -204,7 +204,7 @@ const HomePage = () => {
       try {
         // Replace with your actual API endpoint
         const response = await axios.get(
-          "https://prickle-balanced-archaeopteryx.glitch.me/blogs"
+          "https://backend.phiconsulting.org/blogs"
         );
         setBlogs(response.data);
         console.log(response.data);
@@ -220,7 +220,7 @@ const HomePage = () => {
     const fetchCaseStudies = async () => {
       try {
         const response = await axios.get(
-          "https://prickle-balanced-archaeopteryx.glitch.me/cases"
+          "https://backend.phiconsulting.org/cases"
         );
         setCaseStudies(response.data.slice(0, 3));
         console.log(response.data);
