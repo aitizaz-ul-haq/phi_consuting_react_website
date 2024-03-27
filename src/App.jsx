@@ -177,7 +177,7 @@ import { Helmet } from 'react-helmet';
 import HomepageBackgroundImage from "./assets/img/new_Back.webp";
 
 import ServicesBackgroundImage from "./assets/img/services_page_img/services_image_3.webp";
-import GtmBackgroundImage from "./assets/img/gtm-strategy-phi-consulting.webp"; 
+import GtmBackgroundImage from "./assets/img/gtm-strategy-phi-consulting.webp";
 import FinanceBackgroundImage from "./assets/img/financial-phi-consulting.webp";
 import HrBackgroundImage from "./assets/img/hr-recruitment-phi-consulting.webp";
 import BuisnessBackgroundImage from "./assets/img/investor-relation-phi-consulting.webp";
@@ -248,265 +248,265 @@ const App = () => {
     </>
   );
 
-const ProtectedRoute = ({ children }) => {
-  const isAuthenticated = localStorage.getItem('token');
-  return isAuthenticated ? children : <Navigate to="/phi-remote-login" />;
-};
+  const ProtectedRoute = ({ children }) => {
+    const isAuthenticated = localStorage.getItem('token');
+    return isAuthenticated ? children : <Navigate to="/phi-remote-login" />;
+  };
 
-const breadcrumbSchema =   {
-  "@context": "https://schema.org/", 
-  "@type": "BreadcrumbList", 
-  "itemListElement": [{
-    "@type": "ListItem", 
-    "position": 1, 
-    "name": "Phi Consulting | Home",
-    "item": "https://phiconsulting.org/home"  
-  },{
-    "@type": "ListItem", 
-    "position": 2, 
-    "name": "Solutions",
-    "item": "https://phiconsulting.org/solutions"  
-  },{
-    "@type": "ListItem", 
-    "position": 3, 
-    "name": "Blogs",
-    "item": "https://phiconsulting.org/blogs"  
-  },{
-    "@type": "ListItem", 
-    "position": 4, 
-    "name": "About Us",
-    "item": "https://phiconsulting.org/about-us"  
-  }]
-};
+  const breadcrumbSchema = {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Phi Consulting | Home",
+      "item": "https://phiconsulting.org/home"
+    }, {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Solutions",
+      "item": "https://phiconsulting.org/solutions"
+    }, {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Blogs",
+      "item": "https://phiconsulting.org/blogs"
+    }, {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "About Us",
+      "item": "https://phiconsulting.org/about-us"
+    }]
+  };
 
   return (
     <>
-    <Helmet>
+      <Helmet>
         <script type="application/ld+json">
           {JSON.stringify(breadcrumbSchema)}
         </script>
       </Helmet>
-    <Router>
-      <Routes>
-        {/* Redirect from root to /home */}
-        <Route path="/" element={<Navigate replace to="/home" />} />
+      <Router>
+        <Routes>
+          {/* Redirect from root to /home */}
+          <Route path="/" element={<Navigate replace to="/home" />} />
 
-        {/* Home Page */}
-        <Route path="/home" element={<Layout><HomePage /></Layout>} />
+          {/* Home Page */}
+          <Route path="/home" element={<Layout><HomePage /></Layout>} />
 
-        {/* Solutions and its subpages */}
-        <Route path="/solutions" element={<Layout><Services /></Layout>} />
-        <Route path="/solutions/go-to-market-strategy" element={<Layout><SalesConsulting /></Layout>} />
-        <Route path="/solutions/hr-recruitment" element={<Layout><HrConsulting /></Layout>} />
-        <Route path="/solutions/investors-relation" element={<Layout><BuisnessConsulting /></Layout>} />
-        <Route path="/solutions/financial-consulting" element={<Layout><FinancialConsulting /></Layout>} />
+          {/* Solutions and its subpages */}
+          <Route path="/solutions" element={<Layout><Services /></Layout>} />
+          <Route path="/solutions/go-to-market-strategy" element={<Layout><SalesConsulting /></Layout>} />
+          <Route path="/solutions/hr-recruitment" element={<Layout><HrConsulting /></Layout>} />
+          <Route path="/solutions/investors-relation" element={<Layout><BuisnessConsulting /></Layout>} />
+          <Route path="/solutions/financial-consulting" element={<Layout><FinancialConsulting /></Layout>} />
 
-        {/* Insights and its subpages */}
-        <Route path="/blogs" element={<Layout><Blog /></Layout>} />
-        <Route path="/case-studies" element={<Layout><Spotlight /></Layout>} />
-        <Route path="casestudy/:companyName" element={<Layout><CaseStudyView /></Layout>} />
-        <Route path="blog/:urlName" element={<Layout><BlogView/></Layout>}/>
-        {/* <Route path="casestudy/:id" element={<Layout><CaseStudyView /></Layout>} /> */}
-        {/* <Route path="/viewcasestudy/:caseId" element={<Layout><ViewCasestudy /></Layout>} /> */}
-        {/* <Route path="casedetails/:id" element={<Layout><CaseDetails /></Layout>} /> */}
-        {/* <Route path="blog/:id" element={<Layout><BlogView/></Layout>}/> */}
+          {/* Insights and its subpages */}
+          <Route path="/blogs" element={<Layout><Blog /></Layout>} />
+          <Route path="/case-studies" element={<Layout><Spotlight /></Layout>} />
+          <Route path="casestudy/:companyName" element={<Layout><CaseStudyView /></Layout>} />
+          <Route path="blog/:urlName" element={<Layout><BlogView /></Layout>} />
+          {/* <Route path="casestudy/:id" element={<Layout><CaseStudyView /></Layout>} /> */}
+          {/* <Route path="/viewcasestudy/:caseId" element={<Layout><ViewCasestudy /></Layout>} /> */}
+          {/* <Route path="casedetails/:id" element={<Layout><CaseDetails /></Layout>} /> */}
+          {/* <Route path="blog/:id" element={<Layout><BlogView/></Layout>}/> */}
 
-        {/* Industry and its subpages */}
-        <Route path="/iot-consulting" element={<Layout><Iot /></Layout>} />
-        <Route path="/iaas-consulting" element={<Layout><IaaS /></Layout>} />
-        <Route path="/saas-consulting" element={<Layout><SaaS /></Layout>} />
-        <Route path="/dev-ops-consulting" element={<Layout><DevOps /></Layout>} />
-        <Route path="/cloud-consulting" element={<Layout><Cloud /></Layout>} />
-        <Route path="/fin-tech-consulting" element={<Layout><FinTech /></Layout>} />
+          {/* Industry and its subpages */}
+          <Route path="/iot-consulting" element={<Layout><Iot /></Layout>} />
+          <Route path="/iaas-consulting" element={<Layout><IaaS /></Layout>} />
+          <Route path="/saas-consulting" element={<Layout><SaaS /></Layout>} />
+          <Route path="/dev-ops-consulting" element={<Layout><DevOps /></Layout>} />
+          <Route path="/cloud-consulting" element={<Layout><Cloud /></Layout>} />
+          <Route path="/fin-tech-consulting" element={<Layout><FinTech /></Layout>} />
 
-        {/* Single Pages */}
-        {/* <Route path="/value-creation" element={<Layout><OurWork /></Layout>} /> */}
-        {/* <Route path="value/:id" element={<Layout><Value /></Layout>} /> */}
-        <Route path="/about-us" element={<Layout><AboutUs /></Layout>} />
-        <Route path="/careers" element={<Layout><Careers /></Layout>} />
-        <Route path="/contact-us" element={<Layout><Contacts /></Layout>} />
-        <Route path="/apply" element={<Layout><Apply /></Layout>} />
+          {/* Single Pages */}
+          {/* <Route path="/value-creation" element={<Layout><OurWork /></Layout>} /> */}
+          {/* <Route path="value/:id" element={<Layout><Value /></Layout>} /> */}
+          <Route path="/about-us" element={<Layout><AboutUs /></Layout>} />
+          <Route path="/careers" element={<Layout><Careers /></Layout>} />
+          <Route path="/contact-us" element={<Layout><Contacts /></Layout>} />
+          <Route path="/apply" element={<Layout><Apply /></Layout>} />
 
-         {/* Separate route for login */}
-         <Route path="/phi-remote-login" element={<Login />} />
-         <Route path="/LandingPage" element={<EditGtm />} />
+          {/* Separate route for login */}
+          <Route path="/phi-remote-login" element={<Login />} />
+          <Route path="/LandingPage" element={<EditGtm />} />
 
-        {/* Dashboard and its subpages */}
-        <Route path="/dashboard" element={
-        <ProtectedRoute>
-          <Dashboard />
-        </ProtectedRoute>
-      }>
-          <Route index element={<Navigate replace to="/dashboard/ShowDash" />} />
+          {/* Dashboard and its subpages */}
+          <Route path="/dashboard" element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }>
+            <Route index element={<Navigate replace to="/dashboard/ShowDash" />} />
 
-          <Route path="Jobs" element={<Jobs />} />
-          <Route path="Blogs" element={<Blogs />} />
-          <Route path="Cases" element={<Cases />} />
+            <Route path="Jobs" element={<Jobs />} />
+            <Route path="Blogs" element={<Blogs />} />
+            <Route path="Cases" element={<Cases />} />
 
-          <Route path="AddJobs" element={<AddJobs />} />  
-          <Route path="AddBlogs" element={<AddBlogs />} />
-          <Route path="AddCases" element={<AddCases />} />
-          {/* ----------------- */}
-          <Route path="AddFin" element={<AddFinCont />} />
-          <Route path="AddFinInfo" element={<AddFinInfo />} />
-          
-          {/* ----------------- */}
-          <Route path="AddIot" element={<AddIotCont />} />
-          <Route path="AddIotInfo" element={<AddIotInfo />} />
+            <Route path="AddJobs" element={<AddJobs />} />
+            <Route path="AddBlogs" element={<AddBlogs />} />
+            <Route path="AddCases" element={<AddCases />} />
+            {/* ----------------- */}
+            <Route path="AddFin" element={<AddFinCont />} />
+            <Route path="AddFinInfo" element={<AddFinInfo />} />
 
-          {/* ----------------- */}
-          <Route path="AddSaas" element={<AddSaasCont />} />
-          <Route path="AddSaasInfo" element={<AddSaasInfo />} />
+            {/* ----------------- */}
+            <Route path="AddIot" element={<AddIotCont />} />
+            <Route path="AddIotInfo" element={<AddIotInfo />} />
 
-           {/* ----------------- */}
-           <Route path="AddDev" element={<AddDevCont />} />
-          <Route path="AddDevInfo" element={<AddDevInfo />} />
+            {/* ----------------- */}
+            <Route path="AddSaas" element={<AddSaasCont />} />
+            <Route path="AddSaasInfo" element={<AddSaasInfo />} />
 
-           {/* ----------------- */}
-           <Route path="AddCloud" element={<AddCloudCont />} />
-          <Route path="AddCloudInfo" element={<AddCloudInfo />} />
-          
-           {/* ----------------- */}
-           <Route path="AddIaas" element={<AddIaasCont />} />
-          <Route path="AddIaasInfo" element={<AddIaasInfo />} />
+            {/* ----------------- */}
+            <Route path="AddDev" element={<AddDevCont />} />
+            <Route path="AddDevInfo" element={<AddDevInfo />} />
 
-          {/* ----------------- */}
-          <Route path="AddGTM" element={<AddGtm />} />
-          <Route path="AddHR" element={<AddHr />} />
-          <Route path="AddInv" element={<AddInv />} />
-          <Route path="AddFinc" element={<AddFin />} />
+            {/* ----------------- */}
+            <Route path="AddCloud" element={<AddCloudCont />} />
+            <Route path="AddCloudInfo" element={<AddCloudInfo />} />
+
+            {/* ----------------- */}
+            <Route path="AddIaas" element={<AddIaasCont />} />
+            <Route path="AddIaasInfo" element={<AddIaasInfo />} />
+
+            {/* ----------------- */}
+            <Route path="AddGTM" element={<AddGtm />} />
+            <Route path="AddHR" element={<AddHr />} />
+            <Route path="AddInv" element={<AddInv />} />
+            <Route path="AddFinc" element={<AddFin />} />
 
 
-          {/* ----------------- */}
-          <Route path="fin" element={<Fin />} />
-          <Route path="iot" element={<IotPage />} />
-          <Route path="saas" element={<SaasPage />} />
-          <Route path="dev" element={<DevPage />} />
-          <Route path="cloud" element={<CloudPage />} />
-          <Route path="iaas" element={<IaasPage />} />
-          <Route path="gtm" element={<GtmPage />} />
-          <Route path="hr" element={<HrPage />} />
-          <Route path="inv" element={<InvPage />} />
-          <Route path="fint" element={<FinPage />} />
+            {/* ----------------- */}
+            <Route path="fin" element={<Fin />} />
+            <Route path="iot" element={<IotPage />} />
+            <Route path="saas" element={<SaasPage />} />
+            <Route path="dev" element={<DevPage />} />
+            <Route path="cloud" element={<CloudPage />} />
+            <Route path="iaas" element={<IaasPage />} />
+            <Route path="gtm" element={<GtmPage />} />
+            <Route path="hr" element={<HrPage />} />
+            <Route path="inv" element={<InvPage />} />
+            <Route path="fint" element={<FinPage />} />
 
-          {/* ----------------- */}
-          <Route path="ShowFinInfo" element={<ShowInfo />} />
-          <Route path="ShowIotInfo" element={<ShowIotInfo />} />
-          <Route path="ShowSaasInfo" element={<ShowSaasInfo />} />
-          <Route path="ShowDevInfo" element={<ShowDevInfo />} />
-          <Route path="ShowCloudInfo" element={<ShowCloudInfo />} />
-          <Route path="ShowIaasInfo" element={<ShowIaasInfo />} />
-          
-          <Route path="EditJob/:jobId" element={<EditJob />} />
-          <Route path="EditBlog/:blogId" element={<EditBlog />} />
-          <Route path="EditCase/:caseId" element={<EditCases />} />
+            {/* ----------------- */}
+            <Route path="ShowFinInfo" element={<ShowInfo />} />
+            <Route path="ShowIotInfo" element={<ShowIotInfo />} />
+            <Route path="ShowSaasInfo" element={<ShowSaasInfo />} />
+            <Route path="ShowDevInfo" element={<ShowDevInfo />} />
+            <Route path="ShowCloudInfo" element={<ShowCloudInfo />} />
+            <Route path="ShowIaasInfo" element={<ShowIaasInfo />} />
 
-          <Route path="EditFinInfo/:infoId" element={<EditFinInfo />} />
-          <Route path="EditFin/:fintechId" element={<FinEdit />} />
+            <Route path="EditJob/:jobId" element={<EditJob />} />
+            <Route path="EditBlog/:blogId" element={<EditBlog />} />
+            <Route path="EditCase/:caseId" element={<EditCases />} />
 
-          <Route path="EditiotInfo/:iotInfoId" element={<EditIotInfo />} />
-          <Route path="EditIot/:iotId" element={<IotEdit />} />
+            <Route path="EditFinInfo/:infoId" element={<EditFinInfo />} />
+            <Route path="EditFin/:fintechId" element={<FinEdit />} />
 
-          <Route path="EditsaasInfo/:saasinfoId" element={<EditSaasInfo />} />
-          <Route path="EditSaas/:saasId" element={<SaasEdit />} />
+            <Route path="EditiotInfo/:iotInfoId" element={<EditIotInfo />} />
+            <Route path="EditIot/:iotId" element={<IotEdit />} />
 
-          <Route path="EditdevInfo/:devinfoId" element={<EditDevInfo />} />
-          <Route path="EditDev/:devopsId" element={<DevEdit />} />
+            <Route path="EditsaasInfo/:saasinfoId" element={<EditSaasInfo />} />
+            <Route path="EditSaas/:saasId" element={<SaasEdit />} />
 
-          <Route path="EditcloudInfo/:cloudinfoId" element={<EditCloudInfo />} />
-          <Route path="EditCloud/:cloudId" element={<CloudEdit />} />
+            <Route path="EditdevInfo/:devinfoId" element={<EditDevInfo />} />
+            <Route path="EditDev/:devopsId" element={<DevEdit />} />
 
-          <Route path="EditiaasInfo/:iaasinfoId" element={<EditIaasInfo />} />
-          <Route path="EditIaas/:iaasId" element={<IaasEdit />} />
+            <Route path="EditcloudInfo/:cloudinfoId" element={<EditCloudInfo />} />
+            <Route path="EditCloud/:cloudId" element={<CloudEdit />} />
 
-          <Route path="EditGtm/:gtmpageId" element={<EditGtm />} />
-          <Route path="EditHr/:hrpageId" element={<EditHr />} />
-          <Route path="EditInv/:invId" element={<EditInv />} />
-          <Route path="EditFino/:finId" element={<EditFin />} />
+            <Route path="EditiaasInfo/:iaasinfoId" element={<EditIaasInfo />} />
+            <Route path="EditIaas/:iaasId" element={<IaasEdit />} />
 
-          <Route path="ShowDash" element={<DashPage />} />
+            <Route path="EditGtm/:gtmpageId" element={<EditGtm />} />
+            <Route path="EditHr/:hrpageId" element={<EditHr />} />
+            <Route path="EditInv/:invId" element={<EditInv />} />
+            <Route path="EditFino/:finId" element={<EditFin />} />
 
-          {/* ---------------------------------------------- */}
-                         {/* Banner Dashborad Routes */}
-          {/*------------------------------------------------*/}
-          <Route path="EditSaa/:saasbanId" element={<EditSaasBan />} />
-          <Route path="AddSaasBan" element={<AddSaasBan />} />
-          <Route path="ShowSaasBan" element={<ShowSaasBan />} />
-          
-          <Route path="EditIaa/:iaasbanId" element={<EditIaasBan />} />
-          <Route path="AddIaasBan" element={<AddIaasBan />} />
-          <Route path="ShowIaasBan" element={<ShowIaasBan />} />
-          
-          <Route path="EditIo/:iotbanId" element={<EditIotBan />} />
-          <Route path="AddIotBan" element={<AddIotBan />} />
-          <Route path="ShowIotBan" element={<ShowIotBan />} />
+            <Route path="ShowDash" element={<DashPage />} />
 
-          <Route path="EditFi/:fintbanId" element={<EditFintBan/>} />
-          <Route path="AddFintBan" element={<AddFintBan />} />
-          <Route path="ShowFintBan" element={<ShowFintBan />} />
+            {/* ---------------------------------------------- */}
+            {/* Banner Dashborad Routes */}
+            {/*------------------------------------------------*/}
+            <Route path="EditSaa/:saasbanId" element={<EditSaasBan />} />
+            <Route path="AddSaasBan" element={<AddSaasBan />} />
+            <Route path="ShowSaasBan" element={<ShowSaasBan />} />
 
-          <Route path="Editde/:devbanId" element={<EditDevBanner/>} />
-          <Route path="AddDevBan" element={<AddDevBan />} />
-          <Route path="ShowDevBan" element={<ShowDevBan />} />
+            <Route path="EditIaa/:iaasbanId" element={<EditIaasBan />} />
+            <Route path="AddIaasBan" element={<AddIaasBan />} />
+            <Route path="ShowIaasBan" element={<ShowIaasBan />} />
 
-          <Route path="Editcl/:cloudbanId" element={<EditCloudBan/>} />
-          <Route path="AddCloudBan" element={<AddCloudBan />} />
-          <Route path="ShowCloudBan" element={<ShowCloudBan />} />
-         
-         {/* --------------------------------------------------------- */}
+            <Route path="EditIo/:iotbanId" element={<EditIotBan />} />
+            <Route path="AddIotBan" element={<AddIotBan />} />
+            <Route path="ShowIotBan" element={<ShowIotBan />} />
 
-          <Route path="EditSaasCards/:saascardsId" element={<EditSaasCards/>} />
-          <Route path="AddSaasCards" element={<AddSaasCards />} />
-          <Route path="ShowSaasCards" element={<ShowSaasCards />} />
+            <Route path="EditFi/:fintbanId" element={<EditFintBan />} />
+            <Route path="AddFintBan" element={<AddFintBan />} />
+            <Route path="ShowFintBan" element={<ShowFintBan />} />
 
-          <Route path="EditIotCards/:iotcardsId" element={<EditIotCards/>} />
-          <Route path="AddIotCards" element={<AddIotCards />} />
-          <Route path="ShowIotCards" element={<ShowIotCards />} />
+            <Route path="Editde/:devbanId" element={<EditDevBanner />} />
+            <Route path="AddDevBan" element={<AddDevBan />} />
+            <Route path="ShowDevBan" element={<ShowDevBan />} />
 
-          <Route path="EditIaasCards/:iaascardsId" element={<EditIaasCards/>} />
-          <Route path="AddIaasCards" element={<AddIaasCards />} />
-          <Route path="ShowIaasCards" element={<ShowIaasCards />} />
+            <Route path="Editcl/:cloudbanId" element={<EditCloudBan />} />
+            <Route path="AddCloudBan" element={<AddCloudBan />} />
+            <Route path="ShowCloudBan" element={<ShowCloudBan />} />
 
-          <Route path="EditCloudCards/:cloudcardsId" element={<EditCloudCards/>} />
-          <Route path="AddCloudCards" element={<AddCloudCards />} />
-          <Route path="ShowCloudCards" element={<ShowCloudCards />} />
+            {/* --------------------------------------------------------- */}
 
-          <Route path="EditDevCards/:devcardsId" element={<EditDevCards/>} />
-          <Route path="AddDevCards" element={<AddDevCards />} />
-          <Route path="ShowDevCards" element={<ShowDevCards />} />
+            <Route path="EditSaasCards/:saascardsId" element={<EditSaasCards />} />
+            <Route path="AddSaasCards" element={<AddSaasCards />} />
+            <Route path="ShowSaasCards" element={<ShowSaasCards />} />
 
-          <Route path="EditFinCards/:fincardsId" element={<EditFinCards/>} />
-          <Route path="AddFinCards" element={<AddFinCards />} />
-          <Route path="ShowFinCards" element={<ShowFinCards />} />
+            <Route path="EditIotCards/:iotcardsId" element={<EditIotCards />} />
+            <Route path="AddIotCards" element={<AddIotCards />} />
+            <Route path="ShowIotCards" element={<ShowIotCards />} />
 
-{/* ---------------------------------------------------------------------- */}
+            <Route path="EditIaasCards/:iaascardsId" element={<EditIaasCards />} />
+            <Route path="AddIaasCards" element={<AddIaasCards />} />
+            <Route path="ShowIaasCards" element={<ShowIaasCards />} />
 
-          <Route path="EditAboutPage/:aboutuspageId" element={<EditAboutPageCont/>} />
-          <Route path="AddAboutPage" element={<AddAboutPageCont />} />
-          <Route path="ShowAboutPage" element={<ShowAboutPageCont />} />
+            <Route path="EditCloudCards/:cloudcardsId" element={<EditCloudCards />} />
+            <Route path="AddCloudCards" element={<AddCloudCards />} />
+            <Route path="ShowCloudCards" element={<ShowCloudCards />} />
 
-          <Route path="EditCareerPage/:careerspageId" element={<EditCarPageCont/>} />
-          <Route path="AddCareerPage" element={<AddCarPageCont />} />
-          <Route path="ShowCareerPage" element={<ShowCarPageCont />} />
+            <Route path="EditDevCards/:devcardsId" element={<EditDevCards />} />
+            <Route path="AddDevCards" element={<AddDevCards />} />
+            <Route path="ShowDevCards" element={<ShowDevCards />} />
 
-          <Route path="EditHomePage/:homepageId" element={<EditHomPageCont/>} />
-          <Route path="AddHomePage" element={<AddHomPageCont />} />
-          <Route path="ShowHomePage" element={<ShowHomPageCont />} />
+            <Route path="EditFinCards/:fincardsId" element={<EditFinCards />} />
+            <Route path="AddFinCards" element={<AddFinCards />} />
+            <Route path="ShowFinCards" element={<ShowFinCards />} />
 
-          <Route path="EditServicePage/:servicespageId" element={<EditSercPageCont/>} />
-          <Route path="AddServicePage" element={<AddServPageCont />} />
-          <Route path="ShowServicePage" element={<ShowServPageCont />} />
+            {/* ---------------------------------------------------------------------- */}
 
-          <Route path="EditValuecPage/:valuecreationpageId" element={<EditValPageCont/>} />
-          <Route path="AddValuecPage" element={<AddValPageCont />} />
-          <Route path="ShowSValuecPage" element={<ShowValPageCont />} />
+            <Route path="EditAboutPage/:aboutuspageId" element={<EditAboutPageCont />} />
+            <Route path="AddAboutPage" element={<AddAboutPageCont />} />
+            <Route path="ShowAboutPage" element={<ShowAboutPageCont />} />
 
-        </Route>
+            <Route path="EditCareerPage/:careerspageId" element={<EditCarPageCont />} />
+            <Route path="AddCareerPage" element={<AddCarPageCont />} />
+            <Route path="ShowCareerPage" element={<ShowCarPageCont />} />
 
-      </Routes>
-    </Router>
+            <Route path="EditHomePage/:homepageId" element={<EditHomPageCont />} />
+            <Route path="AddHomePage" element={<AddHomPageCont />} />
+            <Route path="ShowHomePage" element={<ShowHomPageCont />} />
+
+            <Route path="EditServicePage/:servicespageId" element={<EditSercPageCont />} />
+            <Route path="AddServicePage" element={<AddServPageCont />} />
+            <Route path="ShowServicePage" element={<ShowServPageCont />} />
+
+            <Route path="EditValuecPage/:valuecreationpageId" element={<EditValPageCont />} />
+            <Route path="AddValuecPage" element={<AddValPageCont />} />
+            <Route path="ShowSValuecPage" element={<ShowValPageCont />} />
+
+          </Route>
+
+        </Routes>
+      </Router>
     </>
-    
+
   );
 };
 

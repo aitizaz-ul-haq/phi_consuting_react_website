@@ -172,6 +172,17 @@ const Services = () => {
 
   useScrollToTop();
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Solutions",
+      "item": "https://phiconsulting.org/solutions"
+    }]
+  };
+
   return (
     <>
       <Helmet>
@@ -183,6 +194,9 @@ const Services = () => {
       </Helmet>
       <Helmet>
         <link rel="canonical" href="https://phiconsulting.org/solutions" />
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
       </Helmet>
 
       {/* <!-- Hero Section --> */}
@@ -257,9 +271,8 @@ const Services = () => {
           <div class="process-new-section">
             <div class="left-process-section" ref={processNewRef}>
               <div
-                className={`tooltip-right ${
-                  processNewVisible ? "fade-in" : ""
-                }`}
+                className={`tooltip-right ${processNewVisible ? "fade-in" : ""
+                  }`}
               >
                 <img
                   src="../assets/img/process_icons/goal.png"
@@ -299,9 +312,8 @@ const Services = () => {
           <div class="process-new-section">
             <div class="left-process-section">
               <div
-                className={`tooltip-right ${
-                  processNewVisible ? "fade-in" : ""
-                }`}
+                className={`tooltip-right ${processNewVisible ? "fade-in" : ""
+                  }`}
               >
                 <img
                   src="../assets/img/process_icons/action.png"
@@ -341,9 +353,8 @@ const Services = () => {
           <div class="process-new-section">
             <div class="left-process-section">
               <div
-                className={`tooltip-right ${
-                  processNewVisible ? "fade-in" : ""
-                }`}
+                className={`tooltip-right ${processNewVisible ? "fade-in" : ""
+                  }`}
               >
                 <img
                   src="../assets/img/process_icons/test.png"
@@ -383,9 +394,8 @@ const Services = () => {
           <div class="process-new-section">
             <div class="left-process-section">
               <div
-                className={`tooltip-right ${
-                  processNewVisible ? "fade-in" : ""
-                }`}
+                className={`tooltip-right ${processNewVisible ? "fade-in" : ""
+                  }`}
               >
                 <img
                   src="../assets/img/process_icons/monitor.png"

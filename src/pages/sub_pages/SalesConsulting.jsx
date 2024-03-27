@@ -105,6 +105,21 @@ const SalesConsulting = () => {
     return numberOfSalesExecutives * costPerSalesExecutive;
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Solutions",
+      "item": "https://phiconsulting.org/solutions"
+    }, {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Go-To-Market Strategy"
+    }]
+  };
+
   const showCAC = () => setActiveCalculator("CAC");
   const showCSR = () => setActiveCalculator("CSR");
   const showSDR = () => setActiveCalculator("SDR");
@@ -295,6 +310,9 @@ const SalesConsulting = () => {
           rel="canonical"
           href="https://phiconsulting.org/solutions/go-to-market-strategy"
         />
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
       </Helmet>
       <div className={`overlayscreen ${darkMode ? "activate" : ""}`}></div>
       <div className="right-section-control">
@@ -474,9 +492,8 @@ const SalesConsulting = () => {
           <div class="process-new-section">
             <div class="left-process-section" ref={processNewRef}>
               <div
-                className={`tooltip-right ${
-                  processNewVisible ? "fade-in" : ""
-                }`}
+                className={`tooltip-right ${processNewVisible ? "fade-in" : ""
+                  }`}
               >
                 {/* <img
                   src="../assets/img/process_icons/goal.png"
@@ -512,9 +529,8 @@ const SalesConsulting = () => {
           <div class="process-new-section">
             <div class="left-process-section">
               <div
-                className={`tooltip-right ${
-                  processNewVisible ? "fade-in" : ""
-                }`}
+                className={`tooltip-right ${processNewVisible ? "fade-in" : ""
+                  }`}
               >
                 <img
                   src="../assets/img/process_icons/action.png"
@@ -550,9 +566,8 @@ const SalesConsulting = () => {
           <div class="process-new-section">
             <div class="left-process-section">
               <div
-                className={`tooltip-right ${
-                  processNewVisible ? "fade-in" : ""
-                }`}
+                className={`tooltip-right ${processNewVisible ? "fade-in" : ""
+                  }`}
               >
                 <img
                   src="../assets/img/process_icons/test.png"
@@ -588,9 +603,8 @@ const SalesConsulting = () => {
           <div class="process-new-section">
             <div class="left-process-section">
               <div
-                className={`tooltip-right ${
-                  processNewVisible ? "fade-in" : ""
-                }`}
+                className={`tooltip-right ${processNewVisible ? "fade-in" : ""
+                  }`}
               >
                 <img
                   src="../assets/img/process_icons/monitor.png"

@@ -280,6 +280,21 @@ const HrAndRecruitmentConsulting = () => {
   };
   useScrollToTop();
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Solutions",
+      "item": "https://phiconsulting.org/solutions"
+    }, {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "HR & Recruitment"
+    }]
+  };
+
   return (
     <>
       <Helmet>
@@ -295,6 +310,9 @@ const HrAndRecruitmentConsulting = () => {
           rel="canonical"
           href="https://phiconsulting.org/solutions/hr-recruitment"
         />
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
       </Helmet>
 
       <div className={`overlayscreen ${darkMode ? "activate" : ""}`}></div>
@@ -474,9 +492,8 @@ const HrAndRecruitmentConsulting = () => {
           <div class="process-new-section">
             <div class="left-process-section" ref={processNewRef}>
               <div
-                className={`tooltip-right ${
-                  processNewVisible ? "fade-in" : ""
-                }`}
+                className={`tooltip-right ${processNewVisible ? "fade-in" : ""
+                  }`}
               >
                 <img
                   src="../assets/img/process_icons/goal.png"
@@ -512,9 +529,8 @@ const HrAndRecruitmentConsulting = () => {
           <div class="process-new-section">
             <div class="left-process-section">
               <div
-                className={`tooltip-right ${
-                  processNewVisible ? "fade-in" : ""
-                }`}
+                className={`tooltip-right ${processNewVisible ? "fade-in" : ""
+                  }`}
               >
                 <img
                   src="../assets/img/process_icons/action.png"
@@ -550,9 +566,8 @@ const HrAndRecruitmentConsulting = () => {
           <div class="process-new-section">
             <div class="left-process-section">
               <div
-                className={`tooltip-right ${
-                  processNewVisible ? "fade-in" : ""
-                }`}
+                className={`tooltip-right ${processNewVisible ? "fade-in" : ""
+                  }`}
               >
                 <img
                   src="../assets/img/process_icons/test.png"
