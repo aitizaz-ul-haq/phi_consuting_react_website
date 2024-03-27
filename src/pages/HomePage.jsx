@@ -157,7 +157,7 @@ const HomePage = () => {
     const fetchHomePageData = async () => {
       try {
         const response = await axios.get(
-          "https://prickle-balanced-archaeopteryx.glitch.me/homepage"
+          "https://backend.phiconsulting.org/homepage"
         );
         console.log(`your data`, response.data);
         if (response.data && response.data.length > 0) {
