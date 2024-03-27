@@ -640,7 +640,7 @@ const SalesConsulting = () => {
       </article>
 
       {/* Calculator Section */}
-      <article className="calcualtor-container">
+      {/* <article className="calcualtor-container">
         <h2 class="why-phi-heading">Cost Calculator</h2>
         <p class="why-phi-desc">{data.whySectionDescription}</p>
         <section className="calculator-section">
@@ -679,8 +679,6 @@ const SalesConsulting = () => {
                   </h3>
                   <div className="dollor-val">${calculateCAC().toFixed(2)}</div>
                 </div>
-
-                {/* Cost of Marketing */}
                 <div className="slider-section">
                   <div className="cac-slider-container">
                     <div className="cac-subheading-container">
@@ -688,7 +686,7 @@ const SalesConsulting = () => {
                       <InputNumber
                         prefix="$"
                         min={0}
-                        max={100000} // Adjust max as needed
+                        max={100000}
                         style={{ margin: "0 16px" }}
                         value={costOfMarketing}
                         onChange={(value) => setCostOfMarketing(value)}
@@ -698,14 +696,12 @@ const SalesConsulting = () => {
                   <div className="slider-container">
                     <Slider
                       min={0}
-                      max={100000} // Adjust max as needed
+                      max={100000}
                       onChange={(value) => setCostOfMarketing(value)}
                       value={costOfMarketing}
                     />
                   </div>
                 </div>
-
-                {/* Cost of Sales */}
                 <div className="slider-section">
                   <div className="cac-slider-container">
                     <div className="cac-subheading-container">
@@ -713,7 +709,7 @@ const SalesConsulting = () => {
                       <InputNumber
                         prefix="$"
                         min={0}
-                        max={100000} // Adjust max as needed
+                        max={100000}
                         style={{ margin: "0 16px" }}
                         value={costOfSales}
                         onChange={(value) => setCostOfSales(value)}
@@ -723,14 +719,12 @@ const SalesConsulting = () => {
                   <div className="slider-container">
                     <Slider
                       min={0}
-                      max={100000} // Adjust max as needed
+                      max={100000}
                       onChange={(value) => setCostOfSales(value)}
                       value={costOfSales}
                     />
                   </div>
                 </div>
-
-                {/* Number Of New Customers */}
                 <div className="slider-section">
                   <div className="cac-slider-container">
                     <div className="cac-subheading-container">
@@ -738,9 +732,8 @@ const SalesConsulting = () => {
                         Number Of New Customers
                       </h4>
                       <InputNumber
-                        // prefix="$"
-                        min={1} // Starting at 1 to avoid division by zero
-                        max={10000} // Adjust max as needed
+                        min={1}
+                        max={10000}
                         style={{ margin: "0 16px" }}
                         value={numberOfNewCustomers}
                         onChange={(value) => setNumberOfNewCustomers(value)}
@@ -749,8 +742,8 @@ const SalesConsulting = () => {
                   </div>
                   <div className="slider-container">
                     <Slider
-                      min={1} // Starting at 1 to ensure there's at least one customer
-                      max={10000} // Adjust max as needed
+                      min={1}
+                      max={10000}
                       onChange={(value) => setNumberOfNewCustomers(value)}
                       value={numberOfNewCustomers}
                     />
@@ -764,8 +757,6 @@ const SalesConsulting = () => {
                   <h3 className="cac-heading">Customer Sales Rep Cost (CSR)</h3>
                   <div className="dollor-val">${calculateCAC().toFixed(2)}</div>
                 </div>
-
-                {/* Number of Customer Sales Rep  */}
                 <div className="slider-section">
                   <div className="cac-slider-container">
                     <div className="cac-subheading-container">
@@ -773,9 +764,8 @@ const SalesConsulting = () => {
                         Number of Customer Sales Rep
                       </h4>
                       <InputNumber
-                        //  prefix="$"
                         min={0}
-                        max={100000} // Adjust max as needed
+                        max={100000}
                         style={{ margin: "0 16px" }}
                         value={costOfMarketing}
                         onChange={(value) => setCostOfMarketing(value)}
@@ -785,14 +775,12 @@ const SalesConsulting = () => {
                   <div className="slider-container">
                     <Slider
                       min={0}
-                      max={100000} // Adjust max as needed
+                      max={100000}
                       onChange={(value) => setCostOfMarketing(value)}
                       value={costOfMarketing}
                     />
                   </div>
                 </div>
-
-                {/* Cost Per Customer Sales Rep */}
                 <div className="slider-section">
                   <div className="cac-slider-container">
                     <div className="cac-subheading-container">
@@ -802,7 +790,7 @@ const SalesConsulting = () => {
                       <InputNumber
                         prefix="$"
                         min={0}
-                        max={100000} // Adjust max as needed
+                        max={100000}
                         style={{ margin: "0 16px" }}
                         value={costOfSales}
                         onChange={(value) => setCostOfSales(value)}
@@ -812,36 +800,27 @@ const SalesConsulting = () => {
                   <div className="slider-container">
                     <Slider
                       min={0}
-                      max={100000} // Adjust max as needed
+                      max={100000}
                       onChange={(value) => setCostOfSales(value)}
                       value={costOfSales}
                     />
                   </div>
                 </div>
-
-                {/* Savings Per Sales Rep */}
                 <div className="slider-section">
                   <div className="cac-slider-container">
                     <div className="cac-subheading-container">
                       <h4 className="cal-subheading">Savings Per Sales Rep</h4>
                       <InputNumber
                         prefix="$"
-                        min={1} // Starting at 1 to avoid division by zero
-                        max={10000} // Adjust max as needed
+                        min={1}
+                        max={10000}
                         style={{ margin: "0 16px" }}
                         value={numberOfNewCustomers}
                         onChange={(value) => setNumberOfNewCustomers(value)}
                       />
                     </div>
                   </div>
-                  <div className="slider-container">
-                    {/* <Slider
-   min={1} // Starting at 1 to ensure there's at least one customer
-   max={10000} // Adjust max as needed
-   onChange={value => setNumberOfNewCustomers(value)}
-   value={numberOfNewCustomers}
- /> */}
-                  </div>
+                  <div className="slider-container"></div>
                 </div>
               </div>
             )}
@@ -855,8 +834,6 @@ const SalesConsulting = () => {
                     ${calculateTotalCostPerSDR().toFixed(2)}
                   </div>
                 </div>
-
-                {/* Number of Sales Executives */}
                 <div className="slider-section">
                   <div className="cac-slider-container">
                     <div className="cac-subheading-container">
@@ -864,9 +841,8 @@ const SalesConsulting = () => {
                         Number of Sales Executives
                       </h4>
                       <InputNumber
-                        //  prefix="$"
                         min={0}
-                        max={30} // Adjust max as needed
+                        max={30}
                         style={{ margin: "0 16px" }}
                         value={numberOfSalesExecutives}
                         onChange={(value) => setNumberOfSalesExecutives(value)}
@@ -876,7 +852,7 @@ const SalesConsulting = () => {
                   <div className="slider-container">
                     <Slider
                       min={0}
-                      max={100} // Adjust max as needed
+                      max={100}
                       value={
                         typeof numberOfSalesExecutives === "number"
                           ? numberOfSalesExecutives
@@ -886,8 +862,6 @@ const SalesConsulting = () => {
                     />
                   </div>
                 </div>
-
-                {/* Cost Per Sales Executive */}
                 <div className="slider-section">
                   <div className="cac-slider-container">
                     <div className="cac-subheading-container">
@@ -897,7 +871,7 @@ const SalesConsulting = () => {
                       <InputNumber
                         prefix="$"
                         min={0}
-                        max={4000} // Adjust max as needed
+                        max={4000}
                         style={{ margin: "0 16px" }}
                         value={costPerSalesExecutive}
                         onChange={(value) => setCostPerSalesExecutive(value)}
@@ -907,7 +881,7 @@ const SalesConsulting = () => {
                   <div className="slider-container">
                     <Slider
                       min={0}
-                      max={50000} // Example max
+                      max={50000}
                       value={
                         typeof costPerSalesExecutive === "number"
                           ? costPerSalesExecutive
@@ -917,8 +891,6 @@ const SalesConsulting = () => {
                     />
                   </div>
                 </div>
-
-                {/* Savings Per Sales Executive */}
                 <div className="slider-section">
                   <div className="cac-slider-container">
                     <div className="cac-subheading-container">
@@ -927,28 +899,21 @@ const SalesConsulting = () => {
                       </h4>
                       <InputNumber
                         prefix="$"
-                        min={1} // Starting at 1 to avoid division by zero
-                        max={10000} // Adjust max as needed
+                        min={1}
+                        max={10000}
                         style={{ margin: "0 16px" }}
                         value={numberOfNewCustomers}
                         onChange={(value) => setNumberOfNewCustomers(value)}
                       />
                     </div>
                   </div>
-                  <div className="slider-container">
-                    {/* <Slider
-   min={1} // Starting at 1 to ensure there's at least one customer
-   max={10000} // Adjust max as needed
-   onChange={value => setNumberOfNewCustomers(value)}
-   value={numberOfNewCustomers}
- /> */}
-                  </div>
+                  <div className="slider-container"></div>
                 </div>
               </div>
             )}
           </div>
         </section>
-      </article>
+      </article> */}
 
       {/* <!-- why phi for sale Section --> */}
       <article class="why-phi-for-sales">
